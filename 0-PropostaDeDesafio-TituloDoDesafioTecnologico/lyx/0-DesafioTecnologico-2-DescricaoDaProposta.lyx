@@ -208,7 +208,7 @@ thepage}
 
 
 \backslash
-fancyfoot[L]{NomeProfessor-Cliente}
+fancyfoot[L]{Fabiane da Silva Barros}
 \end_layout
 
 \begin_layout Plain Layout
@@ -240,56 +240,21 @@ pagenumbering{arabic}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Substitua "NomeDoProfessorQueElaborouODesafio" por seu nome e sobrenome
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Apresenta-se aqui a proposta de desenvolvimento de um projeto de engenharia que visa ...
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-descrição em um parágrafo
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Description
-Nota:
- esta proposta tem como base a metodologia apresentada no documento 
-\begin_inset CommandInset href
-LatexCommand href
-name "Metodologia-Instrucoes-Etapas.pdf"
-target "https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas/blob/main/0-Metodologia-Instrucoes-Etapas/lyx/ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas.pdf"
+Apresenta-se aqui a proposta de desenvolvimento de um projeto de engenharia que visa a criação de uma Ferramenta para Geração da Curva de Fluxo Fracionário.
+ Esta ferramenta computacional é essencial para a análise de processos de deslocamento bifásico em meios porosos,
+ como a injeção de água em reservatórios de petróleo para recuperação secundária.
+ Baseada na teoria clássica de Buckley-Leverett 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
 literal "false"
 
 \end_inset
 
-.
+,
+ a solução irá modelar a interação entre as propriedades da rocha (permeabilidade relativa) e dos fluidos (viscosidades) para calcular a fração do fluido injetado no escoamento total.
+ O projeto será implementado na linguagem C++ sob o paradigma da orientação a objetos,
+ resultando em um software robusto e didático que fornece dados críticos para a avaliação da eficiência de deslocamento e otimização da produção de hidrocarbonetos.
 \end_layout
 
 \begin_layout Section
@@ -298,7 +263,7 @@ Título da proposta
 
 \begin_layout Itemize
 Título:
- 
+ Ferramenta para Geração da Curva de Fluxo Fracionário
 \end_layout
 
 \begin_layout Section
@@ -306,13 +271,8 @@ Convocação
 \end_layout
 
 \begin_layout Itemize
-[ ] Projeto da UENF [ ] Projeto do CCT [ ] Projeto do LENEP :
- nome do professor
-\end_layout
-
-\begin_layout Itemize
-[ ] Projeto de extensão:
- nome da empresa de engenharia 
+[ X ] Projeto do LENEP :
+ Fabiane da Silva Barros
 \end_layout
 
 \begin_layout Section
@@ -321,21 +281,9 @@ Atendimento obrigação?
 \end_layout
 
 \begin_layout Itemize
-[ ] sim - anp.
-\end_layout
-
-\begin_layout Itemize
-[ ] sim disciplinas modelagem computacional:
+[ X ] sim disciplinas modelagem computacional:
  Introdução ao Projeto de Engenharia,
  Programação Orientada a Objeto em C++ e Projeto de Software Aplicado à Engenharia (antiga programação prática).
-\end_layout
-
-\begin_layout Itemize
-[ ] sim - TCC do curso de engenharia de petróleo.
-\end_layout
-
-\begin_layout Itemize
-[ ] não.
 \end_layout
 
 \begin_layout Section
@@ -344,246 +292,208 @@ Atendimento obrigação?
 \end_layout
 
 \begin_layout Itemize
-Título da área do conhecimento.
+Título da área do conhecimento:
+ Engenharias.
  
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-Dica:
- Ver áreas do conhecimento no 
-\begin_inset CommandInset href
-LatexCommand href
-name "site do CNPq"
-target "https://lattes.cnpq.br/web/dgp/arvore-do-conhecimento"
-literal "false"
-
-\end_inset
-
- ou no arquivo TabelaAreasConhecimento-Assuntos.dat.
- O projeto pode envolver várias áreas do conhecimento,
- mas deve ter como foco principal as áreas de engenharia e modelagem computacional.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
-Título do tema específico.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o nome deve refletir o tema específico
-\end_layout
-
-\end_inset
-
-
+Título do tema específico:
+ Ferramenta para Geração da Curva de Fluxo Fracionário.
 \end_layout
 
 \begin_layout Itemize
-Título do sub-tema.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Informe sub-temas associados
-\end_layout
-
-\end_inset
-
-
+Título do sub-tema:
+ Teoria de Buckley-Leverett.
 \end_layout
 
 \begin_layout Section
 Descrição do desafio tecnológico 
 \end_layout
 
-\begin_layout Itemize
-Descrição do desafio tecnológico 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-descrição da proposta sobre a ótica do problema de engenharia
+\begin_layout Standard
+O desafio tecnológico deste projeto é desenvolver um modelo computacional que represente a complexa interação física entre dois fluidos imiscíveis (óleo e água) e a rocha do reservatório durante um processo de deslocamento.
+ O desafio central reside em traduzir a equação do fluxo fracionário,
+ que é altamente não-linear devido à sua dependência das curvas de permeabilidade relativa,
+ em um algoritmo computacional preciso e eficiente.O software deverá ser projetado de forma flexível,
+ utilizando orientação a objetos,
+ para permitir que os dados de entrada,
+ especialmente as curvas de permeabilidade relativa,
+ possam ser fornecidos de diferentes formas (ex:
+ tabelas de dados que exigem interpolação,
+ ou funções analíticas como correlações).
+ A validação dos resultados contra exemplos de livros-texto será um passo crucial para garantir a correta implementação do modelo físico-matemático.
 \end_layout
 
-\end_inset
-
-.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Coloque aqui uma breve descrição do desafio tecnológico.
-\end_layout
-
-\begin_layout Itemize
-Se necessário adicionar imagens e tabelas,
- referenciar artigos e livros,
- pode adicionar links para imagens e documentos externos.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Objetivo geral 
 \end_layout
 
-\begin_layout Itemize
-Breve descrição do objetivo.
- 
+\begin_layout Standard
+O objetivo é resolver o problema de engenharia de quantificar a eficiência de deslocamento de óleo por água em um nível fundamental.
+ A curva de fluxo fracionário é a peça central da teoria de Buckley-Leverett,
+ o principal modelo analítico usado para prever o avanço de uma frente de injeção e estimar o fator de recuperação em processos de recuperação secundária.
+ Este projeto visa criar um modelo computacional que permita a engenheiros e estudantes gerar esta curva de forma rápida e precisa,
+ possibilitando a análise de sensibilidade de parâmetros chave (como a razão de mobilidade e os expoentes das curvas de permeabilidade) e aprofundando a compreensão sobre como eles impactam a eficiência do deslocamento.
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-Nota:
- Foco no problema de engenharia e não na solução.
- Para as disciplina de modelagem computacional relacionar com modelos computacionais associados.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Solução esperada - Tipo
 \end_layout
 
-\begin_layout Itemize
-Tipo do produto final,
- exemplo um software,
- um equipamento,
- uma metodologia.
+\begin_layout Standard
+Software (Ferramenta de Engenharia / Algoritmo Computacional).
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-Nota:
- Foco na solução a ser desenvolvida.
- Para as disciplina de modelagem computacional o produto é sempre um software ou algoritmo.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Solução esperada - Descrição
 \end_layout
 
-\begin_layout Itemize
-Breve descrição do tipo de solução esperada.
+\begin_layout Standard
+A solução será uma ferramenta de engenharia,
+ de caráter didático e analítico,
+ que implementa o modelo matemático do fluxo fracionário.
+ O software funcionará como um solucionador específico para esta finalidade.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Exemplo:
- descrever o tipo de solução;
- é um modelo matemático?
- é um algoritmo?
- é uma biblioteca computacional?
- é um software didático?
- é um software de engenharia?
+\begin_layout Standard
+O produto final será um programa executável de linha de comando.
+ Ele lerá um arquivo de entrada simples,
+ em formato de texto,
+ contendo os parâmetros necessários:
+ viscosidades do óleo e da água,
+ e os dados das curvas de permeabilidade relativa (seja como uma tabela de pontos 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ ou como parâmetros para um modelo analítico).
+ Após processar os dados,
+ o programa irá calcular os valores do fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) para um intervalo de saturações de água (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+) e escreverá os pares de dados (
+\begin_inset Formula $S_{w},f_{w}$
+\end_inset
+
+) resultantes em um arquivo de saída formatado.
+ Este arquivo poderá ser importado para o software de plotagem Gnuplot para a visualização e análise da curva "S" característica.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Descreva o produto final esperado.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Exemplo:
- o que é o produto final;
- o que ele faz;
- foco na solução a ser desenvolvida e não no problema de engenharia.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 TRL pretendido 
 \end_layout
 
 \begin_layout Itemize
-TRL = 
+TRL = 4 (Validação de componentes e/ou arranjo em ambiente de laboratório).
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Veja o conceito de TRL e material da disciplina 
-\begin_inset CommandInset href
-LatexCommand href
-name "Introdução ao Projeto de Engenharia"
-target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 CRL pretendido
 \end_layout
 
 \begin_layout Itemize
-CRL = 
+CRL = 2 (Formulação da aplicação do negócio).
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Veja o conceito de CRL e material da disciplina 
-\begin_inset CommandInset href
-LatexCommand href
-name "Introdução ao Projeto de Engenharia"
-target "https://sites.google.com/view/professorandreduartebueno/ensino/introdu%C3%A7%C3%A3o-ao-projeto-de-engenharia"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
 \begin_layout Section
 Informações básicas complementares
 \end_layout
 
-\begin_layout Itemize
-Coloque aqui um conjunto de informações que podem ajudar no entendimento do escopo do problema científico/tecnológico e do produto desejado.
+\begin_layout Standard
+O fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) representa a fração da vazão total de fluido,
+ em uma determinada posição do reservatório,
+ que corresponde à água.
+ A sua equação,
+ desprezando efeitos capilares e gravitacionais,
+ é dada por:
 \end_layout
 
-\begin_layout Itemize
-Pode incluir links para material externo e referências bibliográficas.
-\end_layout
-
-\begin_layout Itemize
-Para adicionar referências bibliográficas adicione os dados do livro/artigo no arquivo bibliografia.bib e inclua aqui a referência (menu ou ícon inserir citação).
-\end_layout
-
-\begin_layout Description
-Nota:
- No modelo disponibilizado no 
-\begin_inset CommandInset href
-LatexCommand href
-name "github"
-target "https://github.com/ldsc/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto"
-literal "false"
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{w}=\frac{{1}}{1+\frac{{k_{ro}(S_{w)}}}{\mu_{o}}\cdot\frac{{\mu_{w}}}{k_{rw}(S_{w})}}
+\]
 
 \end_inset
 
- temos dois diretórios para armazenar informações complementares.
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+é a permeabilidade relativa ao óleo (função da saturação de água,
  
+\begin_inset Formula $S_{w}$
+\end_inset
+
+).
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-MaterialAuxiliar:
- Material auxiliar ao projeto desenvolvido internamente.
+\begin_layout Itemize
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+é a permeabilidade relativa à água (função da saturação de água,
+ 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+).
 \end_layout
 
-\begin_deeper
-\begin_layout Description
-MaterialExterno:
- Material auxiliar ao projeto desenvolvido por terceiros (adicionar lista de referências na bibliografia e citar autores).
+\begin_layout Itemize
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+é a viscosidade do óleo.
 \end_layout
 
-\end_deeper
-\end_deeper
+\begin_layout Itemize
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+é a viscosidade da água.
+\end_layout
+
+\begin_layout Standard
+O principal desafio computacional está no fato de que 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ não são valores constantes,
+ mas sim funções da própria saturação.
+ O software deverá ser capaz de obter estes valores para cada passo de saturação para construir a curva completa.
+\end_layout
+
 \begin_layout Section
 Prazo máximo para desenvolvimento da solução
 \end_layout
@@ -644,62 +554,23 @@ Referências bibliográficas complementares
 \end_layout
 
 \begin_layout Itemize
-Entre as referências utilizadas podemos citar:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-UML:
+Ahmed,
+ Tarek.
+ Reservoir Engineering Handbook.
+ Gulf Publishing Company,
+ 2010.
  
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-UML-MartimFowler,prog-UML-Rumbaugh,prog-UML-blaha,prog-UML-Sonerville"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Itemize
-Projetos:
+Lake,
+ Larry W.,
+ et al.
+ Fundamentals of Enhanced Oil Recovery.
+ SPE,
+ 2010.
  
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-introducao,projetos-pmi,projetos-projetoeletrico1,projetos-Woiler"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
-\begin_layout Itemize
-Gestão de Projetos:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-Abrantes,projetos-gestao,projetos-Heldman,projetos-Menezes,projetos-Pahl,projetos-Valeriano,projetos-Rosa"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Produtos:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-Abrantes"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\end_deeper
 \end_body
 \end_document
