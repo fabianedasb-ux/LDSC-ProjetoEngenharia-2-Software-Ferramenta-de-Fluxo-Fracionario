@@ -438,7 +438,7 @@ status open
 \begin_inset Graphics
 	filename ProjetoEngenharia-Etapas-Geral-portrait-1.png
 	lyxscale 40
-	scale 80
+	width 12cm
 	special height=0.8\textheight
 
 \end_inset
