@@ -337,7 +337,7 @@ rhead{}
 
 \end_inset
 
-Etapas-Padrões/Programadas
+
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 bibfiles "bibliografia"

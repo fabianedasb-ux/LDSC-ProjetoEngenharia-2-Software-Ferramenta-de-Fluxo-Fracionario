@@ -219,7 +219,7 @@ thepage}
 
 
 \backslash
-fancyfoot[L]{NomeProfessor-Cliente}
+fancyfoot[L]{Fabiane da Silva Barros}
 \end_layout
 
 \begin_layout Plain Layout
@@ -328,8 +328,10 @@ rhead{}
 
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
+btprint "btPrintCited"
 bibfiles "bibliografia"
 options "apalike"
+encoding "default"
 
 \end_inset
 

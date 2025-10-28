@@ -145,38 +145,13 @@ space - Introdução}
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-mantenha esta seção como esta,
- não modifique
-\end_layout
-
-\end_inset
-
-Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver um projeto de engenharia;
- Neste trabalho,
- apresenta-se a pré-proposta de um projeto em engenharia de software aplicado a solução de um problema específico da engenharia de petróleo.
- 
-\end_layout
-
-\begin_layout Standard
-Apresenta-se aqui a proposta de desenvolvimento do software XX_nome_XX.
- Um software aplicado a engenharia de petróleo e que visa ...descrever.
- em um parágrafo super resumido..
-\end_layout
-
-\begin_layout Itemize
-O primeiro parágrafo pode ser um super resumo da proposta de projeto.
- A ideia é fazer um resumo do resumo.
- Foque no problema que pretende resolver e não em como irá resolvê-lo!
-\end_layout
-
-\begin_layout Itemize
-PS:
- Observe que ESTE MODELO TEM TEXTOS EXPLICATIVOS QUE DEVEM SER ELIMINADOS DA VERSÃO FINAL.
- O OBJETIVO DE COLOCAR AS EXPLICAÇÕES É FACILITAR O ENTENDIMENTO DO QUE DEVE ENTRAR EM CADA SEÇÃO.
+Apresenta-se aqui a proposta de desenvolvimento de um projeto de engenharia que visa a criação de uma Ferramenta para Geração da Curva de Fluxo Fracionário.
+ Esta ferramenta computacional é essencial para a análise de processos de deslocamento bifásico em meios porosos,
+ como a injeção de água em reservatórios de petróleo para recuperação secundária.
+ Baseada na teoria clássica de Buckley-Leverett ,
+ a solução irá modelar a interação entre as propriedades da rocha (permeabilidade relativa) e dos fluidos (viscosidades) para calcular a fração do fluido injetado no escoamento total.
+ O projeto será implementado na linguagem C++ sob o paradigma da orientação a objetos,
+ resultando em um software robusto e didático que fornece dados críticos para a avaliação da eficiência de deslocamento e otimização da produção de hidrocarbonetos.
 \end_layout
 
 \begin_layout Section
@@ -189,21 +164,11 @@ Tipo de investimento /divulgação:
 \end_layout
 
 \begin_layout Itemize
-PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão 2 
+PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão 1 
 \end_layout
 
 \begin_layout Subsubsection
 Coordenador:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Gestão das partes relacionadas às disciplinas e apoio em dúvidas de programação.
-\end_layout
-
-\end_inset
-
- 
 \end_layout
 
 \begin_layout Itemize
@@ -211,115 +176,11 @@ André Duarte Bueno
 \end_layout
 
 \begin_layout Subsubsection
-Gerência técnica:
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Nota:
- caso o projeto tenha algum tipo de vínculo com empresa ou instituição externa (como um projeto de extensão),
- coloque aqui o nome da empresa e do engenheiro que irá acompanhar o projeto.
- Caso o acompanhamento venha a ser feito por outro professor da UENF coloque aqui o nome do professor e seu laboratório/setor.
-\end_layout
-
-\begin_layout Plain Layout
-Nota:
- A gerência técnica é responsável pelo apoio técnico,
- responsável pela parte de equações e modelos da área em que o software será desenvolvido.
- 
-\end_layout
-
-\begin_layout Plain Layout
-Por exemplo,
- se o software é da área de reservatório a gerência técnica será de um professor de reservatório ou gerente de empresa que atua na área e tem o conhecimento técnico para auxiliar no esclarecimento de dúvidas.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Nome Empresa/Instituição:
-\end_layout
-
-\begin_layout Itemize
-Nome Gerente
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-pode ser um professor(a)
-\end_layout
-
-\end_inset
-
-:
- 
-\end_layout
-
-\begin_layout Itemize
-E-mail:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o email da empresa;
- institucional
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Telefone:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-celular
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
 Equipe:
 \end_layout
 
 \begin_layout Itemize
-Nome (gerente-equipe) [email/telefone]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o gerente da equipe é o aluno que faz a comunicação da equipe com a gerência técnica e coordenação.
- Todos se comunicam,
- mas o projeto deve ter um canal principal de comunicação.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Nome [email/telefone] 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-membros da equipe (até 3 pessoas)
-\end_layout
-
-\end_inset
-
-
+Fabiane da Silva Barros [fabianedasb.b@gmail.com/85994004341]
 \end_layout
 
 \begin_layout Subsubsection
@@ -341,16 +202,6 @@ DEPARTAMENTO DE ENGENHARIA DE PETRÓLEO - LENEP
 
 \begin_layout Itemize
 SETOR DE MODELAGEM MATEMÁTICA COMPUTACIONAL
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ADICIONE O Nome dos demais setores envolvidos
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -359,17 +210,7 @@ Duração:
 \end_layout
 
 \begin_layout Itemize
-18-24 mês(es) 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Considere 3 semestres(5/6/7) ou 4 semestres.
-\end_layout
-
-\end_inset
-
-
+4-6 mês(es) 
 \end_layout
 
 \begin_layout Subsubsection
@@ -378,7 +219,7 @@ Data de submissão:
 \end_layout
 
 \begin_layout Itemize
-Coloque aqui a data de entrega do pré-projeto ao professor coordenador
+31 de outubro de 2025
 \end_layout
 
 \begin_layout Subsubsection
@@ -387,7 +228,7 @@ Número da proposta:
 \end_layout
 
 \begin_layout Itemize
-LDSC-2023-1-P50
+LDSC-2025-?-???
 \begin_inset Note Note
 status open
 
@@ -409,17 +250,6 @@ Tipo de instrumento contratual:
 
 \begin_layout Itemize
 Trabalho de disciplina
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ex:
- Termo de Cooperação / Convênio
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -427,7 +257,7 @@ Título do projeto:
 \end_layout
 
 \begin_layout Itemize
-"Título do projeto aqui"
+"Ferramenta para Geração da Curva de Fluxo Fracionário"
 \end_layout
 
 \begin_layout Subsubsection
@@ -436,7 +266,11 @@ Palavras-chave:
 \end_layout
 
 \begin_layout Itemize
-...coloque aqui lista de palavras chaves - até 5...
+Teoria de Buckley-Leverett,
+ Fluxo Bifásico,
+ Permeabilidade Relativa,
+ Recuperação Secundária,
+ Modelagem Computacional.
 \end_layout
 
 \begin_layout Section
@@ -450,14 +284,20 @@ name "sec:Resumo"
 
 \end_layout
 
-\begin_layout Itemize
-Limite de 500 palavras,
- então seja bem direto!
-\end_layout
-
-\begin_layout Itemize
-Escreva no final,
- depois de escrever todo o resto.
+\begin_layout Standard
+Apresenta-se a proposta de desenvolvimento da "Ferramenta para Geração da Curva de Fluxo Fracionário" ,
+ um software didático e analítico essencial para a análise de processos de deslocamento bifásico em meios porosos,
+ como a injeção de água para recuperação secundária.
+ Baseada na teoria de Buckley-Leverett ,
+ a solução modela a interação entre as propriedades da rocha (permeabilidade relativa) e dos fluidos (viscosidades).
+ O desafio tecnológico central é traduzir a equação de fluxo fracionário,
+ altamente não-linear,
+ em um algoritmo computacional preciso.
+ O objetivo é resolver o problema de engenharia de quantificar a eficiência de deslocamento ,
+ permitindo a engenheiros e estudantes gerar a curva de forma rápida,
+ analisar a sensibilidade de parâmetros e aprofundar a compreensão do impacto desses na eficiência do deslocamento.
+ O software será implementado em C++ com orientação a objetos ,
+ lendo dados de entrada de arquivos de texto (tabelas ou correlações) e gerando a curva de fluxo fracionário.
 \end_layout
 
 \begin_layout Section
@@ -471,17 +311,15 @@ name "sec:Escopo-do-Problema"
 
 \end_layout
 
-\begin_layout Itemize
-Definir o escopo do projeto de engenharia,
- a ideia geral do software,
- acentuar sua importância,
- usos e aplicações em engenharia [de petróleo].
-\end_layout
-
-\begin_layout Itemize
-Delimitar o assunto.
- Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros softwares.
+\begin_layout Standard
+O escopo do projeto foca em resolver um problema fundamental da engenharia de reservatórios:
+ a quantificação da eficiência de deslocamento de óleo por água.
+ A ferramenta proposta situa-se como um utilitário de análise,
+ preenchendo a lacuna entre cálculos manuais (demorados e sujeitos a erro) e simuladores de reservatório completos (complexos e de alto custo).
+ O software se delimita a um modelo 1D,
+ desprezando efeitos capilares e gravitacionais (conforme a teoria clássica de Buckley-Leverett),
+ para focar na correta implementação do cálculo do fluxo fracionário e na análise de sensibilidade dos parâmetros de entrada,
+ como viscosidades e os modelos de permeabilidade relativa.
 \end_layout
 
 \begin_layout Section
@@ -509,16 +347,8 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia,
- incluindo vínculos com engenharia de petróleo e com modelagem matemática computacional (ideia de lógica,
- algoritmos,...).
-\end_layout
-
-\begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma clara,
- direta,
- objetiva,
- o objetivo geral do software].
+Desenvolver um projeto de engenharia de software para criar um modelo computacional que permita a engenheiros e estudantes gerar a curva de fluxo fracionário de forma rápida e precisa,
+ possibilitando a análise de sensibilidade e aprofundando a compreensão sobre como os parâmetros do reservatório impactam a eficiência do deslocamento.
 \end_layout
 
 \end_deeper
@@ -532,41 +362,42 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema.
+Modelar física e matematicamente o problema do fluxo fracionário (Teoria de Buckley-Leverett).
 \end_layout
 
 \begin_layout Itemize
-Modelagem estática do software (diagramas de caso de uso,
- de pacotes,
- de classes).
+Modelar o software utilizando diagramas UML (casos de uso,
+ pacotes,
+ classes).
 \end_layout
 
 \begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificando os fluxos de processamento).
+Modelar a dinâmica do software (diagramas de sequência e atividades).
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Implementar em C++ a leitura e interpretação de dados de entrada (viscosidades e curvas de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+) de arquivos de texto.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Implementar o algoritmo de cálculo da curva de fluxo fracionário,
+ incluindo interpolação de dados tabulares.
 \end_layout
 
 \begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
+Gerar um arquivo de saída com os dados (
+\begin_inset Formula $S_{w},f_{w}$
+\end_inset
+
+) e implementar a visualização automática do gráfico via Gnuplot.
 \end_layout
 
 \begin_layout Itemize
-Implementar manual simplificado de uso do software.
+Realizar simulações para teste e validação do software contra exemplos da literatura.
 \end_layout
 
 \end_deeper
@@ -582,7 +413,7 @@ name "sec:Metodologia"
 \end_layout
 
 \begin_layout Standard
-A Figura 
+A metodologia a ser utilizada no desenvolvimento do sistema é a apresentada na Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Metodologia utilizada no desenvolvimento do sistema 1: Desafio, pré-projeto e projeto"
@@ -590,10 +421,11 @@ nolink "false"
 
 \end_inset
 
- apresenta a metodologia a ser utilizada no desenvolvimento do sistema.
- Parte inicial,
- definição do desafio tecnológico,
- pré-projeto e projeto.
+ ,
+ que descreve o fluxo desde a Etapa 0 (Definição do Desafio) até a Etapa 5 (Entrega do Produto).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -604,9 +436,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareAnaliseEncrustacaoAmostrasSalmouras/imagens/ProjetoEngenharia-Etapas-Geral-portrait-1.png
-	lyxscale 50
-	width 100text%
+	filename ProjetoEngenharia-Etapas-Geral-portrait-1.png
+	lyxscale 40
+	scale 80
 	special height=0.8\textheight
 
 \end_inset
@@ -640,67 +472,6 @@ name "fig:Metodologia utilizada no desenvolvimento do sistema 1: Desafio, pré-p
 
 \end_layout
 
-\begin_layout Standard
-A Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Metodologia utilizada no desenvolvimento do sistema 2: Análise, Implementação e Entrega"
-nolink "false"
-
-\end_inset
-
- apresenta a metodologia a ser utilizada no desenvolvimento do sistema.
- Parte de análise,
- implementação (planejamento detalhes,
- implementação,
- testes,
- documentação) e entrega.
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename /home/bueno/Documentos/workdir/ProjetoEngenharia-SoftwareAnaliseEncrustacaoAmostrasSalmouras/imagens/ProjetoEngenharia-Etapas-Geral-portrait-2.png
-	lyxscale 50
-	width 100text%
-	special height=0.8\textheight
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Metodologia utilizada no desenvolvimento do sistema 2:
- Análise,
- Implementação e Entrega 
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Metodologia utilizada no desenvolvimento do sistema 2: Análise, Implementação e Entrega"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Informações Adicionais Específicas
 \begin_inset CommandInset label
@@ -712,82 +483,28 @@ name "sec:Informações-Adicionais-Específicas"
 
 \end_layout
 
-\begin_layout Itemize
-Coloque aqui informações adicionais,
- importantes,
- relevantes e que não se encaixaram nos demais tópicos deste documento.
-\end_layout
-
-\begin_layout Itemize
-Entre as referências utilizadas podemos em sala de aula podemos citar:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-UML:
- 
+\begin_layout Standard
+A base teórica para o desenvolvimento deste software repousa sobre a mecânica de fluidos em meios porosos e,
+ especificamente,
+ na teoria de deslocamento imiscível.
+ As equações e conceitos a serem implementados são derivados diretamente de publicações clássicas da engenharia de petróleo,
+ sendo o artigo seminal de Buckley e Leverett (
 \begin_inset CommandInset citation
 LatexCommand cite
-key "prog-UML-blaha,prog-UML-Rumbaugh"
-literal "false"
+key "Buckley1942"
+literal "true"
 
 \end_inset
 
-.
+) a referência primária.
 \end_layout
 
-\begin_layout Itemize
-Projetos:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-introducao,projetos-pmi,projetos-projetoeletrico1,projetos-Woiler"
-literal "false"
-
-\end_inset
-
-.
+\begin_layout Standard
+Além disso,
+ o desenvolvimento do software seguirá as metodologias e padrões de projeto discutidos em sala de aula,
+ utilizando as referências de UML,
+ Gestão de Projetos e Programação C++ listadas na bibliografia do modelo de projeto .
 \end_layout
 
-\begin_layout Itemize
-Gestão de Projetos:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-Abrantes,projetos-gestao,projetos-Heldman,projetos-Menezes,projetos-Pahl,projetos-Valeriano,projetos-Rosa"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Produtos:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "projetos-Abrantes"
-literal "false"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-C++:
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "adb-prog-livroCpp"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_body
 \end_document
