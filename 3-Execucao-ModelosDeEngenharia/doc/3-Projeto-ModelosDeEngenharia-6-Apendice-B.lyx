@@ -25,12 +25,13 @@
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
+\options normaltoc, sumarioincompleto
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\master 3-Projeto-ModelosDeEngenharia-Master.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -51,10 +52,22 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
 \paperfontsize 12
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
 \papersize a4
 \use_geometry true
 \use_package amsmath 1
@@ -90,7 +103,7 @@
 \rightmargin 20mm
 \bottommargin 20mm
 \secnumdepth 2
-\tocdepth 2
+\tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -98,7 +111,7 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle fancy
 \tablestyle default
 \tracking_changes false
@@ -114,109 +127,11 @@
 
 \begin_body
 
-\begin_layout Standard
-\align center
-
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\begin_inset Newline newline
-\end_inset
-
-CENTRO DE CIÊNCIA E TECNOLOGIA
+\begin_layout Chapter
+Guia de Compilação e Execução
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\size large
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O título deve ser o mais claro possível,
- não deixando dúvidas sobre o assunto em questão.
- O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-PROJETO DE ENGENHARIA
-\begin_inset Newline newline
-\end_inset
-
-DESENVOLVIMENTO DO SOFTWARE 
-\begin_inset Newline newline
-\end_inset
-
-FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
-\begin_inset Newline newline
-\end_inset
-
-DISCIPLINA LEP-0144:
- Projeto de Software Aplicado à Engenharia
-\begin_inset Newline newline
-\end_inset
-
-Setor de Modelagem Matemática Computacional
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Versão 1:
-\begin_inset Newline newline
-\end_inset
-
-Fabiane da Silva Barros
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o valor de 4cm pode ser alterado,
- para que a distribuição fique mais uniforme
-\end_layout
-
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -224,7 +139,67 @@ status open
 
 
 \backslash
-thispagestyle{empty}
+lhead{Apêndice 
+\backslash
+thechapter:
+ Guia de Compilação e Execução}
+\backslash
+rhead{
+\backslash
+thepage}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dependências
+\end_layout
+
+\begin_layout Standard
+Compilador C++:
+ Um compilador moderno com suporte a C++17 (ex:
+ g++ ou clang).
+\end_layout
+
+\begin_layout Standard
+Gnuplot:
+ O executável gnuplot deve estar instalado e acessível no PATH do sistema.
+\end_layout
+
+\begin_layout Section
+Compilação (Exemplo g++)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+g++ -std=c++17 -o fw_calc main.cpp Simulador.cpp Gnuplot.cpp CalculadoraFluxoFracionario.cpp CurvasPermeabilidadeTabelada.cpp CurvasPermeabilidadeCorey.cpp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Execução
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+./fw_calc meu_arquivo_de_entrada.txt
 \end_layout
 
 \end_inset
@@ -233,26 +208,8 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\size large
-MACAÉ - RJ
-\begin_inset Newline newline
-\end_inset
-
-Novembro - 2025
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\size large
-Corrigir a data
-\end_layout
-
-\end_inset
-
-
+Se a execução for bem-sucedida,
+ uma janela do Gnuplot será aberta e um arquivo output.csv será gerado.
 \end_layout
 
 \end_body

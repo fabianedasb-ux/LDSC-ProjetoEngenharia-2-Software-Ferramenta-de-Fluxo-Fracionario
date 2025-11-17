@@ -214,7 +214,7 @@ thepage}
 
 
 \backslash
-fancyfoot[L]{NomeProfessor-Cliente}
+fancyfoot[L]{Fabiane da Silva Barros}
 \end_layout
 
 \begin_layout Plain Layout
@@ -243,49 +243,16 @@ pagenumbering{arabic}
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Jamais retire o 
-\backslash
-today ele vai colocar data no material impresso
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-Apresenta-se aqui a proposta de desenvolvimento do software XX_nome_XX.
- Um software aplicado a engenharia de petróleo e que visa ...descrever.
- em um parágrafo super resumido.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NOTE que este capítulo de introdução deve ser uma cópia do capítulo de introdução ao pré-projeto,
- mas agora vocês tiveram tempo para detalhar diversas informações da proposta;
-\end_layout
-
-\begin_layout Plain Layout
-Coloque aqui todas as novidades e atualizações melhorando o escopo/resumo/objetivos.
-\end_layout
-
-\begin_layout Plain Layout
-Ou seja,
- o projeto detalhado,
- como o nome diz,
- deve ser detalhado.
-\end_layout
-
-\end_inset
-
-
+Apresenta-se aqui a proposta de desenvolvimento de um projeto de engenharia que visa a criação de uma Ferramenta para Geração da Curva de Fluxo Fracionário.
+ Esta ferramenta computacional é essencial para a análise de processos de deslocamento bifásico em meios porosos,
+ como a injeção de água em reservatórios de petróleo para recuperação secundária.
+ Baseada na teoria clássica de Buckley-Leverett,
+ a solução irá modelar a interação entre as propriedades da rocha (permeabilidade relativa) e dos fluidos (viscosidades) para calcular a fração do fluido injetado no escoamento total.
+ O projeto será implementado na linguagem C++ sob o paradigma da orientação a objetos,
+ resultando em um software robusto e didático que fornece dados críticos para a avaliação da eficiência de deslocamento e otimização da produção de hidrocarbonetos.
 \end_layout
 
 \begin_layout Section
@@ -297,19 +264,7 @@ Número da proposta
 \end_layout
 
 \begin_layout Itemize
-LDSC-2023-1-P50
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Numero informado pelo professor,
- leva em conta o número de projetos desenvolvidos no LDSC,
- ano e semestre
-\end_layout
-
-\end_inset
-
-
+LDSC-2025-2-P??
 \end_layout
 
 \begin_layout Subsubsection
@@ -317,7 +272,7 @@ Tipo de investimento /divulgação
 \end_layout
 
 \begin_layout Itemize
-PROJETO DE PESQUISA E DESENVOLVIMENTO / DESENVOLVIMENTO DE SOFTWARE - Versão 2 
+DESENVOLVIMENTO DE SOFTWARE - Versão 1 
 \end_layout
 
 \begin_layout Subsubsection
@@ -326,17 +281,6 @@ Tipo de instrumento contratual
 
 \begin_layout Itemize
 Trabalho de disciplina
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ex:
- Termo de Cooperação / Convênio
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -348,7 +292,7 @@ Título do projeto
 \end_layout
 
 \begin_layout Itemize
-"Título do projeto aqui"
+Ferramenta para Geração da Curva de Fluxo Fracionário
 \end_layout
 
 \begin_layout Subsubsection
@@ -356,7 +300,23 @@ Palavras-chave
 \end_layout
 
 \begin_layout Itemize
-...coloque aqui lista de palavras chaves - até 5...
+Teoria de Buckley-Leverett
+\end_layout
+
+\begin_layout Itemize
+Fluxo Bifásico
+\end_layout
+
+\begin_layout Itemize
+Permeabilidade Relativa
+\end_layout
+
+\begin_layout Itemize
+Recuperação Secundária
+\end_layout
+
+\begin_layout Itemize
+Modelagem Computacional
 \end_layout
 
 \begin_layout Section
@@ -382,16 +342,6 @@ DEPARTAMENTO DE ENGENHARIA DE PETRÓLEO - LENEP
 
 \begin_layout Itemize
 SETOR DE MODELAGEM MATEMÁTICA COMPUTACIONAL
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-ADICIONE O Nome dos demais setores envolvidos
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -401,50 +351,8 @@ Representante pela universidade:
 \begin_deeper
 \begin_layout Itemize
 Professor(a):
- Nome/email/telefone.
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Instituição/Fundação
-\end_layout
-
-\begin_layout Itemize
-Nome instituição se houver.
-\end_layout
-
-\begin_layout Itemize
-Representante da instituição/fundação:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Professor(a):
- Nome/email/telefone.
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Empresa
-\end_layout
-
-\begin_layout Itemize
-Nome empresa se houver.
-\end_layout
-
-\begin_layout Itemize
-Dados da empresa (CNPj,
- contatos).
-\end_layout
-
-\begin_layout Itemize
-Representante pela empresa:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Engenheiro(a):
- Nome/email/telefone.
+ Prof.
+ André Duarte Bueno
 \end_layout
 
 \end_deeper
@@ -453,15 +361,7 @@ Equipe
 \end_layout
 
 \begin_layout Itemize
-Nome aluno/email/telefone.
-\end_layout
-
-\begin_layout Itemize
-Nome aluno/email/telefone.
-\end_layout
-
-\begin_layout Itemize
-Nome aluno/email/telefone.
+Fabiane da Silva Barros / [fabianedas.b@gmail.com] / [(85)994004341]
 \end_layout
 
 \begin_layout Itemize
@@ -471,7 +371,7 @@ Representante pela equipe:
 \begin_deeper
 \begin_layout Itemize
 Estudante:
- Nome/email/telefone.
+ Fabiane da Silva Barros / [fabianedas.b@gmail.com] / [(85)994004341]
 \end_layout
 
 \end_deeper
@@ -486,14 +386,20 @@ name "sec:Resumo"
 
 \end_layout
 
-\begin_layout Itemize
-Limite de 500 palavras,
- então seja bem direto!
-\end_layout
-
-\begin_layout Itemize
-Escreva no final,
- depois de escrever todo o resto.
+\begin_layout Standard
+Apresenta-se a proposta de desenvolvimento da "Ferramenta para Geração da Curva de Fluxo Fracionário",
+ um software didático e analítico essencial para a análise de processos de deslocamento bifásico em meios porosos,
+ como a injeção de água para recuperação secundária.
+ Baseada na teoria de Buckley-Leverett,
+ a solução modela a interação entre as propriedades da rocha (permeabilidade relativa) e dos fluidos (viscosidades).
+ O desafio tecnológico central é traduzir a equação de fluxo fracionário,
+ altamente não-linear,
+ em um algoritmo computacional preciso.
+ O objetivo é resolver o problema de engenharia de quantificar a eficiência de deslocamento,
+ permitindo a engenheiros e estudantes gerar a curva de forma rápida,
+ analisar a sensibilidade de parâmetros e aprofundar a compreensão do impacto desses na eficiência do deslocamento.
+ O software será implementado em C++ com orientação a objetos,
+ lendo dados de entrada de arquivos de texto (tabelas ou correlações) e gerando a curva de fluxo fracionário.
 \end_layout
 
 \begin_layout Section
@@ -508,34 +414,20 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Itemize
-Definir o escopo do problema de engenharia
-\begin_inset Foot
-status open
-
-\begin_layout Itemize
-problemas vinculados à:
- i) engenharia de petróleo,
- ii) algoritmos computacionais,
- iii) sistemas de software
-\end_layout
-
-\end_inset
-
-,
- a ideia geral.
- Destacar sua importância/relevância.
+O escopo do projeto foca em resolver um problema fundamental da engenharia de reservatórios:
+ a quantificação da eficiência de deslocamento de óleo por água.
 \end_layout
 
 \begin_layout Itemize
-Definir a abrangência,
- delimintando o assunto (para que caiba no prazo de até 24 meses).
- 
+A ferramenta proposta situa-se como um utilitário de análise,
+ preenchendo a lacuna entre cálculos manuais (demorados e sujeitos a erro) e simuladores de reservatório completos (complexos e de alto custo) para esta análise específica.
 \end_layout
 
 \begin_layout Itemize
-Situá-lo no tempo e no espaço.
- Situá-lo em relação a outros concorrentes (sistemas similares,
- como softwares similares).
+O software se delimita a um modelo 1D,
+ desprezando efeitos capilares e gravitacionais (conforme a teoria clássica de Buckley-Leverett),
+ para focar na correta implementação do cálculo do fluxo fracionário e na análise de sensibilidade dos parâmetros de entrada,
+ como viscosidades e os modelos de permeabilidade relativa.
 \end_layout
 
 \begin_layout Section
@@ -563,16 +455,8 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Descreva aqui o objetivo geral do projeto de engenharia,
- incluindo vínculos com engenharia de petróleo e com modelagem matemática computacional (ideia de lógica,
- algoritmos,...).
-\end_layout
-
-\begin_layout Itemize
-Desenvolver um projeto de engenharia de software para ...[.....descrever de forma clara,
- direta,
- objetiva,
- o objetivo geral do software].
+Desenvolver um projeto de engenharia de software para criar um modelo computacional que permita a engenheiros e estudantes gerar a curva de fluxo fracionário de forma rápida e precisa,
+ possibilitando a análise de sensibilidade e aprofundando a compreensão sobre como os parâmetros do reservatório impactam a eficiência do deslocamento.
 \end_layout
 
 \end_deeper
@@ -586,7 +470,7 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema.
+Modelar física e matematicamente o problema do fluxo fracionário (Teoria de Buckley-Leverett).
 \end_layout
 
 \begin_layout Itemize
@@ -596,53 +480,36 @@ Modelagem estática do software (diagramas de caso de uso,
 \end_layout
 
 \begin_layout Itemize
-Modelagem dinâmica do software (desenvolver algoritmos e diagramas exemplificando os fluxos de processamento).
+Modelagem dinâmica do software (desenvolver algoritmos e diagramas de sequência e atividades exemplificando os fluxos de processamento).
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Implementar em C++ a leitura e interpretação de dados de entrada (viscosidades e curvas de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+) de arquivos de texto.
 \end_layout
 
 \begin_layout Itemize
-Calcular XXX[.....descrever de forma clara,
- direta,
- objetiva,
- cada objetivo específico,
- cada parte do software].
+Implementar o algoritmo de cálculo da curva de fluxo fracionário,
+ incluindo interpolação de dados tabulares.
 \end_layout
 
 \begin_layout Itemize
-Simular (realizar simulações para teste do software desenvolvido).
+Gerar um arquivo de saída com os dados 
+\begin_inset Formula $(S_{w},f_{w})$
+\end_inset
+
+ e implementar a visualização automática do gráfico via Gnuplot.
+\end_layout
+
+\begin_layout Itemize
+Realizar simulações para teste e validação do software contra exemplos da literatura.
 \end_layout
 
 \begin_layout Itemize
 Implementar manual simplificado de uso do software.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-No pré-projeto vocês colocaram os objetivos específicos;
- depois houve uma prazo para análise pelo coordenador e gerente técnico;
-\end_layout
-
-\begin_layout Plain Layout
-neste meio tempo novas análises foram feitas e os objetivos específicos puderão ser mais bem detalhados;
-\end_layout
-
-\begin_layout Plain Layout
-Coloque aqui este detalhamento.
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \end_deeper

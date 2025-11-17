@@ -25,12 +25,13 @@
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
+\options normaltoc, sumarioincompleto
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto-legacy
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
@@ -51,10 +52,22 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
 \paperfontsize 12
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_title "Título da Monografia - Dissertação - Tese"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
 \papersize a4
 \use_geometry true
 \use_package amsmath 1
@@ -90,7 +103,7 @@
 \rightmargin 20mm
 \bottommargin 20mm
 \secnumdepth 2
-\tocdepth 2
+\tocdepth 1
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -98,7 +111,7 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle fancy
 \tablestyle default
 \tracking_changes false
@@ -114,109 +127,11 @@
 
 \begin_body
 
-\begin_layout Standard
-\align center
-
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\begin_inset Newline newline
-\end_inset
-
-CENTRO DE CIÊNCIA E TECNOLOGIA
+\begin_layout Chapter
+Formato do Arquivo de Entrada
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\size large
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O título deve ser o mais claro possível,
- não deixando dúvidas sobre o assunto em questão.
- O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-PROJETO DE ENGENHARIA
-\begin_inset Newline newline
-\end_inset
-
-DESENVOLVIMENTO DO SOFTWARE 
-\begin_inset Newline newline
-\end_inset
-
-FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
-\begin_inset Newline newline
-\end_inset
-
-DISCIPLINA LEP-0144:
- Projeto de Software Aplicado à Engenharia
-\begin_inset Newline newline
-\end_inset
-
-Setor de Modelagem Matemática Computacional
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Versão 1:
-\begin_inset Newline newline
-\end_inset
-
-Fabiane da Silva Barros
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o valor de 4cm pode ser alterado,
- para que a distribuição fique mais uniforme
-\end_layout
-
-\end_inset
-
-
 \begin_inset ERT
 status open
 
@@ -224,7 +139,14 @@ status open
 
 
 \backslash
-thispagestyle{empty}
+lhead{Apêndice 
+\backslash
+thechapter:
+ Formato do Arquivo de Entrada}
+\backslash
+rhead{
+\backslash
+thepage}
 \end_layout
 
 \end_inset
@@ -233,21 +155,203 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\align center
+O software utiliza um arquivo de entrada de texto .txt baseado em palavras-chave.
+ O parser identifica a palavra-chave (ex:
+ VISC_OLEO) e lê o valor na mesma linha.
+\end_layout
 
-\size large
-MACAÉ - RJ
-\begin_inset Newline newline
-\end_inset
+\begin_layout Standard
+A palavra-chave MODELO_KR define qual modelo de permeabilidade será usado:
+ TABELADO ou COREY.
+\end_layout
 
-Novembro - 2025
-\begin_inset Note Note
+\begin_layout Section
+Exemplo de Arquivo de Entrada (Modelo Tabelado)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
 
-\size large
-Corrigir a data
+# Exemplo de arquivo de entrada para modelo tabelado
+\end_layout
+
+\begin_layout Plain Layout
+
+# Comentários são ignorados
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_OLEO 1.5
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 0.8
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR TABELADO
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Definição da tabela Sw,
+ Krw,
+ Kro
+\end_layout
+
+\begin_layout Plain Layout
+
+# Os dados são lidos até a palavra-chave FIM_DADOS
+\end_layout
+
+\begin_layout Plain Layout
+
+DADOS_KR_INICIO
+\end_layout
+
+\begin_layout Plain Layout
+
+0.20 0.00 0.90
+\end_layout
+
+\begin_layout Plain Layout
+
+0.30 0.05 0.75
+\end_layout
+
+\begin_layout Plain Layout
+
+0.40 0.12 0.50
+\end_layout
+
+\begin_layout Plain Layout
+
+0.50 0.20 0.30
+\end_layout
+
+\begin_layout Plain Layout
+
+0.60 0.30 0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+0.70 0.40 0.05
+\end_layout
+
+\begin_layout Plain Layout
+
+0.80 0.50 0.00
+\end_layout
+
+\begin_layout Plain Layout
+
+FIM_DADOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exemplo de Arquivo de Entrada (Modelo Corey)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Exemplo de arquivo de entrada para modelo Corey
+\end_layout
+
+\begin_layout Plain Layout
+
+# Comentários são ignorados
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_OLEO 2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 1.0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR COREY
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parâmetros da correlação de Corey
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SWIR     0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SORW     0.20
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRW_MAX  0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRO_MAX  0.9
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NW       2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NO       2.5
 \end_layout
 
 \end_inset
