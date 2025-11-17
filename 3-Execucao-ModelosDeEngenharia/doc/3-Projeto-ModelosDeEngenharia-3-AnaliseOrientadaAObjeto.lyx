@@ -1,0 +1,806 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+\end_preamble
+\use_default_options false
+\master /home2/andreduartebueno/workdir/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica/doc/manualDesenvolvedor-lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter
+\backslash
+space - Análise Orientada a Objeto}  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Chapter
+AOO
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+AOO
+\end_layout
+
+\end_inset
+
+ – Análise Orientada a Objeto
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Análise Orientada a Objeto"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Análise orientada a objeto
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:AOO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagramas de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Diagramas-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O design estático do sistema,
+ apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+nolink "false"
+
+\end_inset
+
+,
+ é fundamentado em princípios S.O.L.I.D.
+ de engenharia de software para garantir um código limpo,
+ extensível e de fácil manutenção.
+\end_layout
+
+\begin_layout Enumerate
+Princípio da Inversão de Dependência (D do S.O.L.I.D.):
+ Este é o pilar central da arquitetura.
+ O módulo de alto nível (CalculadoraFluxoFracionario) não depende diretamente dos módulos de baixo nível (...Tabelada,
+ ...Corey).
+ Ambos dependem de uma abstração:
+ a interface ICurvasPermeabilidade.
+\end_layout
+
+\begin_layout Enumerate
+Padrão de Projeto Strategy (Estratégia):
+ A interface ICurvasPermeabilidade implementa o padrão Strategy.
+ Ela define um "contrato" para uma família de algoritmos (os modelos de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+) e permite que eles sejam trocados dinamicamente.
+ A Calculadora é configurada com uma dessas estratégias no momento da sua criação,
+ através de Injeção de Dependência em seu construtor.
+ Isso torna a calculadora completamente agnóstica aos detalhes de como o 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+ é obtido.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Padrão de Projeto Facade (Fachada):
+ A classe Gnuplot é uma Facade estática.
+ Ela fornece uma interface unificada e simples (plotarCurva()) para um subsistema complexo (formatação de scripts,
+ salvamento de arquivos temporários e chamada de processos do sistema operacional).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-classes.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Dicionário de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Dicionário-de-classes"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Classe ICurvasPermeabilidade:
+ (Interface) Define o contrato de serviço para os modelos de permeabilidade relativa.
+ Garante o polimorfismo e a Inversão de Dependência.
+\end_layout
+
+\begin_layout Itemize
+Classe CurvasPermeabilidadeTabelada:
+ (Implementação Concreta) Implementação da Strategy de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+ via dados tabulares.
+ Encapsula a lógica de interpolação linear.
+\end_layout
+
+\begin_layout Itemize
+Classe CurvasPermeabilidadeCorey:
+ (Implementação Concreta) Implementação da Strategy de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+ via correlação analítica de Corey 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+.
+ Encapsula a lógica matemática do modelo.
+\end_layout
+
+\begin_layout Itemize
+Classe CalculadoraFluxoFracionario:
+ (Domínio de Negócio) Classe principal que implementa o domínio central de negócio (a equação de Buckley-Leverett).
+ Opera em um alto nível de abstração,
+ dependendo apenas da interface ICurvasPermeabilidade.
+\end_layout
+
+\begin_layout Itemize
+Classe Gnuplot:
+ (Utilitário / Facade) Classe estática que encapsula toda a lógica de interação com o Gnuplot,
+ simplificando a plotagem para o resto da aplicação.
+\end_layout
+
+\begin_layout Itemize
+Classe Simulador:
+ (Orquestrador / Ponto de Entrada) Atua como o orquestrador da aplicação.
+ É responsável por "montar" o sistema (ler arquivos,
+ instanciar os objetos corretos usando new) e injetar as dependências (modeloKr dentro da Calculadora).
+ Contém o ponto de entrada main().
+\end_layout
+
+\begin_layout Section
+Diagrama de sequência – eventos
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Eventos
+\end_layout
+
+\end_inset
+
+ e mensagens
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Mensagens
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de sequência"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência geral
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec: Diagrama de sequência geral"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama de sequência geral,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-sequencia"
+nolink "false"
+
+\end_inset
+
+,
+ ilustra o fluxo principal de execução do software,
+ correspondente ao caso de uso "Executar Cálculo e Analisar Resultados" com sucesso.
+ .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-sequencia"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+
+\shape italic
+\emph on
+Diagrama de sequência específico
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec: Diagrama de sequência específico"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-sequencia-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ detalha a atividade específica de getKrw() na classe CurvasPermeabilidadeTabelada,
+ mostrando a lógica de interpolação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia-especifico.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de sequência
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-sequencia-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de comunicação
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+comunicação
+\end_layout
+
+\end_inset
+
+ – colaboração
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+colaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Diagrama-de-Comunicação"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Diagrama de colaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Diagrama-de-colaboração:"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+O diagrama de comunicação da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Diagrama-de-Comunicação"
+nolink "false"
+
+\end_inset
+
+ apresenta a mesma interação do diagrama de sequência geral,
+ mas foca na colaboração e nas mensagens trocadas entre os objetos,
+ em vez da ordem temporal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-comunicacao.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de comunicação
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-comunicação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de estado
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Diagrama de estado
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:diagrama de estados"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-maquina-de-estado"
+nolink "false"
+
+\end_inset
+
+ modela os estados dinâmicos de um objeto Simulador ao longo de sua vida,
+ desde a criação até a finalização da execução.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-estado.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de máquina de estado
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-maquina-de-estado"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Diagrama de atividades
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Diagrama de atividades"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O diagrama de atividades da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-atividades"
+nolink "false"
+
+\end_inset
+
+ detalha o algoritmo do método getKrw() na classe CurvasPermeabilidadeTabelada,
+ como descrito na Formulação Teórica.
+ Este é um cálculo específico e crucial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-atividade.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de atividades
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-atividades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
