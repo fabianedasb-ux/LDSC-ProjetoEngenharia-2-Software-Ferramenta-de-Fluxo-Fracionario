@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,20 +27,22 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\master 3-Projeto-ModelosDeEngenharia-Master.lyx
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding utf8
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -51,10 +53,11 @@
 \bibtex_command default
 \index_command default
 \float_placement H
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -75,7 +78,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -97,11 +102,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -129,6 +139,8 @@ space - Elaboração}
 \begin_layout Chapter
 Elaboração
 \begin_inset Index idx
+range none
+pageformat default
 status collapsed
 
 \begin_layout Plain Layout
@@ -148,23 +160,7 @@ name "sec:Elaboração"
 \end_layout
 
 \begin_layout Standard
-Depois da definição dos objetivos, da especificação do software e da montagem
- dos primeiros diagramas de caso de uso, a equipe de desenvolvimento do
- projeto de engenharia passa por um processo de elaboração que envolve o
- estudo de conceitos relacionados ao sistema a ser desenvolvido, a análise
- de domínio e a identificação de pacotes.
- 
-\end_layout
-
-\begin_layout Standard
-Na elaboração fazemos uma análise dos requisitos, ajustando os requisitos
- iniciais de forma a desenvolver um sistema útil, que atenda às necessidades
- do usuário e, na medida do possível, permita seu reuso e futura extensão.
-\end_layout
-
-\begin_layout Standard
-Eliminam-se os requisitos "impossíveis" e ajusta-se a idéia do sistema de
- forma que este seja flexível, considerando-se aspectos como custos e prazos.
+Este capítulo detalha o domínio do problema e a lógica de engenharia.
 \end_layout
 
 \begin_layout Section
@@ -179,30 +175,110 @@ name "sec:Análise-de-domínio"
 \end_layout
 
 \begin_layout Standard
-Após estudo dos requisitos/especificações do sistema, algumas entrevistas,
- estudos na biblioteca e disciplinas do curso foi possível identificar nosso
- domínio de trabalho:
+O domínio deste projeto situa-se na interseção da Engenharia de Reservatórios com a Modelagem Computacional.
+ A seguir,
+ detalha-se a análise deste domínio e as decisões de arquitetura de software que ela motivou.
 \end_layout
 
 \begin_layout Itemize
-Definição e caracterização do domínio a ser investigado 
+Justificativa da Plataforma Tecnológica:
+ A linguagem C++ (padrão C++17) foi selecionada como base tecnológica.
+ A decisão se justifica pelo seu comprovado desempenho computacional,
+ controle de baixo nível de memória e vasta biblioteca padrão (STL).
+ Essa escolha garante que o núcleo de cálculo seja eficiente e,
+ futuramente,
+ possa ser facilmente integrado como uma biblioteca em simuladores de reservatório mais complexos.
+ O desenvolvimento visa a portabilidade entre 
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+ e GNU/Linux,
+ utilizando ferramentas de compilação padrão (g++).
 \end_layout
 
 \begin_layout Itemize
-Descrição das áreas/disciplinas relacionadas.
+Arquitetura de Dados:
+ Optou-se por uma arquitetura 
+\emph on
+\lang english
+serverless
+\emph default
+\lang brazilian
+ e sem banco de dados.
+ A persistência dos dados de entrada é gerenciada pelo usuário via arquivos de texto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.txt
+\end_layout
+
+\end_inset
+
+ com formato baseado em palavras-chave.
+ Esta decisão mitiga a complexidade de 
+\emph on
+\lang english
+deploy
+\emph default
+\lang brazilian
+ e configuração,
+ alinhando-se à natureza de uma ferramenta de análise rápida.
+ O protocolo de saída (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.csv
+\end_layout
+
+\end_inset
+
+) foi escolhido por sua universalidade,
+ permitindo a interoperabilidade com qualquer software de planilha ou 
+\emph on
+\lang english
+script
+\emph default
+\lang brazilian
+ de pós-processamento.
 \end_layout
 
 \begin_layout Itemize
-Descrição de questões associadas a espaço/tempo (espaço físico, local, instalaçã
-o).
+Gerenciamento de Dependências:
+ O projeto terá uma única dependência externa principal:
+ o Gnuplot.
+ Para manter o software leve e evitar a complexidade de linkagem de bibliotecas gráficas,
+ o Gnuplot será invocado como um processo de sistema externo (
+\lang english
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+system()
+\end_layout
+
+\end_inset
+
+
+\lang brazilian
+).
+ A classe Gnuplot do nosso projeto atuará como uma Facade,
+ encapsulando essa chamada.
 \end_layout
 
 \begin_layout Itemize
-Fotografias de sistemas equivalentes/parecidos.
-\end_layout
-
-\begin_layout Itemize
-...
+Modelo de Controle:
+ O fluxo de execução do software é puramente sequencial e síncrono (Leitura -> Cálculo -> Plotagem).
+ Dada a baixa complexidade computacional do modelo 1D,
+ não há necessidade de implementação de concorrência ou processamento paralelo,
+ o que simplifica o design.
 \end_layout
 
 \begin_layout Section
@@ -217,30 +293,526 @@ name "sec:Formulação-teórica"
 \end_layout
 
 \begin_layout Standard
-...coloque aqui texto explicando a formulação física-matemática, a descrição
- das equações que serão utilizadas...
+O núcleo deste projeto é a implementação da equação de fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) de Buckley-Leverett
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
+
+\end_inset
+
+,
+ conforme definido no documento do Desafio Tecnológico :
 \end_layout
 
 \begin_layout Standard
-...aqui entram figuras, tabelas explicativas, equações a serem utilizadas no
- software...
+\begin_inset Formula 
+\[
+f_{w}=\frac{1}{1+\frac{k_{ro}(S_{w})}{\mu_{o}}\cdot\frac{\mu_{w}}{k_{rw}(S_{w})}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-...logo depois, com os dados levantados na análise de domínio, e esta formulação
- teórica, iremos identificar os pacotes, os assuntos com os quais iremos
- trabalhar...
+A curva,
+ resultado da equação do fluxo fracionário possui uma característica de forma 
+\begin_inset Quotes eld
+\end_inset
+
+S
+\begin_inset Quotes erd
+\end_inset
+
+,
+ como está apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Curva-de-fluxo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
 \end_layout
 
 \begin_layout Standard
-...
- no final da formulação teórica, indicar livros e artigos que tem mais informaçã
-o sobre o assunto...
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/curva-S-generica.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva de fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) característica,
+ mostrando a sua forma de "S".
+ Fonte:
+ (Adaptado de Ahmed,
+ 2019 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+).
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Curva-de-fluxo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-...se vai usar modelos numéricos, colocar seção 3.3.x falando deles; no final
- citar/referenciar fontes...
+O desafio computacional reside em como obter os valores de 
+\begin_inset Formula $k_{ro}(S_{w})$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{rw}(S_{w})$
+\end_inset
+
+ para qualquer valor de saturação de água 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+,
+ uma vez que os dados de entrada podem vir de duas formas distintas:
+ um modelo tabular ou um modelo analítico.
+\end_layout
+
+\begin_layout Subsection
+Implementação do Modelo Tabular (Interpolação Linear)
+\end_layout
+
+\begin_layout Standard
+Quando os dados são fornecidos como uma tabela de pontos (lidos do arquivo de texto),
+ o programa precisa calcular os valores de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+ para saturações que estão entre os pontos da tabela.
+ Para isso,
+ usaremos a Interpolação Linear.
+\end_layout
+
+\begin_layout Itemize
+Algoritmo:
+\end_layout
+
+\begin_layout Enumerate
+O software lerá o arquivo de entrada e armazenará os 
+\begin_inset Formula $N$
+\end_inset
+
+ pontos de dados em três vetores (ou listas) paralelos:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+vec_Sw[]
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+vec_Krw[]
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+vec_Kro[]
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Quando a função 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+calcularFw(Sw_desejada)
+\end_layout
+
+\end_inset
+
+ for chamada:
+\end_layout
+
+\begin_layout Enumerate
+O programa irá buscar no 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+vec_Sw[]
+\end_layout
+
+\end_inset
+
+ os dois valores,
+ 
+\begin_inset Formula $S_{w,i}$
+\end_inset
+
+ e 
+\begin_inset Formula $S_{w,i+1}$
+\end_inset
+
+,
+ que "cercam" o valor de 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+ desejado (ou seja,
+ 
+\begin_inset Formula $S_{w,i}\le S_{w}\le S_{w,i+1}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+A interpolação linear é aplicada para encontrar o 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ correspondentes:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $k_{rw}=k_{rw,i}+(S_{w,desejada}-S_{w,i})\times\frac{k_{rw,i+1}-k_{rw,i}}{S_{w,i+1}-S_{w,i}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{ro}=k_{ro,i}+(S_{w,desejada}-S_{w,i})\times\frac{k_{ro,i+1}-k_{ro,i}}{S_{w,i+1}-S_{w,i}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Estes valores interpolados de 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ são então usados na equação principal de 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Tratamento de Pontas:
+ Se 
+\begin_inset Formula $S_{w,desejada}$
+\end_inset
+
+ for menor que o primeiro valor da tabela,
+ os valores do primeiro ponto (
+\begin_inset Formula $k_{rw,0},k_{ro,0}$
+\end_inset
+
+) serão usados.
+ Se for maior que o último ponto,
+ os valores do último ponto (
+\begin_inset Formula $k_{rw,N},k_{ro,N}$
+\end_inset
+
+) serão usados (sem extrapolação).
+\end_layout
+
+\begin_layout Subsection
+Implementação do Modelo Analítico (Correlações de Corey)
+\end_layout
+
+\begin_layout Standard
+Quando o arquivo de entrada especifica o uso de um modelo analítico como o de Corey 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+,
+ o programa não usará uma tabela,
+ mas sim um conjunto de parâmetros para calcular 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+ diretamente.
+\end_layout
+
+\begin_layout Itemize
+Algoritmo:
+\end_layout
+
+\begin_layout Enumerate
+O software lerá do arquivo de entrada os parâmetros do modelo de Corey:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $S_{wir}$
+\end_inset
+
+:
+ Saturação de água irreduzível.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S_{orw}$
+\end_inset
+
+:
+ Saturação de óleo residual à injeção de água.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{rw,max}$
+\end_inset
+
+ (ou 
+\begin_inset Formula $k_{rwro}$
+\end_inset
+
+):
+ Permeabilidade relativa à água na saturação de óleo residual.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{ro,max}$
+\end_inset
+
+ (ou 
+\begin_inset Formula $k_{rocw}$
+\end_inset
+
+):
+ Permeabilidade relativa ao óleo na saturação de água irreduzível.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{w}$
+\end_inset
+
+:
+ Expoente de Corey para a fase água.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{o}$
+\end_inset
+
+:
+ Expoente de Corey para a fase óleo.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Primeiro,
+ calcula-se a saturação de água normalizada (
+\begin_inset Formula $S_{w,norm}$
+\end_inset
+
+) para qualquer 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+ de entrada:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $S_{w,norm}=\frac{S_{w}-S_{wir}}{1-S_{wir}-S_{orw}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A 
+\begin_inset Formula $S_{w,norm}$
+\end_inset
+
+ é limitada entre 0 e 1 (se 
+\begin_inset Formula $S_{w}<S_{wir}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $S_{w,norm}=0$
+\end_inset
+
+;
+ se 
+\begin_inset Formula $S_{w}>(1-S_{orw})$
+\end_inset
+
+,
+ 
+\begin_inset Formula $S_{w,norm}=1$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Enumerate
+As permeabilidades relativas são então calculadas usando 
+\begin_inset Formula $S_{w,norm}$
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $k_{rw}(S_{w})=k_{rw,max}\times(S_{w,norm})^{n_{w}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{ro}(S_{w})=k_{ro,max}\times(1-S_{w,norm})^{n_{o}}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Estes valores calculados de 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ são então usados na equação principal de 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A estrutura do software em C++ será projetada de forma que a calculadora principal de 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ não precise saber qual desses métodos está sendo usado,
+ apenas que ela pode pedir os valores de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Para uma dedução mais detalhada destas equações e uma discussão aprofundada sobre as propriedades dos fluidos e modelos de permeabilidade,
+ consulte as referências clássicas da engenharia de reservatórios,
+ como Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+ e Lake 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -248,22 +820,214 @@ Identificação de pacotes – assuntos
 \end_layout
 
 \begin_layout Standard
-...aqui...
+Identificamos os seguintes pacotes (assuntos) lógicos para a organização do sistema:
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote: Descrição.
- O que é, para que serve, como se relaciona com os demais pacotes.
+Pacote
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ Core (Núcleo)
+\end_layout
+
+\end_inset
+
+:
+ Contém a classe principal com a lógica de engenharia,
+ ou seja,
+ a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario
+\end_layout
+
+\end_inset
+
+.
+ Este pacote implementa a equação de Buckley-Leverett.
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote: Descrição.
- O que é, para que serve, como se relaciona com os demais pacotes.
+Pacote 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ModelosKr
+\end_layout
+
+\end_inset
+
+:
+ Contém a interface 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+ e suas implementações concretas (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeTabelada
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeCorey
+\end_layout
+
+\end_inset
+
+).
+ Este pacote é responsável por fornecer os dados de permeabilidade relativa para o pacote Core.
 \end_layout
 
 \begin_layout Itemize
-Nome Pacote: Descrição.
- O que é, para que serve, como se relaciona com os demais pacotes.
+Pacote 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+IO (Entrada/Saída)
+\end_layout
+
+\end_inset
+
+:
+ Contém classes utilitárias responsáveis pela leitura e 
+\emph on
+\lang english
+parsing
+\emph default
+\lang brazilian
+ do arquivo de entrada de texto e pela escrita do arquivo de saída 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.csv
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Pacote 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Visualizacao
+\end_layout
+
+\end_inset
+
+:
+ Contém a classe utilitária Gnuplot,
+ responsável por formatar os dados de saída e invocar o processo externo do Gnuplot para plotagem.
+\end_layout
+
+\begin_layout Itemize
+Pacote 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Aplicacao
+\end_layout
+
+\end_inset
+
+:
+ Contém a classe Simulador (com a função 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+main()
+\end_layout
+
+\end_inset
+
+),
+ que orquestra todo o processo:
+ lê os dados usando 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+IO
+\end_layout
+
+\end_inset
+
+,
+ instancia o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ModelosKr
+\end_layout
+
+\end_inset
+
+ correto,
+ instancia o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Core
+\end_layout
+
+\end_inset
+
+ e,
+ por fim,
+ chama a 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Visualizacao
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -278,23 +1042,23 @@ name "sec: Diagrama de pacotes – assuntos"
 \end_layout
 
 \begin_layout Standard
-...aqui...
-\end_layout
-
-\begin_layout Standard
-coloque aqui texto falando do diagrama de pacotes, referencie a figura.
- Veja Figura 
+O Diagrama de Pacotes,
+ apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Diagrama-de-Pacotes"
+nolink "false"
 
 \end_inset
 
-.
+,
+ ilustra as dependências entre os assuntos lógicos identificados.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
+placement document
+alignment document
 wide false
 sideways false
 status open
@@ -302,9 +1066,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Assuntos-Pacotes.png
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
 	lyxscale 50
-	width 100text%
+	scale 80
 
 \end_inset
 
@@ -333,22 +1097,6 @@ name "fig:Diagrama-de-Pacotes"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \end_body

@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,19 +27,21 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding utf8
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -50,10 +52,11 @@
 \bibtex_command default
 \index_command default
 \float_placement p
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +77,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +101,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -137,8 +147,7 @@ thechapter - Teste}
 \begin_layout Standard
 Todo projeto de engenharia passa por uma etapa de testes.
  Neste capítulo apresentamos alguns testes do software desenvolvido.
- Estes testes devem dar resposta aos diagramas de caso de uso inicialmente
- apresentados (diagramas de caso de uso geral e específicos).
+ Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
 \end_layout
 
 \begin_layout Section
@@ -149,36 +158,70 @@ name "sec:Teste-1"
 
 \end_inset
 
-: Descrição
+:
+ Validando o Ciclo 1 - Modelo Tabelado
 \end_layout
 
-\begin_layout Standard
-No início apresente texto explicativo do teste:
-\end_layout
-
-\begin_layout Itemize
-O que esta sendo testado?
+\begin_layout Description
+Descrição do Teste:
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
+O que está sendo testado?
+ Este teste valida o funcionamento básico do núcleo numérico e o algoritmo de interpolação linear.
+ O objetivo é garantir que o software consiga ler uma tabela de permeabilidade relativa genérica e calcular valores intermediários corretamente.
 \end_layout
 
 \begin_layout Itemize
-Como o programa será validado?
+Como será realizado?
+ O software é executado com o arquivo de entrada 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+test/Teste-01.in
+\end_layout
+
+\end_inset
+
+,
+ que contém uma tabela simplificada com 7 pontos de 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-Resultados e análises
+Como será validado?
+ A validação é feita pela análise da curva gerada no arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+.
+ Verifica-se se a curva é contínua e se os pontos calculados correspondem a uma interpolação linear suave entre os pontos de entrada,
+ sem saltos ou descontinuidades numéricas.
 \end_layout
 
 \begin_layout Subsection
-Arquivo de entrada de dados 
+Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-A seguir apresente texto explicando a sequência do teste.
- Fale dos dados de entrada e mostre o arquivo usado.
+Apresenta-se a seguir o arquivo de entrada Teste-01.in,
+ que utiliza o modelo tabelado.
 \end_layout
 
 \begin_layout Standard
@@ -189,9 +232,10 @@ status open
 
 
 \backslash
-lstset{style=bash}   
+lstset{style=bash} 
 \backslash
-lstinputlisting[caption=] {../../test/Teste-01.in}
+lstinputlisting[caption={Arquivo de entrada Teste-01.in (Modelo Tabelado).},
+ label={Teste-01.in}] {../../test/Teste-01.in}
 \end_layout
 
 \end_inset
@@ -204,25 +248,30 @@ Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A seguir o arquivo com a saída de dados.
-\end_layout
-
-\begin_layout Standard
+O software é de linha de comando e não gera saída na tela,
+ exceto por mensagens de status ou erro.
+ O resultado principal é o arquivo 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=out}   
-\backslash
-lstinputlisting[caption=] {../../test/Teste-01.out}
+output.csv
 \end_layout
 
 \end_inset
 
+,
+ que conterá duas colunas:
+ 
+\begin_inset Formula $S_{w}$
+\end_inset
 
+ e 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subsection
@@ -230,21 +279,65 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-Coloque aqui figura mostrando resultados.
- Veja Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1"
+reference "fig:Teste01-TelaPrograma-Captura1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-.
- Comente a Figura.
+ mostra a execução do programa no terminal.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste01-TelaPrograma-Captura2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra o gráfico gerado a partir do 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+,
+ comprovando a geração da curva "S" característica.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste01-TelaPrograma-Captura2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta o gráfico gerado.
+ A curva suavizada confirma que a interpolação linear entre os pontos fornecidos está funcionando corretamente,
+ sem descontinuidades.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -252,8 +345,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-Simulador-Transcal-Guilherme2.png
-	width 100text%
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.exe.png
+	lyxscale 40
+	scale 80
 
 \end_inset
 
@@ -264,10 +358,70 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Tela do programa mostrando terminal executando.
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1"
+name "fig:Teste01-TelaPrograma-Captura1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.teorico.png
+	lyxscale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando gráfico (
+\emph on
+\lang english
+Excel
+\emph default
+\lang brazilian
+) gerado a partir do 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste01-TelaPrograma-Captura2"
 
 \end_inset
 
@@ -292,36 +446,96 @@ name "sec:Teste-2"
 
 \end_inset
 
-: Descrição
+:
+ Validando o Ciclo 2 - Modelo Corey
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
+Descrição do Teste:
 \end_layout
 
 \begin_layout Itemize
-O que esta sendo testado?
+O que está sendo testado?
+ Este teste valida a arquitetura de software (Padrão 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+) e a implementação matemática do modelo analítico de Corey.
+ O objetivo é provar que o sistema consegue trocar de modelo de cálculo dinamicamente apenas alterando o arquivo de entrada.
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
+Como será realizado?
+ O software é executado com o arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+test/Teste-02.in
+\end_layout
+
+\end_inset
+
+,
+ que utiliza a palavra-chave 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+MODELO_KR COREY
+\end_layout
+
+\end_inset
+
+ e define os expoentes 
+\begin_inset Formula $n_{w}=2.0$
+\end_inset
+
+ e 
+\begin_inset Formula $n_{o}=2.5$
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Itemize
-Como o programa será validado?
-\end_layout
+Como será validado?
+ A validação é visual e analítica.
+ A curva resultante deve apresentar o perfil exponencial característico das equações de Corey,
+ diferindo das linhas retas do modelo tabelado.
+ Além disso,
+ os pontos finais (saturação irreduzível de água e óleo residual) devem coincidir exatamente com os parâmetros 
+\begin_inset Formula $S_{wir}$
+\end_inset
 
-\begin_layout Itemize
-Resultados e análises
+ e 
+\begin_inset Formula $S_{orw}$
+\end_inset
+
+ fornecidos no arquivo.
 \end_layout
 
 \begin_layout Subsection
-Arquivo de entrada de dados 
+Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-A seguir apresente texto explicando a sequência do teste.
- Fale dos dados de entrada e mostre o arquivo usado.
+Apresenta-se a seguir o arquivo de entrada 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Teste-02.in
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -332,9 +546,10 @@ status open
 
 
 \backslash
-lstset{style=bash}   
+lstset{style=bash} 
 \backslash
-lstinputlisting[caption=] {../../test/Teste-02.in}
+lstinputlisting[caption={Arquivo de entrada Teste-02.in (Modelo Corey).},
+ label={Teste-02.in}] {../../test/Teste-02.in}
 \end_layout
 
 \end_inset
@@ -347,25 +562,19 @@ Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A seguir o arquivo com a saída de dados.
-\end_layout
-
-\begin_layout Standard
+Similar ao Teste 1,
+ o resultado principal é o arquivo 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=out}   
-\backslash
-lstinputlisting[caption=] {../../test/Teste-02.out}
+output.csv
 \end_layout
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
@@ -373,32 +582,39 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-Coloque aqui figura mostrando resultados.
- Veja Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Teste-TelaPrograma-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-.
- Comente a Figura.
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Na Figura simulador desenvolvido pelo aluno Tiago Schauwer
+ mostra o resultado gráfico.
+ A curva apresenta o comportamento exponencial característico do modelo de Corey,
+ confirmando a correta implementação das equações de potência.
 \end_layout
 
+\begin_layout Standard
+A curva gerada apresenta a concavidade característica das funções de potência,
+ confirmando que os expoentes 
+\begin_inset Formula $n_{w}=2.0$
 \end_inset
 
+ e 
+\begin_inset Formula $n_{o}=2.5$
+\end_inset
 
+ foram aplicados corretamente na fórmula analítica.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -406,7 +622,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-Simulador-Tiago.png
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.02.teorico.png
+	lyxscale 80
 	width 100text%
 
 \end_inset
@@ -418,7 +635,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Tela do programa mostrando curva do modelo de Corey.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste-TelaPrograma-1"
@@ -446,62 +663,125 @@ name "sec:Teste-3"
 
 \end_inset
 
-: Descrição
+:
+ Validação com Literatura (Tarek Ahmed)
 \end_layout
 
 \begin_layout Standard
-No início apresente texto explicativo do teste:
+Descrição do Teste
 \end_layout
 
 \begin_layout Itemize
-O que esta sendo testado?
+O que está sendo testado?
+ Este é o teste de validação científica do projeto.
+ O objetivo é comprovar a precisão física dos resultados comparando-os com um problema clássico da literatura de engenharia de reservatórios.
 \end_layout
 
 \begin_layout Itemize
-Como o teste vai ser realizado?
-\end_layout
-
-\begin_layout Itemize
-Como o programa será validado?
-\end_layout
-
-\begin_layout Itemize
-Resultados e análises
-\end_layout
-
-\begin_layout Subsection
-Arquivo de entrada de dados 
-\end_layout
-
-\begin_layout Standard
-A seguir apresente texto explicando a sequência do teste.
- Fale dos dados de entrada e mostre o arquivo usado.
-\end_layout
-
-\begin_layout Standard
+Como será realizado?
+ O software é executado com o arquivo 
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=bash}   
-\backslash
-lstinputlisting[caption=] {../../test/Teste-03.in}
+test/Teste-Tarek-1cp.in
 \end_layout
 
 \end_inset
 
+.
+ Este arquivo reproduz os parâmetros exatos do Exemplo 14-5 do livro
+\emph on
+\lang english
+ Reservoir Engineering Handbook
+\emph default
+\lang brazilian
+ de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
 
+\end_inset
+
+,
+ considerando a viscosidade do óleo de 1.0 cp.
 \end_layout
 
+\begin_layout Itemize
+Como será validado?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Numérica:
+ Os valores do arquivo de saída 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+ são comparados com a coluna "
+\begin_inset Formula $\mu_{o}=1.0$
+\end_inset
+
+" da tabela de resultados na página 950 do livro 1.
+ O erro absoluto deve ser desprezível.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Gráfica:
+ A curva gerada (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste3-TelaPrograma"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) é comparada visualmente com a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste3-TelaPrograma-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ do livro,
+ buscando a reprodução fiel da curva "S".
+\end_layout
+
+\end_deeper
 \begin_layout Subsection
-Arquivo de saída de dados (resultados da tela)
+Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-A seguir o arquivo com a saída de dados.
+Apresenta-se a seguir o conteúdo do arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Teste-Tarek-1cp.in
+\end_layout
+
+\end_inset
+
+ utilizado para esta simulação.
 \end_layout
 
 \begin_layout Standard
@@ -512,9 +792,13 @@ status open
 
 
 \backslash
-lstset{style=out}   
+lstset{style=bash} 
 \backslash
-lstinputlisting[caption=] {../../test/Teste-03.out}
+lstinputlisting[caption={Arquivo de entrada Teste-Tarek-1cp.in,
+ baseado no Exemplo 14-5 de 
+\backslash
+cite{Ahmed2010}.},
+ label={Teste-Tarek-1cp.in}] {../../test/Teste-Tarek-1cp.in}
 \end_layout
 
 \end_inset
@@ -527,22 +811,64 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-Coloque aqui figura mostrando resultados.
- Veja Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1"
+reference "fig:Teste3-TelaPrograma"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta o gráfico gerado automaticamente pelo software após a execução do teste.
+\end_layout
+
+\begin_layout Standard
+A análise comparativa com a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste3-TelaPrograma-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ demonstra que a curva obtida reproduz com exatidão o comportamento esperado descrito por Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
 
 \end_inset
 
 .
- Comente a Figura.
+ Os pontos de saturação inicial de água ( 
+\begin_inset Formula $S_{wi}\approx0.24$
+\end_inset
+
+ ) e saturação de óleo residual (
+\begin_inset Formula $S_{or}\approx0.22$
+\end_inset
+
+,
+ ou seja,
  
+\begin_inset Formula $S_{w}\approx0.78$
+\end_inset
+
+) coincidem perfeitamente com os limites da tabela de entrada,
+ e a curvatura "S" reflete corretamente a variação da razão de mobilidade ao longo do domínio de saturação.
+ Isso confirma que o núcleo numérico da ferramenta é robusto e confiável para aplicações de engenharia.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -550,8 +876,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/Interface-SimuladorTranscal-Nicholas.png
-	lyxscale 25
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste-tarek-1cp.png
+	lyxscale 80
 	width 100text%
 
 \end_inset
@@ -563,14 +889,32 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando xxx
+Tela do programa mostrando curva do Exemplo 14-5 do livro 
+\emph on
+\lang english
+Reservoir Engineering Handbook
+\emph default
+\lang brazilian
+ de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+ 
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1"
+name "fig:Teste3-TelaPrograma"
 
 \end_inset
 
+(com 
+\begin_inset Formula $\mu_{o}=1.0$
+\end_inset
 
+).
 \end_layout
 
 \end_inset
@@ -583,25 +927,214 @@ name "fig:Teste-TelaPrograma-Captura1-1"
 
 \end_layout
 
-\begin_layout Description
-Nota: 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
-\begin_inset Note Note
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-apague!
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/livroTarek.png
+	lyxscale 80
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Curva do Exemplo 14-5 do livro 
+\emph on
+\lang english
+Reservoir Engineering Handbook
+\emph default
+\lang brazilian
+ de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste3-TelaPrograma-1"
+
+\end_inset
+
+(com 
+\begin_inset Formula $\mu_{o}=0.5,$
+\end_inset
+
+
+\begin_inset Formula $\mu_{o}=1.0$
+\end_inset
+
+,
+\begin_inset Formula $\mu_{o}=5$
+\end_inset
+
+e 
+\begin_inset Formula $\mu_{o}=10$
+\end_inset
+
+ ).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 4
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-4"
+
+\end_inset
+
+:
+ Validação da Camada de Apresentação (Gnuplot)
+\end_layout
+
+\begin_layout Standard
+Descrição do Teste:
+\end_layout
+
+\begin_layout Itemize
+O que está sendo testado?
+ Este teste valida o requisito não funcional de usabilidade e a integração com a ferramenta externa Gnuplot (Padrão Facade).
+\end_layout
+
+\begin_layout Itemize
+Como será realizado?
+ O teste consiste na execução bem-sucedida de qualquer um dos cenários anteriores em um ambiente 
+\emph on
+\lang english
+Desktop
+\emph default
+\lang brazilian
+ (
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+ ou Linux).
+\end_layout
+
+\begin_layout Itemize
+Como será validado?
+ O teste é considerado aprovado se,
+ após o cálculo,
+ uma janela gráfica do Gnuplot for aberta automaticamente,
+ exibindo a curva correta com títulos,
+ eixos nomeados e grade (
+\emph on
+\lang english
+grid
+\emph default
+\lang brazilian
+) ativada,
+ sem a necessidade de intervenção manual do usuário para plotar os dados.
+ A persistência da janela (ela não deve fechar sozinha imediatamente) também é um critério de sucesso.
+\end_layout
+
+\begin_layout Subsection
+Arquivo de entrada de dados
+\end_layout
+
+\begin_layout Standard
+Este teste reutiliza o arquivo Teste-01.in.
+ Além da saída padrão (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+),
+ o resultado esperado é uma ação do sistema:
+ a abertura de uma janela de gráfico.
+\end_layout
+
+\begin_layout Subsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste04-TelaPrograma-Captura"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ mostra uma captura de tela a janela do Gnuplot que foi aberta automaticamente pelo software,
+ exibindo o resultado gráfico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.png
+	lyxscale 25
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando captura de tela a janela do Gnuplot
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste04-TelaPrograma-Captura"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -27,17 +27,18 @@
 \end_preamble
 \options normaltoc, sumarioincompleto
 \use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding iso8859-1
+\inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -129,7 +130,7 @@
 \begin_body
 
 \begin_layout Chapter
-Título do Apêndice
+Formato do Arquivo de Entrada
 \end_layout
 
 \begin_layout Standard
@@ -143,7 +144,7 @@ status open
 lhead{Apêndice 
 \backslash
 thechapter:
- Titulo do Apêndice}
+ Formato do Arquivo de Entrada}
 \backslash
 rhead{
 \backslash
@@ -152,59 +153,212 @@ thepage}
 
 \end_inset
 
-Descreve-se neste apêndice ...
-\end_layout
 
-\begin_layout Itemize
-Os anexos ou apêndices contém material auxiliar.
- Por exemplo,
- tabelas,
- gráficos,
- resultados de experimentos,
- algoritmos,
- códigos e simulações.
-\end_layout
-
-\begin_layout Itemize
-Um apêndice pode incluir assuntos mais gerais (geral demais para estar no núcleo do trabalho) ou mais específicos (detalhado demais para estar no núcleo do trabalho).
-\end_layout
-
-\begin_layout Itemize
-Pode conter um artigo de auxílio fundamental ao trabalho.
- 
-\end_layout
-
-\begin_layout Itemize
-Pode conter artigos publicados.
-\end_layout
-
-\begin_layout Itemize
-[tudo aquilo que for importante para a tese mas não essencial,
- deve ser colocado em apêndices]
-\end_layout
-
-\begin_layout Itemize
-[como exemplo,
- revisão de metodologias,
- técnicas,
- modelos matemáticos,
- ítens desenvolvidos por terceiros]
-\end_layout
-
-\begin_layout Itemize
-[algoritmos e programas devem ser colocados no apêndice]
-\end_layout
-
-\begin_layout Itemize
-[imagens detalhadas de programas desenvolvidos devem ser colocados no apêndice]
-\end_layout
-
-\begin_layout Section
-Sub-Titulo do Apêndice
 \end_layout
 
 \begin_layout Standard
-.....conteúdo..
+O software utiliza um arquivo de entrada de texto .txt baseado em palavras-chave.
+ O parser identifica a palavra-chave (ex:
+ VISC_OLEO) e lê o valor na mesma linha.
+\end_layout
+
+\begin_layout Standard
+A palavra-chave MODELO_KR define qual modelo de permeabilidade será usado:
+ TABELADO ou COREY.
+\end_layout
+
+\begin_layout Section
+Exemplo de Arquivo de Entrada (Modelo Tabelado)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Exemplo de arquivo de entrada para modelo tabelado
+\end_layout
+
+\begin_layout Plain Layout
+
+# Comentários são ignorados
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_OLEO 1.5
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 0.8
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR TABELADO
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Definição da tabela Sw,
+ Krw,
+ Kro
+\end_layout
+
+\begin_layout Plain Layout
+
+# Os dados são lidos até a palavra-chave FIM_DADOS
+\end_layout
+
+\begin_layout Plain Layout
+
+DADOS_KR_INICIO
+\end_layout
+
+\begin_layout Plain Layout
+
+0.20 0.00 0.90
+\end_layout
+
+\begin_layout Plain Layout
+
+0.30 0.05 0.75
+\end_layout
+
+\begin_layout Plain Layout
+
+0.40 0.12 0.50
+\end_layout
+
+\begin_layout Plain Layout
+
+0.50 0.20 0.30
+\end_layout
+
+\begin_layout Plain Layout
+
+0.60 0.30 0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+0.70 0.40 0.05
+\end_layout
+
+\begin_layout Plain Layout
+
+0.80 0.50 0.00
+\end_layout
+
+\begin_layout Plain Layout
+
+FIM_DADOS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Exemplo de Arquivo de Entrada (Modelo Corey)
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+# Exemplo de arquivo de entrada para modelo Corey
+\end_layout
+
+\begin_layout Plain Layout
+
+# Comentários são ignorados
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_OLEO 2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 1.0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR COREY
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Parâmetros da correlação de Corey
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SWIR     0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SORW     0.20
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRW_MAX  0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRO_MAX  0.9
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NW       2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NO       2.5
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

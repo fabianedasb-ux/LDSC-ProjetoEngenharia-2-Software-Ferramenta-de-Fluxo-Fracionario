@@ -1,0 +1,49 @@
+\doxysection{Gnuplot Class Reference}
+\hypertarget{class_gnuplot}{}\label{class_gnuplot}\index{Gnuplot@{Gnuplot}}
+
+
+Classe utilitária que implementa o Padrão de Projeto Facade.  
+
+
+
+
+{\ttfamily \#include $<$Gnuplot.\+h$>$}
+
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_gnuplot_a4e29bd3da24dac9d19d826dde04acb9b}{plotar\+Curva}} (const std\+::map$<$ double, double $>$ \&dados, const std\+::string \&titulo)
+\begin{DoxyCompactList}\small\item\em Plota um mapa de dados (x, y) usando o \doxylink{class_gnuplot}{Gnuplot}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe utilitária que implementa o Padrão de Projeto Facade. 
+
+Esta classe esconde toda a complexidade de lidar com o \doxylink{class_gnuplot}{Gnuplot} (criar arquivos temporários, formatar scripts, chamar o system()) por trás de um único método estático. 
+
+\label{doc-func-members}
+\Hypertarget{class_gnuplot_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_gnuplot_a4e29bd3da24dac9d19d826dde04acb9b}\index{Gnuplot@{Gnuplot}!plotarCurva@{plotarCurva}}
+\index{plotarCurva@{plotarCurva}!Gnuplot@{Gnuplot}}
+\doxysubsubsection{\texorpdfstring{plotarCurva()}{plotarCurva()}}
+{\footnotesize\ttfamily \label{class_gnuplot_a4e29bd3da24dac9d19d826dde04acb9b} 
+void Gnuplot\+::plotar\+Curva (\begin{DoxyParamCaption}\item[{const std\+::map$<$ double, double $>$ \&}]{dados}{, }\item[{const std\+::string \&}]{titulo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Plota um mapa de dados (x, y) usando o \doxylink{class_gnuplot}{Gnuplot}. 
+
+Este é um método estático, pois não precisa de um estado de instância. 
+\begin{DoxyParams}{Parameters}
+{\em dados} & Um std\+::map$<$double, double$>$ onde a chave é o eixo X (Sw) e o valor é o eixo Y (Fw). \\
+\hline
+{\em titulo} & O título que aparecerá no topo do gráfico. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Gnuplot.\+h\item 
+Gnuplot.\+cpp\end{DoxyCompactItemize}

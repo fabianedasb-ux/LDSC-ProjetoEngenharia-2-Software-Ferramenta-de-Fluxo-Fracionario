@@ -1,13 +1,10 @@
-Coloque aqui exatamente os dados digitados na hora de rodar o teste, a ideia é usar este arquico como arquivo de entrada do simulador.
-
-ex:
-./simulador < Teste-02.dat
-
-2)
-Rode o comando
-./simulador < Teste-02.dat
-
-a seguir copie toda a saída gerada e armazena no arquivo Teste-02.out
-
-No Lyx, no capítulo de test, na seção Teste-02 inclua a listagem do arquivo Teste-02.out
-
+# Exemplo de arquivo de entrada para modelo Corey
+VISC_OLEO 2.0
+VISC_AGUA 1.0
+MODELO_KR COREY
+COREY_SWIR     0.15
+COREY_SORW     0.20
+COREY_KRW_MAX  0.5
+COREY_KRO_MAX  0.9
+COREY_NW       2.0
+COREY_NO       2.5

@@ -1,0 +1,132 @@
+\doxysection{Curvas\+Permeabilidade\+Tabelada Class Reference}
+\hypertarget{class_curvas_permeabilidade_tabelada}{}\label{class_curvas_permeabilidade_tabelada}\index{CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}}
+
+
+Implementação concreta da interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade} para dados tabulados.  
+
+
+
+
+{\ttfamily \#include $<$Curvas\+Permeabilidade\+Tabelada.\+h$>$}
+
+Inheritance diagram for Curvas\+Permeabilidade\+Tabelada\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_curvas_permeabilidade_tabelada}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a86f483883582f894b00da02def80ba4b}{carregar\+Dados}} (const std\+::string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Carrega os dados da tabela (bloco DADOS\+\_\+\+KR\+\_\+\+INICIO) do arquivo. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a3f269d2b14d33be2585afec5caf52ef9}{get\+Krw}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Obtém o Krw, usando interpolação se necessário. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a922435e1479b0fa48885569dccd0402e}{get\+Kro}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Obtém o Kro, usando interpolação se necessário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual padrão, essencial para classes base polimórficas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação concreta da interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade} para dados tabulados. 
+
+Esta classe lê uma tabela de Sw, Krw e Kro de um arquivo de entrada e usa interpolação linear para calcular valores intermediários. 
+
+\label{doc-func-members}
+\Hypertarget{class_curvas_permeabilidade_tabelada_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_curvas_permeabilidade_tabelada_a86f483883582f894b00da02def80ba4b}\index{CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_tabelada_a86f483883582f894b00da02def80ba4b} 
+void Curvas\+Permeabilidade\+Tabelada\+::carregar\+Dados (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carrega os dados da tabela (bloco DADOS\+\_\+\+KR\+\_\+\+INICIO) do arquivo. 
+
+Carrega os dados tabelados (Sw, Krw, Kro) do arquivo de entrada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & O caminho para o arquivo de configuração .txt. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+\Hypertarget{class_curvas_permeabilidade_tabelada_a922435e1479b0fa48885569dccd0402e}\index{CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}!getKro@{getKro}}
+\index{getKro@{getKro}!CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_tabelada_a922435e1479b0fa48885569dccd0402e} 
+double Curvas\+Permeabilidade\+Tabelada\+::get\+Kro (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Obtém o Kro, usando interpolação se necessário. 
+
+Calcula Kro para uma Sw, usando interpolação linear se necessário.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Kro interpolado.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor de Kro interpolado. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+\Hypertarget{class_curvas_permeabilidade_tabelada_a3f269d2b14d33be2585afec5caf52ef9}\index{CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CurvasPermeabilidadeTabelada@{CurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_tabelada_a3f269d2b14d33be2585afec5caf52ef9} 
+double Curvas\+Permeabilidade\+Tabelada\+::get\+Krw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Obtém o Krw, usando interpolação se necessário. 
+
+Calcula Krw para uma Sw, usando interpolação linear se necessário.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Krw interpolado.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor de Krw interpolado. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Curvas\+Permeabilidade\+Tabelada.\+h\item 
+Curvas\+Permeabilidade\+Tabelada.\+cpp\end{DoxyCompactItemize}

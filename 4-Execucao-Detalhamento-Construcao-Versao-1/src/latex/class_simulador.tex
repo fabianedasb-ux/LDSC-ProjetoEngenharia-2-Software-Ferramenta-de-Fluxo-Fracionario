@@ -1,0 +1,68 @@
+\doxysection{Simulador Class Reference}
+\hypertarget{class_simulador}{}\label{class_simulador}\index{Simulador@{Simulador}}
+
+
+O orquestrador da aplicação.  
+
+
+
+
+{\ttfamily \#include $<$Simulador.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_simulador_ac1a954a8145b6067c0da8ace3451af22}{executar}} (const std\+::string \&arquivo\+Entrada)
+\begin{DoxyCompactList}\small\item\em Ponto de entrada principal da lógica do simulador. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+O orquestrador da aplicação. 
+
+Esta classe é responsável por controlar o fluxo de execução do programa\+: ler o arquivo de entrada, instanciar os objetos corretos (fazendo o \textquotesingle{}new\textquotesingle{} dos modelos) e coordenar as chamadas para a calculadora e o plotter. 
+
+\label{doc-func-members}
+\Hypertarget{class_simulador_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_simulador_ac1a954a8145b6067c0da8ace3451af22}\index{Simulador@{Simulador}!executar@{executar}}
+\index{executar@{executar}!Simulador@{Simulador}}
+\doxysubsubsection{\texorpdfstring{executar()}{executar()}}
+{\footnotesize\ttfamily \label{class_simulador_ac1a954a8145b6067c0da8ace3451af22} 
+void Simulador\+::executar (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{arquivo\+Entrada}{}\end{DoxyParamCaption})}
+
+
+
+Ponto de entrada principal da lógica do simulador. 
+
+Executa a simulação completa.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo\+Entrada} & O caminho (path) para o arquivo de configuração .txt.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyItemize}
+\item Este método orquestra todo o processo\+:
+\end{DoxyItemize}
+\begin{DoxyEnumerate}
+\item Lê o arquivo de entrada para definir os parâmetros.
+\item Instancia o modelo de permeabilidade correto (Tabelado ou Corey).
+\item Delega o carregamento de dados detalhados para o modelo.
+\item Instancia a calculadora.
+\item Gera a curva de fluxo fracionário.
+\item Chama o \doxylink{class_gnuplot}{Gnuplot} para exibir o resultado.
+\end{DoxyEnumerate}
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em arquivo\+Entrada} & O caminho para o arquivo de configuração .txt. \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Simulador.\+h\item 
+Simulador.\+cpp\end{DoxyCompactItemize}
