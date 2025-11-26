@@ -1,0 +1,894 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Ciclos Construção
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Ciclos-Construção-Implementacao"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Ciclo construção
+\end_layout
+
+\end_inset
+
+ - Implementação
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Implementação"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Implementação}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Código fonte
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Codigo-fonte"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Implementação
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se a seguir o conjunto de classes (arquivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.h
+\end_layout
+
+\end_inset
+
+ e 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.cpp
+\end_layout
+
+\end_inset
+
+) que compõem a arquitetura do software,
+ conforme o Diagrama de Classes (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-classes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Interface 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{ICurvasPermeabilidade.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da interface 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+.
+ Esta classe base abstrata define o contrato para todos os modelos de permeabilidade,
+ sendo o pilar do Padrão de Projeto 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+ (Nota:
+ Esta classe é puramente virtual,
+ portanto não possui um arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.cpp
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da interface ICurvasPermeabilidade},
+ label={ICurvasPermeabilidade.h}] {../../src/ICurvasPermeabilidade.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeTabelada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CurvasPermeabilidadeTabelada.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeTabelada
+\end_layout
+
+\end_inset
+
+,
+ que implementa a interface para dados tabulares.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da classe CurvasPermeabilidadeTabelada},
+ label={CurvasPermeabilidadeTabelada.h}] {../../src/CurvasPermeabilidadeTabelada.h}
+\end_layout
+
+\end_inset
+
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CurvasPermeabilidadeTabelada.cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe,
+ incluindo o algoritmo de interpolação linear.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilidadeTabelada},
+ label={CurvasPermeabilidadeTabelada.cpp}] {../../src/CurvasPermeabilidadeTabelada.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeCorey
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CurvasPermeabilidadeCorey.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeCorey
+\end_layout
+
+\end_inset
+
+,
+ que implementa a interface para o modelo analítico de Corey 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da classe CurvasPermeabilidadeCorey},
+ label={CurvasPermeabilidadeCorey.h}] {../../src/CurvasPermeabilidadeCorey.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CurvasPermeabilidadeCorey.cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe,
+ contendo a formulação matemática do modelo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilidadeCorey},
+ label={CurvasPermeabilidadeCorey.cpp}] {../../src/CurvasPermeabilidadeCorey.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CalculadoraFluxoFracionario.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario
+\end_layout
+
+\end_inset
+
+.
+ Esta é a classe central do domínio de negócio,
+ responsável por implementar a equação de Buckley-Leverett 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da classe CalculadoraFluxoFracionario},
+ label={CalculadoraFluxoFracionario.h}] {../../src/CalculadoraFluxoFracionario.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{CalculadoraFluxoFracionario.cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe.
+ Note que ela opera apenas contra a interface 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+,
+ garantindo baixo acoplamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe CalculadoraFluxoFracionario},
+ label={CalculadoraFluxoFracionario.cpp}] {../../src/CalculadoraFluxoFracionario.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe Gnuplot
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{Gnuplot.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe utilitária Gnuplot,
+ que atua como uma Facade para a plotagem.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da classe Gnuplot},
+ label={Gnuplot.h}] {../../src/Gnuplot.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{Gnuplot.cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe,
+ incluindo a chamada 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+system()
+\end_layout
+
+\end_inset
+
+ para o processo externo do Gnuplot.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe Gnuplot},
+ label={Gnuplot.cpp}] {../../src/Gnuplot.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Classe Simulador
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{Simulador.h}
+\end_layout
+
+\end_inset
+
+ o arquivo de cabeçalho da classe Simulador,
+ que atua como o orquestrador da aplicação.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de cabeçalho da classe Simulador},
+ label={Simulador.h}] {../../src/Simulador.h}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{Simulador.cpp}
+\end_layout
+
+\end_inset
+
+ a implementação da classe,
+ responsável por ler o arquivo de entrada,
+ instanciar os objetos corretos e injetar as dependências.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da classe Simulador},
+ label={Simulador.cpp}] {../../src/Simulador.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Programa Principal 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+main.cpp
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{main.cpp}
+\end_layout
+
+\end_inset
+
+ o arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+main.cpp
+\end_layout
+
+\end_inset
+
+,
+ que contém o ponto de entrada do programa.
+ Sua única responsabilidade é instanciar e executar o Simulador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=C++} 
+\backslash
+lstinputlisting[ caption={Arquivo de implementação da função main()},
+ label={main.cpp}] {../../src/main.cpp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

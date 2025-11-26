@@ -1,0 +1,31 @@
+\doxysection{Curvas\+Permeabilidade\+Tabelada.\+h}
+\hypertarget{_curvas_permeabilidade_tabelada_8h_source}{}\label{_curvas_permeabilidade_tabelada_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CURVASPERMEABILIDADETABELADA\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CURVASPERMEABILIDADETABELADA\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ICurvasPermeabilidade.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}\ \textcolor{comment}{//\ Incluído\ para\ std::string}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_curvas_permeabilidade_tabelada}{CurvasPermeabilidadeTabelada}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}\ \{}
+\DoxyCodeLine{00016\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00018\ \ \ \ \ std::vector<double>\ \_sw;}
+\DoxyCodeLine{00019\ }
+\DoxyCodeLine{00021\ \ \ \ \ std::vector<double>\ \_krw;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00024\ \ \ \ \ std::vector<double>\ \_kro;}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keywordtype}{double}\ interpolar(\textcolor{keywordtype}{double}\ x\_desejado,\ \textcolor{keyword}{const}\ std::vector<double>\&\ vec\_x,\ \textcolor{keyword}{const}\ std::vector<double>\&\ vec\_y)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ }
+\DoxyCodeLine{00036\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a86f483883582f894b00da02def80ba4b}{carregarDados}}(\textcolor{keyword}{const}\ std::string\&\ arquivo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a3f269d2b14d33be2585afec5caf52ef9}{getKrw}}(\textcolor{keywordtype}{double}\ sw)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00055\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a922435e1479b0fa48885569dccd0402e}{getKro}}(\textcolor{keywordtype}{double}\ sw)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{00056\ \};}
+\DoxyCodeLine{00057\ }
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

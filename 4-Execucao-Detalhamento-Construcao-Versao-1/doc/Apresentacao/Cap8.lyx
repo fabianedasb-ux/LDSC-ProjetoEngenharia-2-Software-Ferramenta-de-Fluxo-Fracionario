@@ -1,0 +1,610 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\use_default_options true
+\maintain_unincluded_children no
+\language brazilian
+\language_package default
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement class
+\float_alignment class
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content true
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Documentação para o Desenvolvedor
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lhead{
+\backslash
+thechapter - Documentação} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Dependências para compilar o software
+\end_layout
+
+\begin_layout Standard
+Para compilar e executar o software "Ferramenta de Fluxo Fracionário",
+ é necessário configurar um ambiente de desenvolvimento C++ compatível.
+ O projeto foi desenvolvido e testado no ambiente MSYS2 (
+\emph on
+\lang english
+MinGW
+\emph default
+\lang brazilian
+ 64-bit) no 
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+.
+\end_layout
+
+\begin_layout Standard
+As seguintes dependências são obrigatórias:
+\end_layout
+
+\begin_layout Enumerate
+Compilador C++ (g++):
+ Deve suportar o padrão C++17.
+\end_layout
+
+\begin_layout Enumerate
+GNU 
+\emph on
+\lang english
+Make
+\emph default
+\lang brazilian
+:
+ Ferramenta de automação de compilação utilizada pelo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Makefile
+\end_layout
+
+\end_inset
+
+ do projeto.
+\end_layout
+
+\begin_layout Enumerate
+Gnuplot:
+ Ferramenta de plotagem externa,
+ necessária para a visualização dos gráficos (requisito de execução).
+\end_layout
+
+\begin_layout Enumerate
+Doxygen (Opcional):
+ Para geração da documentação automática.
+\end_layout
+
+\begin_layout Standard
+Instalação das Dependências (via MSYS2):
+\end_layout
+
+\begin_layout Standard
+No terminal MINGW64,
+ execute os seguintes comandos para instalar todas as ferramentas necessárias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=bash} 
+\backslash
+lstinputlisting[caption={Comando para instalar Compilador,
+ Make e Gnuplot no MSYS2.}] {pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-gnuplot}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Como gerar a documentação usando doxygen
+\end_layout
+
+\begin_layout Standard
+A documentação do código-fonte foi escrita utilizando o padrão Javadoc.
+ Isso permite que a ferramenta Doxygen analise os arquivos 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.h
+\end_layout
+
+\end_inset
+
+ e gere um site HTML navegável com a descrição de todas as classes e métodos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Passo a Passo para Gerar a Documentação:
+\end_layout
+
+\begin_layout Itemize
+Instale o Doxygen:
+ Caso não tenha instalado,
+ use o comando:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=bash} 
+\backslash
+lstinputlisting[caption={Instalação do Doxygen.}] {pacman -S mingw-w64-x86_64-doxygen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Navegue até a pasta do código:
+ Abra o terminal na raiz do projeto e entre na pasta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+src/
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Execute o Doxygen:
+ O arquivo de configuração Doxyfile já está configurado no projeto.
+ Basta rodar o comando:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=bash} 
+\backslash
+lstinputlisting[caption={Gerando a documentação HTML.}] {doxygen}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Visualize o Resultado:
+ A documentação será gerada na pasta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+html/
+\end_layout
+
+\end_inset
+
+.
+ Para visualizar,
+ abra o arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+index.html
+\end_layout
+
+\end_inset
+
+ no seu navegador:
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{style=bash} 
+\backslash
+lstinputlisting[caption={Abrindo a documentação.}] {start html/index.html}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dog1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ilustra a página inicial da documentação gerada,
+ onde é possível navegar pela hierarquia de classes - Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dog1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ - e ver os diagramas de colaboração.
+ Na figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dog1-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ a página para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario Class Reference
+\end_layout
+
+\end_inset
+
+ e na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:dog1-3"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ o arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario.h
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
+	lyxscale 20
+	scale 60
+	special height=0.8\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página inicial
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dog1"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog2.png
+	lyxscale 20
+	scale 60
+	special height=0.8\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hierarquia de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dog1-1"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
+	lyxscale 20
+	scale 60
+	special height=0.8\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Página para 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario Class Reference
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dog1-2"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
+	lyxscale 20
+	scale 60
+	special height=0.8\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario.h
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:dog1-3"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

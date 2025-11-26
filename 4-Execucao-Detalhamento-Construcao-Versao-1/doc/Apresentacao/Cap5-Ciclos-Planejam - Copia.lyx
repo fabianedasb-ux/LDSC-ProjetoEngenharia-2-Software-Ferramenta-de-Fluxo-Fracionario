@@ -1,0 +1,701 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding utf8
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Ciclos de Planejamento/Detalhamento
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Ciclos de Planejamento/Detalhamento
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "chap: Ciclos de Planejamento/Detalhamento"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se neste capítulo os ciclos de planejamento/detalhamento para as diferentes versões desenvolvidas.
+ O projeto será dividido em quatro ciclos de desenvolvimento e validação.
+\end_layout
+
+\begin_layout Section
+Ciclo 1 (Versão 0.1) 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.1"
+
+\end_inset
+
+ - MVP:
+ Núcleo de Cálculo e Modelo Tabular
+\end_layout
+
+\begin_layout Standard
+Este ciclo inicial foca em construir o Produto Mínimo Viável (MVP).
+ O objetivo é validar a arquitetura central e a lógica de engenharia principal (a equação de Buckley-Leverett).
+ Ao final deste ciclo,
+ teremos um software de linha de comando que lê um arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.txt
+\end_layout
+
+\end_inset
+
+ de um modelo tabelado,
+ calcula a curva de fluxo fracionário e salva um arquivo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+.csv
+\end_layout
+
+\end_inset
+
+ com o resultado.
+\end_layout
+
+\begin_layout Itemize
+Funcionalidades (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+features
+\end_layout
+
+\end_inset
+
+) implementadas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementação da 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+main()
+\end_layout
+
+\end_inset
+
+ (no 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Simulador.cpp
+\end_layout
+
+\end_inset
+
+) para orquestrar o processo.
+\end_layout
+
+\begin_layout Itemize
+Implementação do parser de arquivo de entrada (no pacote IO) para ler 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+VISC_OLEO
+\end_layout
+
+\end_inset
+
+,
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+VISC_AGUA
+\end_layout
+
+\end_inset
+
+ e os dados do 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+MODELO_KR TABELADO
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Implementação da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação da interface 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeTabelada
+\end_layout
+
+\end_inset
+
+,
+ incluindo o algoritmo de interpolação linear.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Teste de Validação do Ciclo 1:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software deve ser executado com o arquivo de entrada 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Teste-01.in
+\end_layout
+
+\end_inset
+
+.
+ O resultado 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+ gerado deve ser comparado,
+ via Excel,
+ com uma planilha de cálculo manual usando os mesmos dados de entrada.
+ Os resultados devem ser idênticos.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ciclo 2 (Versão 0.2)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.2"
+
+\end_inset
+
+ - Extensão:
+ Modelo Analítico Corey
+\end_layout
+
+\begin_layout Standard
+Com o núcleo de cálculo validado,
+ este ciclo foca em demonstrar a extensibilidade do software,
+ conforme projetado no Diagrama de Classes (padrão 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+).
+ O objetivo é adicionar uma nova forma de cálculo (Correlação de Corey 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+) sem alterar o núcleo (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Funcionalidades (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+features
+\end_layout
+
+\end_inset
+
+) implementadas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementação da classe 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeCorey
+\end_layout
+
+\end_inset
+
+,
+ herdando de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ICurvasPermeabilidade
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Implementação do algoritmo matemático das equações de Corey.
+ Atualização do parser de IO para reconhecer a palavra-chave 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+MODELO_KR COREY
+\end_layout
+
+\end_inset
+
+ e ler os seis parâmetros de entrada.
+ 
+\end_layout
+
+\begin_layout Itemize
+Modificação no Simulador para instanciar o objeto 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+CurvasPermeabilidadeCorey
+\end_layout
+
+\end_inset
+
+ quando a palavra-chave for encontrada.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Teste de Validação do Ciclo 2:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software será executado com o arquivo Teste-02.in.
+ Como o modelo de Corey é analítico,
+ os resultados no 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+ serão validados comparando-os com uma planilha que implementa as mesmas fórmulas de Corey,
+ garantindo a precisão matemática da implementação.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ciclo 3 (Versão 0.3)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.3"
+
+\end_inset
+
+ - Validação Científica:
+ Tarek Ahmed
+\end_layout
+
+\begin_layout Standard
+Este ciclo é dedicado exclusivamente à validação científica da ferramenta.
+ O objetivo não é adicionar código novo,
+ mas sim provar que o modelo numérico (tabelado) consegue reproduzir resultados clássicos da literatura de engenharia de petróleo.
+\end_layout
+
+\begin_layout Itemize
+Atividades Realizadas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Levantamento de dados do Exemplo 14-5 do livro 
+\emph on
+\lang english
+Reservoir Engineering Handbook
+\emph default
+\lang brazilian
+ de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Criação do arquivo de entrada específico Teste-Tarek-1cp.in contendo os dados de permeabilidade e viscosidade extraídos do livro.
+\end_layout
+
+\begin_layout Itemize
+Execução e análise comparativa.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Teste de Validação do Ciclo 3:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software será executado com o Teste-Tarek-1cp.in.
+ Os resultados no 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+output.csv
+\end_layout
+
+\end_inset
+
+ serão validados ponto a ponto contra a tabela de resultados publicada na página 950 do livro de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+,
+ como detalhado no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Ciclo 4 (Versão 0.4)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Versão-0.4"
+
+\end_inset
+
+ - Apresentação:
+ Integração Gnuplot
+\end_layout
+
+\begin_layout Standard
+Este ciclo final foca na camada de apresentação e na usabilidade da ferramenta.
+ O objetivo é implementar a 
+\emph on
+Facade
+\emph default
+ Gnuplot para fornecer 
+\emph on
+\lang english
+feedback
+\emph default
+\lang brazilian
+ visual imediato ao usuário,
+ completando o requisito RF-05.
+\end_layout
+
+\begin_layout Itemize
+Funcionalidades (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+features
+\end_layout
+
+\end_inset
+
+) implementadas:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementação da classe Gnuplot como uma classe estática utilitária.
+\end_layout
+
+\begin_layout Itemize
+Implementação do método 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Gnuplot::plotarCurva()
+\end_layout
+
+\end_inset
+
+,
+ que cria os arquivos temporários de dados e 
+\emph on
+\lang english
+script
+\emph default
+\lang brazilian
+,
+ e invoca o 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+system()
+\end_layout
+
+\end_inset
+
+ para chamar o Gnuplot.
+\end_layout
+
+\begin_layout Itemize
+Integração da chamada 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+Gnuplot::plotarCurva()
+\end_layout
+
+\end_inset
+
+ no Simulador.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Teste de Validação do Ciclo 4:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+O software foi executado com sucesso utilizando os arquivos de teste anteriores,
+ e a janela do Gnuplot com o gráfico foi exibida automaticamente em todos os casos,
+ validando a integração.
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

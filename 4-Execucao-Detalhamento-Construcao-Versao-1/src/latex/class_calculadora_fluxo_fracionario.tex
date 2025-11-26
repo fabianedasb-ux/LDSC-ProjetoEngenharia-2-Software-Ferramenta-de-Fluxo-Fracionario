@@ -1,0 +1,122 @@
+\doxysection{Calculadora\+Fluxo\+Fracionario Class Reference}
+\hypertarget{class_calculadora_fluxo_fracionario}{}\label{class_calculadora_fluxo_fracionario}\index{CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}}
+
+
+Classe principal que implementa o "{}domínio de negócio"{} (a lógica de engenharia).  
+
+
+
+
+{\ttfamily \#include $<$Calculadora\+Fluxo\+Fracionario.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_calculadora_fluxo_fracionario_a82a6480c8cefe0b5273f0d6bcbe699d4}{Calculadora\+Fluxo\+Fracionario}} (double mu\+\_\+o, double mu\+\_\+w, \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}modelo)
+\begin{DoxyCompactList}\small\item\em Construtor da Calculadora. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_calculadora_fluxo_fracionario_aba706daf5d0210b55a413a5e2cca5ef9}{calcular\+Fw}} (double sw) const
+\begin{DoxyCompactList}\small\item\em Calcula um único ponto da curva de fluxo fracionário. \end{DoxyCompactList}\item 
+std\+::map$<$ double, double $>$ \mbox{\hyperlink{class_calculadora_fluxo_fracionario_ac68be4ba2296e2f2e33f353a17e37165}{gerar\+Curva\+Completa}} (double passo) const
+\begin{DoxyCompactList}\small\item\em Gera a curva completa de Fw vs Sw, iterando sobre a saturação. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Classe principal que implementa o "{}domínio de negócio"{} (a lógica de engenharia). 
+
+Esta classe é responsável por implementar a equação de Buckley-\/\+Leverett. Ela depende de uma abstração (\doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}) e não de uma implementação concreta, seguindo o Princípio da Inversão de Dependência. 
+
+\label{doc-constructors}
+\Hypertarget{class_calculadora_fluxo_fracionario_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_calculadora_fluxo_fracionario_a82a6480c8cefe0b5273f0d6bcbe699d4}\index{CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}!CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}}
+\index{CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}!CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{CalculadoraFluxoFracionario()}{CalculadoraFluxoFracionario()}}
+{\footnotesize\ttfamily \label{class_calculadora_fluxo_fracionario_a82a6480c8cefe0b5273f0d6bcbe699d4} 
+Calculadora\+Fluxo\+Fracionario\+::\+Calculadora\+Fluxo\+Fracionario (\begin{DoxyParamCaption}\item[{double}]{mu\+\_\+o}{, }\item[{double}]{mu\+\_\+w}{, }\item[{\mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}}]{modelo}{}\end{DoxyParamCaption})}
+
+
+
+Construtor da Calculadora. 
+
+Recebe as viscosidades e o modelo de Kr via Injeção de Dependência. 
+\begin{DoxyParams}{Parameters}
+{\em mu\+\_\+o} & Viscosidade do Óleo (c\+Poise). \\
+\hline
+{\em mu\+\_\+w} & Viscosidade da Água (c\+Poise). \\
+\hline
+{\em modelo} & Um ponteiro para um objeto que implementa \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}.\\
+\hline
+{\em mu\+\_\+o} & Viscosidade do Óleo. \\
+\hline
+{\em mu\+\_\+w} & Viscosidade da Água. \\
+\hline
+{\em modelo} & Ponteiro para o modelo de Kr (injetado). \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{class_calculadora_fluxo_fracionario_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_calculadora_fluxo_fracionario_aba706daf5d0210b55a413a5e2cca5ef9}\index{CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}!calcularFw@{calcularFw}}
+\index{calcularFw@{calcularFw}!CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularFw()}{calcularFw()}}
+{\footnotesize\ttfamily \label{class_calculadora_fluxo_fracionario_aba706daf5d0210b55a413a5e2cca5ef9} 
+double Calculadora\+Fluxo\+Fracionario\+::calcular\+Fw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const}
+
+
+
+Calcula um único ponto da curva de fluxo fracionário. 
+
+Calcula o valor do fluxo fracionário (fw).
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água para a qual o Fw será calculado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor do fluxo fracionário (fw).
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de fw. 
+\end{DoxyReturn}
+\Hypertarget{class_calculadora_fluxo_fracionario_ac68be4ba2296e2f2e33f353a17e37165}\index{CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}!gerarCurvaCompleta@{gerarCurvaCompleta}}
+\index{gerarCurvaCompleta@{gerarCurvaCompleta}!CalculadoraFluxoFracionario@{CalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{gerarCurvaCompleta()}{gerarCurvaCompleta()}}
+{\footnotesize\ttfamily \label{class_calculadora_fluxo_fracionario_ac68be4ba2296e2f2e33f353a17e37165} 
+std\+::map$<$ double, double $>$ Calculadora\+Fluxo\+Fracionario\+::gerar\+Curva\+Completa (\begin{DoxyParamCaption}\item[{double}]{passo}{}\end{DoxyParamCaption}) const}
+
+
+
+Gera a curva completa de Fw vs Sw, iterando sobre a saturação. 
+
+Gera a curva completa de fw vs Sw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em passo} & O incremento de Saturação (ex\+: 0.\+01 para 1\%). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um mapa (std\+::map) contendo os pares (Sw, Fw) da curva.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em passo} & O incremento de Saturação (ex\+: 0.\+01 para 1\%). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um mapa (map) contendo os pares (Sw, Fw). 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Calculadora\+Fluxo\+Fracionario.\+h\item 
+Calculadora\+Fluxo\+Fracionario.\+cpp\end{DoxyCompactItemize}
