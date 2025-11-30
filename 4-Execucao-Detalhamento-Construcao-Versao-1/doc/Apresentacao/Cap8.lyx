@@ -189,12 +189,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Comando para instalar Compilador,
- Make e Gnuplot no MSYS2.}] {pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-gnuplot}
 \end_layout
 
 \end_inset
@@ -237,11 +231,7 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Instalação do Doxygen.}] {pacman -S mingw-w64-x86_64-doxygen}
+gen}
 \end_layout
 
 \end_inset
@@ -275,11 +265,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Gerando a documentação HTML.}] {doxygen}
 \end_layout
 
 \end_inset
@@ -320,11 +305,6 @@ status open
 
 \begin_layout Plain Layout
 
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Abrindo a documentação.}] {start html/index.html}
 \end_layout
 
 \end_inset
