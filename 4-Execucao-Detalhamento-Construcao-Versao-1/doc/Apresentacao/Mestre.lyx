@@ -127,18 +127,8 @@ LatexCommand tableofcontents
 
 \begin_layout Standard
 \align block
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-\align block
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -228,7 +218,7 @@ literal "false"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap8.lyx"
+filename "Cap8-oi-oi.lyx"
 literal "false"
 
 \end_inset
@@ -239,23 +229,6 @@ literal "false"
 \begin_layout Standard
 \noindent
 \align block
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Referências} 
-\backslash
-chead{} 
-\backslash
-rhead{}
-\end_layout
-
-\end_inset
-
-
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"

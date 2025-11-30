@@ -134,29 +134,6 @@ Guia de Compilação e Execução
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Apêndice 
-\backslash
-thechapter:
- Guia de Compilação e Execução}
-\backslash
-rhead{
-\backslash
-thepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Este apêndice descreve os passos exatos para compilar e executar o software "Ferramenta de Fluxo Fracionário" em um ambiente 
 \emph on
 \lang english
@@ -172,17 +149,12 @@ Pré-requisitos
 \end_layout
 
 \begin_layout Standard
-Certifique-se de que o ambiente MSYS2 está instalado com os pacotes
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
- mingw-w64-x86_64-toolchain
-\end_layout
-
-\end_inset
-
+Certifique-se de que o ambiente MSYS2 está instalado com os pacotes 
+\family typewriter
+\nospellcheck on
+mingw-w64-x86_64-toolchain
+\family default
+\nospellcheck default
  (que inclui g++ e 
 \emph on
 \lang english
@@ -190,16 +162,11 @@ make
 \emph default
 \lang brazilian
 ) e 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 mingw-w64-x86_64-gnuplot
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -213,29 +180,49 @@ Abra o terminal MSYS2 MINGW64.
 
 \begin_layout Enumerate
 Navegue até a pasta raiz do projeto (onde está o arquivo 
-\begin_inset ERT
+\family typewriter
+\nospellcheck on
+Makefile
+\family default
+\nospellcheck default
+).
+ Exemplo,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Comando-para-navegar"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
+ 
+\begin_inset listings
+inline false
 status open
 
 \begin_layout Plain Layout
 
-Makefile
+cd "/c/Users/SeuUsuario/Documentos/ProjetoFluxoFracionario/"
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comando para navegar até a pasta do projeto
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Comando-para-navegar"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
 
-).
- Exemplo:
- 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Comando para navegar até a pasta do projeto.}] {cd "/c/Users/SeuUsuario/Documentos/ProjetoFluxoFracionario/"}
 \end_layout
 
 \end_inset
@@ -244,18 +231,44 @@ lstinputlisting[caption={Comando para navegar até a pasta do projeto.}] {cd "/c
 \end_layout
 
 \begin_layout Enumerate
-Execute o comando de limpeza para garantir uma compilação limpa:
- 
-\backslash
+Execute o comando de limpeza para garantir uma compilação limpa,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Limpando-arquivos-antigos."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
-\begin_inset ERT
+\end_inset
+
+:
+ 
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Limpando arquivos antigos.}] {make clean}
+make clean
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Limpando arquivos antigos
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Limpando-arquivos-antigos."
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -265,62 +278,68 @@ lstinputlisting[caption={Limpando arquivos antigos.}] {make clean}
 
 \begin_layout Enumerate
 Compile o projeto usando o comando 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 make
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  O 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Makefile
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  irá gerenciar a compilação de todos os arquivos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e gerar o executável na pasta 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 bin/
-\end_layout
+\family default
+\nospellcheck default
+,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Comando-de-compilação"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
 .
  
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+make
+\begin_inset Caption Standard
 
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Comando de compilação.}] {make}
+\begin_layout Plain Layout
+Comando de compilação
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Comando-de-compilação"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -339,18 +358,44 @@ Após a compilação bem-sucedida (mensagem "Compilação concluída!"),
 
 \begin_layout Enumerate
 Para rodar o Teste 1 (Modelo Tabelado),
- execute:
+ execute,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Executando-o-Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
  
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+./bin/fw_calc test/Teste-01.in
+\begin_inset Caption Standard
 
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Executando o Teste 1.}] {./bin/fw_calc test/Teste-01.in}
+\begin_layout Plain Layout
+Executando o Teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Executando-o-Teste"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -368,18 +413,44 @@ literal "true"
 \end_inset
 
 ),
- execute:
+ execute,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Executando-a-Validação"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
  
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+./bin/fw_calc test/Teste-Tarek-1cp.in
+\begin_inset Caption Standard
 
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Executando a Validação com Literatura.}] {./bin/fw_calc test/Teste-Tarek-1cp.in}
+\begin_layout Plain Layout
+Executando a Validação com Literatura
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Executando-a-Validação"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -127,24 +127,6 @@ name "chap:Teste"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Teste} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Todo projeto de engenharia passa por uma etapa de testes.
  Neste capítulo apresentamos alguns testes do software desenvolvido.
  Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
@@ -175,16 +157,11 @@ O que está sendo testado?
 \begin_layout Itemize
 Como será realizado?
  O software é executado com o arquivo de entrada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 test/Teste-01.in
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que contém uma tabela simplificada com 7 pontos de 
 \begin_inset Formula $k_{rw}$
@@ -200,16 +177,11 @@ test/Teste-01.in
 \begin_layout Itemize
 Como será validado?
  A validação é feita pela análise da curva gerada no arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  Verifica-se se a curva é contínua e se os pontos calculados correspondem a uma interpolação linear suave entre os pontos de entrada,
  sem saltos ou descontinuidades numéricas.
@@ -220,22 +192,117 @@ Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-Apresenta-se a seguir o arquivo de entrada Teste-01.in,
+Apresenta-se a seguir o arquivo de entrada 
+\family typewriter
+\nospellcheck on
+Teste-01.in,
+ 
+\family default
+\nospellcheck default
+Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Teste-01.in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
  que utiliza o modelo tabelado.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+# Exemplo de arquivo de entrada para modelo tabelado
+\end_layout
 
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Arquivo de entrada Teste-01.in (Modelo Tabelado).},
- label={Teste-01.in}] {../../test/Teste-01.in}
+\begin_layout Plain Layout
+
+VISC_OLEO 1.5
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 0.8
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR TABELADO #SW/KRW/KRO
+\end_layout
+
+\begin_layout Plain Layout
+
+DADOS_KR_INICIO
+\end_layout
+
+\begin_layout Plain Layout
+
+0.20 0.00 0.90
+\end_layout
+
+\begin_layout Plain Layout
+
+0.30 0.05 0.75
+\end_layout
+
+\begin_layout Plain Layout
+
+0.40 0.12 0.50
+\end_layout
+
+\begin_layout Plain Layout
+
+0.50 0.20 0.30
+\end_layout
+
+\begin_layout Plain Layout
+
+0.60 0.30 0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+0.70 0.40 0.05
+\end_layout
+
+\begin_layout Plain Layout
+
+0.80 0.50 0.00
+\end_layout
+
+\begin_layout Plain Layout
+
+FIM_DADOS
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste-01.in
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Teste-01.in"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -251,16 +318,11 @@ Arquivo de saída de dados (resultados da tela)
 O software é de linha de comando e não gera saída na tela,
  exceto por mensagens de status ou erro.
  O resultado principal é o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que conterá duas colunas:
  
@@ -303,16 +365,11 @@ nolink "false"
 \end_inset
 
  mostra o gráfico gerado a partir do 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  comprovando a geração da curva "S" característica.
 \end_layout
@@ -347,7 +404,8 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.exe.png
 	lyxscale 40
-	scale 80
+	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -408,16 +466,11 @@ Excel
 \emph default
 \lang brazilian
 ) gerado a partir do 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \begin_inset CommandInset label
 LatexCommand label
@@ -469,28 +522,18 @@ Strategy
 \begin_layout Itemize
 Como será realizado?
  O software é executado com o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 test/Teste-02.in
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que utiliza a palavra-chave 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 MODELO_KR COREY
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e define os expoentes 
 \begin_inset Formula $n_{w}=2.0$
 \end_inset
@@ -525,13 +568,20 @@ Arquivo de entrada de dados
 
 \begin_layout Standard
 Apresenta-se a seguir o arquivo de entrada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Teste-02.in
-\end_layout
+\family default
+\nospellcheck default
+,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Teste-02.in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -539,17 +589,79 @@ Teste-02.in
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+# Exemplo de arquivo de entrada para modelo Corey
+\end_layout
 
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Arquivo de entrada Teste-02.in (Modelo Corey).},
- label={Teste-02.in}] {../../test/Teste-02.in}
+\begin_layout Plain Layout
+
+VISC_OLEO 2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 1.0
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR COREY
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SWIR     0.15
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_SORW     0.20
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRW_MAX  0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_KRO_MAX  0.9
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NW       2.0
+\end_layout
+
+\begin_layout Plain Layout
+
+COREY_NO       2.5
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Teste-02.in
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Teste-02.in"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -564,16 +676,11 @@ Arquivo de saída de dados (resultados da tela)
 \begin_layout Standard
 Similar ao Teste 1,
  o resultado principal é o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -680,16 +787,11 @@ O que está sendo testado?
 \begin_layout Itemize
 Como será realizado?
  O software é executado com o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 test/Teste-Tarek-1cp.in
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  Este arquivo reproduz os parâmetros exatos do Exemplo 14-5 do livro
 \emph on
@@ -717,16 +819,11 @@ Como será validado?
 \begin_layout Enumerate
 Numérica:
  Os valores do arquivo de saída 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  são comparados com a coluna "
 \begin_inset Formula $\mu_{o}=1.0$
 \end_inset
@@ -771,34 +868,153 @@ Arquivo de entrada de dados
 
 \begin_layout Standard
 Apresenta-se a seguir o conteúdo do arquivo 
-\begin_inset ERT
+\family typewriter
+\nospellcheck on
+Teste-Tarek-1cp.in
+\family default
+\nospellcheck default
+ utilizado para esta simulação,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Teste-Tarek-1cp.in"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+# Teste de Validação - Exemplo 14-5 do Tarek Ahmed
+\end_layout
+
+\begin_layout Plain Layout
+
+# Viscosidade do Oleo = 1.0 cp
+\end_layout
+
+\begin_layout Plain Layout
+
+# Viscosidade da Agua = 0.5 cp
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_OLEO 1.0
+\end_layout
+
+\begin_layout Plain Layout
+
+VISC_AGUA 0.5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+MODELO_KR TABELADO
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Dados lidos da Figura 14-15 (Tabela pg.
+ 950)
+\end_layout
+
+\begin_layout Plain Layout
+
+DADOS_KR_INICIO
+\end_layout
+
+\begin_layout Plain Layout
+
+0.24 0.00 0.95 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.30 0.01 0.89 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.40 0.04 0.74 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.50 0.09 0.45 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.60 0.17 0.19 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.65 0.28 0.12 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.70 0.22 0.06 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.75 0.36 0.03 
+\end_layout
+
+\begin_layout Plain Layout
+
+0.78 0.41 0.00 
+\end_layout
+
+\begin_layout Plain Layout
+
+FIM_DADOS
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
 Teste-Tarek-1cp.in
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Teste-Tarek-1cp.in"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
 
- utilizado para esta simulação.
-\end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=bash} 
-\backslash
-lstinputlisting[caption={Arquivo de entrada Teste-Tarek-1cp.in,
- baseado no Exemplo 14-5 de 
-\backslash
-cite{Ahmed2010}.},
- label={Teste-Tarek-1cp.in}] {../../test/Teste-Tarek-1cp.in}
 \end_layout
 
 \end_inset
@@ -940,7 +1156,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/livroTarek.png
 	lyxscale 80
-	scale 80
+	scale 70
 
 \end_inset
 
@@ -998,7 +1214,35 @@ e
 
 \end_inset
 
+Observar que,
+ a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste3-TelaPrograma"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
+\end_inset
+
+representa a curva com viscosidade do óleo igual a 10(
+\begin_inset Formula $\mu_{o}=10$
+\end_inset
+
+),
+ para comparação com a devida curva da imagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste3-TelaPrograma-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Section
@@ -1063,16 +1307,11 @@ Arquivo de entrada de dados
 \begin_layout Standard
 Este teste reutiliza o arquivo Teste-01.in.
  Além da saída padrão (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ),
  o resultado esperado é uma ação do sistema:
  a abertura de uma janela de gráfico.
@@ -1111,7 +1350,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.png
 	lyxscale 25
-	scale 80
+	scale 60
 
 \end_inset
 
@@ -1129,7 +1368,7 @@ name "fig:Teste04-TelaPrograma-Captura"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset

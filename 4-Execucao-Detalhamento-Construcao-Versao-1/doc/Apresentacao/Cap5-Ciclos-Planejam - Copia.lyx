@@ -160,156 +160,101 @@ Este ciclo inicial foca em construir o Produto Mínimo Viável (MVP).
  O objetivo é validar a arquitetura central e a lógica de engenharia principal (a equação de Buckley-Leverett).
  Ao final deste ciclo,
  teremos um software de linha de comando que lê um arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .txt
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  de um modelo tabelado,
  calcula a curva de fluxo fracionário e salva um arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  com o resultado.
 \end_layout
 
 \begin_layout Itemize
 Funcionalidades (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 features
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) implementadas:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Implementação da 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 main()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  (no 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Simulador.cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) para orquestrar o processo.
 \end_layout
 
 \begin_layout Itemize
 Implementação do parser de arquivo de entrada (no pacote IO) para ler 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 VISC_OLEO
-\end_layout
-
-\end_inset
-
-,
+\family default
+\nospellcheck default
+ ,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 VISC_AGUA
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e os dados do 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 MODELO_KR TABELADO
-\end_layout
-
-\end_inset
-
-.
+\family default
+\nospellcheck default
+ .
 \end_layout
 
 \begin_layout Itemize
 Implementação da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
-.
+\family default
+\nospellcheck default
+ .
  
 \end_layout
 
 \begin_layout Itemize
 Implementação da interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
-.
+\family default
+\nospellcheck default
+ .
  
 \end_layout
 
 \begin_layout Itemize
 Implementação da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
-,
+\family default
+\nospellcheck default
+ ,
  incluindo o algoritmo de interpolação linear.
 \end_layout
 
@@ -321,30 +266,26 @@ Teste de Validação do Ciclo 1:
 \begin_deeper
 \begin_layout Itemize
 O software deve ser executado com o arquivo de entrada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Teste-01.in
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  O resultado 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  gerado deve ser comparado,
- via Excel,
+ via 
+\family typewriter
+\nospellcheck on
+Excel
+\family default
+\nospellcheck default
+,
  com uma planilha de cálculo manual usando os mesmos dados de entrada.
  Os resultados devem ser idênticos.
 \end_layout
@@ -381,92 +322,64 @@ literal "true"
 \end_inset
 
 ) sem alterar o núcleo (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
 \end_layout
 
 \begin_layout Itemize
 Funcionalidades (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 features
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) implementadas:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 Implementação da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  herdando de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  
 \end_layout
 
 \begin_layout Itemize
 Implementação do algoritmo matemático das equações de Corey.
- Atualização do parser de IO para reconhecer a palavra-chave 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+ Atualização do parser de IO para reconhecer a palavra-chave:
+ 
+\family typewriter
+\nospellcheck on
 MODELO_KR COREY
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
+ ,
  e ler os seis parâmetros de entrada.
  
 \end_layout
 
 \begin_layout Itemize
 Modificação no Simulador para instanciar o objeto 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  quando a palavra-chave for encontrada.
 \end_layout
 
@@ -477,19 +390,20 @@ Teste de Validação do Ciclo 2:
 
 \begin_deeper
 \begin_layout Itemize
-O software será executado com o arquivo Teste-02.in.
+O software será executado com o arquivo 
+\family typewriter
+\nospellcheck on
+Teste-02.in
+\family default
+\nospellcheck default
+.
  Como o modelo de Corey é analítico,
  os resultados no 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  serão validados comparando-os com uma planilha que implementa as mesmas fórmulas de Corey,
  garantindo a precisão matemática da implementação.
 \end_layout
@@ -553,16 +467,11 @@ Teste de Validação do Ciclo 3:
 \begin_layout Itemize
 O software será executado com o Teste-Tarek-1cp.in.
  Os resultados no 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  serão validados ponto a ponto contra a tabela de resultados publicada na página 950 do livro de Tarek Ahmed 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -617,16 +526,11 @@ feedback
 
 \begin_layout Itemize
 Funcionalidades (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 features
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) implementadas:
 \end_layout
 
@@ -637,16 +541,11 @@ Implementação da classe Gnuplot como uma classe estática utilitária.
 
 \begin_layout Itemize
 Implementação do método 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Gnuplot::plotarCurva()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que cria os arquivos temporários de dados e 
 \emph on
@@ -656,31 +555,21 @@ script
 \lang brazilian
 ,
  e invoca o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 system()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  para chamar o Gnuplot.
 \end_layout
 
 \begin_layout Itemize
 Integração da chamada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Gnuplot::plotarCurva()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  no Simulador.
 \end_layout
 

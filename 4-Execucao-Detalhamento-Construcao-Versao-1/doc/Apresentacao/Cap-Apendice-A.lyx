@@ -134,37 +134,44 @@ Formato do Arquivo de Entrada
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Apêndice 
-\backslash
-thechapter:
- Formato do Arquivo de Entrada}
-\backslash
-rhead{
-\backslash
-thepage}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-O software utiliza um arquivo de entrada de texto .txt baseado em palavras-chave.
+O software utiliza um arquivo de entrada de texto 
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+ baseado em palavras-chave.
  O parser identifica a palavra-chave (ex:
- VISC_OLEO) e lê o valor na mesma linha.
+ 
+\family typewriter
+\nospellcheck on
+VISC_OLEO
+\family default
+\nospellcheck default
+ ) e lê o valor na mesma linha.
 \end_layout
 
 \begin_layout Standard
-A palavra-chave MODELO_KR define qual modelo de permeabilidade será usado:
- TABELADO ou COREY.
+A palavra-chave 
+\family typewriter
+\nospellcheck on
+MODELO_KR
+\family default
+\nospellcheck default
+ define qual modelo de permeabilidade será usado:
+ 
+\family typewriter
+\nospellcheck on
+TABELADO
+\family default
+\nospellcheck default
+ ou 
+\family typewriter
+\nospellcheck on
+COREY
+\family default
+\nospellcheck default
+ .
 \end_layout
 
 \begin_layout Section
@@ -172,7 +179,24 @@ Exemplo de Arquivo de Entrada (Modelo Tabelado)
 \end_layout
 
 \begin_layout Standard
+A seguir a Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Exemplo-de-arquivo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ com um exemplo de arquivo de entrada para modelo tabelado.
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
+lstparams "language={C++},float,breaklines=true"
 inline false
 status open
 
@@ -270,6 +294,26 @@ DADOS_KR_INICIO
 FIM_DADOS
 \end_layout
 
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de arquivo de entrada para modelo tabelado
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Exemplo-de-arquivo"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -280,7 +324,21 @@ Exemplo de Arquivo de Entrada (Modelo Corey)
 \end_layout
 
 \begin_layout Standard
+A seguir a Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Exemplo-de-arquivo-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ com um exemplo de arquivo de entrada para modelo Corey.
 \begin_inset listings
+lstparams "language={C++},float,breaklines=true"
 inline false
 status open
 
@@ -354,6 +412,26 @@ COREY_NW       2.0
 \begin_layout Plain Layout
 
 COREY_NO       2.5
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exemplo de arquivo de entrada para modelo Corey
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Exemplo-de-arquivo-1"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

@@ -116,32 +116,12 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Elaboração}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Elaboração
 \begin_inset Index idx
 range none
 pageformat default
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Elaboração
@@ -182,7 +162,7 @@ O domínio deste projeto situa-se na interseção da Engenharia de Reservatório
 
 \begin_layout Itemize
 Justificativa da Plataforma Tecnológica:
- A linguagem C++ (padrão C++17) foi selecionada como base tecnológica.
+ A linguagem C++ (padrão C++ 17) foi selecionada como base tecnológica.
  A decisão se justifica pelo seu comprovado desempenho computacional,
  controle de baixo nível de memória e vasta biblioteca padrão (STL).
  Essa escolha garante que o núcleo de cálculo seja eficiente e,
@@ -208,16 +188,9 @@ serverless
 \lang brazilian
  e sem banco de dados.
  A persistência dos dados de entrada é gerenciada pelo usuário via arquivos de texto 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
 .txt
-\end_layout
-
-\end_inset
-
+\family default
  com formato baseado em palavras-chave.
  Esta decisão mitiga a complexidade de 
 \emph on
@@ -228,16 +201,9 @@ deploy
  e configuração,
  alinhando-se à natureza de uma ferramenta de análise rápida.
  O protocolo de saída (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
 .csv
-\end_layout
-
-\end_inset
-
+\family default
 ) foi escolhido por sua universalidade,
  permitindo a interoperabilidade com qualquer software de planilha ou 
 \emph on
@@ -254,19 +220,10 @@ Gerenciamento de Dependências:
  o Gnuplot.
  Para manter o software leve e evitar a complexidade de linkagem de bibliotecas gráficas,
  o Gnuplot será invocado como um processo de sistema externo (
+\family typewriter
 \lang english
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
 system()
-\end_layout
-
-\end_inset
-
-
+\family default
 \lang brazilian
 ).
  A classe Gnuplot do nosso projeto atuará como uma Facade,
@@ -355,6 +312,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/curva-S-generica.png
 	lyxscale 50
@@ -376,7 +334,7 @@ Curva de fluxo fracionário (
 ) característica,
  mostrando a sua forma de "S".
  Fonte:
- (Adaptado de Ahmed,
+ Adaptado de Ahmed,
  2019 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -385,14 +343,14 @@ literal "true"
 
 \end_inset
 
-).
+.
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Curva-de-fluxo"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -453,70 +411,45 @@ O software lerá o arquivo de entrada e armazenará os
 
  pontos de dados em três vetores (ou listas) paralelos:
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 vec_Sw[]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 vec_Krw[]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 vec_Kro[]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
 \begin_layout Enumerate
 Quando a função 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 calcularFw(Sw_desejada)
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  for chamada:
 \end_layout
 
 \begin_layout Enumerate
 O programa irá buscar no 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 vec_Sw[]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  os dois valores,
  
 \begin_inset Formula $S_{w,i}$
@@ -824,97 +757,62 @@ Identificamos os seguintes pacotes (assuntos) lógicos para a organização do s
 \end_layout
 
 \begin_layout Itemize
-Pacote
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
- Core (Núcleo)
-\end_layout
-
-\end_inset
-
+Pacote 
+\family typewriter
+\nospellcheck on
+Core (Núcleo)
+\family default
+\nospellcheck default
 :
  Contém a classe principal com a lógica de engenharia,
  ou seja,
  a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  Este pacote implementa a equação de Buckley-Leverett.
 \end_layout
 
 \begin_layout Itemize
 Pacote 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ModelosKr
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  Contém a interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e suas implementações concretas (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
  Este pacote é responsável por fornecer os dados de permeabilidade relativa para o pacote Core.
 \end_layout
 
 \begin_layout Itemize
 Pacote 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 IO (Entrada/Saída)
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  Contém classes utilitárias responsáveis pela leitura e 
 \emph on
@@ -923,31 +821,21 @@ parsing
 \emph default
 \lang brazilian
  do arquivo de entrada de texto e pela escrita do arquivo de saída 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
 \begin_layout Itemize
 Pacote 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Visualizacao
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  Contém a classe utilitária Gnuplot,
  responsável por formatar os dados de saída e invocar o processo externo do Gnuplot para plotagem.
@@ -955,78 +843,48 @@ Visualizacao
 
 \begin_layout Itemize
 Pacote 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Aplicacao
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  Contém a classe Simulador (com a função 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 main()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ),
  que orquestra todo o processo:
  lê os dados usando 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 IO
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  instancia o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ModelosKr
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  correto,
  instancia o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Core
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e,
  por fim,
  chama a 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Visualizacao
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -1068,7 +926,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
 	lyxscale 50
-	scale 80
+	scale 60
 
 \end_inset
 
@@ -1086,7 +944,7 @@ name "fig:Diagrama-de-Pacotes"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset

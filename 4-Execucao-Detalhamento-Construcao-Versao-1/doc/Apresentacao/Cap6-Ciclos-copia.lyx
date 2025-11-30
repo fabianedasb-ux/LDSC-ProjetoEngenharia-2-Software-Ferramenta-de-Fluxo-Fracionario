@@ -25,7 +25,7 @@
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
-\use_default_options false
+\use_default_options true
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
@@ -99,8 +99,8 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 1
-\paperpagestyle fancy
+\papersides 2
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -157,24 +157,6 @@ name "chap:Implementação"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Implementação}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Código fonte
 \begin_inset CommandInset label
@@ -200,27 +182,17 @@ Implementação
 
 \begin_layout Standard
 Apresenta-se a seguir o conjunto de classes (arquivos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) que compõem a arquitetura do software,
  conforme o Diagrama de Classes (
 \begin_inset CommandInset ref
@@ -238,12 +210,252 @@ nolink "false"
 
 \begin_layout Itemize
 Interface 
-\begin_inset ERT
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small\ttfamily},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
-ICurvasPermeabilidade
+#ifndef ICURVASPERMEABILIDADE_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define ICURVASPERMEABILIDADE_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class ICurvasPermeabilidade
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Interface (classe base abstrata) para os modelos de permeabilidade relativa.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe define o "contrato" que todos os modelos de Kr (Tabelado,
+ Corey,
+ etc.)
+\end_layout
+
+\begin_layout Plain Layout
+
+ * devem seguir.
+ Ela é a base do Padrão de Projeto Strategy,
+ permitindo que a
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Calculadora opere em um alto nível de abstração (Inversão de Dependência).
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class ICurvasPermeabilidade {
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Destrutor virtual padrão,
+ essencial para classes base polimórficas.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    virtual ~ICurvasPermeabilidade() {}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Método virtual puro para carregar dados de um arquivo.
+\end_layout
+
+\begin_layout Plain Layout
+
+     *
+\end_layout
+
+\begin_layout Plain Layout
+
+     * Cada classe filha deve implementar este método para ler seus
+\end_layout
+
+\begin_layout Plain Layout
+
+     * parâmetros específicos do arquivo de entrada (ex:
+ ler a tabela ou ler os parâmetros de Corey).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param arquivo O caminho (path) para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    virtual void carregarDados(const std::string& arquivo) = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Obtém a permeabilidade relativa da água (Krw).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água (Sw) para a qual o Krw será calculado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Krw (entre 0 e 1).
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    virtual double getKrw(double sw) const = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Obtém a permeabilidade relativa do óleo (Kro).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água (Sw) para a qual o Kro será calculado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Kro (entre 0 e 1).
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    virtual double getKro(double sw) const = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+ICurvasPermeabilidade.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:ICurvasPermeabilidade.h"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -251,32 +463,29 @@ ICurvasPermeabilidade
 
 \end_layout
 
-\begin_deeper
-\begin_layout Standard
-Apresenta-se na listagem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
+\end_inset
 
 
-\backslash
-ref{ICurvasPermeabilidade.h}
 \end_layout
+
+\begin_layout Standard
+Apresenta-se na Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:ICurvasPermeabilidade.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  o arquivo de cabeçalho da interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  Esta classe base abstrata define o contrato para todos os modelos de permeabilidade,
  sendo o pilar do Padrão de Projeto 
@@ -288,110 +497,371 @@ Strategy
  (Nota:
  Esta classe é puramente virtual,
  portanto não possui um arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da interface ICurvasPermeabilidade},
- label={ICurvasPermeabilidade.h}] {../../src/ICurvasPermeabilidade.h}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CurvasPermeabilidadeTabelada.h}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CurvasPermeabilidadeTabelada.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  o arquivo de cabeçalho da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que implementa a interface para dados tabulares.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small\ttfamily},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#ifndef CURVASPERMEABILIDADETABELADA_H
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe CurvasPermeabilidadeTabelada},
- label={CurvasPermeabilidadeTabelada.h}] {../../src/CurvasPermeabilidadeTabelada.h}
+\begin_layout Plain Layout
+
+#define CURVASPERMEABILIDADETABELADA_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "ICurvasPermeabilidade.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <vector>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string> // Incluído para std::string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class CurvasPermeabilidadeTabelada
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Implementação concreta da interface ICurvasPermeabilidade para dados tabulados.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe lê uma tabela de Sw,
+ Krw e Kro de um arquivo de entrada e usa
+\end_layout
+
+\begin_layout Plain Layout
+
+ * interpolação linear para calcular valores intermediários.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class CurvasPermeabilidadeTabelada :
+ public ICurvasPermeabilidade {
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Vetor com os valores de Saturação de Água da tabela.
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::vector<double> _sw;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Vetor com os valores de Krw da tabela.
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::vector<double> _krw;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Vetor com os valores de Kro da tabela.
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::vector<double> _kro;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Algoritmo de Interpolação Linear (e extrapolação de ponta).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * Este é o algoritmo detalhado no Diagrama de Atividades.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param x_desejado A saturação (Sw) que queremos.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param vec_x O vetor de Saturações da tabela (_sw).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param vec_y O vetor de Krw ou Kro correspondente.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de y (Kr) interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double interpolar(double x_desejado,
+ const std::vector<double>& vec_x,
+ const std::vector<double>& vec_y) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Carrega os dados da tabela (bloco DADOS_KR_INICIO) do arquivo.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param arquivo O caminho para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    void carregarDados(const std::string& arquivo) override;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Obtém o Krw,
+ usando interpolação se necessário.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Krw interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double getKrw(double sw) const override;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Obtém o Kro,
+ usando interpolação se necessário.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Kro interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double getKro(double sw) const override;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CurvasPermeabilidadeTabelada.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CurvasPermeabilidadeTabelada.h"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
 
-Apresenta-se na listagem 
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CurvasPermeabilidadeTabelada.cpp}
 \end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Apresenta-se na listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CurvasPermeabilidadeTabelada.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -400,17 +870,633 @@ ref{CurvasPermeabilidadeTabelada.cpp}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "CurvasPermeabilidadeTabelada.h"
+\end_layout
 
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <fstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdexcept>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Carrega os dados tabelados (Sw,
+ Krw,
+ Kro) do arquivo de entrada.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param arquivo O caminho para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+void CurvasPermeabilidadeTabelada::carregarDados(const std::string& arquivo) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::ifstream arq(arquivo);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!arq.is_open()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro (Tabelado):
+ Nao foi possivel abrir o arquivo:
+ " + arquivo);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string linha;
+\end_layout
+
+\begin_layout Plain Layout
+
+    bool lendoDados = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (std::getline(arq,
+ linha)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (linha.empty() || linha[0] == '#') continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::stringstream ss(linha);
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::string palavraChave;
+\end_layout
+
+\begin_layout Plain Layout
+
+        ss >> palavraChave;
+ // Lê a primeira "palavra"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (palavraChave == "DADOS_KR_INICIO") {
+\end_layout
+
+\begin_layout Plain Layout
+
+            lendoDados = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+            continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (palavraChave == "FIM_DADOS") {
+\end_layout
+
+\begin_layout Plain Layout
+
+            lendoDados = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+            break;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (lendoDados) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            // Se estamos lendo,
+ a "palavraChave" é na verdade o valor do Sw
+\end_layout
+
+\begin_layout Plain Layout
+
+            std::stringstream ss_linha(linha);
+\end_layout
+
+\begin_layout Plain Layout
+
+            double sw,
+ krw,
+ kro;
+\end_layout
+
+\begin_layout Plain Layout
+
+            ss_linha >> sw >> krw >> kro;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // Adiciona os valores aos vetores da classe
+\end_layout
+
+\begin_layout Plain Layout
+
+            _sw.push_back(sw);
+\end_layout
+
+\begin_layout Plain Layout
+
+            _krw.push_back(krw);
+\end_layout
+
+\begin_layout Plain Layout
+
+            _kro.push_back(kro);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (_sw.empty()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ Nenhum dado de permeabilidade encontrado (bloco DADOS_KR_INICIO...FIM_DADOS) no arquivo.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "DEBUG:
+ " << _sw.size() << " pontos de Kr tabelados foram carregados.
 \backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilidadeTabelada},
- label={CurvasPermeabilidadeTabelada.cpp}] {../../src/CurvasPermeabilidadeTabelada.cpp}
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula Krw para uma Sw,
+ usando interpolação linear se necessário.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param sw Saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return Valor de Krw interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CurvasPermeabilidadeTabelada::getKrw(double sw) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return interpolar(sw,
+ _sw,
+ _krw);
+ // Chama a função de interpolação
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula Kro para uma Sw,
+ usando interpolação linear se necessário.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param sw Saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return Valor de Kro interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CurvasPermeabilidadeTabelada::getKro(double sw) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return interpolar(sw,
+ _sw,
+ _kro);
+ // Chama a função de interpolação
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Algoritmo de Interpolação Linear (e extrapolação de ponta).
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Este é o algoritmo detalhado no Diagrama de Atividades.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param x_desejado A saturação (Sw) que queremos.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param vec_x O vetor de Saturações da tabela.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param vec_y O vetor de Krw ou Kro correspondente.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return O valor de y (Kr) interpolado.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CurvasPermeabilidadeTabelada::interpolar(double x_desejado,
+ const std::vector<double>& vec_x,
+ const std::vector<double>& vec_y) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Caso 1:
+ Extrapolação (abaixo do limite inferior)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (x_desejado <= vec_x.front()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return vec_y.front();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Caso 2:
+ Extrapolação (acima do limite superior)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (x_desejado >= vec_x.back()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        return vec_y.back();
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Caso 3:
+ Interpolação (procurar o intervalo)
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (size_t i = 0;
+ i < vec_x.size() - 1;
+ ++i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Achamos o intervalo:
+ vec_x[i] <= x_desejado <= vec_x[i+1]
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (x_desejado >= vec_x[i] && x_desejado <= vec_x[i+1]) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // Pontos do intervalo
+\end_layout
+
+\begin_layout Plain Layout
+
+            double x0 = vec_x[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+            double y0 = vec_y[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+            double x1 = vec_x[i+1];
+\end_layout
+
+\begin_layout Plain Layout
+
+            double y1 = vec_y[i+1];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // Evita divisão por zero se os pontos Sw forem idênticos
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (x1 == x0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                return y0;
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            // Fórmula da Interpolação Linear:
+\end_layout
+
+\begin_layout Plain Layout
+
+            // y = y0 + (x - x0) * (y1 - y0) / (x1 - x0)
+\end_layout
+
+\begin_layout Plain Layout
+
+            return y0 + (x_desejado - x0) * (y1 - y0) / (x1 - x0);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Se algo der muito errado (não deveria acontecer)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return vec_y.back();
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CurvasPermeabilidadeTabelada.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CurvasPermeabilidadeTabelada.cpp"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -421,45 +1507,30 @@ lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilid
 \end_deeper
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CurvasPermeabilidadeCorey.h}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CurvasPermeabilidadeCorey.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  o arquivo de cabeçalho da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que implementa a interface para o modelo analítico de Corey 
 \begin_inset CommandInset citation
@@ -473,17 +1544,299 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#ifndef CURVASPERMEABILIDADECOREY_H
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe CurvasPermeabilidadeCorey},
- label={CurvasPermeabilidadeCorey.h}] {../../src/CurvasPermeabilidadeCorey.h}
+\begin_layout Plain Layout
+
+#define CURVASPERMEABILIDADECOREY_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "ICurvasPermeabilidade.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string> // Incluído para std::string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class CurvasPermeabilidadeCorey
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Implementação concreta da interface ICurvasPermeabilidade para o modelo de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe lê os 6 parâmetros do modelo de Corey do arquivo de entrada
+\end_layout
+
+\begin_layout Plain Layout
+
+ * e calcula Krw/Kro analiticamente usando as fórmulas de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class CurvasPermeabilidadeCorey :
+ public ICurvasPermeabilidade {
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Saturação de água irreduzível (Swir)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _swir;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Saturação de óleo residual (Sorw)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _sorw;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Permeabilidade relativa máxima da água (no Sorw)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _krw_max;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Permeabilidade relativa máxima do óleo (no Swir)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _kro_max;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Expoente de Corey para a água (nw)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _nw;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Expoente de Corey para o óleo (no)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _no;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Carrega os 6 parâmetros do modelo Corey do arquivo.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param arquivo O caminho para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    void carregarDados(const std::string& arquivo) override;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Calcula o Krw usando a fórmula de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Krw analítico.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double getKrw(double sw) const override;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Calcula o Kro usando a fórmula de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor de Kro analítico.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double getKro(double sw) const override;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CurvasPermeabilidadeCorey.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CurvasPermeabilidadeCorey.h"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -493,15 +1846,13 @@ lstinputlisting[ caption={Arquivo de cabeçalho da classe CurvasPermeabilidadeCo
 
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CurvasPermeabilidadeCorey.cpp}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CurvasPermeabilidadeCorey.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -510,17 +1861,456 @@ ref{CurvasPermeabilidadeCorey.cpp}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "CurvasPermeabilidadeCorey.h"
+\end_layout
 
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <fstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdexcept>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <cmath>     // Para std::pow
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <algorithm> // Para std::max e std::min
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Carrega os parâmetros do modelo de Corey do arquivo de entrada.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param arquivo O caminho para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+void CurvasPermeabilidadeCorey::carregarDados(const std::string& arquivo) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Seta valores padrão inválidos para checagem
+\end_layout
+
+\begin_layout Plain Layout
+
+    _swir = _sorw = _krw_max = _kro_max = _nw = _no = -1.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::ifstream arq(arquivo);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!arq.is_open()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro (Corey):
+ Nao foi possivel abrir o arquivo:
+ " + arquivo);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string linha;
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string palavraChave;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (std::getline(arq,
+ linha)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (linha.empty() || linha[0] == '#') continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::stringstream ss(linha);
+\end_layout
+
+\begin_layout Plain Layout
+
+        ss >> palavraChave;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Lê e armazena cada parâmetro
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (palavraChave == "COREY_SWIR")     ss >> _swir;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (palavraChave == "COREY_SORW")    ss >> _sorw;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (palavraChave == "COREY_KRW_MAX") ss >> _krw_max;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (palavraChave == "COREY_KRO_MAX") ss >> _kro_max;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (palavraChave == "COREY_NW")      ss >> _nw;
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (palavraChave == "COREY_NO")      ss >> _no;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Validação simples
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (_swir < 0 || _sorw < 0 || _krw_max < 0 || _kro_max < 0 || _nw < 0 || _no < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ Um ou mais parametros do modelo Corey nao foram carregados corretamente.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "DEBUG:
+ Parametros de Corey carregados com sucesso.
 \backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilidadeCorey},
- label={CurvasPermeabilidadeCorey.cpp}] {../../src/CurvasPermeabilidadeCorey.cpp}
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula a Saturação Normalizada (Sw_norm).
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Privado,
+ apenas para uso interno desta classe.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double calcularSwNorm(double sw,
+ double swir,
+ double sorw) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Fórmula:
+ Sw_norm = (Sw - Swir) / (1 - Swir - Sorw)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double sw_norm = (sw - swir) / (1.0 - swir - sorw);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Limita o resultado entre 0 e 1 (clamp)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return std::max(0.0,
+ std::min(1.0,
+ sw_norm));
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula Krw usando a fórmula de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param sw Saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return Valor de Krw.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CurvasPermeabilidadeCorey::getKrw(double sw) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 1.
+ Calcular Sw_norm
+\end_layout
+
+\begin_layout Plain Layout
+
+    double sw_norm = calcularSwNorm(sw,
+ _swir,
+ _sorw);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 2.
+ Fórmula de Corey para Krw:
+ krw = krw_max * (Sw_norm ^ nw)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return _krw_max * std::pow(sw_norm,
+ _nw);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula Kro usando a fórmula de Corey.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param sw Saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return Valor de Kro.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CurvasPermeabilidadeCorey::getKro(double sw) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 1.
+ Calcular Sw_norm
+\end_layout
+
+\begin_layout Plain Layout
+
+    double sw_norm = calcularSwNorm(sw,
+ _swir,
+ _sorw);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 2.
+ Fórmula de Corey para Kro:
+ kro = kro_max * ((1 - Sw_norm) ^ no)
+\end_layout
+
+\begin_layout Plain Layout
+
+    return _kro_max * std::pow(1.0 - sw_norm,
+ _no);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CurvasPermeabilidadeCorey.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CurvasPermeabilidadeCorey.cpp"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -531,45 +2321,30 @@ lstinputlisting[ caption={Arquivo de implementação da classe CurvasPermeabilid
 \end_deeper
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CalculadoraFluxoFracionario.h}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CalculadoraFluxoFracionario.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  o arquivo de cabeçalho da classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
  Esta é a classe central do domínio de negócio,
  responsável por implementar a equação de Buckley-Leverett 
@@ -584,17 +2359,288 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#ifndef CALCULADORAFLUXOFRACIONARIO_H
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe CalculadoraFluxoFracionario},
- label={CalculadoraFluxoFracionario.h}] {../../src/CalculadoraFluxoFracionario.h}
+\begin_layout Plain Layout
+
+#define CALCULADORAFLUXOFRACIONARIO_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "ICurvasPermeabilidade.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <map>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string> // Incluído para std::string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class CalculadoraFluxoFracionario
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Classe principal que implementa o "domínio de negócio" (a lógica de engenharia).
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe é responsável por implementar a equação de Buckley-Leverett.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Ela depende de uma abstração (ICurvasPermeabilidade) e não de uma
+\end_layout
+
+\begin_layout Plain Layout
+
+ * implementação concreta,
+ seguindo o Princípio da Inversão de Dependência.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class CalculadoraFluxoFracionario {
+\end_layout
+
+\begin_layout Plain Layout
+
+private:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Viscosidade do Óleo (cPoise)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _viscosidadeOleo;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Viscosidade da Água (cPoise)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double _viscosidadeAgua;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /// Ponteiro para o modelo de Kr (Strategy Pattern)
+\end_layout
+
+\begin_layout Plain Layout
+
+    ICurvasPermeabilidade* _modeloKr;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Construtor da Calculadora.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * Recebe as viscosidades e o modelo de Kr via Injeção de Dependência.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param mu_o Viscosidade do Óleo (cPoise).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param mu_w Viscosidade da Água (cPoise).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param modelo Um ponteiro para um objeto que implementa ICurvasPermeabilidade.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    CalculadoraFluxoFracionario(double mu_o,
+ double mu_w,
+ ICurvasPermeabilidade* modelo);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Calcula um único ponto da curva de fluxo fracionário.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param sw A saturação de água para a qual o Fw será calculado.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return O valor do fluxo fracionário (fw).
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    double calcularFw(double sw) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Gera a curva completa de Fw vs Sw,
+ iterando sobre a saturação.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param passo O incremento de Saturação (ex:
+ 0.01 para 1%).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @return Um mapa (std::map) contendo os pares (Sw,
+ Fw) da curva.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::map<double,
+ double> gerarCurvaCompleta(double passo) const;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CalculadoraFluxoFracionario.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CalculadoraFluxoFracionario.h"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -604,46 +2650,421 @@ lstinputlisting[ caption={Arquivo de cabeçalho da classe CalculadoraFluxoFracio
 
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{CalculadoraFluxoFracionario.cpp}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:CalculadoraFluxoFracionario.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  a implementação da classe.
  Note que ela opera apenas contra a interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  garantindo baixo acoplamento.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "CalculadoraFluxoFracionario.h"
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de implementação da classe CalculadoraFluxoFracionario},
- label={CalculadoraFluxoFracionario.cpp}] {../../src/CalculadoraFluxoFracionario.cpp}
+\begin_layout Plain Layout
+
+#include <cmath>     // Para std::pow
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdexcept> // Para std::runtime_error
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <limits>    // Para checagem de divisão por zero
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Construtor da Calculadora.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param mu_o Viscosidade do Óleo.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param mu_w Viscosidade da Água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param modelo Ponteiro para o modelo de Kr (injetado).
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+CalculadoraFluxoFracionario::CalculadoraFluxoFracionario(double mu_o,
+ double mu_w,
+ ICurvasPermeabilidade* modelo)
+\end_layout
+
+\begin_layout Plain Layout
+
+:
+ _viscosidadeOleo(mu_o),
+ _viscosidadeAgua(mu_w),
+ _modeloKr(modelo) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Validação de segurança
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (modelo == nullptr) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ Calculadora recebeu um modelo de permeabilidade nulo.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (mu_o <= 0 || mu_w <= 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ Viscosidades devem ser positivas.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Calcula o valor do fluxo fracionário (fw).
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param sw Saturação de água.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return O valor de fw.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+double CalculadoraFluxoFracionario::calcularFw(double sw) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 1.
+ Pedir os valores de Kr para o modelo (Strategy Pattern)
+\end_layout
+
+\begin_layout Plain Layout
+
+    double krw = _modeloKr->getKrw(sw);
+\end_layout
+
+\begin_layout Plain Layout
+
+    double kro = _modeloKr->getKro(sw);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // 2.
+ Implementar a Equação de Buckley-Leverett
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Razão de mobilidade da água:
+ Lambda_w = krw / mu_w
+\end_layout
+
+\begin_layout Plain Layout
+
+    double lambda_w = krw / _viscosidadeAgua;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Razão de mobilidade do óleo:
+ Lambda_o = kro / mu_o
+\end_layout
+
+\begin_layout Plain Layout
+
+    double lambda_o = kro / _viscosidadeOleo;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Mobilidade Total:
+ Lambda_t = Lambda_w + Lambda_o
+\end_layout
+
+\begin_layout Plain Layout
+
+    double lambda_t = lambda_w + lambda_o;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Fórmula do Fluxo Fracionário:
+ fw = Lambda_w / Lambda_t
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Checagem de segurança para divisão por zero
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (lambda_t < std::numeric_limits<double>::epsilon()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Se a mobilidade total é zero (ambos krw e kro são 0),
+\end_layout
+
+\begin_layout Plain Layout
+
+        // o fluxo fracionário também é zero.
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 0.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return lambda_w / lambda_t;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Gera a curva completa de fw vs Sw.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @param passo O incremento de Saturação (ex:
+ 0.01 para 1%).
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @return Um mapa (map) contendo os pares (Sw,
+ Fw).
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+std::map<double,
+ double> CalculadoraFluxoFracionario::gerarCurvaCompleta(double passo) const {
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::map<double,
+ double> curva;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (double sw = 0.0;
+ sw <= 1.0;
+ sw += passo) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        curva[sw] = calcularFw(sw);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Garante que o ponto final (1.0) seja sempre calculado
+\end_layout
+
+\begin_layout Plain Layout
+
+    curva[1.0] = calcularFw(1.0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return curva;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+CalculadoraFluxoFracionario.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:CalculadoraFluxoFracionario.cpp"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -659,15 +3080,13 @@ Classe Gnuplot
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{Gnuplot.h}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Gnuplot.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -676,17 +3095,163 @@ ref{Gnuplot.h}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#ifndef GNUPLOT_H
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe Gnuplot},
- label={Gnuplot.h}] {../../src/Gnuplot.h}
+\begin_layout Plain Layout
+
+#define GNUPLOT_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <map>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class Gnuplot
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Classe utilitária que implementa o Padrão de Projeto Facade.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe esconde toda a complexidade de lidar com o Gnuplot
+\end_layout
+
+\begin_layout Plain Layout
+
+ * (criar arquivos temporários,
+ formatar scripts,
+ chamar o system())
+\end_layout
+
+\begin_layout Plain Layout
+
+ * por trás de um único método estático.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class Gnuplot {
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Plota um mapa de dados (x,
+ y) usando o Gnuplot.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * Este é um método estático,
+ pois não precisa de um estado de instância.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param dados Um std::map<double,
+ double> onde a chave é o eixo X (Sw) e o valor é o eixo Y (Fw).
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param titulo O título que aparecerá no topo do gráfico.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    static void plotarCurva(const std::map<double,
+ double>& dados,
+ const std::string& titulo);
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gnuplot.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Gnuplot.h"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -695,46 +3260,335 @@ lstinputlisting[ caption={Arquivo de cabeçalho da classe Gnuplot},
 \end_layout
 
 \begin_layout Standard
-Apresenta-se na listagem
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{Gnuplot.cpp}
-\end_layout
+Apresenta-se na listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Gnuplot.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  a implementação da classe,
  incluindo a chamada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 system()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  para o processo externo do Gnuplot.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "Gnuplot.h"
+\end_layout
 
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <fstream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <cstdlib> // Para system()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// TODO:
+ Documentar com JAVADOC/Doxygen
+\end_layout
+
+\begin_layout Plain Layout
+
+void Gnuplot::plotarCurva(const std::map<double,
+ double>& dados,
+ const std::string& titulo) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "DEBUG:
+ Chamando Gnuplot...
 \backslash
-lstset{style=C++} 
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Nomes dos arquivos temporários
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string tempDados = "temp_data.csv";
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string tempScript = "temp_script.gp";
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 1.
+ Salvar dados no arquivo .csv ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::ofstream arqDados(tempDados);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!arqDados.is_open()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cerr << "Erro:
+ Nao foi possivel criar arquivo de dados temporario.
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe Gnuplot},
- label={Gnuplot.cpp}] {../../src/Gnuplot.cpp}
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        return;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqDados << "# Sw,
+ Fw
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (const auto& par :
+ dados) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        arqDados << par.first << ",
+ " << par.second << "
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqDados.close();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 2.
+ Criar script do Gnuplot ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::ofstream arqScript(tempScript);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!arqScript.is_open()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cerr << "Erro:
+ Nao foi possivel criar script Gnuplot temporario.
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        return;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set title '" << titulo << "'
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set xlabel 'Saturacao de Agua (Sw)'
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set ylabel 'Fluxo Fracionario de Agua (Fw)'
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set grid
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set key top left
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "set datafile separator ','
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "plot '" << tempDados << "' with lines title 'Curva Fw'
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript << "pause -1 'Pressione Enter para fechar'
+\backslash
+n";
+ // Mantém a janela aberta
+\end_layout
+
+\begin_layout Plain Layout
+
+    arqScript.close();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 3.
+ Executar Gnuplot ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Este comando supõe que 'gnuplot' está no PATH do sistema
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string comando = "gnuplot " + tempScript;
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::system(comando.c_str());
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 4.
+ (Opcional) Limpar arquivos temporários ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    // std::remove(tempDados.c_str());
+\end_layout
+
+\begin_layout Plain Layout
+
+    // std::remove(tempScript.c_str());
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gnuplot.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Gnuplot.cpp"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -750,15 +3604,13 @@ Classe Simulador
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{Simulador.h}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Simulador.h"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -767,17 +3619,147 @@ ref{Simulador.h}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#ifndef SIMULADOR_H
+\end_layout
 
-\backslash
-lstset{style=C++} 
-\backslash
-lstinputlisting[ caption={Arquivo de cabeçalho da classe Simulador},
- label={Simulador.h}] {../../src/Simulador.h}
+\begin_layout Plain Layout
+
+#define SIMULADOR_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <string>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @class Simulador
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief O orquestrador da aplicação.
+\end_layout
+
+\begin_layout Plain Layout
+
+ *
+\end_layout
+
+\begin_layout Plain Layout
+
+ * Esta classe é responsável por controlar o fluxo de execução do programa:
+\end_layout
+
+\begin_layout Plain Layout
+
+ * ler o arquivo de entrada,
+ instanciar os objetos corretos
+\end_layout
+
+\begin_layout Plain Layout
+
+ * (fazendo o 'new' dos modelos) e coordenar as chamadas
+\end_layout
+
+\begin_layout Plain Layout
+
+ * para a calculadora e o plotter.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+class Simulador {
+\end_layout
+
+\begin_layout Plain Layout
+
+public:
+\end_layout
+
+\begin_layout Plain Layout
+
+    /**
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @brief Ponto de entrada principal da lógica do simulador.
+\end_layout
+
+\begin_layout Plain Layout
+
+     * @param arquivoEntrada O caminho (path) para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+     */
+\end_layout
+
+\begin_layout Plain Layout
+
+    void executar(const std::string& arquivoEntrada);
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulador.h
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Simulador.h"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -787,15 +3769,13 @@ lstinputlisting[ caption={Arquivo de cabeçalho da classe Simulador},
 
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{Simulador.cpp}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Simulador.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
@@ -805,17 +3785,537 @@ ref{Simulador.cpp}
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "Simulador.h"
+\end_layout
 
+\begin_layout Plain Layout
+
+#include "CalculadoraFluxoFracionario.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "CurvasPermeabilidadeTabelada.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "CurvasPermeabilidadeCorey.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+#include "Gnuplot.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <fstream>   // Para ler arquivos (ifstream)
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <sstream>   // Para processar strings (stringstream)
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdexcept> // Para lançar erros (runtime_error)
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <map>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/**
+\end_layout
+
+\begin_layout Plain Layout
+
+ * @brief Executa a simulação completa.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * * Este método orquestra todo o processo:
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 1.
+ Lê o arquivo de entrada para definir os parâmetros.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 2.
+ Instancia o modelo de permeabilidade correto (Tabelado ou Corey).
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 3.
+ Delega o carregamento de dados detalhados para o modelo.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 4.
+ Instancia a calculadora.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 5.
+ Gera a curva de fluxo fracionário.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * 6.
+ Chama o Gnuplot para exibir o resultado.
+\end_layout
+
+\begin_layout Plain Layout
+
+ * * @param arquivoEntrada O caminho para o arquivo de configuração .txt.
+\end_layout
+
+\begin_layout Plain Layout
+
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+void Simulador::executar(const std::string& arquivoEntrada) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "Iniciando simulador...
 \backslash
-lstset{style=C++} 
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 1.
+ Leitura e Parsing do Arquivo de Entrada ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    double mu_o = -1.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    double mu_w = -1.0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string tipoModelo;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ICurvasPermeabilidade* modelo = nullptr;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::ifstream arq(arquivoEntrada);
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (!arq.is_open()) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro fatal:
+ Nao foi possivel abrir o arquivo:
+ " + arquivoEntrada);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "Lendo arquivo de configuracao:
+ " << arquivoEntrada << "
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da classe Simulador},
- label={Simulador.cpp}] {../../src/Simulador.cpp}
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string linha;
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string palavraChave;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (std::getline(arq,
+ linha)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        // Ignora linhas vazias ou comentários
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (linha.empty() || linha[0] == '#') {
+\end_layout
+
+\begin_layout Plain Layout
+
+            continue;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::stringstream ss(linha);
+\end_layout
+
+\begin_layout Plain Layout
+
+        ss >> palavraChave;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (palavraChave == "VISC_OLEO") {
+\end_layout
+
+\begin_layout Plain Layout
+
+            ss >> mu_o;
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else if (palavraChave == "VISC_AGUA") {
+\end_layout
+
+\begin_layout Plain Layout
+
+            ss >> mu_w;
+\end_layout
+
+\begin_layout Plain Layout
+
+        } else if (palavraChave == "MODELO_KR") {
+\end_layout
+
+\begin_layout Plain Layout
+
+            ss >> tipoModelo;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 2.
+ Validação e Instanciação do Modelo ---
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (mu_o <= 0 || mu_w <= 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ Viscosidades do oleo ou da agua nao definidas no arquivo.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (tipoModelo == "TABELADO") {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cout << "Modelo selecionado:
+ TABELADO
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        modelo = new CurvasPermeabilidadeTabelada();
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else if (tipoModelo == "COREY") {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cout << "Modelo selecionado:
+ COREY
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        modelo = new CurvasPermeabilidadeCorey();
+\end_layout
+
+\begin_layout Plain Layout
+
+    } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        throw std::runtime_error("Erro:
+ MODELO_KR nao reconhecido.
+ Use TABELADO ou COREY.");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 3.
+ Delegar Carregamento de Dados ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    // O modelo agora lê o *mesmo* arquivo para pegar seus dados específicos
+\end_layout
+
+\begin_layout Plain Layout
+
+    modelo->carregarDados(arquivoEntrada);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 4.
+ Criar Calculadora (Injeção de Dependência) ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    CalculadoraFluxoFracionario calc(mu_o,
+ mu_w,
+ modelo);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 5.
+ Gerar Curva ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "Calculando curva...
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::map<double,
+ double> curva = calc.gerarCurvaCompleta(0.01);
+ // passo de 1%
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 6.
+ Plotar ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "Plotando resultados...
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+    Gnuplot::plotarCurva(curva,
+ "Curva de Fluxo Fracionario (Buckley-Leverett)");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    // --- 7.
+ Limpeza da Memória ---
+\end_layout
+
+\begin_layout Plain Layout
+
+    delete modelo;
+\end_layout
+
+\begin_layout Plain Layout
+
+    modelo = nullptr;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::cout << "Simulacao concluida.
+\backslash
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulador.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Simulador.cpp"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -826,62 +4326,183 @@ lstinputlisting[ caption={Arquivo de implementação da classe Simulador},
 \end_deeper
 \begin_layout Itemize
 Programa Principal 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 main.cpp
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 Apresenta-se na listagem 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{main.cpp}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:main.cpp"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
  o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 main.cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  que contém o ponto de entrada do programa.
  Sua única responsabilidade é instanciar e executar o Simulador.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
+#include "Simulador.h"
+\end_layout
 
+\begin_layout Plain Layout
+
+#include <iostream>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(int argc,
+ char* argv[]) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    // Verifica se o usuário passou o nome do arquivo de entrada
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (argc < 2) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cerr << "Erro:
+ Por favor,
+ forneça o nome do arquivo de entrada.
 \backslash
-lstset{style=C++} 
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cerr << "Uso:
+ ./fw_calc <caminho_para_arquivo_de_entrada>
 \backslash
-lstinputlisting[ caption={Arquivo de implementação da função main()},
- label={main.cpp}] {../../src/main.cpp}
+n";
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 1;
+ // Retorna um código de erro
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    std::string arquivoEntrada = argv[1];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    try {
+\end_layout
+
+\begin_layout Plain Layout
+
+        Simulador sim;
+\end_layout
+
+\begin_layout Plain Layout
+
+        sim.executar(arquivoEntrada);
+\end_layout
+
+\begin_layout Plain Layout
+
+    } catch (const std::exception& e) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        std::cerr << "Uma exceção ocorreu:
+ " << e.what() << '
+\backslash
+n';
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+ // Sucesso
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+main.cpp
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:main.cpp"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

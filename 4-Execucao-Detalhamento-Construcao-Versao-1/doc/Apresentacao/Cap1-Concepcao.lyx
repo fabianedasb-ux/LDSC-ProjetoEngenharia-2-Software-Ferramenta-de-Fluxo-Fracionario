@@ -174,40 +174,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Especificação}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-chead{}  
-\end_layout
-
-\begin_layout Plain Layout
-
-
-\backslash
-rhead{}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Concepção
 \begin_inset CommandInset label
@@ -220,7 +186,7 @@ name "chap:Concepção"
 \begin_inset Index idx
 range none
 pageformat default
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Concepção
@@ -270,7 +236,6 @@ status open
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/ProjetoEngenharia-Etapas-Geral-wide.png
 	lyxscale 20
 	scale 80
-	special height=0.8\textheight
 
 \end_inset
 
@@ -288,7 +253,7 @@ name "fig: Metodologia utilizada no desenvolvimento do sistema"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -298,7 +263,13 @@ name "fig: Metodologia utilizada no desenvolvimento do sistema"
 
 \end_inset
 
-O desenvolvimento do código-fonte e a estruturação dos documentos LaTeX foram auxiliados pelo uso de modelos de linguagem (IA) para otimização de sintaxe e depuração de erros de compilação.
+O desenvolvimento do código-fonte e a estruturação dos documentos 
+\emph on
+\lang english
+LaTeX
+\emph default
+\lang brazilian
+ foram auxiliados pelo uso de modelos de linguagem (IA) para otimização de sintaxe e depuração de erros de compilação.
  Todo o código gerado foi revisado,
  testado e validado pela autora.
 \end_layout
@@ -315,6 +286,80 @@ name "sec: Nome do sistema/produto"
 \end_layout
 
 \begin_layout Standard
+Abaixo a Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Nome-do-Sistema/Produto"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ com o nome do Sistema/Produto:
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ Ferramenta para Geração da Curva de Fluxo Fracionário.
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nome do Sistema/Produto
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Nome-do-Sistema/Produto"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -445,16 +490,33 @@ Componentes principais
 \color none
 4.
  Módulo de Saída (Gerador de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 .csv
-\end_layout
-
-\end_inset
-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
  e interface com Gnuplot)
 \end_layout
 
@@ -507,6 +569,11 @@ Missão,Calcular e visualizar a curva de fluxo fracionário (
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -582,16 +649,9 @@ literal "true"
 
  e gerará dois produtos:
  um arquivo de dados 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
 .csv
-\end_layout
-
-\end_inset
-
+\family default
  para análise externa e uma visualização gráfica imediata,
  invocando o Gnuplot para plotar a curva "S" característica.
 \end_layout
@@ -811,7 +871,11 @@ RF-04
 
 \begin_layout Plain Layout
 O sistema deve gerar um arquivo de saída em formato de texto (ex:
- .csv) contendo os pares de dados (
+ 
+\family typewriter
+.csv
+\family default
+) contendo os pares de dados (
 \begin_inset Formula $S_{w},f_{w}$
 \end_inset
 
@@ -989,9 +1053,6 @@ Os cálculos de permeabilidade relativa,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1038,9 +1099,6 @@ Windows
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1080,9 +1138,6 @@ O software deve ser desenvolvido na linguagem C++ utilizando o paradigma da Orie
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle" tabularwidth="14cm">
@@ -1181,16 +1236,9 @@ name "cap:Exemplo-de-um-caso-de-uso (tabela)"
 
 \end_inset
 
-
+.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset space ~
 \end_inset
 
 
@@ -1289,16 +1337,9 @@ Etapas:
 \begin_layout Plain Layout
 4.
  O sistema salva os resultados em um arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
 .csv
-\end_layout
-
-\end_inset
-
+\family default
 .
  
 \end_layout
@@ -1369,16 +1410,33 @@ Cenários alternativos:
  O Gnuplot não está instalado ou não foi encontrado no PATH do sistema:
  O sistema exibe um aviso,
  mas informa que o arquivo de dados 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
 .csv
-\end_layout
-
-\end_inset
-
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
  foi gerado com sucesso.
 \end_layout
 
@@ -1444,7 +1502,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso.png
-	lyxscale 50
+	lyxscale 60
 	scale 80
 	special height=0.3\textheight
 
@@ -1526,8 +1584,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso-especifico.png
-	lyxscale 50
-	width 80text%
+	lyxscale 60
+	scale 60
 
 \end_inset
 
@@ -1545,7 +1603,7 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset

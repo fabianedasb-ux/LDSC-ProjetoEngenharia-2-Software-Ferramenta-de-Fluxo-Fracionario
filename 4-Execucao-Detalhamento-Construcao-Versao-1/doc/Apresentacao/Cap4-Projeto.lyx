@@ -126,24 +126,6 @@ name "chap:Projeto-do-Sistema"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Projeto} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Projeto do sistema
 \end_layout
@@ -158,16 +140,11 @@ Comunicação Externa:
  O protocolo de comunicação com o usuário será via arquivos de texto.
  O formato do arquivo de entrada (detalhado no Apêndice A) é o protocolo principal .
  O sistema gerará um arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  (valores separados por vírgula) como protocolo de saída,
  garantindo fácil interoperabilidade.
 \end_layout
@@ -180,27 +157,17 @@ Comunicação Interna:
 \begin_layout Itemize
 API:
  A API interna da biblioteca de cálculo será definida pela interface (classe base abstrata) 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e pela classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  .
 \end_layout
 
@@ -220,16 +187,11 @@ Banco de Dados:
 \begin_layout Itemize
 Armazenamento:
  A persistência dos dados de entrada é gerenciada pelo usuário através de arquivos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .txt
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -281,16 +243,11 @@ Bibliotecas Externas:
  Para manter o software leve,
  o Gnuplot não será linkado ao código;
  ele será invocado como um processo de sistema externo (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 system()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
 \end_layout
 
@@ -390,16 +347,11 @@ Strategy
 \lang brazilian
  garante que o Diagrama de Pacotes seja limpo:
  o pacote Core depende apenas da abstração em 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ModelosKr
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  não das implementações concretas .
 \end_layout
@@ -408,16 +360,11 @@ ModelosKr
 Efeitos do projeto no modelo dinâmico:
  Os diagramas de sequência e estado confirmam o fluxo de controle síncrono e sequencial.
  A chamada ao Gnuplot (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 system()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) será bloqueante,
  garantindo que o programa só termine após o usuário fechar o gráfico.
 \end_layout
@@ -433,27 +380,17 @@ private
 ),
  garantindo encapsulamento.
  A 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  armazenará um ponteiro para a interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  minimizando o acoplamento.
 \end_layout
@@ -461,63 +398,44 @@ ICurvasPermeabilidade
 \begin_layout Itemize
 Efeitos do projeto nos métodos:
  Os métodos de cálculo (como 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 getKrw
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 calcularFw
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) serão declarados como 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 const
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  sempre que possível,
  para garantir que não modifiquem o estado do objeto.
  O método 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 plotarCurva
-\end_layout
-
-\end_inset
-
- da classe Gnuplot será 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family default
+\nospellcheck default
+ da classe 
+\family typewriter
+\nospellcheck on
+Gnuplot
+\family default
+\nospellcheck default
+ será 
+\family typewriter
+\nospellcheck on
 static
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  pois não depende de um estado de instância.
 \end_layout
@@ -533,16 +451,11 @@ Efeitos do projeto nas heranças:
 Efeitos do projeto nas associações:
  A associação principal é a de uso (agregação),
  onde a Calculadora usa a interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  que lhe é injetada.
  O Simulador gerencia o ciclo de vida (criação 
 \emph on
@@ -596,122 +509,72 @@ nolink "false"
  ) detalha as dependências de compilação e ligação do software.
  O componente executável final,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 fw_calc
-\end_layout
-
-\end_inset
-
-,
+\family default
+\nospellcheck default
+ ,
  depende da compilação e linkagem de múltiplos componentes de código-fonte (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
  Cada componente 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  (ex:
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Simulador.cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Calculadora.cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) depende do seu respectivo arquivo de cabeçalho (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) e das abstrações das quais depende (ex:
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Calculadora.cpp
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  depende de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade.h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ).
- O componente Gnuplot
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-.cpp
-\end_layout
-
-\end_inset
-
+ O componente 
+\family typewriter
+\nospellcheck on
+Gnuplot.cpp
+\family default
+\nospellcheck default
  não depende do executável do Gnuplot em tempo de compilação,
  mas o executável 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 fw_calc
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  tem uma dependência em tempo de execução com o Gnuplot.
 \end_layout
 
@@ -728,7 +591,8 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
 	lyxscale 20
-	scale 80
+	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -746,7 +610,7 @@ name "cap:Diagrama-de-componentes"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -807,16 +671,11 @@ nolink "false"
  pois não se trata de um sistema distribuído.
  Haverá um único nó principal:
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 <<device>>
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  Computador Pessoal.
  Este nó de hardware hospeda o sistema operacional (ex:
  
@@ -831,66 +690,43 @@ Windows
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 [fw_calc]
-\end_layout
-
-\end_inset
-
-:
+\family default
+\nospellcheck default
+ :
  O nosso artefato executável compilado.
 \end_layout
 
 \begin_layout Enumerate
-\begin_inset ERT
-status open
 
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 [gnuplot]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  O artefato executável da dependência externa.
  O 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 [fw_calc]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  possui uma dependência de execução (do tipo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 <<call>>
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) com o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 [gnuplot]
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -923,7 +759,7 @@ name "cap:Diagrama-de-implantação."
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -938,16 +774,11 @@ name "cap:Diagrama-de-implantação."
 
 \begin_layout Subsection
 Lista de características 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 <<features>>
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -960,16 +791,11 @@ name "subsec: Lista de características <<features>>"
 
 \begin_layout Standard
 No final do ciclo de concepção e análise chegamos a uma lista de características 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 <<features>>
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  que teremos de implementar.
 \end_layout
 
@@ -986,42 +812,27 @@ v0.1
 \begin_layout Itemize
 Implementar classes Simulador,
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
 \begin_layout Itemize
 Implementar 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -1031,33 +842,23 @@ Implementar leitor de arquivo de entrada (parser) para o modelo tabelado e visco
 
 \begin_layout Itemize
 Implementar cálculo da curva e salvamento em arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 output.csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
 \begin_layout Itemize
 Testes:
  Validar o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-.csv 
-\end_layout
-
-\end_inset
-
-de saída contra um cálculo manual em planilha.
+\family typewriter
+\nospellcheck on
+.csv
+\family default
+\nospellcheck default
+ de saída contra um cálculo manual em planilha.
 \end_layout
 
 \end_deeper
@@ -1068,16 +869,11 @@ v0.2
 \begin_deeper
 \begin_layout Itemize
 Implementar classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1096,16 +892,11 @@ Atualizar o parser do arquivo de entrada para ler os parâmetros do modelo Corey
 \begin_layout Itemize
 Testes:
  Validar o 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .csv
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  de saída para o modelo Corey.
 \end_layout
 
@@ -1180,7 +971,7 @@ name "tab:Tabela-classificação-sistema1"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
