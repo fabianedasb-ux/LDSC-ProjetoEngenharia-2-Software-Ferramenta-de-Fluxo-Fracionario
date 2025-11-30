@@ -92,24 +92,6 @@
 Documentação para o Desenvolvedor
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Documentação} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Section
 Dependências para compilar o software
 \end_layout
@@ -150,16 +132,11 @@ Make
 \lang brazilian
 :
  Ferramenta de automação de compilação utilizada pelo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Makefile
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  do projeto.
 \end_layout
 
@@ -174,20 +151,63 @@ Doxygen (Opcional):
  Para geração da documentação automática.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
 Instalação das Dependências (via MSYS2):
 \end_layout
 
 \begin_layout Standard
-No terminal MINGW64,
- execute os seguintes comandos para instalar todas as ferramentas necessárias:
+No terminal 
+\family typewriter
+\nospellcheck on
+MINGW64
+\family default
+\nospellcheck default
+,
+ execute os seguintes comandos,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Instalação-das-Dependências"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ para instalar todas as ferramentas necessárias:
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
+
+pacman -S mingw-w64-x86_64-toolchain mingw-w64-x86_64-gnuplot
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comando para instalar Compilador,
+ Make e Gnuplot no MSYS2.
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Instalação-das-Dependências"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -203,16 +223,11 @@ Como gerar a documentação usando doxygen
 \begin_layout Standard
 A documentação do código-fonte foi escrita utilizando o padrão Javadoc.
  Isso permite que a ferramenta Doxygen analise os arquivos 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 .h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  e gere um site HTML navegável com a descrição de todas as classes e métodos.
  
 \end_layout
@@ -226,44 +241,63 @@ Instale o Doxygen:
  Caso não tenha instalado,
  use o comando:
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 gen}
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
 Navegue até a pasta do código:
  Abra o terminal na raiz do projeto e entre na pasta 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 src/
 \end_layout
 
+\begin_layout Itemize
+Execute o Doxygen,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Instalação-do-Doxygen."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
 \end_inset
 
-.
-\end_layout
-
-\begin_layout Itemize
-Execute o Doxygen:
+:
  O arquivo de configuração Doxyfile já está configurado no projeto.
  Basta rodar o comando:
  
-\begin_inset ERT
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
+
+pacman -S mingw-w64-x86_64-doxygen
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Instalação do Doxygen
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Instalação-do-Doxygen."
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -273,37 +307,58 @@ status open
 \end_layout
 
 \begin_layout Itemize
-Visualize o Resultado:
+Visualize o Resultado,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Gerando-a-documentação"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+:
  A documentação será gerada na pasta 
-\begin_inset ERT
+\family typewriter
+\nospellcheck on
+html/
+\family default
+\nospellcheck default
+.
+ Para visualizar,
+ abra o arquivo 
+\family typewriter
+\nospellcheck on
+index.html
+\family default
+\nospellcheck default
+ no seu navegador:
+ 
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 
-html/
-\end_layout
+doxygen
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gerando a documentação HTML
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Gerando-a-documentação"
 
 \end_inset
 
 .
- Para visualizar,
- abra o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-index.html
 \end_layout
 
 \end_inset
 
- no seu navegador:
- 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
 
 \end_layout
 
@@ -349,16 +404,17 @@ nolink "false"
 \end_inset
 
  a página para 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-CalculadoraFluxoFracionario Class Reference
-\end_layout
-
-\end_inset
-
+\family typewriter
+\nospellcheck on
+CalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ 
+\emph on
+\lang english
+Class Reference
+\emph default
+\lang brazilian
  e na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -371,16 +427,11 @@ nolink "false"
 \end_inset
 
  o arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario.h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -397,7 +448,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
 	lyxscale 20
-	scale 60
+	rotateOrigin center
 	special height=0.8\textheight
 
 \end_inset
@@ -442,7 +493,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog2.png
 	lyxscale 20
-	scale 60
+	rotateOrigin center
 	special height=0.8\textheight
 
 \end_inset
@@ -487,7 +538,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
 	lyxscale 20
-	scale 60
+	rotateOrigin center
 	special height=0.8\textheight
 
 \end_inset
@@ -500,16 +551,17 @@ status open
 
 \begin_layout Plain Layout
 Página para 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-CalculadoraFluxoFracionario Class Reference
-\end_layout
-
-\end_inset
-
+\family typewriter
+\nospellcheck on
+CalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ 
+\emph on
+\lang english
+Class Reference
+\emph default
+\lang brazilian
 
 \begin_inset CommandInset label
 LatexCommand label
@@ -543,7 +595,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
 	lyxscale 20
-	scale 60
+	rotateOrigin center
 	special height=0.8\textheight
 
 \end_inset
@@ -556,16 +608,11 @@ status open
 
 \begin_layout Plain Layout
 Arquivo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario.h
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 
 \begin_inset CommandInset label
 LatexCommand label

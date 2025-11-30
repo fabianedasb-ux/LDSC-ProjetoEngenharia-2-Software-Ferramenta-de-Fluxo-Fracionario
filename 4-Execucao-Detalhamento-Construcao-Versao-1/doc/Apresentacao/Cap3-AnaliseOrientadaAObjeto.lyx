@@ -102,26 +102,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Análise Orientada a Objeto}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 AOO
 \begin_inset Index idx
@@ -146,7 +126,7 @@ name "chap:Análise Orientada a Objeto"
 \begin_inset Index idx
 range none
 pageformat default
-status collapsed
+status open
 
 \begin_layout Plain Layout
 Análise orientada a objeto
@@ -195,30 +175,20 @@ nolink "false"
 Princípio da Inversão de Dependência (D do S.O.L.I.D.):
  Este é o pilar central da arquitetura.
  O módulo de alto nível (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) não depende diretamente dos módulos de baixo nível (...Tabelada,
  ...Corey).
  Ambos dependem de uma abstração:
  a interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -231,16 +201,11 @@ Strategy
 \lang brazilian
  (Estratégia):
  A interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  implementa o padrão 
 \emph on
 \lang english
@@ -267,16 +232,11 @@ Strategy
 Padrão de Projeto Facade (Fachada):
  A classe Gnuplot é uma Facade estática.
  Ela fornece uma interface unificada e simples (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 plotarCurva()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ) para um subsistema complexo (formatação de 
 \emph on
 \lang english
@@ -300,7 +260,9 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-classes.png
 	lyxscale 50
-	scale 80
+	scale 60
+	rotateAngle 90
+	rotateOrigin center
 
 \end_inset
 
@@ -318,7 +280,7 @@ name "cap:Diagrama-de-classes"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -344,16 +306,11 @@ name "subsec:Dicionário-de-classes"
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Interface) Define o contrato de serviço para os modelos de permeabilidade relativa.
  Garante o polimorfismo e a Inversão de Dependência.
@@ -361,16 +318,11 @@ ICurvasPermeabilidade
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Implementação Concreta) Implementação da 
 \emph on
@@ -388,16 +340,11 @@ Strategy
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeCorey
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Implementação Concreta) Implementação da 
 \emph on
@@ -423,45 +370,30 @@ literal "true"
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CalculadoraFluxoFracionario
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Domínio de Negócio) Classe principal que implementa o domínio central de negócio (a equação de Buckley-Leverett).
  Opera em um alto nível de abstração,
  dependendo apenas da interface 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 ICurvasPermeabilidade
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Gnuplot
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Utilitário / Facade) Classe estática que encapsula toda a lógica de interação com o Gnuplot,
  simplificando a plotagem para o resto da aplicação.
@@ -469,16 +401,11 @@ Gnuplot
 
 \begin_layout Itemize
 Classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 Simulador
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 :
  (Orquestrador / Ponto de Entrada) Atua como o orquestrador da aplicação.
  É responsável por "montar" o sistema (ler arquivos,
@@ -489,28 +416,18 @@ new
 \emph default
 \lang brazilian
 ) e injetar as dependências (
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 modeloKr
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  dentro da Calculadora).
  Contém o ponto de entrada 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 main()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 .
 \end_layout
 
@@ -603,7 +520,9 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia.png
 	lyxscale 50
-	scale 80
+	scale 60
+	rotateAngle 90
+	rotateOrigin center
 
 \end_inset
 
@@ -621,7 +540,7 @@ name "cap:Diagrama-de-sequencia"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -661,27 +580,17 @@ nolink "false"
 \end_inset
 
  detalha a atividade específica de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 getKrw()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  na classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  mostrando a lógica de interpolação.
 \end_layout
@@ -699,7 +608,8 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia-especifico.png
 	lyxscale 50
-	scale 80
+	scale 50
+	rotateOrigin center
 
 \end_inset
 
@@ -717,7 +627,7 @@ name "cap:Diagrama-de-sequencia-2"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -811,7 +721,9 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-comunicacao.png
 	lyxscale 50
-	scale 80
+	scale 60
+	rotateAngle 90
+	rotateOrigin center
 
 \end_inset
 
@@ -829,7 +741,7 @@ name "cap:Diagrama-de-comunicação"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -903,7 +815,8 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-estado.png
 	lyxscale 50
-	scale 80
+	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -921,7 +834,7 @@ name "cap:Diagrama-de-maquina-de-estado"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -955,27 +868,17 @@ nolink "false"
 \end_inset
 
  detalha o algoritmo do método 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 getKrw()
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
  na classe 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
+\family typewriter
+\nospellcheck on
 CurvasPermeabilidadeTabelada
-\end_layout
-
-\end_inset
-
+\family default
+\nospellcheck default
 ,
  como descrito na Formulação Teórica.
  Este é um cálculo específico e crucial.
@@ -994,7 +897,9 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-atividade.png
 	lyxscale 50
-	scale 80
+	scale 70
+	rotateAngle 90
+	rotateOrigin center
 
 \end_inset
 
@@ -1012,7 +917,7 @@ name "cap:Diagrama-de-atividades"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
