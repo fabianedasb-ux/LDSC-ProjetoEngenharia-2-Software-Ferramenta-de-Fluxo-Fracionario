@@ -83,6 +83,7 @@
 %\usepackage[cam,width=18truecm,height=26truecm,center]{crop}
 
 %\noindent
+\usepackage{pdflscape}
 \end_preamble
 \use_default_options false
 \master 3-Projeto-ModelosDeEngenharia-Master.lyx
@@ -223,6 +224,9 @@ nolink "false"
 \end_inset
 
  apresenta a metodologia a ser utilizada no desenvolvimento do sistema.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -235,7 +239,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/ProjetoEngenharia-Etapas-Geral-wide.png
 	lyxscale 20
-	scale 80
+	width 12cm
 
 \end_inset
 
@@ -263,6 +267,10 @@ name "fig: Metodologia utilizada no desenvolvimento do sistema"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 O desenvolvimento do código-fonte e a estruturação dos documentos 
 \emph on
 \lang english
@@ -329,17 +337,19 @@ nolink "false"
 \color inherit
  
 \begin_inset Float table
-placement document
-alignment document
+placement class
+alignment center
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -732,6 +742,7 @@ RF-01
 \begin_inset Text
 
 \begin_layout Plain Layout
+\align center
 O sistema deve ler um arquivo de entrada de texto contendo os parâmetros da simulação (viscosidades e dados de permeabilidade).
 \end_layout
 
@@ -1014,7 +1025,7 @@ name "subsec:Requisitos-não-funcionais"
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="block" valignment="top" width="11cm">
 <row>
@@ -1055,7 +1066,7 @@ Os cálculos de permeabilidade relativa,
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="block" valignment="top" width="11cm">
 <row>
@@ -1101,7 +1112,7 @@ Windows
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="block" valignment="top" width="11cm">
 <row>
@@ -1140,7 +1151,7 @@ O software deve ser desenvolvido na linguagem C++ utilizando o paradigma da Orie
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="block" valignment="top" width="11cm">
 <row>
@@ -1503,7 +1514,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso.png
 	lyxscale 60
-	scale 80
+	width 8cm
 	special height=0.3\textheight
 
 \end_inset
@@ -1560,7 +1571,7 @@ do software
 O caso de uso Executar Cálculo é detalhado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "subsec: Diagrama de sequência específico"
+reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
 plural "false"
 caps "false"
 noprefix "false"
@@ -1585,7 +1596,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso-especifico.png
 	lyxscale 60
-	scale 60
+	width 8cm
 
 \end_inset
 
@@ -1596,7 +1607,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Título
+Diagrama de caso de uso específico – Executar Cálculo
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"

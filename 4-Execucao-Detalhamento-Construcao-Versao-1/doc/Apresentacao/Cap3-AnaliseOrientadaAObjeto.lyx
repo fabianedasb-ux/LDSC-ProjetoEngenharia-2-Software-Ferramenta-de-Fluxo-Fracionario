@@ -11,6 +11,7 @@
 
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
+\usepackage{pdflscape}
 \end_preamble
 \use_default_options false
 \master /home2/andreduartebueno/workdir/ModeloDocumento-ProjetoEngenharia-ProgramacaoPratica/doc/manualDesenvolvedor-lyx/DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
@@ -248,6 +249,29 @@ scripts
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -260,9 +284,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-classes.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
-	rotateOrigin center
+	scale 90
 
 \end_inset
 
@@ -288,6 +310,29 @@ name "cap:Diagrama-de-classes"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -508,6 +553,29 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -520,9 +588,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
-	rotateOrigin center
+	scale 90
 
 \end_inset
 
@@ -548,6 +614,29 @@ name "cap:Diagrama-de-sequencia"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -586,6 +675,10 @@ getKrw()
 \family default
 \nospellcheck default
  na classe 
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeTabelada
@@ -608,7 +701,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia-especifico.png
 	lyxscale 50
-	scale 50
+	scale 60
 	rotateOrigin center
 
 \end_inset
@@ -721,8 +814,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-comunicacao.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
+	scale 65
 	rotateOrigin center
 
 \end_inset
@@ -815,7 +907,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-estado.png
 	lyxscale 50
-	scale 60
+	scale 80
 	rotateOrigin center
 
 \end_inset
@@ -897,8 +989,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-atividade.png
 	lyxscale 50
-	scale 70
-	rotateAngle 90
+	scale 65
 	rotateOrigin center
 
 \end_inset

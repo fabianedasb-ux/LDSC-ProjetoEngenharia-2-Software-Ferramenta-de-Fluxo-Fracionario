@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -27,19 +27,21 @@
 \end_preamble
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -50,10 +52,11 @@
 \bibtex_command default
 \index_command default
 \float_placement p
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -74,7 +77,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -96,11 +101,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -116,35 +126,11 @@ name "chap:Projeto-do-Sistema"
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Projeto} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Neste capítulo do projeto de engenharia veremos questões associadas ao projeto
- do sistema, incluindo protocolos, recursos, plataformas suportadas, inplicações
- nos diagramas feitos anteriormente, diagramas de componentes e implantação.
- Na segunda parte revisamos os diagramas levando em conta as decisões do
- projeto do sistema.
-\end_layout
-
 \begin_layout Section
 Projeto do sistema
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -163,451 +149,170 @@ name "sec:Projeto-do-sistema"
 
 \end_layout
 
-\begin_layout Standard
-Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
- qual envolve etapas como a definição dos protocolos, da interface API,
- o uso de recursos, a subdivisão do sistema em subsistemas, a alocação dos
- subsistemas ao hardware e a seleção das estruturas de controle, a seleção
- das plataformas do sistema, das bibliotecas externas, dos padrões de projeto,
- além da tomada de decisões conceituais e políticas que formam a infraestrutura
- do projeto.
-\end_layout
-
-\begin_layout Standard
-Deve-se definir padrões de documentação, padrões para o nome das classes,
- padrões de retorno e de parâmetros em métodos, características da interface
- do usuário e características de desempenho.
- 
-\end_layout
-
-\begin_layout Standard
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-UML-Rumbaugh,prog-UML-blaha"
-literal "true"
-
-\end_inset
-
-, o projeto do sistema é a estratégia de alto nível para resolver o problema
- e elaborar uma solução.
- Você deve se preocupar com itens como: 
-\end_layout
-
 \begin_layout Enumerate
 Protocolos
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Protocolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos externos
- 
-\begin_inset Newline newline
-\end_inset
-
-(como dispositivos).
- Por exemplo: se o sistema envolve o uso dos nós de um cluster, devem ser
- considerados aspectos como o protocolo de comunicação entre os nós do cluster.
-\begin_inset Separator latexpar
-\end_inset
-
-
+Comunicação Externa:
+ O protocolo de comunicação com o usuário será via arquivos de texto.
+ O formato do arquivo de entrada (detalhado no Apêndice A) é o protocolo principal .
+ O sistema gerará um arquivo 
+\family typewriter
+\nospellcheck on
+.csv
+\family default
+\nospellcheck default
+ (valores separados por vírgula) como protocolo de saída,
+ garantindo fácil interoperabilidade.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Comunicação Interna:
+ A comunicação entre os objetos do sistema seguirá um padrão de passagem de mensagens síncronas (chamadas de método diretas).
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos internos
- 
-\begin_inset Newline newline
-\end_inset
-
-(como objetos).
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+API:
+ A API interna da biblioteca de cálculo será definida pela interface (classe base abstrata) 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ e pela classe 
+\family typewriter
+\nospellcheck on
+CalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ .
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Definição da interface API de suas bibliotecas e sistemas.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Definição do formato dos arquivos gerados pelo software.
- Por exemplo: prefira formatos abertos, como arquivos txt e xml.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Recursos
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Recursos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Identificação e alocação dos recursos globais, como os recursos do sistema
- serão alocados, utilizados, compartilhados e liberados.
- Implicam modificações no diagrama de componentes.
-\begin_inset Separator latexpar
-\end_inset
-
-
+Banco de Dados:
+ Não será utilizado um banco de dados .
+ Para o escopo da aplicação (uma ferramenta de análise leve),
+ um BD introduziria uma complexidade de implantação e configuração desnecessária.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Armazenamento:
+ A persistência dos dados de entrada é gerenciada pelo usuário através de arquivos 
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade do uso de banco de dados.
- Implicam em modificações nos diagramas de atividades e de componentes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade de sistemas de armazenamento de massa.
- Por exemplo: um 
-\emph on
-storage
-\emph default
- em um sistema de cluster ou sistemas de backup.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Controle
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Controle
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Identificação e seleção da implementação de controle, seqüencial ou concorrente,
- baseado em procedimentos ou eventos.
- Implicam modificações no diagrama de execução.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+Implementação:
+ O controle do sistema será sequencial e baseado em procedimentos.
+ A execução seguirá um fluxo linear (Ler -> Calcular -> Plotar).
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação das condições extremas e de prioridades.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação da necessidade de otimização.
- Por exemplo: prefira sistemas com grande capacidade de memória; prefira
- vários hds pequenos a um grande.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação e definição de 
+Concorrência:
+ Não há necessidade de concorrência ou processamento paralelo (
 \emph on
-loops
+\lang english
+multithreading
 \emph default
- de controle e das escalas de tempo.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+\lang brazilian
+),
+ pois o custo computacional do cálculo do fluxo fracionário 1D é baixo e a execução é instantânea.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação de concorrências – quais algoritmos podem ser implementados
- usando processamento paralelo.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Plataformas
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Plataformas
-\end_layout
-
-\end_inset
-
-
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Identificação das estruturas arquitetônicas comuns.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+Hardware/SO:
+ O software será desenvolvido em C++ padrão (C++17),
+ garantindo alta portabilidade e compilação nativa em 
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+ e GNU/Linux.
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Bibliotecas Externas:
+ A única dependência externa será o Gnuplot.
+ Para manter o software leve,
+ o Gnuplot não será linkado ao código;
+ ele será invocado como um processo de sistema externo (
+\family typewriter
+\nospellcheck on
+system()
+\family default
+\nospellcheck default
+).
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
-Identificação de subsistemas relacionados à plataforma selecionada.
- Podem implicar em modificações no diagrama de pacotes e no diagrama de
- componentes.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+IDE:
+ O desenvolvimento será feito utilizando um editor de texto (Kate) e compilação via 
+\emph on
+\lang english
+make
+\emph default
+\lang brazilian
+ no terminal MSYS2.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identificação e definição das plataformas a serem suportadas: hardware,
- sistema operacional e linguagem de software.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção das bibliotecas externas a serem utilizadas.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção da biblioteca utilizada para montar a interface gráfica do software
- – GDI.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Seleção do ambiente de desenvolvimento para montar a interface de desenvolviment
-o – IDE.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Enumerate
 Padrões de projeto
-\begin_inset Separator latexpar
-\end_inset
-
-
 \end_layout
 
-\begin_deeper
 \begin_layout Itemize
-Normalmente os padrões de projeto são identificados e passam a fazer parte
- de uma biblioteca de padrões da empresa.
- Mas isto só ocorre após a realização de diversos projetos.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-se um item não for pertinente; pode ser retirado; ,mas somente na versão
- final; isto facilita o trabalho de revisão do trabalho!!
-\end_layout
+Conforme detalhado no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:AOO"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
-
+ ,
+ o design da arquitetura é centrado no uso dos padrões de projeto 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+ (para os modelos de permeabilidade) e Facade (para a classe Gnuplot) .
 \end_layout
 
-\end_deeper
-\end_deeper
 \begin_layout Section
 Projeto orientado a objeto – POO
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -618,6 +323,8 @@ POO
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -636,36 +343,161 @@ name "sec:Projeto-orientado-a-objeto"
 
 \end_layout
 
-\begin_layout Standard
-O projeto orientado a objeto é a etapa posterior ao projeto do sistema.
- Baseia-se na análise, mas considera as decisões do projeto do sistema.
- Acrescenta a análise desenvolvida e as características da plataforma escolhida
- (hardware, sistema operacional e linguagem de softwareção).
- Passa pelo maior detalhamento do funcionamento do software, acrescentando
- atributos e métodos que envolvem a solução de problemas específicos não
- identificados durante a análise.
+\begin_layout Itemize
+Efeitos do projeto no modelo estrutural:
+ A arquitetura definida na Análise (Cap.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:AOO"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) é mantida.
+ O uso do padrão 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+ garante que o Diagrama de Pacotes seja limpo:
+ o pacote Core depende apenas da abstração em 
+\family typewriter
+\nospellcheck on
+ModelosKr
+\family default
+\nospellcheck default
+,
+ não das implementações concretas .
 \end_layout
 
-\begin_layout Standard
-Envolve a otimização da estrutura de dados e dos algoritmos, a minimização
- do tempo de execução, de memória e de custos.
- Existe um desvio de ênfase para os conceitos da plataforma selecionada.
- 
+\begin_layout Itemize
+Efeitos do projeto no modelo dinâmico:
+ Os diagramas de sequência e estado confirmam o fluxo de controle síncrono e sequencial.
+ A chamada ao Gnuplot (
+\family typewriter
+\nospellcheck on
+system()
+\family default
+\nospellcheck default
+) será bloqueante,
+ garantindo que o programa só termine após o usuário fechar o gráfico.
 \end_layout
 
-\begin_layout Standard
-Exemplo: na análise você define que existe um método para salvar um arquivo
- em disco, define um atributo nomeDoArquivo, mas não se preocupa com detalhes
- específicos da linguagem.
- Já no projeto, você inclui as bibliotecas necessárias para acesso ao disco,
- cria um objeto específico para acessar o disco, podendo, portanto, acrescentar
- novas classes àquelas desenvolvidas na análise.
+\begin_layout Itemize
+Efeitos do projeto nos atributos:
+ Todos os atributos de classe serão privados (
+\emph on
+\lang english
+private
+\emph default
+\lang brazilian
+),
+ garantindo encapsulamento.
+ A 
+\family typewriter
+\nospellcheck on
+CalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ armazenará um ponteiro para a interface 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+,
+ minimizando o acoplamento.
+\end_layout
+
+\begin_layout Itemize
+Efeitos do projeto nos métodos:
+ Os métodos de cálculo (como 
+\family typewriter
+\nospellcheck on
+getKrw
+\family default
+\nospellcheck default
+,
  
+\family typewriter
+\nospellcheck on
+calcularFw
+\family default
+\nospellcheck default
+) serão declarados como 
+\family typewriter
+\nospellcheck on
+const
+\family default
+\nospellcheck default
+ sempre que possível,
+ para garantir que não modifiquem o estado do objeto.
+ O método 
+\family typewriter
+\nospellcheck on
+plotarCurva
+\family default
+\nospellcheck default
+ da classe 
+\family typewriter
+\nospellcheck on
+Gnuplot
+\family default
+\nospellcheck default
+ será 
+\family typewriter
+\nospellcheck on
+static
+\family default
+\nospellcheck default
+,
+ pois não depende de um estado de instância.
+\end_layout
+
+\begin_layout Itemize
+Efeitos do projeto nas heranças:
+ A herança será usada exclusivamente para implementar interfaces (herança de tipo),
+ não para reutilização de código.
+ Isso segue o princípio de "Composição sobre Herança".
+\end_layout
+
+\begin_layout Itemize
+Efeitos do projeto nas associações:
+ A associação principal é a de uso (agregação),
+ onde a Calculadora usa a interface 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ que lhe é injetada.
+ O Simulador gerencia o ciclo de vida (criação 
+\emph on
+\lang english
+new
+\emph default
+\lang brazilian
+ e destruição delete) dos objetos.
+\end_layout
+
+\begin_layout Itemize
+Efeitos do projeto nas otimizações:
+ Nenhuma otimização de baixo nível (ex:
+ paralelismo) é necessária.
+ A otimização do projeto está no design de O.O.,
+ que evita recálculos e promove baixo acoplamento.
 \end_layout
 
 \begin_layout Subsubsection
 Efeitos do projeto no modelo
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -685,8 +517,8 @@ name "subsec:Efeito-do-projeto-no-modelo-estrutural"
 \end_layout
 
 \begin_layout Itemize
-Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados
- no projeto do sistema (exemplo: a biblioteca gráfica selecionada).
+Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no projeto do sistema (exemplo:
+ a biblioteca gráfica selecionada).
 \begin_inset Separator latexpar
 \end_inset
 
@@ -700,8 +532,7 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Novas classes e associações oriundas das bibliotecas selecionadas e da linguagem
- escolhida devem ser acrescentadas ao modelo.
+Novas classes e associações oriundas das bibliotecas selecionadas e da linguagem escolhida devem ser acrescentadas ao modelo.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -731,6 +562,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto no modelo
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -750,8 +583,7 @@ name "subsec:Efeito-do-projeto-no-modelo-dinamico"
 \end_layout
 
 \begin_layout Itemize
-Revisar os diagramas de seqüência e de comunicação considerando a plataforma
- escolhida.
+Revisar os diagramas de seqüência e de comunicação considerando a plataforma escolhida.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -765,8 +597,8 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Verificar a necessidade de se revisar, ampliar e adicionar novos diagramas
- de máquinas de estado e de atividades.
+Verificar a necessidade de se revisar,
+ ampliar e adicionar novos diagramas de máquinas de estado e de atividades.
  
 \begin_inset Separator latexpar
 \end_inset
@@ -783,6 +615,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto nos atributos
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -802,9 +636,12 @@ name "subsec:Efeito-do-projeto-nos-atributos"
 \end_layout
 
 \begin_layout Itemize
-Atributos novos podem ser adicionados a uma classe, como, por exemplo, atributos
- específicos de uma determinada linguagem de softwareção (acesso a disco,
- ponteiros, constantes e informações correlacionadas).
+Atributos novos podem ser adicionados a uma classe,
+ como,
+ por exemplo,
+ atributos específicos de uma determinada linguagem de softwareção (acesso a disco,
+ ponteiros,
+ constantes e informações correlacionadas).
 \begin_inset Separator latexpar
 \end_inset
 
@@ -820,6 +657,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto nos métodos
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -830,6 +669,8 @@ métodos
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -842,10 +683,11 @@ Efeitos do projeto nos métodos
 \end_layout
 
 \begin_layout Itemize
-Em função da plataforma escolhida, verifique as possíveis alterações nos
- métodos.
- O projeto do sistema costuma afetar os métodos de acesso aos diversos dispositi
-vos (exemplo: hd, rede).
+Em função da plataforma escolhida,
+ verifique as possíveis alterações nos métodos.
+ O projeto do sistema costuma afetar os métodos de acesso aos diversos dispositivos (exemplo:
+ hd,
+ rede).
 \begin_inset Separator latexpar
 \end_inset
 
@@ -859,11 +701,14 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-De maneira geral os métodos devem ser divididos em dois tipos: i) tomada
- de decisões, métodos políticos ou de controle; devem ser claros, legíveis,
+De maneira geral os métodos devem ser divididos em dois tipos:
+ i) tomada de decisões,
+ métodos políticos ou de controle;
+ devem ser claros,
+ legíveis,
  flexíveis e usam polimorfismo.
- ii) realização de processamentos, podem ser otimizados e em alguns casos
- o polimorfismo deve ser evitado.
+ ii) realização de processamentos,
+ podem ser otimizados e em alguns casos o polimorfismo deve ser evitado.
  
 \begin_inset Separator latexpar
 \end_inset
@@ -894,8 +739,8 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Responda a pergunta: os métodos da classes estão dando resposta às responsabilid
-ades da classe?
+Responda a pergunta:
+ os métodos da classes estão dando resposta às responsabilidades da classe?
 \begin_inset Separator latexpar
 \end_inset
 
@@ -909,7 +754,8 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Revise os diagramas de classes, de seqüência e de máquina de estado.
+Revise os diagramas de classes,
+ de seqüência e de máquina de estado.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -925,6 +771,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto nas heranças
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -935,6 +783,8 @@ heranças
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -945,6 +795,8 @@ Efeitos do projeto nas heranças
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -957,8 +809,7 @@ Heranças
 \end_layout
 
 \begin_layout Itemize
-Reorganização das classes e dos métodos (criar métodos genéricos com parâmetros
- que nem sempre são necessários e englobam métodos existentes).
+Reorganização das classes e dos métodos (criar métodos genéricos com parâmetros que nem sempre são necessários e englobam métodos existentes).
  
 \begin_inset Separator latexpar
 \end_inset
@@ -973,8 +824,7 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Abstração do comportamento comum (duas classes podem ter uma superclasse
- em comum).
+Abstração do comportamento comum (duas classes podem ter uma superclasse em comum).
  
 \begin_inset Separator latexpar
 \end_inset
@@ -989,8 +839,7 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Utilização de delegação para compartilhar a implementação (quando você cria
- uma herança irreal para reaproveitar código).
+Utilização de delegação para compartilhar a implementação (quando você cria uma herança irreal para reaproveitar código).
  Usar com cuidado.
 \begin_inset Separator latexpar
 \end_inset
@@ -1021,6 +870,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto nas associações
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1031,6 +882,8 @@ Efeitos do projeto nas associações
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1059,11 +912,11 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Se existe uma relação de "muitos", pode-se implementar a associação com
- a utilização de um dicionário, que é um mapa das associações entre objetos.
- Assim, o objeto A acessa o dicionário fornecendo uma chave (um nome para
- o objeto que deseja acessar) e o dicionário retorna um valor (um ponteiro)
- para o objeto correto.
+Se existe uma relação de "muitos",
+ pode-se implementar a associação com a utilização de um dicionário,
+ que é um mapa das associações entre objetos.
+ Assim,
+ o objeto A acessa o dicionário fornecendo uma chave (um nome para o objeto que deseja acessar) e o dicionário retorna um valor (um ponteiro) para o objeto correto.
  
 \begin_inset Separator latexpar
 \end_inset
@@ -1095,6 +948,8 @@ Neste projeto blablabla
 \begin_layout Subsubsection
 Efeitos do projeto nas otimizações
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1108,8 +963,7 @@ otimizações
 
 \begin_layout Itemize
 Faça uma análise de aspectos relativos à otimização do sistema.
- Lembrando que a otimização deve ser desenvolvida por analistas/desenvolvedores
- experientes.
+ Lembrando que a otimização deve ser desenvolvida por analistas/desenvolvedores experientes.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1123,8 +977,7 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Itemize
-Identifique pontos a serem otimizados em que podem ser utilizados processos
- concorrentes.
+Identifique pontos a serem otimizados em que podem ser utilizados processos concorrentes.
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1142,9 +995,10 @@ Pense em incluir bibliotecas otimizadas.
 \end_layout
 
 \begin_layout Itemize
-Se o acesso a determinados objetos (atributos/métodos) requer um caminho
- longo (exemplo: A->B->C->D.atributo), pense em incluir associações extras
- (exemplo: A-D.atributo).
+Se o acesso a determinados objetos (atributos/métodos) requer um caminho longo (exemplo:
+ A->B->C->D.atributo),
+ pense em incluir associações extras (exemplo:
+ A-D.atributo).
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1200,16 +1054,16 @@ Neste projeto blablabla
 
 \end_deeper
 \begin_layout Standard
-Depois de revisados os diagramas da análise você pode montar dois diagramas
- relacionados à infraestrutura do sistema.
- As dependências dos arquivos e bibliotecas podem ser descritos pelo diagrama
- de componentes, e as relações e dependências entre o sistema e o hardware
- podem ser ilustradas com o diagrama de implantação.
+Depois de revisados os diagramas da análise você pode montar dois diagramas relacionados à infraestrutura do sistema.
+ As dependências dos arquivos e bibliotecas podem ser descritos pelo diagrama de componentes,
+ e as relações e dependências entre o sistema e o hardware podem ser ilustradas com o diagrama de implantação.
 \end_layout
 
 \begin_layout Section
 Diagrama de componentes
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1229,76 +1083,90 @@ name "sec:Diagrama-de-componentes"
 \end_layout
 
 \begin_layout Standard
-O diagrama de componentes mostra a forma como os componentes do software
- se relacionam, suas dependências.
- Inclui itens como: componentes, subsistemas, executáveis, nós, associações,
- dependências, generalizações, restrições e notas.
- Exemplos de componentes são bibliotecas estáticas, bibliotecas dinâmicas,
- dlls, componentes Java, executáveis, arquivos de disco, código-fonte.
- 
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
+O Diagrama de Componentes (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-componentes"
+nolink "false"
 
 \end_inset
 
- um exemplo de diagrama de componentes.
- Observe que este inclui muitas dependências, ilustrando as relações entre
- os arquivos.
- Por exemplo: o subsistema biblioteca inclui os arquivos das classes A e
- B, e a geração dos objetos A.obj e B.obj depende dos arquivos A.h, A.cpp, B.h
- e B.cpp.
- A geração da biblioteca depende dos arquivos A.obj e B.obj.
- O subsistema biblioteca Qt, um subsistema exerno, inclui os arquivos de
- código da biblioteca Qt e a biblioteca em si.
- O subsistema banco de dados representa o banco de dados utilizado pelo
- sistema e tem uma interface de acesso que é utilizada pelo software para
- acesso aos dados armazenados no banco de dados.
- O software executável a ser gerado depende da biblioteca gerada, dos arquivos
- da biblioteca Qt, do módulo de arquivos MinhaJanela e do banco de dados.
-\end_layout
-
-\begin_layout Standard
-Algumas observações úteis para o diagrama de componentes:
-\end_layout
-
-\begin_layout Itemize
-De posse do diagrama de componentes, temos a lista de todos os arquivos
- necessários para compilar e rodar o software.
-\end_layout
-
-\begin_layout Itemize
-Observe que um assunto/pacote pode se transformar em uma biblioteca e será
- incluído no diagrama de componentes.
-\end_layout
-
-\begin_layout Itemize
-A ligação entre componentes pode incluir um estereótipo indicando o tipo
- de relacionamento ou algum protocolo utilizado.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Na versão final apagar este texto copiado do livro; e colocado aqui para
- lhe auxiliar; deixar somente o que é pertinente ao trabalho
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Neste projeto blablabla
+ ) detalha as dependências de compilação e ligação do software.
+ O componente executável final,
+ 
+\family typewriter
+\nospellcheck on
+fw_calc
+\family default
+\nospellcheck default
+ ,
+ depende da compilação e linkagem de múltiplos componentes de código-fonte (
+\family typewriter
+\nospellcheck on
+.cpp
+\family default
+\nospellcheck default
+).
+ Cada componente 
+\family typewriter
+\nospellcheck on
+.cpp
+\family default
+\nospellcheck default
+ (ex:
+ 
+\family typewriter
+\nospellcheck on
+Simulador.cpp
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+Calculadora.cpp
+\family default
+\nospellcheck default
+) depende do seu respectivo arquivo de cabeçalho (
+\family typewriter
+\nospellcheck on
+.h
+\family default
+\nospellcheck default
+) e das abstrações das quais depende (ex:
+ 
+\family typewriter
+\nospellcheck on
+Calculadora.cpp
+\family default
+\nospellcheck default
+ depende de 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade.h
+\family default
+\nospellcheck default
+).
+ O componente 
+\family typewriter
+\nospellcheck on
+Gnuplot.cpp
+\family default
+\nospellcheck default
+ não depende do executável do Gnuplot em tempo de compilação,
+ mas o executável 
+\family typewriter
+\nospellcheck on
+fw_calc
+\family default
+\nospellcheck default
+ tem uma dependência em tempo de execução com o Gnuplot.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1306,9 +1174,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Asuntos-Pacotes-Imago.png
-	lyxscale 90
-	width 100text%
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
+	lyxscale 20
+	scale 60
+	rotateOrigin center
 
 \end_inset
 
@@ -1326,7 +1195,7 @@ name "cap:Diagrama-de-componentes"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1342,6 +1211,8 @@ name "cap:Diagrama-de-componentes"
 \begin_layout Section
 Diagrama de implantação
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1352,6 +1223,8 @@ Diagrama de implantação
 
 
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -1371,47 +1244,81 @@ name "sec:Diagrama-de-execução"
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação é um diagrama de alto nível que inclui relações
- entre o sistema e o hardware e que se preocupa com os aspectos da arquitetura
- computacional escolhida.
- Seu enfoque é o hardware, a configuração dos nós em tempo de execução.
- 
-\end_layout
-
-\begin_layout Standard
-O diagrama de implantação deve incluir os elementos necessários para que
- o sistema seja colocado em funcionamento: computador, periféricos, processadore
-s, dispositivos, nós, relacionamentos de dependência, associação, componentes,
- subsistemas, restrições e notas.
-\end_layout
-
-\begin_layout Standard
-Veja na Figura 
+O Diagrama de Implantação (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-implantação."
+nolink "false"
 
 \end_inset
 
- um exemplo de diagrama de implantação de um cluster.
- Observe a presença de um servidor conectado a um switch.
- Os nós do cluster (ou clientes) também estão conectados ao switch.
- Os resultados das simulações são armazenados em um servidor de arquivos
- (
+) para este projeto é simples,
+ pois não se trata de um sistema distribuído.
+ Haverá um único nó principal:
+ 
+\family typewriter
+\nospellcheck on
+<<device>>
+\family default
+\nospellcheck default
+ Computador Pessoal.
+ Este nó de hardware hospeda o sistema operacional (ex:
+ 
 \emph on
-storage
+\lang english
+Windows
 \emph default
-).
+\lang brazilian
+ 10/11 ou GNU/Linux).
+ Dentro deste S.O.,
+ residirão os dois artefatos de software necessários para a execução:
 \end_layout
 
-\begin_layout Standard
-Pode-se utilizar uma anotação de localização para identificar onde determinado
- componente está residente, por exemplo {localização: sala 3}.
+\begin_layout Enumerate
+
+\family typewriter
+\nospellcheck on
+[fw_calc]
+\family default
+\nospellcheck default
+ :
+ O nosso artefato executável compilado.
+\end_layout
+
+\begin_layout Enumerate
+
+\family typewriter
+\nospellcheck on
+[gnuplot]
+\family default
+\nospellcheck default
+:
+ O artefato executável da dependência externa.
+ O 
+\family typewriter
+\nospellcheck on
+[fw_calc]
+\family default
+\nospellcheck default
+ possui uma dependência de execução (do tipo 
+\family typewriter
+\nospellcheck on
+<<call>>
+\family default
+\nospellcheck default
+) com o 
+\family typewriter
+\nospellcheck on
+[gnuplot]
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
 status open
@@ -1419,9 +1326,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramDeExecucao.png
-	lyxscale 50
-	width 100text%
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/pendente-4.2.png
 
 \end_inset
 
@@ -1439,7 +1344,7 @@ name "cap:Diagrama-de-implantação."
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1453,7 +1358,8 @@ name "cap:Diagrama-de-implantação."
 \end_layout
 
 \begin_layout Description
-Nota: 
+Nota:
+ 
 \begin_inset space ~
 \end_inset
 
@@ -1461,10 +1367,14 @@ Nota:
 \begin_inset Newline newline
 \end_inset
 
-Não perca de vista a visão do todo; do projeto de engenharia como um todo.
- Cada capítulo, cada seção, cada parágrafo deve se encaixar.
+Não perca de vista a visão do todo;
+ do projeto de engenharia como um todo.
+ Cada capítulo,
+ cada seção,
+ cada parágrafo deve se encaixar.
  Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos, de ver o todo e suas diferentes partes,
+ a capacidade de desenvolver projetos,
+ de ver o todo e suas diferentes partes,
  de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
@@ -1480,28 +1390,18 @@ name "subsec: Lista de características <<features>>"
 \end_layout
 
 \begin_layout Standard
-No final do ciclo de concepção e análise chegamos a uma lista de características
- <<
-\emph on
-features
-\emph default
->> que teremos de implementar.
+No final do ciclo de concepção e análise chegamos a uma lista de características 
+\family typewriter
+\nospellcheck on
+<<features>>
+\family default
+\nospellcheck default
+ que teremos de implementar.
 \end_layout
 
 \begin_layout Standard
-Após a análises desenvolvidas e considerando o requisito de que este material
- deve ter um formato didático, chegamos a seguinte lista:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-nota importante, o número de versões irá depender do tamanho do ciclo, ou
- seja, número de dias de cada ciclo e capacidade da equipe.
-\end_layout
-
-\end_inset
-
-
+Após a análises desenvolvidas e considerando o requisito de que este material deve ter um formato didático,
+ chegamos a seguinte lista:
 \end_layout
 
 \begin_layout Itemize
@@ -1510,11 +1410,94 @@ v0.1
 
 \begin_deeper
 \begin_layout Itemize
-Lista de classes a serem implementadas
+Implementar classes Simulador,
+ 
+\family typewriter
+\nospellcheck on
+CalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \begin_layout Itemize
-Testes
+Implementar 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+CurvasPermeabilidadeTabelada
+\family default
+\nospellcheck default
+.
+\end_layout
+
+\begin_layout Itemize
+Implementar leitor de arquivo de entrada (parser) para o modelo tabelado e viscosidades.
+\end_layout
+
+\begin_layout Itemize
+Implementar cálculo da curva e salvamento em arquivo 
+\family typewriter
+\nospellcheck on
+output.csv
+\family default
+\nospellcheck default
+.
+\end_layout
+
+\begin_layout Itemize
+Testes:
+ Validar o 
+\family typewriter
+\nospellcheck on
+.csv
+\family default
+\nospellcheck default
+ de saída contra um cálculo manual em planilha.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+v0.2
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementar classe 
+\family typewriter
+\nospellcheck on
+CurvasPermeabilidadeCorey
+\family default
+\nospellcheck default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Atualizar o parser do arquivo de entrada para ler os parâmetros do modelo Corey .
+\end_layout
+
+\begin_layout Itemize
+Testes:
+ Validar o 
+\family typewriter
+\nospellcheck on
+.csv
+\family default
+\nospellcheck default
+ de saída para o modelo Corey.
 \end_layout
 
 \end_deeper
@@ -1524,25 +1507,22 @@ v0.3
 
 \begin_deeper
 \begin_layout Itemize
-Lista de classes a serem implementadas
+Implementar classe Gnuplot .
 \end_layout
 
 \begin_layout Itemize
-Testes
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-v0.7
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
+Integrar a chamada do Gnuplot no Simulador para plotagem automática.
 \end_layout
 
 \begin_layout Itemize
-Testes
+Testes:
+ Validar a exibição do gráfico em 
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+ e Linux.
 \end_layout
 
 \end_deeper
@@ -1558,15 +1538,40 @@ name "subsec:Tabela-classificação-sistema"
 \end_layout
 
 \begin_layout Standard
-A Tabela a seguir é utilizada para classificação do sistema desenvolvido.
- Deve ser preenchida na etapa de projeto e revisada no final, quando o software
- for entregue na sua versão final.
-\begin_inset Note Note
+A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Tabela-classificação-sistema1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ a seguir é utilizada para classificação do sistema desenvolvido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-A tabela esta preenchida com dados de um dos exemplos de projeto; você deve
- preencher de acordo com o problema específico que esta resolvendo
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela classificação sistema
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tabela-classificação-sistema1"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1574,7 +1579,7 @@ A tabela esta preenchida com dados de um dos exemplos de projeto; você deve
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="2">
 <features islongtable="true" longtabularalignment="center">
@@ -1666,38 +1671,7 @@ Modelagem UML:
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] básica 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Diagramas de caso de uso, de componentes(assuntos/pacotes/componentes),
- de classes, de sequência, de distribuição
-\end_layout
-
-\end_inset
-
-[X] intermediária 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Diagramas de máquina de estado, de atividades
-\end_layout
-
-\end_inset
-
-[ ] avançada
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Uso de recursos avançados de UML
-\end_layout
-
-\end_inset
-
-
+[X] básica [X] intermediária [ ] avançada
 \end_layout
 
 \end_inset
@@ -1721,36 +1695,7 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] alto nível 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\color blue
-:
-\color inherit
- são algoritmos que são implementados utilizando instruções mais complexas.
-\end_layout
-
-\end_inset
-
-[X] baixo nível
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\color blue
-:
-\color inherit
- são algoritmos que são implementados utilizando instruções mais básicas
- e essenciais.
-\end_layout
-
-\end_inset
-
-
+[X] alto nível [] baixo nível
 \end_layout
 
 \end_inset
@@ -1770,63 +1715,10 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
-implementação: [ ] recursivo ou [X] iterativo
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\color blue
-:
-\series default
- 
-\color inherit
-um algoritmo iterativo utiliza estruturas de repetição, fazendo com que
- determinadas atividades sejam repetidas tantas vezes quanto necessárias,
- normalmente temos algum critério de parada.
- Já um algoritmo recursivo é um algoritmo que chama a sí mesmo.
- Note que chamar a sí mesmo é uma forma de iteração.
- O exemplo do pagamento dos salários é iterativo, foi do empregado 1 ao
- empregado 10000.
-\end_layout
-
-\end_inset
-
-; [X] determinístico 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\color blue
-:
-\color inherit
- é determinístico quando o caminho para solução é exato e não-determinístico
- quando usamos mecanismos de busca/estimativas para encontrar uma solução.
-\end_layout
-
-\end_inset
-
-ou [ ] não-determinístico; [ ] exato ou [X] aproximado
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\color blue
-: 
-\color inherit
-muitas vezes tenho a equação que me dá uma solução exata, quando utilizo
- esta equação meu algoritmo é exato.
- Mas em muitas situações eu não tenho a soluição exata, tenho apenas equações
- aproximadas, quando uso uma equação inexata ou empírica, sei que meu algoritmo
- é aproximado.
-\end_layout
-
-\end_inset
-
-
+implementação:
+ [ ] recursivo ou [X] iterativo;
+ [X] determinístico ou [ ] não-determinístico;
+ [ ] exato ou [X] aproximado
 \end_layout
 
 \end_inset
@@ -1846,7 +1738,8 @@ muitas vezes tenho a equação que me dá uma solução exata, quando utilizo
 \begin_inset Text
 
 \begin_layout Plain Layout
-concorrências: [X] serial [X] concorrente [X] paralelo
+concorrências:
+ [X] serial [] concorrente [] paralelo
 \end_layout
 
 \end_inset
@@ -1866,132 +1759,8 @@ concorrências: [X] serial [X] concorrente [X] paralelo
 \begin_inset Text
 
 \begin_layout Plain Layout
-paradigma: [X] dividir para conquistar
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-:
-\series default
- 
-\color inherit
-são algoritmos que trabalham com a divisão e subdivisão de um problema em
- partes menores;
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Exemplo: escrever seu TCC - Trabalho de Conclusão de Curso, você irá dividir
- o mesmo em vários capítulos, os capítulos em seções e as seções em subseções.
- De forma que então conseguirá desenvolver seu trabalho, pois as partes
- pequenas tornam-se viáveis de serem feitas.
-\end_layout
-
-\end_deeper
-\end_inset
-
- [ ] programação linear
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\color blue
-:
-\series default
-\color inherit
- o problema é resolvido através de programação linear envolvendo a busca
- de máximos e mínimos
-\end_layout
-
-\end_inset
-
- [ ] transformação/ redução
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-
-\series bold
-\color blue
-:
-\series default
-\color inherit
- são algoritmos que mudam o problema fazendo associações com outros, geralmente
- eu conheço a solução deste outro problema, resolvo o mesmo, e então retorno;
- é exatamente o que fazemos por exemplo quando usamos uma transformada matemátic
-a para resolver um problema.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Exemplo: não sei resolver estas equações professor.
- Faça uma transformada de Laplace, resolva no espaço de Laplace e então
- volte.
-\end_layout
-
-\end_deeper
-\end_inset
-
- [ ] busca e enumeração
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\color blue
-:
-\series default
-\color inherit
- são algoritmos que usam a teoria dos grafos.
-\end_layout
-
-\end_inset
-
- [ ] heurístico e probabilístico
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\color blue
-:
-\series default
-\color inherit
- são algoritmos que trabalham com números aleatórios e heurísticas, aproximações
-, em busca da solução.
-\end_layout
-
-\end_inset
-
- [ ] baseados em pilhas
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\color blue
-:
-\series default
-\color inherit
- são algoritmos de cálculo implementados utilizando o conceito de pilhas
- e Notação Polonesa Inversa (
-\emph on
-RPN - Reverse Polish Notation
-\emph default
-), também conhecida como notação pós-fixada.
-\end_layout
-
-\end_inset
-
-
+paradigma:
+ [X] dividir para conquistar[ ] programação linear [ ] transformação/ redução [ ] busca e enumeração [ ] heurístico e probabilístico [ ] baseados em pilhas
 \end_layout
 
 \end_inset
@@ -2020,16 +1789,25 @@ status collapsed
 \begin_layout Itemize
 
 \series bold
-: 
+:
+ 
 \series default
 Estão relacionados ao funcionamento do computador e seus recursos (processador,
- memória, hd, teclado, mouse, portas, etc).
+ memória,
+ hd,
+ teclado,
+ mouse,
+ portas,
+ etc).
  Exemplos:
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Sistemas operacionais (Windows, GNU/Linux, Mac Os X, Android).
+Sistemas operacionais (Windows,
+ GNU/Linux,
+ Mac Os X,
+ Android).
 \end_layout
 
 \begin_layout Itemize
@@ -2042,14 +1820,17 @@ de dispositivos).
 
 \begin_layout Itemize
 Suporte ao desenvolvimento de software (compiladores,
+
 \emph on
  debugers
 \emph default
-, 
+,
+ 
 \emph on
 profilers
 \emph default
-, ambientes de desenvolvimento).
+,
+ ambientes de desenvolvimento).
 \end_layout
 
 \begin_layout Itemize
@@ -2066,13 +1847,16 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
-: 
+:
+ 
 \series default
-São os demais softwares, os que nos ajudam no dia a dia.
- Podemos dividir em softwares de cunho geral, específicos e científicos.
- Esta divisão faz sentido pois os softwares específicos exigem conhecimentos
- técnicos da área específica e os softwares científicos tem requisitos diferenci
-ados no que se refere a interface, documentação, demandas de otimização,
+São os demais softwares,
+ os que nos ajudam no dia a dia.
+ Podemos dividir em softwares de cunho geral,
+ específicos e científicos.
+ Esta divisão faz sentido pois os softwares específicos exigem conhecimentos técnicos da área específica e os softwares científicos tem requisitos diferenciados no que se refere a interface,
+ documentação,
+ demandas de otimização,
  consumo de memória e performance.
  Exemplos:
 \end_layout
@@ -2084,22 +1868,30 @@ ados no que se refere a interface, documentação, demandas de otimização,
 status collapsed
 
 \begin_layout Itemize
-Editor de texto, editor de apresentações e planilha eletrônica (ex: Office,
+Editor de texto,
+ editor de apresentações e planilha eletrônica (ex:
+ Office,
  Libre Office).
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Aplicativos para ver filmes, ouvir músicas e jogos eletrônicos.
+Aplicativos para ver filmes,
+ ouvir músicas e jogos eletrônicos.
 \end_layout
 
 \begin_layout Itemize
-Aplicações web como navegador de internet, gerenciador de email, gerenciador
- de tarefas (chrome, gmail).
+Aplicações web como navegador de internet,
+ gerenciador de email,
+ gerenciador de tarefas (chrome,
+ gmail).
 \end_layout
 
 \begin_layout Itemize
-Gerenciador de arquivos na rede (ex: dropbox, google drive, github).
+Gerenciador de arquivos na rede (ex:
+ dropbox,
+ google drive,
+ github).
 \end_layout
 
 \end_deeper
@@ -2119,7 +1911,9 @@ Da área de direito (gestão de documentos e processos).
 \end_layout
 
 \begin_layout Itemize
-Da área de engenharia (CAD, modeladores, simuladores específicos).
+Da área de engenharia (CAD,
+ modeladores,
+ simuladores específicos).
 \begin_inset Note Note
 status open
 
@@ -2165,17 +1959,8 @@ Modeladores e simuladores de cunho acadêmico.
 \begin_inset Text
 
 \begin_layout Plain Layout
-instruções: [X] alto nível [ ] baixo nível
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-interrupções/assembler
-\end_layout
-
-\end_inset
-
-
+instruções:
+ [X] alto nível [ ] baixo nível
 \end_layout
 
 \end_inset
@@ -2195,7 +1980,8 @@ interrupções/assembler
 \begin_inset Text
 
 \begin_layout Plain Layout
-otimização: [X] serial não otimizado
+otimização:
+ [X] serial não otimizado
 \begin_inset Note Note
 status collapsed
 
@@ -2203,45 +1989,49 @@ status collapsed
 
 \series bold
 :
+
 \series default
  executa uma sequência de instruções de forma serial (não existe antecipação,
  nem desvios).
  Não houve preocupação com desempenho.
- Não foram aproveitadas opções de otimização do compilador e do processador
- específico.
+ Não foram aproveitadas opções de otimização do compilador e do processador específico.
  É a forma de programação mais usual!
 \end_layout
 
 \end_inset
 
- [X] serial otimizado
+ [] serial otimizado
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
 \series bold
-: 
+:
+ 
 \series default
-Neste caso houve preocupação com desempenho, com a escolha dos melhores
- algoritmos, com alocação de memória(ex: uso de ponteiros), com a forma
- como a linguagem e o sistema operacional lidam com a memória, com a chamada
- das funções.
- Foram aproveitadas opções de otimização do compilador e do processador
- específico.
- É a forma de otimização mais usual, a primeira a ser adotada.
+Neste caso houve preocupação com desempenho,
+ com a escolha dos melhores algoritmos,
+ com alocação de memória(ex:
+ uso de ponteiros),
+ com a forma como a linguagem e o sistema operacional lidam com a memória,
+ com a chamada das funções.
+ Foram aproveitadas opções de otimização do compilador e do processador específico.
+ É a forma de otimização mais usual,
+ a primeira a ser adotada.
 \end_layout
 
 \end_inset
 
- [X] concorrente
+ [] concorrente
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
 \series bold
-: 
+:
+ 
 \series default
 Neste caso dois ou mais processos/
 \emph on
@@ -2250,16 +2040,15 @@ threads
  diferentes rodam ao mesmo tempo e trocam informações entre sí.
  Um exemplo típico é o caso do produtor/consumidor.
  O produtor gera dados que são processador pelo consumidor.
- Note que teremos pelo menos dois núcleos sendo utilizados, cada um fazendo
- um processamento diferente.
+ Note que teremos pelo menos dois núcleos sendo utilizados,
+ cada um fazendo um processamento diferente.
  Note que os softwares podem ter sido desenvolvidos em linguagens diferentes,
- a comunicação pode ser feita por exemplo via pipe (um canal de comunicação
- entre programas).
+ a comunicação pode ser feita por exemplo via pipe (um canal de comunicação entre programas).
 \end_layout
 
 \end_inset
 
- [X] paralelo
+ [] paralelo
 \begin_inset Note Note
 status collapsed
 
@@ -2267,20 +2056,21 @@ status collapsed
 
 \series bold
 :
+
 \series default
  Neste caso dois ou mais processos/
 \emph on
 threads
 \emph default
  iguais rodam em paralelo.
- Um exemplo típico em engenharia é pegar um cálculo muito longo e dividir
- o mesmo.
- Por exemplo, preciso aplicar um filtro passa baixa sobre uma imagem grande.
- Se tenho 4 núcleos a disposição divido a imagem em 4 pedaços e processo
- cada pedaço usando um dos núcleos.
- Se este processamento for independente é fácil implementar, porém, se tiver
- intersecções, então terei de usar mecanismos de comunicação entre processos/thr
-eads.
+ Um exemplo típico em engenharia é pegar um cálculo muito longo e dividir o mesmo.
+ Por exemplo,
+ preciso aplicar um filtro passa baixa sobre uma imagem grande.
+ Se tenho 4 núcleos a disposição divido a imagem em 4 pedaços e processo cada pedaço usando um dos núcleos.
+ Se este processamento for independente é fácil implementar,
+ porém,
+ se tiver intersecções,
+ então terei de usar mecanismos de comunicação entre processos/threads.
 \end_layout
 
 \end_inset
@@ -2293,23 +2083,27 @@ status collapsed
 
 \series bold
 :
+
 \series default
- alguns hardwares possibilitam o uso de processamento vetorial, antigamente
- eram muito específicos e caros, mas hoje em dia várias CPUs tem capacidade
- de processamento vetorial, por exemplo com o uso de SIMD - Uma Instrução
- Múltiplos Dados.
- A ideia aqui é que o processador carrega um vetor de dados A, carrega um
- vetor de dados B, e realiza a operação de soma armazenando o resultado
- em C.
- Isto é feito simultaneamente, isto é, as operações C[0] = A[0] + B[0];
- C[1] = A[1] + B[1];...; C[n] = A[n] + B[n]; são todas feitas no mesmo instante
- (mesmo 
+ alguns hardwares possibilitam o uso de processamento vetorial,
+ antigamente eram muito específicos e caros,
+ mas hoje em dia várias CPUs tem capacidade de processamento vetorial,
+ por exemplo com o uso de SIMD - Uma Instrução Múltiplos Dados.
+ A ideia aqui é que o processador carrega um vetor de dados A,
+ carrega um vetor de dados B,
+ e realiza a operação de soma armazenando o resultado em C.
+ Isto é feito simultaneamente,
+ isto é,
+ as operações C[0] = A[0] + B[0];
+ C[1] = A[1] + B[1];...;
+ C[n] = A[n] + B[n];
+ são todas feitas no mesmo instante (mesmo 
 \emph on
 clock
 \emph default
 ).
- Alguns compiladores já permitem otimizações que viabilizam o uso deste
- tipo de processamento, notadamente nas bibliotecas padrões.
+ Alguns compiladores já permitem otimizações que viabilizam o uso deste tipo de processamento,
+ notadamente nas bibliotecas padrões.
 \end_layout
 
 \end_inset
@@ -2334,9 +2128,9 @@ clock
 \begin_inset Text
 
 \begin_layout Plain Layout
-interface do usuário: [ ] kernel numérico [ ] linha de comando [ ] modo
- texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex: Qt) [
- ] navegador
+interface do usuário:
+ [ ] kernel numérico [ X] linha de comando [ ] modo texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex:
+ Qt) [ ] navegador
 \end_layout
 
 \end_inset
@@ -2358,13 +2152,21 @@ Recursos de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] C++ básico (FCC): variáveis padrões da linguagem, estruturas de controle
- e repetição, estruturas de dados, struct, classes(objetos, atributos, métodos),
- funções; entrada e saída de dados (
+[X] C++ básico (FCC):
+ variáveis padrões da linguagem,
+ estruturas de controle e repetição,
+ estruturas de dados,
+ struct,
+ classes(objetos,
+ atributos,
+ métodos),
+ funções;
+ entrada e saída de dados (
 \emph on
 streams
 \emph default
-), funções de cmath
+),
+ funções de cmath
 \end_layout
 
 \end_inset
@@ -2384,18 +2186,30 @@ streams
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] C++ intermediário: funções lambda.
- Ponteiros, referências, herança, herança múltipla, polimorfismo, sobrecarga
- de funções e de operadores, tipos genéricos (templates), 
+[X] C++ intermediário:
+ funções lambda.
+ Ponteiros,
+ referências,
+ herança,
+ herança múltipla,
+ polimorfismo,
+ sobrecarga de funções e de operadores,
+ tipos genéricos (templates),
+ 
 \emph on
 smarth pointers
 \emph default
 .
- Diretrizes de pré-processador, classes de armazenamento e modificadores
- de acesso.
- Estruturas de dados: enum, uniões.
- Bibliotecas: entrada e saída acesso com arquivos de disco, redirecionamento.
- Bibliotecas: 
+ Diretrizes de pré-processador,
+ classes de armazenamento e modificadores de acesso.
+ Estruturas de dados:
+ enum,
+ uniões.
+ Bibliotecas:
+ entrada e saída acesso com arquivos de disco,
+ redirecionamento.
+ Bibliotecas:
+ 
 \emph on
 filesystem
 \end_layout
@@ -2417,20 +2231,27 @@ filesystem
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] C++ intermediário 2: A biblioteca de gabaritos de C++ (a STL), containers,
- iteradores, objetos funções e funções genéricas.
- Noções de processamento paralelo (múltiplas threads, uso de 
+[X] C++ intermediário 2:
+ A biblioteca de gabaritos de C++ (a STL),
+ containers,
+ iteradores,
+ objetos funções e funções genéricas.
+ Noções de processamento paralelo (múltiplas threads,
+ uso de 
 \emph on
-thread, join 
+thread,
+ join 
 \emph default
 e 
 \emph on
 mutex
 \emph default
 ).
- Bibliotecas: 
+ Bibliotecas:
+ 
 \emph on
-random, threads
+random,
+ threads
 \end_layout
 
 \end_inset
@@ -2450,13 +2271,20 @@ random, threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-[ ] C++ avançado: Conversão de tipos do usuário, especializações de templates,
+[ ] C++ avançado:
+ Conversão de tipos do usuário,
+ especializações de templates,
  excessões.
- Cluster de computadores, processamento paralelo e concorrente, múltiplos
- processos (pipes, memória compartilhada, sinais).
- Bibliotecas: 
+ Cluster de computadores,
+ processamento paralelo e concorrente,
+ múltiplos processos (pipes,
+ memória compartilhada,
+ sinais).
+ Bibliotecas:
+ 
 \emph on
-expressões regulares, múltiplos processos
+expressões regulares,
+ múltiplos processos
 \end_layout
 
 \end_inset
@@ -2490,7 +2318,7 @@ filesystem
 \emph on
 random 
 \emph default
-[X] 
+[] 
 \emph on
 threads 
 \emph default
@@ -2526,7 +2354,7 @@ Bibliotecas externas:
 \family typewriter
 CGnuplot 
 \family default
-[X] 
+[] 
 \family typewriter
 QCustomPlot 
 \family default
@@ -2557,6 +2385,7 @@ Ferramentas auxiliares:
 
 \begin_layout Plain Layout
 Montador:
+
 \family typewriter
  
 \family default
@@ -2568,7 +2397,7 @@ Montador:
 \family typewriter
  
 \family default
-[X] qmake
+[] qmake
 \end_layout
 
 \end_inset
@@ -2590,7 +2419,8 @@ IDE:
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] Editor simples: kate/gedit/emacs
+[X] Editor simples:
+ kate/gedit/emacs
 \family typewriter
  
 \family default
@@ -2659,7 +2489,11 @@ Disciplinas correlacionadas
 status collapsed
 
 \begin_layout Itemize
-[ ] Básica: média, desvio padrão, histogramas, números pseudo randômicos.
+[ ] Básica:
+ média,
+ desvio padrão,
+ histogramas,
+ números pseudo randômicos.
  Estatística descritiva.
  Probabilidades.
  Variáveis aleatórias Unidimensionais.
@@ -2672,34 +2506,50 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
-[ ] Intermediária: Estimação.
+[ ] Intermediária:
+ Estimação.
  Teste de hipótese.
  Correlação e regressão.
  Distribuições (normal.
- T-Student, X-quadrado)
+ T-Student,
+ X-quadrado)
 \end_layout
 
 \end_inset
 
- [ ] cálculo numérico 
+ [ X] cálculo numérico 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Itemize
-[ ] Básico: erros, solver de função (iteração de ponto fixo, método das
- cordas, Newton-Raphson), integral numérica(trapésio, Simpson, Gauss), interpola
-ção(interpolação polinomial, Lagrange, Newton, funções 
+[ ] Básico:
+ erros,
+ solver de função (iteração de ponto fixo,
+ método das cordas,
+ Newton-Raphson),
+ integral numérica(trapésio,
+ Simpson,
+ Gauss),
+ interpolação(interpolação polinomial,
+ Lagrange,
+ Newton,
+ funções 
 \emph on
 spline
 \emph default
-), ajuste de curvas(ajuste por polinômios, mínimos quadrados) .
+),
+ ajuste de curvas(ajuste por polinômios,
+ mínimos quadrados) .
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-[ ] Intermediário: matrizes e sistemas de equações lineares(solver de sistema
- de equações - TDMA, eliminação gauss, fatoração LU), solução numérica de
- equações diferenciais(método de Euler, método de Taylor e Runge-Kutta)
+[ ] Intermediário:
+ matrizes e sistemas de equações lineares(solver de sistema de equações - TDMA,
+ eliminação gauss,
+ fatoração LU),
+ solução numérica de equações diferenciais(método de Euler,
+ método de Taylor e Runge-Kutta)
 \end_layout
 
 \end_deeper
@@ -2721,13 +2571,18 @@ status collapsed
 
 \end_inset
 
- [X] análise e processamento de imagens
+ [] análise e processamento de imagens
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,11 +28,11 @@
 \options normaltoc, sumarioincompleto
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
 \inputencoding utf8
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -40,7 +40,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -66,7 +68,7 @@
 \pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -87,7 +89,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -109,11 +113,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -125,6 +134,8 @@ Manual do Usuário
 
 TÍTULO DO PROJETO/SOFTWARE
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -144,89 +155,26 @@ name "chap:Manual-do-Usuário"
 \end_layout
 
 \begin_layout Chapter
-Instalação
-\begin_inset Index idx
-status open
-
-\begin_layout Plain Layout
-Instalação
-\end_layout
-
-\end_inset
-
-
+Instalação e Dependências
 \end_layout
 
 \begin_layout Standard
-A seguir instruções para instalação do software.
+Para utilizar o software Ferramenta de Fluxo Fracionário,
+ o usuário não precisa realizar uma instalação complexa,
+ pois o software é distribuído como um executável portátil.
+ No entanto,
+ é necessário garantir que o ambiente possua a ferramenta de visualização gráfica.
 \end_layout
 
 \begin_layout Section
-Baixando o software
-\end_layout
-
-\begin_layout Standard
-O software foi disponibilizado no site 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://github.com/ldsc"
-literal "false"
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque o link correto para o seu projeto no site https://github.com/ldsc/nomePro
-jetoEspecifico
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Lá você encontra instruções atualizadas para baixar e instalar.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-coloque as instruções:
-\end_layout
-
-\begin_layout Plain Layout
-git clone https://github.com/ldsc/nomeProjetoEspecifico
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Dependências
+Dependências Obrigatórias
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
 Dependências
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Para compilar o software é necessário atender as seguintes dependências:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-adicione aqui todas as dependências para instalação do software
 \end_layout
 
 \end_inset
@@ -235,42 +183,66 @@ adicione aqui todas as dependências para instalação do software
 \end_layout
 
 \begin_layout Itemize
-Instalar o compilador g++ da GNU disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-name "http://gcc.gnu.org"
-target "http://gcc.gnu.org"
-literal "false"
-
-\end_inset
-
-.
+Gnuplot:
+ O software utiliza o Gnuplot para gerar e exibir os gráficos automaticamente.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Para instalar no GNU/Linux use o comando 
+
+\emph on
+\lang english
+Windows
+\emph default
+\lang brazilian
+:
+ Baixe e instale a versão mais recente do Gnuplot (
 \family typewriter
-dnf install gcc
+\nospellcheck on
+\lang english
+http://www.gnuplot.info/
 \family default
+\nospellcheck default
+\lang brazilian
+).
+ Durante a instalação,
+ marque a opção "
+\emph on
+\lang english
+Add application directory to your PATH environment variable
+\emph default
+\lang brazilian
+" para garantir que o sistema encontre o comando 
+\family typewriter
+\nospellcheck on
+gnuplot
+\family default
+\nospellcheck default
 .
+\end_layout
+
+\begin_layout Itemize
+Linux:
+ Instale via gerenciador de pacotes (ex:
+ 
+\family typewriter
+\nospellcheck on
+sudo apt-get install gnuplot ou pacman -S mingw-w64-x86_64-gnuplot no MSYS2
+\family default
+\nospellcheck default
+).
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-Instalar a biblioteca Qt disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-target "https://www.qt.io/download"
-
-\end_inset
-
-.
-\begin_inset Note Note
+\begin_layout Section
+Instalação do Software
+\begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
-apague se não usa Qt; 
+Instalação
 \end_layout
 
 \end_inset
@@ -278,18 +250,18 @@ apague se não usa Qt;
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Note que você deve testar a instalação seguindo exatamente o que colocou
- nesta seção
+\begin_layout Enumerate
+Baixe o pacote do software (ou compile-o seguindo o Manual do Desenvolvedor).
 \end_layout
 
-\end_inset
+\begin_layout Enumerate
+Mantenha a estrutura de pastas original,
+ garantindo que o executável fw_calc (na pasta bin/) consiga acessar os arquivos de teste se necessário.
+\end_layout
 
-
+\begin_layout Enumerate
+Não é necessário instalador;
+ o programa roda diretamente via terminal.
 \end_layout
 
 \end_body

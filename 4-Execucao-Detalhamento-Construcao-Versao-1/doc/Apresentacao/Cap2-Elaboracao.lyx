@@ -316,7 +316,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/curva-S-generica.png
 	lyxscale 50
-	scale 80
+	width 10cm
 
 \end_inset
 
@@ -350,7 +350,7 @@ name "fig:Curva-de-fluxo"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -926,7 +926,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
 	lyxscale 50
-	scale 60
+	width 9cm
 
 \end_inset
 

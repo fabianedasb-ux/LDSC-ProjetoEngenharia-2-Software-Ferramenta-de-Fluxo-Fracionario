@@ -212,9 +212,10 @@ nolink "false"
 Interface 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small\ttfamily},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -468,6 +469,7 @@ name "lis:ICurvasPermeabilidade.h"
 
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 Apresenta-se na Listagem 
 \begin_inset CommandInset ref
@@ -526,6 +528,10 @@ nolink "false"
 \end_inset
 
  o arquivo de cabeçalho da classe 
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeTabelada
@@ -537,7 +543,7 @@ CurvasPermeabilidadeTabelada
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small\ttfamily},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize\ttfamily},breaklines=true"
 inline false
 status open
 
@@ -821,10 +827,6 @@ public:
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 #endif
 \end_layout
 
@@ -871,7 +873,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -1526,6 +1528,10 @@ nolink "false"
 \end_inset
 
  o arquivo de cabeçalho da classe 
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeCorey
@@ -1545,17 +1551,15 @@ literal "true"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
 \begin_layout Plain Layout
-
 #ifndef CURVASPERMEABILIDADECOREY_H
 \end_layout
 
 \begin_layout Plain Layout
-
 #define CURVASPERMEABILIDADECOREY_H
 \end_layout
 
@@ -1564,12 +1568,10 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 #include "ICurvasPermeabilidade.h"
 \end_layout
 
 \begin_layout Plain Layout
-
 #include <string> // Incluído para std::string
 \end_layout
 
@@ -1578,58 +1580,47 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
 /**
 \end_layout
 
 \begin_layout Plain Layout
-
  * @class CurvasPermeabilidadeCorey
 \end_layout
 
 \begin_layout Plain Layout
-
  * @brief Implementação concreta da interface ICurvasPermeabilidade para o modelo de Corey.
 \end_layout
 
 \begin_layout Plain Layout
-
  *
 \end_layout
 
 \begin_layout Plain Layout
-
  * Esta classe lê os 6 parâmetros do modelo de Corey do arquivo de entrada
 \end_layout
 
 \begin_layout Plain Layout
-
  * e calcula Krw/Kro analiticamente usando as fórmulas de Corey.
 \end_layout
 
 \begin_layout Plain Layout
-
  */
 \end_layout
 
 \begin_layout Plain Layout
-
 class CurvasPermeabilidadeCorey :
  public ICurvasPermeabilidade {
 \end_layout
 
 \begin_layout Plain Layout
-
 private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Saturação de água irreduzível (Swir)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _swir;
 \end_layout
 
@@ -1638,12 +1629,10 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Saturação de óleo residual (Sorw)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _sorw;
 \end_layout
 
@@ -1652,12 +1641,10 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Permeabilidade relativa máxima da água (no Sorw)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _krw_max;
 \end_layout
 
@@ -1666,12 +1653,10 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Permeabilidade relativa máxima do óleo (no Swir)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _kro_max;
 \end_layout
 
@@ -1680,12 +1665,10 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Expoente de Corey para a água (nw)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _nw;
 \end_layout
 
@@ -1694,12 +1677,10 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
     /// Expoente de Corey para o óleo (no)
 \end_layout
 
 \begin_layout Plain Layout
-
     double _no;
 \end_layout
 
@@ -1708,32 +1689,26 @@ private:
 \end_layout
 
 \begin_layout Plain Layout
-
 public:
 \end_layout
 
 \begin_layout Plain Layout
-
     /**
 \end_layout
 
 \begin_layout Plain Layout
-
      * @brief Carrega os 6 parâmetros do modelo Corey do arquivo.
 \end_layout
 
 \begin_layout Plain Layout
-
      * @param arquivo O caminho para o arquivo de configuração .txt.
 \end_layout
 
 \begin_layout Plain Layout
-
      */
 \end_layout
 
 \begin_layout Plain Layout
-
     void carregarDados(const std::string& arquivo) override;
 \end_layout
 
@@ -1742,32 +1717,26 @@ public:
 \end_layout
 
 \begin_layout Plain Layout
-
     /**
 \end_layout
 
 \begin_layout Plain Layout
-
      * @brief Calcula o Krw usando a fórmula de Corey.
 \end_layout
 
 \begin_layout Plain Layout
-
      * @param sw A saturação de água.
 \end_layout
 
 \begin_layout Plain Layout
-
      * @return O valor de Krw analítico.
 \end_layout
 
 \begin_layout Plain Layout
-
      */
 \end_layout
 
 \begin_layout Plain Layout
-
     double getKrw(double sw) const override;
 \end_layout
 
@@ -1776,37 +1745,30 @@ public:
 \end_layout
 
 \begin_layout Plain Layout
-
     /**
 \end_layout
 
 \begin_layout Plain Layout
-
      * @brief Calcula o Kro usando a fórmula de Corey.
 \end_layout
 
 \begin_layout Plain Layout
-
      * @param sw A saturação de água.
 \end_layout
 
 \begin_layout Plain Layout
-
      * @return O valor de Kro analítico.
 \end_layout
 
 \begin_layout Plain Layout
-
      */
 \end_layout
 
 \begin_layout Plain Layout
-
     double getKro(double sw) const override;
 \end_layout
 
 \begin_layout Plain Layout
-
 };
 \end_layout
 
@@ -1815,12 +1777,10 @@ public:
 \end_layout
 
 \begin_layout Plain Layout
-
 #endif
 \end_layout
 
 \begin_layout Plain Layout
-
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1862,7 +1822,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -2340,6 +2300,10 @@ nolink "false"
 \end_inset
 
  o arquivo de cabeçalho da classe 
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CalculadoraFluxoFracionario
@@ -2360,7 +2324,7 @@ literal "true"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -2673,7 +2637,7 @@ ICurvasPermeabilidade
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -3096,7 +3060,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -3283,7 +3247,7 @@ system()
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -3620,7 +3584,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -3786,7 +3750,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
@@ -4357,7 +4321,7 @@ main.cpp
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,basicstyle={\small},breaklines=true"
+lstparams "language={C++},float,numbers=left,numberstyle={\footnotesize},basicstyle={\footnotesize},breaklines=true"
 inline false
 status open
 
