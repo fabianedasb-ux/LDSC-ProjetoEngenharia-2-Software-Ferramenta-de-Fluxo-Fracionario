@@ -5,15 +5,12 @@
 \save_transient_properties true
 \origin unavailable
 \textclass extbook
-\begin_preamble
-\usepackage{pdflscape}
-\end_preamble
 \use_default_options true
 \maintain_unincluded_children no
 \language brazilian
 \language_package default
 \inputencoding utf8
-\fontencoding T1
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -66,8 +63,8 @@
 \shortcut idx
 \color #008000
 \end_index
-\secnumdepth 1
-\tocdepth 1
+\secnumdepth 3
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -92,11 +89,10 @@
 \begin_body
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap0-Capa-ProjetoDisciplina.lyx"
-literal "true"
+filename "Cap0-Capa-ProjetoDisciplina8.lyx"
+literal "false"
 
 \end_inset
 
@@ -121,15 +117,6 @@ LatexCommand tableofcontents
 \end_layout
 
 \begin_layout Standard
-\begin_inset FloatList table
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
 
@@ -139,11 +126,10 @@ LatexCommand lstlistoflistings
 \end_layout
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap1-Concepcao.lyx"
-literal "true"
+literal "false"
 
 \end_inset
 
@@ -151,11 +137,10 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap2-Elaboracao.lyx"
-literal "true"
+literal "false"
 
 \end_inset
 
@@ -163,11 +148,10 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap3-AnaliseOrientadaAObjeto.lyx"
-literal "true"
+filename "Cap3-AnaliseOrientadaAObjeto3.lyx"
+literal "false"
 
 \end_inset
 
@@ -188,28 +172,6 @@ literal "false"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap5-Ciclos-Planejam - Copia.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap6-Ciclos-copia.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
 filename "Cap7-Teste.lyx"
 literal "false"
 
@@ -219,24 +181,11 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap8-oi-oi.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align block
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
-options "apalike"
+options "plain"
 encoding "default"
 
 \end_inset
@@ -261,11 +210,10 @@ appendix
 \end_layout
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice-A.lyx"
-literal "true"
+literal "false"
 
 \end_inset
 
@@ -273,23 +221,10 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\align block
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice-B.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset index_print
-LatexCommand printindex
-type "idx"
-name "Index"
-literal "true"
+literal "false"
 
 \end_inset
 

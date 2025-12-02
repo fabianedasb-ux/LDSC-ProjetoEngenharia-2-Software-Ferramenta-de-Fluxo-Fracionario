@@ -350,15 +350,20 @@ CurvasPermeabilidadeCorey
 \nospellcheck default
 ,
  herdando de 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 ICurvasPermeabilidade
 \family default
 \nospellcheck default
 .
- 
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Implementação do algoritmo matemático das equações de Corey.
  Atualização do parser de IO para reconhecer a palavra-chave:

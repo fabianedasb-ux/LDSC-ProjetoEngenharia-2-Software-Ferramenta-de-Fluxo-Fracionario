@@ -25,8 +25,8 @@
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
+\options normaltoc, sumarioincompleto
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -37,7 +37,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -51,10 +51,24 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement class
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
-\use_hyperref false
+\use_hyperref true
+\pdf_title "Projeto Engenharia: Desenvolvimento Software Aplicado XXXXX"
+\pdf_author "Nome do Autor"
+\pdf_subject "Descrever assunto"
+\pdf_keywords "Copiar do resumo"
+\pdf_bookmarks true
+\pdf_bookmarksnumbered true
+\pdf_bookmarksopen true
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks false
+\pdf_backref page
+\pdf_pdfusetitle true
 \papersize a4
 \use_geometry true
 \use_package amsmath 1
@@ -69,7 +83,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -98,7 +112,7 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle fancy
 \tablestyle default
 \tracking_changes false
@@ -115,18 +129,11 @@
 \begin_body
 
 \begin_layout Standard
-\align center
-
-\size large
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0-Capa.lyx"
+literal "true"
 
 \end_inset
 
@@ -134,28 +141,8 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\align center
-
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-O título deve ser o mais claro possível,
- não deixando dúvidas sobre o assunto em questão.
- O uso de vírgula ou dois pontos pode deixar o título com mais impacto.
-\end_layout
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
 
 \end_inset
 
@@ -163,87 +150,7 @@ O título deve ser o mais claro possível,
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-PROJETO DE ENGENHARIA
-\begin_inset Newline newline
-\end_inset
-
-DESENVOLVIMENTO DO SOFTWARE 
-\begin_inset Newline newline
-\end_inset
-
-XXX
-\begin_inset Newline newline
-\end_inset
-
-TRABALHO DA DISCIPLINA PROGRAMAÇÃO PRÁTICA
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Versão 1:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES
-\begin_inset Newline newline
-\end_inset
-
-Versão 2:
-\begin_inset Newline newline
-\end_inset
-
-AUTORES
-\begin_inset Newline newline
-\end_inset
-
-Prof.
- André Duarte Bueno
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-o valor de 4cm pode ser alterado,
- para que a distribuição fique mais uniforme
-\end_layout
-
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
+\begin_inset FloatList figure
 
 \end_inset
 
@@ -251,14 +158,84 @@ thispagestyle{empty}
 \end_layout
 
 \begin_layout Standard
-\align center
+\begin_inset FloatList table
 
-\size large
-MACAÉ - RJ
-\begin_inset Newline newline
 \end_inset
 
-Janeiro - 2023
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap1-Instalacao-Dependencias.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap2-Interface-ComoUsar.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap3-ExemplosDeUso.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align block
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap4-Contatos.lyx"
+literal "true"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align block
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "bibliografia"
+options "apalike"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset index_print
+LatexCommand printindex
+type "idx"
+name "Índice"
+literal "true"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -334,6 +334,21 @@ output.csv
 \end_inset
 
 .
+\emph on
+\lang english
+Reservoir Engineering Handbook
+\emph default
+\lang brazilian
+ de Tarek Ahmed 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+,
+ 
 \end_layout
 
 \begin_layout Subsection
@@ -404,7 +419,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.exe.png
 	lyxscale 40
-	scale 60
+	width 100text%
 	rotateOrigin center
 
 \end_inset
@@ -1156,7 +1171,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/livroTarek.png
 	lyxscale 80
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -1350,7 +1365,7 @@ status open
 \begin_inset Graphics
 	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.png
 	lyxscale 25
-	scale 60
+	width 100text%
 
 \end_inset
 

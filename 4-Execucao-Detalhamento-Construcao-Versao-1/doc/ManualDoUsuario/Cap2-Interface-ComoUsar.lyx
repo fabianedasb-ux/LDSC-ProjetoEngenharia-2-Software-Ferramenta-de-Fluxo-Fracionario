@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -28,11 +28,11 @@
 \options normaltoc, sumarioincompleto
 \use_default_options false
 \master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language brazilian
 \language_package auto
 \inputencoding utf8
-\fontencoding global
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -40,7 +40,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -66,7 +68,7 @@
 \pdf_colorlinks false
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -87,7 +89,9 @@
 \suppress_date false
 \justification true
 \use_refstyle 0
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Índice
 \shortcut idx
 \color #008000
@@ -109,18 +113,25 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
-Interface Gráfica
+Interface e Modo de Uso
 \begin_inset Index idx
+range none
+pageformat default
 status open
 
 \begin_layout Plain Layout
@@ -132,69 +143,199 @@ Interface gráfica
 
 \end_layout
 
+\begin_layout Standard
+A ferramenta opera via Interface de Linha de Comando (CLI).
+ Toda a configuração da simulação é feita através de um Arquivo de Entrada (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+ ou 
+\family typewriter
+\nospellcheck on
+.in
+\family default
+\nospellcheck default
+) simples e editável.
+\end_layout
+
 \begin_layout Section
-A Interface Gráfica Geral
+Formato do Arquivo de Entrada
 \end_layout
 
 \begin_layout Standard
-A interface do programa é apresentada na Figura 
+O arquivo de entrada utiliza palavras-chave (em maiúsculas) seguidas de seus valores.
+ A ordem das linhas não importa,
+ exceto para os blocos de dados.
+\end_layout
+
+\begin_layout Standard
+Parâmetros Globais:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+VISC_OLEO
+\family default
+\nospellcheck default
+ <valor>:
+ Define a viscosidade do óleo (em cP).
+ Ex:
+ 
+\family typewriter
+\nospellcheck on
+VISC_OLEO
+\family default
+\nospellcheck default
+ 1.5
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+VISC_AGUA
+\family default
+\nospellcheck default
+ <valor>:
+ Define a viscosidade da água (em cP).
+ Ex:
+ 
+\family typewriter
+\nospellcheck on
+VISC_AGUA
+\family default
+\nospellcheck default
+ 0.8
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+MODELO_KR
+\family default
+\nospellcheck default
+ <TIPO>:
+ Define o modelo de permeabilidade.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Opções:
+ 
+\family typewriter
+\nospellcheck on
+TABELADO
+\family default
+\nospellcheck default
+ ou 
+\family typewriter
+\nospellcheck on
+COREY
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Configuração para 
+\family typewriter
+\nospellcheck on
+MODELO_KR TABELADO
+\family default
+\nospellcheck default
+:
+ Deve-se fornecer uma tabela de pontos entre as palavras-chave 
+\family typewriter
+\nospellcheck on
+DADOS_KR_INICIO
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+FIM_DADOS
+\family default
+\nospellcheck default
+,
+ Listagem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Imagem da Interface Gráfica"
+reference "lis:Tabela-de-pontos"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-na imagem simulador desenvolvido pelo aluno Nicholas
-\end_layout
-
-\begin_layout Plain Layout
-note que capturamos a imagem da tela do software e adicionamos na figura
- abaixo algumas informações de uso
-\end_layout
-
-\end_inset
-
-
+ Cada linha deve conter três números:
+ 
+\family typewriter
+\nospellcheck on
+Sw Krw Kro
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
 status open
 
 \begin_layout Plain Layout
 \align center
-\begin_inset Graphics
-	filename imagens/Interface-SimuladorTranscal-Nicholas.png
-	lyxscale 30
-	width 100text%
-	height 85theight%
-	keepAspectRatio
 
-\end_inset
-
-
+DADOS_KR_INICIO
 \end_layout
 
 \begin_layout Plain Layout
+\align center
+
+0.20 0.00 0.90
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+0.50 0.20 0.30
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+0.80 0.50 0.00
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+
+FIM_DADOS
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Imagem da Interface Gráfica
+Tabela de pontos entre as palavras-chave 
+\family typewriter
+\nospellcheck on
+DADOS_KR_INICIO
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+FIM_DADOS
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Imagem da Interface Gráfica"
+name "lis:Tabela-de-pontos"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -208,77 +349,188 @@ name "fig:Imagem da Interface Gráfica"
 \end_layout
 
 \begin_layout Standard
-O Figura 
+Configuração para MODELO_KR COREY:
+ Devem ser fornecidos os 6 parâmetros do modelo analítico:
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_SWIR
+\family default
+\nospellcheck default
+ <valor>:
+ Saturação de água irreduzível.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_SORW
+\family default
+\nospellcheck default
+ <valor>:
+ Saturação de óleo residual.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_KRW_MAX
+\family default
+\nospellcheck default
+ <valor>:
+ 
+\begin_inset Formula $K_{rw}$
+\end_inset
+
+ máximo.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_KRO_MAX
+\family default
+\nospellcheck default
+ <valor>:
+ 
+\begin_inset Formula $K_{ro}$
+\end_inset
+
+ máximo.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_NW
+\family default
+\nospellcheck default
+ <valor>:
+ Expoente da água.
+\end_layout
+
+\begin_layout Itemize
+
+\family typewriter
+\nospellcheck on
+COREY_NO
+\family default
+\nospellcheck default
+ <valor>:
+ Expoente do óleo.
+\end_layout
+
+\begin_layout Section
+Como Executar
+\end_layout
+
+\begin_layout Enumerate
+Abra o terminal (
+\emph on
+\lang english
+Prompt
+\emph default
+\lang brazilian
+ de Comando,
+ 
+\emph on
+\lang english
+PowerShell
+\emph default
+\lang brazilian
+ ou MSYS2).
+\end_layout
+
+\begin_layout Enumerate
+Navegue até a pasta do software.
+\end_layout
+
+\begin_layout Enumerate
+Execute o comando passando o arquivo de entrada como argumento,
+ Listagem 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Imagem da Interface Gráfica"
+reference "lis:Comandopassando-o-arquivo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
 
 \end_inset
 
- mostra a janela principal do software e foram listadas grupos de funcionalidade
-s importantes ao usuário.
+:
+
+\family typewriter
+\nospellcheck on
+ 
+\begin_inset listings
+lstparams "language={C++},float,breaklines=true"
+inline false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+./bin/fw_calc nome_do_arquivo.in
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comandopassando o arquivo de entrada
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Comandopassando-o-arquivo"
+
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Itemize
-explicar o funcionamento do software na prática...explicando o uso de cada
- uma das features/funcionalidades.
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-aqui você dá um apanhado geral...
-\end_layout
+\end_inset
 
-\begin_layout Itemize
-Depois vai criar seções para funcionalidades específicas, detalhando seu
- uso...como nos exemplos abaixo
-\end_layout
 
-\begin_layout Section
-Funcionalidade específica A
-\end_layout
-
-\begin_layout Standard
-O que é?
-\end_layout
-
-\begin_layout Standard
-Como usar - exemplo de uso:
-\end_layout
-
-\begin_layout Subsection
-Item específico A1
-\end_layout
-
-\begin_layout Subsection
-Item específico A2
-\end_layout
-
-\begin_layout Subsection
-Item específico An
 \end_layout
 
 \begin_layout Section
-Funcionalidade específica B
+Saídas Geradas
 \end_layout
 
-\begin_layout Standard
-O que é?
+\begin_layout Itemize
+Gráfico:
+ Uma janela do Gnuplot abrirá automaticamente exibindo a curva 
+\begin_inset Formula $f_{w}\times S_{w}$
+\end_inset
+
+.
 \end_layout
 
-\begin_layout Standard
-Como usar - exemplo de uso:
-\end_layout
-
-\begin_layout Subsection
-Item específico B1
-\end_layout
-
-\begin_layout Subsection
-Item específico B2
-\end_layout
-
-\begin_layout Subsection
-Item específico Bn
+\begin_layout Itemize
+CSV:
+ Um arquivo 
+\family typewriter
+\nospellcheck on
+output.csv
+\family default
+\nospellcheck default
+ será gerado na pasta de execução contendo os dados calculados para análise externa (ex:
+ 
+\emph on
+\lang english
+Excel
+\emph default
+\lang brazilian
+).
 \end_layout
 
 \end_body

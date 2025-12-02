@@ -741,7 +741,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/pendente-4.2.png
+	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-implementacao.png
+	lyxscale 30
+	scale 80
 
 \end_inset
 
@@ -954,13 +956,15 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset Float table
-placement H
+placement document
 alignment document
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -980,6 +984,8 @@ name "tab:Tabela-classificação-sistema1"
 \end_layout
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="2">
 <features islongtable="true" longtabularalignment="center">
@@ -991,6 +997,7 @@ name "tab:Tabela-classificação-sistema1"
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Licença:
 \end_layout
@@ -1001,6 +1008,8 @@ Licença:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] livre GPL-v3 [ ] proprietária
 \end_layout
 
@@ -1013,6 +1022,7 @@ Licença:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Engenharia de software:
 \end_layout
@@ -1023,6 +1033,8 @@ Engenharia de software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ]
 \color blue
  
@@ -1039,6 +1051,7 @@ tradicional [X] ágil [ ] outras
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Paradigma de programação:
 \end_layout
@@ -1049,6 +1062,8 @@ Paradigma de programação:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estruturada [X] orientado a objeto - POO [ ] funcional
 \end_layout
 
@@ -1061,6 +1076,7 @@ Paradigma de programação:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Modelagem UML:
 \end_layout
@@ -1071,6 +1087,8 @@ Modelagem UML:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] básica [X] intermediária [ ] avançada
 \end_layout
 
@@ -1083,6 +1101,7 @@ Modelagem UML:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Algoritmos
 \color inherit
@@ -1095,6 +1114,8 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] alto nível [] baixo nível
 \end_layout
 
@@ -1115,6 +1136,8 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 implementação:
  [ ] recursivo ou [X] iterativo;
  [X] determinístico ou [ ] não-determinístico;
@@ -1138,6 +1161,8 @@ implementação:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 concorrências:
  [X] serial [] concorrente [] paralelo
 \end_layout
@@ -1159,6 +1184,8 @@ concorrências:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 paradigma:
  [X] dividir para conquistar[ ] programação linear [ ] transformação/ redução [ ] busca e enumeração [ ] heurístico e probabilístico [ ] baseados em pilhas
 \end_layout
@@ -1172,6 +1199,7 @@ paradigma:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Software:
 \end_layout
@@ -1182,6 +1210,8 @@ Software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] de base
 \begin_inset Note Note
 status collapsed
@@ -1359,6 +1389,8 @@ Modeladores e simuladores de cunho acadêmico.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 instruções:
  [X] alto nível [ ] baixo nível
 \end_layout
@@ -1380,6 +1412,8 @@ instruções:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 otimização:
  [X] serial não otimizado
 \begin_inset Note Note
@@ -1528,6 +1562,8 @@ clock
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 interface do usuário:
  [ ] kernel numérico [ X] linha de comando [ ] modo texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex:
  Qt) [ ] navegador
@@ -1542,6 +1578,7 @@ interface do usuário:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Recursos de C++:
 \end_layout
@@ -1552,6 +1589,8 @@ Recursos de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ básico (FCC):
  variáveis padrões da linguagem,
  estruturas de controle e repetição,
@@ -1586,6 +1625,8 @@ streams
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário:
  funções lambda.
  Ponteiros,
@@ -1631,6 +1672,8 @@ filesystem
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário 2:
  A biblioteca de gabaritos de C++ (a STL),
  containers,
@@ -1671,6 +1714,8 @@ random,
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] C++ avançado:
  Conversão de tipos do usuário,
  especializações de templates,
@@ -1696,6 +1741,7 @@ expressões regulares,
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas de C++:
 \end_layout
@@ -1706,6 +1752,8 @@ Bibliotecas de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] Entrada e saída de dados (
 \emph on
 streams
@@ -1740,6 +1788,7 @@ múltiplos processos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas externas:
 \end_layout
@@ -1750,6 +1799,8 @@ Bibliotecas externas:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] 
 \family typewriter
 CGnuplot 
@@ -1774,6 +1825,7 @@ Qt diálogos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Ferramentas auxiliares:
 \end_layout
@@ -1784,6 +1836,8 @@ Ferramentas auxiliares:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Montador:
 
 \family typewriter
@@ -1809,6 +1863,7 @@ Montador:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 IDE:
 \end_layout
@@ -1819,6 +1874,8 @@ IDE:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] Editor simples:
  kate/gedit/emacs
 \family typewriter
@@ -1844,6 +1901,7 @@ IDE:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 SCV:
 \end_layout
@@ -1854,6 +1912,8 @@ SCV:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] cvs
 \family typewriter
  
@@ -1874,6 +1934,7 @@ SCV:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Disciplinas correlacionadas
 \end_layout
@@ -1884,6 +1945,8 @@ Disciplinas correlacionadas
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estatística
 \begin_inset Note Note
 status collapsed
