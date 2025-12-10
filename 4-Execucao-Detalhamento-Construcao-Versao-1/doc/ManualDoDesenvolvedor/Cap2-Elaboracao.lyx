@@ -116,26 +116,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Elaboração}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 Elaboração
 \begin_inset Index idx
@@ -334,9 +314,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/curva-S-generica.png
+	filename imagens/curva-S-generica.png
 	lyxscale 50
-	scale 80
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -813,6 +795,11 @@ CurvasPermeabilidadeTabelada
 \family default
 \nospellcheck default
  e 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeCorey
@@ -822,6 +809,7 @@ CurvasPermeabilidadeCorey
  Este pacote é responsável por fornecer os dados de permeabilidade relativa para o pacote Core.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Pacote 
 \family typewriter
@@ -940,9 +928,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
+	filename imagens/diagrama-de-pacotes.png
 	lyxscale 50
-	scale 60
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 

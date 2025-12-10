@@ -5,6 +5,9 @@
 \save_transient_properties true
 \origin unavailable
 \textclass extbook
+\begin_preamble
+\usepackage{pdflscape}
+\end_preamble
 \use_default_options true
 \maintain_unincluded_children no
 \language brazilian
@@ -91,7 +94,7 @@
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap0-Capa-ProjetoDisciplina8.lyx"
+filename "Cap0.lyx"
 literal "false"
 
 \end_inset
@@ -150,7 +153,7 @@ literal "false"
 \begin_layout Standard
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap3-AnaliseOrientadaAObjeto3.lyx"
+filename "Cap3.lyx"
 literal "false"
 
 \end_inset

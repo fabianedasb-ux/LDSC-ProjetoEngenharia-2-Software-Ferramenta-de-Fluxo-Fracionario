@@ -343,9 +343,31 @@ name "sec:Projeto-orientado-a-objeto"
 
 \end_layout
 
+\begin_layout Subsection
+Efeitos do projeto no modelo
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+modelo
+\end_layout
+
+\end_inset
+
+ estrutural:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Efeito-do-projeto-no-modelo-estrutural"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Efeitos do projeto no modelo estrutural:
- A arquitetura definida na Análise (Cap.
+A arquitetura definida na Análise (Cap.
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -375,9 +397,31 @@ ModelosKr
  não das implementações concretas .
 \end_layout
 
+\begin_layout Subsection
+Efeitos do projeto no modelo
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+modelo
+\end_layout
+
+\end_inset
+
+ dinâmico:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Efeito-do-projeto-no-modelo-dinamico"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Efeitos do projeto no modelo dinâmico:
- Os diagramas de sequência e estado confirmam o fluxo de controle síncrono e sequencial.
+Os diagramas de sequência e estado confirmam o fluxo de controle síncrono e sequencial.
  A chamada ao Gnuplot (
 \family typewriter
 \nospellcheck on
@@ -388,9 +432,31 @@ system()
  garantindo que o programa só termine após o usuário fechar o gráfico.
 \end_layout
 
+\begin_layout Subsection
+Efeitos do projeto nos atributos
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+atributos
+\end_layout
+
+\end_inset
+
+:
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Efeito-do-projeto-nos-atributos"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Efeitos do projeto nos atributos:
- Todos os atributos de classe serão privados (
+Todos os atributos de classe serão privados (
 \emph on
 \lang english
 private
@@ -399,6 +465,11 @@ private
 ),
  garantindo encapsulamento.
  A 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CalculadoraFluxoFracionario
@@ -414,9 +485,37 @@ ICurvasPermeabilidade
  minimizando o acoplamento.
 \end_layout
 
+\end_deeper
+\begin_layout Subsection
+Efeitos do projeto nos métodos
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+métodos
+\end_layout
+
+\end_inset
+
+:
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Efeitos do projeto nos métodos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
-Efeitos do projeto nos métodos:
- Os métodos de cálculo (como 
+Os métodos de cálculo (como 
 \family typewriter
 \nospellcheck on
 getKrw
@@ -459,316 +558,7 @@ static
  pois não depende de um estado de instância.
 \end_layout
 
-\begin_layout Itemize
-Efeitos do projeto nas heranças:
- A herança será usada exclusivamente para implementar interfaces (herança de tipo),
- não para reutilização de código.
- Isso segue o princípio de "Composição sobre Herança".
-\end_layout
-
-\begin_layout Itemize
-Efeitos do projeto nas associações:
- A associação principal é a de uso (agregação),
- onde a Calculadora usa a interface 
-\family typewriter
-\nospellcheck on
-ICurvasPermeabilidade
-\family default
-\nospellcheck default
- que lhe é injetada.
- O Simulador gerencia o ciclo de vida (criação 
-\emph on
-\lang english
-new
-\emph default
-\lang brazilian
- e destruição delete) dos objetos.
-\end_layout
-
-\begin_layout Itemize
-Efeitos do projeto nas otimizações:
- Nenhuma otimização de baixo nível (ex:
- paralelismo) é necessária.
- A otimização do projeto está no design de O.O.,
- que evita recálculos e promove baixo acoplamento.
-\end_layout
-
-\begin_layout Subsubsection
-Efeitos do projeto no modelo
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-modelo
-\end_layout
-
-\end_inset
-
- estrutural
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Efeito-do-projeto-no-modelo-estrutural"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no projeto do sistema (exemplo:
- a biblioteca gráfica selecionada).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Novas classes e associações oriundas das bibliotecas selecionadas e da linguagem escolhida devem ser acrescentadas ao modelo.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Estabelecer as dependências e restrições associadas à plataforma escolhida.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
-Efeitos do projeto no modelo
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-modelo
-\end_layout
-
-\end_inset
-
- dinâmico
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Efeito-do-projeto-no-modelo-dinamico"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Revisar os diagramas de seqüência e de comunicação considerando a plataforma escolhida.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Verificar a necessidade de se revisar,
- ampliar e adicionar novos diagramas de máquinas de estado e de atividades.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
-Efeitos do projeto nos atributos
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-atributos
-\end_layout
-
-\end_inset
-
-
-\begin_inset CommandInset label
-LatexCommand label
-name "subsec:Efeito-do-projeto-nos-atributos"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Atributos novos podem ser adicionados a uma classe,
- como,
- por exemplo,
- atributos específicos de uma determinada linguagem de softwareção (acesso a disco,
- ponteiros,
- constantes e informações correlacionadas).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
-Efeitos do projeto nos métodos
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-métodos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Index idx
-range none
-pageformat default
-status open
-
-\begin_layout Plain Layout
-Efeitos do projeto nos métodos
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Em função da plataforma escolhida,
- verifique as possíveis alterações nos métodos.
- O projeto do sistema costuma afetar os métodos de acesso aos diversos dispositivos (exemplo:
- hd,
- rede).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-De maneira geral os métodos devem ser divididos em dois tipos:
- i) tomada de decisões,
- métodos políticos ou de controle;
- devem ser claros,
- legíveis,
- flexíveis e usam polimorfismo.
- ii) realização de processamentos,
- podem ser otimizados e em alguns casos o polimorfismo deve ser evitado.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Algoritmos complexos podem ser subdivididos.
- Verifique quais métodos podem ser otimizados.
- Pense em utilizar algoritmos prontos como os da STL (algoritmos genéricos).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Responda a pergunta:
- os métodos da classes estão dando resposta às responsabilidades da classe?
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise os diagramas de classes,
- de seqüência e de máquina de estado.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
+\begin_layout Subsection
 Efeitos do projeto nas heranças
 \begin_inset Index idx
 range none
@@ -781,7 +571,7 @@ heranças
 
 \end_inset
 
-
+:
 \begin_inset Index idx
 range none
 pageformat default
@@ -809,65 +599,12 @@ Heranças
 \end_layout
 
 \begin_layout Itemize
-Reorganização das classes e dos métodos (criar métodos genéricos com parâmetros que nem sempre são necessários e englobam métodos existentes).
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+A herança será usada exclusivamente para implementar interfaces (herança de tipo),
+ não para reutilização de código.
+ Isso segue o princípio de "Composição sobre Herança".
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Abstração do comportamento comum (duas classes podem ter uma superclasse em comum).
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Utilização de delegação para compartilhar a implementação (quando você cria uma herança irreal para reaproveitar código).
- Usar com cuidado.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise as heranças no diagrama de classes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
+\begin_layout Subsection
 Efeitos do projeto nas associações
 \begin_inset Index idx
 range none
@@ -880,7 +617,7 @@ Efeitos do projeto nas associações
 
 \end_inset
 
-
+:
 \begin_inset Index idx
 range none
 pageformat default
@@ -896,56 +633,24 @@ Associações
 \end_layout
 
 \begin_layout Itemize
-Deve-se definir na fase de projeto como as associações serão implementadas,
- se obedecerão um determinado padrão ou não.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
+A associação principal é a de uso (agregação),
+ onde a Calculadora usa a interface 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ que lhe é injetada.
+ O Simulador gerencia o ciclo de vida (criação 
+\emph on
+\lang english
+new
+\emph default
+\lang brazilian
+ e destruição delete) dos objetos.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Se existe uma relação de "muitos",
- pode-se implementar a associação com a utilização de um dicionário,
- que é um mapa das associações entre objetos.
- Assim,
- o objeto A acessa o dicionário fornecendo uma chave (um nome para o objeto que deseja acessar) e o dicionário retorna um valor (um ponteiro) para o objeto correto.
- 
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Evite percorrer várias associações para acessar dados de classes distantes.
- Pense em adicionar associações diretas.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Subsubsection
+\begin_layout Subsection
 Efeitos do projeto nas otimizações
 \begin_inset Index idx
 range none
@@ -958,105 +663,14 @@ otimizações
 
 \end_inset
 
-
+:
 \end_layout
 
 \begin_layout Itemize
-Faça uma análise de aspectos relativos à otimização do sistema.
- Lembrando que a otimização deve ser desenvolvida por analistas/desenvolvedores experientes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Identifique pontos a serem otimizados em que podem ser utilizados processos concorrentes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Pense em incluir bibliotecas otimizadas.
-\end_layout
-
-\begin_layout Itemize
-Se o acesso a determinados objetos (atributos/métodos) requer um caminho longo (exemplo:
- A->B->C->D.atributo),
- pense em incluir associações extras (exemplo:
- A-D.atributo).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Atributos auxiliares podem ser incluídos.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-A ordem de execução pode ser alterada.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise as associações nos diagramas de classes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Depois de revisados os diagramas da análise você pode montar dois diagramas relacionados à infraestrutura do sistema.
- As dependências dos arquivos e bibliotecas podem ser descritos pelo diagrama de componentes,
- e as relações e dependências entre o sistema e o hardware podem ser ilustradas com o diagrama de implantação.
+Nenhuma otimização de baixo nível (ex:
+ paralelismo) é necessária.
+ A otimização do projeto está no design de O.O.,
+ que evita recálculos e promove baixo acoplamento.
 \end_layout
 
 \begin_layout Section
@@ -1174,9 +788,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
+	filename imagens/diagrama-de-pacotes.png
 	lyxscale 20
-	scale 60
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -1326,7 +942,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/pendente-4.2.png
+	filename imagens/problema-6.png
+	lyxscale 50
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -1428,6 +1048,11 @@ ICurvasPermeabilidade
 \family default
 \nospellcheck default
  e 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeTabelada
@@ -1436,6 +1061,7 @@ CurvasPermeabilidadeTabelada
 .
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Implementar leitor de arquivo de entrada (parser) para o modelo tabelado e viscosidades.
 \end_layout
@@ -1555,12 +1181,14 @@ nolink "false"
 \begin_layout Standard
 \begin_inset Float table
 placement H
-alignment document
+alignment left
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1580,17 +1208,20 @@ name "tab:Tabela-classificação-sistema1"
 \end_layout
 
 \begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="2">
-<features islongtable="true" longtabularalignment="center">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="12cm">
+<features islongtable="true" tabularwidth="100text%" longtabularalignment="center">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="9cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Licença:
 \end_layout
@@ -1601,6 +1232,8 @@ Licença:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] livre GPL-v3 [ ] proprietária
 \end_layout
 
@@ -1613,6 +1246,7 @@ Licença:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Engenharia de software:
 \end_layout
@@ -1623,6 +1257,8 @@ Engenharia de software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ]
 \color blue
  
@@ -1639,6 +1275,7 @@ tradicional [X] ágil [ ] outras
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Paradigma de programação:
 \end_layout
@@ -1649,6 +1286,8 @@ Paradigma de programação:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estruturada [X] orientado a objeto - POO [ ] funcional
 \end_layout
 
@@ -1661,6 +1300,7 @@ Paradigma de programação:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Modelagem UML:
 \end_layout
@@ -1671,6 +1311,8 @@ Modelagem UML:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] básica [X] intermediária [ ] avançada
 \end_layout
 
@@ -1683,6 +1325,7 @@ Modelagem UML:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Algoritmos
 \color inherit
@@ -1695,6 +1338,8 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] alto nível [] baixo nível
 \end_layout
 
@@ -1715,6 +1360,8 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 implementação:
  [ ] recursivo ou [X] iterativo;
  [X] determinístico ou [ ] não-determinístico;
@@ -1738,6 +1385,8 @@ implementação:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 concorrências:
  [X] serial [] concorrente [] paralelo
 \end_layout
@@ -1759,6 +1408,8 @@ concorrências:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 paradigma:
  [X] dividir para conquistar[ ] programação linear [ ] transformação/ redução [ ] busca e enumeração [ ] heurístico e probabilístico [ ] baseados em pilhas
 \end_layout
@@ -1772,6 +1423,7 @@ paradigma:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Software:
 \end_layout
@@ -1782,6 +1434,8 @@ Software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] de base
 \begin_inset Note Note
 status collapsed
@@ -1959,6 +1613,8 @@ Modeladores e simuladores de cunho acadêmico.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 instruções:
  [X] alto nível [ ] baixo nível
 \end_layout
@@ -1980,6 +1636,8 @@ instruções:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 otimização:
  [X] serial não otimizado
 \begin_inset Note Note
@@ -2128,6 +1786,8 @@ clock
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 interface do usuário:
  [ ] kernel numérico [ X] linha de comando [ ] modo texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex:
  Qt) [ ] navegador
@@ -2142,6 +1802,7 @@ interface do usuário:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Recursos de C++:
 \end_layout
@@ -2152,6 +1813,8 @@ Recursos de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ básico (FCC):
  variáveis padrões da linguagem,
  estruturas de controle e repetição,
@@ -2186,6 +1849,8 @@ streams
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário:
  funções lambda.
  Ponteiros,
@@ -2231,6 +1896,8 @@ filesystem
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário 2:
  A biblioteca de gabaritos de C++ (a STL),
  containers,
@@ -2271,6 +1938,8 @@ random,
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] C++ avançado:
  Conversão de tipos do usuário,
  especializações de templates,
@@ -2296,6 +1965,7 @@ expressões regulares,
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas de C++:
 \end_layout
@@ -2306,6 +1976,8 @@ Bibliotecas de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] Entrada e saída de dados (
 \emph on
 streams
@@ -2340,6 +2012,7 @@ múltiplos processos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas externas:
 \end_layout
@@ -2350,6 +2023,8 @@ Bibliotecas externas:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] 
 \family typewriter
 CGnuplot 
@@ -2374,6 +2049,7 @@ Qt diálogos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Ferramentas auxiliares:
 \end_layout
@@ -2384,6 +2060,8 @@ Ferramentas auxiliares:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Montador:
 
 \family typewriter
@@ -2409,6 +2087,7 @@ Montador:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 IDE:
 \end_layout
@@ -2419,6 +2098,8 @@ IDE:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] Editor simples:
  kate/gedit/emacs
 \family typewriter
@@ -2444,6 +2125,7 @@ IDE:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 SCV:
 \end_layout
@@ -2454,6 +2136,8 @@ SCV:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] cvs
 \family typewriter
  
@@ -2474,6 +2158,7 @@ SCV:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Disciplinas correlacionadas
 \end_layout
@@ -2484,6 +2169,8 @@ Disciplinas correlacionadas
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estatística
 \begin_inset Note Note
 status collapsed

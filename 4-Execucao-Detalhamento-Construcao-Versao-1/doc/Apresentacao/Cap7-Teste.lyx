@@ -216,7 +216,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -417,9 +417,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.exe.png
+	filename imagens/teste.01.exe.png
 	lyxscale 40
 	width 100text%
+	height 100theight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -462,8 +464,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.teorico.png
+	filename imagens/teste.01.teorico.png
 	lyxscale 80
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -537,6 +542,11 @@ Strategy
 \begin_layout Itemize
 Como será realizado?
  O software é executado com o arquivo 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 test/Teste-02.in
@@ -560,6 +570,7 @@ MODELO_KR COREY
 .
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Como será validado?
  A validação é visual e analítica.
@@ -605,7 +616,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -744,9 +755,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.02.teorico.png
+	filename imagens/teste.02.teorico.png
 	lyxscale 80
 	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -802,6 +815,11 @@ O que está sendo testado?
 \begin_layout Itemize
 Como será realizado?
  O software é executado com o arquivo 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 test/Teste-Tarek-1cp.in
@@ -826,6 +844,7 @@ literal "true"
  considerando a viscosidade do óleo de 1.0 cp.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Como será validado?
 \end_layout
@@ -905,7 +924,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -1107,7 +1126,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste-tarek-1cp.png
+	filename imagens/teste-tarek-1cp.png
 	lyxscale 80
 	width 100text%
 
@@ -1169,7 +1188,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/livroTarek.png
+	filename imagens/livroTarek.png
 	lyxscale 80
 	width 100text%
 
@@ -1241,8 +1260,8 @@ nolink "false"
 
 \end_inset
 
-representa a curva com viscosidade do óleo igual a 10(
-\begin_inset Formula $\mu_{o}=10$
+representa a curva com viscosidade do óleo igual a 1.0 cp (
+\begin_inset Formula $\mu_{o}=1.0$
 \end_inset
 
 ),
@@ -1363,7 +1382,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste.01.png
+	filename imagens/teste.01.png
 	lyxscale 25
 	width 100text%
 

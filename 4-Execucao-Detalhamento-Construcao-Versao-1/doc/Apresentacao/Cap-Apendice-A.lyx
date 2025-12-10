@@ -196,7 +196,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -338,7 +338,7 @@ nolink "false"
 ,
  com um exemplo de arquivo de entrada para modelo Corey.
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 

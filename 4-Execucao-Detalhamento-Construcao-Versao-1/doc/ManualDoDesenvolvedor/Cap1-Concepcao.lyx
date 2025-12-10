@@ -228,7 +228,7 @@ name "tab:Nome-do-Sistema/Produto"
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
 <column alignment="center" valignment="top" width="8cm">
 <row>
@@ -579,9 +579,9 @@ Apresenta-se a seguir os requisitos funcionais.
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="block" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="9cm">
 <row>
 <cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -618,9 +618,9 @@ O sistema deve ler um arquivo de entrada de texto contendo os parâmetros da sim
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -670,9 +670,9 @@ literal "true"
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -717,9 +717,9 @@ O sistema deve calcular os valores de fluxo fracionário (
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -765,9 +765,9 @@ O sistema deve gerar um arquivo de saída em formato de texto (ex:
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -813,9 +813,9 @@ O sistema deve invocar um processo externo (Gnuplot) para plotar automaticamente
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -880,9 +880,9 @@ name "subsec:Requisitos-não-funcionais"
 \begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<column alignment="block" valignment="top" width="9cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -921,9 +921,9 @@ Os cálculos de permeabilidade relativa,
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -967,9 +967,9 @@ Windows
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1006,9 +1006,9 @@ O software deve ser desenvolvido na linguagem C++ utilizando o paradigma da Orie
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
+<features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1116,7 +1116,7 @@ name "cap:Exemplo-de-um-caso-de-uso (tabela)"
 <lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="10cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1362,10 +1362,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso.png
+	filename imagens/problema-4.png
 	lyxscale 60
-	scale 80
-	special height=0.3\textheight
+	scale 60
 
 \end_inset
 
@@ -1444,9 +1443,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-caso-de-uso-especifico.png
-	lyxscale 60
-	scale 60
+	filename imagens/problema-2.png
+	lyxscale 50
+	scale 50
 
 \end_inset
 

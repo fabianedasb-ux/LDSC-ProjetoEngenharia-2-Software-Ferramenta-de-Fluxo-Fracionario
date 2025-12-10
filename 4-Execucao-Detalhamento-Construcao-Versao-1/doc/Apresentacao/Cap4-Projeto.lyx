@@ -380,6 +380,11 @@ private
 ),
  garantindo encapsulamento.
  A 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CalculadoraFluxoFracionario
@@ -395,6 +400,7 @@ ICurvasPermeabilidade
  minimizando o acoplamento.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Efeitos do projeto nos métodos:
  Os métodos de cálculo (como 
@@ -589,7 +595,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-pacotes.png
+	filename imagens/diagrama-de-pacotes.png
 	lyxscale 20
 	scale 60
 	rotateOrigin center
@@ -741,9 +747,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-implementacao.png
+	filename imagens/diagrama-de-implementacao.png
 	lyxscale 30
-	scale 80
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -830,6 +838,11 @@ ICurvasPermeabilidade
 \family default
 \nospellcheck default
  e 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeTabelada
@@ -838,6 +851,7 @@ CurvasPermeabilidadeTabelada
 .
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Implementar leitor de arquivo de entrada (parser) para o modelo tabelado e viscosidades.
 \end_layout
@@ -956,8 +970,8 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset Float table
-placement document
-alignment document
+placement H
+alignment left
 wide false
 sideways false
 status open
@@ -988,9 +1002,9 @@ name "tab:Tabela-classificação-sistema1"
 \size footnotesize
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="2">
-<features islongtable="true" longtabularalignment="center">
-<column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="12cm">
+<features islongtable="true" tabularwidth="100text%" longtabularalignment="center">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="9cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text

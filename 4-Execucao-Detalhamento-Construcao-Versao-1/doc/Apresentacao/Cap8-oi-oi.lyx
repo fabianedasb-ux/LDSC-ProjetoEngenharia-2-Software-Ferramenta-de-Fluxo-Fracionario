@@ -132,6 +132,11 @@ Make
 \lang brazilian
 :
  Ferramenta de automação de compilação utilizada pelo 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 Makefile
@@ -140,6 +145,7 @@ Makefile
  do projeto.
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Gnuplot:
  Ferramenta de plotagem externa,
@@ -181,7 +187,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -272,7 +278,7 @@ nolink "false"
  Basta rodar o comando:
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -337,7 +343,7 @@ index.html
  no seu navegador:
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -446,10 +452,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog1.png
+	filename imagens/dog1.png
 	lyxscale 20
 	width 100text%
-	rotateOrigin center
+	height 100theight%
+	keepAspectRatio
 	special height=0.8\textheight
 
 \end_inset
@@ -492,10 +499,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog2.png
+	filename imagens/dog2.png
 	lyxscale 20
 	width 100text%
-	rotateOrigin center
+	height 100theight%
+	keepAspectRatio
 	special height=0.8\textheight
 
 \end_inset
@@ -538,10 +546,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog3.png
+	filename imagens/dog3.png
 	lyxscale 20
 	width 100text%
-	rotateOrigin center
+	height 100theight%
+	keepAspectRatio
 	special height=0.8\textheight
 
 \end_inset
@@ -596,10 +605,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/dog4.png
+	filename imagens/dog4.png
 	lyxscale 20
 	width 100text%
-	rotateOrigin center
+	height 100theight%
+	keepAspectRatio
 	special height=0.8\textheight
 
 \end_inset

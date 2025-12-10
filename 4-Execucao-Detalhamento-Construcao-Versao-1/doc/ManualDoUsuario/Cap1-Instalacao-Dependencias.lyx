@@ -38,7 +38,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +52,8 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
@@ -196,7 +198,12 @@ Windows
 \emph default
 \lang brazilian
 :
- Baixe e instale a versão mais recente do Gnuplot (
+ Baixe e instale a versão mais recente do Gnuplot 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(
 \family typewriter
 \nospellcheck on
 \lang english
@@ -221,6 +228,7 @@ gnuplot
 .
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Linux:
  Instale via gerenciador de pacotes (ex:

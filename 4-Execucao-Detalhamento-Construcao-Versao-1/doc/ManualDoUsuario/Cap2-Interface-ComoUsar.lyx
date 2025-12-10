@@ -38,7 +38,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +52,8 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref true
@@ -171,7 +173,16 @@ O arquivo de entrada utiliza palavras-chave (em maiúsculas) seguidas de seus va
 \end_layout
 
 \begin_layout Standard
-Parâmetros Globais:
+Parâmetros Globais,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010,Buckley1942"
+literal "true"
+
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Itemize
@@ -284,7 +295,7 @@ Sw Krw Kro
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -345,11 +356,16 @@ name "lis:Tabela-de-pontos"
 
 \end_inset
 
+Configuração para MODELO_KR COREY,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
 
-\end_layout
+\end_inset
 
-\begin_layout Standard
-Configuração para MODELO_KR COREY:
+:
  Devem ser fornecidos os 6 parâmetros do modelo analítico:
 \end_layout
 
@@ -471,7 +487,7 @@ nolink "false"
 \nospellcheck on
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 

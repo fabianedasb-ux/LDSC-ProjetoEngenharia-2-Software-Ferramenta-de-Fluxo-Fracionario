@@ -37,7 +37,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +52,7 @@
 \bibtex_command default
 \index_command default
 \float_placement p
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -126,24 +127,6 @@ name "chap:Exemplos de Uso"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter - Teste} 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Este capítulo apresenta um tutorial passo a passo para realizar uma simulação de validação baseada na literatura.
 \end_layout
 
@@ -173,7 +156,16 @@ Passo 1
  Preparar o Arquivo de Entrada Crie um arquivo chamado 
 \family typewriter
 \nospellcheck on
-Exemplo_Tarek.in
+Exemplo_Tarek.in,
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Ahmed2010"
+literal "true"
+
+\end_inset
+
+
 \family default
 \nospellcheck default
  com o seguinte conteúdo,
@@ -193,7 +185,7 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -291,7 +283,7 @@ Passo 2
  execute:
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -364,9 +356,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/teste-tarek-1cp.png
+	filename imagens/teste-tarek-1cp.png
 	lyxscale 50
-	scale 80
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 

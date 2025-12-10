@@ -35,6 +35,7 @@
 \renewcommand{\lstlistingname}{Código}
 % Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
 %\renewcommand{\lstlistlistingname}{Lista de códigos}
+\usepackage{pdflscape}
 \end_preamble
 \use_default_options false
 \maintain_unincluded_children no
@@ -125,26 +126,6 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{
-\backslash
-thechapter
-\backslash
-space - Análise Orientada a Objeto}  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Chapter
 AOO
 \begin_inset Index idx
@@ -217,7 +198,12 @@ nolink "false"
 \begin_layout Enumerate
 Princípio da Inversão de Dependência (D do S.O.L.I.D.):
  Este é o pilar central da arquitetura.
- O módulo de alto nível (
+ O módulo de alto nível 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(
 \family typewriter
 \nospellcheck on
 CalculadoraFluxoFracionario
@@ -235,6 +221,7 @@ ICurvasPermeabilidade
 .
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Padrão de Projeto 
 \emph on
@@ -244,6 +231,11 @@ Strategy
 \lang brazilian
  (Estratégia):
  A interface 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 ICurvasPermeabilidade
@@ -268,9 +260,9 @@ Strategy
 \end_inset
 
  é obtido.
- 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Padrão de Projeto Facade (Fachada):
  A classe Gnuplot é uma Facade estática.
@@ -291,6 +283,26 @@ scripts
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Float figure
 placement document
 alignment document
@@ -301,10 +313,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-classes.png
+	filename imagens/diagrama-de-classes.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
+	width 90page%
+	height 90pheight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -331,6 +344,29 @@ name "cap:Diagrama-de-classes"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -475,7 +511,7 @@ main()
 \end_layout
 
 \begin_layout Section
-Diagrama de seqüência – eventos
+Diagrama de sequência – eventos
 \begin_inset Index idx
 range none
 pageformat default
@@ -551,6 +587,29 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -561,10 +620,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia.png
+	filename imagens/diagrama-de-sequencia.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
+	width 85page%
+	height 85pheight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -591,6 +651,29 @@ name "cap:Diagrama-de-sequencia"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -649,9 +732,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia-especifico.png
+	filename imagens/problema-3.png
 	lyxscale 50
-	scale 50
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -762,11 +847,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-comunicacao.png
+	filename imagens/problema-5.png
 	lyxscale 50
-	scale 60
-	rotateAngle 90
-	rotateOrigin center
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -856,9 +941,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-estado.png
+	filename imagens/diagrama-de-estado.png
 	lyxscale 50
-	scale 60
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset
@@ -938,10 +1025,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-atividade.png
+	filename imagens/diagrama-de-atividade.png
 	lyxscale 50
-	scale 70
-	rotateAngle 90
+	width 100text%
+	height 100theight%
+	keepAspectRatio
 	rotateOrigin center
 
 \end_inset

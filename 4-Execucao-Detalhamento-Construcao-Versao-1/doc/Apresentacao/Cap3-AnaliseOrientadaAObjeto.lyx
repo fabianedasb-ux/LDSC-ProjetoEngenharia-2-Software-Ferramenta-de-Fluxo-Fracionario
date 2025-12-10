@@ -175,7 +175,12 @@ nolink "false"
 \begin_layout Enumerate
 Princípio da Inversão de Dependência (D do S.O.L.I.D.):
  Este é o pilar central da arquitetura.
- O módulo de alto nível (
+ O módulo de alto nível 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+(
 \family typewriter
 \nospellcheck on
 CalculadoraFluxoFracionario
@@ -193,6 +198,7 @@ ICurvasPermeabilidade
 .
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Padrão de Projeto 
 \emph on
@@ -202,6 +208,11 @@ Strategy
 \lang brazilian
  (Estratégia):
  A interface 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 ICurvasPermeabilidade
@@ -226,9 +237,9 @@ Strategy
 \end_inset
 
  é obtido.
- 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Padrão de Projeto Facade (Fachada):
  A classe Gnuplot é uma Facade estática.
@@ -253,9 +264,6 @@ scripts
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -269,9 +277,6 @@ begin{landscape}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -282,9 +287,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-classes.png
+	filename imagens/diagrama-de-classes.png
 	lyxscale 50
-	scale 90
+	width 90page%
+	height 90pheight%
+	keepAspectRatio
 
 \end_inset
 
@@ -313,9 +320,6 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -557,9 +561,6 @@ nolink "false"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -573,9 +574,6 @@ begin{landscape}
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -586,9 +584,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia.png
+	filename imagens/diagrama-de-sequencia.png
 	lyxscale 50
-	scale 90
+	width 85page%
+	height 85pheight%
+	keepAspectRatio
 
 \end_inset
 
@@ -617,9 +617,6 @@ name "cap:Diagrama-de-sequencia"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -699,10 +696,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-sequencia-especifico.png
-	lyxscale 50
-	scale 60
-	rotateOrigin center
+	filename imagens/problema-3.png
+	lyxscale 40
+	width 100text%
 
 \end_inset
 
@@ -812,9 +808,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-comunicacao.png
+	filename imagens/diagrama-de-comunicacao.png
 	lyxscale 50
-	scale 65
+	width 100text%
 	rotateOrigin center
 
 \end_inset
@@ -905,9 +901,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-estado.png
+	filename imagens/diagrama-de-estado.png
 	lyxscale 50
-	scale 80
+	width 100text%
 	rotateOrigin center
 
 \end_inset
@@ -987,9 +983,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename C:/Users/fabia/OneDrive/Documentos/Disciplinas UENF 2025.2/Disciplina de Projeto/projeto-git/LDSC-ProjetoEngenharia-2-Software-TituloProjeto-ModeloCompleto/imagens/diagrama-de-atividade.png
+	filename imagens/diagrama-de-atividade.png
 	lyxscale 50
-	scale 65
+	width 100text%
 	rotateOrigin center
 
 \end_inset

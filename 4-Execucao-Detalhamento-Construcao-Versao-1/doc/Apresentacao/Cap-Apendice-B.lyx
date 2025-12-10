@@ -150,6 +150,10 @@ Pré-requisitos
 
 \begin_layout Standard
 Certifique-se de que o ambiente MSYS2 está instalado com os pacotes 
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 mingw-w64-x86_64-toolchain
@@ -201,6 +205,7 @@ nolink "false"
 :
  
 \begin_inset listings
+lstparams "breaklines=true"
 inline false
 status open
 
@@ -246,7 +251,7 @@ nolink "false"
 :
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -317,7 +322,7 @@ nolink "false"
 .
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -373,7 +378,7 @@ nolink "false"
 :
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 
@@ -428,7 +433,7 @@ nolink "false"
 :
  
 \begin_inset listings
-lstparams "language={C++},float,breaklines=true"
+lstparams "language={C++},breaklines=true"
 inline false
 status open
 

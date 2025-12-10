@@ -380,6 +380,11 @@ MODELO_KR COREY
 
 \begin_layout Itemize
 Modificação no Simulador para instanciar o objeto 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CurvasPermeabilidadeCorey
@@ -388,6 +393,7 @@ CurvasPermeabilidadeCorey
  quando a palavra-chave for encontrada.
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Teste de Validação do Ciclo 2:

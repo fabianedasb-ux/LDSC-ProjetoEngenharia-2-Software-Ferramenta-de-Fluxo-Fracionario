@@ -37,7 +37,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +52,7 @@
 \bibtex_command default
 \index_command default
 \float_placement h
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -144,7 +145,7 @@ O título deve ser o mais claro possível,
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -174,7 +175,7 @@ PROJETO ENGENHARIA
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -197,7 +198,7 @@ Prof.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset VSpace 4cm
 \end_inset
 
 
