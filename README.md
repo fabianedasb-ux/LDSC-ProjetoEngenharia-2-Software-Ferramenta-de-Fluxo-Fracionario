@@ -35,7 +35,7 @@
 
 <a id="org2ebec41"></a>
 
-## Coloque aqui o nome do desafio tecnológico
+## Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
 
 
 <a id="org855260d"></a>
@@ -47,14 +47,18 @@
 
 # Nome do Software (ou Biblioteca):
 
--   Coloque aqui o nome do simulador desenvolvido.
+-   Ferramenta de Fluxo Fracionário.
 
 
 <a id="org72ffa40"></a>
 
 # Resumo e/ou informação extra:
 
--   
+-   * Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+-   * Suporte a **Modelo Tabelado** (interpolação linear).
+-   * Suporte a **Modelo de Corey** (correlação analítica).
+-   * Geração automática de gráficos via **Gnuplot**.
+-   * Validação com dados da literatura (Tarek Ahmed).
 
 
 <a id="org10111d4"></a>
@@ -68,7 +72,7 @@
 
 # Data:
 
--   2025/1 - primeiro semestre.
+-   2025/2 - segundo semestre.
 
 
 <a id="org50824d1"></a>
@@ -76,7 +80,7 @@
 # Autor de Contato:
 
 -   André Duarte Bueno <andreduartebueno@gmail.com>
--   Coloque aqui nome e contato do lider da equipe
+-   Fabiane da Silva Barros <fabianedas.b@gmail.com>
 
 
 <a id="orgdcfbf20"></a>
@@ -85,6 +89,7 @@
 
 -   &#x2026;
 -   André Duarte Bueno <andreduartebueno@gmail.com>
+-   Fabiane da Silva Barros <fabianedas.b@gmail.com>
 
 
 <a id="org3e9046d"></a>
@@ -92,10 +97,8 @@
 # Áreas de pesquisa vinculadas:
 
 -   Modelagem Matemática Computacional
--   &#x2026;Engenharia de Reservatório?
--   &#x2026;Geofísica?
--   &#x2026;Petrofísica?
--   &#x2026;Geologia e geoquímica?
+-   &#x2026;Engenharia de Reservatório
+-   &#x2026;Petrofísica
 
 
 <a id="org3a88e7c"></a>
@@ -119,14 +122,13 @@
 # Tipo de Interface:
 
 -   Terminal e gráfica (gnuplot).
--   Qt? [opcional]
 
 
 <a id="org5edb591"></a>
 
 # Plataformas Suportadas:
 
--   Windows e GNU/Linux e Mac OS X (não testada).
+-   Windows e GNU/Linux.
 
 
 <a id="orgb633128"></a>
@@ -141,8 +143,6 @@
 # Bibliotecas Utilizadas (dependências):
 
 -   CGnuplot - <https://github.com/ldsc/CGnuplot>
--   QCustomPlot - <https://www.qcustomplot.com/>
--   ?
 
 
 <a id="orga7939eb"></a>
@@ -207,3 +207,32 @@
 
 ## TODO Você pode colocar aqui atividades a serem desenvolvidas
 
+# Ferramenta de Fluxo Fracionário
+
+Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
+
+## Autora
+* **Fabiane da Silva Barros**
+* Orientador: Prof. André Duarte Bueno
+
+## Funcionalidades
+* Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+* Suporte a **Modelo Tabelado** (interpolação linear).
+* Suporte a **Modelo de Corey** (correlação analítica).
+* Geração automática de gráficos via **Gnuplot**.
+* Validação com dados da literatura (Tarek Ahmed).
+
+## Como Compilar e Rodar
+
+### Pré-requisitos
+* Compilador C++ (g++)
+* GNU Make
+* Gnuplot
+
+### Compilação
+No terminal, execute:
+make
+
+### Execução
+Para rodar a validação com dados de Tarek Ahmed:
+./bin/fw_calc test/Teste-Tarek-1cp.in

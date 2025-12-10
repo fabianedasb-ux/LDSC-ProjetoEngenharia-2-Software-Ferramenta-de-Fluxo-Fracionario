@@ -1,35 +1,39 @@
 #+TITLE: ProjetoEngenharia-Titulo
 
 * Nome do Desafio Tecnológico
-** Coloque aqui o nome do desafio tecnológico
-** Coloque aqui link para documentos relacionados ao desafio tecnológico (links para detalhes do desafio)
+** Ferramenta de Fluxo Fracionário
+** https://github.com/fabianedasb-ux/LDSC-ProjetoEngenharia-2-Software-Ferramenta-de-Fluxo-Fracionario
 
 * Nome do Software (ou Biblioteca):
-- Coloque aqui o nome do simulador desenvolvido.
+- Ferramenta de Fluxo Fracionário
 
 * Resumo e/ou informação extra: 
-- 
+- Funcionalidades
+- * Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+- * Suporte a **Modelo Tabelado** (interpolação linear).
+- * Suporte a **Modelo de Corey** (correlação analítica).
+- * Geração automática de gráficos via **Gnuplot**.
+- * Validação com dados da literatura (Tarek Ahmed).
 
 * Versão: 
 - 1.0.
 
 * Data:
-- 2025/1 - primeiro semestre.
+- 2025/2 - segundo semestre.
   
 * Autor de Contato:
 - André Duarte Bueno <andreduartebueno@gmail.com>
-- Coloque aqui nome e contato do lider da equipe
+- Fabiane da Silva Barros <fabianedas.b@gmail.com>
   
 * Lista dos Autores:
-- ...
 - André Duarte Bueno <andreduartebueno@gmail.com>
+- Fabiane da Silva Barros <fabianedas.b@gmail.com>
 
 * Áreas de pesquisa vinculadas: 
 - Modelagem Matemática Computacional
-- ...Engenharia de Reservatório?
-- ...Geofísica?
-- ...Petrofísica?
-- ...Geologia e geoquímica?
+- Engenharia de Reservatório
+- Petrofísica
+
 
 * Vinculo com: 
 - [[https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado][Trabalho da disciplina Projeto de Software Aplicado à Engenharia]].
@@ -41,18 +45,15 @@
 
 * Tipo de Interface: 
 - Terminal e gráfica (gnuplot).
-- Qt? [opcional]
 
 * Plataformas Suportadas: 
-- Windows e GNU/Linux e Mac OS X (não testada).
+- Windows e GNU/Linux.
 
 * Linguagens Utilizadas: 
 - C++.
 
 * Bibliotecas Utilizadas (dependências):
 - CGnuplot - https://github.com/ldsc/CGnuplot
-- QCustomPlot - https://www.qcustomplot.com/
-- ?
   
 * Softwares utilizados (dependências)
 - gnuplot http://www.gnuplot.info/
@@ -85,3 +86,32 @@
 
 * Todo
 ** TODO Você pode colocar aqui atividades a serem desenvolvidas
+# Ferramenta de Fluxo Fracionário
+
+Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
+
+## Autora
+* **Fabiane da Silva Barros**
+* Orientador: Prof. André Duarte Bueno
+
+## Funcionalidades
+* Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+* Suporte a **Modelo Tabelado** (interpolação linear).
+* Suporte a **Modelo de Corey** (correlação analítica).
+* Geração automática de gráficos via **Gnuplot**.
+* Validação com dados da literatura (Tarek Ahmed).
+
+## Como Compilar e Rodar
+
+### Pré-requisitos
+* Compilador C++ (g++)
+* GNU Make
+* Gnuplot
+
+### Compilação
+No terminal, execute:
+make
+
+### Execução
+Para rodar a validação com dados de Tarek Ahmed:
+./bin/fw_calc test/Teste-Tarek-1cp.in
