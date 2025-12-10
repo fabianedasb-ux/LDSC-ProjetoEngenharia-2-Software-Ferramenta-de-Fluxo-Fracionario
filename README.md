@@ -30,7 +30,7 @@
 
 <a id="orga63642c"></a>
 
-# Nome do Desafio Tecnológico
+# Ferramenta de Fluxo Fracionário.
 
 
 <a id="org2ebec41"></a>
@@ -40,12 +40,12 @@
 
 <a id="org855260d"></a>
 
-## Coloque aqui link para documentos relacionados ao desafio tecnológico (links para detalhes do desafio)
+## (https://github.com/fabianedasb-ux/LDSC-ProjetoEngenharia-2-Software-Ferramenta-de-Fluxo-Fracionario)
 
 
 <a id="org8132f6f"></a>
 
-# Nome do Software (ou Biblioteca):
+# Nome do Software :
 
 -   Ferramenta de Fluxo Fracionário.
 
@@ -54,11 +54,11 @@
 
 # Resumo e/ou informação extra:
 
--   * Cálculo da curva de fluxo fracionário (Buckley-Leverett).
--   * Suporte a **Modelo Tabelado** (interpolação linear).
--   * Suporte a **Modelo de Corey** (correlação analítica).
--   * Geração automática de gráficos via **Gnuplot**.
--   * Validação com dados da literatura (Tarek Ahmed).
+-   Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+-   Suporte a **Modelo Tabelado** (interpolação linear).
+-   Suporte a **Modelo de Corey** (correlação analítica).
+-   Geração automática de gráficos via **Gnuplot**.
+-   Validação com dados da literatura (Tarek Ahmed).
 
 
 <a id="org10111d4"></a>
@@ -87,7 +87,6 @@
 
 # Lista dos Autores:
 
--   &#x2026;
 -   André Duarte Bueno <andreduartebueno@gmail.com>
 -   Fabiane da Silva Barros <fabianedas.b@gmail.com>
 
@@ -97,8 +96,8 @@
 # Áreas de pesquisa vinculadas:
 
 -   Modelagem Matemática Computacional
--   &#x2026;Engenharia de Reservatório
--   &#x2026;Petrofísica
+-   Engenharia de Reservatório
+-   Petrofísica
 
 
 <a id="org3a88e7c"></a>
@@ -205,7 +204,6 @@
 
 <a id="org1c7467e"></a>
 
-## TODO Você pode colocar aqui atividades a serem desenvolvidas
 
 # Ferramenta de Fluxo Fracionário
 

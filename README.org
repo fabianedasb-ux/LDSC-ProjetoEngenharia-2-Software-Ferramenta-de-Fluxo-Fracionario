@@ -1,19 +1,19 @@
-#+TITLE: ProjetoEngenharia-Titulo
+#+TITLE: Ferramenta de Fluxo Fracionário.
 
-* Nome do Desafio Tecnológico
-** Ferramenta de Fluxo Fracionário
+* Ferramenta de Fluxo Fracionário.
+** Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
 ** https://github.com/fabianedasb-ux/LDSC-ProjetoEngenharia-2-Software-Ferramenta-de-Fluxo-Fracionario
 
-* Nome do Software (ou Biblioteca):
+* Nome do Software:
 - Ferramenta de Fluxo Fracionário
 
 * Resumo e/ou informação extra: 
-- Funcionalidades
-- * Cálculo da curva de fluxo fracionário (Buckley-Leverett).
-- * Suporte a **Modelo Tabelado** (interpolação linear).
-- * Suporte a **Modelo de Corey** (correlação analítica).
-- * Geração automática de gráficos via **Gnuplot**.
-- * Validação com dados da literatura (Tarek Ahmed).
+- Funcionalidades:
+  - Cálculo da curva de fluxo fracionário (Buckley-Leverett).
+  - Suporte a **Modelo Tabelado** (interpolação linear).
+  - Suporte a **Modelo de Corey** (correlação analítica).
+  - Geração automática de gráficos via **Gnuplot**.
+  - Validação com dados da literatura (Tarek Ahmed).
 
 * Versão: 
 - 1.0.
@@ -85,7 +85,7 @@
 - [[https://uenf.br/cct/lenep][Site do LENEP]].
 
 * Todo
-** TODO Você pode colocar aqui atividades a serem desenvolvidas
+
 # Ferramenta de Fluxo Fracionário
 
 Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
