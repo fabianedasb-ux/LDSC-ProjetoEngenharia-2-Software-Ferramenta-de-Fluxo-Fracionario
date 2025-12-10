@@ -464,11 +464,9 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste.01.teorico.png
+	filename imagens/tst.01.teori.png
 	lyxscale 80
 	width 100text%
-	height 100theight%
-	keepAspectRatio
 
 \end_inset
 
@@ -758,8 +756,6 @@ status open
 	filename imagens/teste.02.teorico.png
 	lyxscale 80
 	width 100text%
-	height 100theight%
-	keepAspectRatio
 
 \end_inset
 
@@ -1126,9 +1122,11 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste-tarek-1cp.png
+	filename imagens/tst-trk-1cp.png
 	lyxscale 80
 	width 100text%
+	height 100theight%
+	keepAspectRatio
 
 \end_inset
 

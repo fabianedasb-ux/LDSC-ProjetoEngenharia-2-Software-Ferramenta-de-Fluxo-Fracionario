@@ -1212,15 +1212,13 @@ nolink "false"
 
 \begin_layout Standard
 \begin_inset Float table
-placement class
-alignment class
+placement H
+alignment document
 wide false
 sideways false
 status open
 
 \begin_layout Plain Layout
-\paragraph_spacing other 0
-\align left
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1240,13 +1238,12 @@ name "cap:Exemplo-de-um-caso-de-uso (tabela)"
 \end_layout
 
 \begin_layout Plain Layout
-\paragraph_spacing other 0
-\align left
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="7cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1306,13 +1303,11 @@ Etapas:
 1.
  Usuário executa o programa via terminal,
  fornecendo o nome do arquivo de entrada.
- 
 \end_layout
 
 \begin_layout Plain Layout
 2.
  O sistema lê e valida o arquivo de entrada.
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1327,7 +1322,6 @@ Etapas:
 \end_inset
 
 .
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1337,13 +1331,11 @@ Etapas:
 .csv
 \family default
 .
- 
 \end_layout
 
 \begin_layout Plain Layout
 5.
  O sistema invoca o Gnuplot para exibir o gráfico.
- 
 \end_layout
 
 \begin_layout Plain Layout

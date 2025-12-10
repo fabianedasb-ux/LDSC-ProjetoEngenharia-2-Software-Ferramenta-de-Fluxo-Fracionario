@@ -1116,7 +1116,7 @@ name "cap:Exemplo-de-um-caso-de-uso (tabela)"
 <lyxtabular version="3" rows="4" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="7cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
