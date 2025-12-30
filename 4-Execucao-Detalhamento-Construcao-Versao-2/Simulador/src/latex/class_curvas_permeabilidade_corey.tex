@@ -1,0 +1,132 @@
+\doxysection{Curvas\+Permeabilidade\+Corey Class Reference}
+\hypertarget{class_curvas_permeabilidade_corey}{}\label{class_curvas_permeabilidade_corey}\index{CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}}
+
+
+Implementação concreta da interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade} para o modelo de Corey.  
+
+
+
+
+{\ttfamily \#include $<$Curvas\+Permeabilidade\+Corey.\+h$>$}
+
+Inheritance diagram for Curvas\+Permeabilidade\+Corey\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_curvas_permeabilidade_corey}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_curvas_permeabilidade_corey_a8b4e7a271bda5657a4323a2d16231f4e}{carregar\+Dados}} (const std\+::string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Carrega os 6 parâmetros do modelo Corey do arquivo. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_curvas_permeabilidade_corey_a61add071d6e001d9da8d278e706c04fd}{get\+Krw}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Calcula o Krw usando a fórmula de Corey. \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{class_curvas_permeabilidade_corey_af1f406e308ba74fbd71aba5e58a67ba0}{get\+Kro}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Calcula o Kro usando a fórmula de Corey. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual padrão, essencial para classes base polimórficas. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação concreta da interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade} para o modelo de Corey. 
+
+Esta classe lê os 6 parâmetros do modelo de Corey do arquivo de entrada e calcula Krw/\+Kro analiticamente usando as fórmulas de Corey. 
+
+\label{doc-func-members}
+\Hypertarget{class_curvas_permeabilidade_corey_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_curvas_permeabilidade_corey_a8b4e7a271bda5657a4323a2d16231f4e}\index{CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_corey_a8b4e7a271bda5657a4323a2d16231f4e} 
+void Curvas\+Permeabilidade\+Corey\+::carregar\+Dados (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carrega os 6 parâmetros do modelo Corey do arquivo. 
+
+Carrega os parâmetros do modelo de Corey do arquivo de entrada.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & O caminho para o arquivo de configuração .txt. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+\Hypertarget{class_curvas_permeabilidade_corey_af1f406e308ba74fbd71aba5e58a67ba0}\index{CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}!getKro@{getKro}}
+\index{getKro@{getKro}!CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_corey_af1f406e308ba74fbd71aba5e58a67ba0} 
+double Curvas\+Permeabilidade\+Corey\+::get\+Kro (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calcula o Kro usando a fórmula de Corey. 
+
+Calcula Kro usando a fórmula de Corey.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Kro analítico.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor de Kro. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+\Hypertarget{class_curvas_permeabilidade_corey_a61add071d6e001d9da8d278e706c04fd}\index{CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CurvasPermeabilidadeCorey@{CurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_curvas_permeabilidade_corey_a61add071d6e001d9da8d278e706c04fd} 
+double Curvas\+Permeabilidade\+Corey\+::get\+Krw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calcula o Krw usando a fórmula de Corey. 
+
+Calcula Krw usando a fórmula de Corey.
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Krw analítico.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor de Krw. 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Curvas\+Permeabilidade\+Corey.\+h\item 
+Curvas\+Permeabilidade\+Corey.\+cpp\end{DoxyCompactItemize}

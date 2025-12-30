@@ -1,0 +1,13 @@
+# Exemplo de arquivo de entrada para modelo tabelado
+VISC_OLEO 1.5
+VISC_AGUA 0.8
+MODELO_KR TABELADO #SW/KRW/KRO
+DADOS_KR_INICIO
+0.20 0.00 0.90
+0.30 0.05 0.75
+0.40 0.12 0.50
+0.50 0.20 0.30
+0.60 0.30 0.15
+0.70 0.40 0.05
+0.80 0.50 0.00
+FIM_DADOS

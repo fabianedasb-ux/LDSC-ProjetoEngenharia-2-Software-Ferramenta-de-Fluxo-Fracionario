@@ -1,0 +1,10 @@
+# Exemplo de arquivo de entrada para modelo Corey
+VISC_OLEO 2.0
+VISC_AGUA 1.0
+MODELO_KR COREY
+COREY_SWIR     0.15
+COREY_SORW     0.20
+COREY_KRW_MAX  0.5
+COREY_KRO_MAX  0.9
+COREY_NW       2.0
+COREY_NO       2.5

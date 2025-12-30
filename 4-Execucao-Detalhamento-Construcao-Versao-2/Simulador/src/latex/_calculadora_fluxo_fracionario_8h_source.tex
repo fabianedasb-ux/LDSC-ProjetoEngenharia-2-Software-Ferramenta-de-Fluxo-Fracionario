@@ -1,0 +1,29 @@
+\doxysection{Calculadora\+Fluxo\+Fracionario.\+h}
+\hypertarget{_calculadora_fluxo_fracionario_8h_source}{}\label{_calculadora_fluxo_fracionario_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ CALCULADORAFLUXOFRACIONARIO\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ CALCULADORAFLUXOFRACIONARIO\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}ICurvasPermeabilidade.h"{}}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <string>}\ \textcolor{comment}{//\ Incluído\ para\ std::string}}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00016\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_calculadora_fluxo_fracionario_a82a6480c8cefe0b5273f0d6bcbe699d4}{CalculadoraFluxoFracionario}}\ \{}
+\DoxyCodeLine{00017\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{double}\ \_viscosidadeOleo;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{double}\ \_viscosidadeAgua;}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}*\ \_modeloKr;}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00035\ \ \ \ \ \mbox{\hyperlink{class_calculadora_fluxo_fracionario_a82a6480c8cefe0b5273f0d6bcbe699d4}{CalculadoraFluxoFracionario}}(\textcolor{keywordtype}{double}\ mu\_o,\ \textcolor{keywordtype}{double}\ mu\_w,\ \mbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}*\ modelo);}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{class_calculadora_fluxo_fracionario_aba706daf5d0210b55a413a5e2cca5ef9}{calcularFw}}(\textcolor{keywordtype}{double}\ sw)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00049\ \ \ \ \ std::map<double,\ double>\ \mbox{\hyperlink{class_calculadora_fluxo_fracionario_ac68be4ba2296e2f2e33f353a17e37165}{gerarCurvaCompleta}}(\textcolor{keywordtype}{double}\ passo)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00050\ \};}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

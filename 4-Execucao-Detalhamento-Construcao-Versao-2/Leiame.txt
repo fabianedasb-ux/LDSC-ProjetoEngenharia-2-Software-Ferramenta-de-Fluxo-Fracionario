@@ -1,0 +1,6 @@
+# PLANEJAMENTO VERSÃO 2
+[ ] Definir os novos requisitos (O que muda da V1 para V2?)
+[ ] Atualizar Diagramas UML no Umbrello (Classes e Atividades)
+[ ] Implementar Discretização Numérica (Código C++)
+[ ] Implementar Testes Unitários
+[ ] Atualizar Documentação (LyX)

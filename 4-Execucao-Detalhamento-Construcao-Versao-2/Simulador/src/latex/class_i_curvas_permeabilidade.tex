@@ -1,0 +1,107 @@
+\doxysection{ICurvas\+Permeabilidade Class Reference}
+\hypertarget{class_i_curvas_permeabilidade}{}\label{class_i_curvas_permeabilidade}\index{ICurvasPermeabilidade@{ICurvasPermeabilidade}}
+
+
+Interface (classe base abstrata) para os modelos de permeabilidade relativa.  
+
+
+
+
+{\ttfamily \#include $<$ICurvas\+Permeabilidade.\+h$>$}
+
+Inheritance diagram for ICurvas\+Permeabilidade\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_i_curvas_permeabilidade}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64}\label{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64} 
+virtual {\bfseries \texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual padrão, essencial para classes base polimórficas. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{carregar\+Dados}} (const std\+::string \&arquivo)=0
+\begin{DoxyCompactList}\small\item\em Método virtual puro para carregar dados de um arquivo. \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{get\+Krw}} (double sw) const =0
+\begin{DoxyCompactList}\small\item\em Obtém a permeabilidade relativa da água (Krw). \end{DoxyCompactList}\item 
+virtual double \mbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{get\+Kro}} (double sw) const =0
+\begin{DoxyCompactList}\small\item\em Obtém a permeabilidade relativa do óleo (Kro). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface (classe base abstrata) para os modelos de permeabilidade relativa. 
+
+Esta classe define o "{}contrato"{} que todos os modelos de Kr (Tabelado, Corey, etc.) devem seguir. Ela é a base do Padrão de Projeto Strategy, permitindo que a Calculadora opere em um alto nível de abstração (Inversão de Dependência). 
+
+\label{doc-func-members}
+\Hypertarget{class_i_curvas_permeabilidade_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}\index{ICurvasPermeabilidade@{ICurvasPermeabilidade}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!ICurvasPermeabilidade@{ICurvasPermeabilidade}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b} 
+virtual void ICurvas\+Permeabilidade\+::carregar\+Dados (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Método virtual puro para carregar dados de um arquivo. 
+
+Cada classe filha deve implementar este método para ler seus parâmetros específicos do arquivo de entrada (ex\+: ler a tabela ou ler os parâmetros de Corey). 
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & O caminho (path) para o arquivo de configuração .txt. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \mbox{\hyperlink{class_curvas_permeabilidade_corey_a8b4e7a271bda5657a4323a2d16231f4e}{Curvas\+Permeabilidade\+Corey}}, and \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a86f483883582f894b00da02def80ba4b}{Curvas\+Permeabilidade\+Tabelada}}.
+
+\Hypertarget{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}\index{ICurvasPermeabilidade@{ICurvasPermeabilidade}!getKro@{getKro}}
+\index{getKro@{getKro}!ICurvasPermeabilidade@{ICurvasPermeabilidade}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e} 
+virtual double ICurvas\+Permeabilidade\+::get\+Kro (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtém a permeabilidade relativa do óleo (Kro). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água (Sw) para a qual o Kro será calculado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Kro (entre 0 e 1). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_curvas_permeabilidade_corey_af1f406e308ba74fbd71aba5e58a67ba0}{Curvas\+Permeabilidade\+Corey}}, and \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a922435e1479b0fa48885569dccd0402e}{Curvas\+Permeabilidade\+Tabelada}}.
+
+\Hypertarget{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}\index{ICurvasPermeabilidade@{ICurvasPermeabilidade}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!ICurvasPermeabilidade@{ICurvasPermeabilidade}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837} 
+virtual double ICurvas\+Permeabilidade\+::get\+Krw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Obtém a permeabilidade relativa da água (Krw). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & A saturação de água (Sw) para a qual o Krw será calculado. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor de Krw (entre 0 e 1). 
+\end{DoxyReturn}
+
+
+Implemented in \mbox{\hyperlink{class_curvas_permeabilidade_corey_a61add071d6e001d9da8d278e706c04fd}{Curvas\+Permeabilidade\+Corey}}, and \mbox{\hyperlink{class_curvas_permeabilidade_tabelada_a3f269d2b14d33be2585afec5caf52ef9}{Curvas\+Permeabilidade\+Tabelada}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ICurvas\+Permeabilidade.\+h\end{DoxyCompactItemize}
