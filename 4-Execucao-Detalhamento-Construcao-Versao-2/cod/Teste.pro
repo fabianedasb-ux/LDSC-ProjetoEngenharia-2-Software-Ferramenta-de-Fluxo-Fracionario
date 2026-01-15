@@ -21,15 +21,24 @@ SOURCES += \
     src/Model/cmalha.cpp \
     src/Model/csimulador.cpp \
     src/Model/csolver.cpp \
+    src/Model/CalculadoraFluxoFracionario.cpp \
+    src/Model/CurvasPermeabilidadeCorey.cpp \
+    src/Model/CurvasPermeabilidadeTabelada.cpp \
     src/View/mainwindow.cpp \
     src/View/qcustomplot.cpp
 
 # --- CABEÇALHOS (.H) ---
 HEADERS += \
+    src/Model/CurvasPermeabilidadeChierici.h \
+    src/Model/CurvasPermeabilidadeLET.h \
     src/Model/ccelula.h \
     src/Model/cmalha.h \
     src/Model/csimulador.h \
     src/Model/csolver.h \
+    src/Model/CalculadoraFluxoFracionario.h \
+    src/Model/ICurvasPermeabilidade.h \
+    src/Model/CurvasPermeabilidadeCorey.h \
+    src/Model/CurvasPermeabilidadeTabelada.h \
     src/View/mainwindow.h \
     src/View/qcustomplot.h
 
