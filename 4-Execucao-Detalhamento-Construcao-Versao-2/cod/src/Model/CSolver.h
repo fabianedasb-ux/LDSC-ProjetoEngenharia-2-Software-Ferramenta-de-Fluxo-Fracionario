@@ -1,8 +1,8 @@
 #ifndef CSOLVER_H
 #define CSOLVER_H
 
-#include "cmalha.h"
-#include "CalculadoraFluxoFracionario.h"
+#include "CMalha.h"
+#include "CCalculadoraFluxoFracionario.h"
 
 class CSolver
 {
@@ -18,12 +18,12 @@ public:
                         double porosidade,
                         double areaSecao,
                         double comprimentoMax,
-                        CalculadoraFluxoFracionario* calculadora,
+                        CCalculadoraFluxoFracionario* calculadora,
                         CMalha* malha);
 
 private:
     // Método auxiliar para calcular a derivada numericamente (funciona para Corey, LET, Chierici)
-    double obterDerivadaNumerica(CalculadoraFluxoFracionario* calc, double Sw);
+    double obterDerivadaNumerica(CCalculadoraFluxoFracionario* calc, double Sw);
 };
 
 #endif // CSOLVER_H

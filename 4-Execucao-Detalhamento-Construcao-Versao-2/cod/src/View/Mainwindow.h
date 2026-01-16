@@ -2,8 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-// Removemos "csimulador.h" pois ele era numerico
-#include "qcustomplot.h"
+#include "QCustomplot.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -18,13 +17,11 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_btnSimular_clicked(); // Vamos reescrever a logica dele
-    void on_btnLimpar_clicked();  // Limpa o grafico
+    // ATENÇÃO: Mudou de on_btnSimular... para on_btnPlotarFluido...
+    void on_btnPlotarFluido_clicked();
 
 private:
     Ui::MainWindow *ui;
-
-    // Configura o visual do grafico (eixos, legendas)
     void configurarGrafico();
 };
 #endif // MAINWINDOW_H

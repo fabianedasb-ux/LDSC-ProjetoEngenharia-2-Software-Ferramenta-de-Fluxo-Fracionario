@@ -2,7 +2,7 @@
 #define CMALHA_H
 
 #include <vector>
-#include "ccelula.h"
+#include "CCelula.h"
 
 using namespace std;
 

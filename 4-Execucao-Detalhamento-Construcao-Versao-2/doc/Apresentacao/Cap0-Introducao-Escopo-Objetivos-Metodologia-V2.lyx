@@ -1,0 +1,387 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement h
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 2
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Introdução
+\begin_inset CommandInset label
+LatexCommand label
+name "cha:Introdução"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lfoot{Fabiane Barros} 
+\backslash
+rfoot{
+\backslash
+today}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No presente projeto de engenharia desenvolve-se o software 
+\size large
+FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
+\size default
+,
+ um software aplicado à engenharia de petróleo e que utiliza o paradigma da orientação a objetos para auxiliar no estudo de mecanismos de deslocamento de fluidos em meios porosos (método de Buckley-Leverett).
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento deste software integra conceitos fundamentais de Engenharia de Reservatórios com práticas modernas de Engenharia de Software,
+ resultando em uma aplicação gráfica interativa capaz de modelar e visualizar o avanço da frente de saturação em tempo real.
+\end_layout
+
+\begin_layout Section
+Escopo do problema
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver um projeto em engenharia.
+ Neste trabalho,
+ desenvolve-se um projeto em engenharia de software aplicado à solução de um problema específico de engenharia de petróleo:
+ a previsão de desempenho de injeção de água em reservatórios.
+ Trabalha-se com todo o ciclo de um projeto,
+ isto é:
+ especificação,
+ elaboração,
+ análise,
+ projeto,
+ desenvolvimento,
+ teste e documentação.
+\end_layout
+
+\begin_layout Standard
+A análise do fluxo fracionário é uma etapa crítica na caracterização de reservatórios,
+ permitindo estimar a recuperação de óleo e o tempo de irrupção da água (breakthrough).
+ Ferramentas comerciais de simulação numérica de grande porte são robustas,
+ mas muitas vezes complexas e custosas para análises rápidas de sensibilidade ou para fins didáticos.
+\end_layout
+
+\begin_layout Standard
+Nesse contexto,
+ este projeto propõe uma ferramenta leve,
+ focada na solução analítica e visualização gráfica imediata,
+ preenchendo a lacuna entre os cálculos manuais trabalhosos e os simuladores comerciais complexos.
+\end_layout
+
+\begin_layout Section
+Objetivos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Objetivos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Os objetivos deste projeto de engenharia são:
+\end_layout
+
+\begin_layout Itemize
+Objetivo geral:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Desenvolver um projeto de engenharia de software para a análise e visualização do fluxo fracionário e avanço da frente de saturação em reservatórios de petróleo,
+ utilizando uma interface gráfica interativa para facilitar a interpretação dos resultados.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Objetivos específicos:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Modelar física e matematicamente o problema do deslocamento imiscível água-óleo (Equação de Buckley-Leverett e Modelo de Permeabilidade de Corey).
+\end_layout
+
+\begin_layout Itemize
+Realizar a modelagem estática do software (diagramas de caso de uso,
+ de pacotes e de classes),
+ aplicando o padrão de projeto Strategy para garantir flexibilidade na escolha dos modelos de permeabilidade.
+\end_layout
+
+\begin_layout Itemize
+Realizar a modelagem dinâmica do software (algoritmos de cálculo da curva $f_w$ e da derivada $df_w/dS_w$).
+\end_layout
+
+\begin_layout Itemize
+Calcular a curva de Fluxo Fracionário ($f_w$) com base nos parâmetros de entrada (viscosidades,
+ expoentes de Corey e saturações residuais).
+\end_layout
+
+\begin_layout Itemize
+Determinar,
+ através do método da Tangente de Welge,
+ a saturação de choque ($S_{wf}$) e a saturação média atrás da frente de avanço.
+\end_layout
+
+\begin_layout Itemize
+Implementar uma Interface Gráfica do Usuário (GUI) utilizando o framework Qt,
+ permitindo a entrada de dados amigável e a visualização dos gráficos em tempo real.
+\end_layout
+
+\begin_layout Itemize
+Simular o avanço da frente de saturação no tempo e testar a robustez do software com diferentes cenários de entrada.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Metodologia utilizada
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Metodologia-utilizada"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Metodologia utilizada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O software a ser desenvolvido utiliza a metodologia de engenharia de software apresentada pelo Prof.
+ André Bueno na disciplina de programação e ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Etapas para o desenvolvimento do software"
+nolink "false"
+
+\end_inset
+
+.
+ Note que o 
+\begin_inset Quotes eld
+\end_inset
+
+Ciclo de Concepção e Análise
+\begin_inset Quotes erd
+\end_inset
+
+ é composto por diversas partes representadas neste trabalho em diferentes capítulos.
+ Os ciclos de planejamento/detalhamento tem seu próprio capítulo,
+ assim como o ciclo de construção - implementação.
+\end_layout
+
+\begin_layout Standard
+Esta metodologia é utilizada nas disciplinas:
+\end_layout
+
+\begin_layout Itemize
+LEP01447 :
+ Programação Orientada a Objeto em C++.
+\end_layout
+
+\begin_layout Itemize
+LEP01446 :
+ Programação Prática.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/problema.png
+	lyxscale 25
+	width 100text%
+	height 100theight%
+	keepAspectRatio
+	special height=0.85\textheight
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Etapas para o desenvolvimento do software
+\shape italic
+ - projeto de engenharia
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Etapas para o desenvolvimento do software"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

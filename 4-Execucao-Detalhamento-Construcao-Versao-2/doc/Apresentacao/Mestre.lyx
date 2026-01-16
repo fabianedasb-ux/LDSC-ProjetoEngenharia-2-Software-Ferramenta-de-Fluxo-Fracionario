@@ -95,7 +95,7 @@
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap0-Capa-ProjetoDisciplina.lyx"
+filename "Cap0-Capa-ProjetoDisciplina-V2.lyx"
 literal "true"
 
 \end_inset
@@ -139,10 +139,21 @@ LatexCommand lstlistoflistings
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0-Introducao-Escopo-Objetivos-Metodologia-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \align block
 \begin_inset CommandInset include
 LatexCommand include
-filename "Cap1-Concepcao.lyx"
+filename "Cap1-Concepcao-V2.lyx"
 literal "true"
 
 \end_inset

@@ -1,4 +1,4 @@
-#include "CurvasPermeabilidadeTabelada.h"
+#include "CCurvasPermeabilidadeTabelada.h"
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -8,7 +8,7 @@
  * @brief Carrega os dados tabelados (Sw, Krw, Kro) do arquivo de entrada.
  * @param arquivo O caminho para o arquivo de configuração .txt.
  */
-void CurvasPermeabilidadeTabelada::carregarDados(const std::string& arquivo) {
+void CCurvasPermeabilidadeTabelada::carregarDados(const std::string& arquivo) {
     std::ifstream arq(arquivo);
     if (!arq.is_open()) {
         throw std::runtime_error("Erro (Tabelado): Nao foi possivel abrir o arquivo: " + arquivo);
@@ -58,7 +58,7 @@ void CurvasPermeabilidadeTabelada::carregarDados(const std::string& arquivo) {
  * @param sw Saturação de água.
  * @return Valor de Krw interpolado.
  */
-double CurvasPermeabilidadeTabelada::getKrw(double sw) const {
+double CCurvasPermeabilidadeTabelada::getKrw(double sw) const {
     return interpolar(sw, _sw, _krw); // Chama a função de interpolação
 }
 
@@ -67,7 +67,7 @@ double CurvasPermeabilidadeTabelada::getKrw(double sw) const {
  * @param sw Saturação de água.
  * @return Valor de Kro interpolado.
  */
-double CurvasPermeabilidadeTabelada::getKro(double sw) const {
+double CCurvasPermeabilidadeTabelada::getKro(double sw) const {
     return interpolar(sw, _sw, _kro); // Chama a função de interpolação
 }
 
@@ -79,7 +79,7 @@ double CurvasPermeabilidadeTabelada::getKro(double sw) const {
  * @param vec_y O vetor de Krw ou Kro correspondente.
  * @return O valor de y (Kr) interpolado.
  */
-double CurvasPermeabilidadeTabelada::interpolar(double x_desejado, const std::vector<double>& vec_x, const std::vector<double>& vec_y) const {
+double CCurvasPermeabilidadeTabelada::interpolar(double x_desejado, const std::vector<double>& vec_x, const std::vector<double>& vec_y) const {
 
     // Caso 1: Extrapolação (abaixo do limite inferior)
     if (x_desejado <= vec_x.front()) {

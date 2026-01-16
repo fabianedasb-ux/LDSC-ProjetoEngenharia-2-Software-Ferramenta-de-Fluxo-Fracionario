@@ -1,11 +1,11 @@
-#include "csolver.h"
+#include "CSolver.h"
 #include <algorithm> // Para std::min
 
 CSolver::CSolver()
 {
 }
 
-void CSolver::CalcularAvanco(double tempoTotal, double vazaoTotal, double porosidade, double areaSecao, double comprimentoMax, CalculadoraFluxoFracionario *calculadora, CMalha *malha)
+void CSolver::CalcularAvanco(double tempoTotal, double vazaoTotal, double porosidade, double areaSecao, double comprimentoMax, CCalculadoraFluxoFracionario *calculadora, CMalha *malha)
 {
     // Constante de velocidade: v_t = qt / (phi * A)
     // Se as unidades não estiverem consistentes, adicione conversão aqui.
@@ -37,7 +37,7 @@ void CSolver::CalcularAvanco(double tempoTotal, double vazaoTotal, double porosi
     // Por enquanto, ele vai plotar a curva "multivalorada" (em S), o que é normal no início.
 }
 
-double CSolver::obterDerivadaNumerica(CalculadoraFluxoFracionario *calc, double Sw)
+double CSolver::obterDerivadaNumerica(CCalculadoraFluxoFracionario *calc, double Sw)
 {
     double h = 0.0001; // Pequeno passo para derivada
     double sw_mais = Sw + h;

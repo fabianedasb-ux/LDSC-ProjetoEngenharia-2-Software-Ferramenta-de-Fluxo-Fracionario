@@ -1,5 +1,5 @@
-#ifndef CURVASPERMEABILIDADECHIERICI_H
-#define CURVASPERMEABILIDADECHIERICI_H
+#ifndef CCURVASPERMEABILIDADECHIERICI_H
+#define CCURVASPERMEABILIDADECHIERICI_H
 
 #include "ICurvasPermeabilidade.h"
 #include <cmath>
@@ -15,7 +15,7 @@ public:
                                  double Swirr, double Sor,
                                  double krwMax, double kroMax)
         : _Aw(Aw), _Bw(Bw), _Ao(Ao), _Bo(Bo),
-        _Swirr(Swirr), _Sor(Sor), _krwMax(krwMax), _kroMax(kroMax) {}
+        _Swirr(Swirr), _Sor(Sor), _kroMax(kroMax), _krwMax(krwMax) {}
 
     double getKrw(double Sw) override {
         double Swn = (Sw - _Swirr) / (1.0 - _Swirr - _Sor);

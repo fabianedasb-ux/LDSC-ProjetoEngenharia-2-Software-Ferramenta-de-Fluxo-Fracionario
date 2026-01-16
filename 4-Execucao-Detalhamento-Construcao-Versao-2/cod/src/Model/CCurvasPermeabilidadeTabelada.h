@@ -1,18 +1,18 @@
-#ifndef CURVASPERMEABILIDADETABELADA_H
-#define CURVASPERMEABILIDADETABELADA_H
+#ifndef CCURVASPERMEABILIDADETABELADA_H
+#define CCURVASPERMEABILIDADETABELADA_H
 
 #include "ICurvasPermeabilidade.h"
 #include <vector>
 #include <string> // Incluído para std::string
 
 /**
- * @class CurvasPermeabilidadeTabelada
+ * @class CCurvasPermeabilidadeTabelada
  * @brief Implementação concreta da interface ICurvasPermeabilidade para dados tabulados.
  *
  * Esta classe lê uma tabela de Sw, Krw e Kro de um arquivo de entrada e usa
  * interpolação linear para calcular valores intermediários.
  */
-class CurvasPermeabilidadeTabelada : public ICurvasPermeabilidade {
+class CCurvasPermeabilidadeTabelada : public ICurvasPermeabilidade {
 private:
     /// Vetor com os valores de Saturação de Água da tabela.
     std::vector<double> _sw;

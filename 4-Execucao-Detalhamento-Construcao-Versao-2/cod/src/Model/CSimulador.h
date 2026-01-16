@@ -1,9 +1,9 @@
 #ifndef CSIMULADOR_H
 #define CSIMULADOR_H
 
-#include "cmalha.h"
-#include "csolver.h"
-#include "CalculadoraFluxoFracionario.h"
+#include "CMalha.h"
+#include "CSolver.h"
+#include "CCalculadoraFluxoFracionario.h"
 #include "ICurvasPermeabilidade.h"
 
 class CSimulador
@@ -28,7 +28,7 @@ public:
 private:
     CMalha m_malha;
     CSolver m_solver;
-    CalculadoraFluxoFracionario m_calculadora; // Instância concreta
+    CCalculadoraFluxoFracionario m_calculadora; // Instância concreta
 
     // Parâmetros do reservatório
     double m_porosidade;

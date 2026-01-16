@@ -1,10 +1,10 @@
-#ifndef CALCULADORAFLUXOFRACIONARIO_H
-#define CALCULADORAFLUXOFRACIONARIO_H
+#ifndef CCALCULADORAFLUXOFRACIONARIO_H
+#define CCALCULADORAFLUXOFRACIONARIO_H
 
 #include "ICurvasPermeabilidade.h"
 #include <map>
 
-class CalculadoraFluxoFracionario {
+class CCalculadoraFluxoFracionario {
 private:
     double _viscosidadeOleo;
     double _viscosidadeAgua;
@@ -12,7 +12,7 @@ private:
 
 public:
     // Construtor (Mantenha como está)
-    CalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo);
+    CCalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo);
 
     // --- NOVO: Permite atualizar as viscosidades sem recriar o objeto ---
     void setViscosidades(double mu_o, double mu_w);

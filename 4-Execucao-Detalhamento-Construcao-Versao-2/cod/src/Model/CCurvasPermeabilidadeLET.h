@@ -1,5 +1,5 @@
-#ifndef CURVASPERMEABILIDADELET_H
-#define CURVASPERMEABILIDADELET_H
+#ifndef CCURVASPERMEABILIDADELET_H
+#define CCURVASPERMEABILIDADELET_H
 
 #include "ICurvasPermeabilidade.h"
 #include <cmath>

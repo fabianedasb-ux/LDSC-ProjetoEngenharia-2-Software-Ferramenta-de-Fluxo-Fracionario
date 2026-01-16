@@ -1,4 +1,4 @@
-#include "csimulador.h"
+#include "CSimulador.h"
 
 // Inicializa a calculadora com valores padrão (serão sobrepostos depois)
 // Importante: Passamos nullptr no modelo inicialmente, cuidado!

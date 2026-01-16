@@ -16,35 +16,35 @@ INCLUDEPATH += src/Model \
 
 # --- FONTES (C++) ---
 SOURCES += \
-    main.cpp \
-    src/Model/ccelula.cpp \
-    src/Model/cmalha.cpp \
-    src/Model/csimulador.cpp \
-    src/Model/csolver.cpp \
-    src/Model/CalculadoraFluxoFracionario.cpp \
-    src/Model/CurvasPermeabilidadeCorey.cpp \
-    src/Model/CurvasPermeabilidadeTabelada.cpp \
-    src/View/mainwindow.cpp \
-    src/View/qcustomplot.cpp
+    Main.cpp \
+    src/Model/CCalculadoraFluxoFracionario.cpp \
+    src/Model/CCelula.cpp \
+    src/Model/CCurvasPermeabilidadeCorey.cpp \
+    src/Model/CCurvasPermeabilidadeTabelada.cpp \
+    src/Model/CMalha.cpp \
+    src/Model/CSimulador.cpp \
+    src/Model/CSolver.cpp \
+    src/View/Mainwindow.cpp \
+    src/View/QCustomplot.cpp
 
 # --- CABEÇALHOS (.H) ---
 HEADERS += \
-    src/Model/CurvasPermeabilidadeChierici.h \
-    src/Model/CurvasPermeabilidadeLET.h \
-    src/Model/ccelula.h \
-    src/Model/cmalha.h \
-    src/Model/csimulador.h \
-    src/Model/csolver.h \
-    src/Model/CalculadoraFluxoFracionario.h \
+    src/Model/CCalculadoraFluxoFracionario.h \
+    src/Model/CCelula.h \
+    src/Model/CCurvasPermeabilidadeChierici.h \
+    src/Model/CCurvasPermeabilidadeCorey.h \
+    src/Model/CCurvasPermeabilidadeLET.h \
+    src/Model/CCurvasPermeabilidadeTabelada.h \
+    src/Model/CMalha.h \
+    src/Model/CSimulador.h \
+    src/Model/CSolver.h \
     src/Model/ICurvasPermeabilidade.h \
-    src/Model/CurvasPermeabilidadeCorey.h \
-    src/Model/CurvasPermeabilidadeTabelada.h \
-    src/View/mainwindow.h \
-    src/View/qcustomplot.h
+    src/View/Mainwindow.h \
+    src/View/QCustomplot.h
 
 # --- INTERFACE (.UI) ---
 FORMS += \
-    src/View/mainwindow.ui
+    src/View/Mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -1,4 +1,4 @@
-#include "ccelula.h"
+#include "CCelula.h"
 
 CCelula::CCelula() : m_x(0.0), m_saturacao(0.0)
 {
