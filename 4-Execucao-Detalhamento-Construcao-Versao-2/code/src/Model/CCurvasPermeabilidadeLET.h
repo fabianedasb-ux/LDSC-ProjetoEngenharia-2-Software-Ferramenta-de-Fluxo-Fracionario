@@ -39,3 +39,11 @@ public:
 };
 
 #endif
+
+
+// Melhorar os comentários e incluir descrição para doxyfile
+// Corrigir disposiçao das doubles do início com melhor comentário
+// Entender erro em override
+// Separar o arquivo cpp
+// Incluir construtor vazio (caso precise carregar de arquivo depois)
+// Incluir carregar dados

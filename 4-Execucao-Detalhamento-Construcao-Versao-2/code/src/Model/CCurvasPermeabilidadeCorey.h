@@ -28,3 +28,6 @@ public:
 };
 
 #endif
+
+// Melhorar os comentários e incluir descrição para doxyfile
+// Finalizar carregar dados

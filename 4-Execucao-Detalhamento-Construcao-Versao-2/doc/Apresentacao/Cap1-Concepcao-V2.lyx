@@ -27,7 +27,7 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\master Mestre.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -38,7 +38,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -53,6 +53,7 @@
 \bibtex_command default
 \index_command default
 \float_placement ph
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -70,7 +71,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -140,19 +141,41 @@ Concepção
 
 \begin_layout Standard
 Apresenta-se neste capítulo a concepção e a especificação do sistema modelado e desenvolvido.
- A etapa de concepção define os requisitos a serem satisfeitos e o escopo da solução,
- estabelecendo a base para o desenvolvimento do software.
+ Esta fase inicial,
+ classificada por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+ como o alicerce da engenharia de requisitos,
+ é o momento determinante onde o escopo do projeto é delimitado e as necessidades abstratas do problema são traduzidas em definições técnicas concretas.
+ A concepção não se resume apenas a um planejamento preliminar,
+ mas envolve um esforço analítico para identificar os atores envolvidos,
+ compreender as restrições do domínio e estabelecer as funcionalidades fundamentais que guiarão todo o ciclo de construção do software.
 \end_layout
 
 \begin_layout Standard
-O resultado desta etapa é um conjunto formal de requisitos que o software FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO deve atender para cumprir seu objetivo de auxiliar na análise de engenharia de reservatórios.
+O resultado desta etapa consolida-se em um conjunto formal de especificações que definem a identidade do Software Educacional com Interface Interativa.
+ Neste contexto,
+ detalha-se como a ferramenta deve operar para cumprir sua missão pedagógica de auxiliar na análise de Engenharia de Reservatórios,
+ estabelecendo os requisitos necessários para a modelagem computacional da solução analítica de Buckley-Leverett.
+ O objetivo é assegurar que o produto final ofereça não apenas precisão matemática,
+ mas também a interatividade necessária para a visualização dinâmica do avanço da frente de saturação.
 \end_layout
 
 \begin_layout Section
 Nome do sistema/produto
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:2.2 Nome do sistema/produto"
+name "sec:Nome do sistema/produto"
 
 \end_inset
 
@@ -160,11 +183,56 @@ name "sec:2.2 Nome do sistema/produto"
 \end_layout
 
 \begin_layout Standard
+A definição formal da identidade do software é essencial para comunicar seu propósito e delimitar seu escopo de atuação dentro do contexto educacional e tecnológico.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Nome-do-sistema/produto"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta a nomenclatura oficial adotada para o sistema,
+ seus componentes estruturantes e a missão que orienta seu desenvolvimento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nome do sistema/produto
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Nome-do-sistema/produto"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="3" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top" width="8cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="3cm">
+<column alignment="center" valignment="top" width="7cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -181,7 +249,7 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
+Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de Buckley-Leverett
 \end_layout
 
 \end_inset
@@ -217,7 +285,9 @@ Componentes principais
 \uwave off
 \noun off
 \color none
-Interface Gráfica do Usuário (GUI) desenvolvida em Qt.
+Interface Gráfica do Usuário (GUI):
+ Desenvolvida no framework Qt,
+ responsável pela interação homem-máquina e entrada de dados.
 \end_layout
 
 \begin_layout Enumerate
@@ -235,7 +305,8 @@ Interface Gráfica do Usuário (GUI) desenvolvida em Qt.
 \uwave off
 \noun off
 \color none
-Módulo de Cálculo (Analítico).
+Núcleo de Processamento Analítico:
+ Módulo em C++ responsável pela implementação dos algoritmos do Método das Características (MOC) e da construção da tangente de Welge.
 \end_layout
 
 \begin_layout Enumerate
@@ -253,7 +324,8 @@ Módulo de Cálculo (Analítico).
 \uwave off
 \noun off
 \color none
-Módulo de Visualização de Dados (Gráficos em Tempo Real).
+Módulo de Visualização de Dados:
+ Sistema de renderização gráfica em tempo real (baseado na biblioteca QCustomPlot) para exibição das curvas de fluxo e perfis de saturação.
 \end_layout
 
 \end_inset
@@ -275,14 +347,19 @@ Missão
 \begin_inset Text
 
 \begin_layout Plain Layout
-Calcular e visualizar curvas de fluxo fracionário e perfis de saturação de forma interativa,
- facilitando o entendimento do método de Buckley-Leverett e a tomada de decisão em projetos de injeção de água.
+Proporcionar uma plataforma computacional interativa para a modelagem e visualização do deslocamento imiscível linear,
+ facilitando a assimilação dos fundamentos teóricos da Engenharia de Reservatórios e permitindo a análise rápida de sensibilidade em projetos de injeção de água.
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -325,20 +402,95 @@ especificação
 \end_layout
 
 \begin_layout Standard
-A especificação desta solução de engenharia define uma ferramenta computacional analítica com Interface Gráfica (GUI),
- de caráter didático e profissional.
- O sistema abstrai a complexidade matemática do modelo de deslocamento imiscível,
- permitindo que o usuário insira os parâmetros do reservatório e dos fluidos diretamente na tela,
- sem a necessidade de editar arquivos de texto complexos manualmente.
+A especificação do sistema delimita as fronteiras da solução tecnológica,
+ descrevendo o comportamento esperado do software e suas interações com o usuário.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{sommerville2011}
+\end_layout
+
+\end_inset
+
+,
+ esta etapa é fundamental para documentar os serviços que o sistema deve fornecer e as restrições sob as quais deve operar.
+ Neste trabalho,
+ a especificação define uma ferramenta computacional analítica com Interface Gráfica (GUI),
+ projetada para abstrair a complexidade matemática inerente ao modelo de deslocamento imiscível linear.
 \end_layout
 
 \begin_layout Standard
-O software deve suportar diferentes modelos de permeabilidade relativa (com ênfase inicial no modelo de Corey) e realizar o cálculo automático da curva de fluxo fracionário ($f_w 
+O sistema proposto destaca-se pela flexibilidade na entrada de dados.
+ Diferentemente de ferramentas rígidas,
+ a solução permite que o usuário opte entre dois modos de operação:
+ a importação direta de arquivos externos (tabelas em .txt ou planilhas .xlsx) para usuários que já possuem dados consolidados,
+ ou a inserção manual de parâmetros através de formulários intuitivos na interface gráfica.
+\end_layout
+
+\begin_layout Standard
+No que tange ao núcleo de processamento,
+ o software adota uma arquitetura extensível capaz de suportar múltiplos modelos de permeabilidade relativa.
+ A implementação apresenta seleção dinâmica de modelos de permeabilidade relativa —
+ com ênfase primária no modelo de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
 \backslash
-times S_w$) e da tangente de Welge.
- A visualização dos resultados deve ser imediata,
- através de gráficos interativos gerados na própria janela da aplicação,
- eliminando a dependência de softwares externos de plotagem para a visualização básica.
+citeonline{Corey1954}
+\end_layout
+
+\end_inset
+
+,
+ amplamente utilizado devido à sua simplicidade e base física,
+ mas também incorpora correlações paramétricas avançadas para maior precisão em cenários complexos,
+ como o modelo LET 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lombez2008"
+literal "true"
+
+\end_inset
+
+ e o modelo de Chierici 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chierici1984"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Independentemente do modelo escolhido,
+ o cálculo da curva de fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) e a determinação do Perfil de saturação através do Método de Características (MOC) são executados automaticamente.
+ Por fim,
+ diferentemente de abordagens que dependem de softwares externos para a plotagem de dados (como Excel ou Gnuplot),
+ a especificação deste projeto exige que a visualização dos resultados seja imediata e integrada.
+ O sistema deve renderizar gráficos interativos de 
+\begin_inset Formula $f_{w}\times S_{w}$
+\end_inset
+
+ e perfis de saturação 
+\begin_inset Formula $S_{w}\times x$
+\end_inset
+
+ na própria janela da aplicação,
+ proporcionando um ambiente de simulação autocontido (standalone) que favorece a análise comparativa entre diferentes correlações empíricas.
 \end_layout
 
 \begin_layout Section
@@ -365,7 +517,33 @@ name "sec:Requisitos"
 \end_layout
 
 \begin_layout Standard
-Apresentam-se nesta seção os requisitos funcionais e não funcionais atualizados para a versão gráfica do software.
+A etapa de engenharia de requisitos é fundamental para traduzir a necessidade física de simular o deslocamento de fluidos em especificações técnicas de software.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ o entendimento claro dos requisitos estabelece a base para todas as etapas subsequentes de design e implementação.
+ Para o desenvolvimento desta ferramenta,
+ os requisitos foram divididos em duas categorias:
+ funcionais,
+ que descrevem as capacidades matemáticas e interativas do sistema (cálculo do MOC,
+ plotagem de curvas);
+ e não funcionais,
+ que definem as restrições de desempenho,
+ usabilidade e arquitetura (uso de C++,
+ tempo de resposta).
+ A correta definição destes requisitos assegura que o software final não apenas resolva as equações de Buckley-Leverett,
+ mas o faça de maneira didática e responsiva para o usuário.
 \end_layout
 
 \begin_layout Subsection
@@ -392,27 +570,82 @@ name "subsec:Requisitos-funcionais"
 \end_layout
 
 \begin_layout Standard
-Apresenta-se a seguir os requisitos funcionais
-\begin_inset Note Note
+Os requisitos funcionais (RF) detalham as operações que o sistema deve ser capaz de realizar para cumprir sua missão educacional.
+ Conforme definido por 
+\begin_inset ERT
 status open
 
 \begin_layout Plain Layout
-coloque aqueles que fazem sentido para seu sistema
+
+
+\backslash
+citeonline{sommerville2011}
 \end_layout
+
+\end_inset
+
+,
+ tais requisitos descrevem o que o sistema deve fazer,
+ como deve reagir a entradas específicas e como deve se comportar em situações particulares.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Requisitos-funcionais"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ lista as funcionalidades mapeadas para este projeto,
+ abrangendo desde a entrada flexível de dados petrofísicos até a lógica complexa de verificação de estabilidade da frente de choque e a renderização gráfica dos resultados.
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="block" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="block" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Requisitos funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Requisitos-funcionais"
 
 \end_inset
 
 .
 \end_layout
 
-\begin_layout Standard
-\begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="block" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" mroffset="2cm" alignment="block" valignment="top" topline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 <row>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -423,13 +656,12 @@ RF-01
 
 \end_inset
 </cell>
-<cell mroffset="2cm" alignment="block" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve permitir a entrada de dados (viscosidades,
- porosidade,
- parâmetros de Corey) através de campos de formulário na interface gráfica.
+O sistema deve permitir a entrada manual de dados petrofísicos (porosidade,
+ saturações irredutíveis) e propriedades dos fluidos (viscosidades) através de formulários na interface gráfica.
 \end_layout
 
 \end_inset
@@ -440,18 +672,15 @@ O sistema deve permitir a entrada de dados (viscosidades,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -468,10 +697,9 @@ RF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve permitir a seleção do modelo de permeabilidade relativa a ser utilizado (ex:
- Modelo de Corey,
- Tabela,
- LET) através de uma caixa de seleção.
+O sistema deve permitir o carregamento de dados de permeabilidade relativa de duas formas:
+ (a) Importação de arquivos (.txt/.xlsx) contendo tabelas ou parâmetros;
+ (b) Inserção manual de parâmetros na interface.
 \end_layout
 
 \end_inset
@@ -482,18 +710,15 @@ O sistema deve permitir a seleção do modelo de permeabilidade relativa a ser u
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -510,7 +735,10 @@ RF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve calcular os valores de fluxo fracionário ($f_w$) para todo o intervalo de saturação viável.
+O sistema deve implementar algoritmos para calcular permeabilidades relativas baseados nos modelos:
+ Corey,
+ LET,
+ Chierici e Interpolação de Tabelas.
 \end_layout
 
 \end_inset
@@ -521,21 +749,15 @@ O sistema deve calcular os valores de fluxo fracionário ($f_w$) para todo o int
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -552,8 +774,8 @@ RF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve calcular e exibir a Tangente de Welge,
- identificando a saturação da frente de choque ($S_{wf}$) e a saturação média ($S_{wm}$).
+O sistema deve validar os dados de entrada,
+ impedindo cálculos com valores fisicamente inconsistentes e alertando o usuário.
 \end_layout
 
 \end_inset
@@ -564,21 +786,15 @@ O sistema deve calcular e exibir a Tangente de Welge,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -595,9 +811,15 @@ RF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve gerar e exibir o gráfico de $f_w 
-\backslash
-times S_w$ na própria interface da aplicação.
+O sistema deve recalcular instantaneamente a Razão de Mobilidade (
+\begin_inset Formula $M$
+\end_inset
+
+) e atualizar todos os gráficos sempre que o usuário alterar os valores de viscosidade (
+\begin_inset Formula $\mu_{o},\mu_{w}$
+\end_inset
+
+) na interface.
 \end_layout
 
 \end_inset
@@ -608,18 +830,15 @@ times S_w$ na própria interface da aplicação.
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11.5cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -636,9 +855,13 @@ RF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve validar os dados de entrada,
- impedindo cálculos com valores fisicamente impossíveis (ex:
- viscosidade negativa) e alertando o usuário.
+O sistema deve permitir a alteração dinâmica dos parâmetros dos modelos analíticos (Corey,
+ LET,
+ Chierici) na interface,
+ atualizando os gráficos em tempo real para análise de sensibilidade (molhabilidade).
+ Nota:
+ Para o modelo de Tabela,
+ os dados permanecem estáticos.
 \end_layout
 
 \end_inset
@@ -649,10 +872,209 @@ O sistema deve validar os dados de entrada,
 \end_inset
 
 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-07
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ incorporando (opcionalmente) os termos de gradiente de Pressão Capilar (
+\begin_inset Formula $\partial P_{c}/\partial x$
+\end_inset
+
+) e segregação gravitacional (
+\begin_inset Formula $\Delta\rho g\sin\alpha$
+\end_inset
+
+).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve calcular as velocidades de avanço e o perfil preliminar de saturação utilizando a solução geral do Método das Características (MOC).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve analisar a estabilidade física da solução MOC.
+ Caso identifique multivaloração,
+ deve aplicar o método da Tangente de Welge para definir a frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+);
+ caso contrário,
+ deve manter a solução direta.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve simular e renderizar graficamente o cenário de injeção 1D entre um poço injetor e um poço produtor,
+ aplicando o perfil de saturação resultante.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RF-11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve gerar o gráfico da Curva de Fluxo Fracionário (
+\begin_inset Formula $f_{w}\times S_{w}$
+\end_inset
+
+) indicando visualmente o ponto de tangência quando este for calculado.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
 \end_inset
 
 
@@ -682,11 +1104,98 @@ name "subsec:Requisitos-não-funcionais"
 \end_layout
 
 \begin_layout Standard
+\align block
+Enquanto os requisitos funcionais definem 
+\emph on
+'o que'
+\emph default
+ o sistema faz,
+ os requisitos não funcionais (RNF) estabelecem 
+\emph on
+'como'
+\emph default
+ ele deve se comportar,
+ impondo restrições aos serviços oferecidos pelo sistema 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "sommerville2011"
+literal "true"
+
+\end_inset
+
+.
+ A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Requisitos-não-funcionais"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta as restrições arquiteturais adotadas.
+ A escolha pela linguagem C++ e pelo framework Qt (RNF-01 e RNF-02) justifica-se pela necessidade de alto desempenho computacional para garantir a interatividade em tempo real proposta no RF-06,
+ enquanto o uso do padrão de projeto Strategy (RNF-03) visa garantir a extensibilidade do código para futuros modelos de permeabilidade,
+ seguindo as boas práticas de design de software recomendadas por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<lyxtabular version="3" rows="2" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row endfirsthead="true" caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Requisitos não funcionais
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Requisitos-não-funcionais"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="block" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -699,11 +1208,11 @@ RNF-01
 
 \end_inset
 </cell>
-<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-O software deve ser desenvolvido na linguagem C++ utilizando o paradigma de Orientação a Objetos.
+O software deve ser desenvolvido utilizando a linguagem C++ (padrão C++17 ou superior) e o paradigma de Orientação a Objetos para garantir desempenho nos cálculos iterativos.
 \end_layout
 
 \end_inset
@@ -714,21 +1223,15 @@ O software deve ser desenvolvido na linguagem C++ utilizando o paradigma de Orie
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -745,7 +1248,9 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-A interface gráfica deve ser construída utilizando o framework Qt (versão 6 ou superior).
+A interface gráfica deve ser construída utilizando o framework Qt (versão 6.
+ ou superior),
+ assegurando a responsividade dos controles (sliders e formulários) e integração nativa com o sistema operacional.
 \end_layout
 
 \end_inset
@@ -756,21 +1261,15 @@ A interface gráfica deve ser construída utilizando o framework Qt (versão 6 o
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -787,8 +1286,11 @@ RNF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-O software deve utilizar o padrão de projeto Strategy para a implementação dos modelos de permeabilidade,
- visando extensibilidade.
+O sistema deve implementar o padrão de projeto Strategy para o cálculo de permeabilidade relativa.
+ Isso é mandatório para permitir a alternância limpa entre os algoritmos de Corey,
+ LET,
+ Chierici e Tabelas sem modificar o núcleo do simulador,
+ também assegura que novos modelos matemáticos possam ser adicionados sem modificação do código existente (princípio Aberto-Fechado).
 \end_layout
 
 \end_inset
@@ -799,21 +1301,15 @@ O software deve utilizar o padrão de projeto Strategy para a implementação do
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -830,7 +1326,9 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve ser multiplataforma (executável em Windows e Linux).
+A plotagem dos gráficos deve utilizar a biblioteca QCustomPlot,
+ devido à sua capacidade de renderização de alto desempenho,
+ necessária para a atualização instantânea das curvas durante a análise de sensibilidade.
 \end_layout
 
 \end_inset
@@ -841,21 +1339,15 @@ O sistema deve ser multiplataforma (executável em Windows e Linux).
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\begin_inset VSpace medskip
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
 \begin_inset Tabular
 <lyxtabular version="3" rows="1" columns="2">
-<features tabularvalignment="middle" tabularwidth="14cm">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="11cm">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -872,7 +1364,8 @@ RNF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-A plotagem dos gráficos deve utilizar a biblioteca QCustomPlot para integração nativa com a interface.
+O sistema deve garantir um tempo de resposta inferior a 200ms para o recálculo e re-renderização dos gráficos ao alterar parâmetros via interface,
+ proporcionando uma sensação de continuidade (tempo real).
 \end_layout
 
 \end_inset
@@ -883,10 +1376,78 @@ A plotagem dos gráficos deve utilizar a biblioteca QCustomPlot para integraçã
 \end_inset
 
 
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-06
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace bigskip
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O sistema deve possuir tratamento de exceções para a leitura de arquivos externos (.txt/.xlsx),
+ garantindo que formatações incorretas ou dados corrompidos não encerrem a aplicação abruptamente,
+ mas exibam mensagens de erro claras.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="block" valignment="top" width="8cm">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RNF-07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="block" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+O software deve ser compilável e executável tanto em ambientes Windows quanto Linux,
+ sem necessidade de refatoração do código fonte.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
 \end_inset
 
 
@@ -913,76 +1474,86 @@ Casos de uso
 \end_inset
 
  
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-A Tabela 
+A modelagem de casos de uso é utilizada para descrever a interação entre o usuário (ator) e o sistema,
+ abstraindo a complexidade do código fonte para focar no fluxo de eventos e nos objetivos do usuário 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "pressman2016"
+literal "true"
+
+\end_inset
+
+.
+ A Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
+reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
 nolink "false"
 
 \end_inset
 
- abaixo descreve o caso de uso principal do sistema.
+ detalha o cenário principal de utilização do software:
+ 'Simulação de Injeção 1D e Análise de Sensibilidade'.
+ Este caso de uso captura o fluxo completo de trabalho de um engenheiro de reservatórios,
+ desde a configuração das propriedades da rocha até a análise do tempo de ruptura (
+\emph on
+breakthrough
+\emph default
+).
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
-alignment document
-wide false
-sideways false
-status open
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="2">
+<features islongtable="true" longtabularalignment="center">
+<column alignment="center" valignment="top" width="2cm">
+<column alignment="left" valignment="top" width="9cm">
+<row caption="true">
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Caso de uso 1
+Caso de uso geral
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Exemplo-de-um-caso-de-uso (tabela)"
+name "tab:Exemplo-de-um-caso-de-uso (tabela)"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
 
 
 \end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset space ~
-\end_inset
-
 
 \end_layout
 
-\begin_layout Plain Layout
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
-<features tabularvalignment="middle">
-<column alignment="center" valignment="top">
-<column alignment="block" valignment="top" width="10cm">
+\end_inset
+</cell>
+</row>
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Nome do caso de uso:
 \end_layout
 
@@ -992,7 +1563,9 @@ Nome do caso de uso:
 \begin_inset Text
 
 \begin_layout Plain Layout
-Realizar Análise de Fluxo Fracionário.
+
+\size footnotesize
+Simulação de Injeção 1D e Análise de Sensibilidade
 \end_layout
 
 \end_inset
@@ -1003,7 +1576,33 @@ Realizar Análise de Fluxo Fracionário.
 \begin_inset Text
 
 \begin_layout Plain Layout
-Resumo/descrição:
+
+\size footnotesize
+Ator Principal:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Usuário (Estudante de Engenharia ou Engenheiro de Reservatórios)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+Pré-condições:
 \end_layout
 
 \end_inset
@@ -1012,7 +1611,9 @@ Resumo/descrição:
 \begin_inset Text
 
 \begin_layout Plain Layout
-O usuário insere as propriedades dos fluidos e da rocha na interface e solicita a geração das curvas.
+
+\size footnotesize
+O software deve estar inicializado e pronto para receber dados.
 \end_layout
 
 \end_inset
@@ -1023,43 +1624,131 @@ O usuário insere as propriedades dos fluidos e da rocha na interface e solicita
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Etapas:
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Enumerate
-O usuário inicia a aplicação.
+
+\size footnotesize
+Entrada de Dados de Fluidos e Rocha:
+ O usuário insere manualmente na interface as propriedades escalares dos fluidos (viscosidades 
+\begin_inset Formula $\mu_{o},\mu_{w}$
+\end_inset
+
+,
+ densidades) e do reservatório (porosidade 
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+ permeabilidade absoluta 
+\begin_inset Formula $K$
+\end_inset
+
+,
+ saturações irredutíveis e área/distância).
 \end_layout
 
 \begin_layout Enumerate
-O usuário insere os valores de viscosidade do óleo e da água.
+
+\size footnotesize
+Definição da Permeabilidade Relativa:
+ O usuário define a origem das curvas de permeabilidade:   
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Opção A (Modelos Analíticos):
+ Seleciona Corey,
+ LET ou Chierici e ajusta os parâmetros (ex:
+ expoentes 
+\begin_inset Formula $n_{o},n_{w}$
+\end_inset
+
+) diretamente na tela.   
 \end_layout
 
 \begin_layout Enumerate
-O usuário seleciona o "Modelo Corey" e preenche os expoentes ($n_o,
- n_w$) e saturações residuais ($S_{wi},
- S_{or}$).
+
+\size footnotesize
+Opção B (Dados Externos):
+ Seleciona a opção de importação e carrega um arquivo (.txt ou .xlsx) contendo a tabela de permeabilidade relativa.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Análise de Sensibilidade (Interatividade):
+ O usuário altera parâmetros críticos (ex:
+ viscosidade do óleo) na interface.
+ O sistema recalcula instantaneamente a Razão de Mobilidade (
+\begin_inset Formula $M$
+\end_inset
+
+) e atualiza o gráfico de Fluxo Fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ permitindo a visualização imediata do impacto na eficiência de varrido.
 \end_layout
 
 \begin_layout Enumerate
-O usuário clica no botão "Gerar Curvas de Fluido".
+
+\size footnotesize
+Execução do MOC:
+ O sistema calcula as velocidades de avanço para cada saturação utilizando a solução geral do Método das Características (MOC).
 \end_layout
 
 \begin_layout Enumerate
-O sistema valida os dados,
- calcula a curva $f_w$ e a tangente de Welge.
+
+\size footnotesize
+Verificação de Estabilidade:
+ O sistema analisa o perfil gerado pelo MOC para detectar multivaloração (curva S).
 \end_layout
 
 \begin_layout Enumerate
-O sistema exibe o gráfico resultante na área de visualização à direita.
+
+\size footnotesize
+Aplicação de Condição de Choque:   
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Se Instável:
+ O sistema aplica a Tangente de Welge para determinar a saturação da frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) e corrige o perfil.   
 \end_layout
 
 \begin_layout Enumerate
-O sistema exibe no log de mensagens os valores calculados da frente de choque.
+
+\size footnotesize
+Se Estável (Fluxo Pistão/Dispersivo):
+ O sistema mantém a solução direta do MOC.
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\size footnotesize
+Renderização do Cenário:
+ O sistema projeta o perfil de saturação final na distância definida entre o poço injetor e o produtor,
+ exibindo o avanço da frente em função do tempo ou volume injetado.
 \end_layout
 
 \end_inset
@@ -1070,19 +1759,36 @@ O sistema exibe no log de mensagens os valores calculados da frente de choque.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Cenários alternativos:
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
-\begin_layout Plain Layout
-Dados Inválidos:
- Se o usuário inserir valores negativos ou texto em campos numéricos,
- o sistema exibe uma mensagem de erro no log e não executa o cálculo,
- prevenindo falhas.
+\begin_layout Enumerate
+
+\size footnotesize
+Inclusão de Gravidade/Capilaridade:
+ O usuário ativa os termos da Equação Generalizada na interface.
+ O sistema recalcula a curva 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ considerando o ângulo de inclinação (Gravidade) ou o gradiente de pressão (Capilaridade),
+ alterando o critério de formação do choque.
+\end_layout
+
+\begin_layout Enumerate
+
+\size footnotesize
+Erro na Leitura de Arquivo:
+ Caso o usuário importe um arquivo mal formatado na Etapa 2,
+ o sistema exibe um alerta de erro e reverte para o modelo padrão (Corey),
+ impedindo o travamento da aplicação.
 \end_layout
 
 \end_inset
@@ -1095,6 +1801,8 @@ Dados Inválidos:
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset space ~
 \end_inset
 
 
@@ -1109,29 +1817,11 @@ name "subsec: Diagrama de caso de uso geral"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
- do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-....coloque aqui caso de uso geral,
- descrição + figura(s)...
-\end_layout
-
-\begin_layout Standard
-exemplo...
-\end_layout
-
-\begin_layout Standard
-O diagrama de caso de uso geral da Figura 
+O Diagrama de Caso de Uso Geral,
+ apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-caso-uso-geral"
@@ -1139,14 +1829,42 @@ nolink "false"
 
 \end_inset
 
- mostra o usuário acessando os sistemas de ajuda do software,
- calculando a área de uma função ou analisando resultados.
- 
+,
+ oferece uma visão macroscópica das funcionalidades do sistema.
+ A estrutura visual foi organizada de forma hierárquica para refletir o fluxo lógico de uma simulação de engenharia,
+ integrando as definições de múltiplos modelos de permeabilidade como Corey 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Corey1954"
+literal "true"
+
+\end_inset
+
+,
+ LET 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Lombez2008"
+literal "true"
+
+\end_inset
+
+ e Chierici
+\begin_inset CommandInset citation
+LatexCommand citep
+key "Chierici1984"
+literal "true"
+
+\end_inset
+
+ diretamente na etapa de configuração.
+ Esta organização demonstra que o software não é apenas uma ferramenta de cálculo,
+ mas um ambiente integrado de análise.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -1155,7 +1873,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/diagrama-de-caso-de-uso.png
+	filename imagens/diagrama-de-caso-de-uso-geral.png
 	lyxscale 50
 	width 100text%
 	special height=0.8\textheight
@@ -1198,68 +1916,54 @@ name "subsec: Diagrama de caso de uso específico"
 \end_inset
 
 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-do software
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
-....coloque aqui casos de uso específicos,
- descrição + figura(s)...
+Para detalhar a complexidade do sistema,
+ a modelagem foi dividida em dois diagramas específicos que cobrem,
+ respectivamente,
+ a entrada de dados (gerenciamento de propriedades) e o processamento matemático (motor de simulação).
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama Específico 1:
+ Gerenciamento de Propriedades e Interatividade
 \end_layout
 
 \begin_layout Standard
-exemplo...O caso de uso Calcular área função descrito na Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-caso-uso-geral"
+reference "cap:Diagrama-de-caso-de-uso-especifico:Gerenciamento de Propriedades e Interatividade"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
- e na Tabela 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Exemplo-de-um-caso-de-uso (tabela)"
-nolink "false"
+ detalha o subsistema de 'Gerenciamento de Propriedades'.
+ Este diagrama ilustra o cumprimento dos requisitos de flexibilidade (RF-02) e extensibilidade (RNF-03).
+ A estrutura evidencia a aplicação do padrão de projeto Strategy,
+ onde o usuário seleciona a fonte dos dados de permeabilidade relativa:
+ seja através de modelos analíticos parametrizáveis (como Corey,
+ LET ou Chierici) ou pela importação direta de dados experimentais via arquivos externos.
+\end_layout
 
+\begin_layout Standard
+Adicionalmente,
+ o diagrama destaca o ciclo de 'Análise de Sensibilidade' (RF-06).
+ A modelagem demonstra que a alteração de parâmetros na interface (como viscosidade ou expoentes de molhabilidade) dispara eventos de atualização automática nas curvas de fluxo (
+\begin_inset Formula $f_{w}$
 \end_inset
 
- é detalhado na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
-nolink "false"
-
-\end_inset
-
-.
- O usuário criará um objeto função matemática,
- um objeto para sua integração;
- em seguida,
- definirá o intervalo de integração,
- calculará a área da função criada e,
-  por fim,
- analisará os resultados (eventualmente gerará gráficos com os resultados obtidos utilizando um sistema externo,
- como o software 
-\emph on
-gnuplot
-\emph default
-).
- Este diagrama de caso de uso ilustra as etapas a serem executadas pelo usuário ou sistema,
- a iteração do usuário com o sistema.
+),
+ permitindo a visualização instantânea do comportamento dos fluidos sem a necessidade de reconfiguração manual do cenário.
 \end_layout
 
 \begin_layout Standard
 \begin_inset Float figure
-placement document
+placement H
 alignment document
 wide false
 sideways false
@@ -1268,7 +1972,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/diagrama-de-caso-de-uso-especifico.png
+	filename imagens/diagrama-de-caso-de-uso-especifico-um.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1280,14 +1985,97 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Título
+Diagrama de caso de uso específico – Gerenciamento de Propriedades e Interatividade
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico:Titulo"
+name "cap:Diagrama-de-caso-de-uso-especifico:Gerenciamento de Propriedades e Interatividade"
+
+\end_inset
+
+.
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama Específico 2:
+ Motor de Simulação de Deslocamento
+\end_layout
+
+\begin_layout Standard
+Complementarmente,
+ a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "cap:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta o 'Motor de Simulação',
+ focando no rigor físico do algoritmo de avanço frontal.
+ O fluxo inicia com o cálculo da solução analítica direta via Método das Características (MOC).
+\end_layout
+
+\begin_layout Standard
+O ponto crítico deste sistema é o caso de uso 'Verificar Condição de Entropia'.
+ O software não aplica a construção de Welge indiscriminadamente;
+ ela é modelada como uma extensão (<<
+\emph on
+extend
+\emph default
+>>) que é ativada apenas se o perfil de saturação gerado pelo MOC apresentar instabilidade física (multivaloração).
+ Esta abordagem assegura que o simulador trate corretamente tanto cenários de fluxo dispersivo quanto a formação de frentes de choque,
+ culminando no cálculo preciso do tempo de ruptura (
+\emph on
+breakthrough
+\emph default
+) e do fator de recuperação final.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-caso-de-uso-especifico-dois.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico – Motor de Simulação de Deslocamento
+\begin_inset CommandInset label
+LatexCommand label
+name "cap:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset

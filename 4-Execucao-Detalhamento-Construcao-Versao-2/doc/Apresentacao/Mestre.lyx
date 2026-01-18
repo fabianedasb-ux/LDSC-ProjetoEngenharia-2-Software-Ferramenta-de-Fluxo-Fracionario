@@ -7,6 +7,7 @@
 \textclass extbook
 \begin_preamble
 \usepackage{pdflscape}
+\usepackage[alf]{abntex2cite}
 \end_preamble
 \use_default_options true
 \maintain_unincluded_children no
@@ -52,7 +53,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style plain
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -162,92 +163,13 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap2-Elaboracao.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap3-AnaliseOrientadaAObjeto.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap4-Projeto.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap5-Ciclos-Planejam - Copia.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap6-Ciclos-copia.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap7-Teste.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap8-oi-oi.lyx"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 \noindent
 \align block
 \begin_inset CommandInset bibtex
 LatexCommand bibtex
 btprint "btPrintCited"
 bibfiles "bibliografia"
-options "apalike"
+options "abntex2-alf"
 encoding "default"
 
 \end_inset
@@ -265,30 +187,6 @@ status open
 \backslash
 appendix
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap-Apendice-A.lyx"
-literal "true"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align block
-\begin_inset CommandInset include
-LatexCommand include
-filename "Cap-Apendice-B.lyx"
-literal "true"
 
 \end_inset
 

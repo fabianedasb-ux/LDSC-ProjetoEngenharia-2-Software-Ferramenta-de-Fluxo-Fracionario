@@ -38,3 +38,4 @@ private:
 };
 
 #endif // CSIMULADOR_H
+// Incluir entrada dos dados do reservatório na interface

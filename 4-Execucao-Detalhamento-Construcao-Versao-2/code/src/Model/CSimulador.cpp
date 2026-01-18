@@ -32,16 +32,14 @@ void CSimulador::setModeloPermeabilidade(ICurvasPermeabilidade *modelo)
     // Se a Calculadora só aceita no construtor, precisaremos recriá-la aqui.
 
     // Assumindo que você adicionou um método setModelo na Calculadora (recomendado):
-    // m_calculadora.setModelo(modelo);
+     m_calculadora.setModeloPermeabilidade(modelo);
 
-    // SE NÃO TIVER setModelo:
-    // Teremos que recriar o objeto. Mas como é membro stack, melhor adicionar o setter lá.
 }
 
 void CSimulador::setViscosidades(double mu_o, double mu_w)
 {
     // Mesmo caso acima: ideal ter setters na CalculadoraFluxoFracionario
-    // m_calculadora.setViscosidades(mu_o, mu_w);
+     m_calculadora.setViscosidades(mu_o, mu_w);
 }
 
 void CSimulador::Executar(double tempo)
@@ -58,3 +56,6 @@ CMalha *CSimulador::getMalha()
 {
     return &m_malha;
 }
+
+// Incluir entrada de dados do resevatório na interface
+// Finalizar modelo de permeabilidade e viscosidades, já tem setmodelo e setvicosidade em ccalculadora

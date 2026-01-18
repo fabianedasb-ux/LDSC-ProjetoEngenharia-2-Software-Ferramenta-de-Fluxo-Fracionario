@@ -37,3 +37,6 @@ void CCurvasPermeabilidadeCorey::carregarDados(const std::string& arquivo) {
     // Implementação antiga de leitura de arquivo (pode deixar vazia se não for usar agora)
     (void)arquivo;
 }
+
+
+// Finalizar carregar dados

@@ -19,3 +19,5 @@ private:
 };
 
 #endif // CCELULA_H
+
+// Melhorar os comentários e incluir descrição para doxyfile

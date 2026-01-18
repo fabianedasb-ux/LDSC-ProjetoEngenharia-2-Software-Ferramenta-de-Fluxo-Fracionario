@@ -26,7 +26,7 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\master Mestre.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -34,7 +34,7 @@
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
-\font_typewriter "default" "default"
+\font_typewriter "default" "Agency FB"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -136,7 +136,7 @@ CENTRO DE CIÊNCIA E TECNOLOGIA
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 3cm
+\begin_inset VSpace 2.5cm
 \end_inset
 
 
@@ -154,7 +154,7 @@ DESENVOLVIMENTO DO SOFTWARE
 \begin_inset Newline newline
 \end_inset
 
-FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
+SOFTWARE EDUCACIONAL COM INTERFACE INTERATIVA PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS - SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
 \begin_inset Newline newline
 \end_inset
 
@@ -167,7 +167,7 @@ Setor de Modelagem Matemática Computacional
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 3cm
+\begin_inset VSpace 2.5cm
 \end_inset
 
 
@@ -190,7 +190,7 @@ Prof.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 2.5cm
 \end_inset
 
 

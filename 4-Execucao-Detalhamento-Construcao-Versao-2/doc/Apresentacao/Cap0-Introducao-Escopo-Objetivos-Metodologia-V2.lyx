@@ -26,7 +26,7 @@
 \usepackage{listings}
 \end_preamble
 \use_default_options false
-\master DocumentoMestre-Trabalho-ProgramacaoPratica.lyx
+\master Mestre.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package auto
@@ -37,7 +37,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +52,7 @@
 \bibtex_command default
 \index_command default
 \float_placement h
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -69,7 +70,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style abntex2-alf
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -126,6 +127,10 @@ name "cha:Introdução"
 \end_layout
 
 \begin_layout Standard
+O presente trabalho de conclusão de curso propõe o desenvolvimento do Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de Buckley-Leverett.
+ A concepção desta ferramenta tecnológica alinha-se às necessidades contemporâneas da Engenharia de Reservatórios,
+ fornecendo um suporte computacional robusto para o estudo de métodos de recuperação secundária.
+ Conforme destacam 
 \begin_inset ERT
 status open
 
@@ -133,30 +138,43 @@ status open
 
 
 \backslash
-lfoot{Fabiane Barros} 
-\backslash
-rfoot{
-\backslash
-today}
+citeonline{rosa2006}
 \end_layout
 
 \end_inset
 
-
+ ,
+ a injeção de água (waterflooding) permanece como a técnica mais difundida na indústria petrolífera mundial para a manutenção de pressão e otimização do varrido de óleo.
+ Nesse cenário,
+ a aplicação desenvolvida utiliza o paradigma da Orientação a Objetos para simular e visualizar,
+ de forma dinâmica,
+ os fenômenos físicos que regem a competição entre fluidos no meio poroso,
+ preenchendo uma lacuna importante entre a teoria abstrata e a prática de engenharia.
 \end_layout
 
 \begin_layout Standard
-No presente projeto de engenharia desenvolve-se o software 
-\size large
-FERRAMENTA PARA GERAÇÃO DA CURVA DE FLUXO FRACIONÁRIO
-\size default
-,
- um software aplicado à engenharia de petróleo e que utiliza o paradigma da orientação a objetos para auxiliar no estudo de mecanismos de deslocamento de fluidos em meios porosos (método de Buckley-Leverett).
+A base científica para a modelagem desse fenômeno fundamenta-se na teoria clássica de deslocamento imiscível linear estabelecida por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Buckley1942}
 \end_layout
 
-\begin_layout Standard
-O desenvolvimento deste software integra conceitos fundamentais de Engenharia de Reservatórios com práticas modernas de Engenharia de Software,
- resultando em uma aplicação gráfica interativa capaz de modelar e visualizar o avanço da frente de saturação em tempo real.
+\end_inset
+
+ .
+ Embora fundamental,
+ a aplicação analítica dessa teoria exige a resolução de equações diferenciais parciais através do Método das Características (MOC) e a aplicação de condições de entropia para a determinação da frente de choque,
+ processos que apresentam elevada complexidade matemática para cálculos manuais.
+ O software proposto supera essa barreira ao automatizar o cálculo das curvas de fluxo fracionário e dos perfis de saturação,
+ permitindo que o usuário manipule parâmetros críticos —
+ como a razão de mobilidade e a viscosidade dos fluidos —
+ e visualize instantaneamente o impacto dessas variáveis na eficiência de recuperação,
+ consolidando o aprendizado através da interatividade.
 \end_layout
 
 \begin_layout Section
@@ -171,32 +189,109 @@ name "sec:Escopo-do-Problema"
 \end_layout
 
 \begin_layout Standard
-Segundo o CREA/CONFEA um dos quesitos fundamentais que diferenciam a atuação de um tecnólogo da atuação de um engenheiro é a capacidade de desenvolver um projeto em engenharia.
- Neste trabalho,
- desenvolve-se um projeto em engenharia de software aplicado à solução de um problema específico de engenharia de petróleo:
- a previsão de desempenho de injeção de água em reservatórios.
- Trabalha-se com todo o ciclo de um projeto,
- isto é:
- especificação,
- elaboração,
- análise,
- projeto,
- desenvolvimento,
- teste e documentação.
+A competência fundamental que distingue a formação do engenheiro é a capacidade de conceber e desenvolver soluções tecnológicas para problemas complexos,
+ indo além da operação de sistemas preexistentes.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{bazzo2013}
 \end_layout
 
-\begin_layout Standard
-A análise do fluxo fracionário é uma etapa crítica na caracterização de reservatórios,
- permitindo estimar a recuperação de óleo e o tempo de irrupção da água (breakthrough).
- Ferramentas comerciais de simulação numérica de grande porte são robustas,
- mas muitas vezes complexas e custosas para análises rápidas de sensibilidade ou para fins didáticos.
+\end_inset
+
+,
+ a essência da engenharia reside na síntese de conhecimentos científicos e empíricos para a criação de projetos que satisfaçam necessidades humanas e econômicas.
+ Em consonância com as Diretrizes Curriculares Nacionais do Curso de Graduação em Engenharia 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "brasil2002"
+literal "true"
+
+\end_inset
+
+,
+ o perfil do egresso deve contemplar a aptidão para projetar e modelar sistemas,
+ habilidade esta que diferencia a atuação plena do engenheiro das atribuições técnicas operacionais.
 \end_layout
 
 \begin_layout Standard
 Nesse contexto,
- este projeto propõe uma ferramenta leve,
- focada na solução analítica e visualização gráfica imediata,
- preenchendo a lacuna entre os cálculos manuais trabalhosos e os simuladores comerciais complexos.
+ este trabalho delimita-se ao desenvolvimento de um projeto de engenharia de software aplicado à Engenharia de Petróleo,
+ especificamente na subárea de Engenharia de Reservatórios.
+ O problema central abordado é a complexidade na análise preliminar de projetos de injeção de água (waterflooding),
+ o método de recuperação secundária mais utilizado mundialmente 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "rosa2006"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Embora a teoria do deslocamento imiscível,
+ fundamentada na clássica solução de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Buckley1942}
+\end_layout
+
+\end_inset
+
+,
+ seja a base para a compreensão desses mecanismos,
+ sua aplicação prática manual é laboriosa e propensa a erros de cálculo,
+ especialmente quando se consideram variações nos modelos de permeabilidade relativa ou a necessidade de determinar a frente de choque através da construção da tangente de Welge.
+\end_layout
+
+\begin_layout Standard
+Por outro lado,
+ as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG) são projetadas para modelos complexos e tridimensionais 
+\begin_inset CommandInset citation
+LatexCommand citep
+key "ertekin2001"
+literal "true"
+
+\end_inset
+
+.
+ A utilização desses softwares robustos para análises unidimensionais simples ou para fins didáticos apresenta uma curva de aprendizado íngreme e um custo computacional desproporcional à simplicidade do problema físico 1D.
+ Existe,
+ portanto,
+ uma lacuna tecnológica entre o cálculo analítico manual e a simulação numérica de grande porte.
+\end_layout
+
+\begin_layout Standard
+O escopo deste projeto consiste em preencher essa lacuna através do desenvolvimento integral de uma ferramenta computacional dedicada.
+ O trabalho abrange todo o ciclo de vida do desenvolvimento de software preconizado por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ incluindo a especificação de requisitos,
+ a modelagem matemática e algorítmica do Método das Características (MOC),
+ a implementação do código-fonte utilizando o framework Qt/C++ e a validação dos resultados através da comparação com a teoria analítica.
 \end_layout
 
 \begin_layout Section
@@ -211,7 +306,7 @@ name "sec:Objetivos"
 \end_layout
 
 \begin_layout Standard
-Os objetivos deste projeto de engenharia são:
+Os objetivos definidos para este projeto de engenharia são apresentados a seguir.
 \end_layout
 
 \begin_layout Itemize
@@ -224,8 +319,8 @@ Objetivo geral:
 
 \begin_deeper
 \begin_layout Itemize
-Desenvolver um projeto de engenharia de software para a análise e visualização do fluxo fracionário e avanço da frente de saturação em reservatórios de petróleo,
- utilizando uma interface gráfica interativa para facilitar a interpretação dos resultados.
+Desenvolver uma ferramenta computacional interativa para a análise do fluxo fracionário e simulação do avanço da frente de saturação em reservatórios de petróleo,
+ visando facilitar a interpretação dos fenômenos físicos envolvidos no deslocamento imiscível água-óleo.
 \end_layout
 
 \end_deeper
@@ -239,37 +334,48 @@ Objetivos específicos:
 
 \begin_deeper
 \begin_layout Itemize
-Modelar física e matematicamente o problema do deslocamento imiscível água-óleo (Equação de Buckley-Leverett e Modelo de Permeabilidade de Corey).
+Modelar física e matematicamente o problema do deslocamento linear de fluidos imiscíveis,
+ fundamentando-se na equação de fluxo fracionário e no modelo de permeabilidade relativa de Corey.
 \end_layout
 
 \begin_layout Itemize
-Realizar a modelagem estática do software (diagramas de caso de uso,
- de pacotes e de classes),
- aplicando o padrão de projeto Strategy para garantir flexibilidade na escolha dos modelos de permeabilidade.
+Realizar a modelagem estática do sistema,
+ elaborando diagramas de casos de uso,
+ pacotes e classes,
+ com a aplicação de padrões de projeto (Design Patterns),
+ como o Strategy,
+ para assegurar a flexibilidade e escalabilidade do código.
 \end_layout
 
 \begin_layout Itemize
-Realizar a modelagem dinâmica do software (algoritmos de cálculo da curva $f_w$ e da derivada $df_w/dS_w$).
+Desenvolver a modelagem dinâmica do software,
+ estruturando os algoritmos numéricos para o cálculo da curva de fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) e de sua derivada (
+\begin_inset Formula $df_{w}/dS_{w}$
+\end_inset
+
+) em relação à saturação.
 \end_layout
 
 \begin_layout Itemize
-Calcular a curva de Fluxo Fracionário ($f_w$) com base nos parâmetros de entrada (viscosidades,
- expoentes de Corey e saturações residuais).
+Implementar o método da construção da tangente de Welge para determinar a saturação da frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) e a saturação média do reservatório.
 \end_layout
 
 \begin_layout Itemize
-Determinar,
- através do método da Tangente de Welge,
- a saturação de choque ($S_{wf}$) e a saturação média atrás da frente de avanço.
+Construir a Interface Gráfica do Usuário (GUI) utilizando o framework Qt/C++,
+ proporcionando uma experiência de uso intuitiva para a entrada de parâmetros (viscosidades,
+ expoentes de saturação) e visualização de resultados.
 \end_layout
 
 \begin_layout Itemize
-Implementar uma Interface Gráfica do Usuário (GUI) utilizando o framework Qt,
- permitindo a entrada de dados amigável e a visualização dos gráficos em tempo real.
-\end_layout
-
-\begin_layout Itemize
-Simular o avanço da frente de saturação no tempo e testar a robustez do software com diferentes cenários de entrada.
+Simular cenários de injeção e validar a robustez da ferramenta através da análise de sensibilidade de parâmetros e comparação com a teoria clássica de Buckley-Leverett.
 \end_layout
 
 \end_deeper
@@ -297,41 +403,89 @@ Metodologia utilizada
 \end_layout
 
 \begin_layout Standard
-O software a ser desenvolvido utiliza a metodologia de engenharia de software apresentada pelo Prof.
- André Bueno na disciplina de programação e ilustrado na Figura 
+O desenvolvimento deste projeto fundamenta-se nos princípios da Engenharia de Software estabelecidos por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ que preconizam uma abordagem sistemática,
+ disciplinada e quantificável para a construção de sistemas computacionais.
+ A adoção de um processo de software estruturado é essencial para garantir a qualidade,
+ a manutenibilidade e a conformidade do produto final com os requisitos de engenharia de reservatórios.
+\end_layout
+
+\begin_layout Standard
+Para a operacionalização desses princípios,
+ adotou-se a metodologia de projeto aplicada pelo Prof.
+ André Bueno nas disciplinas de Introdução ao Projeto de Engenharia (LEP01348) e Projeto de Software Aplicado à Engenharia (LEP01449) da UENF.
+ Esta abordagem adapta o modelo clássico de ciclo de vida em etapas sequenciais e iterativas,
+ conforme ilustrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Etapas para o desenvolvimento do software"
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
 
 \end_inset
 
-.
- Note que o 
-\begin_inset Quotes eld
-\end_inset
-
-Ciclo de Concepção e Análise
-\begin_inset Quotes erd
-\end_inset
-
- é composto por diversas partes representadas neste trabalho em diferentes capítulos.
- Os ciclos de planejamento/detalhamento tem seu próprio capítulo,
- assim como o ciclo de construção - implementação.
+,
+ permitindo um refinamento progressivo da solução.
 \end_layout
 
 \begin_layout Standard
-Esta metodologia é utilizada nas disciplinas:
+O fluxo de trabalho está estruturado nas seguintes fases,
+ que correspondem à organização dos capítulos deste documento:
 \end_layout
 
 \begin_layout Itemize
-LEP01447 :
- Programação Orientada a Objeto em C++.
+Ciclo de Concepção e Análise:
+ Foca no entendimento do problema físico (fluxo fracionário),
+ levantamento de requisitos e modelagem do domínio.
+ Esta etapa utiliza a abstração da Orientação a Objetos para mapear as equações de Buckley-Leverett em classes computacionais,
+ conforme as práticas de C++ descritas por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{bueno2003}
+\end_layout
+
+\end_inset
+
+;
 \end_layout
 
 \begin_layout Itemize
-LEP01446 :
- Programação Prática.
+Ciclo de Planejamento e Detalhamento:
+ Compreende a arquitetura do software,
+ a definição das estruturas de dados e o design da interface gráfica (GUI),
+ detalhados em capítulo específico;
+\end_layout
+
+\begin_layout Itemize
+Ciclo de Construção (Implementação):
+ Consiste na codificação propriamente dita,
+ utilizando a linguagem C++ e o framework Qt,
+ seguida das etapas de testes e validação dos resultados numéricos.
+\end_layout
+
+\begin_layout Standard
+Dessa forma,
+ a metodologia empregada assegura que o Software Educacional com Interface Interativa seja desenvolvido como um produto de engenharia documentado e robusto.
 \end_layout
 
 \begin_layout Standard
@@ -370,7 +524,7 @@ name "fig:Etapas para o desenvolvimento do software"
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset

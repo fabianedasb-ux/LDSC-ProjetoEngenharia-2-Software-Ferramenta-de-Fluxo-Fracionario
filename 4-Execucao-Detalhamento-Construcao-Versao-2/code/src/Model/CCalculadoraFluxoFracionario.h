@@ -11,24 +11,26 @@ private:
     ICurvasPermeabilidade* _modeloKr; // Ponteiro para a estratégia (Strategy)
 
 public:
-    // Construtor (Mantenha como está)
+    // Construtor
     CCalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo);
 
-    // --- NOVO: Permite atualizar as viscosidades sem recriar o objeto ---
+    // Permite atualizar as viscosidades sem recriar o objeto
     void setViscosidades(double mu_o, double mu_w);
 
-    // --- NOVO: Permite trocar de Corey para LET/Chierici dinamicamente ---
+    // Permite trocar de Corey para LET/Chierici dinamicamente
     void setModeloPermeabilidade(ICurvasPermeabilidade* modelo);
 
-    // Mantenha o calcularFw
+    // calcularFw
     double calcularFw(double sw) const;
 
-    // --- NOVO/VERIFICAR: Necessário para a Solução Analítica (Cálculo de x) ---
+    // VERIFICAR: Necessário para a Solução Analítica (Cálculo de x)
     // O Solver precisa saber a derivada para mover a frente: dx/dt ~ dfw/dsw
     double calcularDerivadaFw(double sw) const;
 
-    // Mantenha gerarCurvaCompleta se já existir
+    // gerarCurvaCompleta
     std::map<double, double> gerarCurvaCompleta(double passo) const;
 };
 
 #endif
+
+// Melhorar os comentários e incluir descrição para doxyfile
