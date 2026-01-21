@@ -1,0 +1,3272 @@
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings, 
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master Mestre-V2.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style apalike
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes false
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Elaboração
+\begin_inset Index idx
+range none
+pageformat default
+status collapsed
+
+\begin_layout Plain Layout
+Elaboração
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Elaboração"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Após a etapa de concepção,
+ onde foram definidos o escopo e os requisitos fundamentais do sistema,
+ o projeto avança para a fase de elaboração.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ esta fase é caracterizada pela expansão e refinamento das representações preliminares do software,
+ transformando os requisitos abstratos em um modelo técnico mais detalhado.
+ É o momento em que a ênfase transita do entendimento do problema para a estruturação da solução,
+ focando na arquitetura do sistema e na consistência dos dados.
+\end_layout
+
+\begin_layout Standard
+Neste contexto,
+ o processo de elaboração busca estabelecer uma base arquitetural sólida antes que a construção do código se inicie massivamente.
+ Conforme destaca 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{sommerville2011}
+\end_layout
+
+\end_inset
+
+,
+ é essencial que,
+ durante esta análise,
+ as fronteiras do sistema sejam perfeitamente compreendidas e que os componentes lógicos sejam organizados de forma a maximizar a coesão e minimizar o acoplamento.
+\end_layout
+
+\begin_layout Standard
+Desta forma,
+ este capítulo detalha as atividades de análise de domínio e identificação de pacotes.
+ O objetivo é ajustar os requisitos iniciais às restrições técnicas identificadas,
+ eliminando funcionalidades inviáveis e consolidando a estrutura dos subsistemas (como o núcleo matemático e a interface gráfica) para garantir que o simulador final seja robusto e extensível.
+\end_layout
+
+\begin_layout Section
+Análise de domínio
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Análise-de-domínio"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A análise de domínio é uma atividade contínua da engenharia de software que não foca apenas em uma aplicação específica,
+ mas sim na identificação,
+ análise e especificação de requisitos comuns a um campo de aplicação inteiro.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ o objetivo é encontrar padrões,
+ conceitos e regras que se aplicam a todos os sistemas dentro desse domínio,
+ permitindo a reutilização de conhecimento e componentes.
+ No contexto deste trabalho,
+ a análise de domínio delimita as fronteiras da Engenharia de Reservatórios que serão computacionalmente modeladas,
+ garantindo que o software respeite as leis físicas e as práticas padrão da indústria petrolífera.
+\end_layout
+
+\begin_layout Subsubsection
+Definição e caracterização do domínio a ser investigado
+\end_layout
+
+\begin_layout Standard
+O domínio de investigação deste trabalho situa-se na interseção entre a Engenharia de Reservatórios e a Computação Científica.
+ O objeto de estudo é a modelagem do escoamento bifásico imiscível (água e óleo) em meios porosos,
+ regido pela teoria clássica do Fluxo Fracionário.
+ Diferentemente de simuladores comerciais focados em modelos tridimensionais complexos de campo (
+\emph on
+\lang english
+full-field
+\emph default
+\lang brazilian
+),
+ o domínio deste software é delimitado à simulação analítica unidimensional (1D).
+ O foco principal é a caracterização precisa do avanço da frente de saturação e a determinação da eficiência de recuperação secundária,
+ servindo como uma ferramenta de apoio à decisão rápida e ao ensino de engenharia.
+\end_layout
+
+\begin_layout Subsubsection
+Descrição das áreas/disciplinas relacionadas
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento deste simulador exige uma abordagem multidisciplinar,
+ integrando conceitos fundamentais de três áreas distintas:
+\end_layout
+
+\begin_layout Itemize
+Engenharia de Petróleo:
+ Fornece a base física do problema,
+ incluindo a Lei de Darcy,
+ as correlações de permeabilidade relativa (modelos de Corey,
+ LET e Chierici) e a própria teoria de deslocamento de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Buckley1942}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Matemática Aplicada:
+ Envolve a resolução de Equações Diferenciais Parciais (EDPs) do tipo hiperbólico através do Método das Características (MOC) e a aplicação de condições de contorno e entropia,
+ como a construção da tangente de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Welge1952}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Engenharia de Software e Programação:
+ Aplica-se na estruturação da arquitetura do sistema utilizando o paradigma de Orientação a Objetos 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bueno2003"
+literal "true"
+
+\end_inset
+
+,
+ na implementação de algoritmos de alta performance em C++ e na construção de interfaces gráficas interativas com o framework Qt.
+\end_layout
+
+\begin_layout Subsubsection
+Descrição de questões associadas a espaço/tempo (espaço físico,
+ local,
+ instalação)
+\end_layout
+
+\begin_layout Itemize
+Espaço (Físico/Simulado):
+ O sistema opera sobre um domínio espacial que representa um meio poroso.
+ Neste projeto,
+ o espaço é simplificado para uma dimensão linear (1D),
+ correspondendo à distância entre um poço injetor e um produtor.
+\end_layout
+
+\begin_layout Itemize
+Tempo (Dinâmica):
+ O domínio envolve processos dinâmicos que evoluem com o tempo.
+ O software deve lidar com a variável temporal não apenas em segundos (tempo de processamento),
+ mas principalmente em "Volumes de Poros Injetados" (PVI) ou dias/anos,
+ que representam a escala de tempo geológica/operacional do processo de recuperação de óleo.
+\end_layout
+
+\begin_layout Subsubsection
+Representação Visual de Sistemas Equivalentes
+\end_layout
+
+\begin_layout Standard
+Para ilustrar a interdependência dos fenômenos físicos modelados,
+ a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:perfil-sat"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta um esquema clássico da influência da razão de mobilidade (
+\begin_inset Formula $M$
+\end_inset
+
+) no deslocamento.
+ A imagem correlaciona visualmente as três saídas principais do simulador proposto:
+ a curva de fluxo fracionário (linha inferior),
+ o perfil de saturação com a formação da frente de choque (linha intermediária) e a curva de eficiência de recuperação (linha superior).
+ Este sistema equivalente demonstra como a física do escoamento (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) dita a forma da frente de avanço e,
+ consequentemente,
+ o sucesso da injeção de água.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/perfil-sat.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ilustração esquemática do efeito da razão de mobilidade na eficiência de deslocamento,
+ no perfil de saturação e no fluxo fracionário.
+ Fonte:
+ Adaptado de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Lake2010}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:perfil-sat"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Formulação teórica
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Formulação-teórica"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A construção do núcleo de processamento matemático do software exige a tradução rigorosa dos fenômenos físicos de transporte em algoritmos computáveis.
+ Para que a ferramenta desenvolvida seja capaz de prever o comportamento do reservatório com a precisão necessária para aplicações de engenharia,
+ a modelagem deve fundamentar-se em leis de conservação e equações constitutivas consagradas.
+\end_layout
+
+\begin_layout Standard
+Nesta seção,
+ detalha-se o arcabouço teórico que foi implementado nas classes do simulador.
+ A formulação parte da descrição do movimento de fluidos em meios porosos (Lei de Darcy) e do princípio da conservação de massa,
+ cuja combinação resulta na equação governante do fluxo fracionário.
+ Em seguida,
+ apresenta-se a solução analítica para o avanço da frente de saturação 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
+
+\end_inset
+
+ e o tratamento matemático para descontinuidades físicas (frentes de choque) através da técnica de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Welge1952}
+\end_layout
+
+\end_inset
+
+,
+ algoritmos essenciais para a geração dos perfis de saturação exibidos pela interface gráfica.
+\end_layout
+
+\begin_layout Subsection
+Fundamentação do Escoamento Bifásico e a Lei de Darcy Generalizada
+\end_layout
+
+\begin_layout Standard
+A descrição matemática do escoamento de fluidos em meios porosos fundamenta-se,
+ primariamente,
+ na relação empírica proposta por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Darcy1856}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O acesso ao conceito ocorreu através de autores modernos como Lake,
+ que referenciam Henry Darcy
+\end_layout
+
+\end_inset
+
+.
+ No entanto,
+ para a análise de reservatórios de petróleo,
+ onde comumente ocorre a coexistência de fluidos imiscíveis (como água e óleo),
+ faz-se necessária a extensão da Lei de Darcy original para o escoamento multifásico.
+\end_layout
+
+\begin_layout Standard
+Conforme estabelecido por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Lake2010}
+\end_layout
+
+\end_inset
+
+,
+ a descrição do fluxo simultâneo de fluidos imiscíveis —
+ neste caso,
+ água e óleo —
+ pressupõe que cada fase escoa através de redes de poros distintas e interconectadas.
+ Assume-se,
+ para esta formulação,
+ um escoamento unidimensional,
+ incompressível e isotérmico,
+ onde as forças inerciais são desprezíveis em comparação às forças viscosas (regime laminar).
+ A interferência mútua entre as fases é quantificada pelo conceito de permeabilidade relativa,
+ que reduz a condutividade efetiva do meio para cada fluido em função de sua saturação local.
+\end_layout
+
+\begin_layout Standard
+Sob estas condições,
+ as velocidades superficiais (velocidades de Darcy) para as fases aquosa (
+\begin_inset Formula $w$
+\end_inset
+
+) e oleosa (
+\begin_inset Formula $o$
+\end_inset
+
+) em um sistema unidimensional inclinado são expressas pelas seguintes equações constitutivas,
+ que consideram os efeitos viscosos,
+ as efeitos gravitacionais e os gradientes de pressão atuantes em cada fase 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Para fase aquosa:
+\series default
+
+\begin_inset Formula 
+\begin{equation}
+u_{w}=-\frac{kk_{rw}}{\mu_{w}}\left(\frac{\partial p_{w}}{\partial x}+\rho_{w}g\sin\alpha\right)\label{eq:vel-agua}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Para fase oleosa:
+\series default
+
+\begin_inset Formula 
+\begin{equation}
+u_{o}=-\frac{kk_{ro}}{\mu_{o}}\left(\frac{\partial p_{o}}{\partial x}+\rho_{o}g\sin\alpha\right)\label{eq:vel-oleo}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $u_{i}$
+\end_inset
+
+ representa a velocidade de Darcy da fase 
+\begin_inset Formula $i$
+\end_inset
+
+ (sendo 
+\begin_inset Formula $i=w,o$
+\end_inset
+
+),
+ definida como a vazão volumétrica por unidade de área transversal (
+\begin_inset Formula $L/t$
+\end_inset
+
+).
+ O termo 
+\begin_inset Formula $k$
+\end_inset
+
+ denota a permeabilidade absoluta do meio poroso (
+\begin_inset Formula $L^{2}$
+\end_inset
+
+),
+ uma propriedade intrínseca da matriz rochosa,
+ enquanto 
+\begin_inset Formula $k_{ri}$
+\end_inset
+
+ refere-se à permeabilidade relativa da fase 
+\begin_inset Formula $i$
+\end_inset
+
+ (adimensional).
+\end_layout
+
+\begin_layout Standard
+As propriedades físicas dos fluidos são representadas pela viscosidade dinâmica 
+\begin_inset Formula $\mu_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $M/Lt$
+\end_inset
+
+) e pela massa específica 
+\begin_inset Formula $\rho_{i}$
+\end_inset
+
+ (
+\begin_inset Formula $M/L^{3}$
+\end_inset
+
+).
+ O termo 
+\begin_inset Formula $\frac{\partial p_{i}}{\partial x}$
+\end_inset
+
+ corresponde ao gradiente de pressão na direção do escoamento.
+ Por fim,
+ o termo gravitacional é dado por 
+\begin_inset Formula $\rho_{i}g\sin\alpha$
+\end_inset
+
+,
+ onde 
+\begin_inset Formula $g$
+\end_inset
+
+ é a aceleração da gravidade e 
+\begin_inset Formula $\alpha$
+\end_inset
+
+ é o ângulo de inclinação do reservatório,
+ convencionado como positivo para o fluxo no sentido ascendente ( 
+\emph on
+updip
+\emph default
+ ).
+\end_layout
+
+\begin_layout Subsection
+Definições Auxiliares e Relações Constitutivas
+\end_layout
+
+\begin_layout Standard
+Para a resolução do sistema de equações de fluxo,
+ é necessário relacionar as pressões das fases oleosa e aquosa.
+ Define-se a pressão capilar (
+\begin_inset Formula $p_{c}$
+\end_inset
+
+) como a diferença de pressão existente na interface entre dois fluidos imiscíveis em um meio poroso.
+\end_layout
+
+\begin_layout Standard
+Embora a magnitude e o sinal da pressão capilar dependam da tensão interfacial e do ângulo de contato (molhabilidade) da rocha,
+ para fins de desenvolvimento algébrico desta formulação,
+ adota-se a convenção padrão apresentada por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Lake2010}
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+p_{c}=p_{o}-p_{w}\implies p_{o}=p_{w}+p_{c}\label{eq:pressao-c}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Desta forma,
+ os gradientes de pressão relacionam-se através da derivada espacial:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial p_{o}}{\partial x}=\frac{\partial p_{w}}{\partial x}+\frac{\partial p_{c}}{\partial x}\label{eq:dpo-dx}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ define-se a velocidade total de escoamento (
+\begin_inset Formula $u_{t}$
+\end_inset
+
+) como a soma algébrica das velocidades superficiais de cada fase.
+ Considerando a premissa de incompressibilidade dos fluidos e da rocha,
+ a velocidade total permanece constante ao longo da direção do fluxo unidimensional:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+u_{t}=u_{w}+u_{o}\label{eq:vel-t}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por fim,
+ introduz-se o conceito de fluxo fracionário da água (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ uma variável adimensional que representa a razão entre a vazão da fase aquosa e a vazão total do sistema:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{w}=\frac{u_{w}}{u_{t}}\label{eq:fluxo-frac}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estas definições permitem a manipulação das equações de transporte para a eliminação dos gradientes de pressão individuais,
+ consolidando o problema na determinação da saturação.
+\end_layout
+
+\begin_layout Subsection
+Desenvolvimento Algébrico e Eliminação dos Gradientes de Pressão
+\end_layout
+
+\begin_layout Standard
+O objetivo desta etapa é combinar as leis de Darcy para as fases fluido com a definição de pressão capilar,
+ eliminando-se os gradientes de pressão individuais 
+\begin_inset Formula $\frac{\partial p_{w}}{\partial x}$
+\end_inset
+
+ e 
+\begin_inset Formula $\frac{\partial p_{o}}{\partial x}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Inicialmente,
+ rearranjam-se as equações de Darcy (Eqs.
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:vel-agua"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:vel-oleo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) para explicitar os gradientes de pressão em função das velocidades e das forças gravitacionais:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{w}}{\partial x}=-\frac{u_{w}\mu_{w}}{kk_{rw}}-\rho_{w}g\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{o}}{\partial x}=-\frac{u_{o}\mu_{o}}{kk_{ro}}-\rho_{o}g\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo-se estas expressões na equação diferencial da pressão capilar (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:dpo-dx"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ obtém-se:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{c}}{\partial x}=\left(-\frac{u_{o}\mu_{o}}{kk_{ro}}-\rho_{o}g\sin\alpha\right)-\left(-\frac{u_{w}\mu_{w}}{kk_{rw}}-\rho_{w}g\sin\alpha\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Agrupando-se os termos viscosos e gravitacionais,
+ a expressão torna-se:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{c}}{\partial x}=\left(\frac{u_{w}\mu_{w}}{kk_{rw}}-\frac{u_{o}\mu_{o}}{kk_{ro}}\right)+(\rho_{w}-\rho_{o})g\sin\alpha
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Neste ponto,
+ é conveniente definir a diferença de densidade entre as fases,
+ 
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+,
+ como a diferença entre a densidade da fase molhante (água) e a fase não-molhante (óleo):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\Delta\rho=\rho_{w}-\rho_{o}\label{eq:delta-rho}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Reescrevendo a equação com 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:delta-rho"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ e isolando os termos de velocidade no lado direito:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha=\frac{u_{w}\mu_{w}}{kk_{rw}}-\frac{u_{o}\mu_{o}}{kk_{ro}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para expressar a equação unicamente em termos da velocidade total (
+\begin_inset Formula $u_{t}$
+\end_inset
+
+) e da fração de fluxo (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ utiliza-se a relação de continuidade 
+\begin_inset Formula $u_{o}=u_{t}-u_{w}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha=\frac{u_{w}\mu_{w}}{kk_{rw}}-\frac{(u_{t}-u_{w})\mu_{o}}{kk_{ro}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A fim de simplificar a manipulação algébrica e isolar a velocidade da água (
+\begin_inset Formula $u_{w}$
+\end_inset
+
+),
+ multiplica-se toda a equação pela mobilidade da fase oleosa,
+ definida pelo termo 
+\begin_inset Formula $\frac{kk_{ro}}{\mu_{o}}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{kk_{ro}}{\mu_{o}}\left(\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha\right)=u_{w}\frac{\mu_{w}k_{ro}}{\mu_{o}k_{rw}}-(u_{t}-u_{w})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Expandindo o termo à direita e fatorando 
+\begin_inset Formula $u_{w}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{kk_{ro}}{\mu_{o}}\left(\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha\right)=u_{w}\left(1+\frac{\mu_{w}k_{ro}}{\mu_{o}k_{rw}}\right)-u_{t}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Rearranjando para isolar o termo que contém 
+\begin_inset Formula $u_{w}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{w}\left(1+\frac{k_{ro}\mu_{w}}{k_{rw}\mu_{o}}\right)=u_{t}+\frac{kk_{ro}}{\mu_{o}}\left(\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Finalmente,
+ introduzindo a definição de fluxo fracionário (
+\begin_inset Formula $f_{w}=u_{w}/u_{t}$
+\end_inset
+
+) e dividindo toda a expressão por 
+\begin_inset Formula $u_{t}$
+\end_inset
+
+,
+ chega-se à forma preliminar da equação generalizada:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{w}\left(1+\frac{k_{ro}\mu_{w}}{k_{rw}\mu_{o}}\right)=1+\frac{kk_{ro}}{u_{t}\mu_{o}}\left(\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Equação do Fluxo Fracionário Generalizada
+\end_layout
+
+\begin_layout Standard
+A partir da relação obtida na etapa anterior,
+ isola-se explicitamente a fração de fluxo da água (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ resultando na formulação matemática generalizada que descreve a competição entre as forças viscosas,
+ capilares e gravitacionais durante o escoamento bifásico em meios porosos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{w}=\frac{1+\frac{kk_{ro}}{u_{t}\mu_{o}}\left(\frac{\partial p_{c}}{\partial x}-\Delta\rho g\sin\alpha\right)}{1+\frac{k_{ro}}{k_{rw}}\frac{\mu_{w}}{\mu_{o}}}\label{eq:fluxo-frac-geral}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta equação é a base fundamental para o desenvolvimento de modelos de simulação de reservatórios e para a aplicação de métodos analíticos de solução,
+ como a teoria de Buckley-Leverett.
+ A análise de seus termos permite distinguir três regimes de fluxo ou forças motrizes principais 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+Forças Viscosas:
+ Representadas principalmente pelos termos de mobilidade no denominador (
+\begin_inset Formula $M=\frac{k_{rw}/\mu_{w}}{k_{ro}/\mu_{o}}$
+\end_inset
+
+).
+ Em altas velocidades de fluxo (
+\begin_inset Formula $u_{t}$
+\end_inset
+
+),
+ o termo aditivo no numerador tende a zero,
+ e o fluxo é dominado pela razão de viscosidades.
+\end_layout
+
+\begin_layout Enumerate
+Forças Gravitacionais:
+ Representadas pelo termo
+\begin_inset Formula $\frac{kk_{ro}\Delta\rho g\sin\alpha}{u_{t}\mu_{o}}$
+\end_inset
+
+.
+ Este componente quantifica a segregação de fluidos devido à diferença de densidade (
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+).
+ Em escoamentos com baixa velocidade ou alta permeabilidade,
+ a gravidade pode causar a contra-corrente (
+\emph on
+\nospellcheck on
+\lang english
+countercurrent flow
+\emph default
+\nospellcheck default
+\lang brazilian
+) ou a segregação vertical,
+ alterando significativamente a eficiência de varrido.
+\end_layout
+
+\begin_layout Enumerate
+Forças Capilares:
+ Representadas pelo gradiente de pressão capilar 
+\begin_inset Formula $\frac{\partial p_{c}}{\partial x}$
+\end_inset
+
+.
+ Embora frequentemente negligenciado em escalas de campo (hipótese de Buckley-Leverett clássica),
+ este termo é crucial para descrever a difusão da frente de saturação e os efeitos de imbibição em escalas locais.
+\end_layout
+
+\begin_layout Subsection
+Análise Dimensional e Simplificação do Modelo Matemático
+\end_layout
+
+\begin_layout Standard
+A equação generalizada obtida na etapa anterior descreve o escoamento bifásico considerando todas as forças atuantes.
+ No entanto,
+ para aplicações em escala de reservatório (macroscópica),
+ é comum avaliar a magnitude relativa dessas forças para simplificar o modelo matemático sem perda significativa de precisão.
+\end_layout
+
+\begin_layout Standard
+A influência das forças capilares na frente de avanço é regida pelo Número de Rapoport-Leas (
+\begin_inset Formula $N_{RL}$
+\end_inset
+
+).
+ Conforme estabelecido no trabalho seminal de 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Rapoport1953}
+\end_layout
+
+\end_inset
+
+ e discutido extensivamente por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Lake2010}
+\end_layout
+
+\end_inset
+
+,
+ existe um valor crítico para o produto entre o comprimento do sistema (
+\begin_inset Formula $L$
+\end_inset
+
+),
+ a velocidade de fluxo (
+\begin_inset Formula $u$
+\end_inset
+
+) e a viscosidade (
+\begin_inset Formula $\mu$
+\end_inset
+
+),
+ acima do qual o escoamento torna-se estabilizado e dominado pelas forças viscosas,
+ tornando a dispersão capilar desprezível na escala de análise.
+\end_layout
+
+\begin_layout Standard
+Considerando um sistema linear de comprimento 
+\begin_inset Formula $L$
+\end_inset
+
+,
+ este número adimensional é expresso pela razão entre o produto das forças viscosas macroscópicas e as forças capilares microscópicas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N_{RL}=\frac{L\cdot u_{t}\cdot\mu_{w}}{\sigma\sqrt{k\phi}}\label{eq:num-rapoport}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L$
+\end_inset
+
+ é o comprimento característico do sistema (ou a distância percorrida pela frente);
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $u_{t}$
+\end_inset
+
+ é a velocidade total de Darcy;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+ é a viscosidade da fase deslocante (água);
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\sigma$
+\end_inset
+
+ é a tensão interfacial entre os fluidos (água e óleo);
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k$
+\end_inset
+
+ é a permeabilidade absoluta;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\phi$
+\end_inset
+
+ é a porosidade da rocha.
+\end_layout
+
+\begin_layout Standard
+A análise dimensional demonstra que,
+ para valores elevados de 
+\begin_inset Formula $N_{RL}$
+\end_inset
+
+ (tipicamente 
+\begin_inset Formula $N_{RL}>3$
+\end_inset
+
+ em unidades de campo consistentes),
+ o termo convectivo (produto 
+\begin_inset Formula $Lu_{t}\mu_{w}$
+\end_inset
+
+) domina o comportamento do fluxo.
+ Nessas condições,
+ a zona de transição capilar torna-se desprezível em relação à escala do reservatório,
+ justificando a eliminação do termo 
+\begin_inset Formula $\frac{\partial p_{c}}{\partial x}$
+\end_inset
+
+ na equação de fluxo fracionário.
+\end_layout
+
+\begin_layout Standard
+Matematicamente,
+ quando o critério de Rapoport-Leas é satisfeito (
+\begin_inset Formula $N_{RL}\gtrsim3$
+\end_inset
+
+),
+ o termo do gradiente de pressão capilar (
+\begin_inset Formula $\frac{\partial p_{c}}{\partial x}$
+\end_inset
+
+) pode ser desconsiderado em relação aos termos convectivos e gravitacionais.
+ Sob esta hipótese de escoamento dominado por advecção,
+ a equação do fluxo fracionário simplifica-se para:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+f_{w}=\frac{1-\frac{kk_{ro}}{u_{t}\mu_{o}}\Delta\rho g\sin\alpha}{1+\frac{k_{ro}}{k_{rw}}\frac{\mu_{w}}{\mu_{o}}}\label{eq:floxu-frac-simples}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nesta formulação final,
+ adequada para a aplicação do Método das Características (MOC) em reservatórios inclinados,
+ a fração de fluxo 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ torna-se uma função exclusiva da saturação de água ($S_w$),
+ dado que as permeabilidades relativas dependem apenas da saturação.
+\end_layout
+
+\begin_layout Standard
+A análise dos termos remanescentes revela a competição entre duas forças principais:
+\end_layout
+
+\begin_layout Enumerate
+Razão de Mobilidade (Termo Viscoso):
+ O denominador reflete a resistência viscosa relativa dos fluidos.
+\end_layout
+
+\begin_layout Enumerate
+Número de Gravidade (
+\begin_inset Formula $N_{G}$
+\end_inset
+
+):
+ O termo no numerador,
+ 
+\begin_inset Formula $\frac{kk_{ro}\Delta\rho g\sin\alpha}{u_{t}\mu_{o}}$
+\end_inset
+
+,
+ representa a razão entre as forças gravitacionais e as forças viscosas.
+\end_layout
+
+\begin_layout Standard
+A presença do termo gravitacional (
+\begin_inset Formula $\sin\alpha$
+\end_inset
+
+) é mantida pois,
+ diferentemente da capilaridade (que atua como um termo difusivo de segunda ordem,
+ "suavizando" a frente),
+ a gravidade atua como um termo aditivo de primeira ordem.
+ Em reservatórios inclinados,
+ ela altera fundamentalmente a forma da curva de fluxo fracionário,
+ podendo gerar fenômenos de contra-corrente ou segregação gravitacional que são capturados pela solução hiperbólica do MOC.
+\end_layout
+
+\begin_layout Subsection
+Interpretação Física da Curva de Fluxo Fracionário:
+ Uma Propriedade Constitutiva
+\end_layout
+
+\begin_layout Standard
+A equação generalizada do fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+),
+ deduzida na seção anterior,
+ constitui a relação fundamental que descreve a hidrodinâmica local do escoamento bifásico.
+ No entanto,
+ é imperativo compreender a natureza física desta expressão antes de aplicá-la à modelagem do avanço da frente de saturação.
+\end_layout
+
+\begin_layout Standard
+Conforme discutido por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Lake2010}
+\end_layout
+
+\end_inset
+
+,
+ a função 
+\begin_inset Formula $f_{w}(S_{w})$
+\end_inset
+
+ não descreve,
+ por si só,
+ a evolução temporal do deslocamento.
+ Ela atua,
+ na verdade,
+ como uma propriedade constitutiva estática do sistema trino formado pela:
+\end_layout
+
+\begin_layout Itemize
+Matriz Rochosa (definida por 
+\begin_inset Formula $k$
+\end_inset
+
+ e curvas de 
+\begin_inset Formula $k_{r}$
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Itemize
+Fase Deslocante (definida por 
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\rho_{w}$
+\end_inset
+
+);
+\end_layout
+
+\begin_layout Itemize
+Fase Deslocada (definida por 
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $\rho_{o}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Analiticamente,
+ a equação afirma que a fração de fluxo é uma função de estado,
+ dependente exclusivamente das propriedades instantâneas dos fluidos e da rocha em um ponto específico.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Dake1978}
+\end_layout
+
+\end_inset
+
+ reforça essa interpretação ao tratar o fluxo fracionário como uma medida da eficiência de deslocamento pontual.
+\end_layout
+
+\begin_layout Standard
+Fisicamente,
+ isso implica que,
+ para um Volume Elementar Representativo (REV) do reservatório com uma saturação de água fixa 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+,
+ as forças viscosas e gravitacionais entram em equilíbrio instantâneo para ditar que uma fração exata 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ da vazão total (
+\begin_inset Formula $u_{t}$
+\end_inset
+
+) será transportada pela água.
+\end_layout
+
+\begin_layout Standard
+Esta característica "estática" impõe uma limitação:
+ embora a equação 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ quantifique a competência de fluxo das fases,
+ ela não possui a variável tempo (
+\begin_inset Formula $t$
+\end_inset
+
+) explícita.
+ Portanto,
+ ela não é capaz de prever a posição dos fluidos no reservatório ou quando a água atingirá o poço produtor.
+ Para transformar essa "fotografia" das forças atuantes em um "filme" do deslocamento de fluidos,
+ torna-se necessário acoplar esta relação constitutiva a uma lei de conservação fundamental.
+\end_layout
+
+\begin_layout Subsection
+A Lei de Conservação de Massa e o Acoplamento do Sistema
+\end_layout
+
+\begin_layout Standard
+A transição de uma descrição estática das propriedades de fluxo (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) para um modelo dinâmico de previsão de reservatórios exige a aplicação de uma lei de conservação fundamental.
+ Para determinar como a saturação de água evolui no tempo e no espaço,
+ realiza-se um balanço de massa em um volume de controle fixo no meio poroso
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dake1978"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+O Princípio da Continuidade
+\end_layout
+
+\begin_layout Standard
+Considere-se um elemento diferencial de volume no reservatório,
+ com área de seção transversal 
+\begin_inset Formula $A$
+\end_inset
+
+ constante e espessura 
+\begin_inset Formula $\Delta x$
+\end_inset
+
+,
+ conforme ilustrado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Volume-Elementar-Representativo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/volume.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Volume Elementar Representativo (REV) para o balanço de massa unidimensional na fase aquosa
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Volume-Elementar-Representativo"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Assume-se a hipótese de imiscibilidade total,
+ onde não há transferência de massa entre as fases (o componente água permanece restrito à fase aquosa).
+ Desta forma,
+ a lei de conservação de massa aplicada à fase água estabelece que o acúmulo de massa no volume é resultante do saldo líquido entre o fluxo de entrada e saída
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
+ Da forma que:
+\begin_inset Formula 
+\[
+[\text{Taxa de Acúmulo}]=[\text{Taxa de Entrada}]-[\text{Taxa de Saída}]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Matematicamente,
+ para um intervalo de tempo 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+,
+ o balanço pode ser escrito em termos de massa específica (
+\begin_inset Formula $\rho_{w}$
+\end_inset
+
+),
+ velocidade superficial (
+\begin_inset Formula $u_{w}$
+\end_inset
+
+),
+ porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+) e saturação (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Enumerate
+Acúmulo de Massa:A variação da massa de água dentro do volume de controle ocorre devido à mudança na saturação,
+ conforme descrito por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{rosa2006}
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Acúmulo=A\Delta x\phi\left[(\rho_{w}S_{w})_{t+\Delta t}-(\rho_{w}S_{w})_{t}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Fluxo Líquido (Entrada - Saída):A massa que entra na face 
+\begin_inset Formula $x$
+\end_inset
+
+ e sai na face 
+\begin_inset Formula $x+\Delta x$
+\end_inset
+
+ durante o intervalo 
+\begin_inset Formula $\Delta t$
+\end_inset
+
+ é dada por:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Fluxo=A\Delta t\left[(\rho_{w}u_{w})_{x}-(\rho_{w}u_{w})_{x+\Delta x}\right]
+\]
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Igualando os termos e dividindo toda a expressão pelo volume do elemento e pelo intervalo de tempo (
+\begin_inset Formula $A\Delta x\Delta t$
+\end_inset
+
+),
+ obtém-se a equação de diferenças finitas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{(\rho_{w}\phi S_{w})_{t+\Delta t}-(\rho_{w}\phi S_{w})_{t}}{\Delta t}+\frac{(\rho_{w}u_{w})_{x+\Delta x}-(\rho_{w}u_{w})_{x}}{\Delta x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tomando-se o limite quando 
+\begin_inset Formula $\Delta t\to0$
+\end_inset
+
+ e 
+\begin_inset Formula $\Delta x\to0$
+\end_inset
+
+,
+ a expressão converge para a equação diferencial parcial da continuidade 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial(\rho_{w}\phi S_{w})}{\partial t}+\frac{\partial(\rho_{w}u_{w})}{\partial x}=0\label{eq:continuidade}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Simplificações Físicas
+\end_layout
+
+\begin_layout Standard
+Para o desenvolvimento da solução analítica clássica,
+ aplicam-se as hipóteses de incompressibilidade dos fluidos e da rocha.
+ Isto implica que:
+\end_layout
+
+\begin_layout Enumerate
+A densidade da água (
+\begin_inset Formula $\rho_{w}$
+\end_inset
+
+) é constante no tempo e espaço.
+\end_layout
+
+\begin_layout Enumerate
+A porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+) é constante e independente da pressão.
+\end_layout
+
+\begin_layout Standard
+Sob estas condições,
+ os termos constantes podem ser retirados das derivadas e cancelados,
+ simplificando a equação para:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi\frac{\partial S_{w}}{\partial t}+\frac{\partial u_{w}}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+A Equação de Buckley-Leverett
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:a-eq-de-buckley"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O passo final consiste em acoplar a equação constitutiva do fluxo fracionário,
+ deduzida na seção anterior,
+ à equação da continuidade.
+ Recordando a definição de fluxo fracionário:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+u_{w}=u_{t}f_{w}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo 
+\begin_inset Formula $u_{w}$
+\end_inset
+
+ na equação de conservação:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi\frac{\partial S_{w}}{\partial t}+\frac{\partial(u_{t}f_{w})}{\partial x}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Em um escoamento incompressível e unidimensional sem fontes ou sumidouros ao longo do domínio,
+ a velocidade total (
+\begin_inset Formula $u_{t}$
+\end_inset
+
+) é invariante com a posição (
+\begin_inset Formula $\frac{\partial u_{t}}{\partial x}=0$
+\end_inset
+
+).
+ Portanto,
+ a equação assume sua forma final,
+ conhecida como a equação fundamental do deslocamento de Buckley-Leverett:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\phi\frac{\partial S_{w}}{\partial t}+u_{t}\frac{\partial f_{w}}{\partial x}=0\label{eq:buckley}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta equação diferencial parcial hiperbólica descreve a dinâmica do transporte de saturação,
+ indicando que a taxa de variação da saturação em um ponto é diretamente proporcional à velocidade de fluxo total e ao gradiente espacial do fluxo fracionário.Também conhecida como Equação de Buckley-Leverett,
+ descreve o transporte convectivo da saturação através do meio poroso 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Análise Dimensional e a Equação de Buckley-Leverett
+\end_layout
+
+\begin_layout Standard
+Para que a solução matemática do problema de deslocamento tenha aplicabilidade universal —
+ permitindo a extrapolação de resultados laboratoriais (escala de core) para reservatórios reais (escala de campo) —
+,
+ é prática padrão na engenharia de reservatórios realizar a adimensionalização das variáveis independentes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+O procedimento consiste em normalizar as coordenadas de tempo e espaço,
+ eliminando a dependência explícita das dimensões físicas do sistema (
+\begin_inset Formula $L$
+\end_inset
+
+) e das propriedades volumétricas (
+\begin_inset Formula $\phi$
+\end_inset
+
+),
+ conforme detalhado a seguir.
+\end_layout
+
+\begin_layout Subsubsection
+Definição das Variáveis Adimensionais
+\end_layout
+
+\begin_layout Standard
+Define-se a distância adimensional (
+\begin_inset Formula $x_{D}$
+\end_inset
+
+) como a fração do comprimento total do sistema linear (
+\begin_inset Formula $L$
+\end_inset
+
+) percorrida pelo fluido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{D}=\frac{x}{L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Desta relação,
+ obtém-se o operador diferencial para o espaço:
+ 
+\begin_inset Formula $\partial x=L\partial x_{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Analogamente,
+ define-se o tempo adimensional (
+\begin_inset Formula $t_{D}$
+\end_inset
+
+) em termos de Volumes de Poros Injetados (PVI).
+ Esta variável representa a razão entre o volume acumulado de fluido injetado e o volume poroso total do sistema 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "true"
+
+\end_inset
+
+.
+ Para uma vazão de injeção constante,
+ a expressão é dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{D}=\frac{u_{t}t}{\phi L}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diferenciando-se em relação ao tempo real,
+ obtém-se o operador diferencial temporal:
+ 
+\begin_inset Formula $\partial t=\frac{\phi L}{u_{t}}\partial t_{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+A Equação Adimensional
+\end_layout
+
+\begin_layout Standard
+Substituindo-se os operadores diferenciais na equação da conservação de massa (derivada na Subseção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:a-eq-de-buckley"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\phi\frac{\partial S_{w}}{\left(\frac{\phi L}{u_{t}}\partial t_{D}\right)}+u_{t}\frac{\partial f_{w}}{(L\partial x_{D})}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Simplificando os termos algébricos,
+ observa-se o cancelamento das variáveis dimensionais 
+\begin_inset Formula $\phi$
+\end_inset
+
+,
+ 
+\begin_inset Formula $L$
+\end_inset
+
+ e 
+\begin_inset Formula $u_{t}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{u_{t}}{L}\frac{\partial S_{w}}{\partial t_{D}}+\frac{u_{t}}{L}\frac{\partial f_{w}}{\partial x_{D}}=0\implies\frac{\partial S_{w}}{\partial t_{D}}+\frac{\partial f_{w}}{\partial x_{D}}=0
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como a fração de fluxo 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ é uma função exclusiva da saturação (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+),
+ conforme estabelecido pela equação constitutiva,
+ aplica-se a regra da cadeia para expandir o termo espacial:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial f_{w}}{\partial x_{D}}=\frac{df_{w}}{dS_{w}}\frac{\partial S_{w}}{\partial x_{D}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo este resultado na equação de transporte,
+ chega-se à forma final da Equação de Buckley-Leverett:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\frac{\partial S_{w}}{\partial t_{D}}+\frac{df_{w}}{dS_{w}}\frac{\partial S_{w}}{\partial x_{D}}=0\label{eq:buckley-ad}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta Equação Diferencial Parcial (EDP) quase-linear e hiperbólica relaciona a taxa de variação da saturação no tempo adimensional com o gradiente de saturação no espaço adimensional.
+ O termo 
+\begin_inset Formula $\frac{df_{w}}{dS_{w}}$
+\end_inset
+
+,
+ correspondente à derivada da curva de fluxo fracionário em relação à saturação,
+ emerge como o fator fundamental que governa a velocidade de propagação das saturações no meio poroso 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Solução Analítica pelo Método das Características (MOC)
+\end_layout
+
+\begin_layout Standard
+A equação de Buckley-Leverett,
+ deduzida na forma adimensional na seção anterior,
+ classifica-se matematicamente como uma Equação Diferencial Parcial (EDP) hiperbólica quase-linear de primeira ordem.
+ Embora existam métodos numéricos (como Diferenças Finitas ou Volumes Finitos) capazes de resolver esta equação,
+ a solução analítica via Método das Características (MOC) é frequentemente preferida para análises teóricas fundamentais.
+ A resolução desta equação requer uma abordagem que preserve a integridade física das frentes de onda,
+ evitando a dispersão numérica comum em métodos de diferenças finitas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Justificativa da Escolha do Método
+\end_layout
+
+\begin_layout Standard
+A seleção do MOC fundamenta-se na sua capacidade de descrever o fenômeno de deslocamento com clareza física superior.
+ Métodos numéricos tradicionais tendem a introduzir erros de truncamento que se manifestam como uma "dispersão numérica" artificial,
+ suavizando artificialmente frentes de choque que deveriam ser abruptas 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Em contraste,
+ o Método das Características preserva a natureza hiperbólica do problema,
+ tratando o escoamento como a propagação de ondas de saturação contínuas e descontínuas.
+ Como ressalta 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Bedrikovetsky1993}
+\end_layout
+
+\end_inset
+
+,
+ esta abordagem permite visualizar explicitamente a competição entre as forças viscosas e gravitacionais através da velocidade das ondas,
+ revelando a "física do escoamento" sem o mascaramento difusivo inerente às discretizações de malha fixa.
+\end_layout
+
+\begin_layout Subsubsection
+Desenvolvimento Matemático
+\end_layout
+
+\begin_layout Standard
+O princípio central do MOC consiste em transformar a EDP original em um sistema de Equações Diferenciais Ordinárias (EDOs) válidas ao longo de trajetórias específicas no plano espaço-tempo (
+\begin_inset Formula $x_{D},t_{D}$
+\end_inset
+
+),
+ denominadas curvas características.
+\end_layout
+
+\begin_layout Standard
+Considera-se que a saturação 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+ é uma função contínua e diferenciável da posição e do tempo:
+ 
+\begin_inset Formula $S_{w}=S_{w}(x_{D},t_{D})$
+\end_inset
+
+.
+ A diferencial total da saturação é dada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+dS_{w}=\frac{\partial S_{w}}{\partial t_{D}}dt_{D}+\frac{\partial S_{w}}{\partial x_{D}}dx_{D}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O método busca identificar trajetórias no reservatório ao longo das quais a saturação de água permanece constante (
+\begin_inset Formula $dS_{w}=0$
+\end_inset
+
+).
+ Para uma saturação constante,
+ a equação diferencial total rearranja-se para definir a inclinação destas trajetórias:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{dx_{D}}{dt_{D}}\right)_{S_{w}}=-\frac{\partial S_{w}/\partial t_{D}}{\partial S_{w}/\partial x_{D}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Retomando a Equação de Buckley-Leverett (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:buckley-ad"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{\partial S_{w}}{\partial t_{D}}=-\frac{df_{w}}{dS_{w}}\frac{\partial S_{w}}{\partial x_{D}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Substituindo esta relação na expressão da inclinação da trajetória,
+ obtém-se a solução fundamental do MOC 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bedrikovetsky1993"
+literal "true"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\left(\frac{dx_{D}}{dt_{D}}\right)_{S_{w}}=\frac{df_{w}}{dS_{w}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interpretação Física
+\end_layout
+
+\begin_layout Standard
+A equação acima demonstra que cada valor de saturação 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+ propaga-se com uma velocidade constante e própria,
+ igual à derivada da função de fluxo fracionário 
+\begin_inset Formula $f_{w}'(S_{w})$
+\end_inset
+
+.
+ Integrando para uma injeção contínua (
+\begin_inset Formula $t_{D}=0,x_{D}=0$
+\end_inset
+
+),
+ a posição da frente é:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+x_{D}=t_{D}\cdot f_{w}'(S_{w})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este resultado analítico expõe a natureza não-linear do problema:
+ como a função 
+\begin_inset Formula $f_{w}(S_{w})$
+\end_inset
+
+ não é linear (devido à gravidade e viscosidade),
+ saturações diferentes viajam a velocidades diferentes.
+ Isso leva inevitavelmente à sobreposição matemática de ondas ("quebra da onda"),
+ exigindo a imposição de uma descontinuidade física (choque) para garantir a unicidade da solução,
+ tema que será tratado na próxima seção sob a ótica da condição de entropia.
+\end_layout
+
+\begin_layout Subsection
+Condição de Entropia e Soluções Descontínuas
+\end_layout
+
+\begin_layout Standard
+A aplicação direta do Método das Características à equação de Buckley-Leverett revela uma limitação fundamental quando a função de fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) não é convexa,
+ como é o caso típico no deslocamento de óleo por água (formato em "S").
+\end_layout
+
+\begin_layout Standard
+Conforme a solução analítica derivada (
+\begin_inset Formula $x_{D}=t_{D}f_{w}'$
+\end_inset
+
+),
+ a velocidade de propagação de uma saturação é proporcional à derivada da curva de fluxo.
+ Em regiões onde a derivada 
+\begin_inset Formula $f_{w}'$
+\end_inset
+
+ é crescente com a saturação,
+ saturações mais altas viajam mais rapidamente do que saturações mais baixas situadas à sua frente.
+ Matematicamente,
+ isso leva à interseção das curvas características no plano espaço-tempo,
+ resultando em um perfil de saturação "multivalorado" 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bedrikovetsky1993"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+O Colapso da Solução Clássica
+\end_layout
+
+\begin_layout Standard
+Fisicamente,
+ a existência de múltiplos valores de saturação no mesmo ponto do espaço (
+\begin_inset Formula $x_{D}$
+\end_inset
+
+) é impossível.
+ Este fenômeno,
+ análogo à quebra de uma onda mecânica,
+ sinaliza o colapso da solução clássica (contínua) da Equação Diferencial Parcial.
+\end_layout
+
+\begin_layout Standard
+Para resolver este impasse físico,
+ recorre-se à teoria das leis de conservação hiperbólicas,
+ conforme estudado em Métodos da Física-Matemática.
+ É necessário abandonar a exigência de continuidade e buscar uma solução fraca (integral) que admita descontinuidades.
+ No contexto do deslocamento de fluidos,
+ essa descontinuidade manifesta-se como uma Frente de Choque.
+\end_layout
+
+\begin_layout Subsubsection
+A Condição de Entropia
+\end_layout
+
+\begin_layout Standard
+A introdução de descontinuidades matemáticas permite infinitas soluções fracas possíveis para a EDP.
+ Para selecionar a única solução fisicamente admissível,
+ aplica-se a Condição de Entropia (ou Condição de Oleinik).
+\end_layout
+
+\begin_layout Standard
+Esta condição estabelece que uma descontinuidade (choque) só é estável se as características "entrarem" no choque e não "saírem" dele.
+ Em termos de engenharia de reservatórios,
+ isso significa que a velocidade da frente de choque (
+\begin_inset Formula $v_{\sigma}$
+\end_inset
+
+) deve ser intermediária entre a velocidade da saturação imediatamente atrás do choque (
+\begin_inset Formula $v_{L}$
+\end_inset
+
+) e a velocidade da saturação imediatamente à frente dele (
+\begin_inset Formula $v_{R}$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{L}\geq v_{\sigma}\geq v_{R}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ou:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{w}'(S_{L})\geq\frac{f_{w}(S_{L})-f_{w}(S_{R})}{S_{L}-S_{R}}\geq f_{w}'(S_{R})
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Onda de Choque e Onda de Rarefação
+\end_layout
+
+\begin_layout Standard
+A aplicação deste critério resulta na decomposição do perfil de saturação em duas estruturas distintas,
+ fundamentais na análise física do problema:
+\end_layout
+
+\begin_layout Enumerate
+Onda de Choque:
+ Uma frente abrupta onde a saturação salta instantaneamente de um valor inicial (geralmente 
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+) para um valor de frente (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+).
+ Ela ocorre na região onde as velocidades das características diminuem na direção do fluxo,
+ violando a unicidade da solução contínua.
+\end_layout
+
+\begin_layout Enumerate
+Onda de Rarefação:
+ Uma zona de variação suave da saturação,
+ que ocorre atrás da frente de choque (entre 
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+ e 
+\begin_inset Formula $1-S_{or}$
+\end_inset
+
+).
+ Nesta região,
+ as características divergem ("se espalham") sem se cruzar,
+ permitindo que a solução contínua do MOC permaneça válida.
+\end_layout
+
+\begin_layout Standard
+A determinação exata da saturação onde ocorre a transição entre a rarefação e o choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) é obtida através da relação de balanço de massa através da descontinuidade (Condição de Rankine-Hugoniot),
+ geometricamente resolvida pela Construção de Welge.
+\end_layout
+
+\begin_layout Subsection
+Solução da Frente de Choque:
+ A Construção de Welge
+\end_layout
+
+\begin_layout Standard
+A imposição da condição de entropia exige que a solução física para o deslocamento contenha uma descontinuidade abrupta de saturação (choque) na região onde a velocidade das ondas é multivalorada.
+ Para determinar a magnitude e a posição deste choque,
+ utiliza-se a técnica analítica desenvolvida por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Welge1952}
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+A Condição de Rankine-Hugoniot
+\end_layout
+
+\begin_layout Standard
+Em problemas de leis de conservação hiperbólicas,
+ a velocidade de propagação de uma descontinuidade (
+\begin_inset Formula $v_{\sigma}$
+\end_inset
+
+) deve respeitar o balanço de massa integral através da interface do choque.
+ Esta relação,
+ conhecida na física-matemática como Condição de Rankine-Hugoniot,
+ iguala a velocidade do choque à razão entre a variação de fluxo e a variação de saturação através da descontinuidade:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+v_{\sigma}=\left(\frac{\Delta x_{D}}{\Delta t_{D}}\right)_{choque}=\frac{f_{w}(S_{wf})-f_{w}(S_{wi})}{S_{wf}-S_{wi}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+:
+ Saturação de água na frente de choque (o valor que buscamos determinar).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+:
+ Saturação de água inicial do reservatório (estado à frente do choque).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $f_{w}(S_{wf})$
+\end_inset
+
+ e 
+\begin_inset Formula $f_{w}(S_{wi})$
+\end_inset
+
+:
+ Fluxos fracionários correspondentes.
+\end_layout
+
+\begin_layout Subsubsection
+O Princípio da Tangência
+\end_layout
+
+\begin_layout Standard
+Para que a solução seja contínua e fisicamente consistente,
+ a velocidade da frente de choque deve ser exatamente igual à velocidade da onda de saturação imediatamente atrás dela (o último ponto da zona de rarefação).
+ Matematicamente,
+ isso implica igualar a velocidade do choque (Rankine-Hugoniot) à velocidade característica (derivada da função 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) no ponto 
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{f_{w}(S_{wf})-f_{w}(S_{wi})}{S_{wf}-S_{wi}}=\left(\frac{df_{w}}{dS_{w}}\right)_{S_{wf}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Geometricamente,
+ esta igualdade descreve uma reta que parte do ponto inicial 
+\begin_inset Formula $(S_{wi},f_{w}(S_{wi}))$
+\end_inset
+
+ e tangencia a curva de fluxo fracionário exatamente no ponto 
+\begin_inset Formula $(S_{wf},f_{w}(S_{wf}))$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Esta construção gráfica,
+ denominada Tangente de Welge,
+ permite determinar univocamente a saturação da frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) mesmo em cenários complexos com efeitos gravitacionais,
+ onde a curva 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ pode apresentar pontos de inflexão.
+\end_layout
+
+\begin_layout Subsubsection
+Determinação da Saturação Média (
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Além de localizar a frente de avanço,
+ o método de Welge fornece uma maneira direta de calcular a saturação média de água em todo o reservatório atrás da frente,
+ uma variável fundamental para o cálculo da recuperação de óleo acumulada (
+\begin_inset Formula $N_{p}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Integrando o perfil de saturação desde a entrada (
+\begin_inset Formula $x_{D}=0$
+\end_inset
+
+) até a frente de choque (
+\begin_inset Formula $x_{Df}$
+\end_inset
+
+),
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{Welge1952}
+\end_layout
+
+\end_inset
+
+ demonstrou que a saturação média (
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+) na zona varrida é dada pela interceptação da reta tangente com a linha de topo do gráfico (
+\begin_inset Formula $f_{w}=1$
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{S}_{w}=S_{wf}+\frac{1-f_{w}(S_{wf})}{f_{w}'(S_{wf})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta relação simplifica drasticamente o cálculo da recuperação de óleo,
+ eliminando a necessidade de integração numérica do perfil de saturação a cada passo de tempo.
+ Basta estender a reta tangente até o eixo 
+\begin_inset Formula $f_{w}=1$
+\end_inset
+
+ e ler o valor correspondente no eixo das abcissas.
+\end_layout
+
+\begin_layout Subsection
+Cálculo dos Indicadores de Recuperação e Eficiência de Deslocamento
+\end_layout
+
+\begin_layout Standard
+A obtenção da solução analítica para o perfil de saturação e a determinação da frente de choque não constituem um fim em si mesmas,
+ mas sim a base fundamental para a previsão de desempenho do reservatório.
+ O objetivo final da modelagem matemática desenvolvida nas seções anteriores é quantificar volume de óleo recuperável e a evolução temporal da produção.
+\end_layout
+
+\begin_layout Standard
+Uma vez determinado o perfil de saturação 
+\begin_inset Formula $S_{w}(x_{D},t_{D})$
+\end_inset
+
+ e a saturação média 
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+ (via método de Welge),
+ é possível calcular os principais indicadores de engenharia:
+\end_layout
+
+\begin_layout Subsubsection
+Eficiência de Deslocamento (
+\begin_inset Formula $E_{D}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+A área sob o perfil de saturação representa fisicamente o volume de água que entrou no sistema e,
+ consequentemente,
+ devido à incompressibilidade,
+ o volume de óleo que foi deslocado.
+ A eficiência de deslocamento microscópico é definida como a fração do óleo móvel que foi efetivamente recuperada num dado instante 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "true"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E_{D}=\frac{\bar{S}_{w}-S_{wi}}{1-S_{wi}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Onde 
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+ é a saturação média de água na zona varrida.
+ Este indicador varia monotonicamente com o tempo,
+ atingindo seu valor máximo teórico apenas quando todo o reservatório atinge a saturação residual de óleo (
+\begin_inset Formula $S_{or}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsubsection
+Tempo de Ruptura (
+\emph on
+Breakthrough
+\emph default
+)
+\end_layout
+
+\begin_layout Standard
+Um dos parâmetros mais críticos fornecidos pela solução analítica é o tempo de ruptura (
+\begin_inset Formula $t_{bt}$
+\end_inset
+
+),
+ que marca o instante exato em que a frente de choque alcança o poço produtor (
+\begin_inset Formula $x_{D}=1$
+\end_inset
+
+).Utilizando a equação da velocidade da frente derivada pelo MOC,
+ o tempo adimensional de ruptura é calculado pelo inverso da derivada do fluxo fracionário na saturação de choque:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+t_{bt}=\frac{1}{f_{w}'(S_{wf})}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Antes deste instante (
+\begin_inset Formula $t_{D}<t_{bt}$
+\end_inset
+
+),
+ apenas óleo é produzido no poço de saída,
+ e a recuperação acumulada é linearmente igual ao volume injetado (
+\begin_inset Formula $N_{p}=t_{D}$
+\end_inset
+
+).
+ Após a ruptura (
+\begin_inset Formula $t_{D}>t_{bt}$
+\end_inset
+
+),
+ a água começa a ser coproduzida,
+ e a razão de água no fluxo (BSW) aumenta progressivamente,
+ reduzindo a eficiência econômica do projeto 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Recuperação de Óleo Acumulada (
+\begin_inset Formula $N_{p}$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Por fim,
+ a integração desses conceitos permite prever a curva de produção acumulada de óleo (
+\begin_inset Formula $N_{p}$
+\end_inset
+
+) em função do tempo ou do volume injetado.
+ Em unidades de volumes porosos (PVI),
+ a recuperação é dada diretamente pela variação da saturação média no reservatório:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+N_{p(PVI)}=\bar{S}_{w}-S_{wi}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Portanto,
+ todo o esforço matemático de deduzir 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+,
+ aplicar a conservação de massa e resolver via Welge culmina nesta capacidade preditiva:
+ estimar quanto óleo será produzido e em que momento a água invadirá os poços produtores,
+ permitindo a análise técnica e econômica de diferentes cenários de injeção e molhabilidade.
+\end_layout
+
+\begin_layout Section
+Identificação de pacotes – assuntos
+\end_layout
+
+\begin_layout Standard
+A identificação de pacotes constitui a etapa fundamental do projeto arquitetural,
+ onde o sistema é decomposto em subsistemas coesos e fracamente acoplados.
+ Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ a arquitetura de software não trata apenas da estrutura operacional dos componentes,
+ mas estabelece a organização hierárquica que permite o desenvolvimento paralelo,
+ a manutenibilidade e o reuso de código.
+\end_layout
+
+\begin_layout Standard
+Neste trabalho,
+ a arquitetura foi estruturada seguindo o padrão arquitetural em camadas,
+ isolando a lógica de apresentação (interface) das regras de negócio (núcleo matemático).
+ Conforme recomenda 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{sommerville2011}
+\end_layout
+
+\end_inset
+
+,
+ essa modularização é essencial em softwares de engenharia para garantir que alterações nos modelos físicos (como a adição de novas correlações de permeabilidade) não impactem a estabilidade da interface gráfica ou dos módulos de persistência de dados.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Interface (
+\family typewriter
+\nospellcheck on
+View
+\family default
+\nospellcheck default
+):
+ Responsável exclusivamente pela camada de apresentação.
+ Contém as classes que definem as janelas (
+\family typewriter
+\nospellcheck on
+MainWindow
+\family default
+\nospellcheck default
+),
+ diálogos e formulários construídos com o 
+\emph on
+\lang english
+framework
+\emph default
+\lang brazilian
+ Qt.
+ Sua função é capturar os eventos do usuário (cliques,
+ entradas de dados) e repassá-los ao Controlador,
+ sem realizar processamento matemático direto,
+ garantindo uma interface leve e responsiva.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Controle (
+\family typewriter
+\emph on
+\lang english
+Controller
+\family default
+\emph default
+\lang brazilian
+):
+ Atua como o intermediário entre a Interface e o Domínio,
+ implementando a lógica de aplicação.
+ Este pacote recebe as requisições da interface (ex:
+ "Calcular Fluxo Fracionário"),
+ orquestra a validação dos dados,
+ invoca os métodos numéricos do núcleo e devolve os resultados formatados para a visualização.
+ Ele assegura o desacoplamento do sistema.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Domínio (
+\family typewriter
+\emph on
+\lang english
+Model
+\family default
+\emph default
+\lang brazilian
+):
+ Constitui o núcleo científico do simulador.
+ Encapsula as classes que representam as entidades físicas da Engenharia de Reservatórios (Fluido,
+ Rocha,
+ Reservatório) e os algoritmos de solução (
+\family typewriter
+\nospellcheck on
+BuckleyLeverettSolver
+\family default
+\nospellcheck default
+).
+ É aqui que residem as leis de conservação e as equações constitutivas,
+ mantendo-se totalmente independente de bibliotecas gráficas.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Modelos de Permeabilidade (
+\family typewriter
+\emph on
+\lang english
+Strategies
+\family default
+\emph default
+\lang brazilian
+):
+ Implementa o padrão de projeto 
+\emph on
+\lang english
+Strategy
+\emph default
+\lang brazilian
+ para flexibilizar o cálculo das propriedades da rocha.
+ Contém a interface comum e as classes concretas para os modelos analíticos (Corey,
+ LET,
+ Chierici) e para a interpolação de dados tabulares.
+ Este isolamento permite que novos modelos de permeabilidade sejam adicionados futuramente sem alterar o código do Domínio.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Gerenciamento de Dados (
+\family typewriter
+IO
+\family default
+):
+ Responsável pela persistência e recuperação de informações.
+ Agrupa as classes especializadas na leitura e interpretação (
+\emph on
+\lang english
+parsing
+\emph default
+\lang brazilian
+) de arquivos externos (
+\family typewriter
+.txt
+\family default
+,
+ .
+\family typewriter
+xlsx
+\family default
+),
+ tratando exceções de formatação e convertendo dados brutos em objetos do domínio,
+ protegendo o núcleo de erros de entrada/saída.
+\end_layout
+
+\begin_layout Itemize
+Pacote de Visualização (
+\family typewriter
+\emph on
+\lang english
+Plotting
+\family default
+\emph default
+\lang brazilian
+):
+ Especializado na renderização científica dos resultados.
+ Integra a biblioteca 
+\family typewriter
+\nospellcheck on
+QCustomPlo
+\nospellcheck default
+t
+\family default
+ para gerar os gráficos cartesianos (
+\begin_inset Formula $f_{w}\times S_{w}$
+\end_inset
+
+,
+ Perfis de Saturação).
+ Este pacote encapsula as configurações estéticas (eixos,
+ legendas,
+ 
+\emph on
+\lang english
+grids
+\emph default
+\lang brazilian
+) e de interatividade gráfica,
+ fornecendo "
+\emph on
+\lang english
+widgets
+\emph default
+\lang brazilian
+" prontos para serem exibidos pela Interface.
+\end_layout
+
+\begin_layout Section
+Diagrama de pacotes – assuntos
+\begin_inset CommandInset label
+LatexCommand label
+name "sec: Diagrama de pacotes – assuntos"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A representação visual da arquitetura do sistema é consolidada no Diagrama de Pacotes,
+ apresentado na Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-Pacotes"
+nolink "false"
+
+\end_inset
+
+.
+ Este artefato oferece uma visão de alto nível sobre a organização modular do software,
+ ilustrando como as fronteiras arquiteturais foram estabelecidas para promover a separação de interesses.
+\end_layout
+
+\begin_layout Standard
+Segundo 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{pressman2016}
+\end_layout
+
+\end_inset
+
+,
+ a modelagem de pacotes é essencial para comunicar a estrutura estática do sistema,
+ evidenciando as dependências entre os subsistemas.
+ No diagrama proposto,
+ observa-se a centralidade do pacote de Controle,
+ que atua como o orquestrador do sistema,
+ isolando a Interface (camada de apresentação) das complexidades do Domínio (camada de negócio) e dos detalhes técnicos de Visualização e Gerenciamento de Dados.
+\end_layout
+
+\begin_layout Standard
+Esta estrutura hierárquica reflete o princípio da alta coesão e baixo acoplamento preconizado por 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+citeonline{sommerville2011}
+\end_layout
+
+\end_inset
+
+,
+ assegurando que mudanças nos algoritmos matemáticos (Domínio) ou nos modelos de permeabilidade (Estratégias) não propaguem efeitos colaterais para a interface gráfica,
+ garantindo a manutenibilidade e a robustez do simulador a longo prazo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-pacotes.png
+	lyxscale 30
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Pacotes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-Pacotes"
+
+\end_inset
+
+ - Arquitetura modular do simulador evidenciando o padrão de camadas e o desacoplamento pelo Controlador.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Mudar a cor da borda da caixinha,
+ está errado nessa cor vinho,
+ só os balões e setas são cor de vinho,
+ a borda da cainha é preto.
+ Como faz isso?
+ Eu odeio o plantxxxxxx
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
