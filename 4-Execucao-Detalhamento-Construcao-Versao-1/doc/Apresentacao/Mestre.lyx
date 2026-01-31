@@ -29,7 +29,7 @@
 \use_microtype false
 \use_dash_ligatures true
 \graphics default
-\default_output_format default
+\default_output_format pdf5
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -81,7 +81,7 @@
 \tracking_changes false
 \output_changes false
 \change_bars false
-\postpone_fragile_content true
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false

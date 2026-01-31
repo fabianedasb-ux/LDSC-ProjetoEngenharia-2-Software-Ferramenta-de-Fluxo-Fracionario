@@ -6,41 +6,14 @@
 \origin unavailable
 \textclass extbook
 \begin_preamble
-\usepackage {graphicx}
-\usepackage {longtable}
-\usepackage {indentfirst}
-\renewenvironment{center}{\par\centering}{\par}
-
-% Comentar linhas abaixo se não estiver usando pacote abntex
-% ou se o pacote ainda não foi instalado.
-% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
-% para usar abnt tem de instalar os arquivos: dnf install texlive-abnt2
-% verificar onde os mesmos estão: rpm -ql texlive-abntex2
-% reconfigurar o latex e o lyx (lyx->ferramentas->reconfigurar). E ativar linhas abaixo.
-% na aba de configuração do lyx, mude a classe de documento para abnt.
-%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
-%\usepackage {helvet}
-%\renewcommand {\familydefault}{\sfdefault}
-
-% Para uso de listagens de código
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
-% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
-
-%Fonte: https://github.com/abntex/abntex2/wiki/HowToFormatarCodigoFonte
-\usepackage{listings}
-%\renewcommand{\lstlistingname}{Listagem}
-% Altera o nome padrão do rótulo usado no comando \autoref{}
-\renewcommand{\lstlistingname}{Código}
-% Altera o rótulo a ser usando no elemento pré-textual "Lista de código"
-%\renewcommand{\lstlistlistingname}{Lista de códigos}
+\usepackage{pdflscape}
+\usepackage[alf]{abntex2cite}
 \end_preamble
-\use_default_options false
+\use_default_options true
 \master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
-\language_package auto
+\language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "default"
@@ -81,13 +54,13 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style plain
+\biblio_style apalike
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -111,7 +84,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -169,59 +142,40 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-A terceira etapa do desenvolvimento de um projeto de engenharia,
- no nosso caso um software aplicado a engenharia de petróleo,
- é a AOO – Análise Orientada a Objeto.
- A AOO utiliza algumas regras para identificar os objetos de interesse,
- as relacões entre os pacotes,
- as classes,
- os atributos,
- os métodos,
- as heranças,
- as associações,
- as agregações,
- as composições e as dependências.
- 
-\end_layout
-
-\begin_layout Standard
-O modelo de análise deve ser conciso,
- simplificado e deve mostrar o que deve ser feito,
- não se preocupando como isso será realizado.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Itemize
-O modelo funcional (aspectos microdinâmicos,
- veja a seção 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "sec:AOO-Modelagem-funcional"
-nolink "false"
+A Análise Orientada a Objetos (AOO) constitui uma etapa fundamental no desenvolvimento de software científico,
+ pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica para uma estrutura computacional lógica e coesa.
+ Segundo 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bueno2003"
+literal "true"
 
 \end_inset
 
-).
- Gabriela:
- O que fazer com essa nota?
- Não ficou claro.
- 
+,
+ a abordagem orientada a objetos facilita a modelagem de sistemas complexos ao decompor o problema em entidades autônomas (objetos) que possuem atributos (dados) e métodos (comportamentos),
+ espelhando as entidades do mundo real,
+ como reservatórios,
+ fluidos e malhas de simulação.
 \end_layout
 
-\begin_layout Itemize
-DESCONSIDERAR
-\end_layout
-
-\begin_layout Itemize
-algumas notas tem lembretes para mim mesmo.
-\end_layout
+\begin_layout Standard
+O foco desta etapa é identificar o que o sistema deve fazer e quais elementos o compõem,
+ independentemente de como eles serão implementados em código.
+ Neste capítulo,
+ apresenta-se a arquitetura do simulador educacional,
+ detalhando como as equações de Buckley-Leverett e as correlações de permeabilidade foram encapsuladas em classes e como esses objetos interagem para resolver o problema de fluxo fracionário.
+ A modelagem resultante busca garantir um sistema modular,
+ reutilizável e de fácil manutenção,
+ alinhado às boas práticas da Engenharia de Software 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
-O resultado da análise é um conjunto de diagramas que identificam os objetos e seus relacionamentos.
+.
 \end_layout
 
 \begin_layout Section
@@ -293,6 +247,22 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{landscape}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 alignment document
@@ -305,7 +275,7 @@ status open
 \begin_inset Graphics
 	filename imagens/diagrama-de-classes.png
 	lyxscale 10
-	width 100text%
+	width 90page%
 
 \end_inset
 
@@ -329,6 +299,22 @@ name "cap:Diagrama-de-classes"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{landscape}
 \end_layout
 
 \end_inset
@@ -828,7 +814,7 @@ CRelatorio
 
 \end_deeper
 \begin_layout Section
-Diagrama de seqüência – eventos
+Diagrama de sequência – eventos
 \begin_inset Index idx
 range none
 pageformat default
@@ -878,9 +864,53 @@ name "subsec:diagrama de sequência"
 
 \shape italic
 \emph on
-O diagrama de seqüência enfatiza a troca de eventos e mensagens e sua ordem temporal.
- Contém informações sobre o fluxo de controle do software.
- Costuma ser montado a partir de um diagrama de caso de uso e estabelece o relacionamento dos atores (usuários e sistemas externos) com alguns objetos do sistema.
+A modelagem estática,
+ apresentada anteriormente no Diagrama de Classes,
+ define a estrutura e a hierarquia dos componentes do sistema,
+ mas é insuficiente para descrever o comportamento do software durante sua execução.
+ Para capturar a dinâmica do sistema e a lógica temporal das operações,
+ utilizam-se os Diagramas de Sequência.
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+Conforme 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "booch2007object"
+literal "true"
+
+\end_inset
+
+ ,
+ esses diagramas enfatizam a ordem temporal das mensagens trocadas entre os objetos,
+ detalhando como o fluxo de controle passa de um componente para outro para realizar uma tarefa específica.
+ No contexto deste simulador,
+ os diagramas de sequência são essenciais para demonstrar como os eventos da interface gráfica (cliques do usuário) são convertidos em chamadas de métodos no núcleo numérico,
+ evidenciando a orquestração entre o controlador (
+\family typewriter
+\shape default
+\emph default
+\nospellcheck on
+CSimulador
+\family default
+\shape italic
+\emph on
+\nospellcheck default
+),
+ o solver (
+\family typewriter
+\shape default
+\emph default
+\nospellcheck on
+CSolver
+\family default
+\shape italic
+\emph on
+\nospellcheck default
+) e as entidades matemáticas durante o avanço do tempo e a correção da frente de choque.
 \end_layout
 
 \begin_layout Subsection
@@ -1410,18 +1440,22 @@ name "par:Diagrama-de-colaboração:"
 \end_layout
 
 \begin_layout Standard
-No diagrama de comunicação o foco é a interação e a troca de mensagens e dados entre os objetos.
- 
-\end_layout
+Enquanto os diagramas de sequência enfatizam a ordem temporal das mensagens,
+ o Diagrama de Comunicação foca na organização estrutural dos objetos que trocam mensagens 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "booch2007object"
+literal "true"
 
-\begin_layout Itemize
-[Pode ser a repetição de um diagrama de sequência;
- mas note que o formato do gráfico é diferente,
- aqui a ênfase é o entendimento das mensagens que chegam e saem de cada objeto.]
+\end_inset
+
+.
+ Ele evidencia as conexões entre os elementos,
+ oferecendo uma visão clara do acoplamento do sistema.
 \end_layout
 
 \begin_layout Standard
-Veja na Figura 
+A Figura
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "subsec:Diagrama-de-Comunicação"
@@ -1429,8 +1463,8 @@ nolink "false"
 
 \end_inset
 
- o diagrama de comunicação mostrando a sequência de blablabla.
- Observe que ....
+ apresenta a visão geral de comunicação,
+ abrangendo desde a configuração das curvas até a geração do relatório.
 \end_layout
 
 \begin_layout Standard
@@ -1442,10 +1476,23 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-comunicacao.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de comunicação
+Diagrama de Comunicação:
+ Fluxo hierárquico de execução.
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-comunicação"
@@ -1462,7 +1509,93 @@ name "cap:Diagrama-de-comunicação"
 
 \end_inset
 
+ 
+\end_layout
 
+\begin_layout Standard
+O diagrama utiliza uma numeração hierárquica para representar três fases distintas de interação iniciadas pelo ator 
+\family typewriter
+\nospellcheck on
+Usuário
+\family default
+\nospellcheck default
+:
+\end_layout
+
+\begin_layout Enumerate
+Fase de Configuração (Mensagens 1.x):
+ Inicia-se com a solicitação de cálculo das curvas.
+ A 
+\family typewriter
+\nospellcheck on
+:MainWindow
+\family default
+\nospellcheck default
+ obtém acesso à 
+\family typewriter
+\nospellcheck on
+:CCalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ através do simulador (1.1) para exibir os gráficos iniciais.
+\end_layout
+
+\begin_layout Enumerate
+Fase de Simulação (Mensagens 2.x):
+ Ao solicitar a solução,
+ o comando é delegado ao 
+\family typewriter
+\nospellcheck on
+:CSimulador
+\family default
+\nospellcheck default
+,
+ que orquestra o 
+\family typewriter
+\nospellcheck on
+:CSolver
+\family default
+\nospellcheck default
+.
+ Nota-se a profundidade da execução nas mensagens 2.1.2.1 e 2.1.2.2,
+ onde o solver interage intensamente com a calculadora e com o especialista 
+\family typewriter
+\nospellcheck on
+:CWelge
+\family default
+\nospellcheck default
+ para resolver o avanço da frente de saturação.
+\end_layout
+
+\begin_layout Enumerate
+Fase de Saída (Mensagens 3.x):
+ Por fim,
+ a interface solicita os dados processados e aciona o 
+\family typewriter
+\nospellcheck on
+:CRelatorio
+\family default
+\nospellcheck default
+ para a exportação dos resultados.
+\end_layout
+
+\begin_layout Standard
+Essa estrutura visual confirma que o princípio de Baixo Acoplamento foi respeitado:
+ o 
+\family typewriter
+\nospellcheck on
+:CSolver
+\family default
+\nospellcheck default
+ e o 
+\family typewriter
+\nospellcheck on
+:CWelge
+\family default
+\nospellcheck default
+ (o núcleo matemático) estão isolados da interface gráfica,
+ sendo acessados apenas indiretamente através do controlador,
+ o que facilita a manutenção e testes dos componentes numéricos.
 \end_layout
 
 \begin_layout Section
@@ -1501,12 +1634,23 @@ name "subsec:diagrama de estados"
 \end_layout
 
 \begin_layout Standard
-Um diagrama de máquina de estado representa os diversos estados que o objeto assume e os eventos que ocorrem ao longo de sua vida ou mesmo ao longo de um processo (histórico do objeto).
- É usado para modelar aspectos dinâmicos do objeto.
-\end_layout
+Para garantir a robustez da aplicação e evitar operações inválidas (como tentar gerar um relatório antes de executar a simulação),
+ o comportamento da classe controladora 
+\family typewriter
+\nospellcheck on
+:CSimulador
+\family default
+\nospellcheck default
+ foi modelado através de uma Máquina de Estados Finita 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
-\begin_layout Standard
-Veja na Figura 
+\end_inset
+
+.
+ A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-maquina-de-estado"
@@ -1514,24 +1658,7 @@ nolink "false"
 
 \end_inset
 
- o diagrama de máquina de estado para o objeto XXX.
- Observe que....
-\end_layout
-
-\begin_layout Itemize
-Lembre-se,
- são os estados de um objeto específico e não uma sequência de cálculo;
- as sequência já foram mostrados nos diagramas de sequência e comunicação!!
-\end_layout
-
-\begin_layout Itemize
-Vou repetir;
- Não faça o diagrama de máquina de estado como sendo uma repetição dos diagramas de sequência!
- 
-\end_layout
-
-\begin_layout Itemize
-Este diagrama trata dos estados de um objeto único/específico!
+ ilustra as transições de estado permitidas durante o ciclo de vida da execução.
 \end_layout
 
 \begin_layout Standard
@@ -1543,10 +1670,29 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-estado.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de máquina de estado
+Diagrama de Máquina de Estados da classe 
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
+.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-maquina-de-estado"
@@ -1563,7 +1709,87 @@ name "cap:Diagrama-de-maquina-de-estado"
 
 \end_inset
 
+ 
+\end_layout
 
+\begin_layout Standard
+O diagrama reflete a sequência lógica de operação imposta pela interface gráfica:
+\end_layout
+
+\begin_layout Enumerate
+Estado 
+\family typewriter
+\nospellcheck on
+AguardandoConfiguracao
+\family default
+\nospellcheck default
+:
+ O sistema inicia neste estado.
+ Nenhuma simulação é permitida até que os parâmetros físicos sejam inseridos.
+\end_layout
+
+\begin_layout Enumerate
+Transição de Configuração:
+ Ao acionar o cálculo das curvas de fluxo fracionário (
+\family typewriter
+\nospellcheck on
+calcularFw
+\family default
+\nospellcheck default
+),
+ o objeto transita para o estado 
+\family typewriter
+\nospellcheck on
+ProntoParaSimulacao
+\family default
+\nospellcheck default
+.
+ Isso valida os dados de entrada.
+\end_layout
+
+\begin_layout Enumerate
+Estado 
+\family typewriter
+\nospellcheck on
+Simulando
+\family default
+\nospellcheck default
+:
+ Ocorre durante a execução do método 
+\family typewriter
+\nospellcheck on
+executarSimulacao()
+\family default
+\nospellcheck default
+.
+ Neste estado,
+ a interface é bloqueada para evitar condições de corrida.
+\end_layout
+
+\begin_layout Enumerate
+Estado 
+\family typewriter
+\nospellcheck on
+ComResultados
+\family default
+\nospellcheck default
+:
+ Após o 
+\emph on
+\lang english
+breakthrough
+\emph default
+\lang brazilian
+ (chegada da frente de saturação ao final do reservatório),
+ o sistema alcança este estado final.
+ Somente aqui a operação 
+\family typewriter
+\nospellcheck on
+exportarParaPDF()
+\family default
+\nospellcheck default
+ é habilitada,
+ garantindo que o relatório contenha dados consistentes e completos.
 \end_layout
 
 \begin_layout Section
@@ -1578,11 +1804,34 @@ name "sec: Diagrama de atividades"
 \end_layout
 
 \begin_layout Standard
-.....
+O Diagrama de Atividades permite modelar o fluxo sequencial e condicional de um processo algorítmico 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "booch2007object"
+literal "true"
+
+\end_inset
+
+.
+ Neste projeto,
+ ele foi utilizado para detalhar a lógica crítica implementada no método 
+\family typewriter
+\nospellcheck on
+executarPassoTempo()
+\family default
+\nospellcheck default
+ da classe 
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+,
+ onde ocorre a integração entre o transporte lagrangiano e a correção física da frente de choque.
 \end_layout
 
 \begin_layout Standard
-Veja na Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "cap:Diagrama-de-atividades"
@@ -1590,28 +1839,7 @@ nolink "false"
 
 \end_inset
 
- o diagrama de atividades correspondente a uma atividade específica do diagrama de máguina de estado.
- Observe que....
-\end_layout
-
-\begin_layout Standard
-...descrever em detalhes uma atividade específica..não pode ser a sequência de uso geral,
- trata-se de um caso específico,
- detalhado do diagrama de máquina de estado.
-\end_layout
-
-\begin_layout Itemize
-Lembrar que o diagrama de sequência é a representação de um método de cálculo específico.
- 
-\end_layout
-
-\begin_layout Itemize
-Não é para fazer o diagrama de atividades do método de gerenciamento!!!
-\end_layout
-
-\begin_layout Itemize
-Coloque aqui um diagrama de atividades que mostra contas/cálculos!
- 
+ apresenta o fluxograma de decisão para um passo de tempo.
 \end_layout
 
 \begin_layout Standard
@@ -1623,10 +1851,23 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-atividades.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de atividades
+Diagrama de Atividades:
+ Algoritmo de avanço temporal com correção de Welge.
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"
@@ -1644,6 +1885,57 @@ name "cap:Diagrama-de-atividades"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+O algoritmo inicia-se com o cálculo das velocidades de onda para todas as células ativas.
+ Após a atualização provisória das posições (
+\begin_inset Formula $x_{new}=x_{old}+v\Delta t$
+\end_inset
+
+),
+ o sistema verifica a ocorrência de inconsistências físicas,
+ especificamente o fenômeno de "múltipla valoração",
+ onde uma saturação maior ultrapassaria uma menor devido à não-linearidade da curva de fluxo fracionário.
+\end_layout
+
+\begin_layout Standard
+O losango de decisão ilustra o tratamento desta condição:
+\end_layout
+
+\begin_layout Enumerate
+Fluxo Normal:
+ Se o perfil de saturação permanece monotônico,
+ os dados são armazenados diretamente.
+\end_layout
+
+\begin_layout Enumerate
+Fluxo de Correção:
+ Caso seja detectada a inversão física,
+ o sistema desvia o fluxo para acionar a rotina de Welge (classe 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+),
+ que calcula a saturação da frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) e ajusta a posição das células para garantir a conservação de massa (Áreas Iguais),
+ conforme fundamentado teoricamente no Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Elaboração"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
 \end_layout
 
 \end_body

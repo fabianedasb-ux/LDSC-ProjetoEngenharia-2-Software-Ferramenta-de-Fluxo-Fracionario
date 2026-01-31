@@ -1,23 +1,68 @@
 #ifndef CCELULA_H
 #define CCELULA_H
 
-class CCelula
-{
+/**
+ * @brief Representa um ponto discreto (volume elementar) no domínio do reservatório.
+ *
+ * Na abordagem analítica, a célula funciona como um container de dados que armazena
+ * o estado de uma saturação específica (Sw) e sua posição (x) correspondente em um
+ * determinado tempo (t).
+ *
+ * @author Fabiane Barros
+ * @date Janeiro 2026
+ */
+class CCelula {
+private:
+    double _saturacao;      ///< Saturação de água (Sw) neste ponto.
+    double _posicao;        ///< Posição espacial (x) no reservatório [m].
+    double _derivadaFluxo;  ///< Velocidade adimensional da onda (dfw/dSw).
+
 public:
+    /**
+     * @brief Construtor padrão.
+     * Inicializa com valores zerados.
+     */
     CCelula();
 
-    // Getters e Setters simplificados
-    double getX() const;
-    void setX(double newX);
+    /**
+     * @brief Construtor parametrizado.
+     *
+     * @param sw Valor da saturação de água.
+     * @param x Posição inicial no espaço.
+     * @param dfw Valor da derivada do fluxo fracionário (velocidade da onda).
+     */
+    CCelula(double sw, double x, double dfw);
 
+    /**
+     * @brief Destrutor virtual.
+     */
+    virtual ~CCelula();
+
+    // --- Getters (Métodos de Acesso) ---
+
+    /**
+     * @brief Retorna a saturação de água da célula.
+     * @return Sw (0 a 1).
+     */
     double getSaturacao() const;
-    void setSaturacao(double newSaturacao);
 
-private:
-    double m_x;          // Posição da frente (calculada)
-    double m_saturacao;  // Valor da saturação (fixo no método das características)
+    /**
+     * @brief Retorna a posição atual da célula.
+     * @return Posição x.
+     */
+    double getPosicao() const;
+
+    /**
+     * @brief Retorna a derivada do fluxo fracionário armazenada.
+     * @return dfw/dSw.
+     */
+    double getDerivadaFluxo() const;
+
+    // --- Setters (Métodos de Modificação) ---
+
+    void setSaturacao(double sw);
+    void setPosicao(double x);
+    void setDerivadaFluxo(double dfw);
 };
 
-#endif // CCELULA_H
-
-// Melhorar os comentários e incluir descrição para doxyfile
+#endif

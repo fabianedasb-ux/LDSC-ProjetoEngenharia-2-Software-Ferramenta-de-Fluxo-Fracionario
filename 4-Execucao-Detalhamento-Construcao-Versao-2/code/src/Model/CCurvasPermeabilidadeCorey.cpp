@@ -1,42 +1,63 @@
+/**
+ * @file CCurvasPermeabilidadeCorey.cpp
+ * @brief Implementação da classe CCurvasPermeabilidadeCorey.
+ */
+
 #include "CCurvasPermeabilidadeCorey.h"
 #include <algorithm> // Para std::max, std::min
+#include <fstream>   // Para leitura de arquivos
+#include <stdexcept> // Para exceções
 
-// --- IMPLEMENTAÇÃO DO NOVO CONSTRUTOR ---
+// --- Construtor Parametrizado ---
 CCurvasPermeabilidadeCorey::CCurvasPermeabilidadeCorey(double kroMax, double krwMax, double no, double nw, double swir, double sor)
     : _swir(swir), _sorw(sor), _krw_max(krwMax), _kro_max(kroMax), _nw(nw), _no(no)
 {
-    // O construtor já inicializa as variáveis acima com a lista de inicialização
 }
 
-// Construtor vazio
-CCurvasPermeabilidadeCorey::CCurvasPermeabilidadeCorey() {
-    _swir = _sorw = _krw_max = _kro_max = _nw = _no = 0.0;
+// --- Construtor Vazio ---
+CCurvasPermeabilidadeCorey::CCurvasPermeabilidadeCorey()
+    : _swir(0), _sorw(0), _krw_max(0), _kro_max(0), _nw(0), _no(0)
+{
 }
 
-// Função auxiliar interna (não precisa estar no .h se for apenas static ou helper)
-double calcularSwNorm(double sw, double swir, double sorw) {
-    double denominador = 1.0 - swir - sorw;
-    if (denominador <= 0.000001) return 0.0; // Evita divisão por zero se dados forem ruins
+// --- Destrutor ---
+CCurvasPermeabilidadeCorey::~CCurvasPermeabilidadeCorey() {
+}
 
-    double sw_norm = (sw - swir) / denominador;
-    return std::max(0.0, std::min(1.0, sw_norm)); // Garante entre 0 e 1
+// --- Método Auxiliar Privado ---
+double CCurvasPermeabilidadeCorey::calcularSwNorm(double sw) const {
+    double denominador = 1.0 - _swir - _sorw;
+    if (denominador <= 1e-6) return 0.0; // Evita divisão por zero
+
+    double sw_norm = (sw - _swir) / denominador;
+    // Garante que o resultado fique entre 0.0 e 1.0 (limites físicos)
+    return std::max(0.0, std::min(1.0, sw_norm));
+}
+
+// --- Implementação da Interface ---
+
+void CCurvasPermeabilidadeCorey::carregarDados(const std::string& arquivo) {
+    std::ifstream in(arquivo);
+    if (!in.is_open()) {
+        throw std::runtime_error("CCurvasCorey: Nao foi possivel abrir o arquivo: " + arquivo);
+    }
+
+    // Tenta ler os 6 parâmetros na ordem esperada
+    // Ordem sugerida: Swir Sor KroMax KrwMax No Nw
+    if (!(in >> _swir >> _sorw >> _kro_max >> _krw_max >> _no >> _nw)) {
+        throw std::runtime_error("CCurvasCorey: Erro ao ler parametros numericos do arquivo.");
+    }
+
+    in.close();
 }
 
 double CCurvasPermeabilidadeCorey::getKrw(double sw) const {
-    double sw_norm = calcularSwNorm(sw, _swir, _sorw);
+    double sw_norm = calcularSwNorm(sw);
     return _krw_max * std::pow(sw_norm, _nw);
 }
 
 double CCurvasPermeabilidadeCorey::getKro(double sw) const {
-    double sw_norm = calcularSwNorm(sw, _swir, _sorw);
+    double sw_norm = calcularSwNorm(sw);
+    // Para óleo, a base é (1 - Swn)
     return _kro_max * std::pow(1.0 - sw_norm, _no);
 }
-
-// Mantemos o carregarDados para compatibilidade, caso queira usar arquivos no futuro
-void CCurvasPermeabilidadeCorey::carregarDados(const std::string& arquivo) {
-    // Implementação antiga de leitura de arquivo (pode deixar vazia se não for usar agora)
-    (void)arquivo;
-}
-
-
-// Finalizar carregar dados

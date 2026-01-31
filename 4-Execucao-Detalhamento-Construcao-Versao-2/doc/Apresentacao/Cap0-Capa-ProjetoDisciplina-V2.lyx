@@ -5,31 +5,11 @@
 \save_transient_properties true
 \origin unavailable
 \textclass extbook
-\begin_preamble
-\usepackage {graphicx}
-\usepackage {longtable}
-\usepackage {indentfirst}
-\renewenvironment{center}{\par\centering}{\par}
-
-% Comentar linhas abaixo se não estiver usando pacote abntex
-% ou se o pacote ainda não foi instalado.
-% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
-%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
-%\usepackage {helvet}
-%\renewcommand {\familydefault}{\sfdefault}
-
-% Para uso de listagens de código
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
-% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
-\usepackage{listings}
-\end_preamble
-\use_default_options false
-\master Mestre.lyx
+\use_default_options true
+\master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
-\language_package auto
+\language_package default
 \inputencoding utf8
 \fontencoding auto
 \font_roman "default" "default"
@@ -100,7 +80,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
-\paperpagestyle fancy
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -116,10 +96,26 @@
 \begin_body
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+thispagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \align center
 
 \size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE
+UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE DARCY RIBEIRO
 \begin_inset Newline newline
 \end_inset
 
@@ -150,20 +146,13 @@ PROJETO DE ENGENHARIA
 \begin_inset Newline newline
 \end_inset
 
-DESENVOLVIMENTO DO SOFTWARE 
+DESENVOLVIMENTO DE SOFTWARE 
 \begin_inset Newline newline
 \end_inset
 
+
+\emph on
 SOFTWARE EDUCACIONAL COM INTERFACE INTERATIVA PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS - SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
-\begin_inset Newline newline
-\end_inset
-
-DISCIPLINA LEP-0144:
- Projeto de Software Aplicado à Engenharia
-\begin_inset Newline newline
-\end_inset
-
-Setor de Modelagem Matemática Computacional
 \end_layout
 
 \begin_layout Standard
@@ -177,11 +166,11 @@ Setor de Modelagem Matemática Computacional
 \align center
 
 \size large
-Versão 2:
+Versão 2.0:
 \begin_inset Newline newline
 \end_inset
 
-Fabiane da Silva Barros
+FABIANE DA SILVA BARROS
 \begin_inset Newline newline
 \end_inset
 
@@ -191,19 +180,6 @@ Prof.
 
 \begin_layout Standard
 \begin_inset VSpace 2.5cm
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
 \end_inset
 
 

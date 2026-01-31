@@ -1,25 +1,50 @@
+/**
+ * @file CCelula.cpp
+ * @brief Implementação da classe CCelula.
+ */
+
 #include "CCelula.h"
 
-CCelula::CCelula() : m_x(0.0), m_saturacao(0.0)
+// --- Construtor Padrão ---
+CCelula::CCelula()
+    : _saturacao(0.0), _posicao(0.0), _derivadaFluxo(0.0)
 {
 }
 
-double CCelula::getX() const
+// --- Construtor Parametrizado ---
+CCelula::CCelula(double sw, double x, double dfw)
+    : _saturacao(sw), _posicao(x), _derivadaFluxo(dfw)
 {
-    return m_x;
 }
 
-void CCelula::setX(double newX)
-{
-    m_x = newX;
+// --- Destrutor ---
+CCelula::~CCelula() {
 }
 
-double CCelula::getSaturacao() const
-{
-    return m_saturacao;
+// --- Getters ---
+
+double CCelula::getSaturacao() const {
+    return _saturacao;
 }
 
-void CCelula::setSaturacao(double newSaturacao)
-{
-    m_saturacao = newSaturacao;
+double CCelula::getPosicao() const {
+    return _posicao;
+}
+
+double CCelula::getDerivadaFluxo() const {
+    return _derivadaFluxo;
+}
+
+// --- Setters ---
+
+void CCelula::setSaturacao(double sw) {
+    _saturacao = sw;
+}
+
+void CCelula::setPosicao(double x) {
+    _posicao = x;
+}
+
+void CCelula::setDerivadaFluxo(double dfw) {
+    _derivadaFluxo = dfw;
 }

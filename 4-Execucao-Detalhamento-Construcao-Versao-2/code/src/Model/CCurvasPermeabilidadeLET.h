@@ -3,47 +3,85 @@
 
 #include "ICurvasPermeabilidade.h"
 #include <cmath>
+#include <string>
 
-class CurvasPermeabilidadeLET : public ICurvasPermeabilidade {
+/**
+ * @brief Implementação do modelo de permeabilidade relativa LET.
+ *
+ * O modelo LET (Lombez, Escovedo, Trindade) é uma correlação empírica flexível
+ * que utiliza três parâmetros (L, E, T) para descrever a forma, elevação e
+ * translação da curva de permeabilidade relativa.
+ *
+ * Referência: Lombez et al. (2008).
+ *
+ * @author Fabiane Barros
+ * @date Janeiro 2026
+ */
+class CCurvasPermeabilidadeLET : public ICurvasPermeabilidade {
 private:
-    // Parâmetros do modelo LET
-    double _Lw, _Ew, _Tw;
-    double _Lo, _Eo, _To;
-    double _Swirr, _Sor;
+    // Parâmetros para a fase aquosa
+    double _Lw; ///< Parâmetro de forma (L) para água.
+    double _Ew; ///< Parâmetro de elevação (E) para água.
+    double _Tw; ///< Parâmetro de translação (T) para água.
+
+    // Parâmetros para a fase oleosa
+    double _Lo; ///< Parâmetro de forma (L) para óleo.
+    double _Eo; ///< Parâmetro de elevação (E) para óleo.
+    double _To; ///< Parâmetro de translação (T) para óleo.
+
+    // Saturações extremas
+    double _Swirr; ///< Saturação irreduzível de água.
+    double _Sor;   ///< Saturação residual de óleo.
 
 public:
-    // Construtor
-    CurvasPermeabilidadeLET(double Lw, double Ew, double Tw,
-                            double Lo, double Eo, double To,
-                            double Swirr, double Sor)
-        : _Lw(Lw), _Ew(Ew), _Tw(Tw), _Lo(Lo), _Eo(Eo), _To(To),
-        _Swirr(Swirr), _Sor(Sor) {}
+    /**
+     * @brief Construtor principal da classe LET.
+     *
+     * @param Lw Parâmetro L para água.
+     * @param Ew Parâmetro E para água.
+     * @param Tw Parâmetro T para água.
+     * @param Lo Parâmetro L para óleo.
+     * @param Eo Parâmetro E para óleo.
+     * @param To Parâmetro T para óleo.
+     * @param Swirr Saturação irreduzível de água.
+     * @param Sor Saturação residual de óleo.
+     */
+    CCurvasPermeabilidadeLET(double Lw, double Ew, double Tw,
+                             double Lo, double Eo, double To,
+                             double Swirr, double Sor);
 
-    // Implementação estrita da interface (getKrw)
-    double getKrw(double Sw) override {
-        double Swn = (Sw - _Swirr) / (1.0 - _Swirr - _Sor);
-        if (Swn <= 0) return 0.0;
-        if (Swn >= 1) return 1.0;
-        // Fórmula LET Água
-        return pow(Swn, _Lw) / (pow(Swn, _Lw) + _Ew * pow(1.0 - Swn, _Tw));
-    }
+    /**
+     * @brief Construtor padrão (Vazio).
+     * Inicializa todos os parâmetros com zero.
+     */
+    CCurvasPermeabilidadeLET();
 
-    // Implementação estrita da interface (getKro)
-    double getKro(double Sw) override {
-        double Swn = (Sw - _Swirr) / (1.0 - _Swirr - _Sor);
-        if (Swn <= 0) return 1.0;
-        if (Swn >= 1) return 0.0;
-        // Fórmula LET Óleo
-        return pow(1.0 - Swn, _Lo) / (pow(1.0 - Swn, _Lo) + _Eo * pow(Swn, _To));
-    }
+    /**
+     * @brief Destrutor virtual.
+     */
+    virtual ~CCurvasPermeabilidadeLET();
+
+    /**
+     * @brief Carrega dados de um arquivo externo.
+     * @param arquivo Caminho para o arquivo.
+     */
+    void carregarDados(const std::string& arquivo) override;
+
+    /**
+     * @brief Calcula Krw usando a correlação LET.
+     * Formula: Krw = (Swn^Lw) / (Swn^Lw + Ew * (1-Swn)^Tw)
+     * @param Sw Saturação de água.
+     * @return Valor de Krw.
+     */
+    double getKrw(double Sw) const override;
+
+    /**
+     * @brief Calcula Kro usando a correlação LET.
+     * Formula: Kro = ((1-Swn)^Lo) / ((1-Swn)^Lo + Eo * Swn^To)
+     * @param Sw Saturação de água.
+     * @return Valor de Kro.
+     */
+    double getKro(double Sw) const override;
 };
 
 #endif
-
-
-// Melhorar os comentários e incluir descrição para doxyfile
-// Corrigir disposiçao das doubles do início com melhor comentário
-// Entender erro em override
-// Separar o arquivo cpp
-// Incluir construtor vazio (caso precise carregar de arquivo depois)
-// Incluir carregar dados

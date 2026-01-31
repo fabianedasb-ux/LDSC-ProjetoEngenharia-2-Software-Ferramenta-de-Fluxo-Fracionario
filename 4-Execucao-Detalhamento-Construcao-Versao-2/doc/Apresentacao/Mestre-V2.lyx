@@ -8,8 +8,32 @@
 \begin_preamble
 \usepackage{pdflscape}
 \usepackage[alf]{abntex2cite}
+\usepackage{verbatim}
+%%\usepackage{algorithm}
+\usepackage{fancyvrb}
+\usepackage{keyval} 
+\usepackage{indentfirst}
+%\usepackage{color}
+\usepackage{xcolor}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+\definecolor{BLACK}{rgb}{0,0,0}%   rgb color model
+\definecolor{BLUE}{rgb}{0,0,1}%   rgb color model
+\definecolor{RED}{rgb}{1,0,0}%   rgb color model
+
+%Informa que vai usar o pacote listings, disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+
+%Define um novo comando, chamado lst
+%observe que lst chama o comando  lstinputlisting.
+\newcommand{\lst}[2]{%
+    \noindent\rule[-1ex]{\textwidth}{0.3mm}\vspace{-1ex}
+    \lstinputlisting[caption={#2},label={#1},stringspaces=false,frame={tb},lineskip=-1pt,extendedchars=true,%
+    basicstyle=\footnotesize\tt,labelstep=1,labelstyle=\tiny,indent=2em,language=Java,breaklines]{#1}
+    \vspace{1ex}%
+}
 \end_preamble
 \use_default_options true
+\master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
 \language_package default
@@ -30,7 +54,7 @@
 \use_microtype false
 \use_dash_ligatures true
 \graphics default
-\default_output_format default
+\default_output_format pdf5
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -63,13 +87,13 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style abntex2-alf
+\biblio_style apalike
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 1
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -115,6 +139,359 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Página de rosto
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Página de rosto
+\end_layout
+
+\begin_layout Plain Layout
+Repetir as informações da capa,
+ com as seguintes alterações:
+\end_layout
+
+\begin_layout Plain Layout
+O nome do aluno ficará centralizado verticalmente entre a base do título e
+\end_layout
+
+\begin_layout Plain Layout
+as informações sobre o título pretendido.
+\end_layout
+
+\begin_layout Plain Layout
+As informações sobre o título pretendido serão incluídas aproximadamente
+\end_layout
+
+\begin_layout Plain Layout
+a 170 mm do topo e margeado a 105 mm da borda esquerda da página (em
+\end_layout
+
+\begin_layout Plain Layout
+espaço simples e em letra arial tamanho 12),
+ com os seguintes dizeres:
+\end_layout
+
+\begin_layout Plain Layout
+“Monografia apresentada ao Centro de Ciências e Tecnologias Agropecuárias da
+\end_layout
+
+\begin_layout Plain Layout
+Universidade Estadual do Norte Fluminense Darcy Ribeiro,
+ como parte das
+\end_layout
+
+\begin_layout Plain Layout
+exigências para obtenção do título de Agrônomo”
+\end_layout
+
+\begin_layout Plain Layout
+Em seguida,
+ 06 espaços simples tamanho Arial 12 para inserir o nome do
+\end_layout
+
+\begin_layout Plain Layout
+Orientador:
+ Prof.
+ (nome do orientador) (centralizado,
+ em letra arial tamanho 14)
+\end_layout
+
+\begin_layout Plain Layout
+Em seguida,
+ mais 06 espaços simples tamanho Arial 12 e inserir - Campos
+\end_layout
+
+\begin_layout Plain Layout
+dos Goytacazes – RJ,
+ (caixa alta,
+ centralizado,
+ letra tipo arial,
+ tamanho 12)
+\end_layout
+
+\begin_layout Plain Layout
+Data (mês e ano),
+ (caixa alta,
+ centralizado,
+ na última linha da página,
+ letra
+\end_layout
+
+\begin_layout Plain Layout
+tipo arial tamanho 12).
+\end_layout
+
+\begin_layout Plain Layout
+Obs.:
+ Devem-se manter inalterados os 06 espaços anteriores e posteriores ao
+\end_layout
+
+\begin_layout Plain Layout
+nome do orientador,
+ assim como a localização da data na última linha.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Página de aprovação da monografia
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Página de aprovação da monografia
+\end_layout
+
+\begin_layout Plain Layout
+É a página um ( i ) em algarismo romano,
+ mas não aparece o número.
+\end_layout
+
+\begin_layout Plain Layout
+Repetir as informações da página de rosto (com exceção do local e data),
+ com as
+\end_layout
+
+\begin_layout Plain Layout
+seguintes alterações:
+\end_layout
+
+\begin_layout Plain Layout
+O nome do aluno ficará centralizado verticalmente entre a base do título e
+\end_layout
+
+\begin_layout Plain Layout
+as informações sobre o título pretendido.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+“Aprovada em (dia) de (mês) de (ano)”
+\end_layout
+
+\begin_layout Plain Layout
+(03 espaços simples,
+ arial 12)
+\end_layout
+
+\begin_layout Plain Layout
+“Banca Examinadora”
+\end_layout
+
+\begin_layout Plain Layout
+(08 espaços simples,
+ arial 12)
+\end_layout
+
+\begin_layout Plain Layout
+___________________(assinatura)_______________________________
+\end_layout
+
+\begin_layout Plain Layout
+“Prof.
+ Nome (título,
+ área de especialização) – sigla da Instituição”
+\end_layout
+
+\begin_layout Plain Layout
+(08 espaços simples,
+ arial 12)
+\end_layout
+
+\begin_layout Plain Layout
+___________________(assinatura)_______________________________
+\end_layout
+
+\begin_layout Plain Layout
+“Prof.
+ Nome (título,
+ área de especialização) – sigla da Instituição”
+\end_layout
+
+\begin_layout Plain Layout
+(09 espaços simples suficientes para que a palavra Orientador fique localizado na
+\end_layout
+
+\begin_layout Plain Layout
+última linha,
+ arial 12)
+\end_layout
+
+\begin_layout Plain Layout
+___________________(assinatura)_______________________________
+\end_layout
+
+\begin_layout Plain Layout
+Prof.
+ Nome (título,
+ área de especialização) – sigla da Instituição
+\end_layout
+
+\begin_layout Plain Layout
+(Orientador) – centralizado – na última linha
+\end_layout
+
+\begin_layout Plain Layout
+Obs.:
+ Deve-se manter inalterados os espaços definidos após as informações
+\end_layout
+
+\begin_layout Plain Layout
+sobre o título pretendido,
+ assim como a localização da palavra “(Orientador)” na
+\end_layout
+
+\begin_layout Plain Layout
+última linha.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Dedicatória (opcional)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Dedicatória (opcional)
+\end_layout
+
+\begin_layout Plain Layout
+A dedicatória deve ser sucinta e centralizada na página,
+ não tem título.
+\end_layout
+
+\begin_layout Plain Layout
+Quando existente,
+ está página recebe o romano ii.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Agradecimentos (opcional)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Agradecimentos (opcional)
+\end_layout
+
+\begin_layout Plain Layout
+Não há obrigatoriedade.
+ Em havendo,
+ não exceder duas páginas.
+\end_layout
+
+\begin_layout Plain Layout
+O agradecimento incluiu uma curta apresentação de agradecimentos ou
+\end_layout
+
+\begin_layout Plain Layout
+reconhecimento por qualquer ajuda especial.
+ O título “AGRADECIMENTO” em
+\end_layout
+
+\begin_layout Plain Layout
+letra maiúscula é centralizado,
+ sem pontuação,
+ a 90 mm do topo da página;
+ o
+\end_layout
+
+\begin_layout Plain Layout
+texto inicia-se a 120 mm do topo da mesma.
+ Esta página é numerada em
+\end_layout
+
+\begin_layout Plain Layout
+algarismos romanos,
+ usando-se letras minúsculas.
+ Caso o estudante tenha
+\end_layout
+
+\begin_layout Plain Layout
+usufruído de bolsa de estudo ou a pesquisa teve suporte de instituições pública,
+ a
+\end_layout
+
+\begin_layout Plain Layout
+consignação de reconhecimento terá sempre que ser feita.
+ Porém,
+ no caso de
+\end_layout
+
+\begin_layout Plain Layout
+instituição privada,
+ o reconhecimento será de comum acordo com o Professor
+\end_layout
+
+\begin_layout Plain Layout
+Orientador.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset CommandInset toc
 LatexCommand tableofcontents
 
@@ -143,6 +520,269 @@ LatexCommand tableofcontents
 \align block
 \begin_inset CommandInset toc
 LatexCommand lstlistoflistings
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Lista de símbolos,
+ abreviaturas e nomenclaturas (opcional)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Lista de símbolos,
+ abreviaturas e nomenclaturas (opcional)
+\end_layout
+
+\begin_layout Plain Layout
+O título,
+ em letras maiúsculas,
+ é centralizado,
+ sem pontuação,
+ a 90 mm do
+\end_layout
+
+\begin_layout Plain Layout
+topo da página (sem contar a margem).
+ A lista é iniciada na margem esquerda,
+ a
+\end_layout
+
+\begin_layout Plain Layout
+120 mm do topo da página.
+\end_layout
+
+\begin_layout Plain Layout
+Segue-se qualquer forma usual no campo de estudo pertinente.
+ É
+\end_layout
+
+\begin_layout Plain Layout
+obrigatório o empregado do Sistema Internacional (SI) nas unidades de peso e
+\end_layout
+
+\begin_layout Plain Layout
+medidas.
+\end_layout
+
+\begin_layout Plain Layout
+Essas páginas são numeradas em algarismos romanos,
+ usando-se letras
+\end_layout
+
+\begin_layout Plain Layout
+minúsculas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Resumo (Obrigatório)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+Resumo (Obrigatório)
+\end_layout
+
+\begin_layout Plain Layout
+O título,
+ “RESUMO”,
+ em letras maiúsculas,
+ é centralizado,
+ sem pontuação,
+\end_layout
+
+\begin_layout Plain Layout
+a 90 mm do topo da página (sem contar a margem).
+ A lista é iniciada na margem
+\end_layout
+
+\begin_layout Plain Layout
+esquerda,
+ a 120 mm do topo da mesma.
+\end_layout
+
+\begin_layout Plain Layout
+O primeiro parágrafo é em espaço simples e contém o nome do candidato
+\end_layout
+
+\begin_layout Plain Layout
+tal como aparece na página de rosto,
+ com o nome da família em primeiro lugar
+\end_layout
+
+\begin_layout Plain Layout
+(em letra maiúscula);
+ a abreviatura do título;
+ o nome da instituição que confere o
+\end_layout
+
+\begin_layout Plain Layout
+título (Universidade Estadual do Norte Fluminense Darcy Ribeiro);
+ mês e ano do
+\end_layout
+
+\begin_layout Plain Layout
+cumprimento da exigência;
+ o título da monografia (exatamente como aparece na
+\end_layout
+
+\begin_layout Plain Layout
+página de rosto);
+ e os nomes completos do professor orientador e do professor coorientador (caso haja).
+\end_layout
+
+\begin_layout Plain Layout
+Em seguida,
+ vem à redação,
+ em parágrafo único,
+ ARIAL 12,
+ em espaço 1,5.
+\end_layout
+
+\begin_layout Plain Layout
+Sobre o assunto da monografia,
+ uma explanação breve sobre a pesquisa e um
+\end_layout
+
+\begin_layout Plain Layout
+resumo daquilo que foi obtido.
+ Não usar diagramas,
+ ilustrações,
+ índices ou
+\end_layout
+
+\begin_layout Plain Layout
+expoentes e referências bibliográfica.
+\end_layout
+
+\begin_layout Plain Layout
+O resumo não deve ultrapassar 500 palavras.
+ Números,
+ símbolos e
+\end_layout
+
+\begin_layout Plain Layout
+abreviaturas são contados como palavras.
+\end_layout
+
+\begin_layout Plain Layout
+As páginas do resumo são numeradas em algarismos romanos,
+ usando-se
+\end_layout
+
+\begin_layout Plain Layout
+letras minúsculas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\lang english
+Abstract
+\emph default
+\lang brazilian
+ (Obrigatório)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+\lang english
+Abstract
+\emph default
+\lang brazilian
+ (Obrigatório)
+\end_layout
+
+\begin_layout Plain Layout
+O título “
+\emph on
+\lang english
+ABSTRACT
+\emph default
+\lang brazilian
+”,
+ em letras maiúsculas,
+ é centralizado,
+ sem
+\end_layout
+
+\begin_layout Plain Layout
+pontuação,
+ a 90 mm do topo da página.
+ Será redigido em inglês,
+ no formato
+\end_layout
+
+\begin_layout Plain Layout
+apresentado para o RESUMO 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0b-ResumoAbstract-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -195,6 +835,106 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap4-Projeto-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap5-Ciclos-Planejamento-Detalhamento-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap6-Ciclos-Construcao-Implementacao-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap7-Teste-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap8-DocumentacaoDoDesenvolvedor-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset CommandInset bibtex
@@ -218,6 +958,46 @@ status open
 
 \backslash
 appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap-Apendice-A-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap-Apendice-B-V2.lyx"
+literal "false"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset

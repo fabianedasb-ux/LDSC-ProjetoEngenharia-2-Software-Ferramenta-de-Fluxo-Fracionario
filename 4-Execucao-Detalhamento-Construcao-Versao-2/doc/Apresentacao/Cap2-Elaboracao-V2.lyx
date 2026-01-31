@@ -7,30 +7,13 @@
 \textclass extbook
 \begin_preamble
 
-\usepackage {graphicx}
-\usepackage {longtable}
-\usepackage {indentfirst}
-\renewenvironment{center}{\par\centering}{\par}
-
-% Comentar linhas abaixo se não estiver usando pacote abntex
-% ou se o pacote ainda não foi instalado.
-% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
-%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
-%\usepackage {helvet}
-%\renewcommand {\familydefault}{\sfdefault}
-
-% Para uso de listagens de código
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
-% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
-\usepackage{listings}
+\usepackage[alf]{abntex2cite}
 \end_preamble
-\use_default_options false
+\use_default_options true
 \master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
-\language_package auto
+\language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "default"
@@ -77,7 +60,7 @@
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -101,7 +84,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 1
-\paperpagestyle fancy
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -144,15 +127,10 @@ Após a etapa de concepção,
  onde foram definidos o escopo e os requisitos fundamentais do sistema,
  o projeto avança para a fase de elaboração.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -167,19 +145,14 @@ citeonline{pressman2016}
 Neste contexto,
  o processo de elaboração busca estabelecer uma base arquitetural sólida antes que a construção do código se inicie massivamente.
  Conforme destaca 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{sommerville2011}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
-,
+ ,
  é essencial que,
  durante esta análise,
  as fronteiras do sistema sejam perfeitamente compreendidas e que os componentes lógicos sejam organizados de forma a maximizar a coesão e minimizar o acoplamento.
@@ -208,15 +181,10 @@ A análise de domínio é uma atividade contínua da engenharia de software que 
  mas sim na identificação,
  análise e especificação de requisitos comuns a um campo de aplicação inteiro.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -264,15 +232,10 @@ Engenharia de Petróleo:
  incluindo a Lei de Darcy,
  as correlações de permeabilidade relativa (modelos de Corey,
  LET e Chierici) e a própria teoria de deslocamento de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Buckley1942}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
 
 \end_inset
 
@@ -283,15 +246,10 @@ citeonline{Buckley1942}
 Matemática Aplicada:
  Envolve a resolução de Equações Diferenciais Parciais (EDPs) do tipo hiperbólico através do Método das Características (MOC) e a aplicação de condições de contorno e entropia,
  como a construção da tangente de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Welge1952}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welge1952"
+literal "true"
 
 \end_inset
 
@@ -396,15 +354,10 @@ Ilustração esquemática do efeito da razão de mobilidade na eficiência de de
  no perfil de saturação e no fluxo fracionário.
  Fonte:
  Adaptado de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Lake2010}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
 
 \end_inset
 
@@ -464,15 +417,10 @@ literal "true"
 \end_inset
 
  e o tratamento matemático para descontinuidades físicas (frentes de choque) através da técnica de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Welge1952}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welge1952"
+literal "true"
 
 \end_inset
 
@@ -488,15 +436,10 @@ Fundamentação do Escoamento Bifásico e a Lei de Darcy Generalizada
 A descrição matemática do escoamento de fluidos em meios porosos fundamenta-se,
  primariamente,
  na relação empírica proposta por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Darcy1856}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Darcy1856"
+literal "true"
 
 \end_inset
 
@@ -520,15 +463,10 @@ O acesso ao conceito ocorreu através de autores modernos como Lake,
 
 \begin_layout Standard
 Conforme estabelecido por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Lake2010}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
 
 \end_inset
 
@@ -704,15 +642,10 @@ Para a resolução do sistema de equações de fluxo,
 Embora a magnitude e o sinal da pressão capilar dependam da tensão interfacial e do ângulo de contato (molhabilidade) da rocha,
  para fins de desenvolvimento algébrico desta formulação,
  adota-se a convenção padrão apresentada por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Lake2010}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
 
 \end_inset
 
@@ -1178,28 +1111,18 @@ A influência das forças capilares na frente de avanço é regida pelo Número 
 
 ).
  Conforme estabelecido no trabalho seminal de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Rapoport1953}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rapoport1953"
+literal "true"
 
 \end_inset
 
  e discutido extensivamente por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Lake2010}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
 
 \end_inset
 
@@ -1347,7 +1270,11 @@ Nesta formulação final,
 \begin_inset Formula $f_{w}$
 \end_inset
 
- torna-se uma função exclusiva da saturação de água ($S_w$),
+ torna-se uma função exclusiva da saturação de água (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+),
  dado que as permeabilidades relativas dependem apenas da saturação.
 \end_layout
 
@@ -1408,15 +1335,10 @@ A equação generalizada do fluxo fracionário (
 
 \begin_layout Standard
 Conforme discutido por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Lake2010}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2010"
+literal "true"
 
 \end_inset
 
@@ -1476,15 +1398,10 @@ Analiticamente,
  a equação afirma que a fração de fluxo é uma função de estado,
  dependente exclusivamente das propriedades instantâneas dos fluidos e da rocha em um ponto específico.
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Dake1978}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Dake1978"
+literal "true"
 
 \end_inset
 
@@ -1678,15 +1595,10 @@ Matematicamente,
 \begin_layout Enumerate
 Acúmulo de Massa:A variação da massa de água dentro do volume de controle ocorre devido à mudança na saturação,
  conforme descrito por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{rosa2006}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "true"
 
 \end_inset
 
@@ -2194,15 +2106,10 @@ Em contraste,
  o Método das Características preserva a natureza hiperbólica do problema,
  tratando o escoamento como a propagação de ondas de saturação contínuas e descontínuas.
  Como ressalta 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Bedrikovetsky1993}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Bedrikovetsky1993"
+literal "true"
 
 \end_inset
 
@@ -2222,6 +2129,17 @@ O princípio central do MOC consiste em transformar a EDP original em um sistema
 
 ),
  denominadas curvas características.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Incluir referência das notas de aula e apostila,
+ do Professor Slava.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2404,6 +2322,17 @@ literal "true"
 \end_inset
 
 .
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Incluir referência das notas de aula e apostila,
+ do Professor Slava.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2544,15 +2473,10 @@ Solução da Frente de Choque:
 A imposição da condição de entropia exige que a solução física para o deslocamento contenha uma descontinuidade abrupta de saturação (choque) na região onde a velocidade das ondas é multivalorada.
  Para determinar a magnitude e a posição deste choque,
  utiliza-se a técnica analítica desenvolvida por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Welge1952}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welge1952"
+literal "true"
 
 \end_inset
 
@@ -2705,15 +2629,10 @@ Integrando o perfil de saturação desde a entrada (
 
 ),
  
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Welge1952}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Welge1952"
+literal "true"
 
 \end_inset
 
@@ -2934,15 +2853,10 @@ Identificação de pacotes – assuntos
 A identificação de pacotes constitui a etapa fundamental do projeto arquitetural,
  onde o sistema é decomposto em subsistemas coesos e fracamente acoplados.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -2957,15 +2871,10 @@ Neste trabalho,
  a arquitetura foi estruturada seguindo o padrão arquitetural em camadas,
  isolando a lógica de apresentação (interface) das regras de negócio (núcleo matemático).
  Conforme recomenda 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{sommerville2011}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
@@ -3165,15 +3074,10 @@ nolink "false"
 
 \begin_layout Standard
 Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -3188,15 +3092,10 @@ citeonline{pressman2016}
 
 \begin_layout Standard
 Esta estrutura hierárquica reflete o princípio da alta coesão e baixo acoplamento preconizado por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{sommerville2011}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
@@ -3251,20 +3150,6 @@ name "fig:Diagrama-de-Pacotes"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Mudar a cor da borda da caixinha,
- está errado nessa cor vinho,
- só os balões e setas são cor de vinho,
- a borda da cainha é preto.
- Como faz isso?
- Eu odeio o plantxxxxxx
-\end_layout
-
-\end_inset
-
 
 \end_layout
 

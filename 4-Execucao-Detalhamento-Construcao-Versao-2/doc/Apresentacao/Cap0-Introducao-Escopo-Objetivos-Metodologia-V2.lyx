@@ -6,30 +6,13 @@
 \origin unavailable
 \textclass extbook
 \begin_preamble
-\usepackage {graphicx}
-\usepackage {longtable}
-\usepackage {indentfirst}
-\renewenvironment{center}{\par\centering}{\par}
-
-% Comentar linhas abaixo se não estiver usando pacote abntex
-% ou se o pacote ainda não foi instalado.
-% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
-%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
-%\usepackage {helvet}
-%\renewcommand {\familydefault}{\sfdefault}
-
-% Para uso de listagens de código
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
-% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
-\usepackage{listings}
+\usepackage[alf]{abntex2cite}
 \end_preamble
 \use_default_options false
-\master Mestre.lyx
+\master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
-\language_package auto
+\language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "default"
@@ -70,7 +53,7 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style abntex2-alf
+\biblio_style apalike
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
@@ -100,7 +83,7 @@
 \dynamic_quotes 0
 \papercolumns 1
 \papersides 2
-\paperpagestyle fancy
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -131,20 +114,19 @@ O presente trabalho de conclusão de curso propõe o desenvolvimento do Software
  A concepção desta ferramenta tecnológica alinha-se às necessidades contemporâneas da Engenharia de Reservatórios,
  fornecendo um suporte computacional robusto para o estudo de métodos de recuperação secundária.
  Conforme destacam 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{rosa2006}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "true"
 
 \end_inset
 
  ,
- a injeção de água (waterflooding) permanece como a técnica mais difundida na indústria petrolífera mundial para a manutenção de pressão e otimização do varrido de óleo.
+ a injeção de água (
+\emph on
+waterflooding
+\emph default
+) permanece como a técnica mais difundida na indústria petrolífera mundial para a manutenção de pressão e otimização do varrido de óleo.
  Nesse cenário,
  a aplicação desenvolvida utiliza o paradigma da Orientação a Objetos para simular e visualizar,
  de forma dinâmica,
@@ -154,15 +136,10 @@ citeonline{rosa2006}
 
 \begin_layout Standard
 A base científica para a modelagem desse fenômeno fundamenta-se na teoria clássica de deslocamento imiscível linear estabelecida por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Buckley1942}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
 
 \end_inset
 
@@ -192,15 +169,10 @@ name "sec:Escopo-do-Problema"
 A competência fundamental que distingue a formação do engenheiro é a capacidade de conceber e desenvolver soluções tecnológicas para problemas complexos,
  indo além da operação de sistemas preexistentes.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{bazzo2013}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bazzo2013"
+literal "true"
 
 \end_inset
 
@@ -223,7 +195,11 @@ literal "true"
 Nesse contexto,
  este trabalho delimita-se ao desenvolvimento de um projeto de engenharia de software aplicado à Engenharia de Petróleo,
  especificamente na subárea de Engenharia de Reservatórios.
- O problema central abordado é a complexidade na análise preliminar de projetos de injeção de água (waterflooding),
+ O problema central abordado é a complexidade na análise preliminar de projetos de injeção de água (
+\emph on
+waterflooding
+\emph default
+),
  o método de recuperação secundária mais utilizado mundialmente 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -238,15 +214,10 @@ literal "true"
 \begin_layout Standard
 Embora a teoria do deslocamento imiscível,
  fundamentada na clássica solução de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Buckley1942}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Buckley1942"
+literal "true"
 
 \end_inset
 
@@ -276,22 +247,21 @@ literal "true"
 \begin_layout Standard
 O escopo deste projeto consiste em preencher essa lacuna através do desenvolvimento integral de uma ferramenta computacional dedicada.
  O trabalho abrange todo o ciclo de vida do desenvolvimento de software preconizado por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
 ,
  incluindo a especificação de requisitos,
  a modelagem matemática e algorítmica do Método das Características (MOC),
- a implementação do código-fonte utilizando o framework Qt/C++ e a validação dos resultados através da comparação com a teoria analítica.
+ a implementação do código-fonte utilizando o 
+\emph on
+framework
+\emph default
+ Qt/C++ e a validação dos resultados através da comparação com a teoria analítica.
 \end_layout
 
 \begin_layout Section
@@ -342,8 +312,16 @@ Modelar física e matematicamente o problema do deslocamento linear de fluidos i
 Realizar a modelagem estática do sistema,
  elaborando diagramas de casos de uso,
  pacotes e classes,
- com a aplicação de padrões de projeto (Design Patterns),
- como o Strategy,
+ com a aplicação de padrões de projeto (
+\emph on
+Design Patterns
+\emph default
+),
+ como o 
+\emph on
+Strategy
+\emph default
+,
  para assegurar a flexibilidade e escalabilidade do código.
 \end_layout
 
@@ -353,7 +331,7 @@ Desenvolver a modelagem dinâmica do software,
 \begin_inset Formula $f_{w}$
 \end_inset
 
-) e de sua derivada (
+ ) e de sua derivada (
 \begin_inset Formula $df_{w}/dS_{w}$
 \end_inset
 
@@ -369,7 +347,11 @@ Implementar o método da construção da tangente de Welge para determinar a sat
 \end_layout
 
 \begin_layout Itemize
-Construir a Interface Gráfica do Usuário (GUI) utilizando o framework Qt/C++,
+Construir a Interface Gráfica do Usuário (GUI) utilizando o 
+\emph on
+framework
+\emph default
+ Qt/C++,
  proporcionando uma experiência de uso intuitiva para a entrada de parâmetros (viscosidades,
  expoentes de saturação) e visualização de resultados.
 \end_layout
@@ -404,15 +386,10 @@ Metodologia utilizada
 
 \begin_layout Standard
 O desenvolvimento deste projeto fundamenta-se nos princípios da Engenharia de Software estabelecidos por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -454,15 +431,10 @@ Ciclo de Concepção e Análise:
  levantamento de requisitos e modelagem do domínio.
  Esta etapa utiliza a abstração da Orientação a Objetos para mapear as equações de Buckley-Leverett em classes computacionais,
  conforme as práticas de C++ descritas por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{bueno2003}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bueno2003"
+literal "true"
 
 \end_inset
 
@@ -479,7 +451,11 @@ Ciclo de Planejamento e Detalhamento:
 \begin_layout Itemize
 Ciclo de Construção (Implementação):
  Consiste na codificação propriamente dita,
- utilizando a linguagem C++ e o framework Qt,
+ utilizando a linguagem C++ e o 
+\emph on
+framework
+\emph default
+ Qt,
  seguida das etapas de testes e validação dos resultados numéricos.
 \end_layout
 

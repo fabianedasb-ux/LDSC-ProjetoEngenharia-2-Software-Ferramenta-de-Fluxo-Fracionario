@@ -1,27 +1,44 @@
-#include "CCalculadoraFluxoFracionario.h"
-#include "ICurvasPermeabilidade.h"
-#include <cmath>
-#include <stdexcept>
-#include <map>
+/**
+ * @file CCalculadoraFluxoFracionario.cpp
+ * @brief Implementação da lógica de cálculo do fluxo fracionário.
+ */
 
-// ---------------------------------------------------------
-// 1. CONSTRUTOR (Fundamental para criar a classe)
-// ---------------------------------------------------------
-CCalculadoraFluxoFracionario::CCalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo)
-    : _viscosidadeOleo(mu_o), _viscosidadeAgua(mu_w), _modeloKr(modelo)
+#include "CCalculadoraFluxoFracionario.h"
+#include <stdexcept>
+#include <cmath>
+#include <algorithm> // Para std::clamp
+
+// Define PI caso não esteja definido
+#ifndef M_PI
+#define M_PI 3.14159265358979323846
+#endif
+
+// --- Construtor ---
+CCalculadoraFluxoFracionario::CCalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo, double g)
+    : _mi_o(mu_o), _mi_w(mu_w), _g(g), _modeloKr(modelo) // _g antes de _modeloKr
 {
-    // Validações básicas
+    // ... resto do código (inicializações seguras e validação de nullptr)
+    _rho_o = 0.0;
+    _rho_w = 0.0;
+    _k = 0.0;
+    _ut = 1.0;
+    _angulo = 0.0;
+
     if (_modeloKr == nullptr) {
         throw std::runtime_error("Erro: Modelo de permeabilidade nulo passado para a calculadora.");
     }
 }
 
-// ---------------------------------------------------------
-// 2. SETTERS (Para mudar valores depois)
-// ---------------------------------------------------------
-void CCalculadoraFluxoFracionario::setViscosidades(double mu_o, double mu_w) {
-    _viscosidadeOleo = mu_o;
-    _viscosidadeAgua = mu_w;
+// --- Configuração ---
+void CCalculadoraFluxoFracionario::setPropriedades(double mi_w, double mi_o, double rho_w, double rho_o, double k, double angulo, double ut) {
+    _mi_w = mi_w;
+    _mi_o = mi_o;
+    _rho_w = rho_w;
+    _rho_o = rho_o;
+    _k = k;
+    // Converte graus para radianos para uso nas funções trigonométricas
+    _angulo = angulo * (M_PI / 180.0);
+    _ut = ut;
 }
 
 void CCalculadoraFluxoFracionario::setModeloPermeabilidade(ICurvasPermeabilidade* modelo) {
@@ -30,63 +47,92 @@ void CCalculadoraFluxoFracionario::setModeloPermeabilidade(ICurvasPermeabilidade
     }
 }
 
-// ---------------------------------------------------------
-// 3. CALCULAR FW (A lógica principal de Buckley-Leverett)
-// ---------------------------------------------------------
+
+// --- Cálculo do Número de Rapoport-Leas (N_RL) ---
+// Baseado na Seção 3.2.5, Equação 3.9 da documentação [cite: 507]
+double CCalculadoraFluxoFracionario::calcularRapoportLeas(double L, double phi, double sigma) const {
+    // Evita divisão por zero
+    if (sigma <= 0 || _k <= 0 || phi <= 0) return 0.0;
+
+    // NRL = (L * ut * mi_w) / (sigma * sqrt(k * phi))
+    double numerador = L * _ut * _mi_w;
+    double denominador = sigma * std::sqrt(_k * phi);
+
+    return numerador / denominador;
+}
+
+// --- Cálculo Principal (Fw) ---
+// Implementa a Equação 3.10 para reservatórios inclinados
 double CCalculadoraFluxoFracionario::calcularFw(double sw) const {
-    // Busca as permeabilidades no modelo (Corey, Tabelado, etc)
+    // 1. Obter Permeabilidades Relativas do Modelo (Strategy) [cite: 660, 723]
     double krw = _modeloKr->getKrw(sw);
     double kro = _modeloKr->getKro(sw);
 
-    // Evita divisão por zero nas viscosidades
-    if (_viscosidadeAgua <= 0 || _viscosidadeOleo <= 0) return 0.0;
+    // 2. Verificação de Mobilidade para Água
+    // Se não há fluxo de água, fw é zero [cite: 368]
+    if (krw <= 1e-12) return 0.0;
+    if (_mi_w <= 1e-9 || _mi_o <= 1e-9) return 0.0;
 
-    // Calcula as mobilidades (Lambda = k / mi)
-    double lambda_w = krw / _viscosidadeAgua;
-    double lambda_o = kro / _viscosidadeOleo;
-    double lambda_t = lambda_w + lambda_o;
+    // 3. Razão de Mobilidade (M) - Termo Viscoso [cite: 408, 439]
+    // M = (krw / mi_w) / (kro / mi_o)
+    double M = (krw / _mi_w) / (kro / _mi_o);
 
-    // Se mobilidade total for zero, não há fluxo
-    if (lambda_t < 1e-9) return 0.0;
+    // 4. Número de Gravidade (Ng) - Termo Gravitacional [cite: 440]
+    // Ng = (k * kro * delta_rho * g * sin(alpha)) / (ut * mi_o)
+    double Ng = 0.0;
+    if (std::abs(_ut) > 1e-12) {
+        double delta_rho = _rho_w - _rho_o; // [cite: 384]
+        Ng = (_k * kro * delta_rho * _g * std::sin(_angulo)) / (_ut * _mi_o);
+    }
 
-    // Fluxo fracionário = mobilidade da água / mobilidade total
-    return lambda_w / lambda_t;
+    // 5. Equação de Generalizada (Eq. 3.10)
+    // fw = (1 - Ng) / (1 + (1/M))
+    // Note que 1/M é equivalente a (kro/krw) * (mi_w/mi_o)
+    double denominador = 1.0 + (1.0 / M);
+    double numerador = 1.0 - Ng;
+
+    double fw_total = numerador / denominador;
+
+    // Restrições Físicas: 0 <= fw <= 1
+    return std::clamp(fw_total, 0.0, 1.0);
 }
 
-// ---------------------------------------------------------
-// 4. DERIVADA NUMÉRICA (Necessária para o CSolver avançar o tempo)
-// ---------------------------------------------------------
+// --- Derivada Numérica (Diferenças Finitas) ---
 double CCalculadoraFluxoFracionario::calcularDerivadaFw(double sw) const {
-    double h = 0.00001; // Passo pequeno
+    double h = 1e-5; // Passo pequeno
+
+    // Proteção de bordas
     double sw_mais = sw + h;
     double sw_menos = sw - h;
-
-    // Proteção de bordas (não sair de 0 a 1)
     if (sw_mais > 1.0) sw_mais = 1.0;
     if (sw_menos < 0.0) sw_menos = 0.0;
 
-    // Chama a função calcularFw que implementamos acima
     double fw_mais = calcularFw(sw_mais);
     double fw_menos = calcularFw(sw_menos);
 
-    // Diferença finita central
     if (std::abs(sw_mais - sw_menos) < 1e-9) return 0.0;
+
     return (fw_mais - fw_menos) / (sw_mais - sw_menos);
 }
 
-// ---------------------------------------------------------
-// 5. GERAR CURVA COMPLETA (Para o Gráfico)
-// ---------------------------------------------------------
+// --- Gerador de Curva ---
 std::map<double, double> CCalculadoraFluxoFracionario::gerarCurvaCompleta(double passo) const {
     std::map<double, double> curva;
+    if (passo <= 0) passo = 0.01;
 
-    if (passo <= 0) passo = 0.01; // Proteção contra loop infinito
+    // Calculamos o número de divisões (inteiro) para evitar erros de precisão
+    int numPontos = static_cast<int>(1.0 / passo);
 
-    for (double sw = 0.0; sw <= 1.0; sw += passo) {
+    for (int i = 0; i <= numPontos; ++i) {
+        double sw = i * passo;
+        if (sw > 1.0) sw = 1.0; // Garante o limite físico
         curva[sw] = calcularFw(sw);
     }
-    // Garante o ponto final exato em 1.0
-    curva[1.0] = calcularFw(1.0);
+
+    // Garante que o ponto final (1.0) esteja sempre presente
+    if (curva.find(1.0) == curva.end()) {
+        curva[1.0] = calcularFw(1.0);
+    }
 
     return curva;
 }

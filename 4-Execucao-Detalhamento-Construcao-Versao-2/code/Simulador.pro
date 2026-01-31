@@ -19,11 +19,15 @@ SOURCES += \
     Main.cpp \
     src/Model/CCalculadoraFluxoFracionario.cpp \
     src/Model/CCelula.cpp \
+    src/Model/CCurvasPermeabilidadeChierici.cpp \
     src/Model/CCurvasPermeabilidadeCorey.cpp \
+    src/Model/CCurvasPermeabilidadeLET.cpp \
     src/Model/CCurvasPermeabilidadeTabelada.cpp \
     src/Model/CMalha.cpp \
+    src/Model/CRelatorio.cpp \
     src/Model/CSimulador.cpp \
     src/Model/CSolver.cpp \
+    src/Model/CWelge.cpp \
     src/View/Mainwindow.cpp \
     src/View/QCustomplot.cpp
 
@@ -36,8 +40,10 @@ HEADERS += \
     src/Model/CCurvasPermeabilidadeLET.h \
     src/Model/CCurvasPermeabilidadeTabelada.h \
     src/Model/CMalha.h \
+    src/Model/CRelatorio.h \
     src/Model/CSimulador.h \
     src/Model/CSolver.h \
+    src/Model/CWelge.h \
     src/Model/ICurvasPermeabilidade.h \
     src/View/Mainwindow.h \
     src/View/QCustomplot.h

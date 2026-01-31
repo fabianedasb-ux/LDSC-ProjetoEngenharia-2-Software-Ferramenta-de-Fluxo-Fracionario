@@ -7,30 +7,13 @@
 \textclass extbook
 \begin_preamble
 
-\usepackage {graphicx}
-\usepackage {longtable}
-\usepackage {indentfirst}
-\renewenvironment{center}{\par\centering}{\par}
-
-% Comentar linhas abaixo se não estiver usando pacote abntex
-% ou se o pacote ainda não foi instalado.
-% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
-%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
-%\usepackage {helvet}
-%\renewcommand {\familydefault}{\sfdefault}
-
-% Para uso de listagens de código
-\usepackage{color}
-\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
-% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
-\usepackage{listings}
+\usepackage[alf]{abntex2cite}
 \end_preamble
-\use_default_options false
-\master Mestre.lyx
+\use_default_options true
+\master Mestre-V2.lyx
 \maintain_unincluded_children no
 \language brazilian
-\language_package auto
+\language_package default
 \inputencoding auto-legacy
 \fontencoding auto
 \font_roman "default" "default"
@@ -71,13 +54,13 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style abntex2-alf
+\biblio_style apalike
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification true
-\use_refstyle 0
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -100,8 +83,8 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 1
-\paperpagestyle fancy
+\papersides 2
+\paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
@@ -143,15 +126,10 @@ Concepção
 Apresenta-se neste capítulo a concepção e a especificação do sistema modelado e desenvolvido.
  Esta fase inicial,
  classificada por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -286,7 +264,35 @@ Componentes principais
 \noun off
 \color none
 Interface Gráfica do Usuário (GUI):
- Desenvolvida no framework Qt,
+ Desenvolvida no 
+\family default
+\series default
+\shape default
+\size default
+\emph on
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+framework
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+ Qt,
  responsável pela interação homem-máquina e entrada de dados.
 \end_layout
 
@@ -325,7 +331,35 @@ Núcleo de Processamento Analítico:
 \noun off
 \color none
 Módulo de Visualização de Dados:
- Sistema de renderização gráfica em tempo real (baseado na biblioteca QCustomPlot) para exibição das curvas de fluxo e perfis de saturação.
+ Sistema de renderização gráfica em tempo real (baseado na biblioteca 
+\family typewriter
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck on
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+QCustomPlot
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+) para exibição das curvas de fluxo e perfis de saturação.
 \end_layout
 
 \end_inset
@@ -405,15 +439,10 @@ especificação
 A especificação do sistema delimita as fronteiras da solução tecnológica,
  descrevendo o comportamento esperado do software e suas interações com o usuário.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{sommerville2011}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
@@ -428,7 +457,19 @@ citeonline{sommerville2011}
 O sistema proposto destaca-se pela flexibilidade na entrada de dados.
  Diferentemente de ferramentas rígidas,
  a solução permite que o usuário opte entre dois modos de operação:
- a importação direta de arquivos externos (tabelas em .txt ou planilhas .xlsx) para usuários que já possuem dados consolidados,
+ a importação direta de arquivos externos (tabelas em 
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+ ou planilhas 
+\family typewriter
+\nospellcheck on
+.xlsx
+\family default
+\nospellcheck default
+) para usuários que já possuem dados consolidados,
  ou a inserção manual de parâmetros através de formulários intuitivos na interface gráfica.
 \end_layout
 
@@ -437,15 +478,10 @@ No que tange ao núcleo de processamento,
  o software adota uma arquitetura extensível capaz de suportar múltiplos modelos de permeabilidade relativa.
  A implementação apresenta seleção dinâmica de modelos de permeabilidade relativa —
  com ênfase primária no modelo de 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{Corey1954}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "true"
 
 \end_inset
 
@@ -490,7 +526,11 @@ Independentemente do modelo escolhido,
 \end_inset
 
  na própria janela da aplicação,
- proporcionando um ambiente de simulação autocontido (standalone) que favorece a análise comparativa entre diferentes correlações empíricas.
+ proporcionando um ambiente de simulação autocontido (
+\emph on
+standalone
+\emph default
+) que favorece a análise comparativa entre diferentes correlações empíricas.
 \end_layout
 
 \begin_layout Section
@@ -519,15 +559,10 @@ name "sec:Requisitos"
 \begin_layout Standard
 A etapa de engenharia de requisitos é fundamental para traduzir a necessidade física de simular o deslocamento de fluidos em especificações técnicas de software.
  Segundo 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -572,15 +607,10 @@ name "subsec:Requisitos-funcionais"
 \begin_layout Standard
 Os requisitos funcionais (RF) detalham as operações que o sistema deve ser capaz de realizar para cumprir sua missão educacional.
  Conforme definido por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{sommerville2011}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "sommerville2011"
+literal "true"
 
 \end_inset
 
@@ -649,6 +679,7 @@ name "tab:Requisitos-funcionais"
 \begin_inset Text
 
 \begin_layout Plain Layout
+\align center
 
 \series bold
 RF-01
@@ -698,7 +729,13 @@ RF-02
 
 \begin_layout Plain Layout
 O sistema deve permitir o carregamento de dados de permeabilidade relativa de duas formas:
- (a) Importação de arquivos (.txt/.xlsx) contendo tabelas ou parâmetros;
+ (a) Importação de arquivos (
+\family typewriter
+\nospellcheck on
+.txt/.xlsx
+\family default
+\nospellcheck default
+) contendo tabelas ou parâmetros;
  (b) Inserção manual de parâmetros na interface.
 \end_layout
 
@@ -902,11 +939,7 @@ O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
 \end_inset
 
 ),
- incorporando (opcionalmente) os termos de gradiente de Pressão Capilar (
-\begin_inset Formula $\partial P_{c}/\partial x$
-\end_inset
-
-) e segregação gravitacional (
+ incorporando (opcionalmente) os termos de gradiente de segregação gravitacional (
 \begin_inset Formula $\Delta\rho g\sin\alpha$
 \end_inset
 
@@ -1136,18 +1169,21 @@ nolink "false"
 \end_inset
 
  apresenta as restrições arquiteturais adotadas.
- A escolha pela linguagem C++ e pelo framework Qt (RNF-01 e RNF-02) justifica-se pela necessidade de alto desempenho computacional para garantir a interatividade em tempo real proposta no RF-06,
- enquanto o uso do padrão de projeto Strategy (RNF-03) visa garantir a extensibilidade do código para futuros modelos de permeabilidade,
+ A escolha pela linguagem C++ e pelo 
+\emph on
+framework
+\emph default
+ Qt (RNF-01 e RNF-02) justifica-se pela necessidade de alto desempenho computacional para garantir a interatividade em tempo real proposta no RF-06,
+ enquanto o uso do padrão de projeto 
+\emph on
+Strategy
+\emph default
+ (RNF-03) visa garantir a extensibilidade do código para futuros modelos de permeabilidade,
  seguindo as boas práticas de design de software recomendadas por 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-citeonline{pressman2016}
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pressman2016"
+literal "true"
 
 \end_inset
 
@@ -1248,9 +1284,17 @@ RNF-02
 \begin_inset Text
 
 \begin_layout Plain Layout
-A interface gráfica deve ser construída utilizando o framework Qt (versão 6.
+A interface gráfica deve ser construída utilizando o 
+\emph on
+framework
+\emph default
+ Qt (versão 6.
  ou superior),
- assegurando a responsividade dos controles (sliders e formulários) e integração nativa com o sistema operacional.
+ assegurando a responsividade dos controles (
+\emph on
+sliders
+\emph default
+ e formulários) e integração nativa com o sistema operacional.
 \end_layout
 
 \end_inset
@@ -1286,7 +1330,11 @@ RNF-03
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve implementar o padrão de projeto Strategy para o cálculo de permeabilidade relativa.
+O sistema deve implementar o padrão de projeto 
+\emph on
+Strategy
+\emph default
+ para o cálculo de permeabilidade relativa.
  Isso é mandatório para permitir a alternância limpa entre os algoritmos de Corey,
  LET,
  Chierici e Tabelas sem modificar o núcleo do simulador,
@@ -1326,7 +1374,13 @@ RNF-04
 \begin_inset Text
 
 \begin_layout Plain Layout
-A plotagem dos gráficos deve utilizar a biblioteca QCustomPlot,
+A plotagem dos gráficos deve utilizar a biblioteca 
+\family typewriter
+\nospellcheck on
+QCustomPlot
+\family default
+\nospellcheck default
+,
  devido à sua capacidade de renderização de alto desempenho,
  necessária para a atualização instantânea das curvas durante a análise de sensibilidade.
 \end_layout
@@ -1364,7 +1418,11 @@ RNF-05
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve garantir um tempo de resposta inferior a 200ms para o recálculo e re-renderização dos gráficos ao alterar parâmetros via interface,
+O sistema deve garantir um tempo de resposta inferior a 
+\begin_inset Formula $200ms$
+\end_inset
+
+ para o recálculo e re-renderização dos gráficos ao alterar parâmetros via interface,
  proporcionando uma sensação de continuidade (tempo real).
 \end_layout
 
@@ -1401,7 +1459,13 @@ RNF-06
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve possuir tratamento de exceções para a leitura de arquivos externos (.txt/.xlsx),
+O sistema deve possuir tratamento de exceções para a leitura de arquivos externos (
+\family typewriter
+\nospellcheck on
+.txt/.xlsx
+\family default
+\nospellcheck default
+),
  garantindo que formatações incorretas ou dados corrompidos não encerrem a aplicação abruptamente,
  mas exibam mensagens de erro claras.
 \end_layout
@@ -1681,7 +1745,19 @@ Opção A (Modelos Analíticos):
 
 \size footnotesize
 Opção B (Dados Externos):
- Seleciona a opção de importação e carrega um arquivo (.txt ou .xlsx) contendo a tabela de permeabilidade relativa.
+ Seleciona a opção de importação e carrega um arquivo (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+ ou 
+\family typewriter
+\nospellcheck on
+.xlsx
+\family default
+\nospellcheck default
+) contendo a tabela de permeabilidade relativa.
 \end_layout
 
 \end_deeper
@@ -1772,13 +1848,13 @@ Cenários alternativos:
 \begin_layout Enumerate
 
 \size footnotesize
-Inclusão de Gravidade/Capilaridade:
+Inclusão de Gravidade:
  O usuário ativa os termos da Equação Generalizada na interface.
  O sistema recalcula a curva 
 \begin_inset Formula $f_{w}$
 \end_inset
 
- considerando o ângulo de inclinação (Gravidade) ou o gradiente de pressão (Capilaridade),
+ considerando o ângulo de inclinação (Gravidade),
  alterando o critério de formação do choque.
 \end_layout
 
@@ -1796,13 +1872,6 @@ Erro na Leitura de Arquivo:
 </row>
 </lyxtabular>
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset space ~
 \end_inset
 
 
@@ -1944,7 +2013,11 @@ nolink "false"
 
  detalha o subsistema de 'Gerenciamento de Propriedades'.
  Este diagrama ilustra o cumprimento dos requisitos de flexibilidade (RF-02) e extensibilidade (RNF-03).
- A estrutura evidencia a aplicação do padrão de projeto Strategy,
+ A estrutura evidencia a aplicação do padrão de projeto 
+\emph on
+Strategy
+\emph default
+,
  onde o usuário seleciona a fonte dos dados de permeabilidade relativa:
  seja através de modelos analíticos parametrizáveis (como Corey,
  LET ou Chierici) ou pela importação direta de dados experimentais via arquivos externos.
@@ -1959,6 +2032,18 @@ Adicionalmente,
 
 ),
  permitindo a visualização instantânea do comportamento dos fluidos sem a necessidade de reconfiguração manual do cenário.
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Assim,
+ só atualiza se clicar no botão,
+ não é automaticamente.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2031,11 +2116,15 @@ nolink "false"
 \begin_layout Standard
 O ponto crítico deste sistema é o caso de uso 'Verificar Condição de Entropia'.
  O software não aplica a construção de Welge indiscriminadamente;
- ela é modelada como uma extensão (<<
-\emph on
-extend
-\emph default
->>) que é ativada apenas se o perfil de saturação gerado pelo MOC apresentar instabilidade física (multivaloração).
+ ela é modelada como uma extensão (
+\family typewriter
+\size footnotesize
+\nospellcheck on
+<<estende>>
+\family default
+\size default
+\nospellcheck default
+) que é ativada apenas se o perfil de saturação gerado pelo MOC apresentar instabilidade física (multivaloração).
  Esta abordagem assegura que o simulador trate corretamente tanto cenários de fluxo dispersivo quanto a formação de frentes de choque,
  culminando no cálculo preciso do tempo de ruptura (
 \emph on
