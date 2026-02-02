@@ -61,12 +61,33 @@ double CCalculadoraFluxoFracionario::calcularRapoportLeas(double L, double phi, 
     return numerador / denominador;
 }
 
+double CCalculadoraFluxoFracionario::calcularM(double sw) const {
+    double krw = _modeloKr->getKrw(sw);
+    double kro = _modeloKr->getKro(sw);
+
+    // Evita divisão por zero se o óleo for residual
+    if (kro < 1e-12) return 1e12;
+
+    // M = (krw / mi_w) / (kro / mi_o)
+    return (krw / _mi_w) / (kro / _mi_o);
+}
+
+// --- Cálculo isolado do Número de Gravidade ---
+double CCalculadoraFluxoFracionario::calcularNg(double sw) const {
+    if (std::abs(_ut) < 1e-12) return 0.0;
+
+    double kro = _modeloKr->getKro(sw);
+    double delta_rho = _rho_w - _rho_o;
+
+    // Ng = (k * kro * delta_rho * g * sin(alpha)) / (ut * mi_o)
+    return (_k * kro * delta_rho * _g * std::sin(_angulo)) / (_ut * _mi_o);
+}
+
 // --- Cálculo Principal (Fw) ---
 // Implementa a Equação 3.10 para reservatórios inclinados
 double CCalculadoraFluxoFracionario::calcularFw(double sw) const {
     // 1. Obter Permeabilidades Relativas do Modelo (Strategy) [cite: 660, 723]
     double krw = _modeloKr->getKrw(sw);
-    double kro = _modeloKr->getKro(sw);
 
     // 2. Verificação de Mobilidade para Água
     // Se não há fluxo de água, fw é zero [cite: 368]
@@ -75,15 +96,10 @@ double CCalculadoraFluxoFracionario::calcularFw(double sw) const {
 
     // 3. Razão de Mobilidade (M) - Termo Viscoso [cite: 408, 439]
     // M = (krw / mi_w) / (kro / mi_o)
-    double M = (krw / _mi_w) / (kro / _mi_o);
+    double M = calcularM(sw);
 
     // 4. Número de Gravidade (Ng) - Termo Gravitacional [cite: 440]
-    // Ng = (k * kro * delta_rho * g * sin(alpha)) / (ut * mi_o)
-    double Ng = 0.0;
-    if (std::abs(_ut) > 1e-12) {
-        double delta_rho = _rho_w - _rho_o; // [cite: 384]
-        Ng = (_k * kro * delta_rho * _g * std::sin(_angulo)) / (_ut * _mi_o);
-    }
+    double Ng = calcularNg(sw);
 
     // 5. Equação de Generalizada (Eq. 3.10)
     // fw = (1 - Ng) / (1 + (1/M))
@@ -136,3 +152,5 @@ std::map<double, double> CCalculadoraFluxoFracionario::gerarCurvaCompleta(double
 
     return curva;
 }
+
+

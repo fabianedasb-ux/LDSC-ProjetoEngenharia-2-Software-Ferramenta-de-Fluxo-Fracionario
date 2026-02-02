@@ -40,8 +40,10 @@ private:
     CSimulador *simulador;
 
     // Métodos auxiliares
+    void sincronizarDadosComSimulador();
     void configurarGraficos();
     void plotarResultados();
+    double obterSaturacaoInicialUI() const;
 };
 
 #endif // MAINWINDOW_H

@@ -54,6 +54,14 @@ void CSimulador::setDadosReservatorio(double L, double A, double phi, double ang
     _vazaoInjecao = vazao;
 }
 
+double CSimulador::getComprimento() const {
+    return _comprimento;
+}
+
+double CSimulador::getPorosidade() const {
+    return _porosidade;
+}
+
 void CSimulador::setFluidos(double mi_o, double mi_w, double rho_o, double rho_w) {
     if (mi_o <= 0 || mi_w <= 0) {
         throw std::invalid_argument("CSimulador: Viscosidades devem ser positivas.");

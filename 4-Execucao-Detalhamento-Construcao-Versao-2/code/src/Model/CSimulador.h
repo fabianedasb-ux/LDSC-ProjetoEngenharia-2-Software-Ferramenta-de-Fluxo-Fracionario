@@ -96,6 +96,8 @@ public:
     CWelge* getWelge() const;
     CCalculadoraFluxoFracionario* getCalculadora() const;
     ICurvasPermeabilidade* getModeloPermeabilidade() const;
+    double getComprimento() const;
+    double getPorosidade() const;
 };
 
 #endif

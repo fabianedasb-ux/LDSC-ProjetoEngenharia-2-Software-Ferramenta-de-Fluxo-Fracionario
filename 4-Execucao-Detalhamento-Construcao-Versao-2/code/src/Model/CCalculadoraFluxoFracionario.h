@@ -69,6 +69,12 @@ public:
 
     double calcularRapoportLeas(double L, double phi, double sigma) const;
 
+    /** @brief Calcula a Razão de Mobilidade (M) para uma saturação dada */
+    double calcularM(double sw) const;
+
+    /** @brief Calcula o Número de Gravidade (Ng) para uma saturação dada */
+    double calcularNg(double sw) const;
+
     /**
      * @brief Calcula o fluxo fracionário de água (fw) para uma dada saturação.
      *
