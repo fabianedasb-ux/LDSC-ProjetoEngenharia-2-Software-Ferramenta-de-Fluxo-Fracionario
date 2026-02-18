@@ -44,6 +44,9 @@ private:
     double _rho_o;          ///< Densidade do óleo [kg/m³].
     double _rho_w;          ///< Densidade da água [kg/m³].
 
+    // --- Propriedade da Rocha ---
+    double _k;              ///< Permeabilidade absoluta [mD ou m²].
+
 public:
     /**
      * @brief Construtor padrão.
@@ -70,6 +73,12 @@ public:
     void setFluidos(double mi_o, double mi_w, double rho_o, double rho_w);
 
     /**
+     * @brief Define a permeabilidade absoluta do reservatório.
+     * @param k Permeabilidade absoluta [mD ou m²].
+     */
+    void setPermeabilidade(double k);
+
+    /**
      * @brief Define a estratégia de permeabilidade a ser usada (Corey, LET, etc).
      * O simulador assume a posse do ponteiro e irá deletá-lo quando necessário.
      * @param modelo Ponteiro para a nova estratégia.
@@ -86,9 +95,9 @@ public:
      * 2. Configura o Solver.
      * 3. Chama o método de cálculo analítico do Solver.
      *
-     * @param tempoInjetado Tempo em PVI ou Dias.
+     * @param tempoInjetado Tempo em horas .
      */
-    void executarSimulacao(double tempoInjetado);
+    void executarSimulacao(double tempoInjetado, double qt,double A);
 
     // --- Acesso aos Resultados (Getters) ---
 

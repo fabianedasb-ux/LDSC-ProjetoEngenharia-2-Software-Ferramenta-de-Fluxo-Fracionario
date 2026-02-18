@@ -10,6 +10,7 @@
 #include <QString>
 #include <QTextDocument>
 #include <QPdfWriter>
+#include <QPageSize>
 #include <QDate>
 
 CRelatorio::CRelatorio() {
@@ -104,9 +105,16 @@ void CRelatorio::registrarEficiencia(double tempo, double fatorRecuperacao) {
     ss << "<p><b>Tempo Atual de Simulação:</b> " << tempo << " PVI</p>";
     ss << "<p><b>Fator de Recuperação (FR):</b> <span class='success'>" << (fatorRecuperacao * 100.0) << " %</span></p>";
 
-    ss << "<br><hr><p style='font-size:small; color:gray; text-align:right;'>Gerado em: "
-       << QDate::currentDate().toString("dd/MM/yyyy").toStdString() << "</p>";
+    //ss << "<br><hr><p style='font-size:small; color:gray; text-align:right;'>Gerado em: "
+    //<< QDate::currentDate().toString("dd/MM/yyyy").toStdString() << "</p>";
 
+    _textoRelatorio += ss.str();
+}
+
+void CRelatorio::adicionarNota(const std::string& notaHtml) {
+    std::stringstream ss;
+    ss << "<h2>Observações</h2>";
+    ss << notaHtml;
     _textoRelatorio += ss.str();
 }
 

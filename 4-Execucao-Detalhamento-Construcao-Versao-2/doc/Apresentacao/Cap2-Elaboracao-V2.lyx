@@ -234,12 +234,12 @@ Engenharia de Petróleo:
  LET e Chierici) e a própria teoria de deslocamento de 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
 
-.
+ .
 \end_layout
 
 \begin_layout Itemize
@@ -356,7 +356,7 @@ Ilustração esquemática do efeito da razão de mobilidade na eficiência de de
  Adaptado de 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -411,7 +411,7 @@ Nesta seção,
  apresenta-se a solução analítica para o avanço da frente de saturação 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
@@ -449,7 +449,7 @@ status open
 
 \begin_layout Plain Layout
 O acesso ao conceito ocorreu através de autores modernos como Lake,
- que referenciam Henry Darcy
+ que referenciam Henry Darcy.
 \end_layout
 
 \end_inset
@@ -465,7 +465,7 @@ O acesso ao conceito ocorreu através de autores modernos como Lake,
 Conforme estabelecido por 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -499,7 +499,7 @@ Sob estas condições,
  as efeitos gravitacionais e os gradientes de pressão atuantes em cada fase 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "rosa2006"
 literal "true"
 
 \end_inset
@@ -644,7 +644,7 @@ Embora a magnitude e o sinal da pressão capilar dependam da tensão interfacial
  adota-se a convenção padrão apresentada por 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1033,7 +1033,7 @@ Esta equação é a base fundamental para o desenvolvimento de modelos de simula
  A análise de seus termos permite distinguir três regimes de fluxo ou forças motrizes principais 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1121,7 +1121,7 @@ literal "true"
  e discutido extensivamente por 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1157,7 +1157,7 @@ Considerando um sistema linear de comprimento
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-N_{RL}=\frac{L\cdot u_{t}\cdot\mu_{w}}{\sigma\sqrt{k\phi}}\label{eq:num-rapoport}
+N_{RL}=\sqrt{\left(\frac{\phi}{k}\right)}\frac{L\cdot u_{t}\cdot\mu_{w}}{k_{rw}\sigma cos\theta}\label{eq:num-rapoport}
 \end{equation}
 
 \end_inset
@@ -1208,7 +1208,25 @@ Onde:
 \begin_inset Formula $\phi$
 \end_inset
 
- é a porosidade da rocha.
+ é a porosidade da rocha;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+é a permeabilidade relativa da água em relação a saturação de água;
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $cos\theta$
+\end_inset
+
+é o cosseno do angulo 
+\begin_inset Formula $\theta$
+\end_inset
+
+ de inclinação do reservatório.
 \end_layout
 
 \begin_layout Standard
@@ -1337,7 +1355,7 @@ A equação generalizada do fluxo fracionário (
 Conforme discutido por 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1547,7 +1565,7 @@ Assume-se a hipótese de imiscibilidade total,
  a lei de conservação de massa aplicada à fase água estabelece que o acúmulo de massa no volume é resultante do saldo líquido entre o fluxo de entrada e saída
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1680,7 +1698,7 @@ Tomando-se o limite quando
  a expressão converge para a equação diferencial parcial da continuidade 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -1823,7 +1841,7 @@ Esta equação diferencial parcial hiperbólica descreve a dinâmica do transpor
  descreve o transporte convectivo da saturação através do meio poroso 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
@@ -1842,7 +1860,7 @@ Para que a solução matemática do problema de deslocamento tenha aplicabilidad
  é prática padrão na engenharia de reservatórios realizar a adimensionalização das variáveis independentes 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -2053,7 +2071,7 @@ Esta Equação Diferencial Parcial (EDP) quase-linear e hiperbólica relaciona a
  emerge como o fator fundamental que governa a velocidade de propagação das saturações no meio poroso 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
@@ -2075,7 +2093,7 @@ A equação de Buckley-Leverett,
  evitando a dispersão numérica comum em métodos de diferenças finitas 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -2093,7 +2111,7 @@ A seleção do MOC fundamenta-se na sua capacidade de descrever o fenômeno de d
  suavizando artificialmente frentes de choque que deveriam ser abruptas 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset
@@ -2795,7 +2813,7 @@ Antes deste instante (
  reduzindo a eficiência econômica do projeto 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Lake2010"
+key "Lake2014"
 literal "true"
 
 \end_inset

@@ -138,14 +138,38 @@ waterflooding
 A base científica para a modelagem desse fenômeno fundamenta-se na teoria clássica de deslocamento imiscível linear estabelecida por 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
 
- .
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+O acesso ao conceito ocorreu através de autores modernos como Lake,
+ que referenciam Buckley,
+ S.E.
+ and Leverett,
+ M.C.
+\end_layout
+
+\end_inset
+
+.
  Embora fundamental,
- a aplicação analítica dessa teoria exige a resolução de equações diferenciais parciais através do Método das Características (MOC) e a aplicação de condições de entropia para a determinação da frente de choque,
+ a aplicação analítica dessa teoria exige a resolução de equações diferenciais parciais através do Método das Características (MOC
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "MOC"
+description "Método das Características"
+literal "false"
+
+\end_inset
+
+) e a aplicação de condições de entropia para a determinação da frente de choque,
  processos que apresentam elevada complexidade matemática para cálculos manuais.
  O software proposto supera essa barreira ao automatizar o cálculo das curvas de fluxo fracionário e dos perfis de saturação,
  permitindo que o usuário manipule parâmetros críticos —
@@ -216,7 +240,7 @@ Embora a teoria do deslocamento imiscível,
  fundamentada na clássica solução de 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Buckley1942"
+key "Buckley1941"
 literal "true"
 
 \end_inset
@@ -229,7 +253,25 @@ literal "true"
 
 \begin_layout Standard
 Por outro lado,
- as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG) são projetadas para modelos complexos e tridimensionais 
+ as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG - 
+\emph on
+\nospellcheck on
+\lang english
+Computer Modelling Group
+\emph default
+\nospellcheck default
+\lang brazilian
+
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "CMG"
+description "Computer Modelling Group"
+literal "false"
+
+\end_inset
+
+) são projetadas para modelos complexos e tridimensionais 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "ertekin2001"
@@ -347,7 +389,17 @@ Implementar o método da construção da tangente de Welge para determinar a sat
 \end_layout
 
 \begin_layout Itemize
-Construir a Interface Gráfica do Usuário (GUI) utilizando o 
+Construir a Interface Gráfica do Usuário (GUI - Graphical User Interface
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "GUI"
+description "Computer Modelling Group"
+literal "false"
+
+\end_inset
+
+) utilizando o 
 \emph on
 framework
 \emph default

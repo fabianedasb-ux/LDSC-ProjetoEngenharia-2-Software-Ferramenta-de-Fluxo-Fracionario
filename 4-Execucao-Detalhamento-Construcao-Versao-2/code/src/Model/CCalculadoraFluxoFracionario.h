@@ -20,15 +20,17 @@
 class CCalculadoraFluxoFracionario {
 private:
     // Propriedades dos Fluidos
-    double _mi_o;   ///< Viscosidade do óleo (cP ou Pa.s).
-    double _mi_w;   ///< Viscosidade da água (cP ou Pa.s).
-    double _rho_o;  ///< Densidade do óleo.
-    double _rho_w;  ///< Densidade da água.
+    double _mi_o;   ///< Viscosidade do óleo (cP).
+    double _mi_w;   ///< Viscosidade da água (cP).
+    double _rho_o;  ///< Densidade do óleo (kg/m³).
+    double _rho_w;  ///< Densidade da água (kg/m³).
 
     // Propriedades do Reservatório/Fluxo
-    double _k;      ///< Permeabilidade absoluta (mD ou m²).
-    double _ut;     ///< Velocidade total de Darcy (m/s ou ft/day).
-    double _angulo; ///< Ângulo de inclinação (radianos).
+    double _k;      ///< Permeabilidade absoluta (mD ).
+    double _qt;     ///< Vazão de injeção (m³/d).
+    double _A;      ///< Área de seção transversal (m²).
+    double _ut;     ///< Velocidade total de Darcy (m/d).
+    double _angulo; ///< Ângulo de inclinação (graus).
     double _g;      ///< Aceleração da gravidade.
 
     // Estratégia de Permeabilidade
@@ -56,9 +58,9 @@ public:
      * @param rho_o Densidade do óleo.
      * @param k Permeabilidade absoluta.
      * @param angulo Ângulo de inclinação (em graus, será convertido para radianos internamente).
-     * @param ut Velocidade total de injeção.
+     * @param ut Velocidade total de Darcy.
      */
-    void setPropriedades(double mi_w, double mi_o, double rho_w, double rho_o, double k, double angulo, double ut);
+    void setPropriedades(double mi_w, double mi_o, double rho_w, double rho_o, double k, double angulo, double qt, double A);
 
     /**
      * @brief Define o modelo de permeabilidade relativa a ser usado (Strategy).
@@ -67,13 +69,13 @@ public:
     void setModeloPermeabilidade(ICurvasPermeabilidade* modelo);
 
 
-    double calcularRapoportLeas(double L, double phi, double sigma) const;
+    double calcularRapoportLeas(double L, double phi, double sigma, double sw, double qt, double A) const;
 
     /** @brief Calcula a Razão de Mobilidade (M) para uma saturação dada */
     double calcularM(double sw) const;
 
     /** @brief Calcula o Número de Gravidade (Ng) para uma saturação dada */
-    double calcularNg(double sw) const;
+    double calcularNg(double sw, double qt, double A) const;
 
     /**
      * @brief Calcula o fluxo fracionário de água (fw) para uma dada saturação.
@@ -83,7 +85,7 @@ public:
      * @param sw Saturação de água.
      * @return Valor adimensional de fw.
      */
-    double calcularFw(double sw) const;
+    double calcularFw(double sw, double qt, double A) const;
 
     /**
      * @brief Calcula a derivada do fluxo fracionário (dfw/dSw) numericamente.
@@ -94,14 +96,14 @@ public:
      * @param sw Saturação de água.
      * @return Valor da derivada (velocidade adimensional da onda).
      */
-    double calcularDerivadaFw(double sw) const;
+    double calcularDerivadaFw(double sw, double qt, double A) const;
 
     /**
      * @brief Gera um mapa de pontos (Sw, fw) para plotagem.
      * @param passo Incremento de saturação (ex: 0.01).
      * @return Mapa contendo a curva completa.
      */
-    std::map<double, double> gerarCurvaCompleta(double passo) const;
+    std::map<double, double> gerarCurvaCompleta(double passo, double qt, double A) const;
 };
 
 #endif

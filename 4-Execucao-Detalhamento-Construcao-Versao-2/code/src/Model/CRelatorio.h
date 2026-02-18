@@ -45,6 +45,12 @@ public:
     void registrarDiagnosticoFisico(double nrl, double m, double ng);
 
     /**
+     * @brief Adiciona uma nota ou observação livre ao relatório (HTML).
+     * @param notaHtml Texto em formato HTML a ser inserido no relatório.
+     */
+    void adicionarNota(const std::string& notaHtml);
+
+    /**
      * @brief Registra qual modelo de permeabilidade foi utilizado.
      * @param nomeModelo Nome do modelo (ex: "Corey", "LET").
      * @param parametros String formatada com os parâmetros usados (ex: "No=2, Nw=2").

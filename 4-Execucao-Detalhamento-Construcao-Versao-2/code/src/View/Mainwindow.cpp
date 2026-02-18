@@ -1,7 +1,10 @@
-#include "mainwindow.h"
+#include "Mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
 #include <QFileDialog>
+#include <QInputDialog>
+#include <algorithm>
+static constexpr double SWI_EPS = 1e-3;
 
 // Inclui os modelos matemáticos
 #include "CCurvasPermeabilidadeCorey.h"
@@ -48,17 +51,11 @@ void MainWindow::configurarGraficos() {
     // 2. Perfil de Saturação (Agora Sw vs xD)
     ui->plotSvsX->xAxis->setLabel("Posição Adimensional (xD)");
     ui->plotSvsX->yAxis->setLabel("Saturação (Sw)");
-    ui->plotSvsX->xAxis->setRange(0, 1.2); // Mostra até um pouco depois do produtor
+    ui->plotSvsX->xAxis->setRange(0, 1.0); // xD máximo físico = 1.0
     ui->plotSvsX->addGraph();
     ui->plotSvsX->graph(0)->setPen(QPen(Qt::red));
 
-    // 3. Velocidade Adimensional vs xD [cite: 532, 560]
-    ui->plotVel->xAxis->setLabel("Posição Adimensional (xD)");
-    ui->plotVel->yAxis->setLabel("Velocidade Adimensional (vD)");
-    ui->plotVel->addGraph();
-    ui->plotVel->graph(0)->setPen(QPen(Qt::darkGreen));
-
-    // 4. Eficiência de Deslocamento vs PVI [cite: 627, 631]
+    // 3. Eficiência de Deslocamento vs PVI [cite: 627, 631]
     ui->plotEfDesl->xAxis->setLabel("Tempo Adimensional (PVI)");
     ui->plotEfDesl->yAxis->setLabel("Eficiência de Deslocamento (Ed)");
     ui->plotEfDesl->addGraph(); // Curva Ed
@@ -73,25 +70,26 @@ void MainWindow::on_cbModeloPerm_currentIndexChanged(int index) {
 
 void MainWindow::sincronizarDadosComSimulador() {
     // 1. Coleta e Conversão de Dados Escalares
-    double L     = ui->leComprimento->text().toDouble();
-    double A     = ui->leArea->text().toDouble();
-    double phi   = ui->lePorosidade->text().toDouble() / 100.0; // % -> fração
-    double ang   = ui->leAngulo->text().toDouble();
-    double vazao = ui->leVazao->text().toDouble();
-    double k     = ui->lePerm->text().toDouble(); // Permeabilidade
+    double L     = ui->leComprimento->text().toDouble(); // 100 m
+    double A     = ui->leArea->text().toDouble(); // 1 m²
+    double phi   = ui->lePorosidade->text().toDouble() / 100.0; // 20 %
+    double ang   = ui->leAngulo->text().toDouble(); // 0 graus
+    double vazao = ui->leVazao->text().toDouble(); // 1 m³/d
+    double k     = ui->lePerm->text().toDouble(); // 100 mD
 
-    double mi_o  = ui->leViscOleo->text().toDouble();
-    double mi_w  = ui->leViscAgua->text().toDouble();
-    double rho_o = ui->leDensOleo->text().toDouble();
-    double rho_w = ui->leDensAgua->text().toDouble();
+    double mi_o  = ui->leViscOleo->text().toDouble(); // 1 cP
+    double mi_w  = ui->leViscAgua->text().toDouble(); // 1 cP
+    double rho_o = ui->leDensOleo->text().toDouble(); // 800 kg/m³
+    double rho_w = ui->leDensAgua->text().toDouble(); // 1000 kg/m³
 
     // 2. Sincroniza Propriedades do Reservatório e Fluidos
     simulador->setDadosReservatorio(L, A, phi, ang, vazao);
     simulador->setFluidos(mi_o, mi_w, rho_o, rho_w);
+    simulador->setPermeabilidade(k);  // Define a permeabilidade absoluta lida da UI
 
     // 3. Atualiza a Calculadora (Crítico para Gravidade e Rapoport-Leas)
-    double ut = vazao / A;
-    simulador->getCalculadora()->setPropriedades(mi_w, mi_o, rho_w, rho_o, k, ang, ut);
+    simulador->getCalculadora()->setPropriedades(mi_w, mi_o, rho_w, rho_o, k, ang, vazao, A);
+    double ut =  vazao/A;
 
     // =========================================================
     // ETAPA 2: Configura o Modelo de Permeabilidade (Strategy)
@@ -100,12 +98,12 @@ void MainWindow::sincronizarDadosComSimulador() {
     int indiceModelo = ui->cbModeloPerm->currentIndex();
 
     if (indiceModelo == 0) { // COREY
-        double no = ui->leCoreyNo->text().toDouble();
-        double nw = ui->leCoreyNw->text().toDouble();
-        double swi = ui->leCoreySwi->text().toDouble();
-        double sor = ui->leCoreySor->text().toDouble();
-        double krwm = ui->leCoreyKrwm->text().toDouble();
-        double krom = ui->leCoreyKrom->text().toDouble();
+        double no = ui->leCoreyNo->text().toDouble(); // 2 inteiro
+        double nw = ui->leCoreyNw->text().toDouble(); // 2 inteiro
+        double swi = ui->leCoreySwi->text().toDouble(); // 0.2 fração
+        double sor = ui->leCoreySor->text().toDouble(); // 0.2 fração
+        double krwm = ui->leCoreyKrwm->text().toDouble(); // 1.0 fração
+        double krom = ui->leCoreyKrom->text().toDouble();  // 1.0 fração
 
         modelo = new CCurvasPermeabilidadeCorey(krom, krwm, no, nw, swi, sor);
 
@@ -151,6 +149,27 @@ void MainWindow::sincronizarDadosComSimulador() {
 
 }
 
+double MainWindow::obterSaturacaoOleoResidualUI() const {
+    // Verifica qual índice (aba) está selecionado no QStackedWidget
+    int indiceAtivo = ui->stkModelos->currentIndex();
+
+    switch (indiceAtivo) {
+    case 0: // Aba Corey
+        return ui->leCoreySor->text().toDouble();
+    case 1: // Aba LET
+        return ui->leLetSor->text().toDouble();
+    case 2: // Aba Chierici
+        return ui->leChiericiSor->text().toDouble();
+    case 3: // Aba Tabela
+        // Em modelos de tabela, Swi geralmente é o primeiro valor da coluna Sw
+        // Para simplificar, você pode retornar o valor de uma variável global
+        // ou buscar do objeto CCurvasPermeabilidadeTabelada se ele estiver carregado.
+        return 0.2; // Valor padrão de segurança ou buscar do objeto tabela
+    default:
+        return 0.0;
+    }
+}
+
 double MainWindow::obterSaturacaoInicialUI() const {
     // Verifica qual índice (aba) está selecionado no QStackedWidget
     int indiceAtivo = ui->stkModelos->currentIndex();
@@ -176,13 +195,23 @@ void MainWindow::on_btnPlotarFw_clicked() {
     try {
         sincronizarDadosComSimulador(); // Dados unificados
         auto calc = simulador->getCalculadora();
-        double swi = obterSaturacaoInicialUI();
+        // Obter Swi de forma consistente com o modelo selecionado (mesma fonte usada em sincronizarDadosComSimulador)
+        double sor = obterSaturacaoOleoResidualUI();
         ui->txtLog->appendHtml("<b>--- Diagnóstico de Engenharia ---</b>");
 
-        // Chamadas diretas conforme implementado na classe
-        ui->txtLog->appendHtml(QString("N. Rapoport-Leas: %1").arg(calc->calcularRapoportLeas(simulador->getComprimento(), simulador->getPorosidade(), 0.03), 0, 'f', 2));
-        ui->txtLog->appendHtml(QString("Razão de Mobilidade (M @ Swi): %1").arg(calc->calcularM(swi), 0, 'f', 3));
-        ui->txtLog->appendHtml(QString("Número de Gravidade (Ng @ Swi): %1").arg(calc->calcularNg(swi), 0, 'f', 3));
+                // Chamadas diretas conforme implementado na classe
+        double sw;
+        double vazao;
+        double A;
+        ui->txtLog->appendHtml(QString("N. Rapoport-Leas: %1").arg(calc->calcularRapoportLeas(simulador->getComprimento(), simulador->getPorosidade(), 0.03, sw, vazao, A ), 0, 'f', 2));
+        // Usar a saturação inicial (Swi) para o diagnóstico mostrado na interface
+        // (evita apresentar o valor final da curva que pode ser zero).
+        double sw_report = 1-sor;
+        // Mostrar Krw/Kro em Swi para diagnóstico
+        auto modelo = simulador->getModeloPermeabilidade();
+
+        double M_sw = calc->calcularM(sw_report);
+        double Ng_sw = calc->calcularNg(sw_report,vazao,A);
 
 
         QVector<double> xFw(101), yFw(101);
@@ -190,12 +219,17 @@ void MainWindow::on_btnPlotarFw_clicked() {
         for (int i = 0; i <= 100; ++i) {
             double sw = i / 100.0;
             xFw[i] = sw;
-            yFw[i] = calc->calcularFw(sw); // Usa a Eq. 3.10 corrigida
+            yFw[i] = calc->calcularFw(sw,vazao,A); // Usa a Eq. 3.10 corrigida
         }
 
         ui->plotFluxo->graph(0)->setData(xFw, yFw);
-        ui->plotFluxo->replot();
-        ui->txtLog->appendHtml("Curva Fw atualizada com dados unificados.");
+        ui->plotFluxo->xAxis->setRange(0, 1.0);
+        ui->plotFluxo->graph(0)->rescaleAxes();
+        // pequena margem visual
+        double yMin = ui->plotFluxo->yAxis->range().lower;
+        double yMax = ui->plotFluxo->yAxis->range().upper;
+        double margin = 0.05 * (yMax - yMin);
+        ui->plotFluxo->yAxis->setRange(yMin - margin, yMax + margin);
 
     } catch (const std::exception& e) {
         QMessageBox::critical(this, "Erro", e.what());
@@ -208,59 +242,128 @@ void MainWindow::on_btnPlotarSolucao_clicked() {
     try {
         sincronizarDadosComSimulador();
 
-        // Executa simulação
-        simulador->executarSimulacao(0.5);
+        // Lê tempo informado pelo usuário (unidades: horas)
+        double t_input = ui->leTempo->text().toDouble();
+        if (t_input <= 0.0) {
+            throw std::runtime_error("Informe um tempo válido no campo Tempo.");
+        }
+
+
+        double L = ui->leComprimento->text().toDouble();
+        double A = ui->leArea->text().toDouble();
+        double phi = ui->lePorosidade->text().toDouble() / 100.0;
+        double permeabilidade_abs = ui->lePerm->text().toDouble();
+        double mi_w  = ui->leViscAgua->text().toDouble();
+        double vazao = ui->leVazao->text().toDouble();
+
+        if (A <= 0.0 || phi <= 0.0 || L <= 0.0) {
+            throw std::runtime_error("Verifique Comprimento, Área e Porosidade (devem ser > 0).");
+        }
+
+        double ct = 8*10^(-5); // compressibilidade total ((kgf/cm²)^-1), valor típico para água e óleo
+        double c = 0.0003484;
+        double tempo_adimensional = (c * permeabilidade_abs * (t_input)) / (phi * (L*L) * ct * mi_w ); // t_input em horas, convertendo para dias
+
+        // Executa simulação no tempo adimensional calculado
+        simulador->executarSimulacao(tempo_adimensional,vazao,A);
 
         plotarResultados();
     } catch (const std::exception& e) {
         QMessageBox::critical(this, "Erro", e.what());
     }
 }
-
+// criar plotarFluxoFracionario
+// criar plotarPerfildeSaturacao
+// criar plotarEfcienciaDeslocamento
 void MainWindow::plotarResultados() {
     auto calc = simulador->getCalculadora();
     auto welge = simulador->getWelge();
     auto malha = simulador->getMalha();
+    double A = ui->leArea->text().toDouble();
+    double vazao = ui->leVazao->text().toDouble();
     const auto& celulas = malha->getCelulas();
 
-    // 1. Atualizar Perfil Sw vs xD e Velocidade vs xD
-    QVector<double> xD, Sw, vD;
+    // 1. Atualizar Perfil Sw vs xD
+    QVector<double> xD, Sw;
     for(const auto& c : celulas) {
         // xD = x/L. Como no CSolver calculamos xD = vD * tD, usamos direto [cite: 562]
         xD.append(c.getPosicao());
         Sw.append(c.getSaturacao());
-        vD.append(c.getDerivadaFluxo());
     }
     ui->plotSvsX->graph(0)->setData(xD, Sw);
-    ui->plotVel->graph(0)->setData(xD, vD);
+
+    // Auto-scale para Sw vs xD
+    ui->plotSvsX->xAxis->setRange(0, 1.0);
+    ui->plotSvsX->graph(0)->rescaleAxes();
+    double yMinS = ui->plotSvsX->yAxis->range().lower;
+    double yMaxS = ui->plotSvsX->yAxis->range().upper;
+    double yMarginS = 0.05 * (yMaxS - yMinS);
+    ui->plotSvsX->yAxis->setRange(yMinS - yMarginS, yMaxS + yMarginS);
+
 
     // 2. Atualizar Fw com Tangente de Welge (se houver choque) [cite: 609]
-    if (welge->getSwFrente() > ui->leCoreySwi->text().toDouble()) {
-        QVector<double> xTan = {ui->leCoreySwi->text().toDouble(), welge->getSwMedia()};
-        QVector<double> yTan = {calc->calcularFw(ui->leCoreySwi->text().toDouble()), 1.0};
+    // Desenhar apenas quando a tangente de Welge efetivamente produz choque
+    double swi_for_plot = obterSaturacaoInicialUI();
+    double swFrente = welge->getSwFrente();
+    if (swFrente > swi_for_plot + 1e-12) {
+        // usar a inclinação calculada por CWelge e o ponto de contato (swFrente, fw_frente)
+        double slope = welge->getInclinacaoChoque();
+        double fw_frente = calc->calcularFw(swFrente,vazao,A);
+        double sw_media = welge->getSwMedia();
+
+        // reta tangente: y = fw_frente + slope * (x - swFrente)
+        double y1 = fw_frente;
+        double y2 = fw_frente + slope * (sw_media - swFrente);
+        y2 = std::clamp(y2, 0.0, 1.0);
+
+        QVector<double> xTan = {swFrente, sw_media};
+        QVector<double> yTan = {y1, y2};
         ui->plotFluxo->graph(1)->setData(xTan, yTan);
+        ui->plotFluxo->rescaleAxes();
+        double yMinF = ui->plotFluxo->yAxis->range().lower;
+        double yMaxF = ui->plotFluxo->yAxis->range().upper;
+        double yMarginF = 0.05 * (yMaxF - yMinF);
+        ui->plotFluxo->yAxis->setRange(yMinF - yMarginF, yMaxF + yMarginF);
+    } else {
+        // Nenhum choque — limpar a reta tangente (não desenhar)
+        // QCPGraph may not have clearData(); clear underlying data container instead.
+        if (ui->plotFluxo->graphCount() > 1 && ui->plotFluxo->graph(1)->data()) {
+            ui->plotFluxo->graph(1)->data()->clear();
+        }
     }
 
     // 3. Eficiência de Deslocamento vs PVI [cite: 631, 636]
-    double t_bt = 1.0 / welge->getInclinacaoChoque(); // Tempo de Breakthrough [cite: 635]
-    double swi = ui->leCoreySwi->text().toDouble();
+    double t_bt = 1.0 / welge->getInclinacaoChoque(); // Tempo de Breakthrough
+    double swi = obterSaturacaoInicialUI();
+    double sw_media = welge->getSwMedia();
 
     QVector<double> tPVI, Ed;
     for (int i = 0; i <= 100; ++i) {
         double t = i * 0.02; // PVI de 0 a 2
-        double np = (t <= t_bt) ? t : (welge->getSwMedia() - swi); // Simplificação teórica [cite: 636]
+        double Np;
+        if (t <= t_bt) {
+            Np = t;
+        } else {
+            Np = (sw_media - swi) + (1.0 - sw_media) * (t - t_bt);
+        }
         tPVI.append(t);
-        Ed.append(np / (1.0 - swi)); // Eq. 3.19 [cite: 627]
+        Ed.append(Np / (1.0 - swi)); // Eq. 3.19 adaptada
     }
     ui->plotEfDesl->graph(0)->setData(tPVI, Ed);
 
     // Destacar o Breakthrough no gráfico
-    ui->plotEfDesl->graph(1)->setData({t_bt}, {t_bt / (1.0 - swi)});
+    double ed_bt = t_bt / (1.0 - swi);
+    ui->plotEfDesl->graph(1)->setData({t_bt}, {ed_bt});
+    ui->plotEfDesl->graph(0)->rescaleAxes();
+    ui->plotEfDesl->xAxis->setRange(0, 2.0);
+    double yMinE = ui->plotEfDesl->yAxis->range().lower;
+    double yMaxE = ui->plotEfDesl->yAxis->range().upper;
+    double yMarginE = 0.05 * (yMaxE - yMinE);
+    ui->plotEfDesl->yAxis->setRange(yMinE - yMarginE, yMaxE + yMarginE);
 
     // Replotar todos
     ui->plotFluxo->replot();
     ui->plotSvsX->replot();
-    ui->plotVel->replot();
     ui->plotEfDesl->replot();
 }
 
@@ -302,7 +405,8 @@ void MainWindow::on_btnRelatorio_clicked() {
     try {
         QString caminho = QFileDialog::getSaveFileName(this, "Salvar PDF", "", "PDF (*.pdf)");
         if (caminho.isEmpty()) return;
-
+        double A = ui->leArea->text().toDouble();
+        double vazao = ui->leVazao->text().toDouble();
         CRelatorio rel; // Agora reconhecido devido ao #include
 
         // Dados para o cabeçalho técnico [cite: 871]
@@ -316,11 +420,22 @@ void MainWindow::on_btnRelatorio_clicked() {
 
         // Diagnóstico de Engenharia: Rapoport-Leas, M e Ng [cite: 416, 440]
         auto calc = simulador->getCalculadora();
+        double sor = obterSaturacaoOleoResidualUI();
         double nrl = calc->calcularRapoportLeas(ui->leComprimento->text().toDouble(),
                                                 ui->lePorosidade->text().toDouble()/100.0,
-                                                0.03); // Tensão interfacial
+                                                0.03,sor, vazao, A); // Tensão interfacial
 
-        rel.registrarDiagnosticoFisico(nrl, 1.0, 0.0); // Valores diagnósticos
+        // Calcular M e Ng usando a saturação inicial (Swi) — mesma escolha da interface
+
+        double sw_report = 1-sor;
+               double M = calc->calcularM(sw_report);
+        double Ng = calc->calcularNg(sw_report, vazao, A);
+
+        double M_to_report = M;
+        double Ng_to_report = Ng;
+
+
+        rel.registrarDiagnosticoFisico(nrl, M_to_report, Ng_to_report);
 
         auto welge = simulador->getWelge();
         rel.registrarResultadoWelge(welge->getSwFrente(), welge->getSwMedia(), 1.0/welge->getInclinacaoChoque());

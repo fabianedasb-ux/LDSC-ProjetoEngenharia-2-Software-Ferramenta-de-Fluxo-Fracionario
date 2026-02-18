@@ -67,7 +67,7 @@ public:
      *
      * @param tempoInjetado Tempo adimensional (PVI) ou dimensional (dias).
      */
-    void calcularPerfilSaturacao(double tempoInjetado);
+    void calcularPerfilSaturacao(double tempoInjetado, double _vazaoInjecao, double _area);
 };
 
 #endif

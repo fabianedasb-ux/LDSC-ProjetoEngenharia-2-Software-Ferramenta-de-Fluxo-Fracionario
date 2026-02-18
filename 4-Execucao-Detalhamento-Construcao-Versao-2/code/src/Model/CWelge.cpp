@@ -9,7 +9,7 @@
 
 // --- Construtor ---
 CWelge::CWelge()
-    : _swFrente(0.0), _swMedia(0.0), _swInicial(0.0), _inclinacaoMax(0.0)
+    : _swFrente(0.0), _swMedia(0.0), _swInicial(0.0), _inclinacaoMax(0.0), _vazaoInjecao(0.0), _area(0.0)
 {
 }
 
@@ -22,12 +22,21 @@ void CWelge::setSwInicial(double swi) {
     _swInicial = swi;
 }
 
+void CWelge::setvazaoInjecao(double vazaoInjecao){
+    _vazaoInjecao = vazaoInjecao;
+}
+
+void CWelge::setarea(double area){
+    _area = area;
+}
+
+
 // --- Algoritmo Principal ---
 bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
     if (!calc) return false;
 
     // 1. Obter o ponto de partida (Sw_i, fw_i) [cite: 604, 609]
-    double fw_inicial = calc->calcularFw(_swInicial);
+    double fw_inicial = calc->calcularFw(_swInicial, _vazaoInjecao, _area);
 
     // Resetar valores para busca
     _inclinacaoMax = -1.0;
@@ -42,7 +51,7 @@ bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
         double sw = _swInicial + (i * passo);
         if (sw > 1.0) sw = 1.0;
 
-        double fw = calc->calcularFw(sw);
+        double fw = calc->calcularFw(sw, _vazaoInjecao, _area);
         double deltaSw = sw - _swInicial;
 
         // Condição de Rankine-Hugoniot: v_sigma = (fw - fwi) / (Sw - Swi) [cite: 600, 602]
@@ -57,7 +66,7 @@ bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
 
     // 3. Validação da Condição de Entropia [cite: 580, 581, 585]
     // Se a inclinação máxima for a derivada no ponto inicial, não há choque (fluxo dispersivo)
-    double derivadaInicial = calc->calcularDerivadaFw(_swInicial);
+    double derivadaInicial = calc->calcularDerivadaFw(_swInicial, _vazaoInjecao, _area);
     if (_inclinacaoMax <= derivadaInicial + 1e-5) {
         _swFrente = _swInicial;
         _inclinacaoMax = derivadaInicial;
@@ -65,7 +74,7 @@ bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
 
     // 4. Cálculo da Saturação Média (Extrapolação da Tangente) [cite: 615, 616]
     // Eq: Sw_media = Sw_frente + (1 - fw_frente) / f'(Sw_frente)
-    double fw_frente = calc->calcularFw(_swFrente);
+    double fw_frente = calc->calcularFw(_swFrente, _vazaoInjecao, _area);
 
     if (_inclinacaoMax > 1e-9) {
         _swMedia = _swFrente + (1.0 - fw_frente) / _inclinacaoMax;
@@ -75,7 +84,17 @@ bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
 
     _swMedia = std::clamp(_swMedia, _swFrente, 1.0); // Restrição física [cite: 629]
 
-    return true;
+    // Determina se o choque encontrado é fisicamente distinto da saturação inicial.
+    const double tol = 1e-9;
+    bool choqueValido = (_swFrente > _swInicial + tol) && (_inclinacaoMax > derivadaInicial + tol);
+    if (!choqueValido) {
+        // Reestabelece valores de não-choque para consistência
+        _swFrente = _swInicial;
+        _inclinacaoMax = derivadaInicial;
+        _swMedia = _swInicial;
+    }
+
+    return choqueValido;
 }
 
 // --- Getters ---

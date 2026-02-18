@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1189</width>
-    <height>884</height>
+    <width>1200</width>
+    <height>861</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -18,9 +18,9 @@
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>310</y>
+      <y>350</y>
       <width>221</width>
-      <height>141</height>
+      <height>101</height>
      </rect>
     </property>
    </widget>
@@ -34,7 +34,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="pgCorey">
      <widget class="QLabel" name="label">
@@ -72,6 +72,9 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="text">
+       <string>2</string>
+      </property>
      </widget>
      <widget class="QLineEdit" name="leCoreyNw">
       <property name="geometry">
@@ -81,6 +84,9 @@
         <width>51</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>2</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -105,6 +111,9 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="text">
+       <string>0.2</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_5">
       <property name="geometry">
@@ -127,6 +136,9 @@
         <width>41</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>0.2</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_6">
@@ -151,6 +163,9 @@
         <height>22</height>
        </rect>
       </property>
+      <property name="text">
+       <string>1</string>
+      </property>
      </widget>
      <widget class="QLabel" name="label_7">
       <property name="geometry">
@@ -173,6 +188,9 @@
         <width>41</width>
         <height>22</height>
        </rect>
+      </property>
+      <property name="text">
+       <string>1</string>
       </property>
      </widget>
      <widget class="QPushButton" name="btlCarregarCorey">
@@ -658,8 +676,8 @@
    <widget class="QPushButton" name="btnPlotarFw">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>210</y>
+      <x>460</x>
+      <y>250</y>
       <width>171</width>
       <height>24</height>
      </rect>
@@ -676,6 +694,9 @@
       <width>113</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>20</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_31">
@@ -700,6 +721,9 @@
       <height>21</height>
      </rect>
     </property>
+    <property name="text">
+     <string>1</string>
+    </property>
    </widget>
    <widget class="QLineEdit" name="leViscAgua">
     <property name="geometry">
@@ -709,6 +733,9 @@
       <width>113</width>
       <height>21</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_29">
@@ -799,6 +826,9 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>100</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_9">
     <property name="geometry">
@@ -810,7 +840,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Área(m2):</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Área(m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leArea">
@@ -821,6 +851,9 @@
       <width>113</width>
       <height>24</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>1</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
@@ -833,7 +866,7 @@
      </rect>
     </property>
     <property name="text">
-     <string>Permeabilidade:</string>
+     <string>Permeabilidade(mD):</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="lePerm">
@@ -845,18 +878,21 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>100</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_11">
     <property name="geometry">
      <rect>
       <x>30</x>
       <y>160</y>
-      <width>49</width>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Ângulo:</string>
+     <string>Ângulo(graus):</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leAngulo">
@@ -868,18 +904,21 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>0</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>90</y>
-      <width>111</width>
+      <width>151</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Densidade do Óleo:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Densidade do Óleo(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leDensOleo">
@@ -891,18 +930,21 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>800</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_13">
     <property name="geometry">
      <rect>
       <x>360</x>
       <y>120</y>
-      <width>121</width>
+      <width>151</width>
       <height>21</height>
      </rect>
     </property>
     <property name="text">
-     <string>Densidade da água:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Densidade da água(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3 &lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leDensAgua">
@@ -914,18 +956,21 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>1000</string>
+    </property>
    </widget>
    <widget class="QLabel" name="label_14">
     <property name="geometry">
      <rect>
-      <x>370</x>
+      <x>360</x>
       <y>170</y>
-      <width>49</width>
+      <width>91</width>
       <height>16</height>
      </rect>
     </property>
     <property name="text">
-     <string>Vazão:</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Vazão(m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;/d):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leVazao">
@@ -937,24 +982,17 @@
       <height>24</height>
      </rect>
     </property>
+    <property name="text">
+     <string>1</string>
+    </property>
    </widget>
    <widget class="QCustomPlot" name="plotSvsX" native="true">
     <property name="geometry">
      <rect>
-      <x>70</x>
-      <y>490</y>
-      <width>541</width>
-      <height>151</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QCustomPlot" name="plotVel" native="true">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>660</y>
-      <width>541</width>
-      <height>151</height>
+      <x>50</x>
+      <y>470</y>
+      <width>591</width>
+      <height>331</height>
      </rect>
     </property>
    </widget>
@@ -971,8 +1009,8 @@
    <widget class="QPushButton" name="btnPlotarSolucao">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>240</y>
+      <x>460</x>
+      <y>280</y>
       <width>171</width>
       <height>24</height>
      </rect>
@@ -984,8 +1022,8 @@
    <widget class="QPushButton" name="btnRelatorio">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>270</y>
+      <x>460</x>
+      <y>310</y>
       <width>171</width>
       <height>24</height>
      </rect>
@@ -994,13 +1032,39 @@
      <string>Relatório</string>
     </property>
    </widget>
+   <widget class="QLineEdit" name="leTempo">
+    <property name="geometry">
+     <rect>
+      <x>520</x>
+      <y>210</y>
+      <width>113</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>24</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_32">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>210</y>
+      <width>61</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Tempo(h):</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1189</width>
+     <width>1200</width>
      <height>21</height>
     </rect>
    </property>

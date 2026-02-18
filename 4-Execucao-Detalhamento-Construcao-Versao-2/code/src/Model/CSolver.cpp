@@ -28,52 +28,77 @@ void CSolver::setWelge(CWelge* welge) {
 }
 
 // --- Motor Matemático (Lógica Principal) ---
-void CSolver::calcularPerfilSaturacao(double tempoInjetado) {
+void CSolver::calcularPerfilSaturacao(double tempoInjetado, double _vazaoInjecao, double _area) {
     if (!_malha || !_calc || !_welge) return;
 
-    // 1. Reset da Simulação
+    // Reset e preparação
     _malha->limpar();
-    _malha->setTempoAtual(tempoInjetado); // t_D (PVI) [cite: 520, 562]
+    _malha->setTempoAtual(tempoInjetado); // t_D (PVI)
 
-    // 2. Cálculo da Frente de Choque (Welge / Rankine-Hugoniot)
-    // Determina a saturação Swf que encerra a zona de rarefação [cite: 592, 608]
-    bool choqueEncontrado = _welge->calcularTangente(_calc);
-    double swFrente = _welge->getSwFrente();
-    double velocidadeChoque = _welge->getInclinacaoChoque(); // v_sigma = f'(Swf) [cite: 602]
 
-    // 3. Construção do Perfil via MOC (Método das Características)
-    // Substituição do loop double por inteiro para evitar warnings de precisão
+    // 1) Construir MOC: calcular velocidades características e posições para cada Sw
     double passoSw = 0.005;
     int numPontos = static_cast<int>(1.0 / passoSw);
+
+    // Vetores temporários para armazenar Sw, velocidade característica e posição
+    std::vector<double> vecSw;
+    std::vector<double> vecVel;
+    std::vector<double> vecPos;
+    vecSw.reserve(numPontos + 1);
+    vecVel.reserve(numPontos + 1);
+    vecPos.reserve(numPontos + 1);
 
     for (int i = 0; i <= numPontos; ++i) {
         double sw = i * passoSw;
         if (sw > 1.0) sw = 1.0;
+        double vel = _calc->calcularDerivadaFw(sw, _vazaoInjecao, _area); // velocidade característica f'(Sw)
+        double pos = vel * tempoInjetado; // xD = v_c * tD
 
-        double velocidadeOnda = 0.0;
-
-        // --- Aplicação da Condição de Entropia ---
-        // Saturações menores que a frente (Sw < Swf) são instáveis e "caem" no choque.
-        // Elas viajam à velocidade da frente, criando a descontinuidade vertical[cite: 588, 592].
-        if (choqueEncontrado && sw < swFrente) {
-            velocidadeOnda = velocidadeChoque;
-        }
-        else {
-            // Região de Rarefação: Sw >= Swf
-            // Cada saturação viaja à sua própria velocidade característica f'(Sw)[cite: 560, 590].
-            velocidadeOnda = _calc->calcularDerivadaFw(sw);
-        }
-
-        // --- Cálculo da Posição Adimensional (xD = v * tD) ---
-        // Aqui tempoInjetado deve ser tD (Volume de Poros Injetados - PVI)[cite: 519, 562].
-        double posicaoX = velocidadeOnda * tempoInjetado;
-
-        // Adiciona o ponto à malha para visualização
-        _malha->adicionarCelula(CCelula(sw, posicaoX, velocidadeOnda));
+        vecSw.push_back(sw);
+        vecVel.push_back(vel);
+        vecPos.push_back(pos);
     }
 
-    // 4. Estabilização do Perfil
-    // Ordenar por posição garante que o gráfico desenhe a frente corretamente,
-    // especialmente se houver efeitos de gravidade que alterem a monotonicidade[cite: 224, 442].
+    // 2) Determinar se existe choque aplicável (Welge) e obter Swf e velocidade do choque
+    // Nota: calculamos MOC primeiro e em seguida verificamos a necessidade física do choque.
+    bool choqueEncontrado = _welge->calcularTangente(_calc);
+    double swFrente = _welge->getSwFrente();
+    double velocidadeChoque = _welge->getInclinacaoChoque();
+
+    // 3) Verificar condição de entropia / cruzamento de características
+    // Simples heurística: se algum ponto com Sw < Swf possui posicao maior que
+    // o ponto em Swf, então há cruzamento e o choque é relevante.
+    bool cruzamento = false;
+    double posSwFrente = 0.0;
+    for (size_t i = 0; i < vecSw.size(); ++i) {
+        if (vecSw[i] >= swFrente) {
+            posSwFrente = vecPos[i];
+            break;
+        }
+    }
+    for (size_t i = 0; i < vecSw.size(); ++i) {
+        if (vecSw[i] < swFrente && vecPos[i] > posSwFrente + 1e-12) {
+            cruzamento = true;
+            break;
+        }
+    }
+
+    // 4) Preencher a malha: aplicar choque somente se ele for físico (cruzamento + choqueEncontrado)
+    for (size_t i = 0; i < vecSw.size(); ++i) {
+        double sw = vecSw[i];
+        double pos = vecPos[i];
+        double vel = vecVel[i];
+
+        if (choqueEncontrado && cruzamento && sw < swFrente) {
+            // Região colapsada: todas as saturações menores que Swf são representadas
+            // pela posição do choque
+            pos = velocidadeChoque * tempoInjetado;
+            vel = velocidadeChoque;
+        }
+
+        _malha->adicionarCelula(CCelula(sw, pos, vel));
+    }
+
+    // Ordenar por posição para garantir plot contínuo
     _malha->ordenarPorPosicao();
 }

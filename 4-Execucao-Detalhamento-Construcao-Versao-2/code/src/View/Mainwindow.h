@@ -43,6 +43,7 @@ private:
     void sincronizarDadosComSimulador();
     void configurarGraficos();
     void plotarResultados();
+    double obterSaturacaoOleoResidualUI() const;
     double obterSaturacaoInicialUI() const;
 };
 

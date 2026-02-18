@@ -26,6 +26,9 @@ private:
     double _swMedia;       ///< Saturação média atrás da frente (útil para recuperação).
     double _swInicial;     ///< Saturação inicial de água no reservatório (Swir).
     double _inclinacaoMax; ///< Armazena o valor da inclinação da reta tangente.
+    // Parâmetros de operação fornecidos pela UI/Simulador
+    double _vazaoInjecao;  ///< Vazão de injeção (m3/s ou unidade definida pelo sistema).
+    double _area;          ///< Área da seção transversal (m2).
 
 public:
     /**
@@ -43,6 +46,8 @@ public:
      * @param swi Geralmente igual à saturação irredutível (Swir).
      */
     void setSwInicial(double swi);
+    void setvazaoInjecao(double vazaoInjecao);
+    void setarea(double area);
 
     /**
      * @brief Executa o algoritmo de busca da tangente.
