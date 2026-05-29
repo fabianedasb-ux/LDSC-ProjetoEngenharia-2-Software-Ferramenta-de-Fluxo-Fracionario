@@ -1,0 +1,277 @@
+\doxysection{CCalculadora\+Fluxo\+Fracionario Class Reference}
+\hypertarget{class_c_calculadora_fluxo_fracionario}{}\label{class_c_calculadora_fluxo_fracionario}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+
+
+Responsável pelos cálculos pontuais do fluxo fracionário e suas derivadas numéricas.  
+
+
+
+
+{\ttfamily \+\#include $<$CCalculadora\+Fluxo\+Fracionario.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7aa1e41e21e5a452957b589a0b83ee7a}{CCalculadora\+Fluxo\+Fracionario}} (double mu\+\_\+o, double mu\+\_\+w, \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}modelo, double g=9.\+80665)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da calculadora física. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_ab7bd7b12a22e7f92b8a81a031f4f1725}{set\+Propriedades}} (double mi\+\_\+w, double mi\+\_\+o, double rho\+\_\+w, double rho\+\_\+o, double k, double angulo, double qt, double A)
+\begin{DoxyCompactList}\small\item\em Injeta e atualiza as propriedades físicas necessárias para o balanço de forças. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_aefe3fe5c76e18b57b0e6493feb2b7ddd}{set\+Modelo\+Permeabilidade}} (\doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}modelo)
+\begin{DoxyCompactList}\small\item\em Modifica dinamicamente a estratégia de permeabilidade relativa. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_aec2d92fb459c025b5541a1409308df3f}{calcular\+Rapoport\+Leas}} (double L, double phi, double sigma) const
+\begin{DoxyCompactList}\small\item\em Avalia o critério macroscópico de estabilidade capilar (Rapoport-\/\+Leas). $ N_{RL} = \left( \frac{\phi}{k} \right)^{1/2} \frac{L \cdot u_t \cdot \mu_w}{\sigma \cdot k_{rw}^0 \cdot \cos(\theta)} $. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7684ac31bd665e8550f5b0f4bc145e49}{calcular\+M0}} () const
+\begin{DoxyCompactList}\small\item\em Calcula a Razão de Mobilidade Global no Ponto Final ( $ M^0 $). $ M^0 = \frac{k_{rw}^0 / \mu_w}{k_{ro}^0 / \mu_o} $. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_ae1de0c8e265d08f552bf28ebf218e803}{calcular\+Ng0}} () const
+\begin{DoxyCompactList}\small\item\em Calcula o Número de Gravidade no Ponto Final ( $ N_g^0 $). Analisa a razão entre as forças gravitacionais e as forças viscosas tratoras. $ N_g^0 = \frac{k \cdot k_{ro}^0 \cdot \Delta\rho \cdot g}{u_t \cdot \mu_o} $. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}{calcular\+Fw}} (double sw) const
+\begin{DoxyCompactList}\small\item\em Computa a taxa de fluxo fracionário instantâneo ( $ f_w $). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a699114726007ef5b2f718363ab6dfdfd}{calcular\+Derivada\+Fw}} (double sw)
+\begin{DoxyCompactList}\small\item\em Avalia a velocidade adimensional da frente de avanço ( $ f_w\textnormal{\textquotesingle} $). Utiliza o método de diferenças finitas centrais de alta ordem para evitar ruído. \end{DoxyCompactList}\item 
+std::\+map$<$ double, double $>$ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a38d0c42cc3d4f1fe5cacd475087e34ea}{gerar\+Curva\+Completa}} (double passo) const
+\begin{DoxyCompactList}\small\item\em Discretiza a curva completa de fluxo fracionário. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsável pelos cálculos pontuais do fluxo fracionário e suas derivadas numéricas. 
+
+Esta classe implementa a equação constitutiva do fluxo fracionário (Buckley-\/\+Leverett generalizado), acoplando os efeitos de forças viscosas e gravitacionais no escoamento bifásico incompressível.
+
+A equação matemática governante implementada é:\+ $ f_w = \frac{1 - \frac{k \cdot k_{ro}}{u_t \cdot \mu_o} \Delta\rho \cdot g \cdot \sin(\alpha)}{1 + \frac{k_{ro}}{k_{rw}} \frac{\mu_w}{\mu_o}} $
+
+Onde:\+
+\begin{DoxyItemize}
+\item $ f_w $ é a fração do fluxo total correspondente à água.
+\item $ \alpha $ é o ângulo de mergulho do reservatório.
+\item $ u_t $ é a velocidade total de Darcy.
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8h_source}{CCalculadora\+Fluxo\+Fracionario.\+h}}.
+
+
+
+\label{class_c_calculadora_fluxo_fracionario_doc-constructors}
+\Hypertarget{class_c_calculadora_fluxo_fracionario_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_calculadora_fluxo_fracionario_a7aa1e41e21e5a452957b589a0b83ee7a}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{CCalculadoraFluxoFracionario()}{CCalculadoraFluxoFracionario()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_a7aa1e41e21e5a452957b589a0b83ee7a} 
+CCalculadora\+Fluxo\+Fracionario::\+\+CCalculadora\+Fluxo\+Fracionario (\begin{DoxyParamCaption}\item[{double}]{mu\+\_\+o}{, }\item[{double}]{mu\+\_\+w}{, }\item[{\doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}}]{modelo}{, }\item[{double}]{g}{ = {\ttfamily 9.80665}}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da calculadora física. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mu\+\_\+o} & Viscosidade do óleo. \\
+\hline
+{\em mu\+\_\+w} & Viscosidade da água. \\
+\hline
+{\em modelo} & Ponteiro alocado para o modelo matemático de rocha-\/fluido. \\
+\hline
+{\em g} & Constante de aceleração gravitacional (Default = 9.\+80665 m/\+s²). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+
+
+\label{class_c_calculadora_fluxo_fracionario_doc-func-members}
+\Hypertarget{class_c_calculadora_fluxo_fracionario_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_calculadora_fluxo_fracionario_a699114726007ef5b2f718363ab6dfdfd}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!calcularDerivadaFw@{calcularDerivadaFw}}
+\index{calcularDerivadaFw@{calcularDerivadaFw}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularDerivadaFw()}{calcularDerivadaFw()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_a699114726007ef5b2f718363ab6dfdfd} 
+double CCalculadora\+Fluxo\+Fracionario::\+calcular\+Derivada\+Fw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption})}
+
+
+
+Avalia a velocidade adimensional da frente de avanço ( $ f_w\textnormal{\textquotesingle} $). Utiliza o método de diferenças finitas centrais de alta ordem para evitar ruído. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação local de água. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A derivada direcional $ \frac{df_w}{dS_w} $. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00120}{120}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!calcularFw@{calcularFw}}
+\index{calcularFw@{calcularFw}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularFw()}{calcularFw()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885} 
+double CCalculadora\+Fluxo\+Fracionario::\+calcular\+Fw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const}
+
+
+
+Computa a taxa de fluxo fracionário instantâneo ( $ f_w $). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação local de água no volume de controle. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fração do fluxo, tipicamente entre 0 e 1. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00096}{96}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_a7684ac31bd665e8550f5b0f4bc145e49}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!calcularM0@{calcularM0}}
+\index{calcularM0@{calcularM0}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularM0()}{calcularM0()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_a7684ac31bd665e8550f5b0f4bc145e49} 
+double CCalculadora\+Fluxo\+Fracionario::\+calcular\+M0 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Calcula a Razão de Mobilidade Global no Ponto Final ( $ M^0 $). $ M^0 = \frac{k_{rw}^0 / \mu_w}{k_{ro}^0 / \mu_o} $. 
+
+\begin{DoxyReturn}{Returns}
+Valor adimensional indicando a estabilidade do deslocamento pistonado. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00076}{76}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_ae1de0c8e265d08f552bf28ebf218e803}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!calcularNg0@{calcularNg0}}
+\index{calcularNg0@{calcularNg0}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularNg0()}{calcularNg0()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_ae1de0c8e265d08f552bf28ebf218e803} 
+double CCalculadora\+Fluxo\+Fracionario::\+calcular\+Ng0 (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Calcula o Número de Gravidade no Ponto Final ( $ N_g^0 $). Analisa a razão entre as forças gravitacionais e as forças viscosas tratoras. $ N_g^0 = \frac{k \cdot k_{ro}^0 \cdot \Delta\rho \cdot g}{u_t \cdot \mu_o} $. 
+
+\begin{DoxyReturn}{Returns}
+O escalar adimensional associado à segregação gravitacional. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00086}{86}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_aec2d92fb459c025b5541a1409308df3f}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!calcularRapoportLeas@{calcularRapoportLeas}}
+\index{calcularRapoportLeas@{calcularRapoportLeas}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{calcularRapoportLeas()}{calcularRapoportLeas()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_aec2d92fb459c025b5541a1409308df3f} 
+double CCalculadora\+Fluxo\+Fracionario::\+calcular\+Rapoport\+Leas (\begin{DoxyParamCaption}\item[{double}]{L}{, }\item[{double}]{phi}{, }\item[{double}]{sigma}{}\end{DoxyParamCaption}) const}
+
+
+
+Avalia o critério macroscópico de estabilidade capilar (Rapoport-\/\+Leas). $ N_{RL} = \left( \frac{\phi}{k} \right)^{1/2} \frac{L \cdot u_t \cdot \mu_w}{\sigma \cdot k_{rw}^0 \cdot \cos(\theta)} $. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em L} & Comprimento característico do sistema \+[m]\+. \\
+\hline
+{\em phi} & Porosidade efetiva da rocha \+[fração]\+. \\
+\hline
+{\em sigma} & Tensão interfacial água-\/óleo \+[m\+N/\+m ou dinas/\+cm]\+. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O escalar do número de Rapoport-\/\+Leas. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00060}{60}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_a38d0c42cc3d4f1fe5cacd475087e34ea}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!gerarCurvaCompleta@{gerarCurvaCompleta}}
+\index{gerarCurvaCompleta@{gerarCurvaCompleta}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{gerarCurvaCompleta()}{gerarCurvaCompleta()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_a38d0c42cc3d4f1fe5cacd475087e34ea} 
+std::\+map$<$ double, double $>$ CCalculadora\+Fluxo\+Fracionario::\+gerar\+Curva\+Completa (\begin{DoxyParamCaption}\item[{double}]{passo}{}\end{DoxyParamCaption}) const}
+
+
+
+Discretiza a curva completa de fluxo fracionário. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em passo} & Incremento de saturação (ex:\+ \$\textbackslash{}\+Delta S\+\_\+w = 0.\+01\$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Um dicionário (map) relacionando ordenadamente Saturações a Fluxos Fracionários. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00129}{129}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_aefe3fe5c76e18b57b0e6493feb2b7ddd}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!setModeloPermeabilidade@{setModeloPermeabilidade}}
+\index{setModeloPermeabilidade@{setModeloPermeabilidade}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{setModeloPermeabilidade()}{setModeloPermeabilidade()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_aefe3fe5c76e18b57b0e6493feb2b7ddd} 
+void CCalculadora\+Fluxo\+Fracionario::\+set\+Modelo\+Permeabilidade (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}} \texorpdfstring{$\ast$}{*}}]{modelo}{}\end{DoxyParamCaption})}
+
+
+
+Modifica dinamicamente a estratégia de permeabilidade relativa. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em modelo} & Ponteiro para a nova interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00053}{53}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+\Hypertarget{class_c_calculadora_fluxo_fracionario_ab7bd7b12a22e7f92b8a81a031f4f1725}\index{CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}!setPropriedades@{setPropriedades}}
+\index{setPropriedades@{setPropriedades}!CCalculadoraFluxoFracionario@{CCalculadoraFluxoFracionario}}
+\doxysubsubsection{\texorpdfstring{setPropriedades()}{setPropriedades()}}
+{\footnotesize\ttfamily \label{class_c_calculadora_fluxo_fracionario_ab7bd7b12a22e7f92b8a81a031f4f1725} 
+void CCalculadora\+Fluxo\+Fracionario::\+set\+Propriedades (\begin{DoxyParamCaption}\item[{double}]{mi\+\_\+w}{, }\item[{double}]{mi\+\_\+o}{, }\item[{double}]{rho\+\_\+w}{, }\item[{double}]{rho\+\_\+o}{, }\item[{double}]{k}{, }\item[{double}]{angulo}{, }\item[{double}]{qt}{, }\item[{double}]{A}{}\end{DoxyParamCaption})}
+
+
+
+Injeta e atualiza as propriedades físicas necessárias para o balanço de forças. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mi\+\_\+w} & Viscosidade da água \+[cP]\+. \\
+\hline
+{\em mi\+\_\+o} & Viscosidade do óleo \+[cP]\+. \\
+\hline
+{\em rho\+\_\+w} & Densidade da água \+[kg/\+m³]\+. \\
+\hline
+{\em rho\+\_\+o} & Densidade do óleo \+[kg/\+m³]\+. \\
+\hline
+{\em k} & Permeabilidade absoluta \+[mD]\+. \\
+\hline
+{\em angulo} & Inclinação do estrato em graus (convertido para radianos internamente). \\
+\hline
+{\em qt} & Vazão de injeção \+[m³/\+d]\+. \\
+\hline
+{\em A} & Área da seção \+[m²]\+. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp_source}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8h}{CCalculadora\+Fluxo\+Fracionario.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8cpp}{CCalculadora\+Fluxo\+Fracionario.\+cpp}}\end{DoxyCompactItemize}

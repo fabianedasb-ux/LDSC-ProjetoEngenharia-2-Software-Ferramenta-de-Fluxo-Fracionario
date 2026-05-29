@@ -1,6 +1,8 @@
 /**
  * @file CSimulador.cpp
- * @brief Implementação do controlador CSimulador.
+ * @brief Implementação da integração e gestão do fluxo MVC analítico.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CSimulador.h"
@@ -13,39 +15,38 @@ CSimulador::CSimulador()
     : _comprimento(100.0), _area(1.0), _porosidade(0.2), _angulo(0.0), _vazaoInjecao(1.0),
     _mi_o(1.0), _mi_w(1.0), _rho_o(800.0), _rho_w(1000.0), _k(1.0e-12)
 {
-    // 1. Criamos um modelo padrão (ex: Corey) primeiro
+    // Construção inicial da dependência forte (modelo padrão)
     _modeloPermeabilidade = new CCurvasPermeabilidadeCorey();
 
-    // 2. Agora passamos esse modelo válido para a calculadora
+    // Cascata de inicialização das instâncias dependentes
     _calculadora = new CCalculadoraFluxoFracionario(_mi_o, _mi_w, _modeloPermeabilidade);
-
     _welge = new CWelge();
     _malha = new CMalha();
     _solver = new CSolver();
 
+    // Acoplamento da malha de comunicação do motor
     _solver->setMalha(_malha);
     _solver->setCalculadora(_calculadora);
     _solver->setWelge(_welge);
 }
 
-// --- Destrutor ---
+// --- Destrutor Seguro ---
 CSimulador::~CSimulador() {
-    // Libera a memória na ordem inversa de dependência (boa prática)
-
+    // Destruição LIFO (Last-In-First-Out) para garantir segurança de ponteiros nulos
     if (_solver) delete _solver;
     if (_malha) delete _malha;
     if (_welge) delete _welge;
     if (_calculadora) delete _calculadora;
 
-    // O modelo de permeabilidade é deletado por último pois a calculadora o usa
+    // A política de interface de curvas só pode ser descartada no fim
     if (_modeloPermeabilidade) delete _modeloPermeabilidade;
 }
 
-// --- Setters de Dados ---
+// --- Delegação de Configurações ---
 
 void CSimulador::setDadosReservatorio(double L, double A, double phi, double angulo, double vazao) {
     if (L <= 0 || A <= 0 || phi <= 0 || vazao <= 0) {
-        throw std::invalid_argument("CSimulador: Parametros geometricos devem ser positivos.");
+        throw std::invalid_argument("Exceção Simulador: Topologia espacial fisicamente inconsistente (valores nulos).");
     }
     _comprimento = L;
     _area = A;
@@ -64,7 +65,7 @@ double CSimulador::getPorosidade() const {
 
 void CSimulador::setFluidos(double mi_o, double mi_w, double rho_o, double rho_w) {
     if (mi_o <= 0 || mi_w <= 0) {
-        throw std::invalid_argument("CSimulador: Viscosidades devem ser positivas.");
+        throw std::invalid_argument("Exceção Simulador: As propriedades termodinâmicas (Viscosidade) não podem ser nulas.");
     }
     _mi_o = mi_o;
     _mi_w = mi_w;
@@ -74,7 +75,7 @@ void CSimulador::setFluidos(double mi_o, double mi_w, double rho_o, double rho_w
 
 void CSimulador::setPermeabilidade(double k) {
     if (k <= 0) {
-        throw std::invalid_argument("CSimulador: Permeabilidade deve ser positiva.");
+        throw std::invalid_argument("Exceção Simulador: Permeabilidade não convergente para o modelo.");
     }
     _k = k;
 }
@@ -82,45 +83,43 @@ void CSimulador::setPermeabilidade(double k) {
 void CSimulador::setModeloPermeabilidade(ICurvasPermeabilidade* modelo) {
     if (modelo == nullptr) return;
 
-    // Se já existia um modelo anterior, deleta para evitar vazamento de memória
+    // Prevenção crítica contra vazamento de memória ram (Memory Leak)
     if (_modeloPermeabilidade != nullptr) {
         delete _modeloPermeabilidade;
     }
 
     _modeloPermeabilidade = modelo;
 
-    // Atualiza a calculadora com a nova estratégia
+    // Repasse da alteração contextual à calculadora termodinâmica
     if (_calculadora) {
         _calculadora->setModeloPermeabilidade(_modeloPermeabilidade);
     }
 }
 
-// --- Execução ---
+// --- Chamada Principal de Execução ---
 
-void CSimulador::executarSimulacao(double tempoInjetado,double qt,double A ) {
+void CSimulador::executarSimulacao(double tempoInjetado, double swi, double sw_max) {
     if (!_modeloPermeabilidade) {
-        throw std::runtime_error("CSimulador: Modelo de permeabilidade nao definido.");
+        throw std::runtime_error("Exceção Simulador: Impossível realizar varredura sem um algoritmo de curvas definido.");
     }
-    const double tensao_interfacial = 0.03;
 
-    double nrl = _calculadora->calcularRapoportLeas(_comprimento, _porosidade, tensao_interfacial, 0.8, qt, A);
+    const double tensao_interfacial = 0.03; // N/m típico para sistemas rocha-óleo-água
+
+    // Check-sum analítico: O número de Rapoport-Leas avalia se as forças capilares
+    // estabilizam a onda, ou se o deslocamento requer correção difusiva
+    double nrl = _calculadora->calcularRapoportLeas(_comprimento, _porosidade, tensao_interfacial);
     if (nrl < 3.0) {
-        // Aqui você pode disparar um sinal para a GUI ou registrar um log de aviso
-        std::cerr << "AVISO: Numero de Rapoport-Leas (" << nrl << ") < 3.0." << std::endl;
-        std::cerr << "A interferencia da pressao capilar e significativa. Os resultados podem ser imprecisos." << std::endl;
+        std::cerr << "AVISO GEOLÓGICO: Número de Rapoport-Leas (" << nrl << ") < 3.0. A assunção de forças viscosas dominantes pode ser imprecisa neste reservatório." << std::endl;
     }
 
-    // 3. Configuração da Calculadora
-    // Passamos a velocidade de Darcy e o ângulo para o cálculo do Número de Gravidade (Ng) [cite: 440]
-    // Usa a permeabilidade _k que foi carregada da UI via setPermeabilidade()
+    // Sincroniza estado de massa e geometria para a GPU virtual
     _calculadora->setPropriedades(_mi_w, _mi_o, _rho_w, _rho_o, _k, _angulo, _vazaoInjecao, _area);
 
-    // 4. Execução do Solver
-    // O solver aplicará o MOC e a Condição de Entropia de Rankine-Hugoniot [cite: 538, 600]
-    _solver->calcularPerfilSaturacao(tempoInjetado, _vazaoInjecao, _area);
+    // Delega os esforços resolutivos para a rotina abstrata
+    _solver->calcularPerfilSaturacao(tempoInjetado, swi, sw_max);
 }
 
-// --- Getters ---
+// --- Getters Internos ---
 
 CMalha* CSimulador::getMalha() const {
     return _malha;

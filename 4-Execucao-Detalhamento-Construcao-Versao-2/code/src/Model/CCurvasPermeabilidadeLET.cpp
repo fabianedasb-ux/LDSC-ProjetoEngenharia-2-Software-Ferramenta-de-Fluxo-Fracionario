@@ -1,6 +1,8 @@
 /**
  * @file CCurvasPermeabilidadeLET.cpp
- * @brief Implementação dos métodos da classe CCurvasPermeabilidadeLET.
+ * @brief Implementação dos métodos e equações do modelo CCurvasPermeabilidadeLET.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CCurvasPermeabilidadeLET.h"
@@ -20,9 +22,9 @@ CCurvasPermeabilidadeLET::CCurvasPermeabilidadeLET(double Lw, double Ew, double 
 
 // --- Construtor Vazio ---
 CCurvasPermeabilidadeLET::CCurvasPermeabilidadeLET()
-    : _Lw(0), _Ew(0), _Tw(0),
-    _Lo(0), _Eo(0), _To(0),
-    _Swirr(0), _Sor(0)
+    : _Lw(0.0), _Ew(0.0), _Tw(0.0),
+    _Lo(0.0), _Eo(0.0), _To(0.0),
+    _Swirr(0.0), _Sor(0.0)
 {
 }
 
@@ -30,18 +32,17 @@ CCurvasPermeabilidadeLET::CCurvasPermeabilidadeLET()
 CCurvasPermeabilidadeLET::~CCurvasPermeabilidadeLET() {
 }
 
-// --- Métodos da Interface ---
+// --- Implementação da Interface ICurvasPermeabilidade ---
 
 void CCurvasPermeabilidadeLET::carregarDados(const std::string& arquivo) {
     std::ifstream in(arquivo);
     if (!in.is_open()) {
-        throw std::runtime_error("Erro LET: Nao foi possivel abrir o arquivo: " + arquivo);
+        throw std::runtime_error("Exceção LET: Não foi possível localizar ou abrir o arquivo: " + arquivo);
     }
 
-    // Ordem esperada no arquivo .txt (8 valores):
-    // Lw Ew Tw Lo Eo To Swirr Sor
+    // Leitura estrita dos 8 parâmetros do modelo LET
     if (!(in >> _Lw >> _Ew >> _Tw >> _Lo >> _Eo >> _To >> _Swirr >> _Sor)) {
-        throw std::runtime_error("Erro LET: Formato de arquivo invalido. Esperado: Lw Ew Tw Lo Eo To Swirr Sor");
+        throw std::runtime_error("Exceção LET: Formato numérico corrompido. Esperado: Lw Ew Tw Lo Eo To Swirr Sor");
     }
 
     in.close();
@@ -51,18 +52,15 @@ double CCurvasPermeabilidadeLET::getKrw(double Sw) const {
     double denominador = 1.0 - _Swirr - _Sor;
     if (denominador <= 1e-6) return 0.0;
 
-    // Saturação normalizada
+    // Normalização da saturação
     double Swn = (Sw - _Swirr) / denominador;
 
-    // Limites físicos
+    // Condições físicas de contorno
     if (Swn <= 0.0) return 0.0;
-    if (Swn >= 1.0) return 1.0; // Assume-se endpoint=1 se não especificado diferente no LET puro
+    if (Swn >= 1.0) return 1.0;
 
-    // Termos da equação LET para água
-    // Numerador: Swn^L
+    // Motor matemático LET para a água
     double num = std::pow(Swn, _Lw);
-
-    // Denominador: Swn^L + E * (1-Swn)^T
     double term2 = _Ew * std::pow(1.0 - Swn, _Tw);
 
     return num / (num + term2);
@@ -72,18 +70,15 @@ double CCurvasPermeabilidadeLET::getKro(double Sw) const {
     double denominador = 1.0 - _Swirr - _Sor;
     if (denominador <= 1e-6) return 0.0;
 
-    // Saturação normalizada
+    // Normalização da saturação
     double Swn = (Sw - _Swirr) / denominador;
 
-    // Limites físicos
-    if (Swn <= 0.0) return 1.0; // Assume-se endpoint=1
+    // Condições físicas de contorno
+    if (Swn <= 0.0) return 1.0;
     if (Swn >= 1.0) return 0.0;
 
-    // Termos da equação LET para óleo
-    // Numerador: (1-Swn)^L
+    // Motor matemático LET para o óleo
     double num = std::pow(1.0 - Swn, _Lo);
-
-    // Denominador: (1-Swn)^L + E * Swn^T
     double term2 = _Eo * std::pow(Swn, _To);
 
     return num / (num + term2);

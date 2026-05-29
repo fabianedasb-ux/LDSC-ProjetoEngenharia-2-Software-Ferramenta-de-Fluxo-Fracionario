@@ -1,0 +1,87 @@
+\doxysection{Main\+Window Class Reference}
+\hypertarget{class_main_window}{}\label{class_main_window}\index{MainWindow@{MainWindow}}
+
+
+Camada de Apresentação (View) do simulador analítico.  
+
+
+
+
+{\ttfamily \+\#include $<$Mainwindow.\+h$>$}
+
+Inheritance diagram for Main\+Window:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_main_window}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_main_window_a996c5a2b6f77944776856f08ec30858d}{Main\+Window}} (QWidget \texorpdfstring{$\ast$}{*}parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Construtor padrão da interface gráfica. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}{\texorpdfstring{$\sim$}{\string~}\+Main\+Window}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual. Libera a interface de usuário (UI) e a instância do simulador alocada. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Camada de Apresentação (View) do simulador analítico. 
+
+Esta classe herda de QMain\+Window e é responsável por toda a interação direta com o usuário. Ela coleta os parâmetros petrofísicos e de fluidos, repassa-\/os ao Controlador (\doxylink{class_c_simulador}{CSimulador}), e gerencia a atualização visual dos painéis de gráficos (\doxylink{class_q_custom_plot}{QCustom\+Plot}) e dos relatórios.
+
+Além disso, a classe implementa um gerenciador dinâmico de folhas de estilo (QSS) para alternância em tempo de execução entre os temas Claro e Escuro, garantindo conforto visual ergonômico.
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_mainwindow_8h_source_l00033}{33}} of file \doxymbox{\hyperlink{_mainwindow_8h_source}{Mainwindow.\+h}}.
+
+
+
+\label{class_main_window_doc-constructors}
+\Hypertarget{class_main_window_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_main_window_a996c5a2b6f77944776856f08ec30858d}\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\index{MainWindow@{MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{MainWindow()}{MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_a996c5a2b6f77944776856f08ec30858d} 
+Main\+Window::\+\+Main\+Window (\begin{DoxyParamCaption}\item[{QWidget \texorpdfstring{$\ast$}{*}}]{parent}{ = {\ttfamily nullptr}}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da interface gráfica. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Widget pai (opcional). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_mainwindow_8cpp_source_l00028}{28}} of file \doxymbox{\hyperlink{_mainwindow_8cpp_source}{Mainwindow.\+cpp}}.
+
+\Hypertarget{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7}\index{MainWindow@{MainWindow}!````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}}
+\index{````~MainWindow@{\texorpdfstring{$\sim$}{\string~}MainWindow}!MainWindow@{MainWindow}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}MainWindow()}{\string~MainWindow()}}
+{\footnotesize\ttfamily \label{class_main_window_ae98d00a93bc118200eeef9f9bba1dba7} 
+Main\+Window::\+\texorpdfstring{$\sim$}{\string~}\+Main\+Window (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destrutor virtual. Libera a interface de usuário (UI) e a instância do simulador alocada. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_mainwindow_8cpp_source_l00053}{53}} of file \doxymbox{\hyperlink{_mainwindow_8cpp_source}{Mainwindow.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+View/\+\doxymbox{\hyperlink{_mainwindow_8h}{Mainwindow.\+h}}\item 
+View/\+\doxymbox{\hyperlink{_mainwindow_8cpp}{Mainwindow.\+cpp}}\end{DoxyCompactItemize}

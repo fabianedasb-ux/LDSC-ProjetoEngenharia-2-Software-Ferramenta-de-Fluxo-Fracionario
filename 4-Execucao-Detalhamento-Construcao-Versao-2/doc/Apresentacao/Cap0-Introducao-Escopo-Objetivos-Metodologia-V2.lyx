@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -58,11 +58,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -94,6 +102,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -103,6 +112,18 @@ Introdução
 \begin_inset CommandInset label
 LatexCommand label
 name "cha:Introdução"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+Introdução 
+\end_layout
 
 \end_inset
 
@@ -160,12 +181,31 @@ O acesso ao conceito ocorreu através de autores modernos como Lake,
 .
  Embora fundamental,
  a aplicação analítica dessa teoria exige a resolução de equações diferenciais parciais através do Método das Características (MOC
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "MOC"
-description "Método das Características"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+MOC
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Método das Características
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -183,6 +223,18 @@ Escopo do problema
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Escopo-do-Problema"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+1.1 Escopo do problema
+\end_layout
 
 \end_inset
 
@@ -253,7 +305,40 @@ literal "true"
 
 \begin_layout Standard
 Por outro lado,
- as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG - 
+ as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+CMG
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\nospellcheck on
+\lang english
+Computer Modelling Group
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ - 
 \emph on
 \nospellcheck on
 \lang english
@@ -261,16 +346,6 @@ Computer Modelling Group
 \emph default
 \nospellcheck default
 \lang brazilian
-
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "CMG"
-description "Computer Modelling Group"
-literal "false"
-
-\end_inset
-
 ) são projetadas para modelos complexos e tridimensionais 
 \begin_inset CommandInset citation
 LatexCommand citep
@@ -299,11 +374,119 @@ literal "true"
 ,
  incluindo a especificação de requisitos,
  a modelagem matemática e algorítmica do Método das Características (MOC),
- a implementação do código-fonte utilizando o 
+ a implementação do código-fonte utilizando o Qt
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+Qt
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
 \emph on
-framework
+Qt Framework
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\emph on
+ framework
 \emph default
- Qt/C++ e a validação dos resultados através da comparação com a teoria analítica.
+/C++
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+C++
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\nospellcheck on
+\lang english
+Linguagem de programação de alto nível
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ e a validação dos resultados através da comparação com a teoria analítica.
+\end_layout
+
+\begin_layout Standard
+A escolha das tecnologias de implementação —
+ C++ e Qt framework —
+ fundamenta-se na necessidade de alta performance computacional e na portabilidade da interface gráfica.
+ Diferente de linguagens interpretadas,
+ o C++ oferece o controle de memória e a velocidade de execução necessárias para cálculos matemáticos complexos,
+ enquanto o Qt framework assegura a integridade da Interface Gráfica do Usuário (GUI 
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+GUI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Graphical User Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+- 
+\emph on
+Graphical User Interface
+\emph default
+) em diferentes sistemas operacionais.
 \end_layout
 
 \begin_layout Section
@@ -311,6 +494,18 @@ Objetivos
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Objetivos"
+
+\end_inset
+
+
+\begin_inset Index idx
+range none
+pageformat default
+status open
+
+\begin_layout Plain Layout
+1.2 Objetivos
+\end_layout
 
 \end_inset
 
@@ -369,7 +564,59 @@ Strategy
 
 \begin_layout Itemize
 Desenvolver a modelagem dinâmica do software,
- estruturando os algoritmos numéricos para o cálculo da curva de fluxo fracionário (
+ estruturando os algoritmos numéricos para o cálculo da curva de fluxo fracionário
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+f_{w}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+Fluxo fracion
+\backslash
+'{a}rio para 
+\backslash
+'{a}gua (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (
 \begin_inset Formula $f_{w}$
 \end_inset
 
@@ -382,6 +629,61 @@ Desenvolver a modelagem dinâmica do software,
 
 \begin_layout Itemize
 Implementar o método da construção da tangente de Welge para determinar a saturação da frente de choque (
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+S_{wf}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+Satura
+\backslash
+c{c}
+\backslash
+~{a}o de 
+\backslash
+'{a}gua da frente de choque (adimensional,
+ fração)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula $S_{wf}$
 \end_inset
 
@@ -389,21 +691,11 @@ Implementar o método da construção da tangente de Welge para determinar a sat
 \end_layout
 
 \begin_layout Itemize
-Construir a Interface Gráfica do Usuário (GUI - Graphical User Interface
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "GUI"
-description "Computer Modelling Group"
-literal "false"
-
-\end_inset
-
-) utilizando o 
+Construir a Interface Gráfica do Usuário (GUI) utilizando o Qt
 \emph on
-framework
+ framework
 \emph default
- Qt/C++,
+/C++,
  proporcionando uma experiência de uso intuitiva para a entrada de parâmetros (viscosidades,
  expoentes de saturação) e visualização de resultados.
 \end_layout
@@ -455,7 +747,64 @@ literal "true"
 \begin_layout Standard
 Para a operacionalização desses princípios,
  adotou-se a metodologia de projeto aplicada pelo Prof.
- André Bueno nas disciplinas de Introdução ao Projeto de Engenharia (LEP01348) e Projeto de Software Aplicado à Engenharia (LEP01449) da UENF.
+ André Bueno nas disciplinas de Introdução ao Projeto de Engenharia (LEP01348) e Projeto de Software Aplicado à Engenharia (LEP01449) da UENF
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+UENF
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Universidade Estadual do Norte Fluminense Darcy Ribeiro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
  Esta abordagem adapta o modelo clássico de ciclo de vida em etapas sequenciais e iterativas,
  conforme ilustrado na Figura 
 \begin_inset CommandInset ref
@@ -503,11 +852,11 @@ Ciclo de Planejamento e Detalhamento:
 \begin_layout Itemize
 Ciclo de Construção (Implementação):
  Consiste na codificação propriamente dita,
- utilizando a linguagem C++ e o 
+ utilizando a linguagem C++ e o Qt
 \emph on
-framework
+ framework
 \emph default
- Qt,
+,
  seguida das etapas de testes e validação dos resultados numéricos.
 \end_layout
 

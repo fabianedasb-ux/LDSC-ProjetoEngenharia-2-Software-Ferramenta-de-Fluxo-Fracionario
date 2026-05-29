@@ -1,0 +1,251 @@
+\doxysection{CCurvas\+Permeabilidade\+Chierici Class Reference}
+\hypertarget{class_c_curvas_permeabilidade_chierici}{}\label{class_c_curvas_permeabilidade_chierici}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+
+
+Implementação empírica do modelo exponencial de permeabilidade relativa de Chierici (1984).  
+
+
+
+
+{\ttfamily \+\#include $<$CCurvas\+Permeabilidade\+Chierici.\+h$>$}
+
+Inheritance diagram for CCurvas\+Permeabilidade\+Chierici:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_curvas_permeabilidade_chierici}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_a4ae92f2751d9c200adedfc658239bd10}{CCurvas\+Permeabilidade\+Chierici}} (double Aw, double Bw, double Ao, double Bo, double Swirr, double Sor, double krw\+Max, double kro\+Max)
+\begin{DoxyCompactList}\small\item\em Construtor principal parametrizado do modelo de Chierici. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0}{CCurvas\+Permeabilidade\+Chierici}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa instâncias temporárias com coeficientes nulos em memória. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_aa7c687d4c595b1925843536ff63fb101}{\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Chierici}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae445f2bb00a8194dd3b783c2f77442ec}{carregar\+Dados}} (const std::\+string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Carrega os coeficientes do modelo Chierici a partir de um arquivo em disco. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_a1038a4fa6fef8ca6e26d267b1dbff784}{get\+Krw}} (double Sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa contínua da água (\$k\+\_\+\{rw\}\$). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae81dd92d24eff07e3104a2c27fd3fb80}{get\+Kro}} (double Sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa contínua do óleo (\$k\+\_\+\{ro\}\$). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae205329eb2ebdad07a7ac455bbc08d7a}{get\+Swi}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação Irredutível. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_aabfbbc7d8f7c8d7cd97f534ff0b6d6a4}{get\+Sor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação de óleo residual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64}{\texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface. Fundamental em polimorfismo C++ para garantir a chamada em cascata dos destrutores e a destruição segura e completa das instâncias das classes derivadas na memória dinâmica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação empírica do modelo exponencial de permeabilidade relativa de Chierici (1984). 
+
+A classe concretiza as equações propostas por Chierici para descrever o escoamento bifásico no meio poroso. Diferentemente do modelo de Corey, o modelo de Chierici baseia-\/se em funções exponenciais de decaimento, sendo reconhecido pela elevada flexibilidade no ajuste da concavidade (curvature) das curvas experimentais.
+
+As equações adotadas são:\+
+\begin{DoxyItemize}
+\item $ k_{rw} = k_{rw,max} \cdot \exp\left(-A_w \cdot S_{wn}^{-B_w}\right) $
+\item $ k_{ro} = k_{ro,max} \cdot \exp\left(-A_o \cdot (1 - S_{wn})^{-B_o}\right) $
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source}{CCurvas\+Permeabilidade\+Chierici.\+h}}.
+
+
+
+\label{class_c_curvas_permeabilidade_chierici_doc-constructors}
+\Hypertarget{class_c_curvas_permeabilidade_chierici_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_chierici_a4ae92f2751d9c200adedfc658239bd10}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeChierici()}{CCurvasPermeabilidadeChierici()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_a4ae92f2751d9c200adedfc658239bd10} 
+CCurvas\+Permeabilidade\+Chierici::\+\+CCurvas\+Permeabilidade\+Chierici (\begin{DoxyParamCaption}\item[{double}]{Aw}{, }\item[{double}]{Bw}{, }\item[{double}]{Ao}{, }\item[{double}]{Bo}{, }\item[{double}]{Swirr}{, }\item[{double}]{Sor}{, }\item[{double}]{krw\+Max}{, }\item[{double}]{kro\+Max}{}\end{DoxyParamCaption})}
+
+
+
+Construtor principal parametrizado do modelo de Chierici. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Aw} & Parâmetro de decaimento (shape) para a água. \\
+\hline
+{\em Bw} & Parâmetro de curvatura (curvature) para a água. \\
+\hline
+{\em Ao} & Parâmetro de decaimento (shape) para o óleo. \\
+\hline
+{\em Bo} & Parâmetro de curvatura (curvature) para o óleo. \\
+\hline
+{\em Swirr} & Saturação irredutível de água. \\
+\hline
+{\em Sor} & Saturação residual de óleo. \\
+\hline
+{\em krw\+Max} & Valor escalar máximo admitido para \$k\+\_\+\{rw\}\$. \\
+\hline
+{\em kro\+Max} & Valor escalar máximo admitido para \$k\+\_\+\{ro\}\$. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeChierici()}{CCurvasPermeabilidadeChierici()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0} 
+CCurvas\+Permeabilidade\+Chierici::\+\+CCurvas\+Permeabilidade\+Chierici (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. Inicializa instâncias temporárias com coeficientes nulos em memória. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_aa7c687d4c595b1925843536ff63fb101}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!````~CCurvasPermeabilidadeChierici@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeChierici}}
+\index{````~CCurvasPermeabilidadeChierici@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeChierici}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeChierici()}{\string~CCurvasPermeabilidadeChierici()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_aa7c687d4c595b1925843536ff63fb101} 
+CCurvas\+Permeabilidade\+Chierici::\+\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Chierici (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da classe. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00030}{30}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+
+
+\label{class_c_curvas_permeabilidade_chierici_doc-func-members}
+\Hypertarget{class_c_curvas_permeabilidade_chierici_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_chierici_ae445f2bb00a8194dd3b783c2f77442ec}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_ae445f2bb00a8194dd3b783c2f77442ec} 
+void CCurvas\+Permeabilidade\+Chierici::\+carregar\+Dados (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carrega os coeficientes do modelo Chierici a partir de um arquivo em disco. 
+
+Lê 8 parâmetros na seguinte ordem estrita:\+ {\ttfamily Aw Bw Ao Bo Swirr Sor Kro\+Max Krw\+Max}
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & Caminho para o arquivo {\ttfamily .txt}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & Em caso de falha de I/\+O ou incompatibilidade numérica. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_ae81dd92d24eff07e3104a2c27fd3fb80}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!getKro@{getKro}}
+\index{getKro@{getKro}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_ae81dd92d24eff07e3104a2c27fd3fb80} 
+double CCurvas\+Permeabilidade\+Chierici::\+get\+Kro (\begin{DoxyParamCaption}\item[{double}]{Sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa contínua do óleo (\$k\+\_\+\{ro\}\$). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sw} & Saturação real da fase aquosa na célula analítica. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O escalar calculado de $ k_{ro} $. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00065}{65}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_a1038a4fa6fef8ca6e26d267b1dbff784}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_a1038a4fa6fef8ca6e26d267b1dbff784} 
+double CCurvas\+Permeabilidade\+Chierici::\+get\+Krw (\begin{DoxyParamCaption}\item[{double}]{Sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa contínua da água (\$k\+\_\+\{rw\}\$). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sw} & Saturação real da fase aquosa na célula analítica. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O escalar calculado de $ k_{rw} $. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source_l00049}{49}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp_source}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_aabfbbc7d8f7c8d7cd97f534ff0b6d6a4}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!getSor@{getSor}}
+\index{getSor@{getSor}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{getSor()}{getSor()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_aabfbbc7d8f7c8d7cd97f534ff0b6d6a4} 
+double CCurvas\+Permeabilidade\+Chierici::\+get\+Sor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação de óleo residual. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source_l00098}{98}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source}{CCurvas\+Permeabilidade\+Chierici.\+h}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_chierici_ae205329eb2ebdad07a7ac455bbc08d7a}\index{CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}!getSwi@{getSwi}}
+\index{getSwi@{getSwi}!CCurvasPermeabilidadeChierici@{CCurvasPermeabilidadeChierici}}
+\doxysubsubsection{\texorpdfstring{getSwi()}{getSwi()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_chierici_ae205329eb2ebdad07a7ac455bbc08d7a} 
+double CCurvas\+Permeabilidade\+Chierici::\+get\+Swi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação Irredutível. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source_l00095}{95}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h_source}{CCurvas\+Permeabilidade\+Chierici.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h}{CCurvas\+Permeabilidade\+Chierici.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp}{CCurvas\+Permeabilidade\+Chierici.\+cpp}}\end{DoxyCompactItemize}

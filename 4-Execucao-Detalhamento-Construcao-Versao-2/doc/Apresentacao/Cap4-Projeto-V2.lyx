@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,18 +10,16 @@
 \usepackage {longtable}
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
-
 % Comentar linhas abaixo se não estiver usando pacote abntex
 % ou se o pacote ainda não foi instalado.
 % neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
 %\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
 %\usepackage {helvet}
 %\renewcommand {\familydefault}{\sfdefault}
-
 % Para uso de listagens de código
 \usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
+% Informa que vai usar o pacote listings,
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
@@ -75,11 +73,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -111,6 +117,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -131,13 +138,26 @@ name "chap:Projeto-do-Sistema"
 \end_layout
 
 \begin_layout Standard
-Neste capítulo do projeto de engenharia veremos questões associadas ao projeto do sistema,
- incluindo protocolos,
- recursos,
- plataformas suportadas,
- inplicações nos diagramas feitos anteriormente,
- diagramas de componentes e implantação.
- Na segunda parte revisamos os diagramas levando em conta as decisões do projeto do sistema.
+Neste capítulo associado ao projeto de engenharia de software,
+ são apresentadas as decisões de alto nível e as especificações estruturais que transformam os requisitos conceituais em uma solução computacional executável.
+ Inicialmente,
+ estabelece-se o projeto do sistema por meio da definição de protocolos de comunicação,
+ alocação de recursos computacionais,
+ mecanismos de controle de fluxo e seleção detalhada das plataformas e bibliotecas tecnológicas.
+ Posteriormente,
+ detalha-se o projeto orientado a objeto,
+ quantificando os impactos dessas decisões de engenharia sobre os modelos estruturais,
+ dinâmicos,
+ atributos,
+ métodos,
+ heranças e associações desenvolvidos na fase de análise.
+ Por fim,
+ a infraestrutura física e lógica do software é consolidada através dos diagramas de componentes e de implantação,
+ culminando no planejamento de lançamentos (
+\emph on
+features
+\emph default
+) e na tabela de classificação do sistema.
 \end_layout
 
 \begin_layout Section
@@ -165,8 +185,37 @@ name "sec:Projeto-do-sistema"
 
 \begin_layout Standard
 Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
- qual envolve etapas como a definição dos protocolos,
- da interface API,
+ o qual envolve etapas como a definição dos protocolos,
+ da interface API
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+API
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Interface de Programação de Aplicações
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (Interface de Programação de Aplicações) ,
  o uso de recursos,
  a subdivisão do sistema em subsistemas,
  a alocação dos subsistemas ao hardware e a seleção das estruturas de controle,
@@ -181,22 +230,7 @@ Deve-se definir padrões de documentação,
  padrões para o nome das classes,
  padrões de retorno e de parâmetros em métodos,
  características da interface do usuário e características de desempenho.
- 
-\end_layout
-
-\begin_layout Standard
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "prog-UML-Rumbaugh,prog-UML-blaha"
-literal "true"
-
-\end_inset
-
-,
- o projeto do sistema é a estratégia de alto nível para resolver o problema e elaborar uma solução.
- Você deve se preocupar com itens como:
- 
+ O projeto do sistema constitui a estratégia de alto nível para resolver o problema de modelagem do fluxo fracionário e deslocamento bifásico imiscível.
 \end_layout
 
 \begin_layout Enumerate
@@ -221,14 +255,7 @@ Protocolos
 
 \begin_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos externos 
-\begin_inset Newline newline
-\end_inset
-
-(como dispositivos).
- Por exemplo:
- se o sistema envolve o uso dos nós de um cluster,
- devem ser considerados aspectos como o protocolo de comunicação entre os nós do cluster.
+Definição dos protocolos de comunicação entre os diversos elementos externos (como dispositivos):
 \begin_inset Separator latexpar
 \end_inset
 
@@ -237,17 +264,27 @@ Definição dos protocolos de comunicação entre os diversos elementos externos
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ por se tratar de um software científico do tipo 
+\emph on
+desktop
+\emph default
+ voltado para a execução local em estações de trabalho de engenharia,
+ não há integração direta com sensores,
+ nós de 
+\emph on
+clusters
+\emph default
+,
+ atuadores ou dispositivos de hardware externos via rede.
+ Portanto,
+ protocolos de comunicação de rede externa não são aplicáveis a esta arquitetura,
+ operando o sistema de forma isolada e autônoma.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Definição dos protocolos de comunicação entre os diversos elementos internos 
-\begin_inset Newline newline
-\end_inset
-
-(como objetos).
- 
+Definição dos protocolos de comunicação entre os diversos elementos internos (como objetos):
 \begin_inset Separator latexpar
 \end_inset
 
@@ -256,12 +293,30 @@ Definição dos protocolos de comunicação entre os diversos elementos internos
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a comunicação interobjeto ocorre de maneira síncrona através da invocação direta de métodos públicos e da passagem de referências e ponteiros na memória primária.
+ Adicionalmente,
+ a comunicação entre o motor matemático de cálculo e a interface gráfica é regida pelo protocolo de 
+\emph on
+Signals and Slots
+\emph default
+ (Sinais e 
+\emph on
+Slots
+\emph default
+),
+ nativo do 
+\emph on
+framework
+\emph default
+ adotado.
+ Esse mecanismo garante o desacoplamento entre as classes de visualização e as classes de modelo físico,
+ permitindo que eventos gerados na interface (como a alteração de um parâmetro) disparem atualizações automáticas nos subcomponentes de cálculo.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Definição da interface API de suas bibliotecas e sistemas.
+Definição da interface API de suas bibliotecas e sistemas:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -270,15 +325,57 @@ Definição da interface API de suas bibliotecas e sistemas.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a interface de programação de aplicação (API) interna é estruturada por meio de contratos rígidos de desenvolvimento baseados em classes abstratas e interfaces puramente virtuais.
+ A API do subsistema rocha-fluido é exposta pela interface 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+,
+ que define a assinatura obrigatória para o cálculo das permeabilidades relativas.
+ O motor matemático encapsula suas operações através da classe 
+\family typewriter
+\nospellcheck on
+CCalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+,
+ cuja API expõe métodos públicos de cálculo como 
+\family typewriter
+\nospellcheck on
+calcularFw(double sw)
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+calcularDerivadaFw(double sw)
+\family default
+\nospellcheck default
+.
+ A execução macroscópica é concentrada na API do resolvedor (
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+),
+ através do método 
+\family typewriter
+\nospellcheck on
+calcularPerfilSaturacao(double tempoInjetado,
+ double swi,
+ double sw_max)
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Definição do formato dos arquivos gerados pelo software.
- Por exemplo:
- prefira formatos abertos,
- como arquivos txt e xml.
+Definição do formato dos arquivos gerados pelo software:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -287,7 +384,62 @@ Definição do formato dos arquivos gerados pelo software.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ o software utiliza dois formatos distintos para a entrada e saída de dados.
+ Para a importação de dados externos associados ao modelo de permeabilidade relativa tabelada,
+ o sistema faz a leitura de arquivos de texto plano com codificação ASCII
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+ASCII
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+American Standard Code for Information Interchange
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+),
+ estruturados em colunas tabuladas para garantir legibilidade e portabilidade.
+ Para a saída de dados,
+ o sistema exporta relatórios executivos fechados no formato 
+\emph on
+Portable Document Format
+\emph default
+ (
+\family typewriter
+\nospellcheck on
+.pdf
+\family default
+\nospellcheck default
+),
+ gerados de forma nativa para documentar de maneira inalterável os parâmetros estáticos,
+ os diagnósticos adimensionais e os gráficos gerados.
 \end_layout
 
 \end_deeper
@@ -317,8 +469,7 @@ Recursos
 Identificação e alocação dos recursos globais,
  como os recursos do sistema serão alocados,
  utilizados,
- compartilhados e liberados.
- Implicam modificações no diagrama de componentes.
+ compartilhados e liberados:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -327,13 +478,95 @@ Identificação e alocação dos recursos globais,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os recursos globais referem-se à memória RAM
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RAM
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Random-access memory
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ de curta duração e ao ciclo de processamento da CPU
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+CPU
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Unidade central de processamento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ .
+ A alocação ocorre dinamicamente durante a inicialização da janela principal,
+ onde o simulador central e as calculadoras são instanciados.
+ O compartilhamento de dados brutos entre as rotinas de cálculo e os componentes de plotagem é otimizado através do uso de estruturas de dados eficientes do ecossistema de desenvolvimento (como 
+\family typewriter
+\nospellcheck on
+QVector
+\family default
+\nospellcheck default
+),
+ evitando a cópia desnecessária de vetores em memória.
+ A liberação dos recursos ocorre de forma controlada no destruidor da classe principal (
+\family typewriter
+\nospellcheck on
+~MainWindow
+\family default
+\nospellcheck default
+),
+ garantindo a desalocação completa de toda a memória dinâmica e prevenindo vazamentos (
+\emph on
+memory leaks
+\emph default
+).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação da necessidade do uso de banco de dados.
- Implicam em modificações nos diagramas de atividades e de componentes.
+Identificação da necessidade do uso de banco de dados:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -342,27 +575,72 @@ Identificação da necessidade do uso de banco de dados.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ devido à natureza estritamente analítica e matemática do problema de 
+\emph on
+Buckley-Leverett,
+
+\emph default
+ as simulações operam em tempo real com dados inteiramente residentes em memória.
+ Os volumes de dados manipulados restringem-se a coeficientes empíricos e matrizes discretizadas de saturação de tamanho reduzido (geralmente matrizes de 100 a 1000 pontos).
+ Sendo assim,
+ identificou-se a total desnecessidade do acoplamento de sistemas de bancos de dados relacionais (como SQLite ou PostgreSQL) ou não-relacionais,
+ simplificando a arquitetura e eliminando gargalos de escrita e leitura em disco.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação da necessidade de sistemas de armazenamento de massa.
- Por exemplo:
- um 
+Identificação da necessidade de sistemas de armazenamento de massa:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto,
+ não há necessidade de infraestruturas corporativas de armazenamento de massa,
+ tais como servidores de arquivos dedicados,
+ redes de armazenamento (SAN
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SAN
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Storage Area Network
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+),
+ sistemas de backup em nuvem em tempo real ou unidades de 
 \emph on
 storage
 \emph default
- em um sistema de cluster ou sistemas de backup.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
+ em rede.
+ O armazenamento dos arquivos de texto de entrada e dos relatórios executivos em formato PDF gerados é delegado por completo ao sistema de arquivos local do computador do usuário,
+ utilizando caminhos definidos dinamicamente por caixas de diálogo padrão do sistema operacional.
 \end_layout
 
 \end_deeper
@@ -390,10 +668,8 @@ Controle
 \begin_deeper
 \begin_layout Itemize
 Identificação e seleção da implementação de controle,
- seqüencial ou concorrente,
- baseado em procedimentos ou eventos.
- Implicam modificações no diagrama de execução.
- 
+ sequencial ou concorrente,
+ baseado em procedimentos ou eventos:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -402,12 +678,22 @@ Identificação e seleção da implementação de controle,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ adota-se um modelo de controle híbrido perfeitamente segmentado por responsabilidade de camadas.
+ O fluxo de controle da interface gráfica é totalmente orientado a eventos,
+ permanecendo em estado de espera (
+\emph on
+event loop
+\emph default
+) até que ações do usuário disparem os gatilhos lógicos.
+ Em contrapartida,
+ o fluxo de controle interno do motor físico de simulação e cálculo da tangente de Welge é estritamente sequencial e baseado em procedimentos,
+ executando de forma determinística as equações matemáticas do balanço de massa sem ramificações assíncronas concorrentes durante o processamento de um mesmo cenário.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação das condições extremas e de prioridades.
+Identificação das condições extremas e de prioridades:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -416,15 +702,28 @@ Identificação das condições extremas e de prioridades.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ as condições extremas foram mapeadas para evitar falhas de execução e colapsos numéricos.
+ Elas englobam:
+ razões de viscosidade excessivamente desfavoráveis (onde a cauda da derivada do fluxo fracionário aproxima-se assintoticamente de zero),
+ divisões por zero em tempos avançados de injeção pós-ruptura (
+\begin_inset Formula $1/t_{D}$
+\end_inset
+
+ com valores infinitésimos) e valores nulos de porosidade ou área.
+ A prioridade máxima do sistema foi dada ao tratamento preventivo dessas exceções diretamente no motor de cálculo,
+ validando os dados na função 
+\family typewriter
+\nospellcheck on
+sincronizarDadosComSimulador
+\family default
+\nospellcheck default
+ antes do início do pipeline matemático.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação da necessidade de otimização.
- Por exemplo:
- prefira sistemas com grande capacidade de memória;
- prefira vários hds pequenos a um grande.
+Identificação da necessidade de otimização:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -433,7 +732,20 @@ Identificação da necessidade de otimização.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica pós-breakthrough.
+ Devido ao comportamento plano da curva de fluxo fracionário próximo à saturação máxima (
+\begin_inset Formula $1-S_{or}$
+\end_inset
+
+),
+ pequenas imprecisões no cálculo da derivada geravam ruídos que travavam a evolução gráfica.
+ A otimização foi realizada substituindo as derivadas analíticas simples por uma formulação paramétrica de diferenças finitas centrais de alta precisão com passo refinado (
+\begin_inset Formula $h=10^{-5}$
+\end_inset
+
+),
+ eliminando a necessidade de algoritmos iterativos de busca e reduzindo o tempo de resposta computacional para a escala de microssegundos.
 \end_layout
 
 \end_deeper
@@ -442,8 +754,7 @@ Identificação e definição de
 \emph on
 loops
 \emph default
- de controle e das escalas de tempo.
- 
+ de controle e das escalas de tempo:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -452,13 +763,39 @@ loops
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os laços de controle executam 
+\emph on
+loops
+\emph default
+ definidos de varredura paramétrica de saturação (incrementos fixos de 
+\begin_inset Formula $\Delta S_{w}=0.001$
+\end_inset
+
+),
+ partindo da saturação inicial até a saturação máxima de água.
+ A escala de tempo física do fenômeno simulado é adimensionalizada em Volumes de Poros Injetados (PVI),
+ cobrindo uma escala operacional típica de 
+\begin_inset Formula $0.0$
+\end_inset
+
+ a 
+\begin_inset Formula $3.0$
+\end_inset
+
+ PVI.
+ Na escala de tempo computacional,
+ o processamento analítico ocorre de forma instantânea em tempo de CPU inferior a 
+\begin_inset Formula $10$
+\end_inset
+
+ milissegundos,
+ garantindo respostas em tempo real para o usuário.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação de concorrências – quais algoritmos podem ser implementados usando processamento paralelo.
- 
+Identificação de concorrências – quais algoritmos podem ser implementados usando processamento paralelo:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -467,7 +804,29 @@ Identificação de concorrências – quais algoritmos podem ser implementados u
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ por se tratar de uma solução analítica pelo Método das Características (MOC) e não de um simulador numérico tridimensional baseado em malhas de blocos por diferenças finitas,
+ o esforço computacional é extremamente baixo.
+ Os 
+\emph on
+loops
+\emph default
+ de discretização gráfica operam em vetores pequenos (101 pontos para fluxo fracionário e cerca de 1000 pontos para os perfis).
+ Dessa forma,
+ determinou-se que não há justificativa técnica para a implementação de concorrência ou processamento paralelo (como OpenMP ou 
+\emph on
+threads
+\emph default
+),
+ mantendo a execução em 
+\emph on
+Thread
+\emph default
+ única (
+\emph on
+single-thread
+\emph default
+) de alto desempenho e livre de condições de corrida.
 \end_layout
 
 \end_deeper
@@ -494,8 +853,7 @@ Plataformas
 
 \begin_deeper
 \begin_layout Itemize
-Identificação das estruturas arquitetônicas comuns.
- 
+Identificação das estruturas arquitetônicas comuns:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -504,14 +862,82 @@ Identificação das estruturas arquitetônicas comuns.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a estrutura arquitetônica comum adotada fundamenta-se no padrão arquitetural MVC (
+\emph on
+Model-View-Controller
+\emph default
+)
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+MVC
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Model-View-Controller
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ simplificado,
+ onde a camada de visualização (
+\family typewriter
+\nospellcheck on
+MainWindow
+\family default
+\nospellcheck default
+ e formulários UI) interage com o controlador central (
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
+),
+ que gerencia o fluxo de dados em direção ao modelo de domínio matemático (
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CCalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identificação de subsistemas relacionados à plataforma selecionada.
- Podem implicar em modificações no diagrama de pacotes e no diagrama de componentes.
- 
+Identificação de subsistemas relacionados à plataforma selecionada:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -520,14 +946,39 @@ Identificação de subsistemas relacionados à plataforma selecionada.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os subsistemas estão intimamente ligados à API de classes do 
+\emph on
+framework
+\emph default
+ multiplataforma adotado.
+ Destacam-se o subsistema de janelas e componentes gráficos de entrada (
+\family typewriter
+\nospellcheck on
+QtWidgets
+\family default
+\nospellcheck default
+),
+ o subsistema de renderização de relatórios baseado no motor de renderização de texto enriquecido (
+\family typewriter
+\nospellcheck on
+QTextDocument
+\family default
+\nospellcheck default
+) e o subsistema de paginação e impressão vetorial para arquivos digitais (
+\family typewriter
+\nospellcheck on
+QPdfWriter
+\family default
+\nospellcheck default
+).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Identificação e definição das plataformas a serem suportadas:
  hardware,
- sistema operacional e linguagem de software.
+ sistema operacional e linguagem de software:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -536,12 +987,20 @@ Identificação e definição das plataformas a serem suportadas:
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a plataforma de software suportada baseia-se na linguagem C++ nativa (padrão ISO/IEC C++11 ou superior),
+ garantindo compilação eficiente.
+ O sistema operacional alvo prioritário é o Microsoft Windows (7,
+ 10 e 11),
+ mas a escolha tecnológica confere portabilidade total para os sistemas Linux e macOS.
+ Em termos de hardware,
+ o software é extremamente leve,
+ exigindo apenas uma estação de trabalho padrão de engenharia com processador x86 ou x64 e um mínimo de 2 GB de memória RAM livre.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Seleção das bibliotecas externas a serem utilizadas.
+Seleção das bibliotecas externas a serem utilizadas:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -550,12 +1009,60 @@ Seleção das bibliotecas externas a serem utilizadas.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a principal biblioteca externa selecionada foi a 
+\family typewriter
+\nospellcheck on
+QCustomPlot
+\family default
+\nospellcheck default
+,
+ um componente de plotagem científica de alto desempenho desenvolvido especificamente para o ecossistema Qt.
+ Ela foi escolhida por sua capacidade de renderizar gráficos bidimensionais complexos de forma nativa,
+ permitindo interações em tempo real (como zoom e redimensionamento automático) e a exportação direta de suas telas em formato vetorial de imagem (
+\family typewriter
+\nospellcheck on
+Pixmaps
+\family default
+\nospellcheck default
+),
+ recurso essencial para a alimentação automática do nosso módulo de relatórios.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI.
+Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+GDI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Graphics Device Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -564,13 +1071,51 @@ Seleção da biblioteca utilizada para montar a interface gráfica do software �
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a biblioteca de interface gráfica (
+\emph on
+Graphics Device Interface
+\emph default
+ / GUI) selecionada foi o módulo Qt Widgets corporativo.
+ Afastou-se o uso de APIs nativas de baixo nível do sistema operacional (como a GDI clássica do Windows) para garantir que toda a renderização visual,
+ folhas de estilo customizadas (QSS para cantos arredondados,
+ fontes personalizadas Segoe UI e modos claro/escuro) e gerenciadores de layout (layouts responsivos) operem de forma agnóstica e integrada à plataforma.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE.
- 
+Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+IDE
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Integrated Development Environment
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -579,7 +1124,28 @@ Seleção do ambiente de desenvolvimento para montar a interface de desenvolvime
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ o ambiente integrado de desenvolvimento adotado foi a IDE oficial Qt Creator em sua versão estável.
+ A ferramenta foi selecionada por centralizar de forma unificada o editor de código C++,
+ o compilador GCC/MinGW,
+ o gerenciador de automação de compilação 
+\family typewriter
+\nospellcheck on
+qmake
+\family default
+\nospellcheck default
+,
+ o depurador (
+\emph on
+debugger
+\emph default
+) e a ferramenta integrada de design de telas Qt Designer (responsável pela edição visual do arquivo 
+\family typewriter
+\nospellcheck on
+mainwindow.ui
+\family default
+\nospellcheck default
+).
 \end_layout
 
 \end_deeper
@@ -594,8 +1160,7 @@ Padrões de projeto
 
 \begin_deeper
 \begin_layout Itemize
-Normalmente os padrões de projeto são identificados e passam a fazer parte de uma biblioteca de padrões da empresa.
- Mas isto só ocorre após a realização de diversos projetos.
+Identificação dos padrões de projeto incorporados:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -604,20 +1169,49 @@ Normalmente os padrões de projeto são identificados e passam a fazer parte de 
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-se um item não for pertinente;
- pode ser retirado;
- ,mas somente na versão final;
- isto facilita o trabalho de revisão do trabalho!!
-\end_layout
-
-\end_inset
-
-
+Neste projeto,
+ o padrão de projeto comportamental 
+\emph on
+Strategy
+\emph default
+ (Estratégia) foi implementado de forma rigorosa como pilar de flexibilidade do sistema.
+ A interface pura 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ atua como a estratégia abstrata.
+ As classes 
+\family typewriter
+\nospellcheck on
+CCurvasPermeabilidadeCorey
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CCurvasPermeabilidadeLET
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CCurvasPermeabilidadeChierici
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+CCurvasPermeabilidadeTabelada
+\family default
+\nospellcheck default
+ atuam como as estratégias concretas que encapsulam os diferentes modelos empíricos rocha-fluido da engenharia de reservatórios.
+ O simulador atua como o contexto,
+ alterando dinamicamente o algoritmo de permeabilidade em tempo de execução com base na escolha do usuário na interface,
+ sem que o motor de cálculo precise conhecer os detalhes de implementação de cada modelo matemático.
 \end_layout
 
 \end_deeper
@@ -662,31 +1256,21 @@ O projeto orientado a objeto é a etapa posterior ao projeto do sistema.
  Baseia-se na análise,
  mas considera as decisões do projeto do sistema.
  Acrescenta a análise desenvolvida e as características da plataforma escolhida (hardware,
- sistema operacional e linguagem de softwareção).
+ sistema operacional e linguagem de programação de software).
  Passa pelo maior detalhamento do funcionamento do software,
- acrescentando atributos e métodos que envolvem a solução de problemas específicos não identificados durante a análise.
+ acrescentando atributos e métodos que envolvem a solução de problemas específicos não identificados durante a fase puramente conceitual.
+ 
 \end_layout
 
 \begin_layout Standard
 Envolve a otimização da estrutura de dados e dos algoritmos,
  a minimização do tempo de execução,
- de memória e de custos.
- Existe um desvio de ênfase para os conceitos da plataforma selecionada.
- 
-\end_layout
-
-\begin_layout Standard
-Exemplo:
- na análise você define que existe um método para salvar um arquivo em disco,
- define um atributo nomeDoArquivo,
- mas não se preocupa com detalhes específicos da linguagem.
- Já no projeto,
- você inclui as bibliotecas necessárias para acesso ao disco,
- cria um objeto específico para acessar o disco,
- podendo,
- portanto,
- acrescentar novas classes àquelas desenvolvidas na análise.
- 
+ da alocação de memória e de custos computacionais.
+ Existe um desvio de ênfase para os conceitos da plataforma selecionada (C++11 e 
+\emph on
+framework
+\emph default
+ Qt).
 \end_layout
 
 \begin_layout Subsubsection
@@ -713,8 +1297,7 @@ name "subsec:Efeito-do-projeto-no-modelo-estrutural"
 \end_layout
 
 \begin_layout Itemize
-Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no projeto do sistema (exemplo:
- a biblioteca gráfica selecionada).
+Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no projeto do sistema:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -723,12 +1306,45 @@ Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no 
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ o modelo estrutural foi expandido para acomodar os pacotes externos do 
+\emph on
+framework
+\emph default
+ Qt.
+ Foram incluídos os pacotes lógicos 
+\family typewriter
+\nospellcheck on
+<QtWidgets>
+\family default
+\nospellcheck default
+ (para a interface do utilizador),
+ 
+\family typewriter
+\nospellcheck on
+<QTextDocument>
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+<QPdfWriter>
+\family default
+\nospellcheck default
+ (para o subsistema de relatórios nativos),
+ bem como a biblioteca gráfica de terceiros 
+\family typewriter
+\nospellcheck on
+QCustomPlot
+\family default
+\nospellcheck default
+,
+ que passou a atuar como um pacote utilitário de renderização bidimensional.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Novas classes e associações oriundas das bibliotecas selecionadas e da linguagem escolhida devem ser acrescentadas ao modelo.
+Novas classes e associações oriundas das bibliotecas selecionadas e da linguagem escolhida devem ser acrescentadas ao modelo:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -737,12 +1353,44 @@ Novas classes e associações oriundas das bibliotecas selecionadas e da linguag
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a classe de geração de relatórios (
+\family typewriter
+\nospellcheck on
+CRelatorio
+\family default
+\nospellcheck default
+) foi adaptada para manipular objetos visuais diretamente através da inclusão da classe utilitária 
+\family typewriter
+\nospellcheck on
+QPixmap
+\family default
+\nospellcheck default
+,
+ convertendo gráficos em fluxos de bytes (
+\family typewriter
+\nospellcheck on
+QByteArray
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+QBuffer
+\family default
+\nospellcheck default
+) codificados em Base64 para injeção direta no 
+\family typewriter
+\nospellcheck on
+HTML
+\family default
+\nospellcheck default
+ do relatório.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Estabelecer as dependências e restrições associadas à plataforma escolhida.
+Estabelecer as dependências e restrições associadas à plataforma escolhida:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -751,7 +1399,28 @@ Estabelecer as dependências e restrições associadas à plataforma escolhida.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ estabeleceu-se a restrição de separação estrita (desacoplamento) entre o domínio (lógica física) e a interface.
+ As classes do núcleo matemático (
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+) não possuem qualquer dependência das bibliotecas gráficas do Qt,
+ garantindo que o motor de cálculo permaneça puramente em C++ padrão (
+\begin_inset Formula $std$
+\end_inset
+
+),
+ facilitando manutenções ou migrações futuras.
 \end_layout
 
 \end_deeper
@@ -779,7 +1448,7 @@ name "subsec:Efeito-do-projeto-no-modelo-dinamico"
 \end_layout
 
 \begin_layout Itemize
-Revisar os diagramas de seqüência e de comunicação considerando a plataforma escolhida.
+Revisar os diagramas de sequência e de comunicação considerando a plataforma escolhida:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -788,14 +1457,34 @@ Revisar os diagramas de seqüência e de comunicação considerando a plataforma
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os diagramas de sequência foram atualizados para refletir o paradigma de comunicação do Qt (
+\emph on
+Signals and Slots
+\emph default
+).
+ As chamadas de cálculo não ocorrem de forma espontânea;
+ o diagrama dinâmico passa a exibir eventos de gatilho,
+ como 
+\family typewriter
+\nospellcheck on
+on_btnPlotarSolucao_clicked()
+\family default
+\nospellcheck default
+,
+ que invocam métodos de sincronização (
+\family typewriter
+\nospellcheck on
+sincronizarDadosComSimulador()
+\family default
+\nospellcheck default
+) antes de despoletar a sequência de resolução numérica.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Verificar a necessidade de se revisar,
- ampliar e adicionar novos diagramas de máquinas de estado e de atividades.
- 
+ ampliar e adicionar novos diagramas de máquinas de estado e de atividades:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -804,7 +1493,60 @@ Verificar a necessidade de se revisar,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ as máquinas de estado da interface gráfica foram refinadas.
+ Foi adicionado um controlo de estado booleano (
+\family typewriter
+\nospellcheck on
+isDarkMode
+\family default
+\nospellcheck default
+) à classe 
+\family typewriter
+\nospellcheck on
+MainWindow
+\family default
+\nospellcheck default
+,
+ que gere a transição visual das folhas de estilo (QSS
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+QSS
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Qt 
+\emph on
+Style Sheets
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) dinâmicas,
+ alternando paletas de cores e ícones (recursos 
+\family typewriter
+\nospellcheck on
+.qrc
+\family default
+\nospellcheck default
+) em tempo de execução sem necessitar da reinicialização do software.
 \end_layout
 
 \end_deeper
@@ -833,11 +1575,7 @@ name "subsec:Efeito-do-projeto-nos-atributos"
 
 \begin_layout Itemize
 Atributos novos podem ser adicionados a uma classe,
- como,
- por exemplo,
- atributos específicos de uma determinada linguagem de softwareção (acesso a disco,
- ponteiros,
- constantes e informações correlacionadas).
+ como atributos específicos de uma determinada linguagem de programação:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -846,7 +1584,28 @@ Atributos novos podem ser adicionados a uma classe,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os vetores matemáticos concebidos na análise foram traduzidos para estruturas otimizadas da linguagem C++.
+ Utilizou-se o 
+\family typewriter
+\nospellcheck on
+QVector<double>
+\family default
+\nospellcheck default
+ para armazenamento contíguo de coordenadas de plotagem (posições adimensionais e tempos),
+ e o iterador 
+\family typewriter
+\nospellcheck on
+std::map<double,
+ double>
+\family default
+\nospellcheck default
+ para garantir a ordenação automática e a eliminação de dados sobrepostos na construção da curva de eficiência de deslocamento (
+\begin_inset Formula $E_{d}$
+\end_inset
+
+).
+ Constantes de precisão (SWI_EPS) foram explicitamente declaradas.
 \end_layout
 
 \end_deeper
@@ -880,10 +1639,7 @@ Efeitos do projeto nos métodos
 
 \begin_layout Itemize
 Em função da plataforma escolhida,
- verifique as possíveis alterações nos métodos.
- O projeto do sistema costuma afetar os métodos de acesso aos diversos dispositivos (exemplo:
- hd,
- rede).
+ verifique as possíveis alterações nos métodos:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -892,20 +1648,116 @@ Em função da plataforma escolhida,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ os métodos de acesso a ficheiros foram completamente alterados para utilizar as caixas de diálogo nativas do sistema operativo através da classe 
+\family typewriter
+\nospellcheck on
+QFileDialog
+\family default
+\nospellcheck default
+.
+ A exportação em formato PDF encapsulou a necessidade de integração entre a lógica de layout de página (
+\family typewriter
+\nospellcheck on
+QPageLayout
+\family default
+\nospellcheck default
+) e as métricas físicas dentro do método 
+\family typewriter
+\nospellcheck on
+exportarParaPDF()
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-De maneira geral os métodos devem ser divididos em dois tipos:
- i) tomada de decisões,
- métodos políticos ou de controle;
- devem ser claros,
- legíveis,
- flexíveis e usam polimorfismo.
- ii) realização de processamentos,
- podem ser otimizados e em alguns casos o polimorfismo deve ser evitado.
+Divisão de métodos (Tomada de decisões/controlo vs.
+ Processamento otimizado):
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto,
+ implementou-se uma clara bifurcação.
+ Métodos de decisão e controlo operam na classe 
+\family typewriter
+\nospellcheck on
+MainWindow
+\family default
+\nospellcheck default
+,
+ sendo responsáveis por validar entradas e lidar com exceções (
+\family typewriter
+\nospellcheck on
+try...catch
+\family default
+\nospellcheck default
+).
+ Em contrapartida,
+ os métodos de processamento,
+ como 
+\family typewriter
+\nospellcheck on
+calcularTangente
+\family default
+\nospellcheck default
+ na classe 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+,
+ evitam o polimorfismo excessivo nos seus laços (
+\emph on
+loops
+\emph default
+) de cálculo pesado para não comprometer o desempenho da varredura,
+ focando na computação pura de diferenças finitas para derivadas pontuais de alta precisão.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Algoritmos complexos podem ser subdivididos e otimizados utilizando STL
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+STL
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Standard Template Library
+\emph default
  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -914,14 +1766,40 @@ De maneira geral os métodos devem ser divididos em dois tipos:
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ o algoritmo clássico de identificação da velocidade da frente de choque foi subdividido para ancorar rigorosamente o ponto inicial da secante na saturação de água irredutível (
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+),
+ utilizando bibliotecas matemáticas padrão (
+\family typewriter
+\nospellcheck on
+<algorithm>
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+<cmath>
+\family default
+\nospellcheck default
+) como o 
+\family typewriter
+\nospellcheck on
+std::max
+\family default
+\nospellcheck default
+ para filtros lógicos de monotonicidade física (garantindo que a eficiência 
+\begin_inset Formula $E_{d}$
+\end_inset
+
+ nunca regrida ao longo do tempo).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Algoritmos complexos podem ser subdivididos.
- Verifique quais métodos podem ser otimizados.
- Pense em utilizar algoritmos prontos como os da STL (algoritmos genéricos).
+Os métodos da classes estão a dar resposta às responsabilidades da classe?
 \begin_inset Separator latexpar
 \end_inset
 
@@ -930,37 +1808,53 @@ Algoritmos complexos podem ser subdivididos.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ reviu-se o Princípio da Responsabilidade Única (SRP
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Responda a pergunta:
- os métodos da classes estão dando resposta às responsabilidades da classe?
-\begin_inset Separator latexpar
+\end_inset
+
+SRP
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Single Responsibility Principle
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise os diagramas de classes,
- de seqüência e de máquina de estado.
-\begin_inset Separator latexpar
 \end_inset
 
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
+:).
+ Asseverou-se que a classe da janela principal não realiza cálculos físicos,
+ delegando toda a montagem do problema transiente à classe 
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+ e os cálculos da descontinuidade hiperbólica à classe 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+.
 \end_layout
 
 \end_deeper
@@ -1005,8 +1899,7 @@ Heranças
 \end_layout
 
 \begin_layout Itemize
-Reorganização das classes e dos métodos (criar métodos genéricos com parâmetros que nem sempre são necessários e englobam métodos existentes).
- 
+Reorganização das classes e dos métodos:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1015,13 +1908,20 @@ Reorganização das classes e dos métodos (criar métodos genéricos com parâm
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ consolidou-se a hierarquia baseada em classes abstratas.
+ Os métodos de cálculo do fluxo fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+) foram generalizados para trabalhar de forma abstrata com ponteiros,
+ permitindo que a injeção do modelo de permeabilidade escolhido decorresse em tempo de execução,
+ sem necessidade de duplicação de métodos genéricos para cenários bifásicos distintos.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Abstração do comportamento comum (duas classes podem ter uma superclasse em comum).
- 
+Abstração do comportamento comum:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1030,13 +1930,30 @@ Abstração do comportamento comum (duas classes podem ter uma superclasse em co
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a interface 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+ garantiu que todas as classes concretas de modelos (Corey,
+ LET,
+ Chierici e Tabelada) assumissem o contrato de fornecimento obrigatório das permeabilidades relativas (
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+),
+ garantindo que as expansões futuras da física do reservatório herdem obrigatoriamente essa mesma estrutura formal.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Utilização de delegação para compartilhar a implementação (quando você cria uma herança irreal para reaproveitar código).
- Usar com cuidado.
+Utilização de delegação para partilhar a implementação:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1045,21 +1962,29 @@ Utilização de delegação para compartilhar a implementação (quando você cr
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise as heranças no diagrama de classes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ evitou-se a herança profunda e irrealista através da delegação (composição).
+ A classe 
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
+ não herda do 
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+ ou do 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+;
+ ela possui ponteiros para essas instâncias delegando-lhes as chamadas numéricas,
+ o que reduziu drasticamente o acoplamento rígido do código-fonte.
 \end_layout
 
 \end_deeper
@@ -1092,8 +2017,31 @@ Associações
 \end_layout
 
 \begin_layout Itemize
-Deve-se definir na fase de projeto como as associações serão implementadas,
- se obedecerão um determinado padrão ou não.
+Definição de como as associações serão implementadas:
+\begin_inset Separator latexpar
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Neste projeto,
+ as associações fortes de composição (tempo de vida dependente) foram implementadas com alocação dinâmica de ponteiros (
+\emph on
+new
+\emph default
+) na instanciação do simulador e libertadas (
+\emph on
+delete
+\emph default
+) no destrutor,
+ de forma a garantir a segurança e a conformidade da gestão manual de memória exigida pela linguagem C++.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Associações diretas (evitar percorrer vários nós de classes distantes):
  
 \begin_inset Separator latexpar
 \end_inset
@@ -1103,41 +2051,27 @@ Deve-se definir na fase de projeto como as associações serão implementadas,
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Se existe uma relação de "muitos",
- pode-se implementar a associação com a utilização de um dicionário,
- que é um mapa das associações entre objetos.
- Assim,
- o objeto A acessa o dicionário fornecendo uma chave (um nome para o objeto que deseja acessar) e o dicionário retorna um valor (um ponteiro) para o objeto correto.
+Neste projeto,
+ evitou-se a transgressão da Lei de Demeter (ex:
  
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Evite percorrer várias associações para acessar dados de classes distantes.
- Pense em adicionar associações diretas.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
+\family typewriter
+\nospellcheck on
+Janela->Simulador->Welge->Calculadora->derivada()
+\family default
+\nospellcheck default
+).
+ A passagem de condições de contorno cruciais (como saturação inicial e máxima) foi refatorada para ser transferida explicitamente através das assinaturas dos métodos (e.g.,
+ 
+\family typewriter
+\nospellcheck on
+_solver->calcularPerfilSaturacao(tempo,
+ swi,
+ sw_max)
+\family default
+\nospellcheck default
+),
+ estabelecendo associações de fluxo de dados diretas e extremamente legíveis,
+ eliminando desvios longos e instáveis de arquitetura.
 \end_layout
 
 \end_deeper
@@ -1158,8 +2092,7 @@ otimizações
 \end_layout
 
 \begin_layout Itemize
-Faça uma análise de aspectos relativos à otimização do sistema.
- Lembrando que a otimização deve ser desenvolvida por analistas/desenvolvedores experientes.
+Análise de aspetos relativos à otimização do sistema:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1168,12 +2101,21 @@ Faça uma análise de aspectos relativos à otimização do sistema.
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ a principal otimização foi realizada na zona pós-breakthrough da curva de recuperação.
+ Como o Método das Características exige encontrar a saturação cuja derivada direcional seja igual ao inverso do tempo (
+\begin_inset Formula $f_{w}'(S_{w})=1/t_{D}$
+\end_inset
+
+),
+ os métodos baseados em procura de raízes causavam colapso numérico (ruído) quando a derivada tendia a zero.
+ A otimização arquitetável inverteu a lógica,
+ varrendo parametricamente a saturação espacial para deduzir diretamente o tempo de saída exato.
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Identifique pontos a serem otimizados em que podem ser utilizados processos concorrentes.
+Inclusão de bibliotecas otimizadas e atributos auxiliares:
 \begin_inset Separator latexpar
 \end_inset
 
@@ -1182,79 +2124,31 @@ Identifique pontos a serem otimizados em que podem ser utilizados processos conc
 
 \begin_deeper
 \begin_layout Itemize
-Neste projeto blablabla
+Neste projeto,
+ foram criados atributos auxiliares calculados prematuramente em memória (como o 
+\family typewriter
+\nospellcheck on
+max_ed
+\family default
+\nospellcheck default
+ gerado num mapa de estados de eficiência temporal),
+ descartando ciclos computacionais repetitivos que desenhariam "quebras" irreais (degraus) no gráfico da eficiência de deslocamento aquando do cálculo da transição abrupta da frente de choque.
+ A ordem de execução garante sempre que a extração em formato imagem (
+\family typewriter
+\nospellcheck on
+QPixmap
+\family default
+\nospellcheck default
+) só decorra após as rotinas de atualização visual de eixos (
+\family typewriter
+\nospellcheck on
+QCustomPlot
+\family default
+\nospellcheck default
+) estarem plenamente concluídas e escaladas.
 \end_layout
 
 \end_deeper
-\begin_layout Itemize
-Pense em incluir bibliotecas otimizadas.
-\end_layout
-
-\begin_layout Itemize
-Se o acesso a determinados objetos (atributos/métodos) requer um caminho longo (exemplo:
- A->B->C->D.atributo),
- pense em incluir associações extras (exemplo:
- A-D.atributo).
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Atributos auxiliares podem ser incluídos.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-A ordem de execução pode ser alterada.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Revise as associações nos diagramas de classes.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Neste projeto blablabla
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Depois de revisados os diagramas da análise você pode montar dois diagramas relacionados à infraestrutura do sistema.
- As dependências dos arquivos e bibliotecas podem ser descritos pelo diagrama de componentes,
- e as relações e dependências entre o sistema e o hardware podem ser ilustradas com o diagrama de implantação.
-\end_layout
-
 \begin_layout Section
 Diagrama de componentes
 \begin_inset Index idx
@@ -1279,85 +2173,196 @@ name "sec:Diagrama-de-componentes"
 \end_layout
 
 \begin_layout Standard
-O diagrama de componentes mostra a forma como os componentes do software se relacionam,
- suas dependências.
- Inclui itens como:
- componentes,
- subsistemas,
+O diagrama de componentes mostra a forma como os componentes do software se relacionam e suas dependências arquiteturais estruturais.
+ Inclui itens como bibliotecas estáticas,
+ bibliotecas dinâmicas (DLLs
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+DLLs
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Dynamic Link Library
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+),
  executáveis,
- nós,
- associações,
- dependências,
- generalizações,
- restrições e notas.
- Exemplos de componentes são bibliotecas estáticas,
- bibliotecas dinâmicas,
- dlls,
- componentes Java,
- executáveis,
- arquivos de disco,
- código-fonte.
+ arquivos de disco e pacotes de código-fonte.
+\end_layout
+
+\begin_layout Standard
+Neste projeto,
+ o diagrama de componentes reflete a arquitetura modular e multiplataforma do 
+\emph on
+framework
+\emph default
+ Qt aliada ao núcleo matemático nativo em C++.
+ O sistema é composto pelos seguintes agrupamentos de componentes lógicos e físicos:
+\end_layout
+
+\begin_layout Itemize
+Executável Principal (
+\family typewriter
+\nospellcheck on
+Simulador.exe
+\family default
+\nospellcheck default
+):
+ Componente central gerado pela compilação,
+ que engloba a lógica de negócio,
+ as instâncias da interface gráfica (
+\family typewriter
+\nospellcheck on
+MainWindow
+\family default
+\nospellcheck default
+) e as rotinas do controlador (
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
+).
+ Ele atua como o maestro do fluxo de execução.
+\end_layout
+
+\begin_layout Itemize
+Subsistema de Interface e Gráficos:
+ Depende diretamente das bibliotecas dinâmicas do Qt (como 
+\family typewriter
+\nospellcheck on
+Qt5Core.dll
+\family default
+\nospellcheck default
+,
  
+\family typewriter
+\nospellcheck on
+Qt5Gui.dll
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+Qt5Widgets.dll
+\family default
+\nospellcheck default
+).
+ Para a renderização visual das curvas,
+ incorpora estaticamente a biblioteca de terceiros 
+\family typewriter
+\nospellcheck on
+QCustomPlot
+\family default
+\nospellcheck default
+,
+ que atua como um componente interno para transformar matrizes de dados em gráficos bidimensionais interativos.
+\end_layout
+
+\begin_layout Itemize
+Subsistema de Geração de Relatórios:
+ Depende das bibliotecas nativas de impressão e formatação de texto do Qt (
+\family typewriter
+\nospellcheck on
+Qt5PrintSupport.dll
+\family default
+\nospellcheck default
+),
+ sendo responsável por injetar os fluxos de bytes das imagens (
+\family typewriter
+\nospellcheck on
+Pixmaps
+\family default
+\nospellcheck default
+) capturadas da camada gráfica em um documento formatado em HTML e,
+ posteriormente,
+ convertido em PDF.
+\end_layout
+
+\begin_layout Itemize
+Subsistema Numérico e Lógico:
+ Composto inteiramente por classes padrão da linguagem C++ (
+\family typewriter
+\nospellcheck on
+CSolver
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CWelge
+\family default
+\nospellcheck default
+,
+ 
+\family typewriter
+\nospellcheck on
+CCalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+),
+ garantindo independência de bibliotecas externas para a execução da matemática do escoamento.
+\end_layout
+
+\begin_layout Itemize
+Arquivos de Entrada e Saída (I/O):
+ O sistema possui dependências de arquivos de disco plano do tipo 
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+ para a importação opcional de parâmetros de permeabilidade relativa tabelada,
+ e gera de forma autônoma documentos executivos de saída do tipo .
+\family typewriter
+\nospellcheck on
+pdf
+\family default
+\nospellcheck default
+.
+\end_layout
+
+\begin_layout Standard
+Esta divisão clara garante que alterações nas regras matemáticas do escoamento bifásico não exijam a recompilação ou substituição de componentes visuais,
+ garantindo a manutenibilidade do código.
 \end_layout
 
 \begin_layout Standard
 Veja na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-componentes"
+reference "fig:Diagrama-de-componentes."
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
- um exemplo de diagrama de componentes.
- Observe que este inclui muitas dependências,
- ilustrando as relações entre os arquivos.
- Por exemplo:
- o subsistema biblioteca inclui os arquivos das classes A e B,
- e a geração dos objetos A.obj e B.obj depende dos arquivos A.h,
- A.cpp,
- B.h e B.cpp.
- A geração da biblioteca depende dos arquivos A.obj e B.obj.
- O subsistema biblioteca Qt,
- um subsistema exerno,
- inclui os arquivos de código da biblioteca Qt e a biblioteca em si.
- O subsistema banco de dados representa o banco de dados utilizado pelo sistema e tem uma interface de acesso que é utilizada pelo software para acesso aos dados armazenados no banco de dados.
- O software executável a ser gerado depende da biblioteca gerada,
- dos arquivos da biblioteca Qt,
- do módulo de arquivos MinhaJanela e do banco de dados.
-\end_layout
-
-\begin_layout Standard
-Algumas observações úteis para o diagrama de componentes:
-\end_layout
-
-\begin_layout Itemize
-De posse do diagrama de componentes,
- temos a lista de todos os arquivos necessários para compilar e rodar o software.
-\end_layout
-
-\begin_layout Itemize
-Observe que um assunto/pacote pode se transformar em uma biblioteca e será incluído no diagrama de componentes.
-\end_layout
-
-\begin_layout Itemize
-A ligação entre componentes pode incluir um estereótipo indicando o tipo de relacionamento ou algum protocolo utilizado.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Na versão final apagar este texto copiado do livro;
- e colocado aqui para lhe auxiliar;
- deixar somente o que é pertinente ao trabalho
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Neste projeto blablabla
+ o de diagrama de componentes:
 \end_layout
 
 \begin_layout Standard
@@ -1371,8 +2376,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramaDeComponentes-Asuntos-Pacotes-Imago.png
-	lyxscale 90
+	filename imagens/diagrama-de-componentes.png
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -1387,11 +2392,11 @@ status open
 Diagrama de componentes
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-componentes"
+name "fig:Diagrama-de-componentes."
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1440,49 +2445,95 @@ name "sec:Diagrama-de-execução"
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação é um diagrama de alto nível que inclui relações entre o sistema e o hardware e que se preocupa com os aspectos da arquitetura computacional escolhida.
- Seu enfoque é o hardware,
- a configuração dos nós em tempo de execução.
- 
+O diagrama de implantação é um diagrama de alto nível que ilustra as relações entre o sistema lógico e o hardware,
+ focando nos aspectos da arquitetura computacional escolhida e na configuração dos nós em tempo de execução.
 \end_layout
 
 \begin_layout Standard
-O diagrama de implantação deve incluir os elementos necessários para que o sistema seja colocado em funcionamento:
- computador,
- periféricos,
- processadores,
- dispositivos,
- nós,
- relacionamentos de dependência,
- associação,
- componentes,
- subsistemas,
- restrições e notas.
+Neste projeto,
+ devido à opção metodológica por uma ferramenta de natureza analítica e resposta em tempo real,
+ dispensou-se a infraestrutura de rede complexa.
+ O diagrama de implantação concentra-se em um único nó principal de execução (
+\emph on
+Node
+\emph default
+),
+ caracterizado como a Estação de Trabalho do Engenheiro (
+\emph on
+Desktop
+\emph default
+).
+\end_layout
+
+\begin_layout Itemize
+Nó de Execução (
+\emph on
+Workstation
+\emph default
+):
+ Representa o hardware do usuário (processador x86/x64,
+ memória RAM primária).
+ Neste nó reside o Sistema Operacional hospedeiro (Windows,
+ Linux ou macOS),
+ o qual fornece a plataforma de execução para o software.
+\end_layout
+
+\begin_layout Itemize
+Artefatos Implantados:
+ Dentro deste nó,
+ o sistema é implantado contendo o pacote executável principal,
+ ladeado pelos componentes dinâmicos do 
+\emph on
+framework
+\emph default
+ Qt (.
+\family typewriter
+\nospellcheck on
+dlls
+\family default
+\nospellcheck default
+ essenciais) encapsulados no mesmo diretório local para evitar problemas de dependência ou instalação de ferramentas de terceiros no computador do cliente.
+\end_layout
+
+\begin_layout Itemize
+Dispositivos de I/O Temporários:
+ O sistema interage diretamente com os discos de armazenamento rígido locais (
+\family typewriter
+\nospellcheck on
+HDD/SSD
+\family default
+\nospellcheck default
+) exclusivamente durante a leitura dos modelos físicos (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+) e na gravação do relatório de diagnóstico (
+\family typewriter
+\nospellcheck on
+.pdf
+\family default
+\nospellcheck default
+),
+ operando isoladamente da internet ou de servidores de banco de dados locais.
 \end_layout
 
 \begin_layout Standard
 Veja na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-implantação."
+reference "cap:Diagrama-de-implantação.,fig:Diagrama-de-implantação."
+plural "false"
+caps "false"
+noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
- um exemplo de diagrama de implantação de um cluster.
- Observe a presença de um servidor conectado a um switch.
- Os nós do cluster (ou clientes) também estão conectados ao switch.
- Os resultados das simulações são armazenados em um servidor de arquivos (
-\emph on
-storage
-\emph default
-).
-\end_layout
-
-\begin_layout Standard
-Pode-se utilizar uma anotação de localização para identificar onde determinado componente está residente,
- por exemplo {localização:
- sala 3}.
+ o de diagrama de implantação.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1496,8 +2547,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/DiagramDeExecucao.png
-	lyxscale 50
+	filename imagens/diagrama-de-implementacao.png
+	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -1512,11 +2563,11 @@ status open
 Diagrama de implantação
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-implantação."
+name "fig:Diagrama-de-implantação."
 
 \end_inset
 
-
+.
 \end_layout
 
 \end_inset
@@ -1527,31 +2578,14 @@ name "cap:Diagrama-de-implantação."
 \end_inset
 
 
-\end_layout
-
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
 \end_layout
 
 \begin_layout Subsection
-Lista de características <<features>>
+Lista de características <<
+\emph on
+features
+\emph default
+>>
 \begin_inset CommandInset label
 LatexCommand label
 name "subsec: Lista de características <<features>>"
@@ -1562,70 +2596,85 @@ name "subsec: Lista de características <<features>>"
 \end_layout
 
 \begin_layout Standard
-No final do ciclo de concepção e análise chegamos a uma lista de características <<
+No final do ciclo de concepção e análise,
+ consolidou-se uma lista iterativa de características (
 \emph on
 features
 \emph default
->> que teremos de implementar.
+) fundamentais para a estabilidade e usabilidade da ferramenta,
+ implementadas através de ciclos curtos de desenvolvimento e validação analítica:
 \end_layout
 
-\begin_layout Standard
-Após a análises desenvolvidas e considerando o requisito de que este material deve ter um formato didático,
- chegamos a seguinte lista:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-nota importante,
- o número de versões irá depender do tamanho do ciclo,
- ou seja,
- número de dias de cada ciclo e capacidade da equipe.
+\begin_layout Itemize
+v2.1 - Fundação Estrutural e Interatividade Básica
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Construção da interface principal com o 
+\emph on
+framework
+\emph default
+ Qt 
+\emph on
+Widgets
+\emph default
+.
+\end_layout
+
+\begin_layout Itemize
+Implementação da calculadora geométrica e modelos de permeabilidade relativa (Padrão 
+\emph on
+Strategy
+\emph default
+).
+\end_layout
+
+\begin_layout Itemize
+Testes lógicos:
+ Validação da plotagem contínua da Curva de Fluxo Fracionário ($f_w$).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+v2.1 - Motor Matemático e Física do Deslocamento
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Implementação da lógica sequencial do Método das Características (MOC) e malha discreta.
+\end_layout
+
+\begin_layout Itemize
+Cálculo algorítmico da derivada pontual e construção da tangente geométrica de Welge.
+\end_layout
+
+\begin_layout Itemize
+Testes de Estabilidade:
+ Prevenção de múltiplos valores de saturação (Frente de Choque).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+v2.3 - Ferramenta Executiva e Otimização Visual
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Integração do subsistema dinâmico de temas UI (Modo Escuro / Claro com QSS).
+\end_layout
+
+\begin_layout Itemize
+Implementação do módulo avançado de exportação vetorial de gráficos e relatórios técnicos (PDF).
+\end_layout
+
+\begin_layout Itemize
+Testes Finais:
+ Validação da continuidade assintótica da Curva de Eficiência de Deslocamento (
+\begin_inset Formula $E_{d}$
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-v0.1
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
-\end_layout
-
-\begin_layout Itemize
-Testes
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-v0.3
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
-\end_layout
-
-\begin_layout Itemize
-Testes
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-v0.7
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Lista de classes a serem implementadas
-\end_layout
-
-\begin_layout Itemize
-Testes
+) pós-breakthrough.
 \end_layout
 
 \end_deeper
@@ -1641,15 +2690,31 @@ name "subsec:Tabela-classificação-sistema"
 \end_layout
 
 \begin_layout Standard
-A Tabela a seguir é utilizada para classificação do sistema desenvolvido.
- Deve ser preenchida na etapa de projeto e revisada no final,
- quando o software for entregue na sua versão final.
-\begin_inset Note Note
+A Tabela a seguir classifica a natureza estrutural e o domínio de aplicação do sistema de engenharia desenvolvido:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment class
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-A tabela esta preenchida com dados de um dos exemplos de projeto;
- você deve preencher de acordo com o problema específico que esta resolvendo
+
+\size footnotesize
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela classificação sistema
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Tabela-classificação-sistema."
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1657,10 +2722,12 @@ A tabela esta preenchida com dados de um dos exemplos de projeto;
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+
+\size footnotesize
 \begin_inset Tabular
 <lyxtabular version="3" rows="22" columns="2">
-<features islongtable="true" longtabularalignment="center">
+<features islongtable="true" tabularwidth="100text%" longtabularalignment="center">
 <column alignment="center" valignment="top" width="3cm">
 <column alignment="center" valignment="top" width="12cm">
 <row>
@@ -1669,6 +2736,7 @@ A tabela esta preenchida com dados de um dos exemplos de projeto;
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Licença:
 \end_layout
@@ -1679,6 +2747,8 @@ Licença:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] livre GPL-v3 [ ] proprietária
 \end_layout
 
@@ -1691,6 +2761,7 @@ Licença:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Engenharia de software:
 \end_layout
@@ -1701,6 +2772,8 @@ Engenharia de software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ]
 \color blue
  
@@ -1717,6 +2790,7 @@ tradicional [X] ágil [ ] outras
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Paradigma de programação:
 \end_layout
@@ -1727,6 +2801,8 @@ Paradigma de programação:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estruturada [X] orientado a objeto - POO [ ] funcional
 \end_layout
 
@@ -1739,6 +2815,7 @@ Paradigma de programação:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Modelagem UML:
 \end_layout
@@ -1749,11 +2826,15 @@ Modelagem UML:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] básica 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diagramas de caso de uso,
  de componentes(assuntos/pacotes/componentes),
  de classes,
@@ -1765,9 +2846,11 @@ Diagramas de caso de uso,
 
 [X] intermediária 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Diagramas de máquina de estado,
  de atividades
 \end_layout
@@ -1779,6 +2862,8 @@ Diagramas de máquina de estado,
 status collapsed
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Uso de recursos avançados de UML
 \end_layout
 
@@ -1796,6 +2881,7 @@ Uso de recursos avançados de UML
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Algoritmos
 \color inherit
@@ -1808,12 +2894,15 @@ Algoritmos
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] alto nível 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 :
 
@@ -1829,6 +2918,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 :
 
@@ -1858,6 +2948,8 @@ status collapsed
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 implementação:
  [ ] recursivo ou [X] iterativo
 \begin_inset Note Note
@@ -1866,6 +2958,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -1890,6 +2983,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 :
 
@@ -1906,6 +3000,7 @@ status collapsed
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 :
  
@@ -1940,8 +3035,10 @@ muitas vezes tenho a equação que me dá uma solução exata,
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 concorrências:
- [X] serial [X] concorrente [X] paralelo
+ [X] serial [ ] concorrente [ ] paralelo
 \end_layout
 
 \end_inset
@@ -1961,6 +3058,8 @@ concorrências:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 paradigma:
  [X] dividir para conquistar
 \begin_inset Note Note
@@ -1969,6 +3068,7 @@ status collapsed
 \begin_layout Itemize
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -1980,6 +3080,8 @@ são algoritmos que trabalham com a divisão e subdivisão de um problema em par
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 Exemplo:
  escrever seu TCC - Trabalho de Conclusão de Curso,
  você irá dividir o mesmo em vários capítulos,
@@ -1998,6 +3100,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -2015,6 +3118,7 @@ status collapsed
 \begin_layout Itemize
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -2029,6 +3133,8 @@ status collapsed
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 Exemplo:
  não sei resolver estas equações professor.
  Faça uma transformada de Laplace,
@@ -2045,6 +3151,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -2062,6 +3169,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -2081,6 +3189,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 \color blue
 :
 
@@ -2108,6 +3217,7 @@ RPN - Reverse Polish Notation
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Software:
 \end_layout
@@ -2118,6 +3228,8 @@ Software:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] de base
 \begin_inset Note Note
 status collapsed
@@ -2125,6 +3237,7 @@ status collapsed
 \begin_layout Itemize
 
 \series bold
+\size footnotesize
 :
  
 \series default
@@ -2140,6 +3253,8 @@ Estão relacionados ao funcionamento do computador e seus recursos (processador,
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 Sistemas operacionais (Windows,
  GNU/Linux,
  Mac Os X,
@@ -2147,6 +3262,8 @@ Sistemas operacionais (Windows,
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Suporte ao sistema operacional (
 \emph on
 drivers 
@@ -2155,6 +3272,8 @@ de dispositivos).
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Suporte ao desenvolvimento de software (compiladores,
 
 \emph on
@@ -2170,6 +3289,8 @@ profilers
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Suporte a manutenção do computador (utilitários).
 \end_layout
 
@@ -2183,6 +3304,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
  
 \series default
@@ -2204,6 +3326,8 @@ São os demais softwares,
 status collapsed
 
 \begin_layout Itemize
+
+\size footnotesize
 Editor de texto,
  editor de apresentações e planilha eletrônica (ex:
  Office,
@@ -2212,11 +3336,15 @@ Editor de texto,
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 Aplicativos para ver filmes,
  ouvir músicas e jogos eletrônicos.
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Aplicações web como navegador de internet,
  gerenciador de email,
  gerenciador de tarefas (chrome,
@@ -2224,6 +3352,8 @@ Aplicações web como navegador de internet,
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Gerenciador de arquivos na rede (ex:
  dropbox,
  google drive,
@@ -2238,15 +3368,21 @@ Gerenciador de arquivos na rede (ex:
 status collapsed
 
 \begin_layout Itemize
+
+\size footnotesize
 Da área de medicina (interpretação de imagens e diagnósticos).
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 Da área de direito (gestão de documentos e processos).
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 Da área de engenharia (CAD,
  modeladores,
  simuladores específicos).
@@ -2254,6 +3390,8 @@ Da área de engenharia (CAD,
 status open
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Com uso de IA - Inteligência Artificial.
 \end_layout
 
@@ -2270,6 +3408,8 @@ Com uso de IA - Inteligência Artificial.
 status collapsed
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Modeladores e simuladores de cunho acadêmico.
 \end_layout
 
@@ -2295,12 +3435,16 @@ Modeladores e simuladores de cunho acadêmico.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 instruções:
  [X] alto nível [ ] baixo nível
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
+
+\size footnotesize
 interrupções/assembler
 \end_layout
 
@@ -2326,14 +3470,17 @@ interrupções/assembler
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 otimização:
- [X] serial não otimizado
+ [ ] serial não otimizado
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
 
 \series default
@@ -2353,6 +3500,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
  
 \series default
@@ -2369,13 +3517,14 @@ Neste caso houve preocupação com desempenho,
 
 \end_inset
 
- [X] concorrente
+ [ ] concorrente
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
  
 \series default
@@ -2394,13 +3543,14 @@ threads
 
 \end_inset
 
- [X] paralelo
+ [ ] paralelo
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
 
 \series default
@@ -2428,6 +3578,7 @@ status collapsed
 \begin_layout Plain Layout
 
 \series bold
+\size footnotesize
 :
 
 \series default
@@ -2474,6 +3625,8 @@ clock
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 interface do usuário:
  [ ] kernel numérico [ ] linha de comando [ ] modo texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex:
  Qt) [ ] navegador
@@ -2488,6 +3641,7 @@ interface do usuário:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Recursos de C++:
 \end_layout
@@ -2498,6 +3652,8 @@ Recursos de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ básico (FCC):
  variáveis padrões da linguagem,
  estruturas de controle e repetição,
@@ -2532,6 +3688,8 @@ streams
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário:
  funções lambda.
  Ponteiros,
@@ -2577,6 +3735,8 @@ filesystem
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] C++ intermediário 2:
  A biblioteca de gabaritos de C++ (a STL),
  containers,
@@ -2617,6 +3777,8 @@ random,
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] C++ avançado:
  Conversão de tipos do usuário,
  especializações de templates,
@@ -2642,6 +3804,7 @@ expressões regulares,
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas de C++:
 \end_layout
@@ -2652,6 +3815,8 @@ Bibliotecas de C++:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [X] Entrada e saída de dados (
 \emph on
 streams
@@ -2664,7 +3829,7 @@ filesystem
 \emph on
 random 
 \emph default
-[X] 
+[ ] 
 \emph on
 threads 
 \emph default
@@ -2686,6 +3851,7 @@ múltiplos processos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Bibliotecas externas:
 \end_layout
@@ -2696,7 +3862,9 @@ Bibliotecas externas:
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] 
+
+\size footnotesize
+[ ] 
 \family typewriter
 CGnuplot 
 \family default
@@ -2720,6 +3888,7 @@ Qt diálogos
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Ferramentas auxiliares:
 \end_layout
@@ -2730,6 +3899,8 @@ Ferramentas auxiliares:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 Montador:
 
 \family typewriter
@@ -2755,6 +3926,7 @@ Montador:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 IDE:
 \end_layout
@@ -2765,7 +3937,9 @@ IDE:
 \begin_inset Text
 
 \begin_layout Plain Layout
-[X] Editor simples:
+
+\size footnotesize
+[ ] Editor simples:
  kate/gedit/emacs
 \family typewriter
  
@@ -2774,7 +3948,7 @@ IDE:
 \family typewriter
  
 \family default
-[ ] QT-Creator
+[X] QT-Creator
 \family typewriter
  
 \family default
@@ -2790,6 +3964,7 @@ IDE:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 SCV:
 \end_layout
@@ -2800,6 +3975,8 @@ SCV:
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] cvs
 \family typewriter
  
@@ -2820,6 +3997,7 @@ SCV:
 
 \begin_layout Plain Layout
 
+\size footnotesize
 \color blue
 Disciplinas correlacionadas
 \end_layout
@@ -2830,11 +4008,15 @@ Disciplinas correlacionadas
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] estatística
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Itemize
+
+\size footnotesize
 [ ] Básica:
  média,
  desvio padrão,
@@ -2852,6 +4034,8 @@ status collapsed
 \end_layout
 
 \begin_layout Itemize
+
+\size footnotesize
 [ ] Intermediária:
  Estimação.
  Teste de hipótese.
@@ -2863,11 +4047,13 @@ status collapsed
 
 \end_inset
 
- [ ] cálculo numérico 
+ [X] cálculo numérico 
 \begin_inset Note Note
 status collapsed
 
 \begin_layout Itemize
+
+\size footnotesize
 [ ] Básico:
  erros,
  solver de função (iteração de ponto fixo,
@@ -2890,6 +4076,8 @@ spline
 
 \begin_deeper
 \begin_layout Itemize
+
+\size footnotesize
 [ ] Intermediário:
  matrizes e sistemas de equações lineares(solver de sistema de equações - TDMA,
  eliminação gauss,
@@ -2901,7 +4089,7 @@ spline
 \end_deeper
 \end_inset
 
- [ ]
+ [X]
 \family typewriter
  
 \family default
@@ -2910,6 +4098,8 @@ modelamento numérico
 status collapsed
 
 \begin_layout Plain Layout
+
+\size footnotesize
 [ ] Volume de controle (equações de balanço).
  [ ] Diferenças finitas.
  [ ] Elementos finitos
@@ -2917,13 +4107,18 @@ status collapsed
 
 \end_inset
 
- [X] análise e processamento de imagens
+ [ ] análise e processamento de imagens
 \end_layout
 
 \end_inset
 </cell>
 </row>
 </lyxtabular>
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

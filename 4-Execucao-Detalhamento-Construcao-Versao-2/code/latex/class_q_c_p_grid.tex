@@ -1,0 +1,462 @@
+\doxysection{QCPGrid Class Reference}
+\hypertarget{class_q_c_p_grid}{}\label{class_q_c_p_grid}\index{QCPGrid@{QCPGrid}}
+
+
+Responsible for drawing the grid of a \doxylink{class_q_c_p_axis}{QCPAxis}.  
+
+
+
+
+{\ttfamily \+\#include $<$QCustomplot.\+h$>$}
+
+Inheritance diagram for QCPGrid:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_q_c_p_grid}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}{QCPGrid}} (\doxymbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} \texorpdfstring{$\ast$}{*}parent\+Axis)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_afface6d8cb6df3cbdc0b5c7c2658f96a}{sub\+Grid\+Visible}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_af16a269b15b2a8d904be087d060536bc}{antialiased\+Sub\+Grid}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_a578d0bd4d2e5000a2ca69b9a034d59aa}{antialiased\+Zero\+Line}} () const
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_a1d68418766b3408c0b7b29ef40b04c2a}{pen}} () const
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_ae231e5b87e68689a666f90531a15552f}{sub\+Grid\+Pen}} () const
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_a85f248487110c4043be696aef5f2f6e1}{zero\+Line\+Pen}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}{set\+Sub\+Grid\+Visible}} (bool visible)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_a5692310ba183721a413d60951407d114}{set\+Antialiased\+Sub\+Grid}} (bool enabled)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}{set\+Antialiased\+Zero\+Line}} (bool enabled)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}{set\+Pen}} (const QPen \&pen)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}{set\+Sub\+Grid\+Pen}} (const QPen \&pen)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}{set\+Zero\+Line\+Pen}} (const QPen \&pen)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}parent\+Layerable=nullptr)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{\texorpdfstring{$\sim$}{\string~}\+QCPLayerable}} ()
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{antialiased}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+virtual double \doxymbox{\hyperlink{class_q_c_p_layerable_a272989087fc8c4357b4ba614f9922336}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}{apply\+Default\+Antialiasing\+Hint}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}{draw}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_aee4e95d54acabbe298d6dda0dd86c0a4}{draw\+Grid\+Lines}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_grid_a751ce8aef815bcc9193432a30c8b6b6e}{draw\+Sub\+Grid\+Lines}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual \doxymbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP::\+\+Interaction}} \doxymbox{\hyperlink{class_q_c_p_layerable_a908c9edda761886f33893be326dab77d}{selection\+Category}} () const
+\item 
+virtual QRect \doxymbox{\hyperlink{class_q_c_p_layerable_acbcfc9ecc75433747b1978a77b1864b3}{clip\+Rect}} () const
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a7498c2d0d081cf7cad0fb3bb93aa0e91}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_ae546370644a5551c76af739afc008bee}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}parent\+Layerable)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \doxymbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP::\+\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}{m\+Sub\+Grid\+Visible}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}{m\+Antialiased\+Sub\+Grid}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}{m\+Antialiased\+Zero\+Line}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}{m\+Pen}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}{m\+Sub\+Grid\+Pen}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_grid_a379481871f17655c27eda30af233554f}{m\+Zero\+Line\+Pen}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}{m\+Parent\+Axis}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}{m\+Visible}}
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}{m\+Parent\+Plot}}
+\item 
+QPointer$<$ \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \doxymbox{\hyperlink{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}{m\+Parent\+Layerable}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}{m\+Layer}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}{m\+Antialiased}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}{QCPAxis}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Responsible for drawing the grid of a \doxylink{class_q_c_p_axis}{QCPAxis}. 
+
+This class is tightly bound to \doxylink{class_q_c_p_axis}{QCPAxis}. Every axis owns a grid instance and uses it to draw the grid lines, sub grid lines and zero-\/line. You can interact with the grid of an axis via \doxylink{class_q_c_p_axis_a63f1dd2df663680d2a8d06c19592dd63}{QCPAxis::\+grid}. Normally, you don\textquotesingle{}t need to create an instance of \doxylink{class_q_c_p_grid}{QCPGrid} yourself.
+
+The axis and grid drawing was split into two classes to allow them to be placed on different layers (both \doxylink{class_q_c_p_axis}{QCPAxis} and \doxylink{class_q_c_p_grid}{QCPGrid} inherit from \doxylink{class_q_c_p_layerable}{QCPLayerable}). Thus it is possible to have the grid in the background and the axes in the foreground, and any plottables/\+items in between. This described situation is the default setup, see the \doxylink{class_q_c_p_layer}{QCPLayer} documentation. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02069}{2069}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_grid_doc-constructors}
+\Hypertarget{class_q_c_p_grid_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17}\index{QCPGrid@{QCPGrid}!QCPGrid@{QCPGrid}}
+\index{QCPGrid@{QCPGrid}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{QCPGrid()}{QCPGrid()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_acd1cdd2909625388a13048b698494a17} 
+QCPGrid::\+\+QCPGrid (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_axis}{QCPAxis}} \texorpdfstring{$\ast$}{*}}]{parent\+Axis}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a \doxylink{class_q_c_p_grid}{QCPGrid} instance and sets default values.
+
+You shouldn\textquotesingle{}t instantiate grids on their own, since every \doxylink{class_q_c_p_axis}{QCPAxis} brings its own \doxylink{class_q_c_p_grid}{QCPGrid}. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07859}{7859}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+
+
+\label{class_q_c_p_grid_doc-func-members}
+\Hypertarget{class_q_c_p_grid_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_q_c_p_grid_af16a269b15b2a8d904be087d060536bc}\index{QCPGrid@{QCPGrid}!antialiasedSubGrid@{antialiasedSubGrid}}
+\index{antialiasedSubGrid@{antialiasedSubGrid}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{antialiasedSubGrid()}{antialiasedSubGrid()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_af16a269b15b2a8d904be087d060536bc} 
+bool QCPGrid::\+antialiased\+Sub\+Grid (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02085}{2085}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a578d0bd4d2e5000a2ca69b9a034d59aa}\index{QCPGrid@{QCPGrid}!antialiasedZeroLine@{antialiasedZeroLine}}
+\index{antialiasedZeroLine@{antialiasedZeroLine}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{antialiasedZeroLine()}{antialiasedZeroLine()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a578d0bd4d2e5000a2ca69b9a034d59aa} 
+bool QCPGrid::\+antialiased\+Zero\+Line (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02086}{2086}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c}\index{QCPGrid@{QCPGrid}!applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}}
+\index{applyDefaultAntialiasingHint@{applyDefaultAntialiasingHint}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{applyDefaultAntialiasingHint()}{applyDefaultAntialiasingHint()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a64fa48e16b4629f5df2a5029ab6e761c} 
+void QCPGrid::\+apply\+Default\+Antialiasing\+Hint (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{class_q_c_p_layerable_a1168944abbf9fa6731b0f4a2d0d67e8b}{QCPLayerable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07943}{7943}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2}\index{QCPGrid@{QCPGrid}!draw@{draw}}
+\index{draw@{draw}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_aad9a312d998e2d170956334d4cb80be2} 
+void QCPGrid::\+draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{class_q_c_p_layerable_adf62b4bac3ca934db80290792fc897e1}{QCPLayerable}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07953}{7953}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_aee4e95d54acabbe298d6dda0dd86c0a4}\index{QCPGrid@{QCPGrid}!drawGridLines@{drawGridLines}}
+\index{drawGridLines@{drawGridLines}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{drawGridLines()}{drawGridLines()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_aee4e95d54acabbe298d6dda0dd86c0a4} 
+void QCPGrid::\+draw\+Grid\+Lines (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07968}{7968}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_a751ce8aef815bcc9193432a30c8b6b6e}\index{QCPGrid@{QCPGrid}!drawSubGridLines@{drawSubGridLines}}
+\index{drawSubGridLines@{drawSubGridLines}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{drawSubGridLines()}{drawSubGridLines()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a751ce8aef815bcc9193432a30c8b6b6e} 
+void QCPGrid::\+draw\+Sub\+Grid\+Lines (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l08041}{8041}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_a1d68418766b3408c0b7b29ef40b04c2a}\index{QCPGrid@{QCPGrid}!pen@{pen}}
+\index{pen@{pen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{pen()}{pen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a1d68418766b3408c0b7b29ef40b04c2a} 
+QPen QCPGrid::\+pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02087}{2087}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a5692310ba183721a413d60951407d114}\index{QCPGrid@{QCPGrid}!setAntialiasedSubGrid@{setAntialiasedSubGrid}}
+\index{setAntialiasedSubGrid@{setAntialiasedSubGrid}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setAntialiasedSubGrid()}{setAntialiasedSubGrid()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a5692310ba183721a413d60951407d114} 
+void QCPGrid::\+set\+Antialiased\+Sub\+Grid (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Sets whether sub grid lines are drawn antialiased. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07890}{7890}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4}\index{QCPGrid@{QCPGrid}!setAntialiasedZeroLine@{setAntialiasedZeroLine}}
+\index{setAntialiasedZeroLine@{setAntialiasedZeroLine}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setAntialiasedZeroLine()}{setAntialiasedZeroLine()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a3cc6d54647393ee71afb6da56af07aa4} 
+void QCPGrid::\+set\+Antialiased\+Zero\+Line (\begin{DoxyParamCaption}\item[{bool}]{enabled}{}\end{DoxyParamCaption})}
+
+Sets whether zero lines are drawn antialiased. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07898}{7898}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593}\index{QCPGrid@{QCPGrid}!setPen@{setPen}}
+\index{setPen@{setPen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_aa05ab9816ffb440908171e45e833b593} 
+void QCPGrid::\+set\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen with which (major) grid lines are drawn. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07906}{7906}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}\index{QCPGrid@{QCPGrid}!setSubGridPen@{setSubGridPen}}
+\index{setSubGridPen@{setSubGridPen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setSubGridPen()}{setSubGridPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d} 
+void QCPGrid::\+set\+Sub\+Grid\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen with which sub grid lines are drawn. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07914}{7914}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700}\index{QCPGrid@{QCPGrid}!setSubGridVisible@{setSubGridVisible}}
+\index{setSubGridVisible@{setSubGridVisible}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setSubGridVisible()}{setSubGridVisible()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_ad4ad6bf714ec45e08845456355a1b700} 
+void QCPGrid::\+set\+Sub\+Grid\+Visible (\begin{DoxyParamCaption}\item[{bool}]{visible}{}\end{DoxyParamCaption})}
+
+Sets whether grid lines at sub tick marks are drawn.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_grid_a9edd3593f384d1f0b0202a39cef4453d}{set\+Sub\+Grid\+Pen} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07882}{7882}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0}\index{QCPGrid@{QCPGrid}!setZeroLinePen@{setZeroLinePen}}
+\index{setZeroLinePen@{setZeroLinePen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{setZeroLinePen()}{setZeroLinePen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a209f40fdb252397b418b82d3494d8ea0} 
+void QCPGrid::\+set\+Zero\+Line\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen with which zero lines are drawn.
+
+Zero lines are lines at value coordinate 0 which may be drawn with a different pen than other grid lines. To disable zero lines and just draw normal grid lines at zero, set {\itshape pen} to Qt::\+\+No\+Pen. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l07925}{7925}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_grid_ae231e5b87e68689a666f90531a15552f}\index{QCPGrid@{QCPGrid}!subGridPen@{subGridPen}}
+\index{subGridPen@{subGridPen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{subGridPen()}{subGridPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_ae231e5b87e68689a666f90531a15552f} 
+QPen QCPGrid::\+sub\+Grid\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02088}{2088}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_afface6d8cb6df3cbdc0b5c7c2658f96a}\index{QCPGrid@{QCPGrid}!subGridVisible@{subGridVisible}}
+\index{subGridVisible@{subGridVisible}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{subGridVisible()}{subGridVisible()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_afface6d8cb6df3cbdc0b5c7c2658f96a} 
+bool QCPGrid::\+sub\+Grid\+Visible (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02084}{2084}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a85f248487110c4043be696aef5f2f6e1}\index{QCPGrid@{QCPGrid}!zeroLinePen@{zeroLinePen}}
+\index{zeroLinePen@{zeroLinePen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{zeroLinePen()}{zeroLinePen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a85f248487110c4043be696aef5f2f6e1} 
+QPen QCPGrid::\+zero\+Line\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02089}{2089}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_grid_doc-related-members}
+\Hypertarget{class_q_c_p_grid_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a}\index{QCPGrid@{QCPGrid}!QCPAxis@{QCPAxis}}
+\index{QCPAxis@{QCPAxis}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{QCPAxis}{QCPAxis}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_af123edeca169ec7a31958a1d714e1a8a} 
+friend class \doxymbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02116}{2116}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_grid_doc-variable-members}
+\Hypertarget{class_q_c_p_grid_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87}\index{QCPGrid@{QCPGrid}!mAntialiasedSubGrid@{mAntialiasedSubGrid}}
+\index{mAntialiasedSubGrid@{mAntialiasedSubGrid}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mAntialiasedSubGrid}{mAntialiasedSubGrid}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a71b7051f833f0c5de3094998d6afdd87} 
+bool QCPGrid::\+m\+Antialiased\+Sub\+Grid\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02102}{2102}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b}\index{QCPGrid@{QCPGrid}!mAntialiasedZeroLine@{mAntialiasedZeroLine}}
+\index{mAntialiasedZeroLine@{mAntialiasedZeroLine}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mAntialiasedZeroLine}{mAntialiasedZeroLine}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a8c0df56ae86440408c050895dcdb922b} 
+bool QCPGrid::\+m\+Antialiased\+Zero\+Line\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02102}{2102}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88}\index{QCPGrid@{QCPGrid}!mParentAxis@{mParentAxis}}
+\index{mParentAxis@{mParentAxis}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mParentAxis}{mParentAxis}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a9a8a76731e6e737b65b929fd1995cc88} 
+\doxymbox{\hyperlink{class_q_c_p_axis}{QCPAxis}}\texorpdfstring{$\ast$}{*} QCPGrid::\+m\+Parent\+Axis\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02106}{2106}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40}\index{QCPGrid@{QCPGrid}!mPen@{mPen}}
+\index{mPen@{mPen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mPen}{mPen}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a1cdc4a3bccf6a40c2d4360def9fefa40} 
+QPen QCPGrid::\+m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02103}{2103}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f}\index{QCPGrid@{QCPGrid}!mSubGridPen@{mSubGridPen}}
+\index{mSubGridPen@{mSubGridPen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mSubGridPen}{mSubGridPen}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_aa9004bc139ad3ea92629f0aaae81d83f} 
+QPen QCPGrid::\+m\+Sub\+Grid\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02103}{2103}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b}\index{QCPGrid@{QCPGrid}!mSubGridVisible@{mSubGridVisible}}
+\index{mSubGridVisible@{mSubGridVisible}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mSubGridVisible}{mSubGridVisible}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a4e4a0400d6319bb44c06341f6298c87b} 
+bool QCPGrid::\+m\+Sub\+Grid\+Visible\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02101}{2101}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_grid_a379481871f17655c27eda30af233554f}\index{QCPGrid@{QCPGrid}!mZeroLinePen@{mZeroLinePen}}
+\index{mZeroLinePen@{mZeroLinePen}!QCPGrid@{QCPGrid}}
+\doxysubsubsection{\texorpdfstring{mZeroLinePen}{mZeroLinePen}}
+{\footnotesize\ttfamily \label{class_q_c_p_grid_a379481871f17655c27eda30af233554f} 
+QPen QCPGrid::\+m\+Zero\+Line\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l02103}{2103}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8h}{QCustomplot.\+h}}\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8cpp}{QCustomplot.\+cpp}}\end{DoxyCompactItemize}

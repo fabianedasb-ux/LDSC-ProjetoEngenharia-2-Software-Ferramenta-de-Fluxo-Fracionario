@@ -1,0 +1,58 @@
+\doxysection{CCalculadora\+Fluxo\+Fracionario.\+h}
+\hypertarget{_c_calculadora_fluxo_fracionario_8h_source}{}\label{_c_calculadora_fluxo_fracionario_8h_source}\index{Model/CCalculadoraFluxoFracionario.h@{Model/CCalculadoraFluxoFracionario.h}}
+\doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CCALCULADORAFLUXOFRACIONARIO\_H}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CCALCULADORAFLUXOFRACIONARIO\_H}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_i_curvas_permeabilidade_8h}{ICurvasPermeabilidade.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <map>}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00032}\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario}{00032}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7aa1e41e21e5a452957b589a0b83ee7a}{CCalculadoraFluxoFracionario}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00033}00033\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00034}00034\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Propriedades\ PVT\ dos\ Fluidos\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \_mi\_o;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00036}00036\ \ \ \ \ \textcolor{keywordtype}{double}\ \_mi\_w;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \_rho\_o;\ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \_rho\_w;\ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00039}00039\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00040}00040\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Propriedades\ Estruturais\ e\ Operacionais\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00041}00041\ \ \ \ \ \textcolor{keywordtype}{double}\ \_k;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \_qt;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \_A;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00044}00044\ \ \ \ \ \textcolor{keywordtype}{double}\ \_ut;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00045}00045\ \ \ \ \ \textcolor{keywordtype}{double}\ \_angulo;\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00046}00046\ \ \ \ \ \textcolor{keywordtype}{double}\ \_g;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00048}00048\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Acoplamento\ de\ Domínio\ (Padrão\ Strategy)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00049}00049\ \ \ \ \ \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}*\ \_modeloKr;\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00051}00051\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00060}00060\ \ \ \ \ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7aa1e41e21e5a452957b589a0b83ee7a}{CCalculadoraFluxoFracionario}}(\textcolor{keywordtype}{double}\ mu\_o,\ \textcolor{keywordtype}{double}\ mu\_w,\ \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}*\ modelo,\ \textcolor{keywordtype}{double}\ g\ =\ 9.80665);}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00074}00074\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_ab7bd7b12a22e7f92b8a81a031f4f1725}{setPropriedades}}(\textcolor{keywordtype}{double}\ mi\_w,\ \textcolor{keywordtype}{double}\ mi\_o,\ \textcolor{keywordtype}{double}\ rho\_w,\ \textcolor{keywordtype}{double}\ rho\_o,\ \textcolor{keywordtype}{double}\ k,\ \textcolor{keywordtype}{double}\ angulo,\ \textcolor{keywordtype}{double}\ qt,\ \textcolor{keywordtype}{double}\ A);}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00080}00080\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_aefe3fe5c76e18b57b0e6493feb2b7ddd}{setModeloPermeabilidade}}(\doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}*\ modelo);}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00081}00081\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00082}00082\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Diagnósticos\ Dimensionais\ e\ Adimensionais\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_aec2d92fb459c025b5541a1409308df3f}{calcularRapoportLeas}}(\textcolor{keywordtype}{double}\ L,\ \textcolor{keywordtype}{double}\ phi,\ \textcolor{keywordtype}{double}\ sigma)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00093}00093\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00099}00099\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7684ac31bd665e8550f5b0f4bc145e49}{calcularM0}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00107}00107\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_ae1de0c8e265d08f552bf28ebf218e803}{calcularNg0}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00108}00108\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00109}00109\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Resolução\ Numérica\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00110}00110\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00116}00116\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}{calcularFw}}(\textcolor{keywordtype}{double}\ sw)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00117}00117\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00124}00124\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a699114726007ef5b2f718363ab6dfdfd}{calcularDerivadaFw}}(\textcolor{keywordtype}{double}\ sw);}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00125}00125\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00131}00131\ \ \ \ \ std::map<double,\ double>\ \doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a38d0c42cc3d4f1fe5cacd475087e34ea}{gerarCurvaCompleta}}(\textcolor{keywordtype}{double}\ passo)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00132}00132\ \};}
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00133}00133\ }
+\DoxyCodeLine{\Hypertarget{_c_calculadora_fluxo_fracionario_8h_source_l00134}00134\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CCALCULADORAFLUXOFRACIONARIO\_H}}
+
+\end{DoxyCode}

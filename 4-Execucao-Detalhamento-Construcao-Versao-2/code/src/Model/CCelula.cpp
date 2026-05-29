@@ -1,6 +1,8 @@
 /**
  * @file CCelula.cpp
- * @brief Implementação da classe CCelula.
+ * @brief Implementação dos métodos da classe CCelula.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CCelula.h"
@@ -22,7 +24,6 @@ CCelula::~CCelula() {
 }
 
 // --- Getters ---
-
 double CCelula::getSaturacao() const {
     return _saturacao;
 }
@@ -36,7 +37,6 @@ double CCelula::getDerivadaFluxo() const {
 }
 
 // --- Setters ---
-
 void CCelula::setSaturacao(double sw) {
     _saturacao = sw;
 }

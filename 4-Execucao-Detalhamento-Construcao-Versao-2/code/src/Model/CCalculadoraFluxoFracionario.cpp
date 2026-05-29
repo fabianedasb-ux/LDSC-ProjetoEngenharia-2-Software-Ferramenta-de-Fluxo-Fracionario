@@ -1,32 +1,35 @@
 /**
  * @file CCalculadoraFluxoFracionario.cpp
- * @brief Implementação da lógica de cálculo do fluxo fracionário.
+ * @brief Implementação da lógica termodinâmica e cálculos adimensionais do escoamento.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CCalculadoraFluxoFracionario.h"
 #include <stdexcept>
 #include <cmath>
-#include <algorithm> // Para std::clamp
+#include <algorithm> // Para algoritmos de saturação
 
-
-
-// Define PI caso não esteja definido
+// Injeção da constante Pi (padrão C++)
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
 
-// --- Construtor ---
-// --- Construtor ---
+// --- Construtor Padrão ---
 CCalculadoraFluxoFracionario::CCalculadoraFluxoFracionario(double mu_o, double mu_w, ICurvasPermeabilidade* modelo, double g)
     : _mi_o(mu_o), _mi_w(mu_w), _g(g), _modeloKr(modelo)
 {
+    // Valores de inicialização segura (*fail-safe*)
     _rho_o = 800.0;
     _rho_w = 1000.0;
     _k = 100.0;
     _angulo = 0.0;
+    _qt = 1.0;
+    _A = 1.0;
+    _ut = 1.0;
 
     if (_modeloKr == nullptr) {
-        throw std::runtime_error("Erro: Modelo de permeabilidade nulo passado para a calculadora.");
+        throw std::runtime_error("Exceção Core: A Calculadora Física exige uma estratégia de permeabilidade não nula na inicialização.");
     }
 }
 
@@ -37,10 +40,13 @@ void CCalculadoraFluxoFracionario::setPropriedades(double mi_w, double mi_o, dou
     _rho_w = rho_w;
     _rho_o = rho_o;
     _k = k;
-    // Converte graus para radianos para uso nas funções trigonométricas
+
+    // Transformação analítica: de Graus para Radianos
     _angulo = angulo * (M_PI / 180.0);
     _qt = qt;
     _A = A;
+
+    // Consequência cinemática imediata:
     _ut = (qt / _A);
 }
 
@@ -50,115 +56,93 @@ void CCalculadoraFluxoFracionario::setModeloPermeabilidade(ICurvasPermeabilidade
     }
 }
 
+// --- Cálculo do Critério de Rapoport-Leas ---
+double CCalculadoraFluxoFracionario::calcularRapoportLeas(double L, double phi, double sigma) const {
+    if (sigma <= 0 || _k <= 0 || phi <= 0 || _ut <= 0) return 0.0;
 
-// --- Cálculo do Número de Rapoport-Leas (N_RL) ---
-// Baseado na Seção 3.2.5, Equação 3.9 da documentação [cite: 507]
-double CCalculadoraFluxoFracionario::calcularRapoportLeas(double L, double phi, double sigma, double sw, double qt, double A) const {
-    // Evita divisão por zero
-    if (sigma <= 0 || _k <= 0 || phi <= 0) return 0.0;
+    // Obtém endpoint de água avaliando em Sw = 1.0
+    double krw0 = _modeloKr->getKrw(1.0);
 
-    // NRL = (L * ut * mi_w) / (sigma * sqrt(k * phi))
-    double krw = _modeloKr->getKrw(sw);
-    double _qt = qt;
-    double _A = A;
-    double _ut = (_qt / _A);
     double numerador = L * _ut * _mi_w;
-    double raiz = std::sqrt(phi/_k);
-    double denominador = sigma * krw * cos(_angulo);
+    double raiz = std::sqrt(phi / _k);
 
-    return (raiz)*(numerador / denominador);
+    // Assume-se reservatório wet-water forte (cos(0) = 1.0)
+    double denominador = sigma * krw0 * 1.0;
+
+    return raiz * (numerador / denominador);
 }
 
-double CCalculadoraFluxoFracionario::calcularM(double sw) const {
-    double krw = _modeloKr->getKrw(sw);
-    double kro = _modeloKr->getKro(sw);
+// --- Razão de Mobilidade (M^0) ---
+double CCalculadoraFluxoFracionario::calcularM0() const {
+    double krw0 = _modeloKr->getKrw(1.0);
+    double kro0 = _modeloKr->getKro(0.0);
 
-    // M = (krw(sw) / mi_w) / (kro(sw) / mi_o)
-    return (krw/ _mi_w) / (kro / _mi_o);
+    if (kro0 <= 0 || _mi_w <= 0) return 0.0;
+
+    return (krw0 / _mi_w) / (kro0 / _mi_o);
 }
 
-// --- Cálculo isolado do Número de Gravidade ---
-double CCalculadoraFluxoFracionario::calcularNg(double sw,double qt, double A) const {
-    if (std::abs(_ut) < 1e-12) return 0.0;
+// --- Número de Gravidade (Ng^0) ---
+double CCalculadoraFluxoFracionario::calcularNg0() const {
+    if (std::abs(_ut) < 1e-12 || _mi_o <= 0) return 0.0;
 
-    double _qt = qt;
-    double _A = A;
-    double _ut = (_qt/_A);
-    double kro = _modeloKr->getKro(sw);
+    double kro0 = _modeloKr->getKro(0.0);
     double delta_rho = _rho_w - _rho_o;
 
-    // Ng = (k * kro * delta_rho * g ) / (ut * mi_o)
-    return (_k * kro * delta_rho * _g ) / (_ut * _mi_o);
+    return (_k * kro0 * delta_rho * _g) / (_ut * _mi_o);
 }
 
-// --- Cálculo Principal (Fw) ---
-// Implementa a Equação 3.10 para reservatórios inclinados
-double CCalculadoraFluxoFracionario::calcularFw(double sw, double qt, double A) const {
-    // 1. Obter Permeabilidades Relativas do Modelo (Strategy) [cite: 660, 723]
+// --- Núcleo Analítico: Fluxo Fracionário (fw) ---
+double CCalculadoraFluxoFracionario::calcularFw(double sw) const {
+
+    // Clamping termodinâmico para as assíntotas do deslocamento
+    if (sw <= 0.0) return 0.0;
+    if (sw >= 1.0) return 1.0;
+
     double krw = _modeloKr->getKrw(sw);
+    double kro = _modeloKr->getKro(sw);
 
-    // 2. Verificação de Mobilidade para Água
-    // Se não há fluxo de água, fw é zero [cite: 368]
-    if (krw <= 1e-12) return 0.0;
-    if (_mi_w <= 1e-9 || _mi_o <= 1e-9) return 0.0;
+    // Condição crítica de estrangulamento de fase (Choke condition)
+    if (krw < 1e-15) return 0.0;
+    if (kro < 1e-15) return 1.0;
 
-    // 3. Razão de Mobilidade (M) - Termo Viscoso [cite: 408, 439]
-    // M = (krw / mi_w) / (kro / mi_o)
-    double M = calcularM(sw);
+    double termo_viscoso = (kro * _mi_w) / (krw * _mi_o);
+    double delta_rho = _rho_w - _rho_o;
 
-    // 4. Número de Gravidade (Ng) - Termo Gravitacional [cite: 440]
-    double Ng = calcularNg(sw, qt, A);
+    // Termo dependente da angulação topográfica
+    double termo_gravitacional = (_k * kro * delta_rho * _g * std::sin(_angulo)) / (_ut * _mi_o);
 
-    // 5. Equação de Generalizada (Eq. 3.10)
-    // fw = (1 - Ng) / (1 + (1/M))
-    // Note que 1/M é equivalente a (kro/krw) * (mi_w/mi_o)
-    double denominador = 1.0 + (1.0 / M);
-    double numerador = 1.0 - Ng;
-
-    double fw_total = numerador / denominador;
-
-    // Restrições Físicas: 0 <= fw <= 1
-    return std::clamp(fw_total, 0.0, 1.0);
+    // O retorno pode assumir fw > 1 (contra-fluxo de óleo decantando) em falhas geológicas íngremes
+    return (1.0 - termo_gravitacional) / (1.0 + termo_viscoso);
 }
 
-// --- Derivada Numérica (Diferenças Finitas) ---
-double CCalculadoraFluxoFracionario::calcularDerivadaFw(double sw, double qt, double A) const {
-    double h = 1e-5; // Passo pequeno
-
-    // Proteção de bordas
-    double sw_mais = sw + h;
-    double sw_menos = sw - h;
-    if (sw_mais > 1.0) sw_mais = 1.0;
-    if (sw_menos < 0.0) sw_menos = 0.0;
-
-    double fw_mais = calcularFw(sw_mais,qt,A);
-    double fw_menos = calcularFw(sw_menos,qt,A);
-
-    if (std::abs(sw_mais - sw_menos) < 1e-9) return 0.0;
-
-    return (fw_mais - fw_menos) / (sw_mais - sw_menos);
+// --- Diferenciação Numérica (fw') ---
+double CCalculadoraFluxoFracionario::calcularDerivadaFw(double sw) {
+    // Abordagem de Diferenças Finitas Centrais (h = 10^-5 para mitigar erro de truncamento)
+    double h = 1e-5;
+    double fw_mais = calcularFw(sw + h);
+    double fw_menos = calcularFw(sw - h);
+    return (fw_mais - fw_menos) / (2.0 * h);
 }
 
-// --- Gerador de Curva ---
-std::map<double, double> CCalculadoraFluxoFracionario::gerarCurvaCompleta(double passo,double qt,double A) const {
+// --- Varredura Discreta ---
+std::map<double, double> CCalculadoraFluxoFracionario::gerarCurvaCompleta(double passo) const {
     std::map<double, double> curva;
     if (passo <= 0) passo = 0.01;
 
-    // Calculamos o número de divisões (inteiro) para evitar erros de precisão
     int numPontos = static_cast<int>(1.0 / passo);
 
+    // Preenchimento contínuo do dicionário indexado
     for (int i = 0; i <= numPontos; ++i) {
         double sw = i * passo;
-        if (sw > 1.0) sw = 1.0; // Garante o limite físico
-        curva[sw] = calcularFw(sw,qt,A);
+        if (sw > 1.0) sw = 1.0;
+        curva[sw] = calcularFw(sw);
     }
 
-    // Garante que o ponto final (1.0) esteja sempre presente
+    // Força o contorno de saturação absoluta
     if (curva.find(1.0) == curva.end()) {
-        curva[1.0] = calcularFw(1.0, qt,A);
+        curva[1.0] = calcularFw(1.0);
     }
 
     return curva;
 }
-
-

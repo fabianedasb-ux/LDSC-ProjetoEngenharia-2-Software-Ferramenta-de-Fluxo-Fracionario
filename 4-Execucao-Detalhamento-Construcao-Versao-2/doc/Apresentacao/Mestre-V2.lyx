@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -11,7 +11,7 @@
 \usepackage{verbatim}
 %%\usepackage{algorithm}
 \usepackage{fancyvrb}
-\usepackage{keyval} 
+\usepackage{keyval}
 \usepackage{indentfirst}
 %\usepackage{color}
 \usepackage{xcolor}
@@ -19,10 +19,8 @@
 \definecolor{BLACK}{rgb}{0,0,0}%   rgb color model
 \definecolor{BLUE}{rgb}{0,0,1}%   rgb color model
 \definecolor{RED}{rgb}{1,0,0}%   rgb color model
-
 %Informa que vai usar o pacote listings, disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
-
 %Define um novo comando, chamado lst
 %observe que lst chama o comando  lstinputlisting.
 \newcommand{\lst}[2]{%
@@ -54,7 +52,7 @@
 \use_microtype false
 \use_dash_ligatures true
 \graphics default
-\default_output_format pdf5
+\default_output_format default
 \output_sync 0
 \bibtex_command default
 \index_command default
@@ -92,11 +90,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -122,6 +128,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -383,42 +390,24 @@ sobre o título pretendido,
 status open
 
 \begin_layout Plain Layout
-Dedicatória (opcional)
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Dedicatória (opcional)
+Agradecimentos:
 \end_layout
 
 \begin_layout Plain Layout
-A dedicatória deve ser sucinta e centralizada na página,
- não tem título.
+Agradeço a Cristiane e Jorge por terem me dado a vida e tudo que veio em seguida.
 \end_layout
 
 \begin_layout Plain Layout
-Quando existente,
- está página recebe o romano ii.
+Agradeço ao Victor por ser meu farol,
+ iluminando minha vida.
 \end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
 
 \begin_layout Plain Layout
-Agradecimentos (opcional)
+Agradeço ao Bueno pelo conhecimento compartilhado.
+\end_layout
+
+\begin_layout Plain Layout
+Agradeço ao universo pela existência.
 \end_layout
 
 \end_inset
@@ -537,262 +526,10 @@ set_width "auto"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Lista de símbolos,
- abreviaturas e nomenclaturas (opcional)
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Lista de símbolos,
- abreviaturas e nomenclaturas (opcional)
-\end_layout
-
-\begin_layout Plain Layout
-O título,
- em letras maiúsculas,
- é centralizado,
- sem pontuação,
- a 90 mm do
-\end_layout
-
-\begin_layout Plain Layout
-topo da página (sem contar a margem).
- A lista é iniciada na margem esquerda,
- a
-\end_layout
-
-\begin_layout Plain Layout
-120 mm do topo da página.
-\end_layout
-
-\begin_layout Plain Layout
-Segue-se qualquer forma usual no campo de estudo pertinente.
- É
-\end_layout
-
-\begin_layout Plain Layout
-obrigatório o empregado do Sistema Internacional (SI) nas unidades de peso e
-\end_layout
-
-\begin_layout Plain Layout
-medidas.
-\end_layout
-
-\begin_layout Plain Layout
-Essas páginas são numeradas em algarismos romanos,
- usando-se letras
-\end_layout
-
-\begin_layout Plain Layout
-minúsculas.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Resumo (Obrigatório)
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Resumo (Obrigatório)
-\end_layout
-
-\begin_layout Plain Layout
-O título,
- “RESUMO”,
- em letras maiúsculas,
- é centralizado,
- sem pontuação,
-\end_layout
-
-\begin_layout Plain Layout
-a 90 mm do topo da página (sem contar a margem).
- A lista é iniciada na margem
-\end_layout
-
-\begin_layout Plain Layout
-esquerda,
- a 120 mm do topo da mesma.
-\end_layout
-
-\begin_layout Plain Layout
-O primeiro parágrafo é em espaço simples e contém o nome do candidato
-\end_layout
-
-\begin_layout Plain Layout
-tal como aparece na página de rosto,
- com o nome da família em primeiro lugar
-\end_layout
-
-\begin_layout Plain Layout
-(em letra maiúscula);
- a abreviatura do título;
- o nome da instituição que confere o
-\end_layout
-
-\begin_layout Plain Layout
-título (Universidade Estadual do Norte Fluminense Darcy Ribeiro);
- mês e ano do
-\end_layout
-
-\begin_layout Plain Layout
-cumprimento da exigência;
- o título da monografia (exatamente como aparece na
-\end_layout
-
-\begin_layout Plain Layout
-página de rosto);
- e os nomes completos do professor orientador e do professor coorientador (caso haja).
-\end_layout
-
-\begin_layout Plain Layout
-Em seguida,
- vem à redação,
- em parágrafo único,
- ARIAL 12,
- em espaço 1,5.
-\end_layout
-
-\begin_layout Plain Layout
-Sobre o assunto da monografia,
- uma explanação breve sobre a pesquisa e um
-\end_layout
-
-\begin_layout Plain Layout
-resumo daquilo que foi obtido.
- Não usar diagramas,
- ilustrações,
- índices ou
-\end_layout
-
-\begin_layout Plain Layout
-expoentes e referências bibliográfica.
-\end_layout
-
-\begin_layout Plain Layout
-O resumo não deve ultrapassar 500 palavras.
- Números,
- símbolos e
-\end_layout
-
-\begin_layout Plain Layout
-abreviaturas são contados como palavras.
-\end_layout
-
-\begin_layout Plain Layout
-As páginas do resumo são numeradas em algarismos romanos,
- usando-se
-\end_layout
-
-\begin_layout Plain Layout
-letras minúsculas.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-\lang english
-Abstract
-\emph default
-\lang brazilian
- (Obrigatório)
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-\emph on
-\lang english
-Abstract
-\emph default
-\lang brazilian
- (Obrigatório)
-\end_layout
-
-\begin_layout Plain Layout
-O título “
-\emph on
-\lang english
-ABSTRACT
-\emph default
-\lang brazilian
-”,
- em letras maiúsculas,
- é centralizado,
- sem
-\end_layout
-
-\begin_layout Plain Layout
-pontuação,
- a 90 mm do topo da página.
- Será redigido em inglês,
- no formato
-\end_layout
-
-\begin_layout Plain Layout
-apresentado para o RESUMO 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap0b-ResumoAbstract-V2.lyx"
 literal "false"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -845,10 +582,6 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap4-Projeto-V2.lyx"
@@ -859,16 +592,7 @@ literal "false"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap5-Ciclos-Planejamento-Detalhamento-V2.lyx"
@@ -879,16 +603,7 @@ literal "false"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap6-Ciclos-Construcao-Implementacao-V2.lyx"
@@ -899,16 +614,7 @@ literal "false"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap7-Teste-V2.lyx"
@@ -919,25 +625,11 @@ literal "false"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap8-DocumentacaoDoDesenvolvedor-V2.lyx"
 literal "false"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 
@@ -965,7 +657,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 appendix
 \end_layout
@@ -976,10 +667,6 @@ appendix
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice-A-V2.lyx"
@@ -990,25 +677,11 @@ literal "false"
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice-B-V2.lyx"
 literal "false"
-
-\end_inset
-
-
-\end_layout
 
 \end_inset
 

@@ -1,14 +1,16 @@
 /**
  * @file CMalha.cpp
- * @brief Implementação da classe CMalha.
+ * @brief Implementação dos métodos da classe CMalha.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CMalha.h"
-#include <algorithm> // Para std::sort
+#include <algorithm> // Necessário para a função std::sort
 
 // --- Construtor ---
 CMalha::CMalha() : _tempoAtual(0.0) {
-    // Vetor inicia vazio
+    // Vetor de células inicia vazio automaticamente
 }
 
 // --- Destrutor ---
@@ -27,7 +29,7 @@ void CMalha::adicionarCelula(const CCelula& celula) {
 }
 
 void CMalha::ordenarPorPosicao() {
-    // Utiliza std::sort com uma função lambda para comparar as posições
+    // Utiliza std::sort da STL com uma função lambda para comparar as posições (x)
     std::sort(_celulas.begin(), _celulas.end(),
               [](const CCelula& a, const CCelula& b) {
                   return a.getPosicao() < b.getPosicao();

@@ -1,0 +1,43 @@
+\_form#0:$ f_w = \frac{1 - \frac{k \cdot k_{ro}}{u_t \cdot \mu_o} \Delta\rho \cdot g \cdot \sin(\alpha)}{1 + \frac{k_{ro}}{k_{rw}} \frac{\mu_w}{\mu_o}} $
+\_form#1:$ f_w $
+\_form#2:$ \alpha $
+\_form#3:$ u_t $
+\_form#4:$ \mu_o $
+\_form#5:$ \mu_w $
+\_form#6:$ \rho_o $
+\_form#7:$ \rho_w $
+\_form#8:$ k $
+\_form#9:$ q_t $
+\_form#10:$ A $
+\_form#11:$ u_t = q_t/A $
+\_form#12:$ g $
+\_form#13:$ N_{RL} = \left( \frac{\phi}{k} \right)^{1/2} \frac{L \cdot u_t \cdot \mu_w}{\sigma \cdot k_{rw}^0 \cdot \cos(\theta)} $
+\_form#14:$ M^0 $
+\_form#15:$ M^0 = \frac{k_{rw}^0 / \mu_w}{k_{ro}^0 / \mu_o} $
+\_form#16:$ N_g^0 $
+\_form#17:$ N_g^0 = \frac{k \cdot k_{ro}^0 \cdot \Delta\rho \cdot g}{u_t \cdot \mu_o} $
+\_form#18:$ f_w' $
+\_form#19:$ \frac{df_w}{dS_w} $
+\_form#20:$ k_{rw} = k_{rw,max} \cdot \exp\left(-A_w \cdot S_{wn}^{-B_w}\right) $
+\_form#21:$ k_{ro} = k_{ro,max} \cdot \exp\left(-A_o \cdot (1 - S_{wn})^{-B_o}\right) $
+\_form#22:$ k_{rw} $
+\_form#23:$ k_{ro} $
+\_form#24:$ k_{rw} = k_{rw,max} \cdot (S_{wn})^{n_w} $
+\_form#25:$ k_{ro} = k_{ro,max} \cdot (1 - S_{wn})^{n_o} $
+\_form#26:$ S_{wn} = \frac{S_w - S_{wir}}{1 - S_{wir} - S_{or}} $
+\_form#27:$ k_{rw} = \frac{(S_{wn})^{L_w}}{(S_{wn})^{L_w} + E_w \cdot (1 - S_{wn})^{T_w}} $
+\_form#28:$ k_{ro} = \frac{(1 - S_{wn})^{L_o}}{(1 - S_{wn})^{L_o} + E_o \cdot (S_{wn})^{T_o}} $
+\_form#29:$ y = y_i + \frac{(x - x_i) \cdot (y_{i+1} - y_i)}{x_{i+1} - x_i} $
+\_form#30:$ y(x) $
+\_form#31:$ k_{rw}(S_w) $
+\_form#32:$ k_{ro}(S_w) $
+\_form#33:$ x_D(S_w, t_D) = \left( \frac{df_w}{dS_w} \right) \cdot t_D $
+\_form#34:$ S_{wf} $
+\_form#35:$ \bar{S}_w $
+\_form#36:$ (S_{wi}, f_w(S_{wi})) $
+\_form#37:$ \left. \frac{df_w}{dS_w} \right|_{S_{wf}} = \frac{f_w(S_{wf}) - f_w(S_{wi})}{S_{wf} - S_{wi}} $
+\_form#38:$ S_{wi} $
+\_form#39:$ S_{wirr} $
+\_form#40:$ 1 - S_{or} $
+\_form#41:$ > 10^{-6} $
+\_form#42:$ f_w = 1 $

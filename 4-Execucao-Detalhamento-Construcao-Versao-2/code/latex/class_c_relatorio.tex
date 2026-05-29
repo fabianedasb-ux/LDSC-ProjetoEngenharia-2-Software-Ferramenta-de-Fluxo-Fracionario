@@ -1,0 +1,277 @@
+\doxysection{CRelatorio Class Reference}
+\hypertarget{class_c_relatorio}{}\label{class_c_relatorio}\index{CRelatorio@{CRelatorio}}
+
+
+Gerenciador de relatórios técnicos e exportação PDF.  
+
+
+
+
+{\ttfamily \+\#include $<$CRelatorio.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_relatorio_a75ea32861a52cb15826c9a273ea2f3df}{CRelatorio}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_c_relatorio}{CRelatorio}. Inicializa a variável de texto e injeta a folha de estilo CSS (limpar). \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_c_relatorio_a7f9d1ecc16576b4f4d6e132dd5580a27}{\texorpdfstring{$\sim$}{\string~}\+CRelatorio}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_ae2e930222952831d4d48096d78e79152}{limpar}} ()
+\begin{DoxyCompactList}\small\item\em Reinicializa o documento HTML. Apaga dados antigos e injeta o cabeçalho base contendo os estilos CSS, fontes (Segoe UI) e formatações rigorosas de tabelas e legendas (Padrão ABNT). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_a2e6c1ad088b76ebbb99b39a8cab2c87b}{gerar\+Cabecalho}} (double comp, double area, double phi, double k, double angulo, double mio, double miw)
+\begin{DoxyCompactList}\small\item\em Registra a tabela de propriedades estáticas do reservatório. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_a6ce942ca4d13c9ac1a705fc6fa6770c2}{registrar\+Diagnostico\+Fisico}} (double nrl, double m, double ng)
+\begin{DoxyCompactList}\small\item\em Registra os adimensionais de diagnóstico e emite o aviso do critério capilar. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_a1cb7e0e68bb0ac1d739343818fbe706a}{registrar\+Resultado\+Welge}} (double sw\+Frente, double sw\+Media, double tempo\+Ruptura, double ed\+Bt)
+\begin{DoxyCompactList}\small\item\em Destaca os resultados críticos da técnica de Welge no instante de ruptura (Breakthrough). \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_adb823a650f91d01b7f101850511d2aae}{registrar\+Eficiencia}} (double tempo, double fator\+Recuperacao)
+\begin{DoxyCompactList}\small\item\em Registra o status temporal do instante em que o relatório foi gerado. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_a492b86668ca6f9755faea5a5a593c08f}{registrar\+Graficos}} (const QPixmap \&pix\+Fluxo, const QPixmap \&pix\+Saturacao, const QPixmap \&pix\+Eficiencia)
+\begin{DoxyCompactList}\small\item\em Converte e embuti os gráficos do \doxylink{class_q_custom_plot}{QCustom\+Plot} diretamente no documento HTML. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_relatorio_a48154c831a93bb3d0b388d9b0095971c}{adicionar\+Nota}} (const std::\+string \&nota\+Html)
+\begin{DoxyCompactList}\small\item\em Anexa anotações customizadas ao fim do relatório. \end{DoxyCompactList}\item 
+bool \doxymbox{\hyperlink{class_c_relatorio_a182a5300842147992e53eef6f78a91b1}{exportar\+Para\+PDF}} (const std::\+string \&caminho)
+\begin{DoxyCompactList}\small\item\em Renderiza e exporta o arquivo PDF em disco. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Gerenciador de relatórios técnicos e exportação PDF. 
+
+Esta classe é responsável por agregar os dados estáticos, os diagnósticos adimensionais, os resultados numéricos do choque de Welge e os gráficos gerados pela interface. O motor interno utiliza a sintaxe HTML5 e CSS3 inline para construir o layout do documento. Posteriormente, o relatório é renderizado vetorizado em formato PDF através das classes nativas QText\+Document e QPdf\+Writer do Qt.
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8h_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_relatorio_8h_source}{CRelatorio.\+h}}.
+
+
+
+\label{class_c_relatorio_doc-constructors}
+\Hypertarget{class_c_relatorio_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_relatorio_a75ea32861a52cb15826c9a273ea2f3df}\index{CRelatorio@{CRelatorio}!CRelatorio@{CRelatorio}}
+\index{CRelatorio@{CRelatorio}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{CRelatorio()}{CRelatorio()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a75ea32861a52cb15826c9a273ea2f3df} 
+CRelatorio::\+\+CRelatorio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe \doxylink{class_c_relatorio}{CRelatorio}. Inicializa a variável de texto e injeta a folha de estilo CSS (limpar). 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00019}{19}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a7f9d1ecc16576b4f4d6e132dd5580a27}\index{CRelatorio@{CRelatorio}!````~CRelatorio@{\texorpdfstring{$\sim$}{\string~}CRelatorio}}
+\index{````~CRelatorio@{\texorpdfstring{$\sim$}{\string~}CRelatorio}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CRelatorio()}{\string~CRelatorio()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a7f9d1ecc16576b4f4d6e132dd5580a27} 
+CRelatorio::\+\texorpdfstring{$\sim$}{\string~}\+CRelatorio (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Destrutor virtual. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+
+
+\label{class_c_relatorio_doc-func-members}
+\Hypertarget{class_c_relatorio_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_relatorio_a48154c831a93bb3d0b388d9b0095971c}\index{CRelatorio@{CRelatorio}!adicionarNota@{adicionarNota}}
+\index{adicionarNota@{adicionarNota}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{adicionarNota()}{adicionarNota()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a48154c831a93bb3d0b388d9b0095971c} 
+void CRelatorio::\+adicionar\+Nota (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{nota\+Html}{}\end{DoxyParamCaption})}
+
+
+
+Anexa anotações customizadas ao fim do relatório. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nota\+Html} & String contendo texto ou marcação HTML extra inserida pelo usuário. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00172}{172}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a182a5300842147992e53eef6f78a91b1}\index{CRelatorio@{CRelatorio}!exportarParaPDF@{exportarParaPDF}}
+\index{exportarParaPDF@{exportarParaPDF}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{exportarParaPDF()}{exportarParaPDF()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a182a5300842147992e53eef6f78a91b1} 
+bool CRelatorio::\+exportar\+Para\+PDF (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{caminho}{}\end{DoxyParamCaption})}
+
+
+
+Renderiza e exporta o arquivo PDF em disco. 
+
+Finaliza a sintaxe HTML e utiliza o motor de renderização {\ttfamily QText\+Document} em conjunto com o {\ttfamily QPdf\+Writer} para formatar e paginar o relatório no padrão ISO A4.
+
+
+\begin{DoxyParams}{Parameters}
+{\em caminho} & Caminho absoluto alvo para gravação do arquivo {\ttfamily .pdf}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true se o arquivo for gravado com sucesso, false em caso de falha de I/\+O. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00177}{177}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a2e6c1ad088b76ebbb99b39a8cab2c87b}\index{CRelatorio@{CRelatorio}!gerarCabecalho@{gerarCabecalho}}
+\index{gerarCabecalho@{gerarCabecalho}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{gerarCabecalho()}{gerarCabecalho()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a2e6c1ad088b76ebbb99b39a8cab2c87b} 
+void CRelatorio::\+gerar\+Cabecalho (\begin{DoxyParamCaption}\item[{double}]{comp}{, }\item[{double}]{area}{, }\item[{double}]{phi}{, }\item[{double}]{k}{, }\item[{double}]{angulo}{, }\item[{double}]{mio}{, }\item[{double}]{miw}{}\end{DoxyParamCaption})}
+
+
+
+Registra a tabela de propriedades estáticas do reservatório. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em comp} & Comprimento (L). \\
+\hline
+{\em area} & Área transversal (A). \\
+\hline
+{\em phi} & Porosidade efetiva. \\
+\hline
+{\em k} & Permeabilidade absoluta. \\
+\hline
+{\em angulo} & Mergulho estrutural. \\
+\hline
+{\em mio} & Viscosidade do óleo. \\
+\hline
+{\em miw} & Viscosidade da água. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_ae2e930222952831d4d48096d78e79152}\index{CRelatorio@{CRelatorio}!limpar@{limpar}}
+\index{limpar@{limpar}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{limpar()}{limpar()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_ae2e930222952831d4d48096d78e79152} 
+void CRelatorio::\+limpar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Reinicializa o documento HTML. Apaga dados antigos e injeta o cabeçalho base contendo os estilos CSS, fontes (Segoe UI) e formatações rigorosas de tabelas e legendas (Padrão ABNT). 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a6ce942ca4d13c9ac1a705fc6fa6770c2}\index{CRelatorio@{CRelatorio}!registrarDiagnosticoFisico@{registrarDiagnosticoFisico}}
+\index{registrarDiagnosticoFisico@{registrarDiagnosticoFisico}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{registrarDiagnosticoFisico()}{registrarDiagnosticoFisico()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a6ce942ca4d13c9ac1a705fc6fa6770c2} 
+void CRelatorio::\+registrar\+Diagnostico\+Fisico (\begin{DoxyParamCaption}\item[{double}]{nrl}{, }\item[{double}]{m}{, }\item[{double}]{ng}{}\end{DoxyParamCaption})}
+
+
+
+Registra os adimensionais de diagnóstico e emite o aviso do critério capilar. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nrl} & Número de Rapoport-\/\+Leas. \\
+\hline
+{\em m} & Razão de mobilidade no ponto final (M\texorpdfstring{$^\wedge$}{\string^}0). \\
+\hline
+{\em ng} & Número de gravidade (Ng). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_adb823a650f91d01b7f101850511d2aae}\index{CRelatorio@{CRelatorio}!registrarEficiencia@{registrarEficiencia}}
+\index{registrarEficiencia@{registrarEficiencia}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{registrarEficiencia()}{registrarEficiencia()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_adb823a650f91d01b7f101850511d2aae} 
+void CRelatorio::\+registrar\+Eficiencia (\begin{DoxyParamCaption}\item[{double}]{tempo}{, }\item[{double}]{fator\+Recuperacao}{}\end{DoxyParamCaption})}
+
+
+
+Registra o status temporal do instante em que o relatório foi gerado. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em tempo} & Tempo atual de injeção analisado (PVI). \\
+\hline
+{\em fator\+Recuperacao} & Recuperação atual baseada no volume poroso. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00114}{114}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a492b86668ca6f9755faea5a5a593c08f}\index{CRelatorio@{CRelatorio}!registrarGraficos@{registrarGraficos}}
+\index{registrarGraficos@{registrarGraficos}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{registrarGraficos()}{registrarGraficos()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a492b86668ca6f9755faea5a5a593c08f} 
+void CRelatorio::\+registrar\+Graficos (\begin{DoxyParamCaption}\item[{const QPixmap \&}]{pix\+Fluxo}{, }\item[{const QPixmap \&}]{pix\+Saturacao}{, }\item[{const QPixmap \&}]{pix\+Eficiencia}{}\end{DoxyParamCaption})}
+
+
+
+Converte e embuti os gráficos do \doxylink{class_q_custom_plot}{QCustom\+Plot} diretamente no documento HTML. 
+
+Os objetos {\ttfamily QPixmap} são codificados em memória para fluxos binários PNG e, em seguida, transformados em strings Base64. Isso permite injetar a imagem como uma URI de dados ({\ttfamily \texorpdfstring{$<$}{<}img src=\textquotesingle{}data:\+image/\+png;base64,...\textquotesingle{}\texorpdfstring{$>$}{>}}) sem depender de arquivos temporários no disco rígido.
+
+
+\begin{DoxyParams}{Parameters}
+{\em pix\+Fluxo} & Captura de tela da curva do fluxo fracionário. \\
+\hline
+{\em pix\+Saturacao} & Captura de tela do perfil de saturação de água. \\
+\hline
+{\em pix\+Eficiencia} & Captura de tela do histórico de eficiência. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00129}{129}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+\Hypertarget{class_c_relatorio_a1cb7e0e68bb0ac1d739343818fbe706a}\index{CRelatorio@{CRelatorio}!registrarResultadoWelge@{registrarResultadoWelge}}
+\index{registrarResultadoWelge@{registrarResultadoWelge}!CRelatorio@{CRelatorio}}
+\doxysubsubsection{\texorpdfstring{registrarResultadoWelge()}{registrarResultadoWelge()}}
+{\footnotesize\ttfamily \label{class_c_relatorio_a1cb7e0e68bb0ac1d739343818fbe706a} 
+void CRelatorio::\+registrar\+Resultado\+Welge (\begin{DoxyParamCaption}\item[{double}]{sw\+Frente}{, }\item[{double}]{sw\+Media}{, }\item[{double}]{tempo\+Ruptura}{, }\item[{double}]{ed\+Bt}{}\end{DoxyParamCaption})}
+
+
+
+Destaca os resultados críticos da técnica de Welge no instante de ruptura (Breakthrough). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw\+Frente} & Saturação da água na frente de choque. \\
+\hline
+{\em sw\+Media} & Saturação média da zona varrida. \\
+\hline
+{\em tempo\+Ruptura} & Tempo de injeção (PVI) exato no momento do breakthrough. \\
+\hline
+{\em ed\+Bt} & Eficiência de deslocamento volumétrico na ruptura. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_relatorio_8cpp_source_l00092}{92}} of file \doxymbox{\hyperlink{_c_relatorio_8cpp_source}{CRelatorio.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_relatorio_8h}{CRelatorio.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_relatorio_8cpp}{CRelatorio.\+cpp}}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -59,11 +59,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -95,6 +103,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -142,7 +151,36 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-A Análise Orientada a Objetos (AOO) constitui uma etapa fundamental no desenvolvimento de software científico,
+A Análise Orientada a Objetos (AOO
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+AOO
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Análise Orientada a Objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) constitui uma etapa fundamental no desenvolvimento de software científico,
  pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica para uma estrutura computacional lógica e coesa.
  Segundo 
 \begin_inset CommandInset citation
@@ -190,7 +228,36 @@ name "sec:Diagramas-de-classes"
 \end_layout
 
 \begin_layout Standard
-O desenvolvimento do simulador foi fundamentado nos paradigmas da Programação Orientada a Objetos (POO),
+O desenvolvimento do simulador foi fundamentado nos paradigmas da Programação Orientada a Objetos (POO
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+POO
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Programação Orientada a Objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+),
  uma abordagem que permite modelar o software através de entidades que interagem entre si,
  garantindo modularidade,
  reutilização de código e facilidade de manutenção 
@@ -206,7 +273,39 @@ literal "true"
 
 \begin_layout Standard
 Para a representação da estrutura estática do sistema,
- utilizou-se a notação UML (
+ utilizou-se a notação UML
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+UML
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\lang english
+Unified Modeling Language
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (
 \emph on
 \lang english
 Unified Modeling Language
@@ -232,7 +331,11 @@ View
 \end_layout
 
 \begin_layout Standard
-Um aspecto central da implementação é a aplicação do Padrão de Projeto Strategy 
+Um aspecto central da implementação é a aplicação do Padrão de Projeto 
+\emph on
+Strategy
+\emph default
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "gamma1994design"
@@ -251,7 +354,6 @@ literal "true"
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 begin{landscape}
@@ -311,7 +413,6 @@ name "cap:Diagrama-de-classes"
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{landscape}

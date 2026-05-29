@@ -1,20 +1,23 @@
 /**
  * @file CSolver.cpp
- * @brief Implementação da solução analítica de Buckley-Leverett.
+ * @brief Implementação analítica das leis de conservação pelo método das características.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CSolver.h"
 #include <cmath>
+#include <vector>
 
 // --- Construtor e Destrutor ---
 CSolver::CSolver() : _malha(nullptr), _calc(nullptr), _welge(nullptr) {
 }
 
 CSolver::~CSolver() {
-    // Não deletamos os ponteiros aqui pois eles são gerenciados pelo CSimulador (agregação)
+    // Gestão de Ciclo de Vida: Deleção delegada ao CSimulador
 }
 
-// --- Setters ---
+// --- Setters de Estruturação ---
 void CSolver::setMalha(CMalha* malha) {
     _malha = malha;
 }
@@ -27,55 +30,63 @@ void CSolver::setWelge(CWelge* welge) {
     _welge = welge;
 }
 
-// --- Motor Matemático (Lógica Principal) ---
-void CSolver::calcularPerfilSaturacao(double tempoInjetado, double _vazaoInjecao, double _area) {
+// --- Algoritmo Base de MOC ---
+void CSolver::calcularPerfilSaturacao(double tempoInjetado, double swi, double sw_max) {
+
+    // Verificação de Seguridade Computacional: Checagem contra nullptr
     if (!_malha || !_calc || !_welge) return;
 
-    // Reset e preparação
     _malha->limpar();
-    _malha->setTempoAtual(tempoInjetado); // t_D (PVI)
+    _malha->setTempoAtual(tempoInjetado);
 
-
-    // 1) Construir MOC: calcular velocidades características e posições para cada Sw
+    // Resolução Fina Discreta Analítica
     double passoSw = 0.005;
     int numPontos = static_cast<int>(1.0 / passoSw);
 
-    // Vetores temporários para armazenar Sw, velocidade característica e posição
     std::vector<double> vecSw;
     std::vector<double> vecVel;
     std::vector<double> vecPos;
+
     vecSw.reserve(numPontos + 1);
     vecVel.reserve(numPontos + 1);
     vecPos.reserve(numPontos + 1);
 
+    // Passo 1: Construção do Perfil Bruto de Múltipla Valoração (Avanço Livre de Ondas)
     for (int i = 0; i <= numPontos; ++i) {
         double sw = i * passoSw;
         if (sw > 1.0) sw = 1.0;
-        double vel = _calc->calcularDerivadaFw(sw, _vazaoInjecao, _area); // velocidade característica f'(Sw)
-        double pos = vel * tempoInjetado; // xD = v_c * tD
+
+        // A velocidade de cada saturação específica independe do tempo injetado na analítica
+        double vel = _calc->calcularDerivadaFw(sw);
+
+        // Posição adimensional da onda: (dfw / dSw) * tempo
+        double pos = vel * tempoInjetado;
 
         vecSw.push_back(sw);
         vecVel.push_back(vel);
         vecPos.push_back(pos);
     }
 
-    // 2) Determinar se existe choque aplicável (Welge) e obter Swf e velocidade do choque
-    // Nota: calculamos MOC primeiro e em seguida verificamos a necessidade física do choque.
-    bool choqueEncontrado = _welge->calcularTangente(_calc);
+    // Passo 2: Verificação do Front de Choque Instável
+    // Avalia a necessidade termodinâmica do choque limitando ao espectro de móveis
+    bool choqueEncontrado = _welge->calcularTangente(_calc, swi, sw_max);
+
+    // Atributos definidores da frente estabilizada
     double swFrente = _welge->getSwFrente();
     double velocidadeChoque = _welge->getInclinacaoChoque();
 
-    // 3) Verificar condição de entropia / cruzamento de características
-    // Simples heurística: se algum ponto com Sw < Swf possui posicao maior que
-    // o ponto em Swf, então há cruzamento e o choque é relevante.
+    // Passo 3: Identificação Topológica da Dupla Valoração (Efeito "Quebra de Onda" de Choque)
     bool cruzamento = false;
     double posSwFrente = 0.0;
+
     for (size_t i = 0; i < vecSw.size(); ++i) {
         if (vecSw[i] >= swFrente) {
             posSwFrente = vecPos[i];
             break;
         }
     }
+
+    // Checa se há porções do vetor que geometricamente estão a frente da linha crítica (sobreposição não-física)
     for (size_t i = 0; i < vecSw.size(); ++i) {
         if (vecSw[i] < swFrente && vecPos[i] > posSwFrente + 1e-12) {
             cruzamento = true;
@@ -83,22 +94,20 @@ void CSolver::calcularPerfilSaturacao(double tempoInjetado, double _vazaoInjecao
         }
     }
 
-    // 4) Preencher a malha: aplicar choque somente se ele for físico (cruzamento + choqueEncontrado)
+    // Passo 4: Filtragem de Entropia - Remoção dos perfis lentos "comidos" pela onda frontal de Choque (Pistonamento ideal)
     for (size_t i = 0; i < vecSw.size(); ++i) {
         double sw = vecSw[i];
         double pos = vecPos[i];
         double vel = vecVel[i];
 
         if (choqueEncontrado && cruzamento && sw < swFrente) {
-            // Região colapsada: todas as saturações menores que Swf são representadas
-            // pela posição do choque
-            pos = velocidadeChoque * tempoInjetado;
+            pos = velocidadeChoque * tempoInjetado; // Fixa todas essas saturações lentas na parede vetorial do choque vertical
             vel = velocidadeChoque;
         }
 
         _malha->adicionarCelula(CCelula(sw, pos, vel));
     }
 
-    // Ordenar por posição para garantir plot contínuo
+    // Passo 5: Restauração da Integridade do Plot Vectorial
     _malha->ordenarPorPosicao();
 }

@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>icones/lua.png</file>
+        <file>icones/sol.png</file>
+    </qresource>
+</RCC>

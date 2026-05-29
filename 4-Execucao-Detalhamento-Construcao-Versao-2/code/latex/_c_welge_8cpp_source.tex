@@ -1,0 +1,80 @@
+\doxysection{CWelge.\+cpp}
+\hypertarget{_c_welge_8cpp_source}{}\label{_c_welge_8cpp_source}\index{Model/CWelge.cpp@{Model/CWelge.cpp}}
+\doxymbox{\hyperlink{_c_welge_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_c_welge_8h}{CWelge.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00011}00011\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00012}00012\ \textcolor{comment}{//\ -\/-\/-\/\ Construtor\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00013}\doxymbox{\hyperlink{class_c_welge_acfe78bf098958f1fbb86a4cbabd97fe7}{00013}}\ \doxymbox{\hyperlink{class_c_welge_acfe78bf098958f1fbb86a4cbabd97fe7}{CWelge::CWelge}}()}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00014}00014\ \ \ \ \ :\ \_swFrente(0.0),\ \_swMedia(0.0),\ \_swInicial(0.0),\ \_inclinacaoMax(0.0),\ \_vazaoInjecao(0.0),\ \_area(0.0)}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00015}00015\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00016}00016\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00017}00017\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00018}00018\ \textcolor{comment}{//\ -\/-\/-\/\ Destrutor\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00019}\doxymbox{\hyperlink{class_c_welge_abb7636a584dc362f34ef208724efbe77}{00019}}\ \doxymbox{\hyperlink{class_c_welge_abb7636a584dc362f34ef208724efbe77}{CWelge::\string~CWelge}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00022}00022\ \textcolor{comment}{//\ -\/-\/-\/\ Setter\ de\ Condição\ Inicial\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00023}\doxymbox{\hyperlink{class_c_welge_a228efebd33a32b0f3db12a1791f23978}{00023}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_welge_a228efebd33a32b0f3db12a1791f23978}{CWelge::setSwInicial}}(\textcolor{keywordtype}{double}\ swi)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00024}00024\ \ \ \ \ \_swInicial\ =\ swi;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00025}00025\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00026}00026\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00027}00027\ \textcolor{comment}{//\ -\/-\/-\/\ Algoritmo\ Principal\ de\ Varredura\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00028}\doxymbox{\hyperlink{class_c_welge_ab97199b4928705043825cdad8877d98e}{00028}}\ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_c_welge_ab97199b4928705043825cdad8877d98e}{CWelge::calcularTangente}}(\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario}{CCalculadoraFluxoFracionario}}*\ calc,\ \textcolor{keywordtype}{double}\ swi,\ \textcolor{keywordtype}{double}\ sw\_max)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Reset\ de\ segurança\ do\ estado\ geométrico}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00031}00031\ \ \ \ \ \_swInicial\ =\ swi;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00032}00032\ \ \ \ \ \_inclinacaoMax\ =\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00033}00033\ \ \ \ \ \_swFrente\ =\ swi;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ fw\_swi\ =\ calc-\/>\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}{calcularFw}}(swi);}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Varredura\ da\ secante\ ancorada\ fortemente\ em\ (Swi,\ fw(Swi))}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00038}00038\ \ \ \ \ \textcolor{comment}{//\ O\ passo\ de\ discretização\ (0.001)\ define\ a\ precisão\ da\ localização\ do\ choque}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00039}00039\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{double}\ s\ =\ swi\ +\ 0.001;\ s\ <=\ sw\_max;\ s\ +=\ 0.001)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Avaliação\ do\ coeficiente\ angular\ da\ secante}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ slope\ =\ (calc-\/>\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}{calcularFw}}(s)\ -\/\ fw\_swi)\ /\ (s\ -\/\ swi);}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ A\ condição\ de\ máximo\ garante\ o\ cumprimento\ da\ Condição\ de\ Entropia}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (slope\ >\ \_inclinacaoMax)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ \_inclinacaoMax\ =\ slope;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \_swFrente\ =\ s;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00049}00049\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00050}00050\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00051}00051\ \ \ \ \ \textcolor{comment}{//\ Validação\ da\ viabilidade\ física\ da\ injeção\ (inclinação\ não\ nula)}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_inclinacaoMax\ >\ 1e-\/6)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00053}00053\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00054}00054\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ O\ balanço\ de\ materiais\ de\ Welge\ permite\ encontrar\ a\ Saturação\ Média}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ através\ do\ prolongamento\ da\ tangente\ até\ o\ eixo\ fw\ =\ 1.0}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ fw\_frente\ =\ calc-\/>\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario_a7d4b6bb59ec3f9d755398c8d43faf885}{calcularFw}}(\_swFrente);}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \_swMedia\ =\ \_swFrente\ +\ (1.0\ -\/\ fw\_frente)\ /\ \_inclinacaoMax;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00059}00059\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00060}00060\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{comment}{//\ Falha\ termodinâmica\ ou\ deslocamento\ impossível}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00063}00063\ \ \ \ \ \_swMedia\ =\ swi;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00064}00064\ \ \ \ \ \textcolor{keywordflow}{return}\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00067}00067\ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ de\ Diagnóstico\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00069}\doxymbox{\hyperlink{class_c_welge_a1ad6aa34807a47c7b8805dada18d9a0f}{00069}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_a1ad6aa34807a47c7b8805dada18d9a0f}{CWelge::getSwFrente}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordflow}{return}\ \_swFrente;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00071}00071\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00073}\doxymbox{\hyperlink{class_c_welge_a9b3b97b4d9c42db91534e153a2733e06}{00073}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_a9b3b97b4d9c42db91534e153a2733e06}{CWelge::getSwMedia}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{return}\ \_swMedia;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00075}00075\ \}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00077}\doxymbox{\hyperlink{class_c_welge_aa04af4e8b34649c983593d87b8c8d9a8}{00077}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_aa04af4e8b34649c983593d87b8c8d9a8}{CWelge::getInclinacaoChoque}}()\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00078}00078\ \ \ \ \ \textcolor{keywordflow}{return}\ \_inclinacaoMax;}
+\DoxyCodeLine{\Hypertarget{_c_welge_8cpp_source_l00079}00079\ \}}
+
+\end{DoxyCode}

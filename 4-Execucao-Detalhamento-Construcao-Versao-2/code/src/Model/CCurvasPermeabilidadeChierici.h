@@ -1,91 +1,101 @@
 #ifndef CCURVASPERMEABILIDADECHIERICI_H
 #define CCURVASPERMEABILIDADECHIERICI_H
 
+/**
+ * @file CCurvasPermeabilidadeChierici.h
+ * @brief Definição da classe CCurvasPermeabilidadeChierici.
+ */
+
 #include "ICurvasPermeabilidade.h"
 #include <cmath>
 #include <string>
 
 /**
- * @brief Implementação do modelo de permeabilidade relativa de Chierici (1984).
+ * @class CCurvasPermeabilidadeChierici
+ * @brief Implementação empírica do modelo exponencial de permeabilidade relativa de Chierici (1984).
  *
- * A classe CCurvasPermeabilidadeChierici implementa as equações exponenciais
- * propostas por Chierici para descrever as curvas de permeabilidade relativa
- * em função da saturação normalizada. Este modelo é amplamente utilizado devido
- * à sua flexibilidade em ajustar dados experimentais.
+ * A classe concretiza as equações propostas por Chierici para descrever o
+ * escoamento bifásico no meio poroso. Diferentemente do modelo de Corey, o
+ * modelo de Chierici baseia-se em funções exponenciais de decaimento, sendo
+ * reconhecido pela elevada flexibilidade no ajuste da concavidade (curvature)
+ * das curvas experimentais.
  *
- * @author Fabiane Barros
+ * As equações adotadas são:
+ * - \f$ k_{rw} = k_{rw,max} \cdot \exp\left(-A_w \cdot S_{wn}^{-B_w}\right) \f$
+ * - \f$ k_{ro} = k_{ro,max} \cdot \exp\left(-A_o \cdot (1 - S_{wn})^{-B_o}\right) \f$
+ *
+ * @author Fabiane da Silva Barros
  * @date Janeiro 2026
  */
 class CCurvasPermeabilidadeChierici : public ICurvasPermeabilidade {
 private:
-    double _Aw;      ///< Parâmetro exponencial A para a fase aquosa.
-    double _Bw;      ///< Parâmetro exponencial B para a fase aquosa.
-    double _Ao;      ///< Parâmetro exponencial A para a fase oleosa.
-    double _Bo;      ///< Parâmetro exponencial B para a fase oleosa.
-    double _Swirr;   ///< Saturação irreduzível de água (Swir).
-    double _Sor;     ///< Saturação residual de óleo (Sor).
-    double _kroMax;  ///< Permeabilidade relativa máxima do óleo (no Swir).
-    double _krwMax;  ///< Permeabilidade relativa máxima da água (no Sor).
+    double _Aw;      ///< Parâmetro empírico exponencial A para a fase aquosa.
+    double _Bw;      ///< Parâmetro empírico exponencial B para a fase aquosa.
+    double _Ao;      ///< Parâmetro empírico exponencial A para a fase oleica.
+    double _Bo;      ///< Parâmetro empírico exponencial B para a fase oleica.
+    double _Swirr;   ///< Saturação irredutível de água ($S_{wirr}$).
+    double _Sor;     ///< Saturação residual de óleo ($S_{or}$).
+    double _kroMax;  ///< Ponto final (endpoint) da permeabilidade relativa do óleo.
+    double _krwMax;  ///< Ponto final (endpoint) da permeabilidade relativa da água.
 
 public:
     /**
-     * @brief Construtor principal da classe Chierici.
+     * @brief Construtor principal parametrizado do modelo de Chierici.
      *
-     * Inicializa o modelo com os parâmetros empíricos e limites de saturação.
-     *
-     * @param Aw Parâmetro de decaimento para água.
-     * @param Bw Expoente para água.
-     * @param Ao Parâmetro de decaimento para óleo.
-     * @param Bo Expoente para óleo.
-     * @param Swirr Saturação irreduzível de água.
+     * @param Aw Parâmetro de decaimento (shape) para a água.
+     * @param Bw Parâmetro de curvatura (curvature) para a água.
+     * @param Ao Parâmetro de decaimento (shape) para o óleo.
+     * @param Bo Parâmetro de curvatura (curvature) para o óleo.
+     * @param Swirr Saturação irredutível de água.
      * @param Sor Saturação residual de óleo.
-     * @param krwMax Valor máximo de Krw (endpoint).
-     * @param kroMax Valor máximo de Kro (endpoint).
+     * @param krwMax Valor escalar máximo admitido para $k_{rw}$.
+     * @param kroMax Valor escalar máximo admitido para $k_{ro}$.
      */
     CCurvasPermeabilidadeChierici(double Aw, double Bw, double Ao, double Bo,
                                   double Swirr, double Sor,
                                   double krwMax, double kroMax);
 
     /**
-     * @brief Construtor padrão (Vazio).
-     *
-     * Inicializa todos os parâmetros com zero. Necessário para instanciação
-     * genérica antes da configuração dos parâmetros.
+     * @brief Construtor padrão.
+     * Inicializa instâncias temporárias com coeficientes nulos em memória.
      */
     CCurvasPermeabilidadeChierici();
 
     /**
-     * @brief Destrutor virtual.
+     * @brief Destrutor virtual da classe.
      */
     virtual ~CCurvasPermeabilidadeChierici();
 
     /**
-     * @brief Carrega dados de um arquivo externo (Implementação da Interface).
-     * * @note Nesta implementação específica, o método apenas cumpre o contrato
-     * da interface, pois os parâmetros geralmente vêm da interface gráfica.
-     * @param arquivo Caminho para o arquivo de dados.
+     * @brief Carrega os coeficientes do modelo Chierici a partir de um arquivo em disco.
+     *
+     * Lê 8 parâmetros na seguinte ordem estrita:
+     * `Aw Bw Ao Bo Swirr Sor KroMax KrwMax`
+     *
+     * @param arquivo Caminho para o arquivo `.txt`.
+     * @throws std::runtime_error Em caso de falha de I/O ou incompatibilidade numérica.
      */
     void carregarDados(const std::string& arquivo) override;
 
     /**
-     * @brief Calcula a permeabilidade relativa da água (Krw).
-     *
-     * Utiliza a equação: Krw = KrwMax * exp(-Aw * Swn^(-Bw))
-     *
-     * @param Sw Saturação de água atual.
-     * @return Valor de Krw calculado (entre 0 e KrwMax).
+     * @brief Computa a permeabilidade relativa contínua da água ($k_{rw}$).
+     * @param Sw Saturação real da fase aquosa na célula analítica.
+     * @return O escalar calculado de \f$ k_{rw} \f$.
      */
     double getKrw(double Sw) const override;
 
     /**
-     * @brief Calcula a permeabilidade relativa do óleo (Kro).
-     *
-     * Utiliza a equação: Kro = KroMax * exp(-Ao * (1-Swn)^(-Bo))
-     *
-     * @param Sw Saturação de água atual.
-     * @return Valor de Kro calculado (entre 0 e KroMax).
+     * @brief Computa a permeabilidade relativa contínua do óleo ($k_{ro}$).
+     * @param Sw Saturação real da fase aquosa na célula analítica.
+     * @return O escalar calculado de \f$ k_{ro} \f$.
      */
     double getKro(double Sw) const override;
+
+    /** @brief Retorna a Saturação Irredutível. */
+    double getSwi() const { return _Swirr; }
+
+    /** @brief Retorna a Saturação de óleo residual. */
+    double getSor() const { return _Sor; }
 };
 
-#endif
+#endif // CCURVASPERMEABILIDADECHIERICI_H

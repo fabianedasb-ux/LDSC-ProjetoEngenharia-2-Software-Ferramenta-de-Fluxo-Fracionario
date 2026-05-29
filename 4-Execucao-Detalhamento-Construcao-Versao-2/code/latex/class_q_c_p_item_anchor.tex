@@ -1,0 +1,274 @@
+\doxysection{QCPItem\+Anchor Class Reference}
+\hypertarget{class_q_c_p_item_anchor}{}\label{class_q_c_p_item_anchor}\index{QCPItemAnchor@{QCPItemAnchor}}
+
+
+An anchor of an item to which positions can be attached to.  
+
+
+
+
+{\ttfamily \+\#include $<$QCustomplot.\+h$>$}
+
+Inheritance diagram for QCPItem\+Anchor:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_q_c_p_item_anchor}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_anchor_a32573023c6fa65b4496f1f995e5bfa5f}{QCPItem\+Anchor}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot, \doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*}parent\+Item, const QString \&name, int anchor\+Id=-\/1)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_item_anchor_a1868559407600688ee4d1a4621e81ceb}{\texorpdfstring{$\sim$}{\string~}\+QCPItem\+Anchor}} ()
+\item 
+QString \doxymbox{\hyperlink{class_q_c_p_item_anchor_aad37cdf5a3f63428f61be739014e212e}{name}} () const
+\item 
+virtual QPointF \doxymbox{\hyperlink{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb}{pixel\+Position}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_item_anchor_ab04819cd5bc6dc607a68413828313675}{to\+QCPItem\+Position}} ()
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc}{add\+ChildX}} (\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_anchor_a230b1d494cda63458e289bbe1b642599}{remove\+ChildX}} (\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_anchor_af05dc56f24536f0c7a9a0f57b58cea67}{add\+ChildY}} (\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_anchor_aa2394911d8fff3bd958b9f4f1994b64d}{remove\+ChildY}} (\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}pos)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \doxymbox{\hyperlink{class_q_c_p_item_anchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec}{m\+Name}}
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_item_anchor_a59b968410831ba91a25cc75a77dde6f5}{m\+Parent\+Plot}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_item_anchor_a80fad480ad3bb980446ed6ebc00818ae}{m\+Parent\+Item}}
+\item 
+int \doxymbox{\hyperlink{class_q_c_p_item_anchor_a00c62070333e8345976b579676ad3997}{m\+Anchor\+Id}}
+\item 
+QSet$<$ \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_item_anchor_a3c0bfd6e50f3b48e2a9b3824695b20f7}{m\+ChildrenX}}
+\item 
+QSet$<$ \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_item_anchor_a3abe4eebd0683454d81c8341df6f7115}{m\+ChildrenY}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_q_c_p_item_anchor_aa9b8ddc062778e202a0be06a57d18d17}{QCPItem\+Position}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+An anchor of an item to which positions can be attached to. 
+
+An item (\doxylink{class_q_c_p_abstract_item}{QCPAbstract\+Item}) may have one or more anchors. Unlike \doxylink{class_q_c_p_item_position}{QCPItem\+Position}, an anchor doesn\textquotesingle{}t control anything on its item, but provides a way to tie other items via their positions to the anchor.
+
+For example, a \doxylink{class_q_c_p_item_rect}{QCPItem\+Rect} is defined by its positions {\itshape top\+Left} and {\itshape bottom\+Right}. Additionally it has various anchors like {\itshape top}, {\itshape top\+Right} or {\itshape bottom\+Left} etc. So you can attach the {\itshape start} (which is a \doxylink{class_q_c_p_item_position}{QCPItem\+Position}) of a \doxylink{class_q_c_p_item_line}{QCPItem\+Line} to one of the anchors by calling \doxylink{class_q_c_p_item_position_ac094d67a95d2dceafa0d50b9db3a7e51}{QCPItem\+Position::\+set\+Parent\+Anchor} on {\itshape start}, passing the wanted anchor of the \doxylink{class_q_c_p_item_rect}{QCPItem\+Rect}. This way the start of the line will now always follow the respective anchor location on the rect item.
+
+Note that \doxylink{class_q_c_p_item_position}{QCPItem\+Position} derives from \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor}, so every position can also serve as an anchor to other positions.
+
+To learn how to provide anchors in your own item subclasses, see the subclassing section of the \doxylink{class_q_c_p_abstract_item}{QCPAbstract\+Item} documentation. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03605}{3605}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_item_anchor_doc-constructors}
+\Hypertarget{class_q_c_p_item_anchor_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_q_c_p_item_anchor_a32573023c6fa65b4496f1f995e5bfa5f}\index{QCPItemAnchor@{QCPItemAnchor}!QCPItemAnchor@{QCPItemAnchor}}
+\index{QCPItemAnchor@{QCPItemAnchor}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{QCPItemAnchor()}{QCPItemAnchor()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a32573023c6fa65b4496f1f995e5bfa5f} 
+QCPItem\+Anchor::\+\+QCPItem\+Anchor (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{, }\item[{\doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}} \texorpdfstring{$\ast$}{*}}]{parent\+Item}{, }\item[{const QString \&}]{name}{, }\item[{int}]{anchor\+Id}{ = {\ttfamily -\/1}}\end{DoxyParamCaption})}
+
+Creates a new \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor}. You shouldn\textquotesingle{}t create \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor} instances directly, even if you want to make a new item subclass. Use \doxylink{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}{QCPAbstract\+Item::\+create\+Anchor} instead, as explained in the subclassing section of the \doxylink{class_q_c_p_abstract_item}{QCPAbstract\+Item} documentation. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12042}{12042}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a1868559407600688ee4d1a4621e81ceb}\index{QCPItemAnchor@{QCPItemAnchor}!````~QCPItemAnchor@{\texorpdfstring{$\sim$}{\string~}QCPItemAnchor}}
+\index{````~QCPItemAnchor@{\texorpdfstring{$\sim$}{\string~}QCPItemAnchor}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}QCPItemAnchor()}{\string~QCPItemAnchor()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a1868559407600688ee4d1a4621e81ceb} 
+QCPItem\+Anchor::\+\texorpdfstring{$\sim$}{\string~}\+QCPItem\+Anchor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12050}{12050}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+
+
+\label{class_q_c_p_item_anchor_doc-func-members}
+\Hypertarget{class_q_c_p_item_anchor_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc}\index{QCPItemAnchor@{QCPItemAnchor}!addChildX@{addChildX}}
+\index{addChildX@{addChildX}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{addChildX()}{addChildX()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_aef15daa640debfb11b0aeaa2116c6fbc} 
+void QCPItem\+Anchor::\+add\+ChildX (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12098}{12098}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_af05dc56f24536f0c7a9a0f57b58cea67}\index{QCPItemAnchor@{QCPItemAnchor}!addChildY@{addChildY}}
+\index{addChildY@{addChildY}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{addChildY()}{addChildY()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_af05dc56f24536f0c7a9a0f57b58cea67} 
+void QCPItem\+Anchor::\+add\+ChildY (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12126}{12126}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_aad37cdf5a3f63428f61be739014e212e}\index{QCPItemAnchor@{QCPItemAnchor}!name@{name}}
+\index{name@{name}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_aad37cdf5a3f63428f61be739014e212e} 
+QString QCPItem\+Anchor::\+name (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03613}{3613}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb}\index{QCPItemAnchor@{QCPItemAnchor}!pixelPosition@{pixelPosition}}
+\index{pixelPosition@{pixelPosition}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{pixelPosition()}{pixelPosition()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a06dcfb7220d26eee93eef56ae66582cb} 
+QPointF QCPItem\+Anchor::\+pixel\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+Returns the final absolute pixel position of the \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor} on the \doxylink{class_q_custom_plot}{QCustom\+Plot} surface.
+
+The pixel information is internally retrieved via \doxylink{class_q_c_p_abstract_item_ada5bad4e1196c4fc0d0d12328e24b8f2}{QCPAbstract\+Item::\+anchor\+Pixel\+Position} of the parent item, \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor} is just an intermediary. 
+
+Reimplemented in \doxymbox{\hyperlink{class_q_c_p_item_position_a8be9a4787635433edecc75164beb748d}{QCPItem\+Position}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12071}{12071}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a230b1d494cda63458e289bbe1b642599}\index{QCPItemAnchor@{QCPItemAnchor}!removeChildX@{removeChildX}}
+\index{removeChildX@{removeChildX}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{removeChildX()}{removeChildX()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a230b1d494cda63458e289bbe1b642599} 
+void QCPItem\+Anchor::\+remove\+ChildX (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12112}{12112}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_aa2394911d8fff3bd958b9f4f1994b64d}\index{QCPItemAnchor@{QCPItemAnchor}!removeChildY@{removeChildY}}
+\index{removeChildY@{removeChildY}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{removeChildY()}{removeChildY()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_aa2394911d8fff3bd958b9f4f1994b64d} 
+void QCPItem\+Anchor::\+remove\+ChildY (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}}]{pos}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l12140}{12140}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_anchor_ab04819cd5bc6dc607a68413828313675}\index{QCPItemAnchor@{QCPItemAnchor}!toQCPItemPosition@{toQCPItemPosition}}
+\index{toQCPItemPosition@{toQCPItemPosition}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{toQCPItemPosition()}{toQCPItemPosition()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_ab04819cd5bc6dc607a68413828313675} 
+virtual \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} QCPItem\+Anchor::\+to\+QCPItem\+Position (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+Returns {\ttfamily nullptr} if this instance is merely a \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor}, and a valid pointer of type QCPItem\+Position\texorpdfstring{$\ast$}{*} if it actually is a \doxylink{class_q_c_p_item_position}{QCPItem\+Position} (which is a subclass of \doxylink{class_q_c_p_item_anchor}{QCPItem\+Anchor}).
+
+This safe downcast functionality could also be achieved with a dynamic\+\_\+cast. However, \doxylink{class_q_custom_plot}{QCustom\+Plot} avoids dynamic\+\_\+cast to work with projects that don\textquotesingle{}t have RTTI support enabled (e.\+g. -\/fno-\/rtti flag with gcc compiler). 
+
+Reimplemented in \doxymbox{\hyperlink{class_q_c_p_item_position_a0d2c5b823c99207eda710a37a4bb1dbf}{QCPItem\+Position}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03627}{3627}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_item_anchor_doc-related-members}
+\Hypertarget{class_q_c_p_item_anchor_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_q_c_p_item_anchor_aa9b8ddc062778e202a0be06a57d18d17}\index{QCPItemAnchor@{QCPItemAnchor}!QCPItemPosition@{QCPItemPosition}}
+\index{QCPItemPosition@{QCPItemPosition}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{QCPItemPosition}{QCPItemPosition}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_aa9b8ddc062778e202a0be06a57d18d17} 
+friend class \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03638}{3638}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_item_anchor_doc-variable-members}
+\Hypertarget{class_q_c_p_item_anchor_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_q_c_p_item_anchor_a00c62070333e8345976b579676ad3997}\index{QCPItemAnchor@{QCPItemAnchor}!mAnchorId@{mAnchorId}}
+\index{mAnchorId@{mAnchorId}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mAnchorId}{mAnchorId}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a00c62070333e8345976b579676ad3997} 
+int QCPItem\+Anchor::\+m\+Anchor\+Id\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03623}{3623}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a3c0bfd6e50f3b48e2a9b3824695b20f7}\index{QCPItemAnchor@{QCPItemAnchor}!mChildrenX@{mChildrenX}}
+\index{mChildrenX@{mChildrenX}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mChildrenX}{mChildrenX}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a3c0bfd6e50f3b48e2a9b3824695b20f7} 
+QSet$<$\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*}$>$ QCPItem\+Anchor::\+m\+ChildrenX\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03624}{3624}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a3abe4eebd0683454d81c8341df6f7115}\index{QCPItemAnchor@{QCPItemAnchor}!mChildrenY@{mChildrenY}}
+\index{mChildrenY@{mChildrenY}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mChildrenY}{mChildrenY}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a3abe4eebd0683454d81c8341df6f7115} 
+QSet$<$\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*}$>$ QCPItem\+Anchor::\+m\+ChildrenY\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03624}{3624}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec}\index{QCPItemAnchor@{QCPItemAnchor}!mName@{mName}}
+\index{mName@{mName}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mName}{mName}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a23ad4d0ab0d2cbb41a7baf05bcf996ec} 
+QString QCPItem\+Anchor::\+m\+Name\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03618}{3618}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a80fad480ad3bb980446ed6ebc00818ae}\index{QCPItemAnchor@{QCPItemAnchor}!mParentItem@{mParentItem}}
+\index{mParentItem@{mParentItem}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mParentItem}{mParentItem}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a80fad480ad3bb980446ed6ebc00818ae} 
+\doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}\texorpdfstring{$\ast$}{*} QCPItem\+Anchor::\+m\+Parent\+Item\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03622}{3622}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_anchor_a59b968410831ba91a25cc75a77dde6f5}\index{QCPItemAnchor@{QCPItemAnchor}!mParentPlot@{mParentPlot}}
+\index{mParentPlot@{mParentPlot}!QCPItemAnchor@{QCPItemAnchor}}
+\doxysubsubsection{\texorpdfstring{mParentPlot}{mParentPlot}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_anchor_a59b968410831ba91a25cc75a77dde6f5} 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\texorpdfstring{$\ast$}{*} QCPItem\+Anchor::\+m\+Parent\+Plot\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l03621}{3621}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8h}{QCustomplot.\+h}}\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8cpp}{QCustomplot.\+cpp}}\end{DoxyCompactItemize}

@@ -1,56 +1,66 @@
 #ifndef CCURVASPERMEABILIDADECOREY_H
 #define CCURVASPERMEABILIDADECOREY_H
 
+/**
+ * @file CCurvasPermeabilidadeCorey.h
+ * @brief Definição da classe CCurvasPermeabilidadeCorey.
+ */
+
 #include "ICurvasPermeabilidade.h"
 #include <string>
 #include <cmath>
 
 /**
- * @brief Implementação do modelo de permeabilidade relativa de Corey.
+ * @class CCurvasPermeabilidadeCorey
+ * @brief Implementação do modelo analítico de permeabilidade relativa de Corey.
  *
- * O modelo de Corey é uma correlação do tipo potência amplamente utilizada
- * na engenharia de reservatórios. Ele assume que a permeabilidade relativa
- * é proporcional a uma potência da saturação normalizada.
+ * O modelo de Corey é uma correlação empírica clássica do tipo potência,
+ * amplamente utilizada na engenharia de reservatórios para sistemas bifásicos.
+ * Ele assume que as permeabilidades relativas são proporcionais a uma potência
+ * da saturação normalizada de água ($S_{wn}$).
  *
- * Equações:
- * Krw = Krw_max * (Swn)^Nw
- * Kro = Kro_max * (1 - Swn)^No
+ * As equações fundamentais são dadas por:
+ * - \f$ k_{rw} = k_{rw,max} \cdot (S_{wn})^{n_w} \f$
+ * - \f$ k_{ro} = k_{ro,max} \cdot (1 - S_{wn})^{n_o} \f$
  *
- * @author Fabiane Barros
+ * Sendo a saturação normalizada:
+ * \f$ S_{wn} = \frac{S_w - S_{wir}}{1 - S_{wir} - S_{or}} \f$
+ *
+ * @author Fabiane da Silva Barros
  * @date Janeiro 2026
  */
 class CCurvasPermeabilidadeCorey : public ICurvasPermeabilidade {
 private:
-    double _swir;    ///< Saturação irreduzível de água (Swir).
-    double _sorw;    ///< Saturação residual de óleo (Sor).
+    double _swir;    ///< Saturação irredutível de água ($S_{wir}$).
+    double _sor;    ///< Saturação residual de óleo ($S_{or}$).
     double _krw_max; ///< Permeabilidade relativa máxima da água (endpoint).
     double _kro_max; ///< Permeabilidade relativa máxima do óleo (endpoint).
-    double _nw;      ///< Expoente de Corey para a água.
-    double _no;      ///< Expoente de Corey para o óleo.
+    double _nw;      ///< Expoente empírico de Corey para a fase aquosa.
+    double _no;      ///< Expoente empírico de Corey para a fase oleica.
 
     /**
-     * @brief Calcula a saturação normalizada de água.
-     * @param sw Saturação real.
-     * @return Saturação normalizada entre 0 e 1.
+     * @brief Calcula a saturação normalizada efetiva de água.
+     * @param sw Saturação real instantânea.
+     * @return Saturação normalizada ($S_{wn}$), limitada estritamente entre 0.0 e 1.0.
      */
     double calcularSwNorm(double sw) const;
 
 public:
     /**
-     * @brief Construtor principal parametrizado.
+     * @brief Construtor parametrizado completo.
      *
      * @param kroMax Permeabilidade relativa máxima do óleo.
      * @param krwMax Permeabilidade relativa máxima da água.
-     * @param no Expoente de Corey para óleo.
-     * @param nw Expoente de Corey para água.
-     * @param swir Saturação irreduzível de água.
+     * @param no Expoente da curva de óleo.
+     * @param nw Expoente da curva de água.
+     * @param swir Saturação irredutível de água.
      * @param sor Saturação residual de óleo.
      */
     CCurvasPermeabilidadeCorey(double kroMax, double krwMax, double no, double nw, double swir, double sor);
 
     /**
-     * @brief Construtor padrão (Vazio).
-     * Inicializa todos os parâmetros com zero.
+     * @brief Construtor padrão.
+     * Inicializa instâncias temporárias com todos os coeficientes zerados.
      */
     CCurvasPermeabilidadeCorey();
 
@@ -60,29 +70,35 @@ public:
     virtual ~CCurvasPermeabilidadeCorey();
 
     /**
-     * @brief Carrega os parâmetros do modelo a partir de um arquivo.
+     * @brief Carrega os coeficientes do modelo a partir de um arquivo externo de texto.
      *
-     * Espera um arquivo de texto contendo os 6 parâmetros na ordem:
+     * Espera-se um arquivo plano estruturado com 6 valores numéricos separados por espaços:
      * Swir, Sor, KroMax, KrwMax, No, Nw.
      *
-     * @param arquivo Caminho completo do arquivo.
-     * @throws std::runtime_error Se não for possível abrir ou ler o arquivo.
+     * @param arquivo Caminho absoluto ou relativo do arquivo `.txt`.
+     * @throws std::runtime_error Se o arquivo for inacessível ou estiver corrompido.
      */
     void carregarDados(const std::string& arquivo) override;
 
     /**
-     * @brief Calcula Krw (Permeabilidade Relativa da Água).
-     * @param sw Saturação de água atual.
-     * @return Valor de Krw.
+     * @brief Calcula a Permeabilidade Relativa da fase Água ($k_{rw}$).
+     * @param sw Saturação espacial de água atual.
+     * @return Valor adimensional interpolado.
      */
     double getKrw(double sw) const override;
 
     /**
-     * @brief Calcula Kro (Permeabilidade Relativa do Óleo).
-     * @param sw Saturação de água atual.
-     * @return Valor de Kro.
+     * @brief Calcula a Permeabilidade Relativa da fase Óleo ($k_{ro}$).
+     * @param sw Saturação espacial de água atual.
+     * @return Valor adimensional interpolado.
      */
     double getKro(double sw) const override;
+
+    /** @brief Retorna a Saturação Irredutível. */
+    double getSwi() const { return _swir; } // Verifique se o atributo interno chama-se _swir ou _swirr na sua classe
+
+    /** @brief Retorna a Saturação de óleo residual. */
+    double getSor() const { return _sor; }
 };
 
-#endif
+#endif // CCURVASPERMEABILIDADECOREY_H

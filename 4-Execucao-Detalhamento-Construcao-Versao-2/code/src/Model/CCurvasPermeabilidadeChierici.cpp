@@ -1,10 +1,12 @@
 /**
  * @file CCurvasPermeabilidadeChierici.cpp
- * @brief Implementação dos métodos da classe CCurvasPermeabilidadeChierici.
+ * @brief Implementação analítica das equações exponenciais do modelo Chierici.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CCurvasPermeabilidadeChierici.h"
-#include <iostream>  // Para logs de erro, se necessário
+#include <iostream>
 #include <fstream>
 #include <stdexcept>
 
@@ -15,7 +17,6 @@ CCurvasPermeabilidadeChierici::CCurvasPermeabilidadeChierici(double Aw, double B
     : _Aw(Aw), _Bw(Bw), _Ao(Ao), _Bo(Bo),
     _Swirr(Swirr), _Sor(Sor), _kroMax(kroMax), _krwMax(krwMax)
 {
-    // Opcional: Adicionar validações de entrada aqui (ex: Swirr + Sor < 1.0)
 }
 
 // --- Construtor Vazio ---
@@ -27,21 +28,19 @@ CCurvasPermeabilidadeChierici::CCurvasPermeabilidadeChierici()
 
 // --- Destrutor ---
 CCurvasPermeabilidadeChierici::~CCurvasPermeabilidadeChierici() {
-    // Não há alocação dinâmica direta para limpar
 }
 
-// --- Implementação da Interface ---
+// --- Implementação da Interface ICurvasPermeabilidade ---
 
 void CCurvasPermeabilidadeChierici::carregarDados(const std::string& arquivo) {
     std::ifstream in(arquivo);
     if (!in.is_open()) {
-        throw std::runtime_error("Erro Chierici: Nao foi possivel abrir o arquivo: " + arquivo);
+        throw std::runtime_error("Exceção Chierici: Falha de acesso ao arquivo de entrada: " + arquivo);
     }
 
-    // Ordem esperada no arquivo .txt (8 valores):
-    // Aw Bw Ao Bo Swirr Sor KroMax KrwMax
+    // Leitura estrita de 8 parâmetros formatados
     if (!(in >> _Aw >> _Bw >> _Ao >> _Bo >> _Swirr >> _Sor >> _kroMax >> _krwMax)) {
-        throw std::runtime_error("Erro Chierici: Formato invalido. Esperado: Aw Bw Ao Bo Swirr Sor KroMax KrwMax");
+        throw std::runtime_error("Exceção Chierici: Avaria no formato dos dados. Esperado: Aw Bw Ao Bo Swirr Sor KroMax KrwMax");
     }
 
     in.close();
@@ -50,20 +49,16 @@ void CCurvasPermeabilidadeChierici::carregarDados(const std::string& arquivo) {
 double CCurvasPermeabilidadeChierici::getKrw(double Sw) const {
     double denominador = 1.0 - _Swirr - _Sor;
 
-    // Proteção contra divisão por zero e consistência física
+    // Proteção de estabilidade estrutural
     if (denominador <= 1e-6) return 0.0;
 
-    // Cálculo da Saturação Normalizada (Swn)
     double Swn = (Sw - _Swirr) / denominador;
 
-    // Limites físicos: Se Swn <= 0, a água não flui (está na irredutível)
+    // Condições de contorno (Singularidade assintótica prevenida)
     if (Swn <= 0.0) return 0.0;
-    // Se Swn >= 1, atingiu o máximo de água móvel
     if (Swn >= 1.0) return _krwMax;
 
-    // Fórmula Exponencial de Chierici para Água
-    // Krw = KrwMax * exp(-Aw * Swn^(-Bw))
-    // Nota: pow(Swn, -Bw) é equivalente a 1 / (Swn^Bw)
+    // Matemática Exponencial: Krw = KrwMax * exp(-Aw * Swn^(-Bw))
     return _krwMax * std::exp(-_Aw * std::pow(Swn, -_Bw));
 }
 
@@ -74,12 +69,10 @@ double CCurvasPermeabilidadeChierici::getKro(double Sw) const {
 
     double Swn = (Sw - _Swirr) / denominador;
 
-    // Limites físicos: Se Swn >= 1, só tem água móvel, óleo não flui
+    // Condições de contorno (Singularidade assintótica prevenida)
     if (Swn >= 1.0) return 0.0;
-    // Se Swn <= 0, o óleo está na saturação máxima (KroMax)
     if (Swn <= 0.0) return _kroMax;
 
-    // Fórmula Exponencial de Chierici para Óleo
-    // Kro = KroMax * exp(-Ao * (1-Swn)^(-Bo))
+    // Matemática Exponencial: Kro = KroMax * exp(-Ao * (1-Swn)^(-Bo))
     return _kroMax * std::exp(-_Ao * std::pow(1.0 - Swn, -_Bo));
 }

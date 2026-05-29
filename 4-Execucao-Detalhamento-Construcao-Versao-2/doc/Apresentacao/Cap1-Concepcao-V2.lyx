@@ -1,12 +1,11 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass extbook
 \begin_preamble
-
 \usepackage[alf]{abntex2cite}
 \end_preamble
 \use_default_options true
@@ -59,11 +58,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -95,6 +102,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -463,13 +471,7 @@ O sistema proposto destaca-se pela flexibilidade na entrada de dados.
 .txt
 \family default
 \nospellcheck default
- ou planilhas 
-\family typewriter
-\nospellcheck on
-.xlsx
-\family default
-\nospellcheck default
-) para usuários que já possuem dados consolidados,
+ ) para usuários que já possuem dados consolidados,
  ou a inserção manual de parâmetros através de formulários intuitivos na interface gráfica.
 \end_layout
 
@@ -488,7 +490,65 @@ literal "true"
 ,
  amplamente utilizado devido à sua simplicidade e base física,
  mas também incorpora correlações paramétricas avançadas para maior precisão em cenários complexos,
- como o modelo LET 
+ como o modelo LET
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+LET
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Lombez,
+ Escovedo e Trindade
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Lombez2008"
@@ -521,8 +581,76 @@ Independentemente do modelo escolhido,
 \begin_inset Formula $f_{w}\times S_{w}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S_{w}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação de água (adimensional,
+ fração)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
  e perfis de saturação 
 \begin_inset Formula $S_{w}\times x$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $x$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Comprimento,
+ distância (metros)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
  na própria janela da aplicação,
@@ -605,7 +733,64 @@ name "subsec:Requisitos-funcionais"
 \end_layout
 
 \begin_layout Standard
-Os requisitos funcionais (RF) detalham as operações que o sistema deve ser capaz de realizar para cumprir sua missão educacional.
+Os requisitos funcionais (RF
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RF
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Requisitos Funcionais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) detalham as operações que o sistema deve ser capaz de realizar para cumprir sua missão educacional.
  Conforme definido por 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -732,7 +917,7 @@ O sistema deve permitir o carregamento de dados de permeabilidade relativa de du
  (a) Importação de arquivos (
 \family typewriter
 \nospellcheck on
-.txt/.xlsx
+.txt
 \family default
 \nospellcheck default
 ) contendo tabelas ou parâmetros;
@@ -852,11 +1037,110 @@ O sistema deve recalcular instantaneamente a Razão de Mobilidade (
 \begin_inset Formula $M$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $M$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Razão de mobilidade (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 ) e atualizar todos os gráficos sempre que o usuário alterar os valores de viscosidade (
 \begin_inset Formula $\mu_{o},\mu_{w}$
 \end_inset
 
-) na interface.
+)
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Viscosidade do óleo (Pa.s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Viscosidade da água (Pa.s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ na interface.
 \end_layout
 
 \end_inset
@@ -944,6 +1228,133 @@ O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
 \end_inset
 
 ).
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Variação das massas específicas (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+kg/m³
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $g$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Gravidade (m²/s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Ângulo de inclinação do reservatório (radianos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1143,7 +1554,64 @@ Enquanto os requisitos funcionais definem
 'o que'
 \emph default
  o sistema faz,
- os requisitos não funcionais (RNF) estabelecem 
+ os requisitos não funcionais (RNF
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RNF
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+requisitos não funcionais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) estabelecem 
 \emph on
 'como'
 \emph default
@@ -1462,7 +1930,7 @@ RNF-06
 O sistema deve possuir tratamento de exceções para a leitura de arquivos externos (
 \family typewriter
 \nospellcheck on
-.txt/.xlsx
+.txt
 \family default
 \nospellcheck default
 ),
@@ -1711,11 +2179,85 @@ Entrada de Dados de Fluidos e Rocha:
 \begin_inset Formula $\phi$
 \end_inset
 
+
+\size default
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Porosidade (porcentagem)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
 ,
  permeabilidade absoluta 
 \begin_inset Formula $K$
 \end_inset
 
+
+\size default
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $K$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Permeabilidade absoluta (m²)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
 ,
  saturações irredutíveis e área/distância).
 \end_layout
@@ -1738,6 +2280,76 @@ Opção A (Modelos Analíticos):
 \begin_inset Formula $n_{o},n_{w}$
 \end_inset
 
+
+\size default
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $n_{o}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Expoente de Corey para a fase oleica (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $n_{w}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Expoente de Corey para a fase aquosa (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size footnotesize
 ) diretamente na tela.   
 \end_layout
 
@@ -2026,24 +2638,14 @@ Strategy
 \begin_layout Standard
 Adicionalmente,
  o diagrama destaca o ciclo de 'Análise de Sensibilidade' (RF-06).
- A modelagem demonstra que a alteração de parâmetros na interface (como viscosidade ou expoentes de molhabilidade) dispara eventos de atualização automática nas curvas de fluxo (
+ A modelagem demonstra que a alteração de parâmetros na interface permite a exploração rápida de cenários,
+ onde o motor de cálculo é acionado sob demanda pelo usuário.
+ Esta arquitetura de execução sob demanda garante que o processamento matemático intensivo (cálculo de 
 \begin_inset Formula $f_{w}$
 \end_inset
 
-),
- permitindo a visualização instantânea do comportamento dos fluidos sem a necessidade de reconfiguração manual do cenário.
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Assim,
- só atualiza se clicar no botão,
- não é automaticamente.
-\end_layout
-
-\end_inset
-
-
+ e MOC) ocorra apenas quando os parâmetros estiverem validados,
+ otimizando o uso de recursos computacionais e evitando instabilidades gráficas durante a edição das variáveis.
 \end_layout
 
 \begin_layout Standard

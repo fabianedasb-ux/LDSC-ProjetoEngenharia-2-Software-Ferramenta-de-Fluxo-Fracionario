@@ -1,0 +1,204 @@
+\doxysection{CCurvas\+Permeabilidade\+Tabelada Class Reference}
+\hypertarget{class_c_curvas_permeabilidade_tabelada}{}\label{class_c_curvas_permeabilidade_tabelada}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+
+
+Implementação empírica de curvas de permeabilidade baseadas em dados laboratoriais discretos.  
+
+
+
+
+{\ttfamily \+\#include $<$CCurvas\+Permeabilidade\+Tabelada.\+h$>$}
+
+Inheritance diagram for CCurvas\+Permeabilidade\+Tabelada:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_curvas_permeabilidade_tabelada}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_ae51e064556cdff21b243fde18da4dde3}{CCurvas\+Permeabilidade\+Tabelada}} ()=default
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_c_curvas_permeabilidade_tabelada}{CCurvas\+Permeabilidade\+Tabelada}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_addd69990b3dd4abd071603474eab62e3}{\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Tabelada}} ()=default
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_aed88788875076641dca81b4fa761c087}{carregar\+Dados}} (const std::\+string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Executa a leitura sequencial ou paralela de dados estruturados em arquivo ASCII. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a34bf56e90240e4bcf24cda3199098a62}{get\+Krw}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa aquosa contínua. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a62e1dd8e2c8438c240c87f54678ca79e}{get\+Kro}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa oleica contínua. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_aa770362c07e8a722c23d76936f158f65}{get\+Swi}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação Irredutível (primeiro ponto da tabela). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a468cf3f179109918c3f9a13e7c538abe}{get\+Sw\+Max}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação Máxima de Água (último ponto da tabela). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64}{\texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface. Fundamental em polimorfismo C++ para garantir a chamada em cascata dos destrutores e a destruição segura e completa das instâncias das classes derivadas na memória dinâmica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação empírica de curvas de permeabilidade baseadas em dados laboratoriais discretos. 
+
+Esta classe concreta da interface \doxylink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade} permite a inserção de dados experimentais arbitrários (pontos discretos retirados de ensaios de laboratório {\itshape Special Core Analysis} -\/ SCAL) para definir as funções de permeabilidade relativa.
+
+A continuidade das funções para os cálculos diferenciais de fluxo fracionário é garantida por meio de interpolação linear entre os nós discretos do domínio de saturação.
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source_l00028}{28}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source}{CCurvas\+Permeabilidade\+Tabelada.\+h}}.
+
+
+
+\label{class_c_curvas_permeabilidade_tabelada_doc-constructors}
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_ae51e064556cdff21b243fde18da4dde3}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeTabelada()}{CCurvasPermeabilidadeTabelada()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_ae51e064556cdff21b243fde18da4dde3} 
+CCurvas\+Permeabilidade\+Tabelada::\+\+CCurvas\+Permeabilidade\+Tabelada (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [default]}}
+
+
+
+Construtor padrão da classe \doxylink{class_c_curvas_permeabilidade_tabelada}{CCurvas\+Permeabilidade\+Tabelada}. 
+
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_addd69990b3dd4abd071603474eab62e3}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!````~CCurvasPermeabilidadeTabelada@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeTabelada}}
+\index{````~CCurvasPermeabilidadeTabelada@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeTabelada}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeTabelada()}{\string~CCurvasPermeabilidadeTabelada()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_addd69990b3dd4abd071603474eab62e3} 
+virtual CCurvas\+Permeabilidade\+Tabelada::\+\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Tabelada (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Destrutor virtual da classe. 
+
+
+
+\label{class_c_curvas_permeabilidade_tabelada_doc-func-members}
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_aed88788875076641dca81b4fa761c087}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_aed88788875076641dca81b4fa761c087} 
+void CCurvas\+Permeabilidade\+Tabelada::\+carregar\+Dados (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Executa a leitura sequencial ou paralela de dados estruturados em arquivo ASCII. 
+
+O leitor (parser) varre o arquivo em busca das diretrizes de controle:\+ {\ttfamily DADOS\+\_\+\+KR\+\_\+\+INICIO} e {\ttfamily FIM\+\_\+\+DADOS}. Os dados internos devem estar alinhados matricialmente como:\+ {\ttfamily \+[Sw]\+ \+[Krw]\+ \+[Kro]\+}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & Caminho relativo ou absoluto do diretório do arquivo {\ttfamily .txt}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & Lança exceção bloqueante caso o arquivo seja inacessível ou se a demarcação das colunas não for localizada. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source_l00016}{16}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source}{CCurvas\+Permeabilidade\+Tabelada.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_a62e1dd8e2c8438c240c87f54678ca79e}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!getKro@{getKro}}
+\index{getKro@{getKro}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_a62e1dd8e2c8438c240c87f54678ca79e} 
+double CCurvas\+Permeabilidade\+Tabelada::\+get\+Kro (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa oleica contínua. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação atual de água da malha (\$\+S\+\_\+w\$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A interpolação de $ k_{ro}(S_w) $. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source_l00071}{71}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source}{CCurvas\+Permeabilidade\+Tabelada.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_a34bf56e90240e4bcf24cda3199098a62}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_a34bf56e90240e4bcf24cda3199098a62} 
+double CCurvas\+Permeabilidade\+Tabelada::\+get\+Krw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa aquosa contínua. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação atual de água da malha (\$\+S\+\_\+w\$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A interpolação de $ k_{rw}(S_w) $. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source_l00067}{67}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp_source}{CCurvas\+Permeabilidade\+Tabelada.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_aa770362c07e8a722c23d76936f158f65}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!getSwi@{getSwi}}
+\index{getSwi@{getSwi}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getSwi()}{getSwi()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_aa770362c07e8a722c23d76936f158f65} 
+double CCurvas\+Permeabilidade\+Tabelada::\+get\+Swi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação Irredutível (primeiro ponto da tabela). 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source_l00088}{88}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source}{CCurvas\+Permeabilidade\+Tabelada.\+h}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_tabelada_a468cf3f179109918c3f9a13e7c538abe}\index{CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}!getSwMax@{getSwMax}}
+\index{getSwMax@{getSwMax}!CCurvasPermeabilidadeTabelada@{CCurvasPermeabilidadeTabelada}}
+\doxysubsubsection{\texorpdfstring{getSwMax()}{getSwMax()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_tabelada_a468cf3f179109918c3f9a13e7c538abe} 
+double CCurvas\+Permeabilidade\+Tabelada::\+get\+Sw\+Max (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação Máxima de Água (último ponto da tabela). 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source_l00093}{93}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h_source}{CCurvas\+Permeabilidade\+Tabelada.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h}{CCurvas\+Permeabilidade\+Tabelada.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp}{CCurvas\+Permeabilidade\+Tabelada.\+cpp}}\end{DoxyCompactItemize}

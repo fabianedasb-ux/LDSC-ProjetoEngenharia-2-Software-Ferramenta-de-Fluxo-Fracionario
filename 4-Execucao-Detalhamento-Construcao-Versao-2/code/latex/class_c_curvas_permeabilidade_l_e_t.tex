@@ -1,0 +1,251 @@
+\doxysection{CCurvas\+Permeabilidade\+LET Class Reference}
+\hypertarget{class_c_curvas_permeabilidade_l_e_t}{}\label{class_c_curvas_permeabilidade_l_e_t}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+
+
+Implementação empírica do modelo de permeabilidade relativa LET.  
+
+
+
+
+{\ttfamily \+\#include $<$CCurvas\+Permeabilidade\+LET.\+h$>$}
+
+Inheritance diagram for CCurvas\+Permeabilidade\+LET:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_curvas_permeabilidade_l_e_t}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a0828ca3797a3f06d7b01b6269f91e989}{CCurvas\+Permeabilidade\+LET}} (double Lw, double Ew, double Tw, double Lo, double Eo, double To, double Swirr, double Sor)
+\begin{DoxyCompactList}\small\item\em Construtor principal parametrizado da classe LET. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_adfacfc1b7d0a5c87d9e5b9bfeacedbff}{CCurvas\+Permeabilidade\+LET}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa todos os coeficientes empíricos e saturações extremas com zero. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a645fa71edca0645754f84db72a2426d3}{\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+LET}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a017f4503c8c26cf77bd12ef7b7a4b237}{carregar\+Dados}} (const std::\+string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Carrega os coeficientes estruturais do modelo LET a partir de um arquivo de disco. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a5f69bc639dd5b9def88fb8626ccf3341}{get\+Krw}} (double Sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa da fase aquosa (\$k\+\_\+\{rw\}\$) usando a formulação LET. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a7ee9cc83ac6ab7619fa17d96451e2f47}{get\+Kro}} (double Sw) const override
+\begin{DoxyCompactList}\small\item\em Computa a permeabilidade relativa da fase oleica (\$k\+\_\+\{ro\}\$) usando a formulação LET. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a0ef94b30282ddb30a37bad729376e91e}{get\+Swi}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação Irredutível. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_acb6db878db4e95beb995b32e56381d1e}{get\+Sor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação de óleo residual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64}{\texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface. Fundamental em polimorfismo C++ para garantir a chamada em cascata dos destrutores e a destruição segura e completa das instâncias das classes derivadas na memória dinâmica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação empírica do modelo de permeabilidade relativa LET. 
+
+O modelo LET (Lombez, Escovedo e Trindade, 2008) é uma correlação matemática altamente flexível. Ele utiliza três parâmetros empíricos (L, E, T) para descrever com precisão a forma (shape), elevação (elevation) e translação (translation) das curvas de permeabilidade relativa, ajustando-\/se a dados laboratoriais complexos.
+
+As equações fundamentais são dadas por:\+
+\begin{DoxyItemize}
+\item $ k_{rw} = \frac{(S_{wn})^{L_w}}{(S_{wn})^{L_w} + E_w \cdot (1 - S_{wn})^{T_w}} $
+\item $ k_{ro} = \frac{(1 - S_{wn})^{L_o}}{(1 - S_{wn})^{L_o} + E_o \cdot (S_{wn})^{T_o}} $
+\end{DoxyItemize}
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source_l00029}{29}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source}{CCurvas\+Permeabilidade\+LET.\+h}}.
+
+
+
+\label{class_c_curvas_permeabilidade_l_e_t_doc-constructors}
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a0828ca3797a3f06d7b01b6269f91e989}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeLET()}{CCurvasPermeabilidadeLET()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a0828ca3797a3f06d7b01b6269f91e989} 
+CCurvas\+Permeabilidade\+LET::\+\+CCurvas\+Permeabilidade\+LET (\begin{DoxyParamCaption}\item[{double}]{Lw}{, }\item[{double}]{Ew}{, }\item[{double}]{Tw}{, }\item[{double}]{Lo}{, }\item[{double}]{Eo}{, }\item[{double}]{To}{, }\item[{double}]{Swirr}{, }\item[{double}]{Sor}{}\end{DoxyParamCaption})}
+
+
+
+Construtor principal parametrizado da classe LET. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Lw} & Parâmetro L para água. \\
+\hline
+{\em Ew} & Parâmetro E para água. \\
+\hline
+{\em Tw} & Parâmetro T para água. \\
+\hline
+{\em Lo} & Parâmetro L para óleo. \\
+\hline
+{\em Eo} & Parâmetro E para óleo. \\
+\hline
+{\em To} & Parâmetro T para óleo. \\
+\hline
+{\em Swirr} & Saturação irredutível de água. \\
+\hline
+{\em Sor} & Saturação residual de óleo. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_adfacfc1b7d0a5c87d9e5b9bfeacedbff}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeLET()}{CCurvasPermeabilidadeLET()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_adfacfc1b7d0a5c87d9e5b9bfeacedbff} 
+CCurvas\+Permeabilidade\+LET::\+\+CCurvas\+Permeabilidade\+LET (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. Inicializa todos os coeficientes empíricos e saturações extremas com zero. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00024}{24}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a645fa71edca0645754f84db72a2426d3}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!````~CCurvasPermeabilidadeLET@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeLET}}
+\index{````~CCurvasPermeabilidadeLET@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeLET}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeLET()}{\string~CCurvasPermeabilidadeLET()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a645fa71edca0645754f84db72a2426d3} 
+CCurvas\+Permeabilidade\+LET::\+\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+LET (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da classe. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+
+
+\label{class_c_curvas_permeabilidade_l_e_t_doc-func-members}
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a017f4503c8c26cf77bd12ef7b7a4b237}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a017f4503c8c26cf77bd12ef7b7a4b237} 
+void CCurvas\+Permeabilidade\+LET::\+carregar\+Dados (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carrega os coeficientes estruturais do modelo LET a partir de um arquivo de disco. 
+
+A leitura espera a extração sequencial de 8 parâmetros no formato ASCII:\+ {\ttfamily \+[Lw]\+ \+[Ew]\+ \+[Tw]\+ \+[Lo]\+ \+[Eo]\+ \+[To]\+ \+[Swirr]\+ \+[Sor]\+}
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & Caminho relativo ou absoluto do arquivo de configuração (.txt). \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & Se o arquivo for inválido ou não contiver os 8 parâmetros. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00037}{37}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a7ee9cc83ac6ab7619fa17d96451e2f47}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!getKro@{getKro}}
+\index{getKro@{getKro}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a7ee9cc83ac6ab7619fa17d96451e2f47} 
+double CCurvas\+Permeabilidade\+LET::\+get\+Kro (\begin{DoxyParamCaption}\item[{double}]{Sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa da fase oleica (\$k\+\_\+\{ro\}\$) usando a formulação LET. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sw} & Saturação atual de água (\$\+S\+\_\+w\$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor adimensional de \$k\+\_\+\{ro\}\$. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00069}{69}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a5f69bc639dd5b9def88fb8626ccf3341}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a5f69bc639dd5b9def88fb8626ccf3341} 
+double CCurvas\+Permeabilidade\+LET::\+get\+Krw (\begin{DoxyParamCaption}\item[{double}]{Sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Computa a permeabilidade relativa da fase aquosa (\$k\+\_\+\{rw\}\$) usando a formulação LET. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Sw} & Saturação atual de água (\$\+S\+\_\+w\$). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+O valor adimensional de \$k\+\_\+\{rw\}\$. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source_l00051}{51}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp_source}{CCurvas\+Permeabilidade\+LET.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_acb6db878db4e95beb995b32e56381d1e}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!getSor@{getSor}}
+\index{getSor@{getSor}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{getSor()}{getSor()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_acb6db878db4e95beb995b32e56381d1e} 
+double CCurvas\+Permeabilidade\+LET::\+get\+Sor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação de óleo residual. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source_l00102}{102}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source}{CCurvas\+Permeabilidade\+LET.\+h}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_l_e_t_a0ef94b30282ddb30a37bad729376e91e}\index{CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}!getSwi@{getSwi}}
+\index{getSwi@{getSwi}!CCurvasPermeabilidadeLET@{CCurvasPermeabilidadeLET}}
+\doxysubsubsection{\texorpdfstring{getSwi()}{getSwi()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_l_e_t_a0ef94b30282ddb30a37bad729376e91e} 
+double CCurvas\+Permeabilidade\+LET::\+get\+Swi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação Irredutível. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source_l00099}{99}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h_source}{CCurvas\+Permeabilidade\+LET.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h}{CCurvas\+Permeabilidade\+LET.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8cpp}{CCurvas\+Permeabilidade\+LET.\+cpp}}\end{DoxyCompactItemize}

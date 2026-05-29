@@ -1,0 +1,41 @@
+\doxysection{CCelula.\+h}
+\hypertarget{_c_celula_8h_source}{}\label{_c_celula_8h_source}\index{Model/CCelula.h@{Model/CCelula.h}}
+\doxymbox{\hyperlink{_c_celula_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CCELULA\_H}}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CCELULA\_H}}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00020}\doxymbox{\hyperlink{class_c_celula}{00020}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_celula_a9a1af7cecfd866bf37f367779de5540a}{CCelula}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00021}00021\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00022}00022\ \ \ \ \ \textcolor{keywordtype}{double}\ \_saturacao;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{double}\ \_posicao;\ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00024}00024\ \ \ \ \ \textcolor{keywordtype}{double}\ \_derivadaFluxo;\ \ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00025}00025\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00026}00026\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00031}00031\ \ \ \ \ \doxymbox{\hyperlink{class_c_celula_a9a1af7cecfd866bf37f367779de5540a}{CCelula}}();}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00040}00040\ \ \ \ \ \doxymbox{\hyperlink{class_c_celula_a9a1af7cecfd866bf37f367779de5540a}{CCelula}}(\textcolor{keywordtype}{double}\ sw,\ \textcolor{keywordtype}{double}\ x,\ \textcolor{keywordtype}{double}\ dfw);}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00041}00041\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00045}00045\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_c_celula_a25901d55c28efa9d6e9a9677b881cfd6}{\string~CCelula}}();}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00046}00046\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00047}00047\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ (Métodos\ de\ Acesso)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00053}00053\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_celula_a3d3a5b44a58ba1d39695a0739e2d8ef5}{getSaturacao}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00059}00059\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_celula_ac0f663382e439ee94a24d825aff06e89}{getPosicao}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00065}00065\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_celula_ad255c6f85a5138d0cbc64f1813e9ca77}{getDerivadaFluxo}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00067}00067\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Setters\ (Métodos\ de\ Modificação)\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00068}00068\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00073}00073\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_celula_a68940ec04470549e8ad7dc4eafcde0dd}{setSaturacao}}(\textcolor{keywordtype}{double}\ sw);}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_celula_a62faadf9943747de14316c71d584c933}{setPosicao}}(\textcolor{keywordtype}{double}\ x);}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00085}00085\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_celula_a53716621d3cc4fe9129953126e8dcddb}{setDerivadaFluxo}}(\textcolor{keywordtype}{double}\ dfw);}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00086}00086\ \};}
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_celula_8h_source_l00088}00088\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CCELULA\_H}}
+
+\end{DoxyCode}

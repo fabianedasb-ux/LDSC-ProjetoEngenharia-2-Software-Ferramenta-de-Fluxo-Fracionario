@@ -1,0 +1,113 @@
+\doxysection{CCurvas\+Permeabilidade\+Tabelada.\+cpp}
+\hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source}{}\label{_c_curvas_permeabilidade_tabelada_8cpp_source}\index{Model/CCurvasPermeabilidadeTabelada.cpp@{Model/CCurvasPermeabilidadeTabelada.cpp}}
+\doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_c_curvas_permeabilidade_tabelada_8h}{CCurvasPermeabilidadeTabelada.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <sstream>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00012}00012\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00013}00013\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00014}00014\ \textcolor{comment}{//\ -\/-\/-\/\ Implementação\ da\ Interface\ ICurvasPermeabilidade\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00015}00015\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00016}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_aed88788875076641dca81b4fa761c087}{00016}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_aed88788875076641dca81b4fa761c087}{CCurvasPermeabilidadeTabelada::carregarDados}}(\textcolor{keyword}{const}\ std::string\&\ arquivo)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00017}00017\ \ \ \ \ std::ifstream\ arq(arquivo);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00018}00018\ \ \ \ \ \textcolor{keywordflow}{if}\ (!arq.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00019}00019\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Exceção\ IO\ (Tabelado):\ Impossível\ resolver\ caminho\ ou\ abrir\ arquivo:\ "{}}\ +\ arquivo);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00020}00020\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00022}00022\ \ \ \ \ std::string\ linha;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00023}00023\ \ \ \ \ \textcolor{keywordtype}{bool}\ lendoDados\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00024}00024\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00025}00025\ \ \ \ \ \textcolor{comment}{//\ Limpeza\ de\ buffer\ de\ dados\ antigos\ antes\ do\ carregamento}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00026}00026\ \ \ \ \ \_sw.clear();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00027}00027\ \ \ \ \ \_krw.clear();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00028}00028\ \ \ \ \ \_kro.clear();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00029}00029\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00030}00030\ \ \ \ \ \textcolor{comment}{//\ Rotina\ de\ varredura\ top-\/down\ e\ limpeza\ de\ ruídos\ no\ ASCII}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00031}00031\ \ \ \ \ \textcolor{keywordflow}{while}\ (std::getline(arq,\ linha))\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00032}00032\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (linha.empty()\ ||\ linha[0]\ ==\ \textcolor{charliteral}{'\#'})\ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00033}00033\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00034}00034\ \ \ \ \ \ \ \ \ std::stringstream\ ss(linha);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00035}00035\ \ \ \ \ \ \ \ \ std::string\ palavraChave;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00036}00036\ \ \ \ \ \ \ \ \ ss\ >>\ palavraChave;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00037}00037\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Máquina\ de\ estados\ simples:\ Início\ de\ bloco}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00039}00039\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (palavraChave\ ==\ \textcolor{stringliteral}{"{}DADOS\_KR\_INICIO"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00040}00040\ \ \ \ \ \ \ \ \ \ \ \ \ lendoDados\ =\ \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00041}00041\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00042}00042\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00043}00043\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00044}00044\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Fim\ de\ bloco\ de\ captura}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00045}00045\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (palavraChave\ ==\ \textcolor{stringliteral}{"{}FIM\_DADOS"{}})\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00046}00046\ \ \ \ \ \ \ \ \ \ \ \ \ lendoDados\ =\ \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00047}00047\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00048}00048\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00049}00049\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00050}00050\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (lendoDados)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00051}00051\ \ \ \ \ \ \ \ \ \ \ \ \ std::stringstream\ ss\_linha(linha);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00052}00052\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ sw,\ krw,\ kro;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00053}00053\ \ \ \ \ \ \ \ \ \ \ \ \ ss\_linha\ >>\ sw\ >>\ krw\ >>\ kro;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00055}00055\ \ \ \ \ \ \ \ \ \ \ \ \ \_sw.push\_back(sw);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00056}00056\ \ \ \ \ \ \ \ \ \ \ \ \ \_krw.push\_back(krw);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00057}00057\ \ \ \ \ \ \ \ \ \ \ \ \ \_kro.push\_back(kro);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00058}00058\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00059}00059\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Validação\ Pós-\/Leitura\ de\ Integridade\ de\ Tamanho}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{if}\ (\_sw.empty())\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00063}00063\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Exceção\ Arquitetural:\ Arquivo\ malformado.\ Ausência\ dos\ delimitadores\ 'DADOS\_KR\_INICIO'\ e\ 'FIM\_DADOS'."{}});}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00064}00064\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00065}00065\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00066}00066\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00067}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a34bf56e90240e4bcf24cda3199098a62}{00067}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a34bf56e90240e4bcf24cda3199098a62}{CCurvasPermeabilidadeTabelada::getKrw}}(\textcolor{keywordtype}{double}\ sw)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{return}\ interpolar(sw,\ \_sw,\ \_krw);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00069}00069\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00070}00070\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00071}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a62e1dd8e2c8438c240c87f54678ca79e}{00071}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_tabelada_a62e1dd8e2c8438c240c87f54678ca79e}{CCurvasPermeabilidadeTabelada::getKro}}(\textcolor{keywordtype}{double}\ sw)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{keywordflow}{return}\ interpolar(sw,\ \_sw,\ \_kro);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00073}00073\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00075}00075\ \textcolor{comment}{//\ -\/-\/-\/\ Métodos\ Numéricos\ Auxiliares\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00076}00076\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00077}00077\ \textcolor{keywordtype}{double}\ CCurvasPermeabilidadeTabelada::interpolar(\textcolor{keywordtype}{double}\ x\_desejado,\ \textcolor{keyword}{const}\ std::vector<double>\&\ vec\_x,\ \textcolor{keyword}{const}\ std::vector<double>\&\ vec\_y)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00078}00078\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00079}00079\ \ \ \ \ \textcolor{comment}{//\ Cenário\ Extremo\ de\ Contorno\ Esquerdo:\ Extrapolação\ inferior\ plana}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00080}00080\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\_desejado\ <=\ vec\_x.front())\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00081}00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vec\_y.front();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00082}00082\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00084}00084\ \ \ \ \ \textcolor{comment}{//\ Cenário\ Extremo\ de\ Contorno\ Direito:\ Extrapolação\ superior\ plana}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00085}00085\ \ \ \ \ \textcolor{keywordflow}{if}\ (x\_desejado\ >=\ vec\_x.back())\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00086}00086\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ vec\_y.back();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00087}00087\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00088}00088\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00089}00089\ \ \ \ \ \textcolor{comment}{//\ Busca\ linear\ de\ ancoragem\ intervalar\ (Interval-\/matching)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00090}00090\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ vec\_x.size()\ -\/\ 1;\ ++i)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00091}00091\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00092}00092\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Limitação\ lógica:\ x\_i\ <=\ x\ <=\ x\_i+1}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00093}00093\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x\_desejado\ >=\ vec\_x[i]\ \&\&\ x\_desejado\ <=\ vec\_x[i+1])\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00095}00095\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x0\ =\ vec\_x[i];}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00096}00096\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ y0\ =\ vec\_y[i];}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00097}00097\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ x1\ =\ vec\_x[i+1];}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00098}00098\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ y1\ =\ vec\_y[i+1];}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00099}00099\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00100}00100\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Proteção\ contra\ anomalias\ geométricas\ em\ matrizes\ densas\ (divisão\ por\ zero)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00101}00101\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (x1\ ==\ x0)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00102}00102\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y0;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00103}00103\ \ \ \ \ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00105}00105\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Lei\ das\ proporções\ geométricas\ (Semelhança\ de\ triângulos\ na\ secante)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00106}00106\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ y0\ +\ (x\_desejado\ -\/\ x0)\ *\ (y1\ -\/\ y0)\ /\ (x1\ -\/\ x0);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00107}00107\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00108}00108\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00109}00109\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00110}00110\ \ \ \ \ \textcolor{comment}{//\ Falha\ em\ cascata\ final\ de\ segurança\ (*fallback*)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00111}00111\ \ \ \ \ \textcolor{keywordflow}{return}\ vec\_y.back();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_tabelada_8cpp_source_l00112}00112\ \}}
+
+\end{DoxyCode}

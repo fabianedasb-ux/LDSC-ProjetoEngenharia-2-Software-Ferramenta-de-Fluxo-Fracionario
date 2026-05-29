@@ -1,12 +1,11 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass extbook
 \begin_preamble
-
 \usepackage[alf]{abntex2cite}
 \end_preamble
 \use_default_options true
@@ -59,11 +58,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -95,6 +102,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -244,7 +252,64 @@ literal "true"
 
 \begin_layout Itemize
 Matemática Aplicada:
- Envolve a resolução de Equações Diferenciais Parciais (EDPs) do tipo hiperbólico através do Método das Características (MOC) e a aplicação de condições de contorno e entropia,
+ Envolve a resolução de Equações Diferenciais Parciais (EDPs
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+EDPs
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Equações Diferenciais Parciais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) do tipo hiperbólico através do Método das Características (MOC) e a aplicação de condições de contorno e entropia,
  como a construção da tangente de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -288,7 +353,64 @@ Espaço (Físico/Simulado):
 Tempo (Dinâmica):
  O domínio envolve processos dinâmicos que evoluem com o tempo.
  O software deve lidar com a variável temporal não apenas em segundos (tempo de processamento),
- mas principalmente em "Volumes de Poros Injetados" (PVI) ou dias/anos,
+ mas principalmente em "Volumes de Poros Injetados" (PVI
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+PVI
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) ou dias/anos,
  que representam a escala de tempo geológica/operacional do processo de recuperação de óleo.
 \end_layout
 
@@ -429,6 +551,1331 @@ literal "true"
 \end_layout
 
 \begin_layout Subsection
+Padronização de Unidades
+\end_layout
+
+\begin_layout Standard
+O desenvolvimento matemático e a implementação computacional do núcleo deste trabalho adotam estritamente o Sistema Internacional de Unidades (SI
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Sistema Internacional de Unidades
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+).
+ A escolha por um sistema de unidades consistentes simplifica o formalismo algébrico das equações de transporte e balanço de massa,
+ garantindo a integridade dimensional direta sem a necessidade de fatores de conversão empíricos ou constantes multiplicativas adicionais.
+\end_layout
+
+\begin_layout Standard
+A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Sistema-de-unidades"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ especifica as grandezas físicas modeladas no simulador,
+ seus respectivos símbolos analíticos e as unidades padronizadas empregadas em todo o arcabouço teórico.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="18" columns="3">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Grandeza Física
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Símbolo 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Unidade Prática (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "false"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento / Distância
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $x,L$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metros,
+ 
+\begin_inset Formula $m$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área da Seção Transversal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $A$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $A$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Área da Seção Transversal (m²)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metros quadrados,
+ 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tempo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $t$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Tempo (s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+segundos,
+ 
+\begin_inset Formula $s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tempo Adimensional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t_{D}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $t_{D}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Tempo Adimensional (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fração,
+ adimensional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão Volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $q$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Vazão Volumétrica (
+\begin_inset Formula $m^{3}/s$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metros cúbicos por segundo,
+ 
+\begin_inset Formula $m^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Velocidade de Darcy (Superficial)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $u$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $u$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Velocidade de Darcy (Superficial) (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m/s
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metros por segundo,
+ 
+\begin_inset Formula $m/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade Absoluta
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+metros quadrados,
+ 
+\begin_inset Formula $m^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade Relativa
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $k_{r}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $k_{r}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Permeabilidade Relativa (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fração,
+ adimensional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade Dinâmica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\begin_inset Argument post:1
+status collapsed
+
+\begin_layout Plain Layout
+Viscosidade Dinâmica) (
+\begin_inset Formula $Pa\cdot s$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pascal-segundo,
+ 
+\begin_inset Formula $Pa\cdot s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa Específica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Massa Específica (
+\begin_inset Formula $kg/m^{3}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+quilograma por metro cúbico,
+ 
+\begin_inset Formula $kg/m^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pressão
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $P$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $P$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Pressão (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $Pa(N/m^{2}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pascal (Newton por metro quadrado),
+ 
+\begin_inset Formula $Pa(N/m^{2})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tensão Interfacial
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Tensão Interfacial (
+\begin_inset Formula $N/m$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Newton por metro,
+ 
+\begin_inset Formula $N/m$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fração,
+ adimensional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Saturação
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $S$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fração,
+ adimensional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fluxo Fracionário
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $f$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Fluxo Fracionário (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+fração,
+ adimensional
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação do reservatório
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\alpha$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+radianos,
+ 
+\begin_inset Formula $rad$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de contato de molhabilidade rocha-fluido
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Ângulo de contato de molhabilidade rocha-fluido (radianos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+radianos,
+ 
+\begin_inset Formula $rad$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Sistema de unidades prático adotado na modelagem matemática.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Sistema-de-unidades"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
 Fundamentação do Escoamento Bifásico e a Lei de Darcy Generalizada
 \end_layout
 
@@ -554,7 +2001,7 @@ Onde
 
 ),
  definida como a vazão volumétrica por unidade de área transversal (
-\begin_inset Formula $L/t$
+\begin_inset Formula $m/s$
 \end_inset
 
 ).
@@ -563,7 +2010,7 @@ Onde
 \end_inset
 
  denota a permeabilidade absoluta do meio poroso (
-\begin_inset Formula $L^{2}$
+\begin_inset Formula $m^{2}$
 \end_inset
 
 ),
@@ -585,7 +2032,7 @@ As propriedades físicas dos fluidos são representadas pela viscosidade dinâmi
 \end_inset
 
  (
-\begin_inset Formula $M/Lt$
+\begin_inset Formula $Pa\cdot s$
 \end_inset
 
 ) e pela massa específica 
@@ -593,7 +2040,7 @@ As propriedades físicas dos fluidos são representadas pela viscosidade dinâmi
 \end_inset
 
  (
-\begin_inset Formula $M/L^{3}$
+\begin_inset Formula $Kg/m^{3}$
 \end_inset
 
 ).
@@ -633,6 +2080,57 @@ Para a resolução do sistema de equações de fluxo,
  é necessário relacionar as pressões das fases oleosa e aquosa.
  Define-se a pressão capilar (
 \begin_inset Formula $p_{c}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $p_{c}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Pressão capilar (
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $Pa(N/m^{2}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 ) como a diferença de pressão existente na interface entre dois fluidos imiscíveis em um meio poroso.
@@ -1109,6 +2607,39 @@ A influência das forças capilares na frente de avanço é regida pelo Número 
 \begin_inset Formula $N_{RL}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $N_{RL}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Número de Rapoport-Leas (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 ).
  Conforme estabelecido no trabalho seminal de 
 \begin_inset CommandInset citation
@@ -1157,7 +2688,7 @@ Considerando um sistema linear de comprimento
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-N_{RL}=\sqrt{\left(\frac{\phi}{k}\right)}\frac{L\cdot u_{t}\cdot\mu_{w}}{k_{rw}\sigma cos\theta}\label{eq:num-rapoport}
+N_{RL}=\sqrt{\left(\frac{1}{\phi k}\right)}\frac{L\cdot u_{t}\cdot\mu_{w}}{k^{0}_{rw}\sigma cos\theta}\label{eq:num-rapoport}
 \end{equation}
 
 \end_inset
@@ -1212,21 +2743,27 @@ Onde:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $k_{rw}$
+\begin_inset Formula $k^{0}_{rw}$
 \end_inset
 
-é a permeabilidade relativa da água em relação a saturação de água;
+é a permeabilidade relativa da água no ponto final (
+\emph on
+endpoint
+\emph default
+),
+ isto é,
+ avaliada na saturação residual de óleo (
+\begin_inset Formula $S_{or}$
+\end_inset
+
+);
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $cos\theta$
 \end_inset
 
-é o cosseno do angulo 
-\begin_inset Formula $\theta$
-\end_inset
-
- de inclinação do reservatório.
+ é o cosseno do ângulo de contato de molhabilidade rocha-fluido.
 \end_layout
 
 \begin_layout Standard
@@ -1267,7 +2804,8 @@ Matematicamente,
 
 ) pode ser desconsiderado em relação aos termos convectivos e gravitacionais.
  Sob esta hipótese de escoamento dominado por advecção,
- a equação do fluxo fracionário simplifica-se para:
+ a formulação simplifica-se substancialmente.
+ A equação geral do fluxo fracionário para reservatórios inclinados assume a seguinte forma paramétrica:
 \end_layout
 
 \begin_layout Standard
@@ -1282,56 +2820,340 @@ f_{w}=\frac{1-\frac{kk_{ro}}{u_{t}\mu_{o}}\Delta\rho g\sin\alpha}{1+\frac{k_{ro}
 \end_layout
 
 \begin_layout Standard
-Nesta formulação final,
- adequada para a aplicação do Método das Características (MOC) em reservatórios inclinados,
+Nesta formulação geral,
+ adequada para a aplicação do Método das Características (MOC),
  a fração de fluxo 
 \begin_inset Formula $f_{w}$
 \end_inset
 
- torna-se uma função exclusiva da saturação de água (
+ torna-se uma propriedade constitutiva dependente exclusivamente da saturação de água (
 \begin_inset Formula $S_{w}$
 \end_inset
 
 ),
- dado que as permeabilidades relativas dependem apenas da saturação.
+ dado que as permeabilidades relativas (
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+) dependem apenas da saturação.
 \end_layout
 
 \begin_layout Standard
-A análise dos termos remanescentes revela a competição entre duas forças principais:
+Para caracterizar o deslocamento de forma global e facilitar a análise adimensional,
+ definem-se parâmetros constantes baseados nos pontos finais (
+\emph on
+endpoints
+\emph default
+) do sistema fluido-rocha,
+ independentemente do modelo empírico escolhido para as curvas de permeabilidade (Corey,
+ LET,
+ Chierici,
+ etc.):
 \end_layout
 
-\begin_layout Enumerate
-Razão de Mobilidade (Termo Viscoso):
- O denominador reflete a resistência viscosa relativa dos fluidos.
-\end_layout
-
-\begin_layout Enumerate
-Número de Gravidade (
-\begin_inset Formula $N_{G}$
+\begin_layout Itemize
+Razão de mobilidade no ponto final (
+\begin_inset Formula $M^{0}$
 \end_inset
 
 ):
- O termo no numerador,
- 
-\begin_inset Formula $\frac{kk_{ro}\Delta\rho g\sin\alpha}{u_{t}\mu_{o}}$
+ Expressa a razão de mobilidade total calculada fixando as permeabilidades relativas máximas de cada fase:
+\begin_inset Formula 
+\[
+M^{0}=\frac{k^{0}_{rw}\mu_{o}}{\mu_{w}k^{0}_{ro}}
+\]
+
 \end_inset
 
-,
- representa a razão entre as forças gravitacionais e as forças viscosas.
+
+\end_layout
+
+\begin_layout Itemize
+Número de gravidade no ponto final (
+\begin_inset Formula $N^{0}_{g}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $N^{0}_{g}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Número de gravidade no ponto final (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+):
+ Define a magnitude máxima relativa entre as forças gravitacionais e as viscosas,
+ calibrada pela permeabilidade de ponto final do óleo:
+\begin_inset Formula 
+\[
+N^{0}_{g}=\frac{kk^{0}_{ro}\Delta\rho g}{\mu_{o}u_{t}}
+\]
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-A presença do termo gravitacional (
+Ao reescrever a equação geral de 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ utilizando essas constantes globais e agrupando os termos dependentes da saturação,
+ obtém-se uma forma que evidencia a competição entre as forças motrizes,
+ aplicável a qualquer modelo de permeabilidade:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+f_{w}=\frac{1-N^{0}_{g}\left[\frac{k_{ro}(S_{w})}{k^{0}_{ro}}\right]\sin\alpha}{1+\frac{1}{M^{0}}\left[\frac{k_{ro}(S_{w})}{k_{rw}(S_{w})}\frac{k^{0}_{rw}}{k^{0}_{ro}}\right]}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A análise dos termos na equação geral revela a competição direta entre duas forças principais indexadas nos 
+\emph on
+endpoints
+\emph default
+:
+\end_layout
+
+\begin_layout Enumerate
+Razão de Mobilidade no Ponto Final (
+\begin_inset Formula $M^{0}$
+\end_inset
+
+):
+ Governa o componente viscoso do escoamento,
+ refletindo a facilidade relativa de transporte da fase injetada em comparação com a fase deslocada.
+\end_layout
+
+\begin_layout Enumerate
+Número de Gravidade no Ponto Final (
+\begin_inset Formula $N^{0}_{g}$
+\end_inset
+
+):
+ Modulado pela função local de permeabilidade do óleo (
+\begin_inset Formula $\frac{k_{ro}(S_{w})}{k^{0}_{ro}}$
+\end_inset
+
+),
+ quantifica o gradiente segregativo gerado pela diferença de massas específicas.A presença do termo gravitacional (
 \begin_inset Formula $\sin\alpha$
 \end_inset
 
-) é mantida pois,
- diferentemente da capilaridade (que atua como um termo difusivo de segunda ordem,
- "suavizando" a frente),
- a gravidade atua como um termo aditivo de primeira ordem.
+) é mantida pois atua como uma força aditiva de primeira ordem.
  Em reservatórios inclinados,
- ela altera fundamentalmente a forma da curva de fluxo fracionário,
- podendo gerar fenômenos de contra-corrente ou segregação gravitacional que são capturados pela solução hiperbólica do MOC.
+ ela altera de forma permanente a curvatura da função de fluxo fracionário,
+ sendo capaz de gerar fenômenos de fluxo em contracorrente ou segregação gravitacional que são capturados com exatidão pela solução analítica hiperbólica do MOC.
+\end_layout
+
+\begin_layout Subsubsection
+Parametrização Constitutiva Padrão para a Análise Dimensional
+\end_layout
+
+\begin_layout Standard
+Para a implementação computacional desta análise dimensional e o cálculo automático do Número de Rapoport-Leas (
+\begin_inset Formula $N_{RL}$
+\end_inset
+
+),
+ a ferramenta analítica requer a definição de valores termodinâmicos para a tensão interfacial (
+\begin_inset Formula $\sigma$
+\end_inset
+
+) e o ângulo de contato (
+\begin_inset Formula $\theta$
+\end_inset
+
+).
+ Na ausência de dados laboratoriais específicos (análises PVT
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+PVT
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Pressão,
+ Volume e Tempo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ ou testes de testemunhos),
+ o modelo matemático adota parâmetros padrão (
+\emph on
+defaults
+\emph default
+) estritamente fundamentados na literatura clássica para sistemas convencionais de recuperação secundária.
+\end_layout
+
+\begin_layout Standard
+Assume-se,
+ como premissa conservadora para a avaliação teórica de deslocamentos,
+ um sistema rocha-fluido fortemente molhável à água (
+\emph on
+strongly water-wet
+\emph default
+).
+ Sob esta condição,
+ o ângulo de contato formado pela interface água-óleo na superfície porosa tende a zero (
+\begin_inset Formula $\theta=0^{\circ}$
+\end_inset
+
+).
+ Consequentemente,
+ o cosseno do ângulo atinge seu valor máximo (
+\begin_inset Formula $\cos0^{\circ}=1$
+\end_inset
+
+),
+ refletindo a máxima expressão das forças capilares de embebição no meio,
+ uma hipótese amplamente validada em estudos de escalonamento linear (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "craig1971,Rapoport1953"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Para a tensão interfacial entre a água de injeção (salmoura) e um óleo cru típico,
+ o simulador adota o valor constante de 
+\begin_inset Formula $\sigma=30$
+\end_inset
+
+ mN/m (numericamente equivalente a dinas/cm).
+ Esta magnitude é representativa para escoamentos imiscíveis de água e óleo em condições de reservatório,
+ na ausência de agentes tensoativos ou métodos químicos de recuperação (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "craig1971,Lake2014"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+A adoção destas constantes é justificada pelas observações empíricas consolidadas na engenharia de petróleo.
+ Conforme apontado na formulação original de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Rapoport1953"
+literal "false"
+
+\end_inset
+
+,
+ o agrupamento no denominador da equação (
+\begin_inset Formula $k^{0}_{rw}\sigma\cos\theta$
+\end_inset
+
+) frequentemente resulta em magnitudes da ordem de 
+\begin_inset Formula $1$
+\end_inset
+
+ mN/m para meios hidrofílicos,
+ permitindo a correta avaliação do critério de estabilização do fluxo (
+\begin_inset Formula $N_{RL}\gtrsim3$
+\end_inset
+
+).
+ Desta forma,
+ o desenvolvimento do software resguarda o rigor físico e a integridade da análise dimensional,
+ evitando o uso de constantes arbitrárias ocultas no código-fonte.
+ 
+\end_layout
+
+\begin_layout Standard
+Simultaneamente,
+ a arquitetura da interface gráfica é projetada para exibir estes valores de forma transparente ao usuário,
+ permitindo a flexibilização e inserção de dados experimentais reais caso o cenário de simulação assim o exija.
 \end_layout
 
 \begin_layout Subsection
@@ -1429,7 +3251,64 @@ literal "true"
 \begin_layout Standard
 Fisicamente,
  isso implica que,
- para um Volume Elementar Representativo (REV) do reservatório com uma saturação de água fixa 
+ para um Volume Elementar Representativo (REV
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+REV
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Volume Elementar Representativo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) do reservatório com uma saturação de água fixa 
 \begin_inset Formula $S_{w}$
 \end_inset
 
@@ -2141,23 +4020,49 @@ Desenvolvimento Matemático
 \end_layout
 
 \begin_layout Standard
-O princípio central do MOC consiste em transformar a EDP original em um sistema de Equações Diferenciais Ordinárias (EDOs) válidas ao longo de trajetórias específicas no plano espaço-tempo (
-\begin_inset Formula $x_{D},t_{D}$
-\end_inset
-
-),
- denominadas curvas características.
-\begin_inset Note Comment
+O princípio central do MOC consiste em transformar a EDP original em um sistema de Equações Diferenciais Ordinárias (EDOs
+\begin_inset Nomenclature
 status open
 
 \begin_layout Plain Layout
-Incluir referência das notas de aula e apostila,
- do Professor Slava.
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+EDOs
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Equações Diferenciais Ordinárias
 \end_layout
 
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+) válidas ao longo de trajetórias específicas no plano espaço-tempo (
+\begin_inset Formula $x_{D},t_{D}$
+\end_inset
+
+),
+ denominadas curvas características 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "slava_notas"
+literal "false"
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2339,18 +4244,15 @@ literal "true"
 
 \end_inset
 
-.
-\begin_inset Note Comment
-status open
 
-\begin_layout Plain Layout
-Incluir referência das notas de aula e apostila,
- do Professor Slava.
-\end_layout
+\begin_inset CommandInset citation
+LatexCommand cite
+key "slava_notas"
+literal "false"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2395,12 +4297,111 @@ Esta condição estabelece que uma descontinuidade (choque) só é estável se a
 \begin_inset Formula $v_{\sigma}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $v_{\sigma}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Velocidade da frente de choque (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 ) deve ser intermediária entre a velocidade da saturação imediatamente atrás do choque (
 \begin_inset Formula $v_{L}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $v_{L}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Velocidade da saturação imediatamente atrás do choque (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 ) e a velocidade da saturação imediatamente à frente dele (
 \begin_inset Formula $v_{R}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $v_{R}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Velocidade da saturação imediatamente à frente do choque (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 ):
@@ -2623,6 +4624,39 @@ Determinação da Saturação Média (
 \begin_inset Formula $\bar{S}_{w}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação Média (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 )
 \end_layout
 
@@ -2633,7 +4667,40 @@ Além de localizar a frente de avanço,
 \begin_inset Formula $N_{p}$
 \end_inset
 
-).
+)
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $N_{p}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Recuperação de óleo acumulada (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Standard
@@ -2714,6 +4781,39 @@ Eficiência de Deslocamento (
 \begin_inset Formula $E_{D}$
 \end_inset
 
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $E_{D}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Eficiência de Deslocamento (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 )
 \end_layout
 
@@ -2722,7 +4822,7 @@ A área sob o perfil de saturação representa fisicamente o volume de água que
  consequentemente,
  devido à incompressibilidade,
  o volume de óleo que foi deslocado.
- A eficiência de deslocamento microscópico é definida como a fração do óleo móvel que foi efetivamente recuperada num dado instante 
+ A eficiência de deslocamento microscópico é definida como a fração do volume de óleo originalmente existente que foi efetivamente recuperada num dado instante 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rosa2006"
@@ -2756,6 +4856,112 @@ Onde
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Standard
+Para o período pós-ruptura (
+\begin_inset Formula $t_{D}>t_{bt}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $t_{bt}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Tempo de Ruptura (
+\emph on
+Breakthrough
+\emph default
+) (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+),
+ a frente de choque já abandonou o meio poroso,
+ e a saturação de água na face de saída do reservatório (
+\begin_inset Formula $S_{w,out}$
+\end_inset
+
+) aumenta progressivamente.
+ De acordo com o Método das Características aplicado a 
+\begin_inset Formula $x_{D}=1$
+\end_inset
+
+,
+ a saturação que atinge o poço produtor num dado tempo 
+\begin_inset Formula $t_{D}$
+\end_inset
+
+ é governada pela relação 
+\begin_inset Formula $f_{w}'(S_{w,out})=1/t_{D}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A extensão do método de Welge demonstra que a saturação média de água no reservatório (
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+) continua sendo determinada pela interceptação da tangente geométrica com a linha 
+\begin_inset Formula $f_{w}=1$
+\end_inset
+
+.
+ Contudo,
+ para 
+\begin_inset Formula $t_{D}>t_{bt}$
+\end_inset
+
+,
+ a reta não se origina na saturação inicial,
+ mas tangencia localmente a curva de fluxo fracionário no ponto de saída 
+\begin_inset Formula $(S_{w,out},f_{w,out})$
+\end_inset
+
+.
+ Matematicamente,
+ a saturação média generalizada para a zona de escoamento bifásico é expressa por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\bar{S}_{w}=S_{w,out}+(1-f_{w}(S_{w,out}))\cdot t_{D}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+É esta formulação dinâmica que permite prever o crescimento assintótico da recuperação de óleo e a queda da eficiência de deslocamento microscópico ao longo do tempo de injeção avançado.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2809,7 +5015,36 @@ Antes deste instante (
 
 ),
  a água começa a ser coproduzida,
- e a razão de água no fluxo (BSW) aumenta progressivamente,
+ e a razão de água no fluxo (BSW
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+BSW
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Razão de água no fluxo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) aumenta progressivamente,
  reduzindo a eficiência econômica do projeto 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3011,11 +5246,6 @@ parsing
 ) de arquivos externos (
 \family typewriter
 .txt
-\family default
-,
- .
-\family typewriter
-xlsx
 \family default
 ),
  tratando exceções de formatação e convertendo dados brutos em objetos do domínio,

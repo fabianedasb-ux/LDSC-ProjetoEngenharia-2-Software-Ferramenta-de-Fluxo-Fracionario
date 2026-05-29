@@ -1,0 +1,51 @@
+\doxysection{CCurvas\+Permeabilidade\+LET.\+h}
+\hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source}{}\label{_c_curvas_permeabilidade_l_e_t_8h_source}\index{Model/CCurvasPermeabilidadeLET.h@{Model/CCurvasPermeabilidadeLET.h}}
+\doxymbox{\hyperlink{_c_curvas_permeabilidade_l_e_t_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CCURVASPERMEABILIDADELET\_H}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CCURVASPERMEABILIDADELET\_H}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_i_curvas_permeabilidade_8h}{ICurvasPermeabilidade.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00029}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t}{00029}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a0828ca3797a3f06d7b01b6269f91e989}{CCurvasPermeabilidadeLET}}\ :\ \textcolor{keyword}{public}\ \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvasPermeabilidade}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00030}00030\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00031}00031\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Parâmetros\ da\ Fase\ Aquosa\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Lw;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Ew;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Tw;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00035}00035\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00036}00036\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Parâmetros\ da\ Fase\ Oleica\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00037}00037\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Lo;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Eo;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \_To;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Saturações\ de\ Contorno\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00042}00042\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Swirr;\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00043}00043\ \ \ \ \ \textcolor{keywordtype}{double}\ \_Sor;\ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00044}00044\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00045}00045\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00058}00058\ \ \ \ \ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_adfacfc1b7d0a5c87d9e5b9bfeacedbff}{CCurvasPermeabilidadeLET}}(\textcolor{keywordtype}{double}\ Lw,\ \textcolor{keywordtype}{double}\ Ew,\ \textcolor{keywordtype}{double}\ Tw,}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00059}00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Lo,\ \textcolor{keywordtype}{double}\ Eo,\ \textcolor{keywordtype}{double}\ To,}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00060}00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Swirr,\ \textcolor{keywordtype}{double}\ Sor);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00061}00061\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00066}00066\ \ \ \ \ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_adfacfc1b7d0a5c87d9e5b9bfeacedbff}{CCurvasPermeabilidadeLET}}();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00071}00071\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a645fa71edca0645754f84db72a2426d3}{\string~CCurvasPermeabilidadeLET}}();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00082}00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a017f4503c8c26cf77bd12ef7b7a4b237}{carregarDados}}(\textcolor{keyword}{const}\ std::string\&\ arquivo)\ \textcolor{keyword}{override};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00083}00083\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00089}00089\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a5f69bc639dd5b9def88fb8626ccf3341}{getKrw}}(\textcolor{keywordtype}{double}\ Sw)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00090}00090\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00096}00096\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a7ee9cc83ac6ab7619fa17d96451e2f47}{getKro}}(\textcolor{keywordtype}{double}\ Sw)\ \textcolor{keyword}{const\ override};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00097}00097\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00099}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a0ef94b30282ddb30a37bad729376e91e}{00099}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_a0ef94b30282ddb30a37bad729376e91e}{getSwi}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_Swirr;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00100}00100\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00102}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_acb6db878db4e95beb995b32e56381d1e}{00102}}\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_l_e_t_acb6db878db4e95beb995b32e56381d1e}{getSor}}()\textcolor{keyword}{\ const\ }\{\ \textcolor{keywordflow}{return}\ \_Sor;\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00103}00103\ \};}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00104}00104\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_l_e_t_8h_source_l00105}00105\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CCURVASPERMEABILIDADELET\_H}}
+
+\end{DoxyCode}

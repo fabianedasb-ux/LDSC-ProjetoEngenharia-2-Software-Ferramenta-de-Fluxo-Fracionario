@@ -1,0 +1,224 @@
+\doxysection{CCelula Class Reference}
+\hypertarget{class_c_celula}{}\label{class_c_celula}\index{CCelula@{CCelula}}
+
+
+Representa um ponto discreto (volume elementar) no domínio do reservatório.  
+
+
+
+
+{\ttfamily \+\#include $<$CCelula.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_celula_a9a1af7cecfd866bf37f367779de5540a}{CCelula}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão da classe \doxylink{class_c_celula}{CCelula}. Inicializa todos os atributos numéricos com valor zero. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_c_celula_a2e6235c92f8daaf878771070557d7d5b}{CCelula}} (double sw, double x, double dfw)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado da classe \doxylink{class_c_celula}{CCelula}. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_c_celula_a25901d55c28efa9d6e9a9677b881cfd6}{\texorpdfstring{$\sim$}{\string~}\+CCelula}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da classe \doxylink{class_c_celula}{CCelula}. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_celula_a3d3a5b44a58ba1d39695a0739e2d8ef5}{get\+Saturacao}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a saturação de água atual da célula. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_celula_ac0f663382e439ee94a24d825aff06e89}{get\+Posicao}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a posição espacial atual da célula. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_celula_ad255c6f85a5138d0cbc64f1813e9ca77}{get\+Derivada\+Fluxo}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a derivada do fluxo fracionário armazenada na célula. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_celula_a68940ec04470549e8ad7dc4eafcde0dd}{set\+Saturacao}} (double sw)
+\begin{DoxyCompactList}\small\item\em Define uma nova saturação de água para a célula. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_celula_a62faadf9943747de14316c71d584c933}{set\+Posicao}} (double x)
+\begin{DoxyCompactList}\small\item\em Define uma nova posição espacial para a célula. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_celula_a53716621d3cc4fe9129953126e8dcddb}{set\+Derivada\+Fluxo}} (double dfw)
+\begin{DoxyCompactList}\small\item\em Define uma nova derivada de fluxo para a célula. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Representa um ponto discreto (volume elementar) no domínio do reservatório. 
+
+Na abordagem analítica, a célula funciona como um container de dados que armazena o estado de uma saturação específica (Sw) e sua posição (x) correspondente em um determinado tempo (t).
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8h_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_celula_8h_source}{CCelula.\+h}}.
+
+
+
+\label{class_c_celula_doc-constructors}
+\Hypertarget{class_c_celula_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_celula_a9a1af7cecfd866bf37f367779de5540a}\index{CCelula@{CCelula}!CCelula@{CCelula}}
+\index{CCelula@{CCelula}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{CCelula()}{CCelula()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_celula_a9a1af7cecfd866bf37f367779de5540a} 
+CCelula::\+\+CCelula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão da classe \doxylink{class_c_celula}{CCelula}. Inicializa todos os atributos numéricos com valor zero. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00011}{11}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a2e6235c92f8daaf878771070557d7d5b}\index{CCelula@{CCelula}!CCelula@{CCelula}}
+\index{CCelula@{CCelula}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{CCelula()}{CCelula()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_celula_a2e6235c92f8daaf878771070557d7d5b} 
+CCelula::\+\+CCelula (\begin{DoxyParamCaption}\item[{double}]{sw}{, }\item[{double}]{x}{, }\item[{double}]{dfw}{}\end{DoxyParamCaption})}
+
+
+
+Construtor parametrizado da classe \doxylink{class_c_celula}{CCelula}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Valor da saturação de água da célula. \\
+\hline
+{\em x} & Posição inicial no espaço (adimensional ou em metros). \\
+\hline
+{\em dfw} & Valor da derivada do fluxo fracionário (velocidade da onda associada). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00017}{17}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a25901d55c28efa9d6e9a9677b881cfd6}\index{CCelula@{CCelula}!````~CCelula@{\texorpdfstring{$\sim$}{\string~}CCelula}}
+\index{````~CCelula@{\texorpdfstring{$\sim$}{\string~}CCelula}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCelula()}{\string~CCelula()}}
+{\footnotesize\ttfamily \label{class_c_celula_a25901d55c28efa9d6e9a9677b881cfd6} 
+CCelula::\+\texorpdfstring{$\sim$}{\string~}\+CCelula (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual da classe \doxylink{class_c_celula}{CCelula}. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00023}{23}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+
+
+\label{class_c_celula_doc-func-members}
+\Hypertarget{class_c_celula_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_celula_ad255c6f85a5138d0cbc64f1813e9ca77}\index{CCelula@{CCelula}!getDerivadaFluxo@{getDerivadaFluxo}}
+\index{getDerivadaFluxo@{getDerivadaFluxo}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{getDerivadaFluxo()}{getDerivadaFluxo()}}
+{\footnotesize\ttfamily \label{class_c_celula_ad255c6f85a5138d0cbc64f1813e9ca77} 
+double CCelula::\+get\+Derivada\+Fluxo (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna a derivada do fluxo fracionário armazenada na célula. 
+
+\begin{DoxyReturn}{Returns}
+O valor da taxa de variação (dfw/\+d\+Sw). 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00035}{35}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_ac0f663382e439ee94a24d825aff06e89}\index{CCelula@{CCelula}!getPosicao@{getPosicao}}
+\index{getPosicao@{getPosicao}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{getPosicao()}{getPosicao()}}
+{\footnotesize\ttfamily \label{class_c_celula_ac0f663382e439ee94a24d825aff06e89} 
+double CCelula::\+get\+Posicao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna a posição espacial atual da célula. 
+
+\begin{DoxyReturn}{Returns}
+O valor da posição (x). 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00031}{31}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a3d3a5b44a58ba1d39695a0739e2d8ef5}\index{CCelula@{CCelula}!getSaturacao@{getSaturacao}}
+\index{getSaturacao@{getSaturacao}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{getSaturacao()}{getSaturacao()}}
+{\footnotesize\ttfamily \label{class_c_celula_a3d3a5b44a58ba1d39695a0739e2d8ef5} 
+double CCelula::\+get\+Saturacao (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const}
+
+
+
+Retorna a saturação de água atual da célula. 
+
+\begin{DoxyReturn}{Returns}
+O valor da saturação (Sw) compreendido entre 0 e 1. 
+\end{DoxyReturn}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00027}{27}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a53716621d3cc4fe9129953126e8dcddb}\index{CCelula@{CCelula}!setDerivadaFluxo@{setDerivadaFluxo}}
+\index{setDerivadaFluxo@{setDerivadaFluxo}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{setDerivadaFluxo()}{setDerivadaFluxo()}}
+{\footnotesize\ttfamily \label{class_c_celula_a53716621d3cc4fe9129953126e8dcddb} 
+void CCelula::\+set\+Derivada\+Fluxo (\begin{DoxyParamCaption}\item[{double}]{dfw}{}\end{DoxyParamCaption})}
+
+
+
+Define uma nova derivada de fluxo para a célula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dfw} & O novo valor da derivada do fluxo fracionário. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00048}{48}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a62faadf9943747de14316c71d584c933}\index{CCelula@{CCelula}!setPosicao@{setPosicao}}
+\index{setPosicao@{setPosicao}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{setPosicao()}{setPosicao()}}
+{\footnotesize\ttfamily \label{class_c_celula_a62faadf9943747de14316c71d584c933} 
+void CCelula::\+set\+Posicao (\begin{DoxyParamCaption}\item[{double}]{x}{}\end{DoxyParamCaption})}
+
+
+
+Define uma nova posição espacial para a célula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & O novo valor da posição. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00044}{44}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+\Hypertarget{class_c_celula_a68940ec04470549e8ad7dc4eafcde0dd}\index{CCelula@{CCelula}!setSaturacao@{setSaturacao}}
+\index{setSaturacao@{setSaturacao}!CCelula@{CCelula}}
+\doxysubsubsection{\texorpdfstring{setSaturacao()}{setSaturacao()}}
+{\footnotesize\ttfamily \label{class_c_celula_a68940ec04470549e8ad7dc4eafcde0dd} 
+void CCelula::\+set\+Saturacao (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption})}
+
+
+
+Define uma nova saturação de água para a célula. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & O novo valor da saturação de água. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_celula_8cpp_source_l00040}{40}} of file \doxymbox{\hyperlink{_c_celula_8cpp_source}{CCelula.\+cpp}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_celula_8h}{CCelula.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_celula_8cpp}{CCelula.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,42 @@
+\doxysection{CWelge.\+h}
+\hypertarget{_c_welge_8h_source}{}\label{_c_welge_8h_source}\index{Model/CWelge.h@{Model/CWelge.h}}
+\doxymbox{\hyperlink{_c_welge_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00001}00001\ \textcolor{preprocessor}{\#ifndef\ CWELGE\_H}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00002}00002\ \textcolor{preprocessor}{\#define\ CWELGE\_H}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00003}00003\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00008}00008\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00009}00009\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_c_calculadora_fluxo_fracionario_8h}{CCalculadoraFluxoFracionario.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00010}00010\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00030}\doxymbox{\hyperlink{class_c_welge}{00030}}\ \textcolor{keyword}{class\ }\doxymbox{\hyperlink{class_c_welge_acfe78bf098958f1fbb86a4cbabd97fe7}{CWelge}}\ \{}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00031}00031\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00032}00032\ \ \ \ \ \textcolor{keywordtype}{double}\ \_swFrente;\ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00033}00033\ \ \ \ \ \textcolor{keywordtype}{double}\ \_swMedia;\ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00034}00034\ \ \ \ \ \textcolor{keywordtype}{double}\ \_swInicial;\ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00035}00035\ \ \ \ \ \textcolor{keywordtype}{double}\ \_inclinacaoMax;\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00036}00036\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00037}00037\ \ \ \ \ \textcolor{comment}{//\ Parâmetros\ operacionais\ sistêmicos}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00038}00038\ \ \ \ \ \textcolor{keywordtype}{double}\ \_vazaoInjecao;\ \ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00039}00039\ \ \ \ \ \textcolor{keywordtype}{double}\ \_area;\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00041}00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00046}00046\ \ \ \ \ \doxymbox{\hyperlink{class_c_welge_acfe78bf098958f1fbb86a4cbabd97fe7}{CWelge}}();}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00047}00047\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00051}00051\ \ \ \ \ \textcolor{keyword}{virtual}\ \doxymbox{\hyperlink{class_c_welge_abb7636a584dc362f34ef208724efbe77}{\string~CWelge}}();}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00052}00052\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00057}00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_welge_a228efebd33a32b0f3db12a1791f23978}{setSwInicial}}(\textcolor{keywordtype}{double}\ swi);}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00058}00058\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00071}00071\ \ \ \ \ \textcolor{keywordtype}{bool}\ \doxymbox{\hyperlink{class_c_welge_ab97199b4928705043825cdad8877d98e}{calcularTangente}}(\doxymbox{\hyperlink{class_c_calculadora_fluxo_fracionario}{CCalculadoraFluxoFracionario}}*\ calc,\ \textcolor{keywordtype}{double}\ swi,\ \textcolor{keywordtype}{double}\ sw\_max);}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00072}00072\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00073}00073\ \ \ \ \ \textcolor{comment}{//\ -\/-\/-\/\ Getters\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00074}00074\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00079}00079\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_a1ad6aa34807a47c7b8805dada18d9a0f}{getSwFrente}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00080}00080\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00086}00086\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_a9b3b97b4d9c42db91534e153a2733e06}{getSwMedia}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00087}00087\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00092}00092\ \ \ \ \ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_welge_aa04af4e8b34649c983593d87b8c8d9a8}{getInclinacaoChoque}}()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00093}00093\ \};}
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00094}00094\ }
+\DoxyCodeLine{\Hypertarget{_c_welge_8h_source_l00095}00095\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ CWELGE\_H}}
+
+\end{DoxyCode}

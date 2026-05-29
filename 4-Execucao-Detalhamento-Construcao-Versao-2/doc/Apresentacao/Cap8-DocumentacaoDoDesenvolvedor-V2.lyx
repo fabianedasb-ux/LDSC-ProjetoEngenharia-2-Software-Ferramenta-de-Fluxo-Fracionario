@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,18 +10,16 @@
 \usepackage {longtable}
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
-
 % Comentar linhas abaixo se não estiver usando pacote abntex
 % ou se o pacote ainda não foi instalado.
 % neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
 %\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
 %\usepackage {helvet}
 %\renewcommand {\familydefault}{\sfdefault}
-
 % Para uso de listagens de código
 \usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
+% Informa que vai usar o pacote listings,
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
@@ -75,11 +73,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -111,6 +117,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -126,15 +133,9 @@ Documentação para o Desenvolvedor
 \begin_layout Standard
 Todo projeto de engenharia precisa ser bem documentado.
  Neste sentido,
- apresenta-se neste capítulo documentações extras para o desenvolvedor.
+ apresentam-se neste capítulo as documentações extras para o desenvolvedor.
  Ou seja,
- instruções para pessoas que venham a dar continuidade a este projeto de engenharia.
-\end_layout
-
-\begin_layout Description
-Nota:
- O manual do usuário é apresentado em um documento separado.
- Veja diretório "doc/ManualDoUsuario".
+ instruções técnicas para pessoas que venham a dar continuidade a esta ferramenta analítica.
 \end_layout
 
 \begin_layout Section
@@ -142,80 +143,45 @@ Dependências para compilar o software
 \end_layout
 
 \begin_layout Standard
-Para compilar o software é necessário atender as seguintes dependências:
+Para compilar o código-fonte da Ferramenta para Geração da Curva de Fluxo Fracionário,
+ é necessário atender às seguintes dependências de ambiente e bibliotecas:
 \end_layout
 
 \begin_layout Itemize
-Instalar o compilador g++ da GNU disponível em 
-\begin_inset CommandInset href
-LatexCommand href
-name "http://gcc.gnu.org"
-target "http://gcc.gnu.org"
-literal "false"
-
-\end_inset
-
-.
- Para instalar no GNU/Linux use o comando 
-\family typewriter
-yum install gcc
-\family default
-.
+Compilador C++:
+ É necessário um compilador com suporte nativo ao padrão C++11 ou superior.
+ Recomenda-se o compilador g++ da coleção GNU (MinGW no Windows ou GCC no GNU/Linux).
 \end_layout
 
 \begin_layout Itemize
-Biblioteca CGnuplot;
- os arquivos para acesso a biblioteca CGnuplot devem estar no diretório com os códigos do software;
+Qt 
+\emph on
+Framework
+\emph default
+:
+ O software foi desenvolvido sob a arquitetura de eventos do Qt.
+ É necessário ter o 
+\emph on
+framework
+\emph default
+ instalado (versão 5.x ou 6.x) juntamente com a ferramenta de compilação qmake ou CMake.
+ Os módulos estruturais exigidos são:
+ Core,
+ Gui,
+ Widgets e PrintSupport (este último essencial para a geração do relatório em PDF nativo).
 \end_layout
 
 \begin_layout Itemize
-O software 
-\family typewriter
-gnuplot
-\family default
-,
- disponível no endereço 
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.gnuplot.info/"
-literal "false"
-
-\end_inset
-
-,
- deve estar instalado.
- É possível que haja necessidade de setar o caminho para execução do 
-\family typewriter
-gnuplot
-\family default
-.
- 
+Biblioteca QCustomPlot:
+ Utilizada para a renderização vetorial bidimensional da curva de fluxo fracionário,
+ perfil de saturação e eficiência.
+ Os arquivos de cabeçalho (qcustomplot.h) e implementação (qcustomplot.cpp) já estão acoplados e devem permanecer no diretório fonte (src/View ou similar).
+ O uso do QCustomPlot elimina a necessidade de instalação de softwares externos de plotagem na máquina do desenvolvedor.
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Coloque aqui quaisquer dependências de arquivos com dados
-\end_layout
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Coloque aqui quaisquer dependências de softwares ou sistemas externos
-\end_layout
-
-\end_inset
-
-.
+Sistema de Controle de Versão:
+ Recomenda-se o uso do Git para gerenciar as alterações no código e rastrear evoluções implementadas nas correlações de permeabilidade relativa.
 \end_layout
 
 \begin_layout Section
@@ -223,215 +189,134 @@ Como gerar a documentação usando doxygen
 \end_layout
 
 \begin_layout Standard
-A documentação do código do software deve ser feita usando o padrão JAVADOC,
- conforme apresentada no Capítulo - Documentação,
- do livro texto da disciplina.
- Depois de documentar o código,
- use o software 
-\family typewriter
-doxygen 
-\family default
-para gerar a documentação do desenvolvedor no formato html.
- O software 
-\family typewriter
-doxygen
-\family default
- lê os arquivos com os códigos (*.h e *.cpp) e gera uma documentação muito útil e de fácil navegação no formato html.
- 
+O código-fonte foi desenvolvido seguindo o padrão de documentação Doxygen.
+ Esta escolha visa assegurar que a arquitetura MVC (Model-View-Controller) seja compreensível para futuros pesquisadores,
+ facilitando a inclusão de novos modelos de permeabilidade relativa ou a extensão das rotinas de cálculo do fluxo fracionário.
 \end_layout
 
-\begin_layout Itemize
-Veja informações sobre uso do formato JAVADOC em:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.stack.nl/~dimitri/doxygen/manual/docblocks.html"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Veja informações sobre o software 
-\family typewriter
-doxygen
-\family default
- em
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset CommandInset href
-LatexCommand href
-target "http://www.stack.nl/~dimitri/doxygen/"
-literal "false"
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \begin_layout Standard
-Passos para gerar a documentação usando o 
-\family typewriter
-doxygen
-\family default
-.
-\end_layout
+A documentação gerada,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Página-inicial-da"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
 
-\begin_layout Itemize
-Documente o código usando o formato JAVADOC.
- Um bom exemplo de código documentado é apresentado nos arquivos da biblioteca CGnuplot,
- abra os arquivos 
-\family typewriter
-CGnuplot.h
-\family default
- e 
-\family typewriter
-CGnuplot.cpp
-\family default
- no editor de texto e veja como o código foi documentado.
-\end_layout
-
-\begin_layout Itemize
-Abra um terminal.
-\end_layout
-
-\begin_layout Itemize
-Vá para o diretório onde esta o código.
-\begin_inset Separator latexpar
 \end_inset
 
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Detalhe-da-documentação"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
 
+\end_inset
+
+,
+ provê uma visão hierárquica do sistema,
+ essencial para entender a abstração polimórfica utilizada na estratégia (Strategy) de cálculo de permeabilidades.
+ Abaixo são apresentados exemplos das saídas geradas automaticamente a partir do código-fonte,
+ evidenciando as relações de herança e as descrições teóricas dos métodos.
 \end_layout
 
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-cd /caminho/para/seu/codigo
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Peça para o 
-\family typewriter
-doxygen
-\family default
- gerar o arquivo de definições (arquivo que diz para o doxygem como deve ser a documentação).
-\begin_inset Note Note
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
 status open
 
 \begin_layout Plain Layout
-O software doxywizard é uma interface gráfica que permite a configuração do arquivo de definições (gerado pelo comando doxygen -g).
- 
-\end_layout
+\begin_inset Graphics
+	filename imagens/DOC-DOXYGEN.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
 
 \begin_layout Plain Layout
-No GNU/Linux o doxywizard pode ser instaldo com o comando yum install doxygen-doxywizard.
-\end_layout
+Página inicial da documentação técnica do sistema gerada via Doxygen
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Página-inicial-da"
 
 \end_inset
 
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-dogygen -g
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Peça para o 
-\family typewriter
-doxygen
-\family default
- gerar a documentação.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-
-\family typewriter
-doxygen
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Verifique a documentação gerada abrindo o arquivo html/index.html.
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout LyX-Code
-firefox html/index.html
-\end_layout
-
-\begin_layout Standard
-ou
-\end_layout
-
-\begin_layout LyX-Code
-chrome html/index.html
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Apresenta-se a seguir algumas imagens com as telas das saídas geradas pelo software 
-\family typewriter
-doxygen
-\family default
 .
 \end_layout
 
-\begin_layout Description
-Nota:
- 
-\begin_inset space ~
 \end_inset
 
 
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
-Não perca de vista a visão do todo;
- do projeto de engenharia como um todo.
- Cada capítulo,
- cada seção,
- cada parágrafo deve se encaixar.
- Este é um diferencial fundamental do engenheiro em relação ao técnico,
- a capacidade de desenvolver projetos,
- de ver o todo e suas diferentes partes,
- de modelar processos/sistemas/produtos de engenharia.
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/doxygen-2.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Detalhe da documentação de classe,
+ evidenciando a renderização das equações de Buckley-Leverett.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Detalhe-da-documentação"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

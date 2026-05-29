@@ -1,0 +1,467 @@
+\doxysection{QCPBars\+Group Class Reference}
+\hypertarget{class_q_c_p_bars_group}{}\label{class_q_c_p_bars_group}\index{QCPBarsGroup@{QCPBarsGroup}}
+
+
+Groups multiple \doxylink{class_q_c_p_bars}{QCPBars} together so they appear side by side.  
+
+
+
+
+{\ttfamily \+\#include $<$QCustomplot.\+h$>$}
+
+Inheritance diagram for QCPBars\+Group:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_q_c_p_bars_group}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} \{ \doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ab53fa3efaf14867dd0f14d41d64e42ac}{st\+Absolute}}
+, \doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26}{st\+Axis\+Rect\+Ratio}}
+, \doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54}{st\+Plot\+Coords}}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}{QCPBars\+Group}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_bars_group_adb9475bcb6a5f18c8918e17d939d8dbd}{\texorpdfstring{$\sim$}{\string~}\+QCPBars\+Group}} ()
+\item 
+\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} \doxymbox{\hyperlink{class_q_c_p_bars_group_a894a77c45325aad2e742d936bc1f8aea}{spacing\+Type}} () const
+\item 
+double \doxymbox{\hyperlink{class_q_c_p_bars_group_a314d09aeb2ad209518b9183ca7ffe662}{spacing}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}} (\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} spacing\+Type)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}} (double spacing)
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_bars_group_a0754d659a020aa7fddfe81e657ce2d92}{bars}} (int index) const
+\item 
+int \doxymbox{\hyperlink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a}{is\+Empty}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}{clear}} ()
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}{contains}} (\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars) const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}{append}} (\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}{insert}} (int i, \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove}} (\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_a7b00514f19ad58d0bb3fd5246a67fae2}{register\+Bars}} (\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_bars_group_ac7073cdd7b1a40c6cb4b5f908145f8c4}{unregister\+Bars}} (\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars)
+\item 
+double \doxymbox{\hyperlink{class_q_c_p_bars_group_a8e2ca6002e7bab49670144d048a2bcc9}{key\+Pixel\+Offset}} (const \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars, double key\+Coord)
+\item 
+double \doxymbox{\hyperlink{class_q_c_p_bars_group_a0beccd41bc3841a4c5b284823bc7d2de}{get\+Pixel\+Spacing}} (const \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}bars, double key\+Coord)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_bars_group_a973d408cfbf88db95115aec71877f9e7}{m\+Parent\+Plot}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} \doxymbox{\hyperlink{class_q_c_p_bars_group_a6794ee1a9c81864d627bff6a4b2d64ec}{m\+Spacing\+Type}}
+\item 
+double \doxymbox{\hyperlink{class_q_c_p_bars_group_a56471d7f548ca6141b7a5bf9629f7ece}{m\+Spacing}}
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_bars_group_affdb1e9233c277ff5a4c0a1121cf1fc0}{m\+Bars}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \doxymbox{\hyperlink{class_q_c_p_bars_group_a721b87c7cdb8e83a90d77fc8a22e7195}{QCPBars}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Groups multiple \doxylink{class_q_c_p_bars}{QCPBars} together so they appear side by side. 
+
+
+
+When showing multiple \doxylink{class_q_c_p_bars}{QCPBars} in one plot which have bars at identical keys, it may be desirable to have them appearing next to each other at each key. This is what adding the respective \doxylink{class_q_c_p_bars}{QCPBars} plottables to a \doxylink{class_q_c_p_bars_group}{QCPBars\+Group} achieves. (An alternative approach is to stack them on top of each other, see \doxylink{class_q_c_p_bars_ac22e00a6a41509538c21b04f0a57318c}{QCPBars::\+move\+Above}.)\hypertarget{class_q_c_p_bars_group_qcpbarsgroup-usage}{}\doxysubsection{\texorpdfstring{Usage}{Usage}}\label{class_q_c_p_bars_group_qcpbarsgroup-usage}
+To add a \doxylink{class_q_c_p_bars}{QCPBars} plottable to the group, create a new group and then add the respective bars intances:\+ 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ Alternatively to appending to the group like shown above, you can also set the group on the \doxylink{class_q_c_p_bars}{QCPBars} plottable via \doxylink{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}{QCPBars::\+set\+Bars\+Group}.
+
+The spacing between the bars can be configured via \doxylink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type} and \doxylink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}. The bars in this group appear in the plot in the order they were appended. To insert a bars plottable at a certain index position, or to reposition a bars plottable which is already in the group, use \doxylink{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}{insert}.
+
+To remove specific bars from the group, use either \doxylink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove} or call \doxylink{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}{QCPBars::\+set\+Bars\+Group(0)} on the respective bars plottable.
+
+To clear the entire group, call \doxylink{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}{clear}, or simply delete the group.\hypertarget{class_q_c_p_bars_group_qcpbarsgroup-example}{}\doxysubsection{\texorpdfstring{Example}{Example}}\label{class_q_c_p_bars_group_qcpbarsgroup-example}
+The image above is generated with the following code:\+ 
+\begin{DoxyCodeInclude}{0}
+
+\end{DoxyCodeInclude}
+ 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05717}{5717}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_bars_group_doc-enum-members}
+\Hypertarget{class_q_c_p_bars_group_doc-enum-members}
+\doxysubsection{Member Enumeration Documentation}
+\Hypertarget{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}\index{QCPBarsGroup@{QCPBarsGroup}!SpacingType@{SpacingType}}
+\index{SpacingType@{SpacingType}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{SpacingType}{SpacingType}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6} 
+enum \doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{QCPBars\+Group::\+\+Spacing\+Type}}}
+
+Defines the ways the spacing between bars in the group can be specified. Thus it defines what the number passed to \doxylink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing} actually means.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}, \doxylink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing} 
+\end{DoxySeeAlso}
+\begin{DoxyEnumFields}[2]{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stAbsolute@{stAbsolute}!QCPBarsGroup@{QCPBarsGroup}}
+\index{QCPBarsGroup@{QCPBarsGroup}!stAbsolute@{stAbsolute}}
+}\Hypertarget{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ab53fa3efaf14867dd0f14d41d64e42ac}\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ab53fa3efaf14867dd0f14d41d64e42ac} 
+st\+Absolute&Bar spacing is in absolute pixels. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stAxisRectRatio@{stAxisRectRatio}!QCPBarsGroup@{QCPBarsGroup}}
+\index{QCPBarsGroup@{QCPBarsGroup}!stAxisRectRatio@{stAxisRectRatio}}
+}\Hypertarget{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26}\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ae94b05c27bc985dcdd8b1e1b7f163d26} 
+st\+Axis\+Rect\+Ratio&Bar spacing is given by a fraction of the axis rect size. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{stPlotCoords@{stPlotCoords}!QCPBarsGroup@{QCPBarsGroup}}
+\index{QCPBarsGroup@{QCPBarsGroup}!stPlotCoords@{stPlotCoords}}
+}\Hypertarget{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54}\label{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6ad369cee6287e0a86e8c2b643a3168c54} 
+st\+Plot\+Coords&Bar spacing is in key coordinates and thus scales with the key axis range. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05731}{5731}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_bars_group_doc-constructors}
+\Hypertarget{class_q_c_p_bars_group_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1}\index{QCPBarsGroup@{QCPBarsGroup}!QCPBarsGroup@{QCPBarsGroup}}
+\index{QCPBarsGroup@{QCPBarsGroup}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{QCPBarsGroup()}{QCPBarsGroup()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_aa4e043b9a22c6c5ea0f93740aca063e1} 
+QCPBars\+Group::\+\+QCPBars\+Group (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Constructs a new bars group for the specified \doxylink{class_q_custom_plot}{QCustom\+Plot} instance. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24028}{24028}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_adb9475bcb6a5f18c8918e17d939d8dbd}\index{QCPBarsGroup@{QCPBarsGroup}!````~QCPBarsGroup@{\texorpdfstring{$\sim$}{\string~}QCPBarsGroup}}
+\index{````~QCPBarsGroup@{\texorpdfstring{$\sim$}{\string~}QCPBarsGroup}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}QCPBarsGroup()}{\string~QCPBarsGroup()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_adb9475bcb6a5f18c8918e17d939d8dbd} 
+QCPBars\+Group::\+\texorpdfstring{$\sim$}{\string~}\+QCPBars\+Group (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24036}{24036}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+
+
+\label{class_q_c_p_bars_group_doc-func-members}
+\Hypertarget{class_q_c_p_bars_group_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}\index{QCPBarsGroup@{QCPBarsGroup}!append@{append}}
+\index{append@{append}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3} 
+void QCPBars\+Group::\+append (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption})}
+
+Adds the specified {\itshape bars} plottable to this group. Alternatively, you can also use \doxylink{class_q_c_p_bars_aedd1709061f0b307c47ddb45e172ef9a}{QCPBars::\+set\+Bars\+Group} on the {\itshape bars} instance.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}{insert}, \doxylink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24100}{24100}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}\index{QCPBarsGroup@{QCPBarsGroup}!bars@{bars}}
+\index{bars@{bars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{bars()}{bars()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8} 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*} $>$ QCPBars\+Group::\+bars (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns all bars currently in this group.
+
+\begin{DoxySeeAlso}{See also}
+bars(int index) 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05749}{5749}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a0754d659a020aa7fddfe81e657ce2d92}\index{QCPBarsGroup@{QCPBarsGroup}!bars@{bars}}
+\index{bars@{bars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{bars()}{bars()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a0754d659a020aa7fddfe81e657ce2d92} 
+\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*} QCPBars\+Group::\+bars (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption}) const}
+
+Returns the \doxylink{class_q_c_p_bars}{QCPBars} instance with the specified {\itshape index} in this group. If no such \doxylink{class_q_c_p_bars}{QCPBars} exists, returns {\ttfamily nullptr}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a6e4f4e86abbec6a9342f204ef82abef8}{bars()}, \doxylink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24070}{24070}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}\index{QCPBarsGroup@{QCPBarsGroup}!clear@{clear}}
+\index{clear@{clear}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{clear()}{clear()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177} 
+void QCPBars\+Group::\+clear (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+Removes all \doxylink{class_q_c_p_bars}{QCPBars} plottables from this group.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a}{is\+Empty} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24087}{24087}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}\index{QCPBarsGroup@{QCPBarsGroup}!contains@{contains}}
+\index{contains@{contains}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{contains()}{contains()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc} 
+bool QCPBars\+Group::\+contains (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether the specified {\itshape bars} plottable is part of this group. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05754}{5754}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a0beccd41bc3841a4c5b284823bc7d2de}\index{QCPBarsGroup@{QCPBarsGroup}!getPixelSpacing@{getPixelSpacing}}
+\index{getPixelSpacing@{getPixelSpacing}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{getPixelSpacing()}{getPixelSpacing()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a0beccd41bc3841a4c5b284823bc7d2de} 
+double QCPBars\+Group::\+get\+Pixel\+Spacing (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{, }\item[{double}]{key\+Coord}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24254}{24254}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13}\index{QCPBarsGroup@{QCPBarsGroup}!insert@{insert}}
+\index{insert@{insert}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{insert()}{insert()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a309a5f7233db189f3ea9c2d04ece6c13} 
+void QCPBars\+Group::\+insert (\begin{DoxyParamCaption}\item[{int}]{i}{, }\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption})}
+
+Inserts the specified {\itshape bars} plottable into this group at the specified index position {\itshape i}. This gives you full control over the ordering of the bars.
+
+{\itshape bars} may already be part of this group. In that case, {\itshape bars} is just moved to the new index position.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a809ed63cc4ff7cd5b0b8c96b470163d3}{append}, \doxylink{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}{remove} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24123}{24123}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a}\index{QCPBarsGroup@{QCPBarsGroup}!isEmpty@{isEmpty}}
+\index{isEmpty@{isEmpty}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{isEmpty()}{isEmpty()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_aac959e79e852e8ef9aea6e0449ad000a} 
+bool QCPBars\+Group::\+is\+Empty (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns whether this bars group is empty.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}{size} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05752}{5752}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a8e2ca6002e7bab49670144d048a2bcc9}\index{QCPBarsGroup@{QCPBarsGroup}!keyPixelOffset@{keyPixelOffset}}
+\index{keyPixelOffset@{keyPixelOffset}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{keyPixelOffset()}{keyPixelOffset()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a8e2ca6002e7bab49670144d048a2bcc9} 
+double QCPBars\+Group::\+key\+Pixel\+Offset (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{, }\item[{double}]{key\+Coord}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24188}{24188}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a7b00514f19ad58d0bb3fd5246a67fae2}\index{QCPBarsGroup@{QCPBarsGroup}!registerBars@{registerBars}}
+\index{registerBars@{registerBars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{registerBars()}{registerBars()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a7b00514f19ad58d0bb3fd5246a67fae2} 
+void QCPBars\+Group::\+register\+Bars (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24164}{24164}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7}\index{QCPBarsGroup@{QCPBarsGroup}!remove@{remove}}
+\index{remove@{remove}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a215e28a5944f1159013a0e19169220e7} 
+void QCPBars\+Group::\+remove (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption})}
+
+Removes the specified {\itshape bars} plottable from this group.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_ae26da07a23553052a178fb3fae90d0dc}{contains}, \doxylink{class_q_c_p_bars_group_a3ddf23928c6cd89530bd34ab7ba7b177}{clear} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24143}{24143}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}\index{QCPBarsGroup@{QCPBarsGroup}!setSpacing@{setSpacing}}
+\index{setSpacing@{setSpacing}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{setSpacing()}{setSpacing()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2} 
+void QCPBars\+Group::\+set\+Spacing (\begin{DoxyParamCaption}\item[{double}]{spacing}{}\end{DoxyParamCaption})}
+
+Sets the spacing between adjacent bars. What the number passed as {\itshape spacing} actually means, is defined by the current \doxylink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}, which can be set with \doxylink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}{set\+Spacing\+Type} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24059}{24059}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e}\index{QCPBarsGroup@{QCPBarsGroup}!setSpacingType@{setSpacingType}}
+\index{setSpacingType@{setSpacingType}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{setSpacingType()}{setSpacingType()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a2c7e2d61b10594a4555b615e1fcaf49e} 
+void QCPBars\+Group::\+set\+Spacing\+Type (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}}}]{spacing\+Type}{}\end{DoxyParamCaption})}
+
+Sets how the spacing between adjacent bars is interpreted. See \doxylink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}.
+
+The actual spacing can then be specified with \doxylink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing}.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_bars_group_aa553d327479d72a0c3dafcc724a190e2}{set\+Spacing} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24048}{24048}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5}\index{QCPBarsGroup@{QCPBarsGroup}!size@{size}}
+\index{size@{size}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a3780ec77919cb00840207ec7a0f00dd5} 
+int QCPBars\+Group::\+size (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+Returns the number of \doxylink{class_q_c_p_bars}{QCPBars} plottables that are part of this group. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05751}{5751}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a314d09aeb2ad209518b9183ca7ffe662}\index{QCPBarsGroup@{QCPBarsGroup}!spacing@{spacing}}
+\index{spacing@{spacing}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{spacing()}{spacing()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a314d09aeb2ad209518b9183ca7ffe662} 
+double QCPBars\+Group::\+spacing (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05742}{5742}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a894a77c45325aad2e742d936bc1f8aea}\index{QCPBarsGroup@{QCPBarsGroup}!spacingType@{spacingType}}
+\index{spacingType@{spacingType}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{spacingType()}{spacingType()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a894a77c45325aad2e742d936bc1f8aea} 
+\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} QCPBars\+Group::\+spacing\+Type (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05741}{5741}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_ac7073cdd7b1a40c6cb4b5f908145f8c4}\index{QCPBarsGroup@{QCPBarsGroup}!unregisterBars@{unregisterBars}}
+\index{unregisterBars@{unregisterBars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{unregisterBars()}{unregisterBars()}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_ac7073cdd7b1a40c6cb4b5f908145f8c4} 
+void QCPBars\+Group::\+unregister\+Bars (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}} \texorpdfstring{$\ast$}{*}}]{bars}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l24177}{24177}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+
+
+\label{class_q_c_p_bars_group_doc-related-members}
+\Hypertarget{class_q_c_p_bars_group_doc-related-members}
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_q_c_p_bars_group_a721b87c7cdb8e83a90d77fc8a22e7195}\index{QCPBarsGroup@{QCPBarsGroup}!QCPBars@{QCPBars}}
+\index{QCPBars@{QCPBars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{QCPBars}{QCPBars}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a721b87c7cdb8e83a90d77fc8a22e7195} 
+friend class \doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05777}{5777}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_bars_group_doc-variable-members}
+\Hypertarget{class_q_c_p_bars_group_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_q_c_p_bars_group_affdb1e9233c277ff5a4c0a1121cf1fc0}\index{QCPBarsGroup@{QCPBarsGroup}!mBars@{mBars}}
+\index{mBars@{mBars}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{mBars}{mBars}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_affdb1e9233c277ff5a4c0a1121cf1fc0} 
+QList$<$\doxymbox{\hyperlink{class_q_c_p_bars}{QCPBars}}\texorpdfstring{$\ast$}{*}$>$ QCPBars\+Group::\+m\+Bars\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05764}{5764}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a973d408cfbf88db95115aec71877f9e7}\index{QCPBarsGroup@{QCPBarsGroup}!mParentPlot@{mParentPlot}}
+\index{mParentPlot@{mParentPlot}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{mParentPlot}{mParentPlot}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a973d408cfbf88db95115aec71877f9e7} 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}}\texorpdfstring{$\ast$}{*} QCPBars\+Group::\+m\+Parent\+Plot\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05761}{5761}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a56471d7f548ca6141b7a5bf9629f7ece}\index{QCPBarsGroup@{QCPBarsGroup}!mSpacing@{mSpacing}}
+\index{mSpacing@{mSpacing}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{mSpacing}{mSpacing}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a56471d7f548ca6141b7a5bf9629f7ece} 
+double QCPBars\+Group::\+m\+Spacing\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05763}{5763}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_bars_group_a6794ee1a9c81864d627bff6a4b2d64ec}\index{QCPBarsGroup@{QCPBarsGroup}!mSpacingType@{mSpacingType}}
+\index{mSpacingType@{mSpacingType}!QCPBarsGroup@{QCPBarsGroup}}
+\doxysubsubsection{\texorpdfstring{mSpacingType}{mSpacingType}}
+{\footnotesize\ttfamily \label{class_q_c_p_bars_group_a6794ee1a9c81864d627bff6a4b2d64ec} 
+\doxymbox{\hyperlink{class_q_c_p_bars_group_a4c0521120a97e60bbca37677a37075b6}{Spacing\+Type}} QCPBars\+Group::\+m\+Spacing\+Type\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l05762}{5762}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8h}{QCustomplot.\+h}}\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8cpp}{QCustomplot.\+cpp}}\end{DoxyCompactItemize}

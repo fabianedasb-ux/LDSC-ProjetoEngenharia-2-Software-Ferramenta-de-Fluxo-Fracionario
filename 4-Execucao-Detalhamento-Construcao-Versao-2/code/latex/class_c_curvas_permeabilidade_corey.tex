@@ -1,0 +1,249 @@
+\doxysection{CCurvas\+Permeabilidade\+Corey Class Reference}
+\hypertarget{class_c_curvas_permeabilidade_corey}{}\label{class_c_curvas_permeabilidade_corey}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+
+
+Implementação do modelo analítico de permeabilidade relativa de Corey.  
+
+
+
+
+{\ttfamily \+\#include $<$CCurvas\+Permeabilidade\+Corey.\+h$>$}
+
+Inheritance diagram for CCurvas\+Permeabilidade\+Corey:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_c_curvas_permeabilidade_corey}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a36a1b526e977298dd101f1c45c1068b8}{CCurvas\+Permeabilidade\+Corey}} (double kro\+Max, double krw\+Max, double no, double nw, double swir, double sor)
+\begin{DoxyCompactList}\small\item\em Construtor parametrizado completo. \end{DoxyCompactList}\item 
+\doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a29e6d324d360f14239a005852c4f03eb}{CCurvas\+Permeabilidade\+Corey}} ()
+\begin{DoxyCompactList}\small\item\em Construtor padrão. Inicializa instâncias temporárias com todos os coeficientes zerados. \end{DoxyCompactList}\item 
+virtual \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a473ef1318dd751e7b5808fbe596b077f}{\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Corey}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a83c4f8680ac61e52fea4e90fab60e212}{carregar\+Dados}} (const std::\+string \&arquivo) override
+\begin{DoxyCompactList}\small\item\em Carrega os coeficientes do modelo a partir de um arquivo externo de texto. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a6d0d4f922faf75f3fd55b3050d60602b}{get\+Krw}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Calcula a Permeabilidade Relativa da fase Água (\$k\+\_\+\{rw\}\$). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a36a9a6f8233bb85a3b8b500b4afc364e}{get\+Kro}} (double sw) const override
+\begin{DoxyCompactList}\small\item\em Calcula a Permeabilidade Relativa da fase Óleo (\$k\+\_\+\{ro\}\$). \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_af3c396fe07b3a568ae60aac0d98e7ee3}{get\+Swi}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação Irredutível. \end{DoxyCompactList}\item 
+double \doxymbox{\hyperlink{class_c_curvas_permeabilidade_corey_a18646071f216f27a03cb8351fae733d1}{get\+Sor}} () const
+\begin{DoxyCompactList}\small\item\em Retorna a Saturação de óleo residual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_i_curvas_permeabilidade}{ICurvas\+Permeabilidade}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a3e1658196ce6a6e522d45591bf030b64}{\texorpdfstring{$\sim$}{\string~}\+ICurvas\+Permeabilidade}} ()
+\begin{DoxyCompactList}\small\item\em Destrutor virtual da interface. Fundamental em polimorfismo C++ para garantir a chamada em cascata dos destrutores e a destruição segura e completa das instâncias das classes derivadas na memória dinâmica. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementação do modelo analítico de permeabilidade relativa de Corey. 
+
+O modelo de Corey é uma correlação empírica clássica do tipo potência, amplamente utilizada na engenharia de reservatórios para sistemas bifásicos. Ele assume que as permeabilidades relativas são proporcionais a uma potência da saturação normalizada de água (\$\+S\+\_\+\{wn\}\$).
+
+As equações fundamentais são dadas por:\+
+\begin{DoxyItemize}
+\item $ k_{rw} = k_{rw,max} \cdot (S_{wn})^{n_w} $
+\item $ k_{ro} = k_{ro,max} \cdot (1 - S_{wn})^{n_o} $
+\end{DoxyItemize}
+
+Sendo a saturação normalizada:\+ $ S_{wn} = \frac{S_w - S_{wir}}{1 - S_{wir} - S_{or}} $
+
+\begin{DoxyAuthor}{Author}
+Fabiane da Silva Barros 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Janeiro 2026 
+\end{DoxyDate}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source_l00032}{32}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source}{CCurvas\+Permeabilidade\+Corey.\+h}}.
+
+
+
+\label{class_c_curvas_permeabilidade_corey_doc-constructors}
+\Hypertarget{class_c_curvas_permeabilidade_corey_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_corey_a36a1b526e977298dd101f1c45c1068b8}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeCorey()}{CCurvasPermeabilidadeCorey()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a36a1b526e977298dd101f1c45c1068b8} 
+CCurvas\+Permeabilidade\+Corey::\+\+CCurvas\+Permeabilidade\+Corey (\begin{DoxyParamCaption}\item[{double}]{kro\+Max}{, }\item[{double}]{krw\+Max}{, }\item[{double}]{no}{, }\item[{double}]{nw}{, }\item[{double}]{swir}{, }\item[{double}]{sor}{}\end{DoxyParamCaption})}
+
+
+
+Construtor parametrizado completo. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em kro\+Max} & Permeabilidade relativa máxima do óleo. \\
+\hline
+{\em krw\+Max} & Permeabilidade relativa máxima da água. \\
+\hline
+{\em no} & Expoente da curva de óleo. \\
+\hline
+{\em nw} & Expoente da curva de água. \\
+\hline
+{\em swir} & Saturação irredutível de água. \\
+\hline
+{\em sor} & Saturação residual de óleo. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00014}{14}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_a29e6d324d360f14239a005852c4f03eb}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{CCurvasPermeabilidadeCorey()}{CCurvasPermeabilidadeCorey()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a29e6d324d360f14239a005852c4f03eb} 
+CCurvas\+Permeabilidade\+Corey::\+\+CCurvas\+Permeabilidade\+Corey (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Construtor padrão. Inicializa instâncias temporárias com todos os coeficientes zerados. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00020}{20}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_a473ef1318dd751e7b5808fbe596b077f}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!````~CCurvasPermeabilidadeCorey@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeCorey}}
+\index{````~CCurvasPermeabilidadeCorey@{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeCorey}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}CCurvasPermeabilidadeCorey()}{\string~CCurvasPermeabilidadeCorey()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a473ef1318dd751e7b5808fbe596b077f} 
+CCurvas\+Permeabilidade\+Corey::\+\texorpdfstring{$\sim$}{\string~}\+CCurvas\+Permeabilidade\+Corey (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destrutor virtual. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00026}{26}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+
+
+\label{class_c_curvas_permeabilidade_corey_doc-func-members}
+\Hypertarget{class_c_curvas_permeabilidade_corey_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_c_curvas_permeabilidade_corey_a83c4f8680ac61e52fea4e90fab60e212}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!carregarDados@{carregarDados}}
+\index{carregarDados@{carregarDados}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{carregarDados()}{carregarDados()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a83c4f8680ac61e52fea4e90fab60e212} 
+void CCurvas\+Permeabilidade\+Corey::\+carregar\+Dados (\begin{DoxyParamCaption}\item[{const std::\+string \&}]{arquivo}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Carrega os coeficientes do modelo a partir de um arquivo externo de texto. 
+
+Espera-\/se um arquivo plano estruturado com 6 valores numéricos separados por espaços:\+ Swir, Sor, Kro\+Max, Krw\+Max, No, Nw.
+
+
+\begin{DoxyParams}{Parameters}
+{\em arquivo} & Caminho absoluto ou relativo do arquivo {\ttfamily .txt}. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std::\+runtime\+\_\+error} & Se o arquivo for inacessível ou estiver corrompido. \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_a941f041001757346bfedfb12cc376b3b}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00044}{44}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_a36a9a6f8233bb85a3b8b500b4afc364e}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!getKro@{getKro}}
+\index{getKro@{getKro}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getKro()}{getKro()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a36a9a6f8233bb85a3b8b500b4afc364e} 
+double CCurvas\+Permeabilidade\+Corey::\+get\+Kro (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calcula a Permeabilidade Relativa da fase Óleo (\$k\+\_\+\{ro\}\$). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação espacial de água atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor adimensional interpolado. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aca3a9e78a1df63d1316c1bcb05832d3e}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00064}{64}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_a6d0d4f922faf75f3fd55b3050d60602b}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!getKrw@{getKrw}}
+\index{getKrw@{getKrw}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getKrw()}{getKrw()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a6d0d4f922faf75f3fd55b3050d60602b} 
+double CCurvas\+Permeabilidade\+Corey::\+get\+Krw (\begin{DoxyParamCaption}\item[{double}]{sw}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Calcula a Permeabilidade Relativa da fase Água (\$k\+\_\+\{rw\}\$). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sw} & Saturação espacial de água atual. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Valor adimensional interpolado. 
+\end{DoxyReturn}
+
+
+Implements \doxymbox{\hyperlink{class_i_curvas_permeabilidade_aafbc2f886c4b9e885da96c79dbc21837}{ICurvas\+Permeabilidade}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source_l00058}{58}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp_source}{CCurvas\+Permeabilidade\+Corey.\+cpp}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_a18646071f216f27a03cb8351fae733d1}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!getSor@{getSor}}
+\index{getSor@{getSor}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getSor()}{getSor()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_a18646071f216f27a03cb8351fae733d1} 
+double CCurvas\+Permeabilidade\+Corey::\+get\+Sor (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação de óleo residual. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source_l00101}{101}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source}{CCurvas\+Permeabilidade\+Corey.\+h}}.
+
+\Hypertarget{class_c_curvas_permeabilidade_corey_af3c396fe07b3a568ae60aac0d98e7ee3}\index{CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}!getSwi@{getSwi}}
+\index{getSwi@{getSwi}!CCurvasPermeabilidadeCorey@{CCurvasPermeabilidadeCorey}}
+\doxysubsubsection{\texorpdfstring{getSwi()}{getSwi()}}
+{\footnotesize\ttfamily \label{class_c_curvas_permeabilidade_corey_af3c396fe07b3a568ae60aac0d98e7ee3} 
+double CCurvas\+Permeabilidade\+Corey::\+get\+Swi (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retorna a Saturação Irredutível. 
+
+
+
+Definition at line \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source_l00098}{98}} of file \doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h_source}{CCurvas\+Permeabilidade\+Corey.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8h}{CCurvas\+Permeabilidade\+Corey.\+h}}\item 
+Model/\+\doxymbox{\hyperlink{_c_curvas_permeabilidade_corey_8cpp}{CCurvas\+Permeabilidade\+Corey.\+cpp}}\end{DoxyCompactItemize}

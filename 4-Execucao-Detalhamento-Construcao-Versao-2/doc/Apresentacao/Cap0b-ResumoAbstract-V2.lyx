@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,7 +10,6 @@
 \usepackage {longtable}
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
-
 % Comentar linhas abaixo se não estiver usando pacote abntex
 % ou se o pacote ainda não foi instalado.
 % neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
@@ -82,11 +81,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -118,14 +125,18 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
 
 \begin_layout Standard
 
+\size large
 \emph on
-Titulo do Trabalho...Titulo do Trabalho...Titulo do Trabalho...
+Software Educacional com Interface Interativa para Implementação Computacional do Método das Características - Solução Analítica de Buckley-Leverett
+\size default
+
 \begin_inset Separator latexpar
 \end_inset
 
@@ -178,173 +189,33 @@ Resumo
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Resumo}
-\backslash
-thispagestyle{plain}
-\backslash
-addcontentsline{toc}{chapter}{Resumo}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Este trabalho objetiva,
- através da análise de imagens de rochas reservatório de petróleo,
- estudar,
- simular e determinar as propriedades petrofísicas que descrevem o escoamento multifásico no meio poroso.
- Tais informações descrevem a interação dinâmica entre os fluidos e o meio poroso,
- sendo então imprescindíveis para a compreensão do comportamento de produção dos reservatórios.
-\end_layout
-
-\end_inset
-
- 
-\end_layout
-
-\begin_layout Standard
-Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...
-\end_layout
-
-\begin_layout Itemize
-O resumo deve ser feito no início do trabalho,
- na etapa de especificação do trabalho (ajuda a esclarecer as ideias).
- 
-\end_layout
-
-\begin_layout Itemize
-Deve ter aproximadamente 200-500 palavras.
- 
-\end_layout
-
-\begin_layout Itemize
-A versão final deve ser feita depois das correções sugeridas pela banca.
-\end_layout
-
-\begin_layout Itemize
-O resumo deve ser completo,
- simples e direto,
- pois é um elemento externo a Tese/Dissertação/Monografia,
- disponibilizado em bibliotecas eletrônicas.
- Um bom resumo irá convencer o leitor a baixar o arquivo,
- se for ruim,
- com certeza seu trabalho não será lido - por melhor que seja a parte técnica!
-\end_layout
-
-\begin_layout Itemize
-Um bom resumo é completo e tem a mesma ordem do documento final:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Colocação do problema,
- 
-\series bold
-objetivos e metodologia
-\series default
-,
- seguido de desenvolvimento,
- simulações/experimentos,
- 
-\series bold
-resultados
-\series default
-,
- análises e 
-\series bold
-conclusões
-\series default
-.
- 
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Evite colocar citações no resumo;
- se o fizer,
- incluir a referência completa.
- Veja o exemplo a seguir:
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\paragraph_spacing double
-Embora obtendo resultados muito expressivos,
- métodos de predição da permeabilidade intrínseca baseados no campo local de velocidades,
- como em Santos 
+O desenvolvimento de simuladores computacionais robustos é fundamental para a otimização da recuperação de petróleo em reservatórios.
+ O presente trabalho apresenta o desenvolvimento de um simulador analítico baseado no Método das Características para a resolução da equação de Buckley-Leverett,
+ aplicado ao escoamento imiscível de fluidos em meios porosos.
+ A ferramenta foi implementada utilizando a linguagem C++ e o 
 \emph on
-et al.
+framework
 \emph default
-(2001) (Santos,
- L.O.E;
- Philippi,
- P.C;
- Damiani,
- M.C;
- Fernandes,
- C.P;
- 2001,
- 
+ Qt,
+ integrando diversos modelos de permeabilidade relativa,
+ incluindo o modelo tabelado experimental,
+ modelos clássicos de Corey,
+ LET e Chierici.
+ O simulador permite a configuração de parâmetros geomorfológicos,
+ efeitos gravitacionais,
+ viscosidades e densidades dos fluidos,
+ gerando diagnósticos automatizados sobre o instante de ruptura (
 \emph on
-Using three-dimensional reconstructed microstructures for predicting intrinsic permeability of reservoir- rocks based on a boolean lattice gas method
+breakthrough
 \emph default
-,
- Submitted to Journal of Petroleum Science and Engineering),
- são computacionalmente caros e não se espera que sejam usados na rotina diária da engenharia de petróleo.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Segundo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "metcient-LaudemiraSilvaRabelo"
-literal "true"
-
+) e a eficiência de varrido.
+ A validação do motor matemático foi realizada através da comparação com cenários clássicos da literatura técnica,
+ demonstrando alta precisão na ancoragem da tangente de Welge e na correta aplicação da condição de entropia para frentes de choque.
+ Os resultados indicam que a ferramenta é eficaz para o suporte à tomada de decisão em projetos de injeção de água,
+ servindo tanto como suporte didático para o ensino de engenharia de reservatórios quanto como base para futuras expansões modulares em softwares de simulação numérica.
+\begin_inset Newline newline
 \end_inset
 
-,
- "A NBR 6028 (1990) esclarece que um resumo deve passar informações suficientes sobre todo o conteúdo do texto,
- possibilitando ao leitor a decisão de lê em sua totalidade.
- É solicitado que o resumo contenha objetivo,
- método,
- resultados e as conclusões do trabalho.
- ...
- O resumo deve ser escrito em parágrafo único,
- numa seqüência corrente de frases lógicas sem nenhuma enumeração de tópicos.
- A norma 6028 (1990) explicita também que a primeira frase deve explicar o tema do artigo,
- dando-se preferência ao uso da terceira pessoa do singular e do verbo na voz ativa.
- Embora o artigo possa ter sido escrito por vários autores,
- a primeira pessoa do plural (nós) não deve ser utilizado.
- Deve-se,
- ainda,
- evitar o uso de frases negativas,
- símbolos,
- equações,
- tabelas,
- quadros etc no resumo ".
-\end_layout
-
-\begin_layout Standard
 
 \series bold
 \size large
@@ -352,7 +223,11 @@ Palavras chave:
  
 \series default
 \size default
-[até 5 palavras chaves].
+Buckley-Leverett.
+ Permeabilidade Relativa.
+ Simulador Computacional.
+ Fluxo Fracionário.
+ Engenharia de Reservatórios.
 \end_layout
 
 \begin_layout Standard
@@ -365,7 +240,8 @@ Palavras chave:
 \begin_layout Standard
 
 \emph on
-Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...Titulo do Trabalho em ingles...
+Educational Software with Interactive Interface for the Computational Implementation of the Method of Characteristics:
+ Analytical Solution to the Buckley-Leverett Equation
 \begin_inset Separator latexpar
 \end_inset
 
@@ -418,75 +294,25 @@ Abstract
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-lhead{Abstract}
-\backslash
-thispagestyle{plain}
-\backslash
-addcontentsline{toc}{chapter}{Abstract}
-\end_layout
-
-\end_inset
-
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-This work aims,
- through image analysis of oil reservoir rocks,
- study,
- simulate and determine the petrophysical properties that describe the multiphase flow in porous medium.
- Such information describes the dynamic interaction between the fluid and the porous media,
- is essential to understanding the behavior of reservoirs producing.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-[coloque aqui o resumo em inglês].
-\lang english
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\lang english
-Note que o documento tem uma língua,
- que pode ser setada utilizando-se Document-Settings->Language.
-\end_layout
-
-\begin_layout Plain Layout
-
-\lang english
-Note que partes do texto podem ser definidos como tendo outra linguagem.
- Selecione o texto,
- vá em Edit->TextStyle->Customized,
- ou Edit->Language.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo
- aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...Resumo aqui...
-\begin_inset space ~
-\end_inset
-
-
+The development of robust computational simulators is essential for optimizing oil recovery in reservoirs.
+ This work presents the development of an analytical simulator based on the Method of Characteristics for solving the Buckley-Leverett equation,
+ applied to immiscible fluid flow in porous media.
+ The tool was implemented using C++ and the Qt framework,
+ integrating various relative permeability models,
+ including experimental tabulated data,
+ as well as classical Corey,
+ LET,
+ and Chierici models.
+ The simulator allows for the configuration of geomorphological parameters,
+ gravitational effects,
+ fluid viscosities,
+ and densities,
+ generating automated diagnostics on breakthrough time and sweep efficiency.
+ The validation of the mathematical engine was performed by comparing results against classical scenarios from technical literature,
+ demonstrating high precision in anchoring the Welge tangent and correctly applying the entropy condition for shock fronts.
+ Results indicate that the tool is effective for supporting decision-making in waterflooding projects,
+ serving both as a didactic support for reservoir engineering education and as a foundation for future modular expansions in numerical simulation software.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -497,7 +323,11 @@ Keywords:
  
 \series default
 \size default
-[até 5 palavras chaves em inglês].
+Buckley-Leverett.
+ Relative Permeability.
+ Computational Simulator.
+ Fractional Flow.
+ Reservoir Engineering.
 \end_layout
 
 \end_body

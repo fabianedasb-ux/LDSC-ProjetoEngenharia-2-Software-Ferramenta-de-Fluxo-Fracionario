@@ -1,0 +1,525 @@
+\doxysection{QCPItem\+Curve Class Reference}
+\hypertarget{class_q_c_p_item_curve}{}\label{class_q_c_p_item_curve}\index{QCPItemCurve@{QCPItemCurve}}
+
+
+A curved line from one point to another.  
+
+
+
+
+{\ttfamily \+\#include $<$QCustomplot.\+h$>$}
+
+Inheritance diagram for QCPItem\+Curve:\+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_q_c_p_item_curve}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_curve_ac9b7508bb5c8827e1a7a6199f8c82bec}{QCPItem\+Curve}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_item_curve_a20269d12d9787cec749bf72f527d6074}{\texorpdfstring{$\sim$}{\string~}\+QCPItem\+Curve}} () \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_item_curve_aefe2e9affaa9c70f434a076def4a7ea5}{pen}} () const
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_item_curve_a4827e5f89e8fb3b2760871c4e5315322}{selected\+Pen}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \doxymbox{\hyperlink{class_q_c_p_item_curve_a86467ff1dc9cbcefead6333bd5e27393}{head}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \doxymbox{\hyperlink{class_q_c_p_item_curve_aaef82aa581f6996444028027d6829acc}{tail}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_curve_a034be908440aec785c34b92843461221}{set\+Pen}} (const QPen \&pen)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_curve_a375b917669f868c5a106bf2f1ab7c26d}{set\+Selected\+Pen}} (const QPen \&pen)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}{set\+Head}} (const \doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&head)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}{set\+Tail}} (const \doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&tail)
+\item 
+virtual double \doxymbox{\hyperlink{class_q_c_p_item_curve_ae5b09ad4ea7ec2d9f08190c73c39e9b9}{select\+Test}} (const QPointF \&pos, bool only\+Selectable, QVariant \texorpdfstring{$\ast$}{*}details=nullptr) const \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_abstract_item_a9922507d8b4503a1fe1ed0b1030e23b6}{QCPAbstract\+Item}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_abstract_item_a5120698bef63cbaa8544e9f47a2f4abc}{\texorpdfstring{$\sim$}{\string~}\+QCPAbstract\+Item}} () \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_a42715ad5f3d7fca6854025fa5636f436}{clip\+To\+Axis\+Rect}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_abstract_item_ae162314efd3fe1a6d4df11da1d275d52}{clip\+Axis\+Rect}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_ae29aa489767352b40c4aaa7ea50c5582}{selectable}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_aa069fba320a13639f119f82ad29ead96}{selected}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a39e05b9d4176b9accafc746d16ca6a06}{set\+Clip\+To\+Axis\+Rect}} (bool clip)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a7dc75fcbcd10206fe0b75d757ea7a347}{set\+Clip\+Axis\+Rect}} (\doxymbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} \texorpdfstring{$\ast$}{*}rect)
+\item 
+Q\+\_\+\+SLOT void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a8a8e32a55bc478b849756a78c2d87fd2}{set\+Selectable}} (bool selectable)
+\item 
+Q\+\_\+\+SLOT void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected}} (bool selected)
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_abstract_item_a709f655ac3f7f22d452714134662b454}{positions}} () const
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_abstract_item_a81d1ecfea3368b836cf9675a0045e659}{anchors}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_abstract_item_a2589c3d298f9a576d77d9addb440a18d}{position}} (const QString \&name) const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_abstract_item_a139c255ea8831642fac91748e29a5adb}{anchor}} (const QString \&name) const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_a84914f4516f9b38ef0bd89eafe3dbda7}{has\+Anchor}} (const QString \&name) const
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layerable_a4f87f420cb2597e2b393aab934d2f099}{QCPLayerable}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}plot, QString target\+Layer=QString(), \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}parent\+Layerable=nullptr)
+\item 
+virtual \doxymbox{\hyperlink{class_q_c_p_layerable_a4231cf5b3601d6d3a5781283e7a9735b}{\texorpdfstring{$\sim$}{\string~}\+QCPLayerable}} ()
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_af0297b944b6192b6d67d00bff41b6b70}{visible}} () const
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_a36ed5b292b90934b524a4e5866a3526c}{parent\+Plot}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa78b7e644d2c519e1a9a6f2ac5fcd858}{parent\+Layerable}} () const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_a9d4e121a7f1d2314f906fe698209cac9}{layer}} () const
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a71cbd212fde2703cee076e204a475709}{antialiased}} () const
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a3bed99ddc396b48ce3ebfdc0418744f8}{set\+Visible}} (bool on)
+\item 
+Q\+\_\+\+SLOT bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab0d0da6d2de45a118886d2c8e16d5a54}{set\+Layer}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab25a0e7b897993b44447caee0f142083}{set\+Layer}} (const QString \&layer\+Name)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a4fd43e89be4a553ead41652565ff0581}{set\+Antialiased}} (bool enabled)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_ab054e88f15d485defcb95e7376f119e7}{real\+Visibility}} () const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}const \doxymbox{\hyperlink{class_q_c_p_item_curve_a20c3b5ea31c33764f4f30c2ec7ae518b}{start}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}const \doxymbox{\hyperlink{class_q_c_p_item_curve_aa124bf66c09cc51c627fb49db8bf8a7b}{start\+Dir}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}const \doxymbox{\hyperlink{class_q_c_p_item_curve_a28181a9dee9cc3c3da83a883221bd2d0}{end\+Dir}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*}const \doxymbox{\hyperlink{class_q_c_p_item_curve_a24ecbb195b32a08b42b61c2cf08a1b4d}{end}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_item_curve_a856ae61de18278847ba5e0e357bf68f2}{draw}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_item_curve_a3a3a84518e8701211c8c5a40bf3c911f}{main\+Pen}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual \doxymbox{\hyperlink{namespace_q_c_p_a2ad6bb6281c7c2d593d4277b44c2b037}{QCP::\+\+Interaction}} \doxymbox{\hyperlink{class_q_c_p_abstract_item_aceb5f99c361cf023c7cbe7339ea29571}{selection\+Category}} () const \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual QRect \doxymbox{\hyperlink{class_q_c_p_abstract_item_a6ad60000f29afe11035e1f791dcbd45a}{clip\+Rect}} () const \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a5579ce9ec7cad202499886b042448b10}{apply\+Default\+Antialiasing\+Hint}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter) const \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, bool additive, const QVariant \&details, bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}} (bool \texorpdfstring{$\ast$}{*}selection\+State\+Changed) \doxymbox{\hyperlink{_q_customplot_8h_a42cc5eaeb25b85f8b52d2a4b94c56f55}{Q\+\_\+\+DECL\+\_\+\+OVERRIDE}}
+\item 
+virtual QPointF \doxymbox{\hyperlink{class_q_c_p_abstract_item_ada5bad4e1196c4fc0d0d12328e24b8f2}{anchor\+Pixel\+Position}} (int anchor\+Id) const
+\item 
+double \doxymbox{\hyperlink{class_q_c_p_abstract_item_a7dfc2007e36d09b8b5c988a9f06d6a7e}{rect\+Distance}} (const QRectF \&rect, const QPointF \&pos, bool filled\+Rect) const
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_abstract_item_a75036d39c4d4e2e1a7dd145fff915d32}{create\+Position}} (const QString \&name)
+\item 
+\doxymbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_abstract_item_af3fc92527802078ca395138748b629a7}{create\+Anchor}} (const QString \&name, int anchor\+Id)
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Member Functions inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_ab20b7dbd8e0249ed61adb9622c427382}{parent\+Plot\+Initialized}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a9eee1ba47fd69be111059ca3881933e4}{mouse\+Move\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_aa0d79b005686f668622bbe66ac03ba2c}{mouse\+Release\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QPointF \&start\+Pos)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a4171e2e823aca242dd0279f00ed2de81}{mouse\+Double\+Click\+Event}} (QMouse\+Event \texorpdfstring{$\ast$}{*}event, const QVariant \&details)
+\item 
+virtual void \doxymbox{\hyperlink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}} (QWheel\+Event \texorpdfstring{$\ast$}{*}event)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_a8cbe5a0c9a5674249982f5ca5f8e02bc}{initialize\+Parent\+Plot}} (\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}parent\+Plot)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_aa23c893671f1f6744ac235cf2204cf3a}{set\+Parent\+Layerable}} (\doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} \texorpdfstring{$\ast$}{*}parent\+Layerable)
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_af94484cfb7cbbddb7de522e9be71d9a4}{move\+To\+Layer}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}layer, bool prepend)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_acb663e375d2d36dc5c55021ee5a2119b}{apply\+Antialiasing\+Hint}} (\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}painter, bool local\+Antialiased, \doxymbox{\hyperlink{namespace_q_c_p_ae55dbe315d41fe80f29ba88100843a0c}{QCP::\+\+Antialiased\+Element}} override\+Element) const
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_item_curve_a7ef92988d1db2e4d0311e34c0a57fe42}{m\+Pen}}
+\item 
+QPen \doxymbox{\hyperlink{class_q_c_p_item_curve_ab22cbab261b20be5aa8e4ca252149246}{m\+Selected\+Pen}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \doxymbox{\hyperlink{class_q_c_p_item_curve_af2cc26ff199570940dc96f5ec19a13f8}{m\+Head}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \doxymbox{\hyperlink{class_q_c_p_item_curve_af1dca285b97e3f5b892dab827a79f327}{m\+Tail}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_ad2a70ff6b658fcb84a9427f69d3f587d}{m\+Clip\+To\+Axis\+Rect}}
+\item 
+QPointer$<$ \doxymbox{\hyperlink{class_q_c_p_axis_rect}{QCPAxis\+Rect}} $>$ \doxymbox{\hyperlink{class_q_c_p_abstract_item_a3e57cfe7da4b1ac3d6fa7281ea437361}{m\+Clip\+Axis\+Rect}}
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_abstract_item_af94ff71b6a15ea6d028ab8bd8eccd012}{m\+Positions}}
+\item 
+QList$<$ \doxymbox{\hyperlink{class_q_c_p_item_anchor}{QCPItem\+Anchor}} \texorpdfstring{$\ast$}{*} $>$ \doxymbox{\hyperlink{class_q_c_p_abstract_item_a909a3abab783de302ebf0a0e6f2bbc15}{m\+Anchors}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_ad81eb35c8726a0f458db9df9732e0e41}{m\+Selectable}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_abstract_item_a4bdb3457dad1d268c0f78a44152b9645}{m\+Selected}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a62e3aed8427d6ce3ccf716f285106cb3}{m\+Visible}}
+\item 
+\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa2a528433e44db02b8aef23c1f9f90ed}{m\+Parent\+Plot}}
+\item 
+QPointer$<$ \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}} $>$ \doxymbox{\hyperlink{class_q_c_p_layerable_a3291445a980053e2d17a21d15957624e}{m\+Parent\+Layerable}}
+\item 
+\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*} \doxymbox{\hyperlink{class_q_c_p_layerable_aa38ec5891aff0f50b36fd63e9372a0cd}{m\+Layer}}
+\item 
+bool \doxymbox{\hyperlink{class_q_c_p_layerable_a3ab45a4c76a3333ce42eb217a81733ec}{m\+Antialiased}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Signals inherited from \doxymbox{\hyperlink{class_q_c_p_abstract_item}{QCPAbstract\+Item}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_abstract_item_aa5cffb034fc65dbb91c77e02c1c14251}{selection\+Changed}} (bool selected)
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_abstract_item_a5b266c11aac61cb511901f3911dac2a3}{selectable\+Changed}} (bool selectable)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals inherited from \doxymbox{\hyperlink{class_q_c_p_layerable}{QCPLayerable}}}
+\begin{DoxyCompactItemize}
+\item 
+void \doxymbox{\hyperlink{class_q_c_p_layerable_abbf8657cedea73ac1c3499b521c90eba}{layer\+Changed}} (\doxymbox{\hyperlink{class_q_c_p_layer}{QCPLayer}} \texorpdfstring{$\ast$}{*}new\+Layer)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A curved line from one point to another. 
+
+
+
+It has four positions, {\itshape start} and {\itshape end}, which define the end points of the line, and two control points which define the direction the line exits from the start and the direction from which it approaches the end:\+ {\itshape start\+Dir} and {\itshape end\+Dir}.
+
+With \doxylink{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}{set\+Head} and \doxylink{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}{set\+Tail} you may set different line ending styles, e.\+g. to create an arrow.
+
+Often it is desirable for the control points to stay at fixed relative positions to the start/\+end point. This can be achieved by setting the parent anchor e.\+g. of {\itshape start\+Dir} simply to {\itshape start}, and then specify the desired pixel offset with \doxylink{class_q_c_p_item_position_aa988ba4e87ab684c9021017dcaba945f}{QCPItem\+Position::\+set\+Coords} on {\itshape start\+Dir}. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06515}{6515}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_item_curve_doc-constructors}
+\Hypertarget{class_q_c_p_item_curve_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_q_c_p_item_curve_ac9b7508bb5c8827e1a7a6199f8c82bec}\index{QCPItemCurve@{QCPItemCurve}!QCPItemCurve@{QCPItemCurve}}
+\index{QCPItemCurve@{QCPItemCurve}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{QCPItemCurve()}{QCPItemCurve()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_ac9b7508bb5c8827e1a7a6199f8c82bec} 
+QCPItem\+Curve::\+\+QCPItem\+Curve (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_custom_plot}{QCustom\+Plot}} \texorpdfstring{$\ast$}{*}}]{parent\+Plot}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+Creates a curve item and sets default values.
+
+The created item is automatically registered with {\itshape parent\+Plot}. This \doxylink{class_q_custom_plot}{QCustom\+Plot} instance takes ownership of the item, so do not delete it manually but use \doxylink{class_q_custom_plot_ae04446557292551e8fb6e2c106e1848d}{QCustom\+Plot::\+remove\+Item()} instead. 
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29294}{29294}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_a20269d12d9787cec749bf72f527d6074}\index{QCPItemCurve@{QCPItemCurve}!````~QCPItemCurve@{\texorpdfstring{$\sim$}{\string~}QCPItemCurve}}
+\index{````~QCPItemCurve@{\texorpdfstring{$\sim$}{\string~}QCPItemCurve}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}QCPItemCurve()}{\string~QCPItemCurve()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a20269d12d9787cec749bf72f527d6074} 
+QCPItem\+Curve::\+\texorpdfstring{$\sim$}{\string~}\+QCPItem\+Curve (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29310}{29310}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+
+
+\label{class_q_c_p_item_curve_doc-func-members}
+\Hypertarget{class_q_c_p_item_curve_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_q_c_p_item_curve_a856ae61de18278847ba5e0e357bf68f2}\index{QCPItemCurve@{QCPItemCurve}!draw@{draw}}
+\index{draw@{draw}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a856ae61de18278847ba5e0e357bf68f2} 
+void QCPItem\+Curve::\+draw (\begin{DoxyParamCaption}\item[{\doxymbox{\hyperlink{class_q_c_p_painter}{QCPPainter}} \texorpdfstring{$\ast$}{*}}]{painter}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}
+
+
+
+Implements \doxymbox{\hyperlink{class_q_c_p_abstract_item_afe12c077663d07233a1b06608783ae41}{QCPAbstract\+Item}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29391}{29391}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_a86467ff1dc9cbcefead6333bd5e27393}\index{QCPItemCurve@{QCPItemCurve}!head@{head}}
+\index{head@{head}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{head()}{head()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a86467ff1dc9cbcefead6333bd5e27393} 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPItem\+Curve::\+head (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06531}{6531}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_a3a3a84518e8701211c8c5a40bf3c911f}\index{QCPItemCurve@{QCPItemCurve}!mainPen@{mainPen}}
+\index{mainPen@{mainPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{mainPen()}{mainPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a3a3a84518e8701211c8c5a40bf3c911f} 
+QPen QCPItem\+Curve::\+main\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29426}{29426}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_aefe2e9affaa9c70f434a076def4a7ea5}\index{QCPItemCurve@{QCPItemCurve}!pen@{pen}}
+\index{pen@{pen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{pen()}{pen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_aefe2e9affaa9c70f434a076def4a7ea5} 
+QPen QCPItem\+Curve::\+pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06529}{6529}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_a4827e5f89e8fb3b2760871c4e5315322}\index{QCPItemCurve@{QCPItemCurve}!selectedPen@{selectedPen}}
+\index{selectedPen@{selectedPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{selectedPen()}{selectedPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a4827e5f89e8fb3b2760871c4e5315322} 
+QPen QCPItem\+Curve::\+selected\+Pen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06530}{6530}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_ae5b09ad4ea7ec2d9f08190c73c39e9b9}\index{QCPItemCurve@{QCPItemCurve}!selectTest@{selectTest}}
+\index{selectTest@{selectTest}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{selectTest()}{selectTest()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_ae5b09ad4ea7ec2d9f08190c73c39e9b9} 
+double QCPItem\+Curve::\+select\+Test (\begin{DoxyParamCaption}\item[{const QPointF \&}]{pos}{, }\item[{bool}]{only\+Selectable}{, }\item[{QVariant \texorpdfstring{$\ast$}{*}}]{details}{ = {\ttfamily nullptr}}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This function is used to decide whether a click hits a layerable object or not.
+
+{\itshape pos} is a point in pixel coordinates on the \doxylink{class_q_custom_plot}{QCustom\+Plot} surface. This function returns the shortest pixel distance of this point to the object. If the object is either invisible or the distance couldn\textquotesingle{}t be determined, -\/1.\+0 is returned. Further, if {\itshape only\+Selectable} is true and the object is not selectable, -\/1.\+0 is returned, too.
+
+If the object is represented not by single lines but by an area like a \doxylink{class_q_c_p_item_text}{QCPItem\+Text} or the bars of a \doxylink{class_q_c_p_bars}{QCPBars} plottable, a click inside the area should also be considered a hit. In these cases this function thus returns a constant value greater zero but still below the parent plot\textquotesingle{}s selection tolerance. (typically the selection\+Tolerance multiplied by 0.\+99).
+
+Providing a constant value for area objects allows selecting line objects even when they are obscured by such area objects, by clicking close to the lines (i.\+e. closer than 0.\+99\texorpdfstring{$\ast$}{*}selection\+Tolerance).
+
+The actual setting of the selection state is not done by this function. This is handled by the parent \doxylink{class_q_custom_plot}{QCustom\+Plot} when the mouse\+Release\+Event occurs, and the finally selected object is notified via the select\+Event/\+ deselect\+Event methods.
+
+{\itshape details} is an optional output parameter. Every layerable subclass may place any information in {\itshape details}. This information will be passed to \doxylink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event} when the parent \doxylink{class_q_custom_plot}{QCustom\+Plot} decides on the basis of this select\+Test call, that the object was successfully selected. The subsequent call to \doxylink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event} will carry the {\itshape details}. This is useful for multi-\/part objects (like \doxylink{class_q_c_p_axis}{QCPAxis}). This way, a possibly complex calculation to decide which part was clicked is only done once in \doxylink{class_q_c_p_item_curve_ae5b09ad4ea7ec2d9f08190c73c39e9b9}{select\+Test}. The result (i.\+e. the actually clicked part) can then be placed in {\itshape details}. So in the subsequent \doxylink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}, the decision which part was selected doesn\textquotesingle{}t have to be done a second time for a single selection operation.
+
+In the case of 1D Plottables (\doxylink{class_q_c_p_abstract_plottable1_d}{QCPAbstract\+Plottable1D}, like \doxylink{class_q_c_p_graph}{QCPGraph} or \doxylink{class_q_c_p_bars}{QCPBars}) {\itshape details} will be set to a \doxylink{class_q_c_p_data_selection}{QCPData\+Selection}, describing the closest data point to {\itshape pos}.
+
+You may pass {\ttfamily nullptr} as {\itshape details} to indicate that you are not interested in those selection details.
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_abstract_item_aa4b969c58797f39c9c0b6c07c7869d17}{select\+Event}, \doxylink{class_q_c_p_abstract_item_af9093798cb07a861dcc73f93ca16c0c1}{deselect\+Event}, \doxylink{class_q_c_p_layerable_af6567604818db90f4fd52822f8bc8376}{mouse\+Press\+Event}, \doxylink{class_q_c_p_layerable_a47dfd7b8fd99c08ca54e09c362b6f022}{wheel\+Event}, \doxylink{class_q_custom_plot_a5ee1e2f6ae27419deca53e75907c27e5}{QCustom\+Plot::\+set\+Interactions}, \doxylink{class_q_c_p_abstract_plottable1_d_a22377bf6e57ab7eedbc9e489250c6ded}{QCPAbstract\+Plottable1\+D::\+select\+Test\+Rect} 
+\end{DoxySeeAlso}
+
+
+Implements \doxymbox{\hyperlink{class_q_c_p_abstract_item_ac75a4bdcba0ce51ae22eacebb16a9dcd}{QCPAbstract\+Item}}.
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29361}{29361}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}\index{QCPItemCurve@{QCPItemCurve}!setHead@{setHead}}
+\index{setHead@{setHead}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{setHead()}{setHead()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f} 
+void QCPItem\+Curve::\+set\+Head (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&}]{head}{}\end{DoxyParamCaption})}
+
+Sets the line ending style of the head. The head corresponds to the {\itshape end} position.
+
+Note that due to the overloaded \doxylink{class_q_c_p_line_ending}{QCPLine\+Ending} constructor, you may directly specify a \doxylink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{QCPLine\+Ending::\+\+Ending\+Style} here, e.\+g. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}{setHead}}(\doxymbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}{QCPLineEnding::esSpikeArrow}})\ }
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}{set\+Tail} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29342}{29342}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_a034be908440aec785c34b92843461221}\index{QCPItemCurve@{QCPItemCurve}!setPen@{setPen}}
+\index{setPen@{setPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{setPen()}{setPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a034be908440aec785c34b92843461221} 
+void QCPItem\+Curve::\+set\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that will be used to draw the line
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_item_curve_a375b917669f868c5a106bf2f1ab7c26d}{set\+Selected\+Pen} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29319}{29319}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_a375b917669f868c5a106bf2f1ab7c26d}\index{QCPItemCurve@{QCPItemCurve}!setSelectedPen@{setSelectedPen}}
+\index{setSelectedPen@{setSelectedPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{setSelectedPen()}{setSelectedPen()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a375b917669f868c5a106bf2f1ab7c26d} 
+void QCPItem\+Curve::\+set\+Selected\+Pen (\begin{DoxyParamCaption}\item[{const QPen \&}]{pen}{}\end{DoxyParamCaption})}
+
+Sets the pen that will be used to draw the line when selected
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_item_curve_a034be908440aec785c34b92843461221}{set\+Pen}, \doxylink{class_q_c_p_abstract_item_a203de94ad586cc44d16c9565f49d3378}{set\+Selected} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29329}{29329}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}\index{QCPItemCurve@{QCPItemCurve}!setTail@{setTail}}
+\index{setTail@{setTail}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{setTail()}{setTail()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124} 
+void QCPItem\+Curve::\+set\+Tail (\begin{DoxyParamCaption}\item[{const \doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} \&}]{tail}{}\end{DoxyParamCaption})}
+
+Sets the line ending style of the tail. The tail corresponds to the {\itshape start} position.
+
+Note that due to the overloaded \doxylink{class_q_c_p_line_ending}{QCPLine\+Ending} constructor, you may directly specify a \doxylink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5}{QCPLine\+Ending::\+\+Ending\+Style} here, e.\+g. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\doxymbox{\hyperlink{class_q_c_p_item_curve_ac3488d8b1a6489c845dc5bff3ef71124}{setTail}}(\doxymbox{\hyperlink{class_q_c_p_line_ending_a5ef16e6876b4b74959c7261d8d4c2cd5ab9964d0d03f812d1e79de15edbeb2cbf}{QCPLineEnding::esSpikeArrow}})\ }
+
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\doxylink{class_q_c_p_item_curve_a08a30d9cdd63995deea3d9e20430676f}{set\+Head} 
+\end{DoxySeeAlso}
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8cpp_source_l29355}{29355}} of file \doxymbox{\hyperlink{_q_customplot_8cpp_source}{QCustomplot.\+cpp}}.
+
+\Hypertarget{class_q_c_p_item_curve_aaef82aa581f6996444028027d6829acc}\index{QCPItemCurve@{QCPItemCurve}!tail@{tail}}
+\index{tail@{tail}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{tail()}{tail()}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_aaef82aa581f6996444028027d6829acc} 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPItem\+Curve::\+tail (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06532}{6532}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+\label{class_q_c_p_item_curve_doc-variable-members}
+\Hypertarget{class_q_c_p_item_curve_doc-variable-members}
+\doxysubsection{Member Data Documentation}
+\Hypertarget{class_q_c_p_item_curve_a24ecbb195b32a08b42b61c2cf08a1b4d}\index{QCPItemCurve@{QCPItemCurve}!end@{end}}
+\index{end@{end}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a24ecbb195b32a08b42b61c2cf08a1b4d} 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*} const QCPItem\+Curve::\+end}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06546}{6546}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_a28181a9dee9cc3c3da83a883221bd2d0}\index{QCPItemCurve@{QCPItemCurve}!endDir@{endDir}}
+\index{endDir@{endDir}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{endDir}{endDir}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a28181a9dee9cc3c3da83a883221bd2d0} 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*} const QCPItem\+Curve::\+end\+Dir}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06545}{6545}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_af2cc26ff199570940dc96f5ec19a13f8}\index{QCPItemCurve@{QCPItemCurve}!mHead@{mHead}}
+\index{mHead@{mHead}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{mHead}{mHead}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_af2cc26ff199570940dc96f5ec19a13f8} 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPItem\+Curve::\+m\+Head\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06551}{6551}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_a7ef92988d1db2e4d0311e34c0a57fe42}\index{QCPItemCurve@{QCPItemCurve}!mPen@{mPen}}
+\index{mPen@{mPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{mPen}{mPen}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a7ef92988d1db2e4d0311e34c0a57fe42} 
+QPen QCPItem\+Curve::\+m\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06550}{6550}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_ab22cbab261b20be5aa8e4ca252149246}\index{QCPItemCurve@{QCPItemCurve}!mSelectedPen@{mSelectedPen}}
+\index{mSelectedPen@{mSelectedPen}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{mSelectedPen}{mSelectedPen}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_ab22cbab261b20be5aa8e4ca252149246} 
+QPen QCPItem\+Curve::\+m\+Selected\+Pen\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06550}{6550}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_af1dca285b97e3f5b892dab827a79f327}\index{QCPItemCurve@{QCPItemCurve}!mTail@{mTail}}
+\index{mTail@{mTail}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{mTail}{mTail}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_af1dca285b97e3f5b892dab827a79f327} 
+\doxymbox{\hyperlink{class_q_c_p_line_ending}{QCPLine\+Ending}} QCPItem\+Curve::\+m\+Tail\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06551}{6551}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_a20c3b5ea31c33764f4f30c2ec7ae518b}\index{QCPItemCurve@{QCPItemCurve}!start@{start}}
+\index{start@{start}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{start}{start}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_a20c3b5ea31c33764f4f30c2ec7ae518b} 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*} const QCPItem\+Curve::\+start}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06543}{6543}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+\Hypertarget{class_q_c_p_item_curve_aa124bf66c09cc51c627fb49db8bf8a7b}\index{QCPItemCurve@{QCPItemCurve}!startDir@{startDir}}
+\index{startDir@{startDir}!QCPItemCurve@{QCPItemCurve}}
+\doxysubsubsection{\texorpdfstring{startDir}{startDir}}
+{\footnotesize\ttfamily \label{class_q_c_p_item_curve_aa124bf66c09cc51c627fb49db8bf8a7b} 
+\doxymbox{\hyperlink{class_q_c_p_item_position}{QCPItem\+Position}}\texorpdfstring{$\ast$}{*} const QCPItem\+Curve::\+start\+Dir}
+
+
+
+Definition at line \doxymbox{\hyperlink{_q_customplot_8h_source_l06544}{6544}} of file \doxymbox{\hyperlink{_q_customplot_8h_source}{QCustomplot.\+h}}.
+
+
+
+The documentation for this class was generated from the following files:\+\begin{DoxyCompactItemize}
+\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8h}{QCustomplot.\+h}}\item 
+View/\+\doxymbox{\hyperlink{_q_customplot_8cpp}{QCustomplot.\+cpp}}\end{DoxyCompactItemize}

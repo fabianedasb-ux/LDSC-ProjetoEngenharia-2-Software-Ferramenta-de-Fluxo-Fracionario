@@ -1,0 +1,79 @@
+\doxysection{CCurvas\+Permeabilidade\+Chierici.\+cpp}
+\hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source}{}\label{_c_curvas_permeabilidade_chierici_8cpp_source}\index{Model/CCurvasPermeabilidadeChierici.cpp@{Model/CCurvasPermeabilidadeChierici.cpp}}
+\doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8cpp}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00001}00001\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00007}00007\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00008}00008\ \textcolor{preprocessor}{\#include\ "{}\doxymbox{\hyperlink{_c_curvas_permeabilidade_chierici_8h}{CCurvasPermeabilidadeChierici.h}}"{}}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00009}00009\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00010}00010\ \textcolor{preprocessor}{\#include\ <fstream>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00011}00011\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00012}00012\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00013}00013\ \textcolor{comment}{//\ -\/-\/-\/\ Construtor\ Principal\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00014}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_a4ae92f2751d9c200adedfc658239bd10}{00014}}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0}{CCurvasPermeabilidadeChierici::CCurvasPermeabilidadeChierici}}(\textcolor{keywordtype}{double}\ Aw,\ \textcolor{keywordtype}{double}\ Bw,\ \textcolor{keywordtype}{double}\ Ao,\ \textcolor{keywordtype}{double}\ Bo,}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00015}00015\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ Swirr,\ \textcolor{keywordtype}{double}\ Sor,}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00016}00016\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ krwMax,\ \textcolor{keywordtype}{double}\ kroMax)}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00017}00017\ \ \ \ \ :\ \_Aw(Aw),\ \_Bw(Bw),\ \_Ao(Ao),\ \_Bo(Bo),}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00018}00018\ \ \ \ \ \_Swirr(Swirr),\ \_Sor(Sor),\ \_kroMax(kroMax),\ \_krwMax(krwMax)}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00019}00019\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00020}00020\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00021}00021\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00022}00022\ \textcolor{comment}{//\ -\/-\/-\/\ Construtor\ Vazio\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00023}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0}{00023}}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ace14f2442ce7900862d9b1b25ec9a5e0}{CCurvasPermeabilidadeChierici::CCurvasPermeabilidadeChierici}}()}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00024}00024\ \ \ \ \ :\ \_Aw(0.0),\ \_Bw(0.0),\ \_Ao(0.0),\ \_Bo(0.0),}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00025}00025\ \ \ \ \ \_Swirr(0.0),\ \_Sor(0.0),\ \_kroMax(0.0),\ \_krwMax(0.0)}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00026}00026\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00027}00027\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00028}00028\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00029}00029\ \textcolor{comment}{//\ -\/-\/-\/\ Destrutor\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00030}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_aa7c687d4c595b1925843536ff63fb101}{00030}}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_aa7c687d4c595b1925843536ff63fb101}{CCurvasPermeabilidadeChierici::\string~CCurvasPermeabilidadeChierici}}()\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00031}00031\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00032}00032\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00033}00033\ \textcolor{comment}{//\ -\/-\/-\/\ Implementação\ da\ Interface\ ICurvasPermeabilidade\ -\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00034}00034\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00035}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae445f2bb00a8194dd3b783c2f77442ec}{00035}}\ \textcolor{keywordtype}{void}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae445f2bb00a8194dd3b783c2f77442ec}{CCurvasPermeabilidadeChierici::carregarDados}}(\textcolor{keyword}{const}\ std::string\&\ arquivo)\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00036}00036\ \ \ \ \ std::ifstream\ in(arquivo);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00037}00037\ \ \ \ \ \textcolor{keywordflow}{if}\ (!in.is\_open())\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00038}00038\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Exceção\ Chierici:\ Falha\ de\ acesso\ ao\ arquivo\ de\ entrada:\ "{}}\ +\ arquivo);}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00039}00039\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00040}00040\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00041}00041\ \ \ \ \ \textcolor{comment}{//\ Leitura\ estrita\ de\ 8\ parâmetros\ formatados}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00042}00042\ \ \ \ \ \textcolor{keywordflow}{if}\ (!(in\ >>\ \_Aw\ >>\ \_Bw\ >>\ \_Ao\ >>\ \_Bo\ >>\ \_Swirr\ >>\ \_Sor\ >>\ \_kroMax\ >>\ \_krwMax))\ \{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00043}00043\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{throw}\ std::runtime\_error(\textcolor{stringliteral}{"{}Exceção\ Chierici:\ Avaria\ no\ formato\ dos\ dados.\ Esperado:\ Aw\ Bw\ Ao\ Bo\ Swirr\ Sor\ KroMax\ KrwMax"{}});}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00044}00044\ \ \ \ \ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00045}00045\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00046}00046\ \ \ \ \ in.close();}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00047}00047\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00048}00048\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00049}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_a1038a4fa6fef8ca6e26d267b1dbff784}{00049}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_a1038a4fa6fef8ca6e26d267b1dbff784}{CCurvasPermeabilidadeChierici::getKrw}}(\textcolor{keywordtype}{double}\ Sw)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00050}00050\ \ \ \ \ \textcolor{keywordtype}{double}\ denominador\ =\ 1.0\ -\/\ \_Swirr\ -\/\ \_Sor;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00051}00051\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00052}00052\ \ \ \ \ \textcolor{comment}{//\ Proteção\ de\ estabilidade\ estrutural}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00053}00053\ \ \ \ \ \textcolor{keywordflow}{if}\ (denominador\ <=\ 1e-\/6)\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00054}00054\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00055}00055\ \ \ \ \ \textcolor{keywordtype}{double}\ Swn\ =\ (Sw\ -\/\ \_Swirr)\ /\ denominador;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00056}00056\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00057}00057\ \ \ \ \ \textcolor{comment}{//\ Condições\ de\ contorno\ (Singularidade\ assintótica\ prevenida)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00058}00058\ \ \ \ \ \textcolor{keywordflow}{if}\ (Swn\ <=\ 0.0)\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00059}00059\ \ \ \ \ \textcolor{keywordflow}{if}\ (Swn\ >=\ 1.0)\ \textcolor{keywordflow}{return}\ \_krwMax;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00060}00060\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00061}00061\ \ \ \ \ \textcolor{comment}{//\ Matemática\ Exponencial:\ Krw\ =\ KrwMax\ *\ exp(-\/Aw\ *\ Swn\string^(-\/Bw))}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00062}00062\ \ \ \ \ \textcolor{keywordflow}{return}\ \_krwMax\ *\ std::exp(-\/\_Aw\ *\ std::pow(Swn,\ -\/\_Bw));}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00063}00063\ \}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00064}00064\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00065}\doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae81dd92d24eff07e3104a2c27fd3fb80}{00065}}\ \textcolor{keywordtype}{double}\ \doxymbox{\hyperlink{class_c_curvas_permeabilidade_chierici_ae81dd92d24eff07e3104a2c27fd3fb80}{CCurvasPermeabilidadeChierici::getKro}}(\textcolor{keywordtype}{double}\ Sw)\textcolor{keyword}{\ const\ }\{}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00066}00066\ \ \ \ \ \textcolor{keywordtype}{double}\ denominador\ =\ 1.0\ -\/\ \_Swirr\ -\/\ \_Sor;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00067}00067\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00068}00068\ \ \ \ \ \textcolor{keywordflow}{if}\ (denominador\ <=\ 1e-\/6)\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00069}00069\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00070}00070\ \ \ \ \ \textcolor{keywordtype}{double}\ Swn\ =\ (Sw\ -\/\ \_Swirr)\ /\ denominador;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00071}00071\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00072}00072\ \ \ \ \ \textcolor{comment}{//\ Condições\ de\ contorno\ (Singularidade\ assintótica\ prevenida)}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00073}00073\ \ \ \ \ \textcolor{keywordflow}{if}\ (Swn\ >=\ 1.0)\ \textcolor{keywordflow}{return}\ 0.0;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00074}00074\ \ \ \ \ \textcolor{keywordflow}{if}\ (Swn\ <=\ 0.0)\ \textcolor{keywordflow}{return}\ \_kroMax;}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00075}00075\ }
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00076}00076\ \ \ \ \ \textcolor{comment}{//\ Matemática\ Exponencial:\ Kro\ =\ KroMax\ *\ exp(-\/Ao\ *\ (1-\/Swn)\string^(-\/Bo))}}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00077}00077\ \ \ \ \ \textcolor{keywordflow}{return}\ \_kroMax\ *\ std::exp(-\/\_Ao\ *\ std::pow(1.0\ -\/\ Swn,\ -\/\_Bo));}
+\DoxyCodeLine{\Hypertarget{_c_curvas_permeabilidade_chierici_8cpp_source_l00078}00078\ \}}
+
+\end{DoxyCode}

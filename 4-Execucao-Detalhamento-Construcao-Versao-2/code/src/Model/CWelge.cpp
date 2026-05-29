@@ -1,11 +1,13 @@
 /**
  * @file CWelge.cpp
- * @brief Implementação do algoritmo de construção da tangente de Welge.
+ * @brief Implementação dos cálculos de descontinuidade da frente de saturação.
+ * @author Fabiane da Silva Barros
+ * @date Janeiro 2026
  */
 
 #include "CWelge.h"
 #include <cmath>
-#include <algorithm> // Para std::max
+#include <algorithm>
 
 // --- Construtor ---
 CWelge::CWelge()
@@ -17,87 +19,52 @@ CWelge::CWelge()
 CWelge::~CWelge() {
 }
 
-// --- Setter ---
+// --- Setter de Condição Inicial ---
 void CWelge::setSwInicial(double swi) {
     _swInicial = swi;
 }
 
-void CWelge::setvazaoInjecao(double vazaoInjecao){
-    _vazaoInjecao = vazaoInjecao;
-}
+// --- Algoritmo Principal de Varredura ---
+bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc, double swi, double sw_max) {
 
-void CWelge::setarea(double area){
-    _area = area;
-}
+    // Reset de segurança do estado geométrico
+    _swInicial = swi;
+    _inclinacaoMax = 0.0;
+    _swFrente = swi;
 
+    double fw_swi = calc->calcularFw(swi);
 
-// --- Algoritmo Principal ---
-bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc) {
-    if (!calc) return false;
+    // Varredura da secante ancorada fortemente em (Swi, fw(Swi))
+    // O passo de discretização (0.001) define a precisão da localização do choque
+    for (double s = swi + 0.001; s <= sw_max; s += 0.001) {
 
-    // 1. Obter o ponto de partida (Sw_i, fw_i) [cite: 604, 609]
-    double fw_inicial = calc->calcularFw(_swInicial, _vazaoInjecao, _area);
+        // Avaliação do coeficiente angular da secante
+        double slope = (calc->calcularFw(s) - fw_swi) / (s - swi);
 
-    // Resetar valores para busca
-    _inclinacaoMax = -1.0;
-    _swFrente = _swInicial;
-
-    // 2. Busca da Máxima Inclinação (Rankine-Hugoniot) [cite: 600, 602, 609]
-    // Substituindo o loop de double por um contador inteiro para evitar warnings
-    double passo = 0.001;
-    int numPassos = static_cast<int>((1.0 - _swInicial) / passo);
-
-    for (int i = 1; i <= numPassos; ++i) {
-        double sw = _swInicial + (i * passo);
-        if (sw > 1.0) sw = 1.0;
-
-        double fw = calc->calcularFw(sw, _vazaoInjecao, _area);
-        double deltaSw = sw - _swInicial;
-
-        // Condição de Rankine-Hugoniot: v_sigma = (fw - fwi) / (Sw - Swi) [cite: 600, 602]
-        double inclinacaoSecante = (fw - fw_inicial) / deltaSw;
-
-        // A tangente de Welge é o ponto de máxima inclinação da secante [cite: 609, 610]
-        if (inclinacaoSecante > _inclinacaoMax) {
-            _inclinacaoMax = inclinacaoSecante;
-            _swFrente = sw;
+        // A condição de máximo garante o cumprimento da Condição de Entropia
+        if (slope > _inclinacaoMax) {
+            _inclinacaoMax = slope;
+            _swFrente = s;
         }
     }
 
-    // 3. Validação da Condição de Entropia [cite: 580, 581, 585]
-    // Se a inclinação máxima for a derivada no ponto inicial, não há choque (fluxo dispersivo)
-    double derivadaInicial = calc->calcularDerivadaFw(_swInicial, _vazaoInjecao, _area);
-    if (_inclinacaoMax <= derivadaInicial + 1e-5) {
-        _swFrente = _swInicial;
-        _inclinacaoMax = derivadaInicial;
-    }
+    // Validação da viabilidade física da injeção (inclinação não nula)
+    if (_inclinacaoMax > 1e-6) {
 
-    // 4. Cálculo da Saturação Média (Extrapolação da Tangente) [cite: 615, 616]
-    // Eq: Sw_media = Sw_frente + (1 - fw_frente) / f'(Sw_frente)
-    double fw_frente = calc->calcularFw(_swFrente, _vazaoInjecao, _area);
-
-    if (_inclinacaoMax > 1e-9) {
+        // O balanço de materiais de Welge permite encontrar a Saturação Média
+        // através do prolongamento da tangente até o eixo fw = 1.0
+        double fw_frente = calc->calcularFw(_swFrente);
         _swMedia = _swFrente + (1.0 - fw_frente) / _inclinacaoMax;
-    } else {
-        _swMedia = _swFrente;
+
+        return true;
     }
 
-    _swMedia = std::clamp(_swMedia, _swFrente, 1.0); // Restrição física [cite: 629]
-
-    // Determina se o choque encontrado é fisicamente distinto da saturação inicial.
-    const double tol = 1e-9;
-    bool choqueValido = (_swFrente > _swInicial + tol) && (_inclinacaoMax > derivadaInicial + tol);
-    if (!choqueValido) {
-        // Reestabelece valores de não-choque para consistência
-        _swFrente = _swInicial;
-        _inclinacaoMax = derivadaInicial;
-        _swMedia = _swInicial;
-    }
-
-    return choqueValido;
+    // Falha termodinâmica ou deslocamento impossível
+    _swMedia = swi;
+    return false;
 }
 
-// --- Getters ---
+// --- Getters de Diagnóstico ---
 
 double CWelge::getSwFrente() const {
     return _swFrente;

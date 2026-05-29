@@ -1,73 +1,94 @@
 #ifndef CSOLVER_H
 #define CSOLVER_H
 
+/**
+ * @file CSolver.h
+ * @brief Definição da classe CSolver, motor principal da solução de Buckley-Leverett.
+ */
+
 #include "CMalha.h"
 #include "CCalculadoraFluxoFracionario.h"
 #include "CWelge.h" // Dependência necessária para correção da frente
 #include <vector>
 
 /**
- * @brief Motor matemático do simulador (Solução Analítica).
+ * @class CSolver
+ * @brief Motor matemático do simulador de deslocamento imiscível 1D (Solução Analítica).
  *
- * Responsável por aplicar o Método das Características (MOC) para determinar
- * a posição da frente de saturação em um determinado tempo.
+ * A classe CSolver é a entidade coordenadora que aplica o Método das Características (MOC)
+ * para solucionar a Equação a Derivadas Parciais (EDP) não-linear hiperbólica de Buckley-Leverett.
  *
- * Lógica Analítica:
- * Em vez de avançar pequenos passos de tempo (dt), este solver calcula
- * diretamente a posição x de cada saturação Sw para um tempo total t,
- * usando a derivada do fluxo fracionário.
+ * Diferentemente da modelagem por simulação numérica discreta (Diferenças Finitas),
+ * o solver analítico não avança a solução por passos de tempo de forma iterativa ao longo de uma malha fixa.
+ * Em vez disso, dada uma saturação de água $S_w$, ele mapeia diretamente a propagação de sua característica
+ * ao longo do domínio espacial, calculando o perfil instantâneo para o tempo injetado $t_D$ usando a relação cinemática:
+ * \f$ x_D(S_w, t_D) = \left( \frac{df_w}{dS_w} \right) \cdot t_D \f$
  *
- * @author Fabiane Barros
+ * Adicionalmente, o solver orquestra a aplicação da condição de entropia macroscópica por meio
+ * do algoritmo de Welge, garantindo o balanço de massa ao resolver a descontinuidade (frente de choque)
+ * que previne soluções fisicamente impossíveis de múltipla valoração de saturação espacial.
+ *
+ * @author Fabiane da Silva Barros
  * @date Janeiro 2026
  */
 class CSolver {
 private:
-    CMalha* _malha;              ///< Ponteiro para a malha onde os dados serão salvos.
-    CCalculadoraFluxoFracionario* _calc; ///< Ponteiro para a calculadora física.
-    CWelge* _welge;              ///< Ponteiro para o algoritmo de Welge (choque).
+    CMalha* _malha;                      ///< Ponteiro para a estrutura de dados onde o perfil temporal espacial será registrado.
+    CCalculadoraFluxoFracionario* _calc; ///< Ponteiro associado à máquina de cálculo de estado termodinâmico e derivativo.
+    CWelge* _welge;                      ///< Ponteiro para a interface geométrica do método de Welge e construção do choque de Buckley-Leverett.
 
 public:
     /**
-     * @brief Construtor padrão.
+     * @brief Construtor padrão da classe CSolver.
+     * Aloca referências de ponteiros como nulas, exigindo injeção de dependência explícita pela camada superior.
      */
     CSolver();
 
     /**
-     * @brief Destrutor.
+     * @brief Destrutor da classe.
+     * A classe opera sob o conceito de agregação forte de ponteiros externos,
+     * logo, o destrutor não executa a deleção física de `_malha`, `_calc` e `_welge` na memória heap.
      */
     ~CSolver();
 
-    // --- Configuração ---
+    // --- Injeção de Dependências Analíticas ---
 
     /**
-     * @brief Define a malha a ser populada.
+     * @brief Atrela uma malha topológica ao Solver.
+     * @param malha Ponteiro ativo contendo um objeto tipo CMalha.
      */
     void setMalha(CMalha* malha);
 
     /**
-     * @brief Define a calculadora de física a ser usada.
+     * @brief Determina o motor matemático base.
+     * @param calc Ponteiro ativo contendo uma CCalculadoraFluxoFracionario instanciada.
      */
     void setCalculadora(CCalculadoraFluxoFracionario* calc);
 
     /**
-     * @brief Define o objeto Welge para cálculo da frente de choque.
+     * @brief Define o resolvedor da singularidade frontal de Buckley-Leverett.
+     * @param welge Ponteiro ativo da técnica construtiva de tangente de Welge.
      */
     void setWelge(CWelge* welge);
 
-    // --- Motor Matemático ---
+    // --- Núcleo Computacional ---
 
     /**
-     * @brief Calcula o perfil de saturação analítico para um tempo específico.
+     * @brief Computa e monta todo o campo espacial de Saturação de Água vs Posição Adimensional no reservatório.
      *
-     * Este é o método principal que implementa a lógica:
-     * x = (dfw/dSw) * tempo.
+     * O algoritmo interno procede da seguinte forma:
+     * 1. Limpa os instantes passados armazenados da CMalha.
+     * 2. Varre linearmente o domínio de Saturações possíveis da injeção.
+     * 3. Projeta a velocidade $v(S_w) = f_w'$ e determina a distância propagada (Método das Características Analítico).
+     * 4. Valida a instabilidade no contorno do perfil utilizando a técnica auxiliar CWelge (Tangente/Entropia).
+     * 5. Corrige numericamente as velocidades irreais que causariam sobreposição da onda de avanço.
+     * 6. Registra ordenadamente cada CCelula resultante.
      *
-     * Também aplica a correção de Welge (Condição de Entropia) para garantir
-     * que a frente de choque seja vertical (velocidade constante na frente).
-     *
-     * @param tempoInjetado Tempo adimensional (PVI) ou dimensional (dias).
+     * @param tempoInjetado Escala temporal (Adimensionalizada em PVI ou volumes porosos).
+     * @param swi Saturação base (Irredutível de água) presente originalmente no reservatório, para restrição construtiva do Choque Welge.
+     * @param sw_max Teto da onda aquosa (1 - Saturação residual oleica limitadora).
      */
-    void calcularPerfilSaturacao(double tempoInjetado, double _vazaoInjecao, double _area);
+    void calcularPerfilSaturacao(double tempoInjetado, double swi, double sw_max);
 };
 
-#endif
+#endif // CSOLVER_H
