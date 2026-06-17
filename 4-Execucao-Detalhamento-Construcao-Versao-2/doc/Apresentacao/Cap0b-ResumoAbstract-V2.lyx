@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -81,19 +81,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -116,7 +108,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -125,17 +117,24 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
 
 \begin_layout Standard
 
+\change_deleted 643308733 1781730541
+
 \size large
 \emph on
 Software Educacional com Interface Interativa para Implementação Computacional do Método das Características - Solução Analítica de Buckley-Leverett
+\change_inserted 643308733 1781730541
+
 \size default
+Software Educacional Interativo para Simulação do Método das Características:
+ Solução Analítica de Buckley-Leverett
+\change_unchanged
 
 \begin_inset Separator latexpar
 \end_inset
@@ -189,6 +188,8 @@ Resumo
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1781730576
 O desenvolvimento de simuladores computacionais robustos é fundamental para a otimização da recuperação de petróleo em reservatórios.
  O presente trabalho apresenta o desenvolvimento de um simulador analítico baseado no Método das Características para a resolução da equação de Buckley-Leverett,
  aplicado ao escoamento imiscível de fluidos em meios porosos.
@@ -213,9 +214,35 @@ breakthrough
  demonstrando alta precisão na ancoragem da tangente de Welge e na correta aplicação da condição de entropia para frentes de choque.
  Os resultados indicam que a ferramenta é eficaz para o suporte à tomada de decisão em projetos de injeção de água,
  servindo tanto como suporte didático para o ensino de engenharia de reservatórios quanto como base para futuras expansões modulares em softwares de simulação numérica.
+\change_inserted 643308733 1781730608
+O desenvolvimento de simuladores computacionais robustos é fundamental para a otimização da recuperação de petróleo em reservatórios.
+ O presente trabalho apresenta o desenvolvimento de um software educacional interativo,
+ baseado no Método das Características (MOC),
+ para a resolução analítica da equação de Buckley-Leverett aplicada ao escoamento imiscível linear em meios porosos.
+ A ferramenta foi implementada em linguagem C++ com o framework Qt,
+ integrando os modelos de permeabilidade relativa de Corey,
+ LET,
+ Chierici e o modelo experimental tabelado.
+ O simulador permite a configuração de parâmetros geomorfológicos,
+ viscosidades,
+ densidades e efeitos gravitacionais,
+ gerando diagnósticos automatizados sobre o instante de ruptura (breakthrough) e a eficiência de varrido.
+ A validação do motor matemático foi realizada através da comparação com cenários clássicos da literatura,
+ demonstrando alta precisão na ancoragem da tangente de Welge e na aplicação da condição de entropia para frentes de choque.
+ Os resultados indicam que a ferramenta é eficaz tanto para o ensino de engenharia de reservatórios quanto como suporte à tomada de decisão em projetos de injeção de água.
+ O software é de código aberto,
+ com repositório disponível para a comunidade técnica e acadêmica.
+\change_deleted 643308733 1781730733
+
 \begin_inset Newline newline
 \end_inset
 
+
+\change_inserted 643308733 1781730741
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 \size large
@@ -225,9 +252,19 @@ Palavras chave:
 \size default
 Buckley-Leverett.
  Permeabilidade Relativa.
- Simulador Computacional.
+ 
+\change_deleted 643308733 1781730733
+Simulador Computacional.
+
+\change_unchanged
  Fluxo Fracionário.
  Engenharia de Reservatórios.
+
+\change_inserted 643308733 1781730725
+ Software Educacional.
+ Simulador Computacional.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -239,9 +276,16 @@ Buckley-Leverett.
 
 \begin_layout Standard
 
+\change_deleted 643308733 1781730810
+
 \emph on
 Educational Software with Interactive Interface for the Computational Implementation of the Method of Characteristics:
  Analytical Solution to the Buckley-Leverett Equation
+\change_inserted 643308733 1781730810
+Interactive Educational Software for Method of Characteristics Simulation:
+ Buckley-Leverett Analytical Solution
+\change_unchanged
+
 \begin_inset Separator latexpar
 \end_inset
 
@@ -294,6 +338,8 @@ Abstract
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1781730821
 The development of robust computational simulators is essential for optimizing oil recovery in reservoirs.
  This work presents the development of an analytical simulator based on the Method of Characteristics for solving the Buckley-Leverett equation,
  applied to immiscible fluid flow in porous media.
@@ -313,6 +359,30 @@ The development of robust computational simulators is essential for optimizing o
  Results indicate that the tool is effective for supporting decision-making in waterflooding projects,
  serving both as a didactic support for reservoir engineering education and as a foundation for future modular expansions in numerical simulation software.
  
+\change_inserted 643308733 1781730836
+The development of robust computational simulators is fundamental for optimizing oil recovery in reservoirs.
+ This work presents the development of interactive educational software,
+ based on the Method of Characteristics (MOC),
+ for the analytical resolution of the Buckley-Leverett equation applied to linear immiscible flow in porous media.
+ The tool was implemented using the C++ language and the Qt framework,
+ integrating several relative permeability models,
+ including Corey,
+ LET,
+ Chierici,
+ and the experimental tabulated model.
+ The simulator allows for the configuration of geomorphological parameters,
+ viscosities,
+ densities,
+ and gravitational effects,
+ generating automated diagnostics on breakthrough time and sweep efficiency.
+ Mathematical engine validation was performed through comparison with classical scenarios from technical literature,
+ demonstrating high precision in anchoring the Welge tangent and correctly applying the entropy condition for shock fronts.
+ The results indicate that the tool is effective both for reservoir engineering education and as a decision-support aid in waterflooding projects.
+ The software is open-source,
+ with its repository available to the technical and academic community.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newline newline
 \end_inset
 
@@ -325,9 +395,19 @@ Keywords:
 \size default
 Buckley-Leverett.
  Relative Permeability.
- Computational Simulator.
+ 
+\change_deleted 643308733 1781730862
+Computational Simulator.
+
+\change_unchanged
  Fractional Flow.
  Reservoir Engineering.
+
+\change_inserted 643308733 1781730893
+ Educational Software.
+ Computational Simulator.
+\change_unchanged
+
 \end_layout
 
 \end_body
