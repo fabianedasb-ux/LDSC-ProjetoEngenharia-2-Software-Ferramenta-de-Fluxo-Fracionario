@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -7,6 +7,10 @@
 \textclass extbook
 \begin_preamble
 \usepackage[alf]{abntex2cite}
+% Added by lyx2lyx
+% added by lyx2lyx for converted index entries
+\@ifundefined{textmu}
+ {\usepackage{textcomp}}{}
 \end_preamble
 \use_default_options true
 \master Mestre-V2.lyx
@@ -58,19 +62,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -93,7 +89,7 @@
 \papersides 1
 \paperpagestyle default
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -102,7 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -235,7 +231,11 @@ O desenvolvimento deste simulador exige uma abordagem multidisciplinar,
 \end_layout
 
 \begin_layout Itemize
-Engenharia de Petróleo:
+
+\series bold
+Engenharia de Petróleo
+\series default
+:
  Fornece a base física do problema,
  incluindo a Lei de Darcy,
  as correlações de permeabilidade relativa (modelos de Corey,
@@ -251,61 +251,18 @@ literal "true"
 \end_layout
 
 \begin_layout Itemize
-Matemática Aplicada:
- Envolve a resolução de Equações Diferenciais Parciais (EDPs
-\begin_inset Nomenclature
-status open
 
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-EDPs
-\family default
+\series bold
+Matemática Aplicada
 \series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Equações Diferenciais Parciais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+:
+ Envolve a resolução de Equações Diferenciais Parciais (EDPs
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color noneEDPs\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Equações Diferenciais Parciais"
+literal "false"
 
 \end_inset
 
@@ -322,7 +279,11 @@ literal "true"
 \end_layout
 
 \begin_layout Itemize
-Engenharia de Software e Programação:
+
+\series bold
+Engenharia de Software e Programação
+\series default
+:
  Aplica-se na estruturação da arquitetura do sistema utilizando o paradigma de Orientação a Objetos 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -342,7 +303,11 @@ Descrição de questões associadas a espaço/tempo (espaço físico,
 \end_layout
 
 \begin_layout Itemize
-Espaço (Físico/Simulado):
+
+\series bold
+Espaço (Físico/Simulado)
+\series default
+:
  O sistema opera sobre um domínio espacial que representa um meio poroso.
  Neste projeto,
  o espaço é simplificado para uma dimensão linear (1D),
@@ -350,63 +315,20 @@ Espaço (Físico/Simulado):
 \end_layout
 
 \begin_layout Itemize
-Tempo (Dinâmica):
+
+\series bold
+Tempo (Dinâmica)
+\series default
+:
  O domínio envolve processos dinâmicos que evoluem com o tempo.
  O software deve lidar com a variável temporal não apenas em segundos (tempo de processamento),
  mas principalmente em "Volumes de Poros Injetados" (PVI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-PVI
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Volumes de Poros Injetados
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonePVI\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Volumes de Poros Injetados"
+literal "false"
 
 \end_inset
 
@@ -490,7 +412,7 @@ name "fig:perfil-sat"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -556,31 +478,12 @@ Padronização de Unidades
 
 \begin_layout Standard
 O desenvolvimento matemático e a implementação computacional do núcleo deste trabalho adotam estritamente o Sistema Internacional de Unidades (SI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-SI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Sistema Internacional de Unidades
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "SI"
+description "Sistema Internacional de Unidades"
+literal "false"
 
 \end_inset
 
@@ -598,7 +501,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -618,12 +520,12 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="3">
-<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle" tabularwidth="100text%">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+<features tabularvalignment="middle" tabularwidth="100text%">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -646,7 +548,7 @@ Grandeza Física
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -669,7 +571,7 @@ Símbolo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -701,8 +603,8 @@ literal "false"
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -711,7 +613,7 @@ Comprimento / Distância
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -723,7 +625,7 @@ Comprimento / Distância
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -738,8 +640,8 @@ metros,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -748,7 +650,7 @@ metros,
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -756,35 +658,12 @@ metros,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $A$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Área da Seção Transversal (m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$A\\$"
+description "Área da Seção Transversal (m²)"
+literal "false"
 
 \end_inset
 
@@ -793,7 +672,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -808,8 +687,8 @@ metros quadrados,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -818,7 +697,7 @@ Tempo
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -826,35 +705,12 @@ Tempo
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $t$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo (s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\$"
+description "Tempo (s)"
+literal "false"
 
 \end_inset
 
@@ -863,7 +719,7 @@ Tempo (s)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -878,8 +734,8 @@ segundos,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -888,7 +744,7 @@ Tempo Adimensional
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -896,35 +752,12 @@ Tempo Adimensional
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $t_{D}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo Adimensional (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\_{D}\\$"
+description "Tempo Adimensional (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -933,7 +766,7 @@ Tempo Adimensional (adimensional)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -944,8 +777,8 @@ fração,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -954,7 +787,7 @@ Vazão Volumétrica
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -962,39 +795,12 @@ Vazão Volumétrica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $q$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Vazão Volumétrica (
-\begin_inset Formula $m^{3}/s$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$q\\$"
+description "Vazão Volumétrica ( \\$m\\textasciicircum{}{3}/s\\$)"
+literal "false"
 
 \end_inset
 
@@ -1003,7 +809,7 @@ Vazão Volumétrica (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1018,8 +824,8 @@ metros cúbicos por segundo,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1028,7 +834,7 @@ Velocidade de Darcy (Superficial)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1036,63 +842,12 @@ Velocidade de Darcy (Superficial)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $u$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade de Darcy (Superficial) (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m/s
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$u\\$"
+description "Velocidade de Darcy (Superficial) (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonem/s\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit)"
+literal "false"
 
 \end_inset
 
@@ -1101,7 +856,7 @@ m/s
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1116,8 +871,8 @@ metros por segundo,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1126,7 +881,7 @@ Permeabilidade Absoluta
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1138,7 +893,7 @@ Permeabilidade Absoluta
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1153,8 +908,8 @@ metros quadrados,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1163,7 +918,7 @@ Permeabilidade Relativa
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1171,49 +926,12 @@ Permeabilidade Relativa
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $k_{r}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade Relativa (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none \\$k\\_{r}\\$"
+description "Permeabilidade Relativa (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1222,7 +940,7 @@ Permeabilidade Relativa (adimensional)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1233,8 +951,8 @@ fração,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1243,7 +961,7 @@ Viscosidade Dinâmica
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1251,39 +969,12 @@ Viscosidade Dinâmica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu$
-\end_inset
-
-
-\begin_inset Argument post:1
-status collapsed
-
-\begin_layout Plain Layout
-Viscosidade Dinâmica) (
-\begin_inset Formula $Pa\cdot s$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\$"
+description "Viscosidade Dinâmica) ( \\$Pa\\cdot s\\$)"
+literal "false"
 
 \end_inset
 
@@ -1292,7 +983,7 @@ Viscosidade Dinâmica) (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1307,8 +998,8 @@ Pascal-segundo,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1317,7 +1008,7 @@ Massa Específica
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1325,39 +1016,12 @@ Massa Específica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\rho$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Massa Específica (
-\begin_inset Formula $kg/m^{3}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\rho\\$"
+description "Massa Específica ( \\$kg/m\\textasciicircum{}{3}\\$)"
+literal "false"
 
 \end_inset
 
@@ -1366,7 +1030,7 @@ Massa Específica (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1381,8 +1045,8 @@ quilograma por metro cúbico,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1391,7 +1055,7 @@ Pressão
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1399,81 +1063,12 @@ Pressão
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $P$
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Pressão (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $Pa(N/m^{2}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none \\$P\\$\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Pressão (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none \\$Pa(N/m\\textasciicircum{}{2}\\$)"
+literal "false"
 
 \end_inset
 
@@ -1482,7 +1077,7 @@ Pressão (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1497,8 +1092,8 @@ Pascal (Newton por metro quadrado),
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1507,7 +1102,7 @@ Tensão Interfacial
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1515,39 +1110,12 @@ Tensão Interfacial
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\sigma$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tensão Interfacial (
-\begin_inset Formula $N/m$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\sigma\\$"
+description "Tensão Interfacial ( \\$N/m\\$)"
+literal "false"
 
 \end_inset
 
@@ -1556,7 +1124,7 @@ Tensão Interfacial (
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1571,8 +1139,8 @@ Newton por metro,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1581,7 +1149,7 @@ Porosidade
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1593,7 +1161,7 @@ Porosidade
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1604,8 +1172,8 @@ fração,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1614,7 +1182,7 @@ Saturação
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1622,35 +1190,12 @@ Saturação
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\$"
+description "Saturação (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1659,7 +1204,7 @@ Saturação (adimensional)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1670,8 +1215,8 @@ fração,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1680,7 +1225,7 @@ Fluxo Fracionário
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1688,35 +1233,12 @@ Fluxo Fracionário
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $f$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Fluxo Fracionário (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$f\\$"
+description "Fluxo Fracionário (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1725,7 +1247,7 @@ Fluxo Fracionário (adimensional)
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1736,8 +1258,8 @@ fração,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1746,7 +1268,7 @@ fração,
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1758,7 +1280,7 @@ fração,
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1773,8 +1295,8 @@ radianos,
 \end_inset
 </cell>
 </row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1783,7 +1305,7 @@ radianos,
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1791,35 +1313,12 @@ radianos,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\theta$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Ângulo de contato de molhabilidade rocha-fluido (radianos)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\theta\\$"
+description "Ângulo de contato de molhabilidade rocha-fluido (radianos)"
+literal "false"
 
 \end_inset
 
@@ -1828,7 +1327,7 @@ status open
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -1851,7 +1350,7 @@ radianos,
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Sistema de unidades prático adotado na modelagem matemática.
+Sistema de unidades prático adotado na modelagem matemática
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:Sistema-de-unidades"
@@ -2083,53 +1582,12 @@ Para a resolução do sistema de equações de fluxo,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $p_{c}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Pressão capilar (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
-\begin_inset Formula $Pa(N/m^{2}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$p\\_{c}\\$"
+description "Pressão capilar (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none \\$Pa(N/m\\textasciicircum{}{2}\\$)"
+literal "false"
 
 \end_inset
 
@@ -2527,7 +1985,11 @@ f_{w}=\frac{1+\frac{kk_{ro}}{u_{t}\mu_{o}}\left(\frac{\partial p_{c}}{\partial x
 
 \begin_layout Standard
 Esta equação é a base fundamental para o desenvolvimento de modelos de simulação de reservatórios e para a aplicação de métodos analíticos de solução,
- como a teoria de Buckley-Leverett.
+ como a teoria de 
+\emph on
+Buckley-Leverett
+\emph default
+.
  A análise de seus termos permite distinguir três regimes de fluxo ou forças motrizes principais 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2540,7 +2002,11 @@ literal "true"
 \end_layout
 
 \begin_layout Enumerate
-Forças Viscosas:
+
+\series bold
+Forças Viscosas
+\series default
+:
  Representadas principalmente pelos termos de mobilidade no denominador (
 \begin_inset Formula $M=\frac{k_{rw}/\mu_{w}}{k_{ro}/\mu_{o}}$
 \end_inset
@@ -2556,7 +2022,11 @@ Forças Viscosas:
 \end_layout
 
 \begin_layout Enumerate
-Forças Gravitacionais:
+
+\series bold
+Forças Gravitacionais
+\series default
+:
  Representadas pelo termo
 \begin_inset Formula $\frac{kk_{ro}\Delta\rho g\sin\alpha}{u_{t}\mu_{o}}$
 \end_inset
@@ -2581,13 +2051,21 @@ countercurrent flow
 \end_layout
 
 \begin_layout Enumerate
-Forças Capilares:
+
+\series bold
+Forças Capilares
+\series default
+:
  Representadas pelo gradiente de pressão capilar 
 \begin_inset Formula $\frac{\partial p_{c}}{\partial x}$
 \end_inset
 
 .
- Embora frequentemente negligenciado em escalas de campo (hipótese de Buckley-Leverett clássica),
+ Embora frequentemente negligenciado em escalas de campo (hipótese de 
+\emph on
+Buckley-Leverett
+\emph default
+ clássica),
  este termo é crucial para descrever a difusão da frente de saturação e os efeitos de imbibição em escalas locais.
 \end_layout
 
@@ -2608,35 +2086,12 @@ A influência das forças capilares na frente de avanço é regida pelo Número 
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $N_{RL}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Número de Rapoport-Leas (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\_{RL}\\$"
+description "Número de Rapoport-Leas (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2701,10 +2156,21 @@ Onde:
 \end_layout
 
 \begin_layout Itemize
-\begin_inset Formula $L$
+\begin_inset Formula $L[m]$
 \end_inset
 
  é o comprimento característico do sistema (ou a distância percorrida pela frente);
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Fabiane,
+ todos os termos quando apresentados pela 1x devem incluir simbolo[unidade] descricao
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -2856,11 +2322,15 @@ endpoints
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Razão de mobilidade no ponto final (
 \begin_inset Formula $M^{0}$
 \end_inset
 
-):
+)
+\series default
+:
  Expressa a razão de mobilidade total calculada fixando as permeabilidades relativas máximas de cada fase:
 \begin_inset Formula 
 \[
@@ -2873,44 +2343,25 @@ M^{0}=\frac{k^{0}_{rw}\mu_{o}}{\mu_{w}k^{0}_{ro}}
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Número de gravidade no ponto final (
 \begin_inset Formula $N^{0}_{g}$
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\textasciicircum{}{0}\\_{g}\\$"
+description "Número de gravidade no ponto final (adimensional)"
+literal "false"
 
 \end_inset
 
-
-\begin_inset Formula $N^{0}_{g}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Número de gravidade no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-):
+)
+\series default
+:
  Define a magnitude máxima relativa entre as forças gravitacionais e as viscosas,
  calibrada pela permeabilidade de ponto final do óleo:
 \begin_inset Formula 
@@ -2953,21 +2404,29 @@ endpoints
 \end_layout
 
 \begin_layout Enumerate
+
+\series bold
 Razão de Mobilidade no Ponto Final (
 \begin_inset Formula $M^{0}$
 \end_inset
 
-):
+)
+\series default
+:
  Governa o componente viscoso do escoamento,
  refletindo a facilidade relativa de transporte da fase injetada em comparação com a fase deslocada.
 \end_layout
 
 \begin_layout Enumerate
+
+\series bold
 Número de Gravidade no Ponto Final (
 \begin_inset Formula $N^{0}_{g}$
 \end_inset
 
-):
+)
+\series default
+:
  Modulado pela função local de permeabilidade do óleo (
 \begin_inset Formula $\frac{k_{ro}(S_{w})}{k^{0}_{ro}}$
 \end_inset
@@ -3003,60 +2462,12 @@ Para a implementação computacional desta análise dimensional e o cálculo aut
 
 ).
  Na ausência de dados laboratoriais específicos (análises PVT
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-PVT
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Pressão,
- Volume e Tempo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonePVT\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Pressão, Volume e Tempo"
+literal "false"
 
 \end_inset
 
@@ -3066,6 +2477,16 @@ Pressão,
 defaults
 \emph default
 ) estritamente fundamentados na literatura clássica para sistemas convencionais de recuperação secundária.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+trabalho futuro permitir o uso de analises PVT
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3252,59 +2673,12 @@ literal "true"
 Fisicamente,
  isso implica que,
  para um Volume Elementar Representativo (REV
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-REV
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Volume Elementar Representativo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inheritREV"
+description "Volume Elementar Representativo"
+literal "false"
 
 \end_inset
 
@@ -3424,7 +2798,7 @@ name "fig:Volume-Elementar-Representativo"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -3490,7 +2864,8 @@ Matematicamente,
 \end_layout
 
 \begin_layout Enumerate
-Acúmulo de Massa:A variação da massa de água dentro do volume de controle ocorre devido à mudança na saturação,
+Acúmulo de Massa:
+ A variação da massa de água dentro do volume de controle ocorre devido à mudança na saturação,
  conforme descrito por 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3516,7 +2891,8 @@ Acúmulo=A\Delta x\phi\left[(\rho_{w}S_{w})_{t+\Delta t}-(\rho_{w}S_{w})_{t}\rig
 
 \end_deeper
 \begin_layout Enumerate
-Fluxo Líquido (Entrada - Saída):A massa que entra na face 
+Fluxo Líquido (Entrada - Saída):
+ A massa que entra na face 
 \begin_inset Formula $x$
 \end_inset
 
@@ -3716,7 +3092,16 @@ Em um escoamento incompressível e unidimensional sem fontes ou sumidouros ao lo
 
 \begin_layout Standard
 Esta equação diferencial parcial hiperbólica descreve a dinâmica do transporte de saturação,
- indicando que a taxa de variação da saturação em um ponto é diretamente proporcional à velocidade de fluxo total e ao gradiente espacial do fluxo fracionário.Também conhecida como Equação de Buckley-Leverett,
+ indicando que a taxa de variação da saturação em um ponto é diretamente proporcional à velocidade de fluxo total e ao gradiente espacial do fluxo fracionário.
+
+\change_inserted 643308733 1781738591
+ 
+\change_unchanged
+Também conhecida como Equação de 
+\emph on
+Buckley-Leverett
+\emph default
+,
  descreve o transporte convectivo da saturação através do meio poroso 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -3729,7 +3114,9 @@ literal "true"
 \end_layout
 
 \begin_layout Subsection
-Análise Dimensional e a Equação de Buckley-Leverett
+Análise Dimensional e a Equação de 
+\emph on
+Buckley-Leverett
 \end_layout
 
 \begin_layout Standard
@@ -3759,6 +3146,29 @@ O procedimento consiste em normalizar as coordenadas de tempo e espaço,
 
 ),
  conforme detalhado a seguir.
+\change_inserted 643308733 1781738642
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781738715
+lembrar que a adimensionalização trás a vantagem de termos gráficos nas mesmas escalas,
+ mas,
+ ao mesmo tempo,
+ elimina um pouco a percepção das dimensões físicas reais.
+ Uma análise integral,
+ idealmente considera também as escalas reais
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3963,7 +3373,11 @@ Solução Analítica pelo Método das Características (MOC)
 \end_layout
 
 \begin_layout Standard
-A equação de Buckley-Leverett,
+A equação de 
+\emph on
+Buckley-Leverett
+\emph default
+,
  deduzida na forma adimensional na seção anterior,
  classifica-se matematicamente como uma Equação Diferencial Parcial (EDP) hiperbólica quase-linear de primeira ordem.
  Embora existam métodos numéricos (como Diferenças Finitas ou Volumes Finitos) capazes de resolver esta equação,
@@ -4021,31 +3435,12 @@ Desenvolvimento Matemático
 
 \begin_layout Standard
 O princípio central do MOC consiste em transformar a EDP original em um sistema de Equações Diferenciais Ordinárias (EDOs
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-EDOs
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Equações Diferenciais Ordinárias
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "EDOs"
+description "Equações Diferenciais Ordinárias"
+literal "false"
 
 \end_inset
 
@@ -4112,7 +3507,11 @@ O método busca identificar trajetórias no reservatório ao longo das quais a s
 \end_layout
 
 \begin_layout Standard
-Retomando a Equação de Buckley-Leverett (
+Retomando a Equação de 
+\emph on
+Buckley-Leverett
+\emph default
+ (
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "eq:buckley-ad"
@@ -4213,7 +3612,11 @@ Condição de Entropia e Soluções Descontínuas
 \end_layout
 
 \begin_layout Standard
-A aplicação direta do Método das Características à equação de Buckley-Leverett revela uma limitação fundamental quando a função de fluxo fracionário (
+A aplicação direta do Método das Características à equação de 
+\emph on
+Buckley-Leverett
+\emph default
+ revela uma limitação fundamental quando a função de fluxo fracionário (
 \begin_inset Formula $f_{w}$
 \end_inset
 
@@ -4298,35 +3701,12 @@ Esta condição estabelece que uma descontinuidade (choque) só é estável se a
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $v_{\sigma}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da frente de choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$v\\_{\\sigma}\\$"
+description "Velocidade da frente de choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4335,35 +3715,12 @@ Velocidade da frente de choque (adimensional)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $v_{L}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da saturação imediatamente atrás do choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$v\\_{L}\\$"
+description "Velocidade da saturação imediatamente atrás do choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4372,35 +3729,12 @@ Velocidade da saturação imediatamente atrás do choque (adimensional)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $v_{R}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da saturação imediatamente à frente do choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$v\\_{R}\\$"
+description "Velocidade da saturação imediatamente à frente do choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4443,7 +3777,11 @@ A aplicação deste critério resulta na decomposição do perfil de saturação
 \end_layout
 
 \begin_layout Enumerate
-Onda de Choque:
+
+\series bold
+Onda de Choque
+\series default
+:
  Uma frente abrupta onde a saturação salta instantaneamente de um valor inicial (geralmente 
 \begin_inset Formula $S_{wi}$
 \end_inset
@@ -4458,7 +3796,11 @@ Onda de Choque:
 \end_layout
 
 \begin_layout Enumerate
-Onda de Rarefação:
+
+\series bold
+Onda de Rarefação
+\series default
+:
  Uma zona de variação suave da saturação,
  que ocorre atrás da frente de choque (entre 
 \begin_inset Formula $S_{wf}$
@@ -4625,35 +3967,12 @@ Determinação da Saturação Média (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\bar{S}_{w}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação Média (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\bar{S}\\_{w}\\$"
+description "Saturação Média (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4668,35 +3987,12 @@ Além de localizar a frente de avanço,
 \end_inset
 
 )
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $N_{p}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Recuperação de óleo acumulada (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\_{p}\\$"
+description "Recuperação de óleo acumulada (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4782,35 +4078,12 @@ Eficiência de Deslocamento (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $E_{D}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Eficiência de Deslocamento (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$E\\_{D}\\$"
+description "Eficiência de Deslocamento (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4864,39 +4137,12 @@ Para o período pós-ruptura (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $t_{bt}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo de Ruptura (
-\emph on
-Breakthrough
-\emph default
-) (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\_{bt}\\$"
+description "Tempo de Ruptura (\\em{}Breakthrough\\em{}) (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -4982,7 +4228,12 @@ Um dos parâmetros mais críticos fornecidos pela solução analítica é o temp
 \begin_inset Formula $x_{D}=1$
 \end_inset
 
-).Utilizando a equação da velocidade da frente derivada pelo MOC,
+).
+
+\change_inserted 643308733 1781739840
+ 
+\change_unchanged
+Utilizando a equação da velocidade da frente derivada pelo MOC,
  o tempo adimensional de ruptura é calculado pelo inverso da derivada do fluxo fracionário na saturação de choque:
 \end_layout
 
@@ -5016,31 +4267,12 @@ Antes deste instante (
 ),
  a água começa a ser coproduzida,
  e a razão de água no fluxo (BSW
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-BSW
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Razão de água no fluxo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "BSW"
+description "Razão de água no fluxo"
+literal "false"
 
 \end_inset
 
@@ -5136,13 +4368,17 @@ literal "true"
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Interface (
 \family typewriter
 \nospellcheck on
 View
 \family default
 \nospellcheck default
-):
+)
+\series default
+:
  Responsável exclusivamente pela camada de apresentação.
  Contém as classes que definem as janelas (
 \family typewriter
@@ -5165,6 +4401,8 @@ framework
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Controle (
 \family typewriter
 \emph on
@@ -5173,7 +4411,9 @@ Controller
 \family default
 \emph default
 \lang brazilian
-):
+)
+\series default
+:
  Atua como o intermediário entre a Interface e o Domínio,
  implementando a lógica de aplicação.
  Este pacote recebe as requisições da interface (ex:
@@ -5184,6 +4424,8 @@ Controller
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Domínio (
 \family typewriter
 \emph on
@@ -5192,7 +4434,9 @@ Model
 \family default
 \emph default
 \lang brazilian
-):
+)
+\series default
+:
  Constitui o núcleo científico do simulador.
  Encapsula as classes que representam as entidades físicas da Engenharia de Reservatórios (Fluido,
  Rocha,
@@ -5208,6 +4452,8 @@ BuckleyLeverettSolver
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Modelos de Permeabilidade (
 \family typewriter
 \emph on
@@ -5216,7 +4462,9 @@ Strategies
 \family default
 \emph default
 \lang brazilian
-):
+)
+\series default
+:
  Implementa o padrão de projeto 
 \emph on
 \lang english
@@ -5231,11 +4479,15 @@ Strategy
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Gerenciamento de Dados (
 \family typewriter
 IO
 \family default
-):
+)
+\series default
+:
  Responsável pela persistência e recuperação de informações.
  Agrupa as classes especializadas na leitura e interpretação (
 \emph on
@@ -5253,6 +4505,8 @@ parsing
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Pacote de Visualização (
 \family typewriter
 \emph on
@@ -5261,7 +4515,9 @@ Plotting
 \family default
 \emph default
 \lang brazilian
-):
+)
+\series default
+:
  Especializado na renderização científica dos resultados.
  Integra a biblioteca 
 \family typewriter
@@ -5364,8 +4620,10 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-pacotes.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
+	height 90dd
+	keepAspectRatio
 
 \end_inset
 
@@ -5384,7 +4642,7 @@ name "fig:Diagrama-de-Pacotes"
 
 \end_inset
 
- - Arquitetura modular do simulador evidenciando o padrão de camadas e o desacoplamento pelo Controlador.
+ - Arquitetura modular do simulador evidenciando o padrão de camadas e o desacoplamento pelo Controlador
 \end_layout
 
 \end_inset

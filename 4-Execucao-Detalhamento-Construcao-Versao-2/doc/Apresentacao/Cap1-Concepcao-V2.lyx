@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -7,6 +7,10 @@
 \textclass extbook
 \begin_preamble
 \usepackage[alf]{abntex2cite}
+% Added by lyx2lyx
+% added by lyx2lyx for converted index entries
+\@ifundefined{textmu}
+ {\usepackage{textcomp}}{}
 \end_preamble
 \use_default_options true
 \master Mestre-V2.lyx
@@ -58,19 +62,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -93,7 +89,7 @@
 \papersides 2
 \paperpagestyle default
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -102,7 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -155,6 +151,17 @@ O resultado desta etapa consolida-se em um conjunto formal de especificações q
  estabelecendo os requisitos necessários para a modelagem computacional da solução analítica de Buckley-Leverett.
  O objetivo é assegurar que o produto final ofereça não apenas precisão matemática,
  mas também a interatividade necessária para a visualização dinâmica do avanço da frente de saturação.
+\change_inserted 643308733 1781737290
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781737290
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -204,7 +211,7 @@ name "tab:Nome-do-sistema/produto"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -406,6 +413,17 @@ Proporcionar uma plataforma computacional interativa para a modelagem e visualiz
 \end_inset
 
 
+\change_inserted 643308733 1781737297
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781737298
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -491,60 +509,12 @@ literal "true"
  amplamente utilizado devido à sua simplicidade e base física,
  mas também incorpora correlações paramétricas avançadas para maior precisão em cenários complexos,
  como o modelo LET
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-LET
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Lombez,
- Escovedo e Trindade
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color noneLET\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Lombez, Escovedo e Trindade"
+literal "false"
 
 \end_inset
 
@@ -582,36 +552,12 @@ Independentemente do modelo escolhido,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{w}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água (adimensional,
- fração)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{w}\\$"
+description "Saturação de água (adimensional, fra\\c{c}\\~{a}o)"
+literal "false"
 
 \end_inset
 
@@ -620,36 +566,12 @@ Saturação de água (adimensional,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $x$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Comprimento,
- distância (metros)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$x\\$"
+description "Comprimento, dist\\^{a}ncia (metros)"
+literal "false"
 
 \end_inset
 
@@ -659,6 +581,17 @@ Comprimento,
 standalone
 \emph default
 ) que favorece a análise comparativa entre diferentes correlações empíricas.
+\change_inserted 643308733 1781737305
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781737305
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -696,7 +629,13 @@ literal "true"
 
 ,
  o entendimento claro dos requisitos estabelece a base para todas as etapas subsequentes de design e implementação.
- Para o desenvolvimento desta ferramenta,
+ 
+\change_inserted 643308733 1781734356
+
+\end_layout
+
+\begin_layout Standard
+Para o desenvolvimento desta ferramenta,
  os requisitos foram divididos em duas categorias:
  funcionais,
  que descrevem as capacidades matemáticas e interativas do sistema (cálculo do MOC,
@@ -705,7 +644,13 @@ literal "true"
  que definem as restrições de desempenho,
  usabilidade e arquitetura (uso de C++,
  tempo de resposta).
- A correta definição destes requisitos assegura que o software final não apenas resolva as equações de Buckley-Leverett,
+ 
+\change_inserted 643308733 1781734372
+
+\end_layout
+
+\begin_layout Standard
+A correta definição destes requisitos assegura que o software final não apenas resolva as equações de Buckley-Leverett,
  mas o faça de maneira didática e responsiva para o usuário.
 \end_layout
 
@@ -734,59 +679,12 @@ name "subsec:Requisitos-funcionais"
 
 \begin_layout Standard
 Os requisitos funcionais (RF
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-RF
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Requisitos Funcionais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color noneRF\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Requisitos Funcionais"
+literal "false"
 
 \end_inset
 
@@ -839,7 +737,11 @@ name "tab:Requisitos-funcionais"
 
 \end_inset
 
+
+\change_deleted 643308733 1781737422
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1038,35 +940,12 @@ O sistema deve recalcular instantaneamente a Razão de Mobilidade (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $M$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Razão de mobilidade (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$M\\$"
+description "Razão de mobilidade (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1075,68 +954,22 @@ Razão de mobilidade (adimensional)
 \end_inset
 
 )
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Viscosidade do óleo (Pa.s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\_{o}\\$"
+description "Viscosidade do óleo (Pa.s)"
+literal "false"
 
 \end_inset
 
  
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu_{w}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Viscosidade da água (Pa.s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\_{w}\\$"
+description "Viscosidade da água (Pa.s)"
+literal "false"
 
 \end_inset
 
@@ -1228,129 +1061,32 @@ O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
 \end_inset
 
 ).
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\Delta\\rho\\$"
+description "Variação das massas específicas (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonekg/m\\textthreesuperior{}\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit)"
+literal "false"
 
 \end_inset
 
 
-\begin_inset Formula $\Delta\rho$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Variação das massas específicas (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-kg/m³
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-)
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$g\\$"
+description "Gravidade (m²/s)"
+literal "false"
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $g$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Gravidade (m²/s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\alpha$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Ângulo de inclinação do reservatório (radianos)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\alpha\\$"
+description "Ângulo de inclinação do reservatório (radianos)"
+literal "false"
 
 \end_inset
 
@@ -1555,59 +1291,12 @@ Enquanto os requisitos funcionais definem
 \emph default
  o sistema faz,
  os requisitos não funcionais (RNF
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-RNF
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-requisitos não funcionais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color noneRNF\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "requisitos não funcionais"
+literal "false"
 
 \end_inset
 
@@ -1680,7 +1369,11 @@ name "tab:Requisitos-não-funcionais"
 
 \end_inset
 
+
+\change_deleted 643308733 1781737428
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2019,7 +1712,13 @@ literal "true"
 \end_inset
 
 .
- A Tabela 
+ 
+\change_inserted 643308733 1781736581
+
+\end_layout
+
+\begin_layout Standard
+A Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Exemplo-de-um-caso-de-uso (tabela)"
@@ -2043,7 +1742,7 @@ breakthrough
 <lyxtabular version="3" rows="6" columns="2">
 <features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="left" valignment="top" width="9cm">
+<column alignment="left" valignment="top" width="90text%">
 <row caption="true">
 <cell multicolumn="1" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -2059,7 +1758,11 @@ name "tab:Exemplo-de-um-caso-de-uso (tabela)"
 
 \end_inset
 
+
+\change_deleted 643308733 1781737406
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2182,35 +1885,12 @@ Entrada de Dados de Fluidos e Rocha:
 
 \size default
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\phi$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Porosidade (porcentagem)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\phi\\$"
+description "Porosidade (porcentagem)"
+literal "false"
 
 \end_inset
 
@@ -2224,35 +1904,12 @@ Porosidade (porcentagem)
 
 \size default
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $K$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade absoluta (m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$K\\$"
+description "Permeabilidade absoluta (m²)"
+literal "false"
 
 \end_inset
 
@@ -2283,68 +1940,22 @@ Opção A (Modelos Analíticos):
 
 \size default
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$n\\_{o}\\$"
+description "Expoente de Corey para a fase oleica (adimensional)"
+literal "false"
 
 \end_inset
 
 
-\begin_inset Formula $n_{o}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Expoente de Corey para a fase oleica (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $n_{w}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Expoente de Corey para a fase aquosa (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$n\\_{w}\\$"
+description "Expoente de Corey para a fase aquosa (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2475,7 +2086,11 @@ Inclusão de Gravidade:
 \size footnotesize
 Erro na Leitura de Arquivo:
  Caso o usuário importe um arquivo mal formatado na Etapa 2,
- o sistema exibe um alerta de erro e reverte para o modelo padrão (Corey),
+ o sistema exibe um alerta de erro e reverte para o modelo padrão (
+\emph on
+Corey
+\emph default
+),
  impedindo o travamento da aplicação.
 \end_layout
 
@@ -2679,7 +2294,11 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Gerenciamento de Propriedades e Int
 
 \end_inset
 
+
+\change_deleted 643308733 1781737003
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2766,7 +2385,11 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocament
 
 \end_inset
 
+
+\change_deleted 643308733 1781737006
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset

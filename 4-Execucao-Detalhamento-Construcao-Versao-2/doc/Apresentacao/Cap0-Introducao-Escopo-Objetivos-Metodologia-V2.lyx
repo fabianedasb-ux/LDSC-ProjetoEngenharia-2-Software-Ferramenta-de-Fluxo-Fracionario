@@ -213,6 +213,19 @@ literal "false"
  como a razão de mobilidade e a viscosidade dos fluidos —
  e visualize instantaneamente o impacto dessas variáveis na eficiência de recuperação,
  consolidando o aprendizado através da interatividade.
+\change_inserted 643308733 1781737227
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781737233
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -440,10 +453,17 @@ Graphical User Interface
 \emph default
 ) em diferentes sistemas operacionais.
 
-\change_inserted 643308733 1781732081
+\change_inserted 643308733 1781737242
  Garantindo assim alto desempenho,
  interface amigável e uso em múltiplas plataformas.
-\change_unchanged
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781737243
+\begin_inset Newpage pagebreak
+\end_inset
+
 
 \end_layout
 
@@ -606,6 +626,15 @@ Desenvolver o manual do usuário (instalação e uso).
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+
+\change_inserted 643308733 1781737249
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Metodologia utilizada
 \begin_inset CommandInset label
@@ -618,7 +647,7 @@ name "sec:Metodologia-utilizada"
 \begin_inset Index idx
 range none
 pageformat default
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Metodologia utilizada
