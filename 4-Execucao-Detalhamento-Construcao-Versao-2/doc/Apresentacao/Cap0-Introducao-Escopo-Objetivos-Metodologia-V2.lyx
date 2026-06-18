@@ -818,12 +818,10 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/problema.png
-	lyxscale 25
+	filename imagens/EtapasProjetoEngenharia.png
+	lyxscale 50
 	width 100text%
 	height 100theight%
-	keepAspectRatio
-	rotateAngle 90
 	special height=0.85\textheight
 
 \end_inset
@@ -844,7 +842,11 @@ name "fig:Etapas para o desenvolvimento do software"
 
 \end_inset
 
+
+\change_deleted 643308733 1781804964
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset

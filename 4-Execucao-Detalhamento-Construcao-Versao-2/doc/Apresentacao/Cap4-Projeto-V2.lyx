@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -22,6 +22,10 @@
 % Informa que vai usar o pacote listings,
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+% Added by lyx2lyx
+% added by lyx2lyx for converted index entries
+\@ifundefined{textmu}
+ {\usepackage{textcomp}}{}
 \end_preamble
 \use_default_options false
 \master Mestre-V2.lyx
@@ -73,19 +77,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -108,7 +104,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -117,7 +113,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -187,31 +183,12 @@ name "sec:Projeto-do-sistema"
 Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
  o qual envolve etapas como a definição dos protocolos,
  da interface API
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-API
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Interface de Programação de Aplicações
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "API"
+description "Interface de Programação de Aplicações"
+literal "false"
 
 \end_inset
 
@@ -388,33 +365,12 @@ Neste projeto,
  o software utiliza dois formatos distintos para a entrada e saída de dados.
  Para a importação de dados externos associados ao modelo de permeabilidade relativa tabelada,
  o sistema faz a leitura de arquivos de texto plano com codificação ASCII
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-ASCII
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-American Standard Code for Information Interchange
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "ASCII"
+description "\\em{}American Standard Code for Information Interchange"
+literal "false"
 
 \end_inset
 
@@ -480,62 +436,22 @@ Identificação e alocação dos recursos globais,
 \begin_layout Itemize
 Neste projeto,
  os recursos globais referem-se à memória RAM
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-RAM
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Random-access memory
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "RAM"
+description "\\em{}Random-access memory"
+literal "false"
 
 \end_inset
 
  de curta duração e ao ciclo de processamento da CPU
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-CPU
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Unidade central de processamento
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "CPU"
+description "Unidade central de processamento"
+literal "false"
 
 \end_inset
 
@@ -586,6 +502,11 @@ Buckley-Leverett,
  Sendo assim,
  identificou-se a total desnecessidade do acoplamento de sistemas de bancos de dados relacionais (como SQLite ou PostgreSQL) ou não-relacionais,
  simplificando a arquitetura e eliminando gargalos de escrita e leitura em disco.
+ 
+\change_inserted 643308733 1781804015
+Versões futuras do simulador poderão considerar o uso de SQLite para o armazenamento de simulações padrões usadas por exemplo em sala de aula.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -603,33 +524,12 @@ Neste projeto,
  não há necessidade de infraestruturas corporativas de armazenamento de massa,
  tais como servidores de arquivos dedicados,
  redes de armazenamento (SAN
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-SAN
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Storage Area Network
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "SAN"
+description "\\em{}Storage Area Network"
+literal "false"
 
 \end_inset
 
@@ -733,7 +633,11 @@ Identificação da necessidade de otimização:
 \begin_deeper
 \begin_layout Itemize
 Neste projeto,
- a necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica pós-breakthrough.
+ a necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica 
+\emph on
+pós-breakthrough
+\emph default
+.
  Devido ao comportamento plano da curva de fluxo fracionário próximo à saturação máxima (
 \begin_inset Formula $1-S_{or}$
 \end_inset
@@ -746,6 +650,24 @@ Neste projeto,
 
 ),
  eliminando a necessidade de algoritmos iterativos de busca e reduzindo o tempo de resposta computacional para a escala de microssegundos.
+\change_inserted 643308733 1781804162
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781804178
+este algoritmo específico poderia ser detalhado em apendice;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -868,33 +790,12 @@ Neste projeto,
 Model-View-Controller
 \emph default
 )
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-MVC
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Model-View-Controller
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "MVC"
+description "\\em{}Model-View-Controller"
+literal "false"
 
 \end_inset
 
@@ -1027,38 +928,31 @@ Pixmaps
 \nospellcheck default
 ),
  recurso essencial para a alimentação automática do nosso módulo de relatórios.
+
+\change_inserted 643308733 1781804429
+ Maiores detalhes da biblioteca acesse 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.qcustomplot.com/"
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+,
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-GDI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Graphics Device Interface
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "GDI"
+description "\\em{}Graphics Device Interface"
+literal "false"
 
 \end_inset
 
@@ -1080,38 +974,26 @@ Graphics Device Interface
  Afastou-se o uso de APIs nativas de baixo nível do sistema operacional (como a GDI clássica do Windows) para garantir que toda a renderização visual,
  folhas de estilo customizadas (QSS para cantos arredondados,
  fontes personalizadas Segoe UI e modos claro/escuro) e gerenciadores de layout (layouts responsivos) operem de forma agnóstica e integrada à plataforma.
+
+\change_inserted 643308733 1781804498
+ A biblioteca Qt é multiplataforma,
+ funciona nos três principais sistemas operacionais,
+ a saber,
+ Windows,
+ GNU/Linux e Mac OS X.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-IDE
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Integrated Development Environment
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "IDE"
+description "\\em{}Integrated Development Environment"
+literal "false"
 
 \end_inset
 
@@ -1146,6 +1028,20 @@ mainwindow.ui
 \family default
 \nospellcheck default
 ).
+
+\change_inserted 643308733 1781804543
+ Maiores detalhes acesse 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.qt.io/development/tools/qt-creator-ide"
+target "https://www.qt.io/development/tools/qt-creator-ide"
+literal "false"
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -1212,6 +1108,26 @@ CCurvasPermeabilidadeTabelada
  O simulador atua como o contexto,
  alterando dinamicamente o algoritmo de permeabilidade em tempo de execução com base na escolha do usuário na interface,
  sem que o motor de cálculo precise conhecer os detalhes de implementação de cada modelo matemático.
+\change_inserted 643308733 1781804585
+
+\end_layout
+
+\begin_layout Itemize
+
+\change_inserted 643308733 1781804833
+O padrão arquitetural MVC definiu a estrutura inicial do projeto.
+ Uma descrição do MVC é disponibilizada no site 
+\begin_inset CommandInset href
+LatexCommand href
+name "padrão MVC"
+target "https://www.devmedia.com.br/padrao-mvc-java-magazine/21995#2"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \end_deeper
@@ -1445,6 +1361,24 @@ name "subsec:Efeito-do-projeto-no-modelo-dinamico"
 \end_inset
 
 
+\change_inserted 643308733 1781807356
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781807359
+parei aqui
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -1509,33 +1443,12 @@ MainWindow
 \nospellcheck default
 ,
  que gere a transição visual das folhas de estilo (QSS
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-QSS
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Qt 
-\emph on
-Style Sheets
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "QSS"
+description "Qt \\em{}Style Sheets"
+literal "false"
 
 \end_inset
 
@@ -1725,35 +1638,12 @@ loops
 \end_deeper
 \begin_layout Itemize
 Algoritmos complexos podem ser subdivididos e otimizados utilizando STL
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-STL
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Standard Template Library
-\emph default
- 
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "STL"
+description "\\em{}Standard Template Library\\em{}"
+literal "false"
 
 \end_inset
 
@@ -1810,33 +1700,12 @@ Os métodos da classes estão a dar resposta às responsabilidades da classe?
 \begin_layout Itemize
 Neste projeto,
  reviu-se o Princípio da Responsabilidade Única (SRP
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-SRP
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Single Responsibility Principle
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "SRP"
+description "\\em{}Single Responsibility Principle"
+literal "false"
 
 \end_inset
 
@@ -2176,33 +2045,12 @@ name "sec:Diagrama-de-componentes"
 O diagrama de componentes mostra a forma como os componentes do software se relacionam e suas dependências arquiteturais estruturais.
  Inclui itens como bibliotecas estáticas,
  bibliotecas dinâmicas (DLLs
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-DLLs
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Dynamic Link Library
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "DLLs"
+description "\\em{}Dynamic Link Library"
+literal "false"
 
 \end_inset
 
@@ -2358,7 +2206,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -2521,14 +2368,26 @@ HDD/SSD
 
 \begin_layout Standard
 Veja na Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "cap:Diagrama-de-implantação.,fig:Diagrama-de-implantação."
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-tuple "list"
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{cap:Diagrama-de-implanta
+\backslash
+c{c}
+\backslash
+~{a}o.},
+ 
+\backslash
+ref{fig:Diagrama-de-implanta
+\backslash
+c{c}
+\backslash
+~{a}o.}
+\end_layout
 
 \end_inset
 
