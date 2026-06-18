@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -22,6 +22,10 @@
 % Informa que vai usar o pacote listings,
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
+% Added by lyx2lyx
+% added by lyx2lyx for converted index entries
+\@ifundefined{textmu}
+ {\usepackage{textcomp}}{}
 \end_preamble
 \use_default_options false
 \master Mestre-V2.lyx
@@ -73,19 +77,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -108,7 +104,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -117,7 +113,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -170,40 +166,22 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
- o foco foi exclusivamente a validação do núcleo matemático fundamental.
+ o foco foi 
+\change_deleted 643308733 1781809610
+exclusivamente
+\change_unchanged
+ a validação do núcleo matemático fundamental.
  O software foi concebido como uma ferramenta de linha de comando (CLI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-CLI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Command Line Interface
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "CLI"
+description "\\em{}Command Line Interface"
+literal "false"
 
 \end_inset
 
@@ -236,6 +214,24 @@ Funcionalidades:
 Gnuplot
 \emph default
  para a geração de gráficos.
+\change_inserted 643308733 1781809638
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781809666
+poderia recapturar a imagem mostrando além do terminal o gráfico do gnuplot
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -257,7 +253,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/v-1.0.png
-	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -273,7 +268,11 @@ Versão 1.0,
  
 \shape italic
 \emph on
-imagem do programa rodando.
+imagem do programa rodando
+\change_deleted 643308733 1781807541
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-1.0"
@@ -314,7 +313,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -383,7 +381,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/v-2.1.png
-	lyxscale 20
 	width 100text%
 
 \end_inset
@@ -408,7 +405,11 @@ name "fig:Versão-2.1"
 
 \end_inset
 
+
+\change_deleted 643308733 1781807536
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -430,33 +431,12 @@ name "sec:Versão-2.3"
 \end_inset
 
 - Refinamento de Engenharia e Experiência do Usuário (UX
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-UX
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-User Experience
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "UX"
+description "\\em{}User Experience"
+literal "false"
 
 \end_inset
 
@@ -473,13 +453,18 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
  o desenvolvimento foi voltado para o refinamento da experiência do utilizador e a formalização do projeto como um produto educativo e profissional.
- A interface foi submetida a um processo de redesign completo,
+ A interface foi submetida a um processo de 
+\change_deleted 643308733 1781809116
+redesign
+\change_inserted 643308733 1781809117
+redesenho
+\change_unchanged
+ completo,
  focando na ergonomia visual e na acessibilidade.
 \end_layout
 
@@ -493,7 +478,11 @@ Escopo:
 Funcionalidades:
  Implementação do sistema dinâmico de temas (Modo Claro/Escuro),
  padronização tipográfica (Segoe UI),
- arredondamento ergonómico de componentes,
+ arredondamento 
+\change_inserted 643308733 1781809125
+ergonômico
+\change_unchanged
+ de componentes,
  ícones vetoriais em tempo de execução e a funcionalidade de exportação de diagnósticos físicos para PDF,
  com embutimento automático dos gráficos simulados.
 \end_layout
@@ -522,7 +511,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/v-2.3.PNG
-	lyxscale 40
+	lyxscale 90
 	width 100text%
 
 \end_inset
@@ -538,7 +527,11 @@ Versão 2.3,
  
 \shape italic
 \emph on
-imagem do programa rodando.
+imagem do programa rodando
+\change_deleted 643308733 1781807532
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Versão-2.3"
@@ -573,7 +566,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -585,12 +577,40 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 .
  Estes ícones foram embutidos diretamente no executável final através do sistema de recursos do Qt (.qrc).
+
+\change_inserted 643308733 1781809858
+ Maiores detalhes da plataforma Canva podem ser obtidos no site 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.canva.com/pt_br/"
+target "https://www.canva.com/pt_br/"
+literal "false"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781809900
+sempre que se referenciar a sofware/site externo coloque o link para que a banca e leitores possam dar uma olhada rápida;
+ nem todos conhecem o canva
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -625,7 +645,7 @@ name "fig:Ícone-claro"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -674,7 +694,7 @@ name "fig:Ícone-escuro"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
