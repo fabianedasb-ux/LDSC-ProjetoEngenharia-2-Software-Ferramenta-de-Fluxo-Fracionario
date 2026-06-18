@@ -444,3 +444,10 @@ flycheck_*.el
 
 # cópias de arquivos
 *c\303\263pia*
+
+# diretórios de documentacao gerados pelo doxygen
+
+html/
+latex/
+.js
+.html

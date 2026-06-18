@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -73,19 +73,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -108,7 +100,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -117,7 +109,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -148,15 +140,36 @@ Para compilar o código-fonte da Ferramenta para Geração da Curva de Fluxo Fra
 \end_layout
 
 \begin_layout Itemize
-Compilador C++:
+
+\series bold
+Compilador C++
+\series default
+:
  É necessário um compilador com suporte nativo ao padrão C++11 ou superior.
  Recomenda-se o compilador g++ da coleção GNU (MinGW no Windows ou GCC no GNU/Linux).
+
+\change_inserted 643308733 1781819502
+ Site:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://gcc.gnu.org/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Qt 
 \emph on
 Framework
+\series default
 \emph default
 :
  O software foi desenvolvido sob a arquitetura de eventos do Qt.
@@ -164,33 +177,113 @@ Framework
 \emph on
 framework
 \emph default
- instalado (versão 5.x ou 6.x) juntamente com a ferramenta de compilação qmake ou CMake.
+ instalado (versão 5.x ou 6.x) juntamente com a ferramenta de compilação 
+\family typewriter
+qmake
+\family default
+ ou 
+\family typewriter
+CMake
+\family default
+.
  Os módulos estruturais exigidos são:
- Core,
- Gui,
- Widgets e PrintSupport (este último essencial para a geração do relatório em PDF nativo).
+ 
+\emph on
+Core
+\emph default
+,
+ 
+\emph on
+Gui
+\emph default
+,
+ 
+\emph on
+Widgets
+\emph default
+ e 
+\emph on
+PrintSupport
+\emph default
+ (este último essencial para a geração do relatório em PDF nativo).
+
+\change_inserted 643308733 1781819609
+ Site:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qt.io/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
-Biblioteca QCustomPlot:
+
+\series bold
+Biblioteca QCustomPlot
+\series default
+:
  Utilizada para a renderização vetorial bidimensional da curva de fluxo fracionário,
  perfil de saturação e eficiência.
  Os arquivos de cabeçalho (qcustomplot.h) e implementação (qcustomplot.cpp) já estão acoplados e devem permanecer no diretório fonte (src/View ou similar).
  O uso do QCustomPlot elimina a necessidade de instalação de softwares externos de plotagem na máquina do desenvolvedor.
+
+\change_inserted 643308733 1781819607
+ Site:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.qcustomplot.com/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
-Sistema de Controle de Versão:
+
+\series bold
+Sistema de Controle de Versão
+\series default
+:
  Recomenda-se o uso do Git para gerenciar as alterações no código e rastrear evoluções implementadas nas correlações de permeabilidade relativa.
+
+\change_inserted 643308733 1781819638
+ Site:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://git-scm.com/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
-Como gerar a documentação usando doxygen
+Como gerar a documentação usando 
+\emph on
+doxygen
 \end_layout
 
 \begin_layout Standard
 O código-fonte foi desenvolvido seguindo o padrão de documentação Doxygen.
- Esta escolha visa assegurar que a arquitetura MVC (Model-View-Controller) seja compreensível para futuros pesquisadores,
+ Esta escolha visa assegurar que a arquitetura MVC (
+\emph on
+Model-View-Controller
+\emph default
+) seja compreensível para futuros pesquisadores,
  facilitando a inclusão de novos modelos de permeabilidade relativa ou a extensão das rotinas de cálculo do fluxo fracionário.
 \end_layout
 
@@ -199,32 +292,52 @@ A documentação gerada,
  Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Página-inicial-da"
+reference "fig:doxygen-1"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
  e 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Detalhe-da-documentação"
+reference "fig:doxygen-2"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
  provê uma visão hierárquica do sistema,
- essencial para entender a abstração polimórfica utilizada na estratégia (Strategy) de cálculo de permeabilidades.
+ essencial para entender a abstração polimórfica utilizada na estratégia (
+\emph on
+Strategy
+\emph default
+) de cálculo de permeabilidades.
  Abaixo são apresentados exemplos das saídas geradas automaticamente a partir do código-fonte,
  evidenciando as relações de herança e as descrições teóricas dos métodos.
+\change_inserted 643308733 1781821742
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781821857
+A grande vantagem do uso de javadoc e doxygem esta no fato de que a documentação pode ser gerada em diversos formatos,
+ incluindo,
+ latex,
+ html,
+ rtf,
+ pdf.
+ Além disso a documentação gerada inclui dezenas de imagens (diagramas UML) e links cruzados entre imagens,
+ comentários e até arquivos de código.
+ Isto facilita navegar pela documentação e encontrar a informação desejada.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -236,8 +349,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
-	filename imagens/DOC-DOXYGEN.png
+	filename imagens/doxygen-1.png
 	lyxscale 50
 	width 100text%
 
@@ -247,14 +361,24 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Página inicial da documentação técnica do sistema gerada via Doxygen
+Página 
+\change_deleted 643308733 1781821489
+inicial
+\change_inserted 643308733 1781821504
+Class Hirrarchy
+\change_unchanged
+ da documentação técnica do sistema gerada via Doxygen
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Página-inicial-da"
+name "fig:doxygen-1"
 
 \end_inset
 
+
+\change_deleted 643308733 1781820623
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -280,6 +404,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/doxygen-2.png
 	lyxscale 50
@@ -294,11 +419,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Detalhe da documentação de classe,
- evidenciando a renderização das equações de Buckley-Leverett.
+Detalhe da documentação de classe
+\change_inserted 643308733 1781821573
+ CSimulador,
+ funções membro públicas
+\change_deleted 643308733 1781821552
+,
+ evidenciando a renderização das equações de 
+\emph on
+Buckley-Leverett
+\emph default
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Detalhe-da-documentação"
+name "fig:doxygen-2"
 
 \end_inset
 
@@ -316,6 +452,111 @@ name "fig:Detalhe-da-documentação"
 
 \end_inset
 
+
+\change_inserted 643308733 1781821474
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781821477
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 643308733 1781821476
+\begin_inset Graphics
+	filename imagens/doxygen-3.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781821476
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781821618
+Detalhe da documentação de classe CSimulador,
+ note que doxygen gera diagramas UML
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:doxygen-3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\change_inserted 643308733 1781821477
+\begin_inset Graphics
+	filename imagens/doxygen-4.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781821477
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781821719
+Detalhe da documentação de classe ICurvasPermeabilidade,
+ note a hierarquia de classes
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:doxygen-4"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
