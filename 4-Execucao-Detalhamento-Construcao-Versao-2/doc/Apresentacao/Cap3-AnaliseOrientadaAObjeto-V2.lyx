@@ -431,8 +431,6 @@ status open
 	lyxscale 30
 	width 100page%
 	height 90theight%
-	keepAspectRatio
-	rotateAngle 90
 
 \end_inset
 
@@ -476,6 +474,24 @@ end{landscape}
 
 \end_inset
 
+
+\change_inserted 643308733 1781824144
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781824177
+clicar na imagem e definir girar grafico 90 dá no mesmo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 

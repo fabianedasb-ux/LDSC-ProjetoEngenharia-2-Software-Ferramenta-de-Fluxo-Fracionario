@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -85,19 +85,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -129,7 +121,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -153,9 +144,16 @@ Configuração de Entrada de Dados
 O software permite duas formas de entrada para as curvas de permeabilidade relativa:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Itemize
+
+\series bold
 Entrada Manual:
- Selecione a aba correspondente ao modelo desejado (Corey,
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Selecione a aba correspondente ao modelo desejado (Corey,
  LET,
  Chierici ou Tabela).
  Preencha os campos numéricos (como 
@@ -171,9 +169,19 @@ Entrada Manual:
  expoentes ou coeficientes) diretamente nos campos de texto da interface.
 \end_layout
 
-\begin_layout Standard
+\end_deeper
+\begin_layout Itemize
+
+\series bold
 Entrada via Arquivo:
- Clique no botão "Carregar Dados" na aba escolhida e selecione o arquivo 
+
+\series default
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Clique no botão "Carregar Dados" na aba escolhida e selecione o arquivo 
 \family typewriter
 \nospellcheck on
 .txt
@@ -183,6 +191,7 @@ Entrada via Arquivo:
  O sistema validará automaticamente os dados e atualizará os campos da interface.
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 Para garantir a consistência dos gráficos,
  recomenda-se que,
@@ -208,23 +217,53 @@ No painel lateral esquerdo,
 \end_layout
 
 \begin_layout Itemize
-Geometria:
- Comprimento,
+
+\series bold
+Geometria
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Comprimento,
  área,
  porosidade e permeabilidade.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Gravidade:
- Insira o ângulo de inclinação (em graus).
+
+\series bold
+Gravidade
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Insira o ângulo de inclinação (em graus).
  O software converte automaticamente o valor para radianos para o cálculo da componente gravitacional.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Propriedades dos Fluidos:
- Insira as viscosidades (em Pa.s) e as densidades (em kg/m³).
+
+\series bold
+Propriedades dos Fluidos
+\series default
+:
+ 
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+Insira as viscosidades (em Pa.s) e as densidades (em kg/m³).
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Execução e Visualização
 \end_layout
@@ -244,31 +283,70 @@ Fluxo fracionário
 \end_layout
 
 \begin_layout Itemize
-Gráfico Superior (Direita):
- Curva de fluxo fracionário (
+
+\series bold
+Gráfico Superior (Direita)
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Curva de fluxo fracionário (
 \begin_inset Formula $f_{w}$
 \end_inset
 
 ) e tangente de Welge.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Gráfico Inferior (Esquerda):
- Perfil de saturação espacial.
+
+\series bold
+Gráfico Inferior (Esquerda)
+\series default
+:
+ 
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
-Gráfico Inferior (Direita):
- Histórico da eficiência de deslocamento.
+Perfil de saturação espacial.
 \end_layout
 
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+Gráfico Inferior (Direita)
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Histórico da eficiência de deslocamento.
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Geração de Relatórios e Temas
 \end_layout
 
 \begin_layout Itemize
-Relatório em PDF:
- Clique no menu "Relatório".
+
+\series bold
+Relatório em PDF
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Clique no menu "Relatório".
  O simulador compilará automaticamente os indicadores críticos (
 \begin_inset Formula $S_{wf}$
 \end_inset
@@ -286,12 +364,23 @@ Relatório em PDF:
 ) em um documento PDF formatado.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
-Personalização de Tema:
- A interface suporta a alternância de temas (Claro/Escuro) através do menu representado pelos ícones de sol e lua,
+
+\series bold
+Personalização de Tema
+\series default
+:
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+A interface suporta a alternância de temas (Claro/Escuro) através do menu representado pelos ícones de sol e lua,
  permitindo maior conforto visual durante a análise de dados.
 \end_layout
 
+\end_deeper
 \begin_layout Standard
 
 \end_layout

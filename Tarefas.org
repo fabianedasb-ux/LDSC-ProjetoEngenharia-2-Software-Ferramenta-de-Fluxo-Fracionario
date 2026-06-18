@@ -56,27 +56,46 @@ Software Educacional com Interface Interativa para Implementação Computacional
    - [ ] Revisar as decisões de Projeto do Sistema (Protocolos, Recursos, Controle) [42-48].
    - [ ] Validar a Tabela de Classificação do Sistema: conferir se as marcações [X] refletem a realidade [49-53].
    - [ ] Diagramas de Componentes e Implantação: verificar dependências das DLLs do Qt [54, 55].
+- [] no capítulo de projeto coloque uma seção informando que os dados devem ser entrados sempre em SI;
 
 ** TODO Capítulo 5: Ciclos de Planejamento e Detalhamento
    - [ ] Verificar se a evolução da Versão 1.0 (CLI) para a 2.3 (UX/UI) está bem documentada com prints [13, 56-58].
 
 ** TODO Capítulo 6: Ciclos de Construção (Código-Fonte)
-   - [ ] Realizar leitura técnica dos cabeçalhos (.h) e implementações (.cpp) [59-203].
-   - [ ] Verificar se os comentários seguem o padrão Doxygen [204].
-   - [ ] Checar a lógica da função `aplicarTemaUI` para o Modo Escuro [205, 206].
+- [] Adicionei o arquivo Base.lyx, ele cria formatos específicos de listagens; é legal porque poderemos incluir vários códigos em C++ apenas colocando título da listagem, label para poder citar e o endereço relativo de onde se encontra.
+- [] Adicionei os arquivos Cap6-Ciclos-Construcao-Implementacao.lyx e Cap7-Teste.lyx, são os modelos padrões, use para poder trocar a inserção direta dos códigos - copiar/colar pelo endereço dos arquivos; no master terá de trocar a inclusao de Cap6-Ciclos-Construcao-Implementacao-V2.lyx por Cap6-Ciclos-Construcao-Implementacao.lyx; depois testa a geracao do pdf; se funcionar basta copiar Cap6-Ciclos-Construcao-Implementacao.lyx para Cap6-Ciclos-Construcao-Implementacao-V2.lyx.
+- [] Fazer o mesmo para o arquivo de teste se houver saidas no modo texto capturadas como arquivos; algo como ./simular > saida.out
+- [ ] Realizar leitura técnica dos cabeçalhos (.h) e implementações (.cpp) [59-203].
+- [ ] Verificar se os comentários seguem o padrão Doxygen [204].
+- [ ] Checar a lógica da função `aplicarTemaUI` para o Modo Escuro [205, 206].
 
 ** TODO Capítulo 7: Testes e Validação
    - [ ] Teste 1 (Tabelado): Verificar se o ruído numérico ("ringing") foi explicado como quinas de classe C1 [207, 208].
    - [ ] Teste 2 (Gravidade): Validar se as simulações em aclive (30º) e declive (-30º) respondem à física [209, 210].
    - [ ] Testes 3 e 4 (LET/Chierici): Confirmar a estabilidade do motor matemático em curvas não-convencionais [210, 211].
+   - [] você tem de adicionar um teste, rodar os mesmos exemplos no linux usando os mesmos arquivos de entrada; a ideia é testar os arquivos de entrada; seria interessante colocar a informação de conformidade dos arquivos de entrada, se podem ser UTF-8 e ISO-8859-1 ou apenas um formato; normalmente acentos geram problemas.
 
 ** TODO Capítulo 8: Documentação do Desenvolvedor
    - [ ] Conferir se as dependências (Qt, QCustomPlot, g++) estão listadas corretamente [212].
    - [ ] Verificar o guia para geração de documentação via Doxygen [204].
-
+- [] no manual coloque uma seção informando que os dados devem ser entrados sempre em SI;esta informação deve ser repetida;
 ** TODO Apêndices e Referências
    - [ ] Apêndice A/B: O guia de operação reflete a versão 2.3 da interface? [213, 214].
    - [ ] Referências: Confirmar se Rosa, Carvalho e Xavier (2006) e Pressman (2016) estão formatados corretamente [215, 216].
+   - [ ] Criar apêndice com soluções numéricas específicas desenvolvidas para o trabalho;
+     Por exemplo:
+     "A necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica pós-breakthrough.
+     Devido ao comportamento plano da curva de fluxo fracionário próximo à saturação máxima (1-S_{or}), pequenas imprecisões no cálculo da derivada geravam ruídos que travavam a evolução gráfica. A otimização foi realizada substituindo as derivadas analíticas simples por uma formulação paramétrica de diferenças finitas centrais de alta precisão com passo refinado (h=10^{-5}), eliminando a necessidade de algoritmos iterativos de busca e reduzindo o tempo de resposta computacional para a escala de microssegundos."
+     este algoritmo específico poderia ser detalhado em apendice;
+** Documentação do código
+Adicionei em /home/bueno/Dropbox/workdir/LDSC-ProjetoEngenharia-2-Software-Ferramenta-de-Fluxo-Fracionario/4-Execucao-Detalhamento-Construcao-Versao-2/code/Doxyfile
+o arquivo Doxyfile
+ele tem instruçoes que normalmente respondemos YES/NO
+eu coloquei vários YES e gerei a documentacao aqui;
+aqui tenho o pacote dot instalado, ele gera diagramas diversos deixando a documentação bem mais detalhada e com diagramas;
+voce pode brincar alterando os parametros e vendo como fica; mas faça isso depois...
+
+
 
 ** TODO FORMATO FINAL E ENTREGA (Referência: P04-C06)
    - [ ] Gerar versão PDF final e realizar commit no Git [217].
@@ -90,6 +109,32 @@ Assume-se, como premissa conservadora para a avaliação teórica de deslocament
 Para a tensão interfacial entre a água de injeção (salmoura) e um óleo cru típico, o simulador adota o valor constante de \sigma=30 mN/m (numericamente equivalente a dinas/cm). Esta magnitude é representativa para escoamentos imiscíveis de água e óleo em condições de reservatório, na ausência de agentes tensoativos ou métodos químicos de recuperação ([#craig1971, #Lake2014]).
 
 .
+** TODO Códigos
+-[] Arquivos de entrada poderão aceitar arquivos no formato json.
+#swir sor kro krw no nw
+Exemplo em json (JavaScript Object Notation):
+
+Abaixo, um exemplo de como os dados da Listagem 8.2 (Corey) seriam estruturados em JSON para o simulador:
+{
+  "simulacao": {
+    "modelo_permeabilidade": "Corey",
+    "parametros": {
+      "swir": 0.2,
+      "sor": 0.2,
+      "kro_max": 0.8,
+      "krw_max": 0.1,
+      "expoente_oleo_no": 2,
+      "expoente_agua_nw": 1
+    },
+    "condicoes_contorno": {
+      "angulo_inclinacao_graus": 0.0,
+      "tempo_pvi": 0.2
+    }
+  }
+  exemplos de uso de json em c++ aqui:
+  https://github.com/nlohmann/json
+
+
 ** TODO Comentário
 lembrar que a adimensionalização trás a vantagem de termos gráficos nas mesmas escalas, mas, ao mesmo tempo, elimina um pouco a percepção das dimensões físicas reais. Uma análise integral, idealmente considera também as escalas reais
 .
