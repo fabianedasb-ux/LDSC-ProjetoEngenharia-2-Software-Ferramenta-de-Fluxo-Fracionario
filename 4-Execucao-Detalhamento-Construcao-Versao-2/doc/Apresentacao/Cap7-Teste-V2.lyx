@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -73,19 +73,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -108,7 +100,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -117,7 +109,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -177,7 +169,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -240,9 +231,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/5.1-lake.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -261,7 +252,11 @@ name "fig:Exercício-5.1."
 
 \end_inset
 
+
+\change_deleted 643308733 1781813415
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -309,7 +304,25 @@ O simulador foi capaz de ler a tabela dinâmica,
 \emph on
 ringing
 \emph default
-") na porção superior do perfil de saturação de água (platô viscoso).
+") na porção superior do perfil de saturação de água (platô viscoso)
+\change_inserted 643308733 1781814265
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814268
+referencie a figura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+.
  Este fenômeno atesta o rigor do cálculo da derivada de diferenças finitas centrais do simulador:
  como os dados de entrada são esparsos e interpolados por retas,
  a função de fluxo fracionário apresenta quinas de classe 
@@ -331,7 +344,11 @@ Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-A seguir apresenta-se o arquivo de texto formatado com as matrizes de saturação e permeabilidade do ensaio de laboratório .
+A seguir apresenta-se o arquivo de texto formatado com as matrizes de saturação e permeabilidade do ensaio de laboratório
+\change_deleted 643308733 1781813822
+ 
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -340,64 +357,87 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 # Dados experimentais do Exercício 5.1 (Lake,
  1989)
 \end_layout
 
 \begin_layout Plain Layout
+
 # Colunas:
  Sw Krw Kro
 \end_layout
 
 \begin_layout Plain Layout
+
 DADOS_KR_INICIO
 \end_layout
 
 \begin_layout Plain Layout
+
 0.40 0.000 0.360
 \end_layout
 
 \begin_layout Plain Layout
+
 0.45 0.005 0.260
 \end_layout
 
 \begin_layout Plain Layout
+
 0.50 0.009 0.140
 \end_layout
 
 \begin_layout Plain Layout
+
 0.55 0.020 0.080
 \end_layout
 
 \begin_layout Plain Layout
+
 0.60 0.035 0.036
 \end_layout
 
 \begin_layout Plain Layout
+
 0.65 0.050 0.020
 \end_layout
 
 \begin_layout Plain Layout
+
 0.70 0.080 0.000
 \end_layout
 
 \begin_layout Plain Layout
+
 FIM_DADOS
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
+
+\change_inserted 643308733 1781813759
 Arquivo de texto,
  teste 1
+\change_deleted 643308733 1781813766
+Arquivo de texto,
+ teste 1
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "lis:Arquivo-de-texto-"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813703
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -415,8 +455,18 @@ Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A seguir apresenta-se,
- Figura 
+A seguir apresenta-se
+\change_inserted 643308733 1781813873
+ a 
+\change_deleted 643308733 1781813872
+,
+
+\change_inserted 643308733 1781813877
+ 
+\change_deleted 643308733 1781813872
+ 
+\change_unchanged
+Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Extração-dos-diagnósticos-"
@@ -424,12 +474,30 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
  a extração dos diagnósticos de ruptura calculados pelo motor analítico do simulador.
+\change_inserted 643308733 1781813912
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781813989
+não esta clara a fonte destes dados;
+ se for o relatório pdf gerado pelo software deixe mais claro
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -441,6 +509,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-1-resul.png
 	width 100text%
@@ -462,7 +531,11 @@ name "fig:Extração-dos-diagnósticos-"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813430
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -488,7 +561,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -496,6 +568,30 @@ tuple "list"
  evidenciando a curva de fluxo fracionário associada à tangente construtiva de Welge,
  o perfil de saturação ancorado no poço injetor com a descontinuidade de choque evidente,
  e a evolução temporal da eficiência de deslocamento.
+\change_inserted 643308733 1781814405
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814483
+falta correlacionar os dados da imagem,
+ ex:
+ comprimento 100,
+ porosidade 20,
+ etc,
+ com as tabelas de dados (entradas),
+ algo como os dados de entrada estão na tabela x.
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -507,9 +603,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/resultado.png
-	lyxscale 40
 	width 100text%
 
 \end_inset
@@ -528,7 +624,11 @@ name "fig:Teste-TelaPrograma-Captura1"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813438
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -585,7 +685,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -615,8 +714,37 @@ tuple "list"
 \begin_inset Formula $k^{0}_{ro}=0.8$
 \end_inset
 
-.Para garantir a coerência com o Sistema Internacional (SI) exigido pelo motor físico do software,
+.
+
+\change_inserted 643308733 1781814575
+ 
+\change_unchanged
+Para garantir a coerência com o Sistema Internacional (SI) exigido pelo motor físico do software,
  os dados originais da literatura sofreram as seguintes conversões:
+\change_inserted 643308733 1781814596
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814629
+no capítulo de projeto coloque uma seção informando que os dados devem ser entrados sempre em SI;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814645
+no manual esta informação deve ser repetida;
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -626,6 +754,10 @@ Viscosidades:
 \end_inset
 
  (água) e
+\change_inserted 643308733 1781814716
+ 
+\change_unchanged
+
 \begin_inset Formula $10\text{ mPa}\cdot\text{s}$
 \end_inset
 
@@ -788,9 +920,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/5.2-lake.png
-	lyxscale 80
 	width 100text%
 
 \end_inset
@@ -809,7 +941,11 @@ name "fig:Exercício-5.2."
 
 \end_inset
 
+
+\change_deleted 643308733 1781813446
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -862,6 +998,193 @@ O carregamento da parametrização de Corey foi realizado pelo leitor de disco i
 \end_inset
 
 ).
+\change_inserted 643308733 1781814802
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814819
+Considere adicionar na primeira linha do arquivo o seguinte
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814848
+#swir sor kro krw no nw
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781814884
+no código pode descartar a primeira linha ou toda linha iniciada com #
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815129
+Se colocar desconsiderar todas as linhas iniciadas com # poderá colocar outras instruções no arquivo
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815138
+para futuro aceitar arquivos no formato json;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815161
+c++ tem arquivo de cabecalho que permite ler arquivos json diretamente;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815312
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815312
+.
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+Abaixo,
+ um exemplo de como os dados da Listagem 8.2 (Corey) seriam estruturados em JSON para o simulador:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"simulacao":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"modelo_permeabilidade":
+ "Corey",
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"parametros":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"swir":
+ 0.2,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"sor":
+ 0.2,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"kro_max":
+ 0.8,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"krw_max":
+ 0.1,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"expoente_oleo_no":
+ 2,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"expoente_agua_nw":
+ 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+},
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"condicoes_contorno":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"angulo_inclinacao_graus":
+ 0.0,
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+"tempo_pvi":
+ 0.2
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+exemplos de uso de json em c++ aqui:
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815313
+https://github.com/nlohmann/json
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -870,10 +1193,12 @@ inline false
 status open
 
 \begin_layout Plain Layout
+
 0.2 0.2 0.8 0.1 2 1
 \end_layout
 
 \begin_layout Plain Layout
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -912,11 +1237,29 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 .
+\change_inserted 643308733 1781815390
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815416
+o livro que tem o exercício tem a resposta?
+ se tiver coloque do lado do resultado que obteve mostrando a validação
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -928,6 +1271,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-2.png
 	width 100text%
@@ -948,7 +1292,11 @@ name "fig:Cenário-horizontal."
 
 \end_inset
 
+
+\change_deleted 643308733 1781813456
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -975,7 +1323,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -991,6 +1338,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-2.1.png
 	width 100text%
@@ -1008,7 +1356,11 @@ name "fig:Cenário-com-ângulo"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813461
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1031,7 +1383,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -1047,6 +1398,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-2.2.png
 	width 100text%
@@ -1064,7 +1416,11 @@ name "fig:Cenário-com-ângulo-1"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813465
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1083,7 +1439,22 @@ Figuras
 
 \begin_layout Standard
 Adicionalmente,
- as Figuras 
+ as Figuras
+\change_inserted 643308733 1781813511
+ l
+\change_deleted 643308733 1781813513
+ 
+\change_inserted 643308733 1781813515
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-3"
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Tela-do-programa"
@@ -1091,12 +1462,22 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
  
+\change_inserted 643308733 1781815468
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-1-1"
+
+\end_inset
+
+
+\change_deleted 643308733 1781815468
+
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Tela-do-programa-1"
@@ -1104,10 +1485,11 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
+
+\change_unchanged
  e 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1116,7 +1498,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -1138,6 +1519,26 @@ tuple "list"
  Nelas,
  é possível visualizar o adiantamento da frente de saturação para injeções descendentes e o atraso para injeções ascendentes,
  confirmando a robustez da integração do termo gravitacional.
+\change_inserted 643308733 1781815479
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815538
+o lyx identificou que algumas figura estavam com nome repetido e renomeou;
+ verifique se as referencias estão corretas e corrija o nome do label das figuras;
+ quando corrige o nome do label o lyx já corrige o nome na referencia
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1152,7 +1553,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/resultado-2.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1161,6 +1561,8 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+
+\change_deleted 643308733 1781813490
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1181,6 +1583,21 @@ name "fig:Tela-do-programa"
 \end_inset
 
 
+\change_inserted 643308733 1781813490
+Tela do programa exibindo o perfil de saturação e a eficiência de deslocamento para injeção em reservatório horizontal (
+\begin_inset Formula $\alpha=0^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-3"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1197,13 +1614,15 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/resultado-2-1.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
 
+
+\change_deleted 643308733 1781813534
 
 \begin_inset Caption Standard
 
@@ -1225,6 +1644,21 @@ name "fig:Tela-do-programa-1"
 \end_inset
 
 
+\change_inserted 643308733 1781813534
+Tela do programa exibindo o perfil de saturação retardado para injeção ascendente em aclive (
+\begin_inset Formula $\alpha=30^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-1-1"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -1245,9 +1679,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/resultado-2-1-1.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1267,7 +1701,11 @@ name "fig:Tela-do-programa-2"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813549
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1317,13 +1755,122 @@ Os coeficientes empíricos foram extraídos da literatura especializada,
  2020).
  Na fase aquosa,
  os parâmetros de forma,
- elevação e translação foram definidos como Lw = 4.02,
- Ew = 2.00 e Tw = 0.41.
+ elevação e translação foram definidos como 
+\change_inserted 643308733 1781815683
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815714
+termos fisicos,
+ matematicos,
+ valores,
+ sempre dentro de equacao assim usarão as mesmas fontes
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_deleted 643308733 1781815597
+Lw = 4.02
+\change_inserted 643308733 1781815597
+
+\begin_inset Formula $Lw=4.02$
+\end_inset
+
+
+\change_unchanged
+,
+ 
+\change_deleted 643308733 1781815602
+Ew = 2.00
+\change_inserted 643308733 1781815602
+
+\begin_inset Formula $Ew=2.00$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1781815607
+Tw = 0.41
+\change_inserted 643308733 1781815607
+
+\begin_inset Formula $Tw=0.41$
+\end_inset
+
+
+\change_unchanged
+.
  Para a fase oleica,
- utilizou-se Lo = 1.00,
- Eo = 1.18 e To = 1.28.
+ utilizou-se 
+\change_deleted 643308733 1781815611
+Lo = 1.00
+\change_inserted 643308733 1781815611
+
+\begin_inset Formula $Lo=1.00$
+\end_inset
+
+
+\change_unchanged
+,
+ 
+\change_deleted 643308733 1781815615
+Eo = 1.18
+\change_inserted 643308733 1781815615
+
+\begin_inset Formula $Eo=1.18$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1781815619
+To = 1.28
+\change_inserted 643308733 1781815619
+
+\begin_inset Formula $To=1.28$
+\end_inset
+
+
+\change_unchanged
+.
  O cenário fluido-dinâmico foi mantido idêntico ao Teste 1,
- com injeção horizontal e viscosidades de 1 mPa.s (água) e 5 mPa.s (óleo) aos 0.3 PVI.
+ com injeção horizontal e viscosidades de 
+\change_deleted 643308733 1781815626
+1 mPa.s
+\change_inserted 643308733 1781815626
+
+\begin_inset Formula $1mPa.s$
+\end_inset
+
+
+\change_unchanged
+ (água) e 
+\change_deleted 643308733 1781815633
+5 mPa.s
+\change_inserted 643308733 1781815633
+
+\begin_inset Formula $5mPa.s$
+\end_inset
+
+
+\change_unchanged
+ (óleo) aos 
+\change_deleted 643308733 1781815651
+0.3 PVI
+\change_inserted 643308733 1781815651
+
+\begin_inset Formula $0.3PVI$
+\end_inset
+
+
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -1335,7 +1882,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -1346,7 +1892,27 @@ tuple "list"
 \begin_layout Standard
 O programa será validado pela geração da curva em "S" característica do fluxo fracionário,
  confirmando que as ramificações matemáticas do modelo LET (elevação e translação) não geram instabilidades numéricas,
- singularidades ou limites fora do intervalo físico (0 a 1) durante a interpolação ou no cálculo de derivadas centrais.
+ singularidades ou limites fora do intervalo físico (
+\change_deleted 643308733 1781815661
+0
+\change_inserted 643308733 1781815661
+
+\begin_inset Formula $0$
+\end_inset
+
+
+\change_unchanged
+ a 
+\change_deleted 643308733 1781815664
+1
+\change_inserted 643308733 1781815664
+
+\begin_inset Formula $1$
+\end_inset
+
+
+\change_unchanged
+) durante a interpolação ou no cálculo de derivadas centrais.
 \end_layout
 
 \begin_layout Standard
@@ -1368,12 +1934,37 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-3 e 4.png
 	width 100text%
 
 \end_inset
 
+
+\change_inserted 643308733 1781814067
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815729
+imagem pouco legivel considere pedir a IA para reproduzir fielmente com mais qualidade gráfica
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781815744
+ou crie uma tabela e reproduza o texto
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -1396,7 +1987,11 @@ name "fig:Tabela-de-coeficientes"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813559
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1420,6 +2015,36 @@ Arquivo de entrada de dados
 \begin_layout Standard
 Os coeficientes do modelo LET foram carregados no simulador através da interface gráfica,
  parametrizados em conformidade com o cenário base de incertezas publicado na literatura.
+\change_inserted 643308733 1781816110
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781816120
+explique a ordem dos dados do arquivo
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781816124
+considere colocar
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781816134
+#bla bla bla na primeira linha
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1428,6 +2053,8 @@ inline false
 status open
 
 \begin_layout Plain Layout
+\align center
+
 4.02 2.00 0.41 1.00 1.18 1.28 0.2 0.2
 \begin_inset Caption Standard
 
@@ -1440,7 +2067,11 @@ name "lis:Arquivo-de-texto3"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813562
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1466,11 +2097,14 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
- extrai os indicadores de ruptura (breakthrough) gerados pelo relatório executivo do simulador para a rocha avaliada pelo modelo LET.
+ extrai os indicadores de ruptura (
+\emph on
+breakthrough
+\emph default
+) gerados pelo relatório executivo do simulador para a rocha avaliada pelo modelo LET.
  
 \end_layout
 
@@ -1487,6 +2121,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-3.png
 	width 100text%
@@ -1504,7 +2139,11 @@ name "fig:Diagnóstico-numérico-do"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813585
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1535,12 +2174,29 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
  apresenta o painel da interface gráfica,
  evidenciando o formato singular em "S" da curva de fluxo fracionário gerada por este modelo empírico flexível.
+\change_inserted 643308733 1781816188
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781816207
+confira se os dados de entrada da figura estão corretos
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1552,6 +2208,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/resultado-3.png
 	lyxscale 50
@@ -1566,7 +2223,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Painel principal do simulador processando o escoamento governado pelas curvas de permeabilidade do modelo LET.
+Painel principal do simulador processando o escoamento governado pelas curvas de permeabilidade do modelo LET
+\change_deleted 643308733 1781813595
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Painel-principal-do"
@@ -1619,10 +2280,60 @@ Este cenário testa a resolução termodinâmica do software frente ao modelo de
 
 \begin_layout Standard
 As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pela SBMAC (2020).
- Os parâmetros aplicados à fase aquosa foram Aw = 3.21 e Bw = 0.86;
+ Os parâmetros aplicados à fase aquosa foram 
+\change_deleted 643308733 1781816310
+Aw = 3.21
+\change_inserted 643308733 1781816310
+
+\begin_inset Formula $Aw=3.21$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1781816314
+Bw = 0.86
+\change_inserted 643308733 1781816314
+
+\begin_inset Formula $Bw=0.86$
+\end_inset
+
+
+\change_unchanged
+;
  e para a fase oleica,
- Ao = 0.87 e Bo = 0.84.
- Os pontos de saturação irredutível e residual foram fixados em 0.20,
+ 
+\change_deleted 643308733 1781816319
+Ao = 0.87
+\change_inserted 643308733 1781816319
+
+\begin_inset Formula $Ao=0.87$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1781816325
+Bo = 0.84
+\change_inserted 643308733 1781816325
+
+\begin_inset Formula $Bo=0.84$
+\end_inset
+
+
+\change_unchanged
+.
+ Os pontos de saturação irredutível e residual foram fixados em 
+\change_deleted 643308733 1781816329
+0.20
+\change_inserted 643308733 1781816329
+
+\begin_inset Formula $0.20$
+\end_inset
+
+
+\change_unchanged
+,
  assegurando uma comparação simétrica de volume poroso móvel com os testes anteriores.
 \end_layout
 
@@ -1632,7 +2343,27 @@ Espera-se que o simulador compute as exponenciais respeitando as assíntotas do 
 \emph on
 crash
 \emph default
-) nas saturações críticas próximas a Swir e 1 - Sor.
+) nas saturações críticas próximas a 
+\change_deleted 643308733 1781816342
+Swir
+\change_inserted 643308733 1781816342
+
+\begin_inset Formula $Swir$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1781816349
+1 - Sor
+\change_inserted 643308733 1781816349
+
+\begin_inset Formula $1-Sor$
+\end_inset
+
+
+\change_unchanged
+.
  A integridade do método da tangente de Welge também será observada.
 \end_layout
 
@@ -1642,7 +2373,17 @@ O modelo de Chierici foi executado com sucesso e a rotina de segurança matemát
 clamping
 \emph default
 ") inserida no código-fonte evitou anomalias nos limites do domínio.
- Devido à natureza do decaimento exponencial rápido imposto pelo parâmetro Bw = 0.86,
+ Devido à natureza do decaimento exponencial rápido imposto pelo parâmetro 
+\change_deleted 643308733 1781816366
+Bw = 0.86
+\change_inserted 643308733 1781816366
+
+\begin_inset Formula $Bw=0.86$
+\end_inset
+
+
+\change_unchanged
+,
  a frente de avanço da água demonstrou um perfil de ruptura (
 \emph on
 breakthrough
@@ -1666,12 +2407,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
+\align center
+
 3.21 0.86 0.87 0.84 0.2 0.2 1.0 1.0
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Arquivo de texto,
- teste 4.
+ teste 4
+\change_deleted 643308733 1781813603
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "lis:Arquivo-de-texto-2"
@@ -1704,12 +2451,15 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
  demonstra as métricas de tempo e eficiência de deslocamento no momento da ruptura para o modelo exponencial.
+
+\change_deleted 643308733 1781816385
  
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1725,6 +2475,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/teste-4.png
 	width 100text%
@@ -1735,14 +2486,22 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultados analíticos do choque de Buckley-Leverett empregando o modelo de decaimento exponencial de Chierici
+Resultados analíticos do choque de 
+\emph on
+Buckley-Leverett
+\emph default
+ empregando o modelo de decaimento exponencial de Chierici
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Resultados-analíticos-do"
 
 \end_inset
 
+
+\change_deleted 643308733 1781813609
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1772,7 +2531,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -1783,6 +2541,44 @@ tuple "list"
 \end_inset
 
 ).
+\change_inserted 643308733 1781817790
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781817791
+você tem de adicionar um teste,
+ rodar os mesmos exemplos no linux usando os mesmos arquivos de entrada;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781817791
+a ideia é testar os arquivos de entrada;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781817791
+seria interessante colocar a informação de conformidade dos arquivos de entrada,
+ se podem ser UTF-8 e ISO-8859-1 ou apenas um formato;
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781817791
+normalmente acentos geram problemas
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1794,6 +2590,7 @@ sideways false
 status open
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Graphics
 	filename imagens/resulta-4.png
 	lyxscale 50
@@ -1808,7 +2605,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Painel de resultados da interface gráfica demonstrando a estabilidade computacional na interpolação do modelo de Chierici.
+Painel de resultados da interface gráfica demonstrando a estabilidade computacional na interpolação do modelo de Chierici
+\change_deleted 643308733 1781813618
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Painel-de-resultados"
