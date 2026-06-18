@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -8,6 +8,10 @@
 \begin_preamble
 \usepackage{pdflscape}
 \usepackage[alf]{abntex2cite}
+% Added by lyx2lyx
+% added by lyx2lyx for converted index entries
+\@ifundefined{textmu}
+ {\usepackage{textcomp}}{}
 \end_preamble
 \use_default_options true
 \master Mestre-V2.lyx
@@ -59,19 +63,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -94,7 +90,7 @@
 \papersides 1
 \paperpagestyle default
 \tablestyle default
-\tracking_changes false
+\tracking_changes true
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -103,7 +99,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -151,36 +147,42 @@ name "sec:AOO"
 \end_layout
 
 \begin_layout Standard
-A Análise Orientada a Objetos (AOO
-\begin_inset Nomenclature
-status open
 
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-AOO
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Análise Orientada a Objetos
-\end_layout
+\change_inserted 643308733 1781784087
+Neste capítulo,
+ apresenta-se a Análise Orientada a Objetos (AOO
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "AOO"
+description "Análise Orientada a Objetos"
+literal "false"
 
 \end_inset
 
-
+) do simulador educacional,
+ detalhando como as equações de Buckley-Leverett e as correlações de permeabilidade foram encapsuladas em classes e como esses objetos interagem para resolver o problema de fluxo fracionário.
+ 
 \end_layout
+
+\begin_layout Standard
+A A
+\change_deleted 643308733 1781784100
+nálise Orientada a Objetos (AOO
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "AOO"
+description "Análise Orientada a Objetos"
+literal "false"
 
 \end_inset
 
-) constitui uma etapa fundamental no desenvolvimento de software científico,
+) 
+\change_inserted 643308733 1781784102
+OO 
+\change_unchanged
+constitui uma etapa fundamental no desenvolvimento de software científico,
  pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica para uma estrutura computacional lógica e coesa.
  Segundo 
 \begin_inset CommandInset citation
@@ -200,10 +202,24 @@ literal "true"
 \begin_layout Standard
 O foco desta etapa é identificar o que o sistema deve fazer e quais elementos o compõem,
  independentemente de como eles serão implementados em código.
- Neste capítulo,
+ 
+\change_inserted 643308733 1781784022
+
+\end_layout
+
+\begin_layout Standard
+
+\change_deleted 643308733 1781784084
+Neste capítulo,
  apresenta-se a arquitetura do simulador educacional,
  detalhando como as equações de Buckley-Leverett e as correlações de permeabilidade foram encapsuladas em classes e como esses objetos interagem para resolver o problema de fluxo fracionário.
- A modelagem resultante busca garantir um sistema modular,
+ 
+\change_inserted 643308733 1781784079
+
+\end_layout
+
+\begin_layout Standard
+A modelagem resultante busca garantir um sistema modular,
  reutilizável e de fácil manutenção,
  alinhado às boas práticas da Engenharia de Software 
 \begin_inset CommandInset citation
@@ -214,6 +230,27 @@ literal "true"
 \end_inset
 
 .
+\change_inserted 643308733 1781784236
+
+\end_layout
+
+\begin_layout Description
+
+\change_inserted 643308733 1781784276
+Nota:
+ Detalhes da UML podem ser vistos aqui:
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.omg.org/uml/"
+target "https://www.omg.org/uml/"
+literal "false"
+
+\end_inset
+
+.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section
@@ -228,32 +265,15 @@ name "sec:Diagramas-de-classes"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1781784163
 O desenvolvimento do simulador foi fundamentado nos paradigmas da Programação Orientada a Objetos (POO
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-POO
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Programação Orientada a Objetos
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "POO"
+description "Programação Orientada a Objetos"
+literal "false"
 
 \end_inset
 
@@ -269,39 +289,19 @@ literal "true"
 \end_inset
 
 .
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
 Para a representação da estrutura estática do sistema,
  utilizou-se a notação UML
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-UML
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-\lang english
-Unified Modeling Language
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "UML"
+description "\\em{}Unified Modeling Language"
+literal "false"
 
 \end_inset
 
@@ -347,13 +347,65 @@ literal "true"
  Essa escolha arquitetural permite que o modelo matemático de permeabilidade (Corey,
  LET ou Chierici) seja alterado em tempo de execução através de polimorfismo,
  sem a necessidade de modificar o código fonte do simulador ou do solver numérico.
+\change_inserted 643308733 1781784349
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784398
+verifique se esta informação já não foi passada antes;
+ só repetimos informações fundamentais;
+ se repete demais fica chata e truncada a leitura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 643308733 1781784719
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784736
+o modelador luid importa código?
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784772
+dentro de CSimulador tem um atributo
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784764
+comprimento :
+ double ( tire o (
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset ERT
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 begin{landscape}
@@ -376,8 +428,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-classes.png
-	lyxscale 10
+	lyxscale 30
 	width 90page%
+	rotateAngle 90
 
 \end_inset
 
@@ -395,7 +448,7 @@ name "cap:Diagrama-de-classes"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -413,6 +466,7 @@ name "cap:Diagrama-de-classes"
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{landscape}
@@ -548,18 +602,18 @@ CWelge
 \family default
 \nospellcheck default
 )
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+
 \family typewriter
 \nospellcheck on
 CSolver
 \family default
 \nospellcheck default
 :
- 
-\end_layout
-
-\begin_deeper
-\begin_layout Description
-Implementa a lógica do Método das Características (MOC).
+ Implementa a lógica do Método das Características (MOC).
  É responsável por controlar o passo de tempo (
 \family typewriter
 \nospellcheck on
@@ -665,6 +719,25 @@ celulas
 ) e controla o tempo atual da simulação.
  Diferente de malhas eulerianas fixas,
  esta classe gerencia pontos que se movem no espaço.
+\change_inserted 643308733 1781785436
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781785514
+Se existe um algoritmo pouco usual que foi implementado adicione um apendice Algoritmos Inovadores e seções explicando cada algoritmo desenvolvido;
+ explicar a lógica numérica e depois detalhes de implementação
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Description
@@ -988,7 +1061,16 @@ literal "true"
  ,
  esses diagramas enfatizam a ordem temporal das mensagens trocadas entre os objetos,
  detalhando como o fluxo de controle passa de um componente para outro para realizar uma tarefa específica.
- No contexto deste simulador,
+ 
+\change_inserted 643308733 1781786073
+
+\end_layout
+
+\begin_layout Standard
+
+\shape italic
+\emph on
+No contexto deste simulador,
  os diagramas de sequência são essenciais para demonstrar como os eventos da interface gráfica (cliques do usuário) são convertidos em chamadas de métodos no núcleo numérico,
  evidenciando a orquestração entre o controlador (
 \family typewriter
@@ -1052,6 +1134,26 @@ nolink "false"
 
  apresenta o Diagrama de Sequência Geral,
  que ilustra o fluxo macroscópico de execução quando o usuário solicita a solução do problema de Buckley-Leverett.
+\change_inserted 643308733 1781786319
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781786377
+me esplique aqui no comentário o getCalculadora(),
+ pos se usa getCalculadora() provavemente quer usar ela diretamente na interface?
+ chamar calcularFW() na interface
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1066,7 +1168,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-geral.png
-	lyxscale 10
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1082,7 +1184,11 @@ name "cap:Diagrama-de-sequencia"
 
 \end_inset
 
+
+\change_deleted 643308733 1781741112
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1200,7 +1306,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-especifico-um.png
-	lyxscale 20
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1220,7 +1326,11 @@ name "fig:Diagrama-de-Sequência:um"
 
 \end_inset
 
+
+\change_deleted 643308733 1781741115
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1357,7 +1467,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-especifico-dois.png
-	lyxscale 20
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1377,7 +1487,11 @@ name "fig:Diagrama-de-Sequência:dois"
 
 \end_inset
 
+
+\change_deleted 643308733 1781741119
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1552,7 +1666,15 @@ literal "true"
 
 .
  Ele evidencia as conexões entre os elementos,
- oferecendo uma visão clara do acoplamento do sistema.
+ oferecendo uma visão 
+\change_deleted 643308733 1781789397
+clara
+\change_unchanged
+ do acoplamento do sistema
+\change_inserted 643308733 1781791642
+ como um todo e dos acoplamentos entre pares de objetos
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -1580,7 +1702,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-comunicacao.png
-	lyxscale 10
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1593,7 +1715,11 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de Comunicação:
- Fluxo hierárquico de execução.
+ Fluxo hierárquico de execução
+\change_deleted 643308733 1781741130
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-comunicação"
@@ -1774,7 +1900,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-estado.png
-	lyxscale 10
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1790,9 +1916,13 @@ Diagrama de Máquina de Estados da classe
 \family typewriter
 \nospellcheck on
 CSimulador
+\change_deleted 643308733 1781741125
+
 \family default
 \nospellcheck default
 .
+
+\change_unchanged
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1865,6 +1995,24 @@ executarSimulacao()
 .
  Neste estado,
  a interface é bloqueada para evitar condições de corrida.
+\change_inserted 643308733 1781792499
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781792522
+normalmente mudamos a imagem do mouse para o formato de ampulheta
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1955,7 +2103,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-atividades.png
-	lyxscale 10
+	lyxscale 30
 	width 100text%
 
 \end_inset
@@ -1968,7 +2116,11 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de Atividades:
- Algoritmo de avanço temporal com correção de Welge.
+ Algoritmo de avanço temporal com correção de Welge
+\change_deleted 643308733 1781741138
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

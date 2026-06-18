@@ -23,7 +23,7 @@ Software Educacional com Interface Interativa para Implementação Computacional
 
 ** TODO Fabiane, todos os termos quando apresentados pela 1x devem incluir simbolo[unidade] descricao
 
-** TODO Capítulo 0: Título e Resumo
+** TODO Capítulo 0: Título, Resumo, Introducao/escopo/objetivos/metodologia
 - [x] Título  - Deve espelhar o que foi feito
 
 - Software Educacional com Interface Interativa para Implementação Computacional do Método das Características - Solução Analítica de Buckley-Leverett
@@ -32,45 +32,45 @@ Software Educacional com Interface Interativa para Implementação Computacional
 
 - [x] Resumo  - Deve espelhar o que foi feito
 
-** TODO Capítulo 1: Introdução
-   - [ ] Verificar se o Escopo do Problema distingue claramente a atuação do engenheiro vs técnico [23].
-   - [ ] Confirmar se os Objetivos Específicos são mensuráveis e alcançáveis pelo software [24].
-   - [ ] Checar se a Metodologia cita o ciclo de vida de Pressman e as etapas do Prof. André Bueno [4, 25].
+- [ ] Verificar se o Escopo do Problema distingue claramente a atuação do engenheiro vs técnico [23].
+- [ ] Confirmar se os Objetivos Específicos são mensuráveis e alcançáveis pelo software [24].
+- [ ] Checar se a Metodologia cita o ciclo de vida de Pressman e as etapas do Prof. André Bueno [4, 25].
 
-** TODO Capítulo 2: Concepção
+** TODO Capítulo 1: Concepção
    - [ ] Validar a Tabela de Requisitos Funcionais (RF-01 a RF-11) contra o que o software realmente faz [6, 26-28].
    - [ ] Revisar Requisitos Não Funcionais: confirmar menção ao C++17, Qt 6 e QCustomPlot [29, 30].
    - [ ] Diagramas de Caso de Uso: verificar se a extensão da "Construção de Welge" está bem explicada [31].
 
-** TODO Capítulo 3: Elaboração (Fundamentação Teórica)
-   - [ ] Conferir a dedução da Equação do Fluxo Fracionário e a Lei de Darcy Generalizada [32, 33].
-   - [ ] Verificar se os parâmetros "default" (tensão interfacial, ângulo de contato) estão justificados pela literatura [34].
-   - [ ] Revisar a explicação do Método das Características e a Condição de Entropia [35-37].
+** TODO Capítulo 2: Elaboração (Fundamentação Teórica)
+- [ ] Conferir a dedução da Equação do Fluxo Fracionário e a Lei de Darcy Generalizada [32, 33].
+- [ ] Verificar se os parâmetros "default" (tensão interfacial, ângulo de contato) estão justificados pela literatura [34].
+- [ ] Revisar a explicação do Método das Características e a Condição de Entropia [35-37].
 
-** TODO Capítulo 4: AOO (Análise Orientada a Objeto)
+** TODO Capítulo 3: AOO (Análise Orientada a Objeto)
    - [ ] Conferir o Diagrama de Classes: a aplicação do padrão Strategy está clara? [38].
    - [ ] Dicionário de Classes: verificar se as responsabilidades de CSolver, CWelge e CSimulador estão precisas [8, 39].
    - [ ] Diagramas de Sequência: validar o fluxo do "Passo de Tempo" e "Verificação de Welge" [40, 41].
+   - [ ] Se existe um algoritmo pouco usual que foi implementado adicione um apendice Algoritmos Inovadores e seções explicando cada algoritmo desenvolvido; explicar a lógica numérica e depois detalhes de implementação
 
-** TODO Capítulo 5: Projeto
+** TODO Capítulo 4: Projeto
    - [ ] Revisar as decisões de Projeto do Sistema (Protocolos, Recursos, Controle) [42-48].
    - [ ] Validar a Tabela de Classificação do Sistema: conferir se as marcações [X] refletem a realidade [49-53].
    - [ ] Diagramas de Componentes e Implantação: verificar dependências das DLLs do Qt [54, 55].
 
-** TODO Capítulo 6: Ciclos de Planejamento e Detalhamento
+** TODO Capítulo 5: Ciclos de Planejamento e Detalhamento
    - [ ] Verificar se a evolução da Versão 1.0 (CLI) para a 2.3 (UX/UI) está bem documentada com prints [13, 56-58].
 
-** TODO Capítulo 7: Ciclos de Construção (Código-Fonte)
+** TODO Capítulo 6: Ciclos de Construção (Código-Fonte)
    - [ ] Realizar leitura técnica dos cabeçalhos (.h) e implementações (.cpp) [59-203].
    - [ ] Verificar se os comentários seguem o padrão Doxygen [204].
    - [ ] Checar a lógica da função `aplicarTemaUI` para o Modo Escuro [205, 206].
 
-** TODO Capítulo 8: Testes e Validação
+** TODO Capítulo 7: Testes e Validação
    - [ ] Teste 1 (Tabelado): Verificar se o ruído numérico ("ringing") foi explicado como quinas de classe C1 [207, 208].
    - [ ] Teste 2 (Gravidade): Validar se as simulações em aclive (30º) e declive (-30º) respondem à física [209, 210].
    - [ ] Testes 3 e 4 (LET/Chierici): Confirmar a estabilidade do motor matemático em curvas não-convencionais [210, 211].
 
-** TODO Capítulo 9: Documentação do Desenvolvedor
+** TODO Capítulo 8: Documentação do Desenvolvedor
    - [ ] Conferir se as dependências (Qt, QCustomPlot, g++) estão listadas corretamente [212].
    - [ ] Verificar o guia para geração de documentação via Doxygen [204].
 
@@ -93,4 +93,10 @@ Para a tensão interfacial entre a água de injeção (salmoura) e um óleo cru 
 ** TODO Comentário
 lembrar que a adimensionalização trás a vantagem de termos gráficos nas mesmas escalas, mas, ao mesmo tempo, elimina um pouco a percepção das dimensões físicas reais. Uma análise integral, idealmente considera também as escalas reais
 .
+** TODO Relatório
+*** A classe CRelatório deve incluir campos que permitem ao usuário adicionar comentários sobre o que foi feito, ou seja, comentar o relatório gerado automaticamente.
+*** Considerar a possibilidade de exportar no formato orgmode, um formato que permite edição em qualquer editor de texto e a geração do relatório em diversos formatos, incluindo pdf, latex, rtf, html, markdow...
+
+** TODO .
+** TODO .
 ** TODO .
