@@ -332,7 +332,15 @@ calcularDerivadaFw(double sw)
 \family default
 \nospellcheck default
 .
- A execução macroscópica é concentrada na API do resolvedor (
+ A execução macroscópica é concentrada na API do resolvedor 
+\change_inserted 643308733 1781817080
+
+\begin_inset Newline newline
+\end_inset
+
+
+\change_unchanged
+(
 \family typewriter
 \nospellcheck on
 CSolver
@@ -830,7 +838,12 @@ CWelge
  
 \family typewriter
 \nospellcheck on
-CCalculadoraFluxoFracionario
+CCalculadoraFluxo
+\change_inserted 643308733 1781817156
+\SpecialChar nobreakdash
+
+\change_unchanged
+Fracionario
 \family default
 \nospellcheck default
 ).
@@ -1088,7 +1101,12 @@ CCurvasPermeabilidadeCorey
  
 \family typewriter
 \nospellcheck on
-CCurvasPermeabilidadeLET
+CCurvasPermeabilidade
+\change_inserted 643308733 1781817197
+\SpecialChar nobreakdash
+
+\change_unchanged
+LET
 \family default
 \nospellcheck default
 ,
@@ -1971,7 +1989,11 @@ Análise de aspetos relativos à otimização do sistema:
 \begin_deeper
 \begin_layout Itemize
 Neste projeto,
- a principal otimização foi realizada na zona pós-breakthrough da curva de recuperação.
+ a principal otimização foi realizada na zona pós-
+\emph on
+breakthrough
+\emph default
+ da curva de recuperação.
  Como o Método das Características exige encontrar a saturação cuja derivada direcional seja igual ao inverso do tempo (
 \begin_inset Formula $f_{w}'(S_{w})=1/t_{D}$
 \end_inset
@@ -2070,13 +2092,17 @@ framework
 \end_layout
 
 \begin_layout Itemize
+
+\series bold
 Executável Principal (
 \family typewriter
 \nospellcheck on
 Simulador.exe
 \family default
 \nospellcheck default
-):
+)
+\series default
+:
  Componente central gerado pela compilação,
  que engloba a lógica de negócio,
  as instâncias da interface gráfica (
@@ -2096,7 +2122,11 @@ CSimulador
 \end_layout
 
 \begin_layout Itemize
-Subsistema de Interface e Gráficos:
+
+\series bold
+Subsistema de Interface e Gráficos
+\series default
+:
  Depende diretamente das bibliotecas dinâmicas do Qt (como 
 \family typewriter
 \nospellcheck on
@@ -2114,8 +2144,12 @@ Qt5Gui.dll
 \family typewriter
 \nospellcheck on
 Qt5Widgets.dll
+\change_inserted 643308733 1781817612
+
 \family default
 \nospellcheck default
+ no windows
+\change_unchanged
 ).
  Para a renderização visual das curvas,
  incorpora estaticamente a biblioteca de terceiros 
@@ -2129,7 +2163,11 @@ QCustomPlot
 \end_layout
 
 \begin_layout Itemize
-Subsistema de Geração de Relatórios:
+
+\series bold
+Subsistema de Geração de Relatórios
+\series default
+:
  Depende das bibliotecas nativas de impressão e formatação de texto do Qt (
 \family typewriter
 \nospellcheck on
@@ -2149,7 +2187,11 @@ Pixmaps
 \end_layout
 
 \begin_layout Itemize
-Subsistema Numérico e Lógico:
+
+\series bold
+Subsistema Numérico e Lógico
+\series default
+:
  Composto inteiramente por classes padrão da linguagem C++ (
 \family typewriter
 \nospellcheck on
@@ -2175,7 +2217,11 @@ CCalculadoraFluxoFracionario
 \end_layout
 
 \begin_layout Itemize
-Arquivos de Entrada e Saída (I/O):
+
+\series bold
+Arquivos de Entrada e Saída (I/O)
+\series default
+:
  O sistema possui dependências de arquivos de disco plano do tipo 
 \family typewriter
 \nospellcheck on
@@ -2243,7 +2289,11 @@ name "fig:Diagrama-de-componentes."
 
 \end_inset
 
+
+\change_deleted 643308733 1781817411
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2426,7 +2476,11 @@ name "fig:Diagrama-de-implantação."
 
 \end_inset
 
+
+\change_deleted 643308733 1781817435
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2573,7 +2627,11 @@ name "tab:Tabela-classificação-sistema."
 
 \end_inset
 
+
+\change_deleted 643308733 1781817440
 .
+\change_unchanged
+
 \end_layout
 
 \end_inset

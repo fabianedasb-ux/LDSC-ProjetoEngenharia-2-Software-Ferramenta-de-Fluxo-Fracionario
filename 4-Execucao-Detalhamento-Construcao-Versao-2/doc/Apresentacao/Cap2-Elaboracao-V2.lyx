@@ -4622,7 +4622,7 @@ status open
 	filename imagens/diagrama-de-pacotes.png
 	lyxscale 50
 	width 100text%
-	height 90dd
+	height 90theight%
 	keepAspectRatio
 
 \end_inset

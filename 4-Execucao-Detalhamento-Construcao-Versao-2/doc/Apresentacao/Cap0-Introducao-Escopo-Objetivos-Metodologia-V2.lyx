@@ -822,6 +822,7 @@ status open
 	lyxscale 50
 	width 100text%
 	height 100theight%
+	keepAspectRatio
 	special height=0.85\textheight
 
 \end_inset

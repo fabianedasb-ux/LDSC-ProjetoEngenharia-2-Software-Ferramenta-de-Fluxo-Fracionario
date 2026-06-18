@@ -429,7 +429,9 @@ status open
 \begin_inset Graphics
 	filename imagens/diagrama-de-classes.png
 	lyxscale 30
-	width 90page%
+	width 100page%
+	height 90theight%
+	keepAspectRatio
 	rotateAngle 90
 
 \end_inset
