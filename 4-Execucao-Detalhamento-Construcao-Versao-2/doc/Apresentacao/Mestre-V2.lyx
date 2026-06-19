@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -90,11 +90,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Index
 \shortcut idx
 \color #008000
@@ -126,6 +134,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -155,16 +164,6 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Página de rosto
-\end_layout
-
-\end_inset
-
-
 \begin_inset Note Note
 status collapsed
 
@@ -263,19 +262,17 @@ nome do orientador,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-Página de aprovação da monografia
-\end_layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0-Pagina-de-rosto.lyx"
+literal "false"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -392,36 +389,17 @@ sobre o título pretendido,
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
-Agradecimentos:
-\end_layout
-
-\begin_layout Plain Layout
-Agradeço a Cristiane e Jorge por terem me dado a vida e tudo que veio em seguida.
-\end_layout
-
-\begin_layout Plain Layout
-Agradeço ao Victor por ser meu farol,
- iluminando minha vida.
-\end_layout
-
-\begin_layout Plain Layout
-Agradeço ao Bueno pelo conhecimento compartilhado.
-\end_layout
-
-\begin_layout Plain Layout
-Agradeço ao universo pela existência.
-\end_layout
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0-Pagina-de-aprovacao.lyx"
+literal "false"
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
 \begin_inset Note Note
 status collapsed
 
@@ -483,6 +461,14 @@ instituição privada,
 \begin_layout Plain Layout
 Orientador.
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap0-Agradecimentos.lyx"
+literal "false"
 
 \end_inset
 
@@ -665,7 +651,6 @@ encoding "default"
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 appendix

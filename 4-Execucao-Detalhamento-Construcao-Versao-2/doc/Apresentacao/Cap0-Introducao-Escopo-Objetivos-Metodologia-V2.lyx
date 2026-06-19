@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,11 +62,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -98,7 +106,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -118,7 +126,7 @@ pageformat default
 status open
 
 \begin_layout Plain Layout
-Introdução 
+Introdução
 \end_layout
 
 \end_inset
@@ -128,17 +136,8 @@ Introdução
 
 \begin_layout Standard
 O presente trabalho de conclusão de curso propõe o desenvolvimento do Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de Buckley-Leverett.
- A concepção desta ferramenta tecnológica alinha-se às necessidades contemporâneas
-\change_deleted 643308733 1781731171
- 
-\change_inserted 643308733 1781731171
- do ensino
-\change_unchanged
- da Engenharia de Reservatórios,
+ A concepção desta ferramenta tecnológica alinha-se às necessidades contemporâneas do ensino da Engenharia de Reservatórios,
  fornecendo um suporte computacional robusto para o estudo de métodos de recuperação secundária.
- 
-\change_inserted 643308733 1781731192
-
 \end_layout
 
 \begin_layout Standard
@@ -150,10 +149,6 @@ literal "true"
 
 \end_inset
 
-
-\change_deleted 643308733 1781731179
- 
-\change_unchanged
 ,
  a injeção de água (
 \emph on
@@ -161,11 +156,69 @@ waterflooding
 \emph default
 ) permanece como a técnica mais difundida na indústria petrolífera mundial para a manutenção de pressão e otimização do varrido de óleo.
  Nesse cenário,
- a aplicação desenvolvida 
-\change_inserted 643308733 1781731230
-em C++/Qt 
-\change_unchanged
-utiliza o paradigma da Orientação a Objetos para simular e visualizar,
+ a aplicação desenvolvida em C++
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+C++
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Linguagem de programação orientada a objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+/Qt
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+Qt
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Framework
+\emph default
+ de desenvolvimento de interfaces gráficas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ utiliza o paradigma da Orientação a Objetos para simular e visualizar,
  de forma dinâmica,
  os fenômenos físicos que regem a competição entre fluidos no meio poroso,
  preenchendo uma lacuna importante entre a teoria abstrata e a prática de engenharia.
@@ -197,12 +250,31 @@ O acesso ao conceito ocorreu através de autores modernos como Lake,
 .
  Embora fundamental,
  a aplicação analítica dessa teoria exige a resolução de equações diferenciais parciais através do Método das Características (MOC
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "MOC"
-description "Método das Características"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+MOC
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Método das Características
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -213,18 +285,12 @@ literal "false"
  como a razão de mobilidade e a viscosidade dos fluidos —
  e visualize instantaneamente o impacto dessas variáveis na eficiência de recuperação,
  consolidando o aprendizado através da interatividade.
-\change_inserted 643308733 1781737227
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1781737233
 \begin_inset Newpage pagebreak
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -275,8 +341,6 @@ literal "true"
 ,
  o perfil do egresso deve contemplar a aptidão para projetar e modelar sistemas,
  habilidade esta que diferencia a atuação plena do engenheiro das atribuições técnicas operacionais.
-
-\change_inserted 643308733 1781731747
  A 
 \begin_inset CommandInset href
 LatexCommand href
@@ -287,8 +351,6 @@ literal "false"
 \end_inset
 
  estabelece explicitamente o desenvolvimento de conhecimentos e habilidades relacionados ao desenvolvimento de simuladores aplicados à Engenharia de Petróleo.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -330,12 +392,35 @@ literal "true"
 \begin_layout Standard
 Por outro lado,
  as ferramentas comerciais de simulação numérica disponíveis na indústria (como Eclipse ou CMG
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "CMG"
-description "\\em{}\\nospellcheck onComputer Modelling Group"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+CMG
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+\nospellcheck on
+\lang english
+Computer Modelling Group
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -376,39 +461,11 @@ literal "true"
  incluindo a especificação de requisitos,
  a modelagem matemática e algorítmica do Método das Características (MOC),
  a implementação do código-fonte utilizando o Qt
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "Qt"
-description "\\em{}Qt Framework"
-literal "false"
-
-\end_inset
-
-
 \emph on
  framework
 \emph default
-/C++
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "C++"
-description "\\em{}\\nospellcheck onLinguagem de programa\\c{c}\\~{a}o de alto n\\'{\\i}vel"
-literal "false"
-
-\end_inset
-
-
-\change_inserted 643308733 1781731924
-,
-
-\change_deleted 643308733 1781731924
- e
-\change_unchanged
- a validação dos resultados através da comparação com a teoria analítica
-\change_inserted 643308733 1781732021
-,
+/C++,
+ a validação dos resultados através da comparação com a teoria analítica,
  a documentação do software desenvolvido e seu armazenamento e disponibilização no 
 \begin_inset CommandInset href
 LatexCommand href
@@ -418,8 +475,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 .
 \end_layout
 
@@ -438,12 +493,33 @@ framework
 framework
 \emph default
  assegura a integridade da Interface Gráfica do Usuário (GUI 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "GUI"
-description "\\em{}Graphical User Interface"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+GUI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Graphical User Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -452,15 +528,11 @@ literal "false"
 Graphical User Interface
 \emph default
 ) em diferentes sistemas operacionais.
-
-\change_inserted 643308733 1781737242
  Garantindo assim alto desempenho,
  interface amigável e uso em múltiplas plataformas.
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1781737243
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -511,26 +583,6 @@ Desenvolver uma ferramenta computacional interativa para a análise do fluxo fra
 \end_deeper
 \begin_layout Itemize
 Objetivos específicos:
-\change_inserted 643308733 1781732123
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1781732167
-Fabiane mantenha o que fez;
- o que não foi feito jogue para o final das conclusoes,
- numa seção Sugestão para Trabalhos Futuros
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \begin_inset Separator latexpar
 \end_inset
 
@@ -560,15 +612,39 @@ Strategy
  para assegurar a flexibilidade e escalabilidade do código.
 \end_layout
 
+\begin_deeper
 \begin_layout Itemize
 Desenvolver a modelagem dinâmica do software,
  estruturando os algoritmos numéricos para o cálculo da curva de fluxo fracionário
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol "f_{w}"
-description "Fluxo fracion\\'{a}rio para \\'{a}gua (adimensional)"
-literal "true"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $f_{w}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Fluxo fracionário para água (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -576,21 +652,26 @@ literal "true"
 \begin_inset Formula $f_{w}$
 \end_inset
 
- ) e de sua derivada (
+) [adimensional] e de sua derivada (
 \begin_inset Formula $df_{w}/dS_{w}$
 \end_inset
 
 ) em relação à saturação.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 Implementar o método da construção da tangente de Welge para determinar a saturação da frente de choque (
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol "S_{wf}"
-description "Satura\\c{c}\\~{a}o de \\'{a}gua da frente de choque (adimensional, fração)"
-literal "true"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
 
 \end_inset
 
@@ -598,7 +679,26 @@ literal "true"
 \begin_inset Formula $S_{wf}$
 \end_inset
 
-) e a saturação média do reservatório.
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação de água da frente de choque (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) [adimensional] e a saturação média do reservatório.
 \end_layout
 
 \begin_layout Itemize
@@ -613,22 +713,14 @@ Construir a Interface Gráfica do Usuário (GUI) utilizando o Qt
 
 \begin_layout Itemize
 Simular cenários de injeção e validar a robustez da ferramenta através da análise de sensibilidade de parâmetros e comparação com a teoria clássica de Buckley-Leverett.
-\change_inserted 643308733 1781732225
-
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 643308733 1781732257
 Desenvolver o manual do usuário (instalação e uso).
-\change_unchanged
-
 \end_layout
 
 \end_deeper
 \begin_layout Standard
-
-\change_inserted 643308733 1781737249
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -678,10 +770,6 @@ literal "true"
 Para a operacionalização desses princípios,
  adotou-se a metodologia de projeto aplicada pelo Prof.
  André Bueno nas disciplinas de Introdução ao Projeto de Engenharia (
-\change_deleted 643308733 1781732315
-LEP01348
-\change_inserted 643308733 1781732315
-
 \begin_inset CommandInset href
 LatexCommand href
 name "LEP01348"
@@ -690,13 +778,7 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 ) e Projeto de Software Aplicado à Engenharia (
-\change_deleted 643308733 1781732346
-LEP01449
-\change_inserted 643308733 1781732346
-
 \begin_inset CommandInset href
 LatexCommand href
 name "LEP01449"
@@ -705,26 +787,39 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 ) da UENF
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color noneUENF\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
-description "Universidade Estadual do Norte Fluminense Darcy Ribeiro"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+UENF
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Universidade Estadual do Norte Fluminense Darcy Ribeiro
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
 .
  Esta abordagem adapta o modelo clássico de ciclo de vida em etapas sequenciais e iterativas,
- 
-\change_inserted 643308733 1781732407
-adicionando conceitos de metodologias ágeis,
- 
-\change_unchanged
-conforme ilustrado na Figura 
+ adicionando conceitos de metodologias ágeis,
+ conforme ilustrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Etapas para o desenvolvimento do software"
@@ -735,26 +830,8 @@ nolink "false"
 
 \end_inset
 
-
-\change_inserted 643308733 1781732418
 .
- Isto nos 
-\change_deleted 643308733 1781732412
-,
-
-\change_unchanged
- permiti
-\change_inserted 643308733 1781732426
-u
-\change_deleted 643308733 1781732425
-ndo
-\change_unchanged
- um refinamento progressivo da solução.
-
-\change_inserted 643308733 1781732431
- 
-\change_unchanged
-
+ Isto nos permitiu um refinamento progressivo da solução.
 \end_layout
 
 \begin_layout Standard
@@ -767,13 +844,7 @@ Ciclo de Concepção e Análise:
  Foca no entendimento do problema físico (fluxo fracionário),
  levantamento de requisitos e modelagem do domínio.
  Esta etapa utiliza a abstração da Orientação a Objetos para mapear as equações de Buckley-Leverett em classes computacionais,
- conforme as práticas de
-\change_deleted 643308733 1781732473
- C++
-\change_inserted 643308733 1781732474
-modelagem
-\change_unchanged
- descritas por 
+ conforme as práticas de modelagem descritas por 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "bueno2003"
@@ -844,10 +915,6 @@ name "fig:Etapas para o desenvolvimento do software"
 \end_inset
 
 
-\change_deleted 643308733 1781804964
-.
-\change_unchanged
-
 \end_layout
 
 \end_inset
@@ -858,6 +925,24 @@ name "fig:Etapas para o desenvolvimento do software"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ cumpre informar que as etapas de revisão textual,
+ otimização da estrutura de apresentação e auxílio na formatação de rotinas no editor LyX contaram com o suporte da inteligência artificial generativa Gemini (
+\begin_inset CommandInset href
+LatexCommand href
+name "Gemini"
+target "https://gemini.google.com"
+literal "false"
+
+\end_inset
+
+),
+ desenvolvida pelo Google.
+ O uso da ferramenta limitou-se ao refinamento da comunicação escrita e estruturação de documentos,
+ preservando a autoria integral e o desenvolvimento lógico-matemático do código-fonte e das análises analíticas por parte da autora.
 \end_layout
 
 \end_body

@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -10,18 +10,16 @@
 \usepackage {longtable}
 \usepackage {indentfirst}
 \renewenvironment{center}{\par\centering}{\par}
-
 % Comentar linhas abaixo se não estiver usando pacote abntex
 % ou se o pacote ainda não foi instalado.
 % neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
 %\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
 %\usepackage {helvet}
 %\renewcommand {\familydefault}{\sfdefault}
-
 % Para uso de listagens de código
 \usepackage{color}
 \definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
-% Informa que vai usar o pacote listings, 
+% Informa que vai usar o pacote listings,
 % disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
 \usepackage{listings}
 \end_preamble
@@ -37,7 +35,7 @@
 \font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
-\use_non_tex_fonts false
+\use_non_tex_fonts true
 \font_sc false
 \font_roman_osf false
 \font_sans_osf false
@@ -52,6 +50,7 @@
 \bibtex_command default
 \index_command default
 \float_placement h
+\float_alignment class
 \paperfontsize 12
 \spacing onehalf
 \use_hyperref false
@@ -74,11 +73,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -110,6 +117,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -131,7 +139,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{brown}{rgb}{0.59,
  0.29,
@@ -140,13 +147,11 @@ definecolor{brown}{rgb}{0.59,
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{lightgray}{rgb}{0.8,0.8,0.8} 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 definecolor{myred1}{rgb}{0.75,0.0,0} 
@@ -154,13 +159,11 @@ definecolor{myred1}{rgb}{0.75,0.0,0}
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{myred2}{rgb}{0.9,0.0,0} 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 definecolor{mygreen1}{rgb}{0,0.7,0} 
@@ -168,13 +171,11 @@ definecolor{mygreen1}{rgb}{0,0.7,0}
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{mygreen2}{rgb}{0,0.9,0} 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 definecolor{myblue1}{rgb}{0,0,0.7} 
@@ -182,13 +183,11 @@ definecolor{myblue1}{rgb}{0,0,0.7}
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{myblue2}{rgb}{0,0,0.9}
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 definecolor{mygray1}{rgb}{0.5,0.5,0.5} 
@@ -196,13 +195,11 @@ definecolor{mygray1}{rgb}{0.5,0.5,0.5}
 
 \begin_layout Plain Layout
 
-
 \backslash
 definecolor{mygray2}{rgb}{0.7,0.7,0.7} 
 \end_layout
 
 \begin_layout Plain Layout
-
 
 \backslash
 definecolor{mymauve}{rgb}{0.58,0,0.82}
@@ -230,28 +227,23 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 lstdefinestyle{C++}{
 \end_layout
 
 \begin_layout Plain Layout
-
 % tipo de bordas
 \end_layout
 
 \begin_layout Plain Layout
-
 frame=lines,
 \end_layout
 
 \begin_layout Plain Layout
-
 % tamanho da fonte e tipo de fonte
 \end_layout
 
 \begin_layout Plain Layout
-
 basicstyle=
 \backslash
 small
@@ -260,28 +252,23 @@ ttfamily,
 \end_layout
 
 \begin_layout Plain Layout
-
 % linguagem
 \end_layout
 
 \begin_layout Plain Layout
-
 language=[ISO]C++,
 \end_layout
 
 \begin_layout Plain Layout
-
 % numeração
 \end_layout
 
 \begin_layout Plain Layout
-
 numbers=left,
  
 \end_layout
 
 \begin_layout Plain Layout
-
 numberstyle=
 \backslash
 tiny,
@@ -289,57 +276,47 @@ tiny,
 \end_layout
 
 \begin_layout Plain Layout
-
 stepnumber=5,
  
 \end_layout
 
 \begin_layout Plain Layout
-
 numbersep=1pt,
  
 \end_layout
 
 \begin_layout Plain Layout
-
 firstnumber=1,
  
 \end_layout
 
 \begin_layout Plain Layout
-
 % formatação
 \end_layout
 
 \begin_layout Plain Layout
-
 breakatwhitespace=false,
 \end_layout
 
 \begin_layout Plain Layout
-
 breaklines=true,
 \end_layout
 
 \begin_layout Plain Layout
-
 extendedchars=true,
 \end_layout
 
 \begin_layout Plain Layout
-
 % cores
 \end_layout
 
 \begin_layout Plain Layout
-
 backgroundcolor=
 \backslash
 color{white},
 \end_layout
 
 \begin_layout Plain Layout
-
 commentstyle=
 \backslash
 color{lightgray},
@@ -347,37 +324,31 @@ color{lightgray},
 \end_layout
 
 \begin_layout Plain Layout
-
 keywordstyle=
 \backslash
 color{blue},
 \end_layout
 
 \begin_layout Plain Layout
-
 morekeywords={*,...},
  
 \end_layout
 
 \begin_layout Plain Layout
-
 stringstyle=
 \backslash
 color{mygreen1},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Palavras chave BLUE
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={ bool,
  char,
  char8_t,
@@ -470,24 +441,20 @@ emph={ bool,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={
 \backslash
 color{blue}},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Estruturas de controle e de repeticao RED
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[2] and,
  and_eq,
  bitand,
@@ -516,25 +483,21 @@ emph={[2] and,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[2]
 \backslash
 color{red}},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Arquivos de inclusao mymauve (note que alguns poderao aparecer com outra cor,
  ocorre quando nome arquivo igual ao nome da classe)
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[3] algorithm ,
  atomic ,backward ,bits ,bitset ,cassert ,ccomplex ,cctype ,cerrno ,cfenv ,cfloat ,chrono ,cinttypes ,ciso646 ,climits ,clocale ,cmath ,complex ,csetjmp ,csignal ,cstdalign ,cstdarg ,cstdbool ,cstddef ,cstdint ,cstdio ,cstdlib ,cstring ,ctgmath ,ctime ,cwchar ,cwctype ,debug ,decimal ,exception ,ext ,filesystem,
  fstream ,functional  ,initializer_list ,iomanip ,ios ,iosfwd ,iostream ,istream ,iterator ,limits ,locale ,numeric ,ostream ,profile ,random ,ratio ,regex ,scoped_allocator ,sstream ,stack ,stdexcept  ,streambuf ,system_error ,tr1 ,tr2 ,typeindex ,typeinfo ,type_traits ,utility ,x86_64-redhat-linux ,complex } ,
@@ -542,24 +505,20 @@ emph={[3] algorithm ,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[3]
 \backslash
 color{green}},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Strings VERDE2
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[4] string,
  string_view,
  wstring,
@@ -567,7 +526,6 @@ emph={[4] string,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[4]
 \backslash
 color{mygreen2}
@@ -576,17 +534,14 @@ bfseries},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Containers purple
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[5]  array,
  vector,
  deque,
@@ -606,7 +561,6 @@ emph={[5]  array,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[5]
 \backslash
 color{brown}
@@ -615,17 +569,14 @@ bfseries},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 %Algoritmos genericos VERMELHO2
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[6]  accumulate,
  find,
  max,
@@ -741,24 +692,20 @@ emph={[6]  accumulate,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[6]
 \backslash
 color{olive}},
 \end_layout
 
 \begin_layout Plain Layout
-
 %
 \end_layout
 
 \begin_layout Plain Layout
-
 % Processamento Paralelo Orange/laranja
 \end_layout
 
 \begin_layout Plain Layout
-
 emph={[7] thread,
  yield,
  get_id,
@@ -803,14 +750,12 @@ emph={[7] thread,
 \end_layout
 
 \begin_layout Plain Layout
-
 emphstyle={[7]
 \backslash
 color{mymauve}},
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -840,26 +785,22 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 lstdefinestyle{iC++}{ style=C++,
 \end_layout
 
 \begin_layout Plain Layout
-
 numbers=none,
  
 \end_layout
 
 \begin_layout Plain Layout
-
 backgroundcolor=
 \backslash
 color{white},
 \end_layout
 
 \begin_layout Plain Layout
-
 }
 \end_layout
 
@@ -880,7 +821,6 @@ Define estilo de saida gerada por programa executado
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 lstdefinestyle{out} {frame=lines,numbers=none,
@@ -919,7 +859,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 lstdefinestyle{italico} {frame=lines,numbers=none,
  caption=,
@@ -957,7 +896,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 lstdefinestyle{Gnuplot} {caption=,language=Gnuplot,breaklines=true,backgroundcolor=
 \backslash
@@ -989,7 +927,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 lstdefinestyle{Bash} {caption=,language=bash,numbers=none,breaklines=true,backgroundcolor=
 \backslash
@@ -1007,7 +944,6 @@ ttfamily}
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 lstdefinestyle{bash} {caption=,language=bash,numbers=none,breaklines=true,backgroundcolor=
@@ -1039,7 +975,6 @@ Define estilo de saida para arquivos Makefile
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 lstdefinestyle{make} {caption=,language=make,breaklines=true,backgroundcolor=

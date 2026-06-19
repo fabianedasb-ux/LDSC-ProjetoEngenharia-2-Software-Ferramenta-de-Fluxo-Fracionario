@@ -107,6 +107,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -224,64 +225,7 @@ full-field
 \emph default
 \lang brazilian
 ),
- o domínio deste software é delimitado à simulação analítica unidimensional (1D
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-1D
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Uma dimensão
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-).
+ o domínio deste software é delimitado à simulação analítica unidimensional (1D).
  O foco principal é a caracterização precisa do avanço da frente de saturação e a determinação da eficiência de recuperação secundária,
  servindo como uma ferramenta de apoio à decisão rápida e ao ensino de engenharia.
 \end_layout
@@ -335,7 +279,11 @@ Abreviaturas
 
 \end_inset
 
+
+\change_inserted 258712344 1781839607
 EDPs
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -424,7 +372,11 @@ Abreviaturas
 
 \end_inset
 
+
+\change_inserted 258712344 1781839612
 PVI
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -524,6 +476,10 @@ name "fig:perfil-sat"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -688,7 +644,7 @@ Grandeza Física
 \uwave off
 \noun off
 \color none
-Símbolo
+Símbolo 
 \end_layout
 
 \end_inset
@@ -1008,7 +964,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Vazão Volumétrica (m³/s)
+Vazão Volumétrica (
+\change_inserted 258712344 1781839729
+m³/s)
+\change_unchanged
+ 
 \end_layout
 
 \end_inset
@@ -1078,7 +1038,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Velocidade de Darcy (Superficial) (m/s)
+Velocidade de Darcy (Superficial) (
+\change_inserted 258712344 1781839743
+m/s)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1251,7 +1215,13 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Viscosidade Dinâmica(Pa.s)
+Viscosidade Dinâmica
+\change_inserted 258712344 1781839786
+(Pa.s)
+\change_deleted 258712344 1781839780
+) (
+\change_unchanged
+ 
 \end_layout
 
 \end_inset
@@ -1321,7 +1291,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Massa Específica (kg/m³)
+Massa Específica (
+\change_inserted 258712344 1781839803
+kg/m³)
+\change_unchanged
+ 
 \end_layout
 
 \end_inset
@@ -1391,7 +1365,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Pressão (Pa(N/m²)
+Pressão (
+\change_inserted 258712344 1781839836
+Pa(N/m²)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1461,7 +1439,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Tensão Interfacial (N/m)
+Tensão Interfacial (
+\change_inserted 258712344 1781839844
+N/m)
+\change_unchanged
+ 
 \end_layout
 
 \end_inset
@@ -1786,6 +1768,10 @@ name "tab:Sistema-de-unidades"
 
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
 \end_inset
 
 
@@ -1859,7 +1845,13 @@ Sob estas condições,
 
 ) em um sistema unidimensional inclinado são expressas pelas seguintes equações constitutivas,
  que consideram os efeitos viscosos,
- os efeitos gravitacionais e os gradientes de pressão atuantes em cada fase 
+ 
+\change_inserted 258712344 1781839912
+o
+\change_deleted 258712344 1781839912
+a
+\change_unchanged
+s efeitos gravitacionais e os gradientes de pressão atuantes em cada fase 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rosa2006"
@@ -1916,20 +1908,20 @@ Onde
 \end_inset
 
 ),
- definida como a vazão volumétrica por unidade de área transversal [
+ definida como a vazão volumétrica por unidade de área transversal (
 \begin_inset Formula $m/s$
 \end_inset
 
-].
+).
  O termo 
 \begin_inset Formula $k$
 \end_inset
 
- denota a permeabilidade absoluta do meio poroso [
+ denota a permeabilidade absoluta do meio poroso (
 \begin_inset Formula $m^{2}$
 \end_inset
 
-],
+),
  uma propriedade intrínseca da matriz rochosa,
  enquanto 
 \begin_inset Formula $k_{ri}$
@@ -1939,7 +1931,7 @@ Onde
 \begin_inset Formula $i$
 \end_inset
 
- [adimensional].
+ (adimensional).
 \end_layout
 
 \begin_layout Standard
@@ -1947,19 +1939,19 @@ As propriedades físicas dos fluidos são representadas pela viscosidade dinâmi
 \begin_inset Formula $\mu_{i}$
 \end_inset
 
- [
+ (
 \begin_inset Formula $Pa\cdot s$
 \end_inset
 
-] e pela massa específica 
+) e pela massa específica 
 \begin_inset Formula $\rho_{i}$
 \end_inset
 
- [
+ (
 \begin_inset Formula $Kg/m^{3}$
 \end_inset
 
-].
+).
  O termo 
 \begin_inset Formula $\frac{\partial P_{i}}{\partial x}$
 \end_inset
@@ -1975,11 +1967,11 @@ As propriedades físicas dos fluidos são representadas pela viscosidade dinâmi
 \begin_inset Formula $g$
 \end_inset
 
- é a aceleração da gravidade [m²/s] e 
+ é a aceleração da gravidade e 
 \begin_inset Formula $\alpha$
 \end_inset
 
- é o ângulo de inclinação do reservatório [radianos],
+ é o ângulo de inclinação do reservatório,
  convencionado como positivo para o fluxo no sentido ascendente ( 
 \emph on
 updip
@@ -1998,7 +1990,11 @@ Para a resolução do sistema de equações de fluxo,
 \begin_inset Formula $P_{c}$
 \end_inset
 
- 
+
+\change_inserted 258712344 1781840758
+ [Pa]
+\change_unchanged
+
 \begin_inset Nomenclature
 status open
 
@@ -2045,7 +2041,7 @@ Pa(N/m²)
 
 \end_inset
 
-) [Pa] como a diferença de pressão existente na interface entre dois fluidos imiscíveis em um meio poroso.
+) como a diferença de pressão existente na interface entre dois fluidos imiscíveis em um meio poroso.
 \end_layout
 
 \begin_layout Standard
@@ -2095,7 +2091,11 @@ Adicionalmente,
 \begin_inset Formula $u_{t}$
 \end_inset
 
-) [m/s] como a soma algébrica das velocidades superficiais de cada fase.
+
+\change_inserted 258712344 1781840762
+ [m/s]
+\change_unchanged
+) como a soma algébrica das velocidades superficiais de cada fase.
  Considerando a premissa de incompressibilidade dos fluidos e da rocha,
  a velocidade total permanece constante ao longo da direção do fluxo unidimensional:
 \end_layout
@@ -2254,6 +2254,10 @@ Neste ponto,
 \begin_inset Formula $\Delta\rho$
 \end_inset
 
+
+\change_inserted 258712344 1781840799
+ [kg/m³]
+\change_unchanged
 ,
  como a diferença entre a densidade da fase molhante (água) e a fase não-molhante (óleo):
 \end_layout
@@ -2328,6 +2332,10 @@ A fim de simplificar a manipulação algébrica e isolar a velocidade da água (
 \begin_inset Formula $u_{w}$
 \end_inset
 
+
+\change_inserted 258712344 1781840853
+ [m/s]
+\change_unchanged
 ),
  multiplica-se toda a equação pela mobilidade da fase oleosa,
  definida pelo termo 
@@ -2539,7 +2547,11 @@ A influência das forças capilares na frente de avanço é regida pelo Número 
 \begin_inset Formula $N_{RL}$
 \end_inset
 
- 
+
+\change_inserted 258712344 1781840875
+[adimensional] 
+\change_unchanged
+
 \begin_inset Nomenclature
 status open
 
@@ -2572,7 +2584,7 @@ Número de Rapoport-Leas (adimensional)
 
 \end_inset
 
-) [adimensional].
+).
  Conforme estabelecido no trabalho seminal de 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -2594,15 +2606,27 @@ literal "true"
 \begin_inset Formula $L$
 \end_inset
 
-) [m],
+
+\change_inserted 258712344 1781840920
+ [m]
+\change_unchanged
+),
  a velocidade de fluxo (
 \begin_inset Formula $u$
 \end_inset
 
+
+\change_inserted 258712344 1781840928
+ [m/s]
+\change_unchanged
 ) e a viscosidade (
 \begin_inset Formula $\mu$
 \end_inset
 
+
+\change_inserted 258712344 1781840947
+ [Pa.s]
+\change_unchanged
 ),
  acima do qual o escoamento torna-se estabilizado e dominado pelas forças viscosas,
  tornando a dispersão capilar desprezível na escala de análise.
@@ -2637,6 +2661,25 @@ Onde:
 \end_inset
 
  é o comprimento característico do sistema (ou a distância percorrida pela frente);
+\change_deleted 258712344 1781840906
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Fabiane,
+ todos os termos quando apresentados pela 1x devem incluir simbolo[unidade] descricao
+\change_inserted 258712344 1781832265
+ 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Itemize
@@ -2650,6 +2693,10 @@ Onde:
 \begin_inset Formula $\mu_{w}$
 \end_inset
 
+
+\change_inserted 258712344 1781840968
+[Pa.s]
+\change_unchanged
  é a viscosidade da fase deslocante (água);
 \end_layout
 
@@ -2657,13 +2704,21 @@ Onde:
 \begin_inset Formula $\sigma$
 \end_inset
 
- [N/m] é a tensão interfacial entre os fluidos (água e óleo);
+
+\change_inserted 258712344 1781841077
+ [N/m]
+\change_unchanged
+ é a tensão interfacial entre os fluidos (água e óleo);
 \end_layout
 
 \begin_layout Itemize
 \begin_inset Formula $k$
 \end_inset
 
+
+\change_inserted 258712344 1781841083
+[m²]
+\change_unchanged
  é a permeabilidade absoluta;
 \end_layout
 
@@ -2678,7 +2733,11 @@ Onde:
 \begin_inset Formula $k^{0}_{rw}$
 \end_inset
 
- é a permeabilidade relativa da água no ponto final (
+
+\change_inserted 258712344 1781841060
+[adimensional] 
+\change_unchanged
+é a permeabilidade relativa da água no ponto final (
 \emph on
 endpoint
 \emph default
@@ -2695,39 +2754,17 @@ endpoint
 \begin_inset Formula $cos\theta$
 \end_inset
 
- é o cosseno do ângulo de contato de molhabilidade rocha-fluido (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-
+ é o cosseno do ângulo
+\change_inserted 258712344 1781841014
+ 
 \begin_inset Formula $\theta$
 \end_inset
 
 
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-)
+\change_unchanged
+ 
+\change_inserted 258712344 1781841037
+
 \family roman
 \series medium
 \shape up
@@ -2741,7 +2778,7 @@ endpoint
 \uwave off
 \noun off
 \color none
- [radianos]
+[radianos]
 \family default
 \series default
 \shape default
@@ -2755,7 +2792,9 @@ endpoint
 \uwave default
 \noun default
 \color inherit
-.
+ 
+\change_unchanged
+de contato de molhabilidade rocha-fluido.
 \end_layout
 
 \begin_layout Standard
@@ -2822,7 +2861,11 @@ Nesta formulação geral,
 \begin_inset Formula $S_{w}$
 \end_inset
 
-) [adimensional] ,
+
+\change_inserted 258712344 1781841156
+ [adimensional]
+\change_unchanged
+),
  dado que as permeabilidades relativas (
 \begin_inset Formula $k_{rw}$
 \end_inset
@@ -2855,15 +2898,23 @@ Razão de mobilidade no ponto final (
 \end_inset
 
 
+\change_inserted 258712344 1781841489
+
 \begin_inset Nomenclature
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1781841459
 \begin_inset Argument 1
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1781841456
 Símbolos
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -2878,20 +2929,28 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted 258712344 1781841479
+
 \series bold
 Razão de mobilidade no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
+\change_unchanged
 
 \end_layout
 
 \end_inset
 
-) [adimensional]:
 
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+[adimensional]
+\change_unchanged
+)
 \series default
+:
  Expressa a razão de mobilidade total calculada fixando as permeabilidades relativas máximas de cada fase:
 \begin_inset Formula 
 \[
@@ -2943,9 +3002,13 @@ Número de gravidade no ponto final (adimensional)
 
 \end_inset
 
-) [adimensional]:
 
+\change_inserted 258712344 1781841491
+[adimensional]
+\change_unchanged
+)
 \series default
+:
  Define a magnitude máxima relativa entre as forças gravitacionais e as viscosas,
  calibrada pela permeabilidade de ponto final do óleo:
 \begin_inset Formula 
@@ -3086,6 +3149,10 @@ status open
 
 \begin_layout Plain Layout
 trabalho futuro permitir o uso de analises PVT
+\change_inserted 258712344 1781832260
+ 
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -3172,6 +3239,7 @@ literal "false"
  Desta forma,
  o desenvolvimento do software resguarda o rigor físico e a integridade da análise dimensional,
  evitando o uso de constantes arbitrárias ocultas no código-fonte.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3331,7 +3399,11 @@ Esta característica "estática" impõe uma limitação:
 \begin_inset Formula $t$
 \end_inset
 
- [segundos]) explícita.
+
+\change_inserted 258712344 1781841625
+ [segundos]
+\change_unchanged
+) explícita.
  Portanto,
  ela não é capaz de prever a posição dos fluidos no reservatório ou quando a água atingirá o poço produtor.
  Para transformar essa "fotografia" das forças atuantes em um "filme" do deslocamento de fluidos,
@@ -3370,11 +3442,19 @@ Considere-se um elemento diferencial de volume no reservatório,
 \begin_inset Formula $A$
 \end_inset
 
- [m²] constante e espessura 
+
+\change_inserted 258712344 1781841709
+ [m²]
+\change_unchanged
+ constante e espessura 
 \begin_inset Formula $\Delta x$
 \end_inset
 
- [m],
+
+\change_inserted 258712344 1781841714
+ [m]
+\change_unchanged
+,
  conforme ilustrado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -3463,11 +3543,19 @@ Matematicamente,
 \begin_inset Formula $\Delta t$
 \end_inset
 
- [segundos],
+
+\change_inserted 258712344 1781841724
+[segundos]
+\change_unchanged
+,
  o balanço pode ser escrito em termos de massa específica (
 \begin_inset Formula $\rho_{w}$
 \end_inset
 
+
+\change_inserted 258712344 1781841732
+[kg/m³]
+\change_unchanged
 ),
  velocidade superficial (
 \begin_inset Formula $u_{w}$
@@ -3782,7 +3870,11 @@ Define-se a distância adimensional (
 \begin_inset Formula $x_{D}$
 \end_inset
 
-) [adimensional] como a fração do comprimento total do sistema linear (
+
+\change_inserted 258712344 1781841770
+ [adimensional]
+\change_unchanged
+) como a fração do comprimento total do sistema linear (
 \begin_inset Formula $L$
 \end_inset
 
@@ -3816,7 +3908,11 @@ Analogamente,
 \begin_inset Formula $t_{D}$
 \end_inset
 
-) [adimensional] em termos de Volumes de Poros Injetados (PVI).
+
+\change_inserted 258712344 1781841781
+[adimensional]
+\change_unchanged
+) em termos de Volumes de Poros Injetados (PVI).
  Esta variável representa a razão entre o volume acumulado de fluido injetado e o volume poroso total do sistema 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4354,7 +4450,11 @@ Velocidade da frente de choque (adimensional)
 
 \end_inset
 
-) [adimensional] deve ser intermediária entre a velocidade da saturação imediatamente atrás do choque (
+
+\change_inserted 258712344 1781841837
+[adimensional]
+\change_unchanged
+) deve ser intermediária entre a velocidade da saturação imediatamente atrás do choque (
 \begin_inset Formula $v_{L}$
 \end_inset
 
@@ -4391,7 +4491,11 @@ Velocidade da saturação imediatamente atrás do choque (adimensional)
 
 \end_inset
 
-) [adimensional] e a velocidade da saturação imediatamente à frente dele (
+
+\change_inserted 258712344 1781841838
+[adimensional]
+\change_unchanged
+) e a velocidade da saturação imediatamente à frente dele (
 \begin_inset Formula $v_{R}$
 \end_inset
 
@@ -4428,7 +4532,11 @@ Velocidade da saturação imediatamente à frente do choque (adimensional)
 
 \end_inset
 
-) [adimensional] :
+
+\change_inserted 258712344 1781841840
+[adimensional]
+\change_unchanged
+):
 \end_layout
 
 \begin_layout Standard
@@ -4472,44 +4580,11 @@ A aplicação deste critério resulta na decomposição do perfil de saturação
 Onda de Choque
 \series default
 :
- Uma frente abrupta onde a saturação salta instantaneamente de um valor inicial (geralmente a Saturação de água inicial 
+ Uma frente abrupta onde a saturação salta instantaneamente de um valor inicial (geralmente 
 \begin_inset Formula $S_{wi}$
 \end_inset
 
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{wi}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água inicial (adimencional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- [adimensional]) para um valor de frente (
+) para um valor de frente (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
@@ -4533,12 +4608,7 @@ Onda de Rarefação
 \begin_inset Formula $1-S_{or}$
 \end_inset
 
-,
- onde a Saturação de óleo residual é 
-\begin_inset Formula $S_{or}$
-\end_inset
-
- [adimensional]).
+).
  Nesta região,
  as características divergem ("se espalham") sem se cruzar,
  permitindo que a solução contínua do MOC permaneça válida.
@@ -4617,54 +4687,6 @@ Onde:
 
 :
  Saturação de água inicial do reservatório (estado à frente do choque).
- Para os cenários clássicos de deslocamento secundário modelados por este simulador,
- assume-se que o reservatório encontra-se no estado de saturação de água irredutível (
-\begin_inset Formula $S_{wi}=S_{wirr}$
-\end_inset
-
-)
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{wirr}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água irredutível
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- [adimensional] ,
- premissa padrão adotada para o início do processo de injeção de água 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "craig1971,rosa2006"
-literal "false"
-
-\end_inset
-
-.
 \end_layout
 
 \begin_layout Itemize
@@ -4785,7 +4807,7 @@ Além de localizar a frente de avanço,
 \begin_inset Formula $N_{p}$
 \end_inset
 
-) [adimensional] 
+)
 \begin_inset Nomenclature
 status open
 
@@ -4830,40 +4852,7 @@ Integrando o perfil de saturação desde a entrada (
 \begin_inset Formula $x_{Df}$
 \end_inset
 
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $x_{Df}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Posição adimensional da frente de choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-) [adimensional],
+),
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4876,7 +4865,7 @@ literal "true"
 \begin_inset Formula $\bar{S}_{w}$
 \end_inset
 
-) [adimensional] na zona varrida é dada pela interceptação da reta tangente com a linha de topo do gráfico (
+) na zona varrida é dada pela interceptação da reta tangente com a linha de topo do gráfico (
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
@@ -4973,11 +4962,7 @@ A área sob o perfil de saturação representa fisicamente o volume de água que
  consequentemente,
  devido à incompressibilidade,
  o volume de óleo que foi deslocado.
- A eficiência de deslocamento (
-\begin_inset Formula $E_{D}$
-\end_inset
-
-) [adimensional] microscópico é definida como a fração do volume de óleo originalmente existente que foi efetivamente recuperada num dado instante 
+ A eficiência de deslocamento microscópico é definida como a fração do volume de óleo originalmente existente que foi efetivamente recuperada num dado instante 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rosa2006"
@@ -5061,40 +5046,7 @@ Breakthrough
 \begin_inset Formula $S_{w,out}$
 \end_inset
 
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{w,out}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água na face de saída do reservatório (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-) [adimensional] aumenta progressivamente.
+) aumenta progressivamente.
  De acordo com o Método das Características aplicado a 
 \begin_inset Formula $x_{D}=1$
 \end_inset
@@ -5165,7 +5117,7 @@ Um dos parâmetros mais críticos fornecidos pela solução analítica é o temp
 \begin_inset Formula $t_{bt}$
 \end_inset
 
-) [adimensional],
+),
  que marca o instante exato em que a frente de choque alcança o poço produtor (
 \begin_inset Formula $x_{D}=1$
 \end_inset
@@ -5609,6 +5561,10 @@ name "fig:Diagrama-de-Pacotes"
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \end_layout
 

@@ -108,6 +108,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -210,6 +211,7 @@ literal "true"
 \begin_layout Standard
 O foco desta etapa é identificar o que o sistema deve fazer e quais elementos o compõem,
  independentemente de como eles serão implementados em código.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -254,7 +256,42 @@ name "sec:Diagramas-de-classes"
 
 \begin_layout Standard
 Para a representação da estrutura estática do sistema,
- utilizou-se a notação UML,
+ utilizou-se a notação UML
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+UML
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ (
+\emph on
+\lang english
+Unified Modeling Language
+\emph default
+\lang brazilian
+),
  resultando no Diagrama de Classes apresentado na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -274,6 +311,76 @@ View
 \end_layout
 
 \begin_layout Standard
+Um aspecto central da implementação é a aplicação do Padrão de Projeto 
+\emph on
+Strategy
+\emph default
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "gamma1994design"
+literal "true"
+
+\end_inset
+
+ para o cálculo das permeabilidades relativas.
+ Essa escolha arquitetural permite que o modelo matemático de permeabilidade (Corey,
+ LET ou Chierici) seja alterado em tempo de execução através de polimorfismo,
+ sem a necessidade de modificar o código fonte do simulador ou do solver numérico.
+\change_inserted 643308733 1781784349
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784398
+verifique se esta informação já não foi passada antes;
+ só repetimos informações fundamentais;
+ se repete demais fica chata e truncada a leitura
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 643308733 1781784719
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784736
+o modelador luid importa código?
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784772
+dentro de CSimulador tem um atributo
+\end_layout
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781784764
+comprimento :
+ double ( tire o (
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset ERT
 status open
 
@@ -345,6 +452,24 @@ end{landscape}
 
 \end_inset
 
+
+\change_inserted 643308733 1781824144
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781824177
+clicar na imagem e definir girar grafico 90 dá no mesmo
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
 
 \end_layout
 
@@ -590,6 +715,25 @@ celulas
 ) e controla o tempo atual da simulação.
  Diferente de malhas eulerianas fixas,
  esta classe gerencia pontos que se movem no espaço.
+\change_inserted 643308733 1781785436
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781785514
+Se existe um algoritmo pouco usual que foi implementado adicione um apendice Algoritmos Inovadores e seções explicando cada algoritmo desenvolvido;
+ explicar a lógica numérica e depois detalhes de implementação
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Description
@@ -913,6 +1057,9 @@ literal "true"
  ,
  esses diagramas enfatizam a ordem temporal das mensagens trocadas entre os objetos,
  detalhando como o fluxo de controle passa de um componente para outro para realizar uma tarefa específica.
+ 
+\change_inserted 643308733 1781786073
+
 \end_layout
 
 \begin_layout Standard
@@ -973,55 +1120,6 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-É importante ressaltar e justificar a presença da chamada 
-\family typewriter
-\nospellcheck on
-getCalculadora()
-\family default
-\nospellcheck default
- por parte da interface gráfica neste fluxo inicial.
- Embora o processamento dinâmico da simulação (o avanço do MOC e a correção de Welge) seja estritamente orquestrado pelo 
-\family typewriter
-\nospellcheck on
-CSimulador
-\family default
-\nospellcheck default
- de forma encapsulada,
- a 
-\family typewriter
-\nospellcheck on
-MainWindow
-\family default
-\nospellcheck default
- necessita acessar a 
-\family typewriter
-\nospellcheck on
-CCalculadoraFluxoFracionario
-\family default
-\nospellcheck default
- em modo de leitura (
-\emph on
-read-only
-\emph default
-).
- Esse acesso direto,
- autorizado pelo controlador,
- ocorre exclusivamente para coletar dados diagnósticos pontuais (como a validação do Número de Rapoport-Leas) e para realizar a plotagem visual independente da curva estática de fluxo fracionário (
-\begin_inset Formula $f_{w}\times S_{w}$
-\end_inset
-
-).
- Tal decisão arquitetural preserva a coesão do controlador,
- evitando a centralização excessiva de responsabilidades e eliminando a necessidade de o 
-\family typewriter
-\nospellcheck on
-CSimulador
-\family default
-\nospellcheck default
- atuar como um intermediário redundante na transferência de vetores de plotagem gráfica para a camada de apresentação.
-\end_layout
-
-\begin_layout Standard
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1032,6 +1130,26 @@ nolink "false"
 
  apresenta o Diagrama de Sequência Geral,
  que ilustra o fluxo macroscópico de execução quando o usuário solicita a solução do problema de Buckley-Leverett.
+\change_inserted 643308733 1781786319
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781786377
+me esplique aqui no comentário o getCalculadora(),
+ pos se usa getCalculadora() provavemente quer usar ela diretamente na interface?
+ chamar calcularFW() na interface
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1062,6 +1180,10 @@ name "cap:Diagrama-de-sequencia"
 
 \end_inset
 
+
+\change_deleted 643308733 1781741112
+.
+\change_unchanged
 
 \end_layout
 
@@ -1201,10 +1323,18 @@ name "fig:Diagrama-de-Sequência:um"
 \end_inset
 
 
+\change_deleted 643308733 1781741115
+.
+\change_unchanged
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1354,10 +1484,18 @@ name "fig:Diagrama-de-Sequência:dois"
 \end_inset
 
 
+\change_deleted 643308733 1781741119
+.
+\change_unchanged
+
 \end_layout
 
 \end_inset
 
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -1509,7 +1647,7 @@ name "par:Diagrama-de-colaboração:"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1524,7 +1662,15 @@ literal "true"
 
 .
  Ele evidencia as conexões entre os elementos,
- oferecendo uma visão do acoplamento do sistema como um todo e dos acoplamentos entre pares de objetos.
+ oferecendo uma visão 
+\change_deleted 643308733 1781789397
+clara
+\change_unchanged
+ do acoplamento do sistema
+\change_inserted 643308733 1781791642
+ como um todo e dos acoplamentos entre pares de objetos
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -1566,6 +1712,10 @@ status open
 \begin_layout Plain Layout
 Diagrama de Comunicação:
  Fluxo hierárquico de execução
+\change_deleted 643308733 1781741130
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-comunicação"
@@ -1582,7 +1732,7 @@ name "cap:Diagrama-de-comunicação"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1762,8 +1912,13 @@ Diagrama de Máquina de Estados da classe
 \family typewriter
 \nospellcheck on
 CSimulador
+\change_deleted 643308733 1781741125
+
 \family default
 \nospellcheck default
+.
+
+\change_unchanged
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -1781,7 +1936,7 @@ name "cap:Diagrama-de-maquina-de-estado"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1836,6 +1991,24 @@ executarSimulacao()
 .
  Neste estado,
  a interface é bloqueada para evitar condições de corrida.
+\change_inserted 643308733 1781792499
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1781792522
+normalmente mudamos a imagem do mouse para o formato de ampulheta
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Enumerate
@@ -1940,6 +2113,10 @@ status open
 \begin_layout Plain Layout
 Diagrama de Atividades:
  Algoritmo de avanço temporal com correção de Welge
+\change_deleted 643308733 1781741138
+.
+\change_unchanged
+
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-atividades"

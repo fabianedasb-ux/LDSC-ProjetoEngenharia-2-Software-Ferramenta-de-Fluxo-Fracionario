@@ -14,7 +14,7 @@
 \fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
-\font_typewriter "default" "Agency FB"
+\font_typewriter "default" "default"
 \font_math "auto" "auto"
 \font_default_family default
 \use_non_tex_fonts true
@@ -31,17 +31,17 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
-\float_placement h
+\float_placement class
 \float_alignment class
-\paperfontsize 12
-\spacing onehalf
+\paperfontsize default
+\spacing single
 \use_hyperref false
-\papersize a4
-\use_geometry true
+\papersize default
+\use_geometry false
 \use_package amsmath 1
 \use_package amssymb 1
 \use_package cancel 1
-\use_package esint 0
+\use_package esint 1
 \use_package mathdots 1
 \use_package mathtools 1
 \use_package mhchem 1
@@ -50,13 +50,13 @@
 \use_package undertilde 1
 \cite_engine basic
 \cite_engine_type default
-\biblio_style apalike
+\biblio_style plain
 \use_bibtopic false
 \use_indices false
 \paperorientation portrait
 \suppress_date false
 \justification default
-\crossref_package prettyref
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
@@ -68,18 +68,12 @@
 \table_odd_row_color default
 \table_even_row_color default
 \table_alt_row_colors_start 1
-\index Índice
+\index Index
 \shortcut idx
 \color #008000
 \end_index
-\paperwidth 210mm
-\paperheight 297mm
-\leftmargin 30mm
-\topmargin 25mm
-\rightmargin 20mm
-\bottommargin 20mm
-\secnumdepth 2
-\tocdepth 2
+\secnumdepth 3
+\tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
 \is_math_indent 0
@@ -87,13 +81,13 @@
 \quotes_style english
 \dynamic_quotes 0
 \papercolumns 1
-\papersides 2
+\papersides 1
 \paperpagestyle default
 \tablestyle default
 \tracking_changes false
 \output_changes false
 \change_bars false
-\postpone_fragile_content false
+\postpone_fragile_content true
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
@@ -122,24 +116,13 @@ thispagestyle{empty}
 \begin_layout Standard
 \align center
 
-\size large
-UNIVERSIDADE ESTADUAL DO NORTE FLUMINENSE DARCY RIBEIRO - UENF
-\begin_inset Newline newline
-\end_inset
-
-LABORATÓRIO DE ENGENHARIA E EXPLORAÇÃO DE PETRÓLEO - LENEP
-\begin_inset Newline newline
-\end_inset
-
-CENTRO DE CIÊNCIA E TECNOLOGIA - CCT
+\series bold
+SOFTWARE EDUCACIONAL INTERATIVO PARA SIMULAÇÃO DO MÉTODO DAS CARACTERÍSTICAS:
+ SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
 \end_layout
 
 \begin_layout Standard
 \align center
-
-\end_layout
-
-\begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
 
@@ -148,27 +131,42 @@ CENTRO DE CIÊNCIA E TECNOLOGIA - CCT
 
 \begin_layout Standard
 \align center
-
-\size large
-SOFTWARE EDUCACIONAL COM INTERFACE INTERATIVA PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS - SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
 FABIANE DA SILVA BARROS
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 2.5cm
+\align center
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "8cm"
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "0.4pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "default"
+backgroundcolor "none"
+status open
+
+\begin_layout Plain Layout
+Projeto de Engenharia apresentado ao Centro de Ciência e Tecnologia da Universidade Estadual do Norte Fluminense Darcy Ribeiro,
+ como parte das exigências para obtenção do título de Engenheira de Exploração e Produção de Petróleo.
+\end_layout
+
 \end_inset
 
 
@@ -178,11 +176,26 @@ FABIANE DA SILVA BARROS
 \align center
 
 \size large
-MACAÉ - RJ
-\begin_inset Newline newline
+Orientador:
+ Prof.
+ André Duarte Bueno
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
 \end_inset
 
-ABRIL - 2026
+
+\end_layout
+
+\begin_layout Standard
+\align center
+MACAÉ – RJ
+\end_layout
+
+\begin_layout Standard
+\align center
+JUNHO - 2026
 \end_layout
 
 \end_body

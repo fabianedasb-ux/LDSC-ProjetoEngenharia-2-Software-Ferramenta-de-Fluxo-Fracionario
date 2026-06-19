@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -77,11 +77,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -113,7 +121,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -126,10 +134,6 @@ name "chap:Projeto-do-Sistema"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
@@ -183,12 +187,31 @@ name "sec:Projeto-do-sistema"
 Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
  o qual envolve etapas como a definição dos protocolos,
  da interface API
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "API"
-description "Interface de Programação de Aplicações"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+API
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Interface de Programação de Aplicações
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -333,13 +356,9 @@ calcularDerivadaFw(double sw)
 \nospellcheck default
 .
  A execução macroscópica é concentrada na API do resolvedor 
-\change_inserted 643308733 1781817080
-
 \begin_inset Newline newline
 \end_inset
 
-
-\change_unchanged
 (
 \family typewriter
 \nospellcheck on
@@ -373,12 +392,33 @@ Neste projeto,
  o software utiliza dois formatos distintos para a entrada e saída de dados.
  Para a importação de dados externos associados ao modelo de permeabilidade relativa tabelada,
  o sistema faz a leitura de arquivos de texto plano com codificação ASCII
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "ASCII"
-description "\\em{}American Standard Code for Information Interchange"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+ASCII
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+American Standard Code for Information Interchange
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -444,22 +484,62 @@ Identificação e alocação dos recursos globais,
 \begin_layout Itemize
 Neste projeto,
  os recursos globais referem-se à memória RAM
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "RAM"
-description "\\em{}Random-access memory"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RAM
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Random-access memory
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
  de curta duração e ao ciclo de processamento da CPU
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "CPU"
-description "Unidade central de processamento"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+CPU
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Unidade central de processamento
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -510,11 +590,7 @@ Buckley-Leverett,
  Sendo assim,
  identificou-se a total desnecessidade do acoplamento de sistemas de bancos de dados relacionais (como SQLite ou PostgreSQL) ou não-relacionais,
  simplificando a arquitetura e eliminando gargalos de escrita e leitura em disco.
- 
-\change_inserted 643308733 1781804015
-Versões futuras do simulador poderão considerar o uso de SQLite para o armazenamento de simulações padrões usadas por exemplo em sala de aula.
-\change_unchanged
-
+ Versões futuras do simulador poderão considerar o uso de SQLite para o armazenamento de simulações padrões usadas por exemplo em sala de aula.
 \end_layout
 
 \end_deeper
@@ -532,12 +608,33 @@ Neste projeto,
  não há necessidade de infraestruturas corporativas de armazenamento de massa,
  tais como servidores de arquivos dedicados,
  redes de armazenamento (SAN
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "SAN"
-description "\\em{}Storage Area Network"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SAN
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Storage Area Network
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -657,25 +754,7 @@ pós-breakthrough
 \end_inset
 
 ),
- eliminando a necessidade de algoritmos iterativos de busca e reduzindo o tempo de resposta computacional para a escala de microssegundos.
-\change_inserted 643308733 1781804162
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1781804178
-este algoritmo específico poderia ser detalhado em apendice;
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ eliminando a necessidade de algoritmos iterativos de busca e reduzindo o tempo de resposta computacional para a escala de microssegundos
 \end_layout
 
 \end_deeper
@@ -798,12 +877,33 @@ Neste projeto,
 Model-View-Controller
 \emph default
 )
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "MVC"
-description "\\em{}Model-View-Controller"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+MVC
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Model-View-Controller
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -838,11 +938,7 @@ CWelge
  
 \family typewriter
 \nospellcheck on
-CCalculadoraFluxo
-\change_inserted 643308733 1781817156
-\SpecialChar nobreakdash
-
-\change_unchanged
+CCalculadoraFluxo\SpecialChar nobreakdash
 Fracionario
 \family default
 \nospellcheck default
@@ -941,8 +1037,6 @@ Pixmaps
 \nospellcheck default
 ),
  recurso essencial para a alimentação automática do nosso módulo de relatórios.
-
-\change_inserted 643308733 1781804429
  Maiores detalhes da biblioteca acesse 
 \begin_inset CommandInset href
 LatexCommand href
@@ -953,19 +1047,38 @@ literal "false"
 \end_inset
 
 ,
-\change_unchanged
-
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "GDI"
-description "\\em{}Graphics Device Interface"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+GDI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Graphics Device Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -987,26 +1100,43 @@ Graphics Device Interface
  Afastou-se o uso de APIs nativas de baixo nível do sistema operacional (como a GDI clássica do Windows) para garantir que toda a renderização visual,
  folhas de estilo customizadas (QSS para cantos arredondados,
  fontes personalizadas Segoe UI e modos claro/escuro) e gerenciadores de layout (layouts responsivos) operem de forma agnóstica e integrada à plataforma.
-
-\change_inserted 643308733 1781804498
  A biblioteca Qt é multiplataforma,
  funciona nos três principais sistemas operacionais,
  a saber,
  Windows,
  GNU/Linux e Mac OS X.
-\change_unchanged
-
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
 Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "IDE"
-description "\\em{}Integrated Development Environment"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+IDE
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Integrated Development Environment
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1041,8 +1171,6 @@ mainwindow.ui
 \family default
 \nospellcheck default
 ).
-
-\change_inserted 643308733 1781804543
  Maiores detalhes acesse 
 \begin_inset CommandInset href
 LatexCommand href
@@ -1052,8 +1180,6 @@ literal "false"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1101,11 +1227,7 @@ CCurvasPermeabilidadeCorey
  
 \family typewriter
 \nospellcheck on
-CCurvasPermeabilidade
-\change_inserted 643308733 1781817197
-\SpecialChar nobreakdash
-
-\change_unchanged
+CCurvasPermeabilidade\SpecialChar nobreakdash
 LET
 \family default
 \nospellcheck default
@@ -1126,13 +1248,9 @@ CCurvasPermeabilidadeTabelada
  O simulador atua como o contexto,
  alterando dinamicamente o algoritmo de permeabilidade em tempo de execução com base na escolha do usuário na interface,
  sem que o motor de cálculo precise conhecer os detalhes de implementação de cada modelo matemático.
-\change_inserted 643308733 1781804585
-
 \end_layout
 
 \begin_layout Itemize
-
-\change_inserted 643308733 1781804833
 O padrão arquitetural MVC definiu a estrutura inicial do projeto.
  Uma descrição do MVC é disponibilizada no site 
 \begin_inset CommandInset href
@@ -1144,12 +1262,67 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \end_deeper
 \end_deeper
+\begin_layout Subsection
+Padrão de Entrada de Dados (Sistema Internacional)
+\end_layout
+
+\begin_layout Standard
+Uma diretriz fundamental estabelecida no projeto do sistema é a padronização das unidades de medida.
+ Para garantir a coerência termodinâmica do motor matemático de cálculo e evitar falhas de escala nas equações de transporte,
+ definiu-se arquiteturalmente que todos os dados devem ser entrados pelo usuário estritamente no Sistema Internacional de Unidades (SI).
+\end_layout
+
+\begin_layout Standard
+Dessa forma,
+ não há rotinas de conversão interna ou fatores empíricos de correção embutidos para as propriedades de rocha e fluido.
+ Parâmetros geométricos como comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+) e área (
+\begin_inset Formula $A$
+\end_inset
+
+) devem ser inseridos em metros (m) e metros quadrados (m²).
+ De igual modo,
+ propriedades petrofísicas e viscosidades comumente tratadas na indústria em unidades de campo (como permeabilidade em miliDarcys e viscosidade em centiPoise) devem ser obrigatoriamente convertidas de forma prévia pelo usuário e inseridas na interface do software em suas grandezas equivalentes no SI,
+ ou seja,
+ em metros quadrados (
+\begin_inset Formula $m^{2}$
+\end_inset
+
+) e Pascal-segundo (
+\begin_inset Formula $Pa\cdot s$
+\end_inset
+
+).
+ Esta exigência garante a integridade dimensional absoluta da simulação e a correta avaliação de critérios adimensionais,
+ como o Número de Rapoport-Leas.
+\end_layout
+
+\begin_layout Standard
+A única exceção operacional a esta regra de entrada na interface gráfica diz respeito ao ângulo de inclinação estrutural (
+\begin_inset Formula $\alpha$
+\end_inset
+
+).
+ Visando a conveniência e a ergonomia de uso,
+ o formulário de entrada permite a inserção direta do ângulo em graus.
+ Contudo,
+ o controlador aciona uma rotina interna na classe 
+\family typewriter
+\nospellcheck on
+CCalculadoraFluxoFracionario
+\family default
+\nospellcheck default
+ que executa a conversão automática deste valor para radianos de forma encapsulada antes de qualquer processamento algébrico,
+ preservando integralmente a homogeneidade do Sistema Internacional no núcleo matemático.
+\end_layout
+
 \begin_layout Section
 Projeto orientado a objeto – POO
 \begin_inset Index idx
@@ -1193,7 +1366,6 @@ O projeto orientado a objeto é a etapa posterior ao projeto do sistema.
  sistema operacional e linguagem de programação de software).
  Passa pelo maior detalhamento do funcionamento do software,
  acrescentando atributos e métodos que envolvem a solução de problemas específicos não identificados durante a fase puramente conceitual.
- 
 \end_layout
 
 \begin_layout Standard
@@ -1379,24 +1551,6 @@ name "subsec:Efeito-do-projeto-no-modelo-dinamico"
 \end_inset
 
 
-\change_inserted 643308733 1781807356
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 643308733 1781807359
-parei aqui
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -1461,12 +1615,33 @@ MainWindow
 \nospellcheck default
 ,
  que gere a transição visual das folhas de estilo (QSS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "QSS"
-description "Qt \\em{}Style Sheets"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+QSS
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Qt 
+\emph on
+Style Sheets
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1580,7 +1755,7 @@ Em função da plataforma escolhida,
 \begin_deeper
 \begin_layout Itemize
 Neste projeto,
- os métodos de acesso a ficheiros foram completamente alterados para utilizar as caixas de diálogo nativas do sistema operativo através da classe 
+ os métodos de acesso a arquivos foram completamente alterados para utilizar as caixas de diálogo nativas do sistema operacional através da classe 
 \family typewriter
 \nospellcheck on
 QFileDialog
@@ -1656,12 +1831,33 @@ loops
 \end_deeper
 \begin_layout Itemize
 Algoritmos complexos podem ser subdivididos e otimizados utilizando STL
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "STL"
-description "\\em{}Standard Template Library\\em{}"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+STL
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Standard Template Library
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1718,12 +1914,33 @@ Os métodos da classes estão a dar resposta às responsabilidades da classe?
 \begin_layout Itemize
 Neste projeto,
  reviu-se o Princípio da Responsabilidade Única (SRP
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "SRP"
-description "\\em{}Single Responsibility Principle"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SRP
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Single Responsibility Principle
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1918,7 +2135,7 @@ Neste projeto,
 \emph on
 new
 \emph default
-) na instanciação do simulador e libertadas (
+) na instanciação do simulador e liberadas (
 \emph on
 delete
 \emph default
@@ -2023,7 +2240,7 @@ max_ed
 \family default
 \nospellcheck default
  gerado num mapa de estados de eficiência temporal),
- descartando ciclos computacionais repetitivos que desenhariam "quebras" irreais (degraus) no gráfico da eficiência de deslocamento aquando do cálculo da transição abrupta da frente de choque.
+ descartando ciclos computacionais repetitivos que desenhariam "quebras" irreais (degraus) no gráfico da eficiência de deslocamento durante do cálculo da transição abrupta da frente de choque.
  A ordem de execução garante sempre que a extração em formato imagem (
 \family typewriter
 \nospellcheck on
@@ -2067,12 +2284,33 @@ name "sec:Diagrama-de-componentes"
 O diagrama de componentes mostra a forma como os componentes do software se relacionam e suas dependências arquiteturais estruturais.
  Inclui itens como bibliotecas estáticas,
  bibliotecas dinâmicas (DLLs
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "DLLs"
-description "\\em{}Dynamic Link Library"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+DLLs
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\emph on
+Dynamic Link Library
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2130,27 +2368,27 @@ Subsistema de Interface e Gráficos
  Depende diretamente das bibliotecas dinâmicas do Qt (como 
 \family typewriter
 \nospellcheck on
-Qt5Core.dll
+Qt6Core.dll
 \family default
 \nospellcheck default
 ,
  
 \family typewriter
 \nospellcheck on
-Qt5Gui.dll
+Qt6Gui.dll
 \family default
 \nospellcheck default
  e 
 \family typewriter
 \nospellcheck on
-Qt5Widgets.dll
-\change_inserted 643308733 1781817612
-
+Qt6Widgets.dll
 \family default
 \nospellcheck default
- no windows
-\change_unchanged
-).
+ no 
+\emph on
+Windows
+\emph default
+)).
  Para a renderização visual das curvas,
  incorpora estaticamente a biblioteca de terceiros 
 \family typewriter
@@ -2171,7 +2409,7 @@ Subsistema de Geração de Relatórios
  Depende das bibliotecas nativas de impressão e formatação de texto do Qt (
 \family typewriter
 \nospellcheck on
-Qt5PrintSupport.dll
+Qt6PrintSupport.dll
 \family default
 \nospellcheck default
 ),
@@ -2289,10 +2527,6 @@ name "fig:Diagrama-de-componentes."
 
 \end_inset
 
-
-\change_deleted 643308733 1781817411
-.
-\change_unchanged
 
 \end_layout
 
@@ -2418,31 +2652,18 @@ HDD/SSD
 
 \begin_layout Standard
 Veja na Figura 
-\begin_inset ERT
-status collapsed
-
-\begin_layout Plain Layout
-
-
-\backslash
-ref{cap:Diagrama-de-implanta
-\backslash
-c{c}
-\backslash
-~{a}o.},
- 
-\backslash
-ref{fig:Diagrama-de-implanta
-\backslash
-c{c}
-\backslash
-~{a}o.}
-\end_layout
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-implantação."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
 
 \end_inset
 
  o de diagrama de implantação.
- 
 \end_layout
 
 \begin_layout Standard
@@ -2476,10 +2697,6 @@ name "fig:Diagrama-de-implantação."
 
 \end_inset
 
-
-\change_deleted 643308733 1781817435
-.
-\change_unchanged
 
 \end_layout
 
@@ -2545,17 +2762,21 @@ Strategy
 
 \begin_layout Itemize
 Testes lógicos:
- Validação da plotagem contínua da Curva de Fluxo Fracionário ($f_w$).
+ Validação da plotagem contínua da Curva de Fluxo Fracionário (
+\begin_inset Formula $f_{w}$
+\end_inset
+
+).
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-v2.1 - Motor Matemático e Física do Deslocamento
+v2.2 - Motor Matemático e Física do Deslocamento
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Implementação da lógica sequencial do Método das Características (MOC) e malha discreta.
+Implementação dSa lógica sequencial do Método das Características (MOC) e malha discreta.
 \end_layout
 
 \begin_layout Itemize
@@ -2627,10 +2848,6 @@ name "tab:Tabela-classificação-sistema."
 
 \end_inset
 
-
-\change_deleted 643308733 1781817440
-.
-\change_unchanged
 
 \end_layout
 
@@ -2747,7 +2964,7 @@ Modelagem UML:
 \size footnotesize
 [X] básica 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2763,7 +2980,7 @@ Diagramas de caso de uso,
 
 [X] intermediária 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2776,7 +2993,7 @@ Diagramas de máquina de estado,
 
 [ ] avançada
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -2911,7 +3128,7 @@ status collapsed
 \end_inset
 
 ou [ ] não-determinístico;
- [ ] exato ou [X] aproximado
+ [X] exato ou [ ] aproximado
 \begin_inset Note Note
 status collapsed
 
@@ -2978,7 +3195,7 @@ concorrências:
 
 \size footnotesize
 paradigma:
- [X] dividir para conquistar
+ [ ] dividir para conquistar
 \begin_inset Note Note
 status collapsed
 
@@ -3028,7 +3245,7 @@ status collapsed
 
 \end_inset
 
- [ ] transformação/ redução
+ [X] transformação/ redução
 \begin_inset Note Note
 status collapsed
 
@@ -3149,7 +3366,7 @@ Software:
 \size footnotesize
 [ ] de base
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 
@@ -3216,7 +3433,7 @@ Suporte a manutenção do computador (utilitários).
 
  [X] aplicados
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3240,7 +3457,7 @@ São os demais softwares,
 
  [ ] de cunho geral
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 
@@ -3282,7 +3499,7 @@ Gerenciador de arquivos na rede (ex:
 
  [X] específicos para determinada área
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 
@@ -3322,7 +3539,7 @@ Com uso de IA - Inteligência Artificial.
 
  [X] educativo [X] científico
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3392,7 +3609,7 @@ interrupções/assembler
 otimização:
  [ ] serial não otimizado
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3412,7 +3629,7 @@ status collapsed
 
  [X] serial otimizado
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3436,7 +3653,7 @@ Neste caso houve preocupação com desempenho,
 
  [ ] concorrente
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3462,7 +3679,7 @@ threads
 
  [ ] paralelo
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3490,7 +3707,7 @@ threads
 
  [ ] vetorial
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -3545,7 +3762,7 @@ clock
 
 \size footnotesize
 interface do usuário:
- [ ] kernel numérico [ ] linha de comando [ ] modo texto [X] híbrida (texto e saídas gráficas) [ ] modo gráfico (ex:
+ [ ] kernel numérico [ ] linha de comando [ ] modo texto [ ] híbrida (texto e saídas gráficas) [X] modo gráfico (ex:
  Qt) [ ] navegador
 \end_layout
 
@@ -3738,7 +3955,7 @@ Bibliotecas de C++:
 \emph on
 streams
 \emph default
-) [X] cmath [X] 
+) [X] cmath [ ] 
 \emph on
 filesystem 
 \emph default
@@ -3789,11 +4006,11 @@ CGnuplot
 \family typewriter
 QCustomPlot 
 \family default
-[ ] 
+[X] 
 \family typewriter
 Qt diálogos
 \family default
- [ ] QT Janelas/menus/BT______
+ [X] QT Janelas/menus/BT______
 \end_layout
 
 \end_inset
@@ -3929,7 +4146,7 @@ Disciplinas correlacionadas
 \size footnotesize
 [ ] estatística
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 
@@ -3966,12 +4183,12 @@ status collapsed
 
  [X] cálculo numérico 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Itemize
 
 \size footnotesize
-[ ] Básico:
+[X] Básico:
  erros,
  solver de função (iteração de ponto fixo,
  método das cordas,
@@ -4006,13 +4223,13 @@ spline
 \end_deeper
 \end_inset
 
- [X]
+ [ ]
 \family typewriter
  
 \family default
 modelamento numérico 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 

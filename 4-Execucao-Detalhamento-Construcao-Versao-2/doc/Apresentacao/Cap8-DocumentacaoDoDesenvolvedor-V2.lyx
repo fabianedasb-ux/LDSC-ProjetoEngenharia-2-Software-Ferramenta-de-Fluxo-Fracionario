@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -73,11 +73,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -109,17 +117,13 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
 
 \begin_layout Chapter
 Documentação para o Desenvolvedor
-\end_layout
-
-\begin_layout Standard
-
 \end_layout
 
 \begin_layout Standard
@@ -147,8 +151,6 @@ Compilador C++
 :
  É necessário um compilador com suporte nativo ao padrão C++11 ou superior.
  Recomenda-se o compilador g++ da coleção GNU (MinGW no Windows ou GCC no GNU/Linux).
-
-\change_inserted 643308733 1781819502
  Site:
  
 \begin_inset CommandInset href
@@ -159,8 +161,6 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -206,8 +206,6 @@ Widgets
 PrintSupport
 \emph default
  (este último essencial para a geração do relatório em PDF nativo).
-
-\change_inserted 643308733 1781819609
  Site:
  
 \begin_inset CommandInset href
@@ -218,8 +216,6 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -230,10 +226,14 @@ Biblioteca QCustomPlot
 :
  Utilizada para a renderização vetorial bidimensional da curva de fluxo fracionário,
  perfil de saturação e eficiência.
- Os arquivos de cabeçalho (qcustomplot.h) e implementação (qcustomplot.cpp) já estão acoplados e devem permanecer no diretório fonte (src/View ou similar).
+ Os arquivos de cabeçalho (qcustomplot.h) e implementação (qcustomplot.cpp) já estão acoplados e devem permanecer no diretório fonte (
+\family typewriter
+\nospellcheck on
+src/View
+\family default
+\nospellcheck default
+ ou similar).
  O uso do QCustomPlot elimina a necessidade de instalação de softwares externos de plotagem na máquina do desenvolvedor.
-
-\change_inserted 643308733 1781819607
  Site:
  
 \begin_inset CommandInset href
@@ -244,8 +244,6 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -255,8 +253,6 @@ Sistema de Controle de Versão
 \series default
 :
  Recomenda-se o uso do Git para gerenciar as alterações no código e rastrear evoluções implementadas nas correlações de permeabilidade relativa.
-
-\change_inserted 643308733 1781819638
  Site:
  
 \begin_inset CommandInset href
@@ -267,8 +263,6 @@ literal "false"
 \end_inset
 
 .
-\change_unchanged
-
 \end_layout
 
 \begin_layout Section
@@ -300,7 +294,8 @@ nolink "false"
 
 \end_inset
 
- e 
+,
+ 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:doxygen-2"
@@ -312,6 +307,18 @@ nolink "false"
 \end_inset
 
 ,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:doxygen-3,fig:doxygen-4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
  provê uma visão hierárquica do sistema,
  essencial para entender a abstração polimórfica utilizada na estratégia (
 \emph on
@@ -320,24 +327,36 @@ Strategy
 ) de cálculo de permeabilidades.
  Abaixo são apresentados exemplos das saídas geradas automaticamente a partir do código-fonte,
  evidenciando as relações de herança e as descrições teóricas dos métodos.
-\change_inserted 643308733 1781821742
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1781821857
-A grande vantagem do uso de javadoc e doxygem esta no fato de que a documentação pode ser gerada em diversos formatos,
+A grande vantagem do uso de 
+\family typewriter
+\nospellcheck on
+javadoc
+\family default
+\nospellcheck default
+ e 
+\family typewriter
+\nospellcheck on
+doxygem
+\family default
+\nospellcheck default
+ esta no fato de que a documentação pode ser gerada em diversos formatos,
  incluindo,
- latex,
+ 
+\family typewriter
+\nospellcheck on
+latex,
  html,
  rtf,
- pdf.
+ pdf
+\family default
+\nospellcheck default
+.
  Além disso a documentação gerada inclui dezenas de imagens (diagramas UML) e links cruzados entre imagens,
  comentários e até arquivos de código.
  Isto facilita navegar pela documentação e encontrar a informação desejada.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
@@ -361,23 +380,13 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Página 
-\change_deleted 643308733 1781821489
-inicial
-\change_inserted 643308733 1781821504
-Class Hirrarchy
-\change_unchanged
- da documentação técnica do sistema gerada via Doxygen
+Página Class Hirrarchy da documentação técnica do sistema gerada via Doxygen
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:doxygen-1"
 
 \end_inset
 
-
-\change_deleted 643308733 1781820623
-.
-\change_unchanged
 
 \end_layout
 
@@ -419,19 +428,14 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Detalhe da documentação de classe
-\change_inserted 643308733 1781821573
- CSimulador,
- funções membro públicas
-\change_deleted 643308733 1781821552
+Detalhe da documentação de classe 
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
 ,
- evidenciando a renderização das equações de 
-\emph on
-Buckley-Leverett
-\emph default
-.
-\change_unchanged
-
+ funções membro públicas
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:doxygen-2"
@@ -453,13 +457,9 @@ name "fig:doxygen-2"
 \end_inset
 
 
-\change_inserted 643308733 1781821474
-
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 643308733 1781821477
 \begin_inset Float figure
 placement document
 alignment document
@@ -469,8 +469,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 643308733 1781821476
 \begin_inset Graphics
 	filename imagens/doxygen-3.png
 	lyxscale 50
@@ -482,14 +480,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1781821476
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1781821618
-Detalhe da documentação de classe CSimulador,
+Detalhe da documentação de classe 
+\family typewriter
+\nospellcheck on
+CSimulador
+\family default
+\nospellcheck default
+,
  note que doxygen gera diagramas UML
 \begin_inset CommandInset label
 LatexCommand label
@@ -517,8 +517,6 @@ status open
 
 \begin_layout Plain Layout
 \align center
-
-\change_inserted 643308733 1781821477
 \begin_inset Graphics
 	filename imagens/doxygen-4.png
 	lyxscale 50
@@ -530,14 +528,16 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1781821477
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1781821719
-Detalhe da documentação de classe ICurvasPermeabilidade,
+Detalhe da documentação de classe 
+\family typewriter
+\nospellcheck on
+ICurvasPermeabilidade
+\family default
+\nospellcheck default
+,
  note a hierarquia de classes
 \begin_inset CommandInset label
 LatexCommand label
@@ -555,8 +555,6 @@ name "fig:doxygen-4"
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
