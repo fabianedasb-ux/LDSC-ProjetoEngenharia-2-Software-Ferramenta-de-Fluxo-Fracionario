@@ -919,12 +919,12 @@
      <rect>
       <x>350</x>
       <y>90</y>
-      <width>181</width>
+      <width>221</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Densidade do Óleo(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Massa específica do Óleo(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leDensOleo">
@@ -945,12 +945,12 @@
      <rect>
       <x>350</x>
       <y>120</y>
-      <width>171</width>
+      <width>221</width>
       <height>24</height>
      </rect>
     </property>
     <property name="text">
-     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Densidade da água(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3 &lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Massa específica da água(kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3 &lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="leDensAgua">

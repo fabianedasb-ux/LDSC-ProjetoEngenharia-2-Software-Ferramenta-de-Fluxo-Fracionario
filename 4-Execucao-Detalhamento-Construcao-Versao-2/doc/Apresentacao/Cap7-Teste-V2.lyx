@@ -108,7 +108,7 @@
 \papersides 1
 \paperpagestyle fancy
 \tablestyle default
-\tracking_changes true
+\tracking_changes false
 \output_changes false
 \change_bars false
 \postpone_fragile_content false
@@ -118,7 +118,6 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
-\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -135,27 +134,10 @@ name "chap:Teste"
 \end_layout
 
 \begin_layout Standard
-
-\change_inserted 258712344 1781859919
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859939
-Fabiane:
- Esse capítulo ainda falta terminar de ser corrigido
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
 Todo projeto de engenharia passa por uma etapa de testes.
  Neste capítulo apresentamos alguns testes do software desenvolvido.
  Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
+ 
 \end_layout
 
 \begin_layout Section
@@ -183,91 +165,6 @@ Este teste tem o objetivo de validar o motor matemático do simulador (Método d
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 258712344 1781857287
-Utiliza-se o cenário clássico do Exercício 5.1,
- Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Exercício-5.1."
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-tuple "list"
-
-\end_inset
-
-,
- proposto por 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lake2014"
-literal "false"
-
-\end_inset
-
-.
- Os dados discretos de permeabilidade relativa (
-\begin_inset Formula $k_{rw}$
-\end_inset
-
- e 
-\begin_inset Formula $k_{ro}$
-\end_inset
-
-) foram carregados via arquivo de texto (
-\family typewriter
-\nospellcheck on
-.txt
-\family default
-\nospellcheck default
-).
- Configurou-se um cenário de injeção unidimensional horizontal (
-\begin_inset Formula $\alpha=0^{\circ}$
-\end_inset
-
-),
- com permeabilidade absoluta fixada em 
-\begin_inset Formula $0.5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
- (equivalente a 
-\begin_inset Formula $0.5\ \mu\text{m}^{2}$
-\end_inset
-
-,
- adotando-se o parâmetro do Exercício 5.2 a seguir para fins de padronização estrutural).
- As viscosidades foram inseridas no sistema como 
-\begin_inset Formula $0.001\text{ Pa}\cdot\text{s}$
-\end_inset
-
- para a água e 
-\begin_inset Formula $0.001\text{ Pa}\cdot\text{s}$
-\end_inset
-
- para o óleo (correspondentes a 
-\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
-\end_inset
-
- e 
-\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
-\end_inset
-
-,
- respectivamente).
- O instante de observação foi fixado em 
-\begin_inset Formula $0.2\text{ PVI}$
-\end_inset
-
-.
-\change_inserted 258712344 1781857091
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 258712344 1781857221
 Utiliza-se o cenário do Exercício 5.1 (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -291,87 +188,29 @@ literal "false"
 
 ,
  para validar o motor matemático do simulador.
- Os dados discretos de permeabilidade relativa (
-\begin_inset Formula $k_{rw}$
-\end_inset
+\end_layout
 
- e 
-\begin_inset Formula $k_{ro}$
-\end_inset
+\begin_layout Standard
 
-) foram carregados via arquivo de texto (
-\family typewriter
-\nospellcheck on
-.txt
-\family default
-\nospellcheck default
-).
- Configurou-se um cenário de injeção unidimensional horizontal (
-\begin_inset Formula $\alpha=0^{\circ}$
-\end_inset
-
-),
- com permeabilidade absoluta de 
-\begin_inset Formula $0.5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
- e velocidade de Darcy de 
-\begin_inset Formula $0.6\text{ cm/d}$
-\end_inset
-
- (convertida para a vazão volumétrica de 
-\begin_inset Formula $6.944\times10^{-8}\text{ m}^{3}/\text{s}$
-\end_inset
-
- para uma área unitária de 
-\begin_inset Formula $1\text{ m}^{2}$
-\end_inset
-
-);
- estes parâmetros operacionais foram extraídos do Exercício 5.2 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Lake2014"
-literal "false"
-
-\end_inset
-
-,
- apresentado e detalhado na seção subsequente deste capítulo,
- garantindo a padronização estrutural de todas as validações realizadas.Para a validação,
- o simulador foi submetido a três cenários de razão de mobilidade (
-\begin_inset Formula $M=\mu_{o}/\mu_{w}$
-\end_inset
-
-),
- variando-se a viscosidade do óleo (
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
-) em 
-\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
-\end_inset
-
-,
- 
-\begin_inset Formula $5\text{ mPa}\cdot\text{s}$
-\end_inset
-
- e 
-\begin_inset Formula $50\text{ mPa}\cdot\text{s}$
-\end_inset
-
-,
- enquanto a viscosidade da água foi mantida em 
-\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
-\end_inset
-
-.
- O software foi validado através da extração dos indicadores críticos de breakthrough (saturação na frente de choque,
- saturação média na ruptura e tempo adimensional de ruptura),
- comparando-se a resposta física do modelo às variações de viscosidade e à condição de entropia de Buckley-Leverett.
-\change_unchanged
-
+\series bold
+NOTA:
+ Explicar o enunciado.
+ Citar a tabela.
+ O dados de reservatório:
+ comprometo,
+ área,
+ porosidade e permeabilidade absoluta foram os mesmos em todos o cenários para se manter um padrão comparativo;
+ os dados de injeção:
+ massa específica do óleo e da água(nesse caso ta certo ser Massa específica ou é massa específica?) e velocidade de darcy se basearam no exercício 5.2 do lake que é o próximo teste,
+ o PVI foi de 0.2 pq eu sim,
+ não sei explicar,
+ foi baseado no exercício 5.2,
+ mas reduzi um pouco para ser possível observar o bt antes de acontecer,
+ assim da pra ver a onda,
+ mas não acho essa uma boa explicação,
+ tem que melhorar isso.
+ Sempre com atenção dobrada as unidades e conversões,
+ pois usamos o SI.
 \end_layout
 
 \begin_layout Standard
@@ -418,69 +257,357 @@ name "fig:Exercício-5.1."
 \end_layout
 
 \begin_layout Standard
-O programa será validado avaliando-se a detecção automática da saturação irredutível de água (
-\begin_inset Formula $S_{wi}=0.40$
-\end_inset
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
 
-),
- a ancoragem correta da tangente de Welge neste ponto inicial e o cálculo coerente da saturação da frente de choque (
-\begin_inset Formula $S_{wf}$
-\end_inset
+\begin_layout Plain Layout
+\begin_inset Caption Standard
 
-) e do tempo de ruptura.
- Espera-se que o simulador corrija o perfil multivalorado,
- gerando uma frente de choque perfeitamente vertical (condição de entropia).
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 1
 \end_layout
 
-\begin_layout Standard
-O simulador foi capaz de ler a tabela dinâmica,
- extraindo automaticamente 
-\begin_inset Formula $S_{wi}=0.40$
 \end_inset
 
- e 
-\begin_inset Formula $S_{or}=0.30$
-\end_inset
-
-.
- Observou-se a ancoragem perfeita da secante de entropia e o corte da curva original sem a ocorrência de singularidades (divisão por zero).
- Um aspecto analítico importante revelado pelo simulador foi o leve ruído numérico ("
-\emph on
-ringing
-\emph default
-") na porção superior do perfil de saturação de água (platô viscoso,
- visível no painel inferior esquerdo da Figura 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-tuple "list"
-
-\end_inset
-
-).
- Este fenômeno atesta o rigor do cálculo da derivada de diferenças finitas centrais do simulador:
- como os dados de entrada são esparsos e interpolados por retas,
- a função de fluxo fracionário apresenta quinas de classe 
-\begin_inset Formula $C^{1}$
-\end_inset
-
-,
- refletindo-se em pequenas oscilações locais na velocidade da onda (
-\begin_inset Formula $\frac{df_{w}}{dS_{w}}$
-\end_inset
-
-).
- Na engenharia prática,
- isso evidencia a necessidade de modelos matemáticos contínuos (como Corey ou LET) para suavização de dados de laboratório.
-\change_inserted 258712344 1781853734
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -499,7 +626,7 @@ status open
 
 \begin_layout Plain Layout
 # Dados experimentais do Exercício 5.1 (Lake,
- 1989)
+ 2014)
 \end_layout
 
 \begin_layout Plain Layout
@@ -569,11 +696,31 @@ name "lis:Arquivo-de-texto-"
 \end_layout
 
 \begin_layout Subsection
+Cenário A
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+) 
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\begin_layout Subsubsection
 Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A seguir apresenta-se a Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Extração-dos-diagnósticos-"
@@ -584,9 +731,12 @@ nolink "false"
 
 \end_inset
 
-,
- a extração dos diagnósticos de ruptura calculados pelo motor analítico do simulador.
- Estes dados foram capturados diretamente da tabela de resultados do relatório executivo em PDF gerado autonomamente pelo motor analítico do simulador.
+.
+
+\series bold
+ NOTA:
+ Parágrafo conectivo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -598,9 +748,9 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/teste-1-resul.png
+	filename imagens/1A_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -633,7 +783,47 @@ name "fig:Extração-dos-diagnósticos-"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1A_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Figuras
 \end_layout
 
@@ -649,2008 +839,12 @@ nolink "false"
 
 \end_inset
 
- ilustra o painel de diagnósticos operacionais do software,
- evidenciando a curva de fluxo fracionário associada à tangente construtiva de Welge,
- o perfil de saturação ancorado no poço injetor com a descontinuidade de choque evidente,
- e a evolução temporal da eficiência de deslocamento.
-\change_inserted 258712344 1781852262
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 258712344 1781859543
-\begin_inset Float table
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852299
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852297
-Parâmetros de Entrada configurados para o Teste 1
-\change_unchanged
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-
-\change_inserted 258712344 1781852313
-\begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="4">
-<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" change="deleted 258712344 1781852313" valignment="top" color="default">
-<column alignment="center" change="deleted 258712344 1781852313" valignment="top" color="default">
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852411
-Parâmetro Físico / Operacional
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852429
-Valor
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852525
-Comprimento (
-\begin_inset Formula $L$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854377
-\begin_inset Formula $100$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852508
-Área (
-\begin_inset Formula $A$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854371
-\begin_inset Formula $1$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m²
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852535
-Porosidade (
-\begin_inset Formula $\phi$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854361
-\begin_inset Formula $20$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-%
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781852571
-Permeabilidade (
-\begin_inset Formula $K$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781853997
-\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854107
-Ângulo de inclinação (
-\begin_inset Formula $\alpha$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854170
-\begin_inset Formula $0\text{º}$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854202
-Viscosidade do Óleo (
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854574
-\begin_inset Formula $0,001$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Pa.s 
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854419
-Viscosidade da Água (
-\begin_inset Formula $\mu_{w}$
-\end_inset
-
-)
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854580
-\begin_inset Formula $0,001$
-\end_inset
-
-Pa.s
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854593
-Densidade do Óleo
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781855071
-\begin_inset Formula $800$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854598
-Densidade da Água
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781855072
-\begin_inset Formula $1000$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854602
-Vazão volumétrica
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854921
-\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781854607
-Volumes de Poros Injetados
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781855100
-\begin_inset Formula $0,2$
-\end_inset
-
- / 
-\begin_inset Formula $0,25$
-\end_inset
-
- / 
-\begin_inset Formula $0,3$
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_deleted 258712344 1781852313
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\change_unchanged
-
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 258712344 1781859546
-\begin_inset Float table
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Parâmetros de Entrada configurados para o Teste 1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-
-\change_inserted 258712344 1781859545
-\begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="3">
-<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" change="deleted 258712344 1781852313" valignment="top" color="default">
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Parâmetro Físico / Operacional
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Valor
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Comprimento (
-\begin_inset Formula $L$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $100$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Área (
-\begin_inset Formula $A$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $1$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m²
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Porosidade (
-\begin_inset Formula $\phi$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $20$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-%
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Permeabilidade (
-\begin_inset Formula $K$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Ângulo de inclinação (
-\begin_inset Formula $\alpha$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $0\text{º}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Viscosidade do Óleo (
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $0,005$
-\end_inset
-
- Pa.s 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Viscosidade da Água (
-\begin_inset Formula $\mu_{w}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $0,001$
-\end_inset
-
-Pa.s
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Densidade do Óleo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $800$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Densidade da Água
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $1000$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Vazão volumétrica
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-Volumes de Poros Injetados
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-\begin_inset Formula $0,2$
-\end_inset
-
- / 
-\begin_inset Formula $0,25$
-\end_inset
-
- / 
-\begin_inset Formula $0,3$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859545
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_inserted 258712344 1781859546
-\begin_inset Float table
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Parâmetros de Entrada configurados para o Teste 1
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\align center
-
-\change_inserted 258712344 1781859546
-\begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="3">
-<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" change="deleted 258712344 1781852313" valignment="top" color="default">
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Parâmetro Físico / Operacional
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Valor
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Comprimento (
-\begin_inset Formula $L$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $100$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Área (
-\begin_inset Formula $A$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $1$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-m²
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Porosidade (
-\begin_inset Formula $\phi$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $20$
-\end_inset
-
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-%
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Permeabilidade (
-\begin_inset Formula $K$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Ângulo de inclinação (
-\begin_inset Formula $\alpha$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $0\text{º}$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Viscosidade do Óleo (
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Formula $0,050$
-\end_inset
-
-Pa.s
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Viscosidade da Água (
-\begin_inset Formula $\mu_{w}$
-\end_inset
-
-)
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $0,001$
-\end_inset
-
-Pa.s
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Densidade do Óleo
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $800$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Densidade da Água
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $1000$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Vazão volumétrica
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row color="default">
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-Volumes de Poros Injetados
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-\begin_inset Formula $0,2$
-\end_inset
-
- / 
-\begin_inset Formula $0,25$
-\end_inset
-
- / 
-\begin_inset Formula $0,3$
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\change_inserted 258712344 1781859546
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\change_deleted 258712344 1781854075
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+.
+ 
+\series bold
 NOTA:
- falta correlacionar os dados da imagem,
- ex:
- comprimento 100,
- porosidade 20,
- etc,
- com as tabelas de dados (entradas),
- algo como os dados de entrada estão na tabela x.
-\end_layout
-
-\end_inset
-
-
-\change_unchanged
-
+ Parágrafo conectivo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2662,17 +856,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/resultado.png
+	filename imagens/1a.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -2694,6 +885,429 @@ name "fig:Teste-TelaPrograma-Captura1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
+\begin_layout Subsection
+Cenário B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+) 
+\begin_inset Formula $0,005$
+\end_inset
+
+ Pa.s
+\end_layout
+
+\begin_layout Subsubsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Extração-dos-diagnósticos--1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1B_page-0001.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Extração dos diagnósticos,
+ teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Extração-dos-diagnósticos--1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1B_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1b.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
+\begin_layout Subsection
+Cenário C
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+) 
+\begin_inset Formula $0,050$
+\end_inset
+
+Pa.s
+\end_layout
+
+\begin_layout Subsubsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Extração-dos-diagnósticos--2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1C_page-0001.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Extração dos diagnósticos,
+ teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Extração-dos-diagnósticos--2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1C_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/1c.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
 \end_layout
 
 \begin_layout Section
@@ -2745,208 +1359,21 @@ nolink "false"
 
 ,
  que define funções de permeabilidade relativa exponenciais equivalentes ao modelo analítico de Corey.
- Os parâmetros empíricos de entrada são:
  
-\begin_inset Formula $S_{wir}=S_{or}=0.20$
-\end_inset
+\end_layout
 
-,
- 
-\begin_inset Formula $n_{w}=1$
-\end_inset
+\begin_layout Standard
 
-,
- 
-\begin_inset Formula $n_{o}=2$
-\end_inset
-
-,
- 
-\begin_inset Formula $k^{0}_{rw}=0.1$
-\end_inset
-
- e 
-\begin_inset Formula $k^{0}_{ro}=0.8$
-\end_inset
-
-.
- Para garantir a coerência com o Sistema Internacional (SI) exigido pelo motor físico do software,
- os dados originais da literatura sofreram as seguintes conversões:
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+\series bold
 NOTA:
- no capítulo de projeto coloque uma seção informando que os dados devem ser entrados sempre em SI;
-\end_layout
-
-\begin_layout Plain Layout
-no manual esta informação deve ser repetida;
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Viscosidades:
- 
-\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
-\end_inset
-
- (água) e 
-\begin_inset Formula $10\text{ mPa}\cdot\text{s}$
-\end_inset
-
- (óleo) foram convertidos para 
-\begin_inset Formula $0.001\text{ Pa}\cdot\text{s}$
-\end_inset
-
- e 
-\begin_inset Formula $0.010\text{ Pa}\cdot\text{s}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Permeabilidade Absoluta:
- O valor de 
-\begin_inset Formula $0.5\mu\text{m}^{2}$
-\end_inset
-
- (aproximadamente 
-\begin_inset Formula $0.5\text{ Darcy}$
-\end_inset
-
-) equivale a 
-\begin_inset Formula $0.5\times10^{-12}\text{ m}^{2}$
-\end_inset
-
- no SI.
-\end_layout
-
-\begin_layout Itemize
-Velocidade de Darcy (
-\begin_inset Formula $u$
-\end_inset
-
-):
- O valor original de 
-\begin_inset Formula $0.6\text{ cm/d}$
-\end_inset
-
- foi convertido para vazão volumétrica em uma área unitária (
-\begin_inset Formula $A=1\text{ m}^{2}$
-\end_inset
-
-),
- resultando em 
-\begin_inset Formula $6.944\times10^{-8}\text{ m}^{3}\text{/s}$
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Itemize
-Diferença de Densidade (
-\begin_inset Formula $\Delta\rho$
-\end_inset
-
-):
- O gradiente de 
-\begin_inset Formula $0.2\text{ g/cm}^{3}$
-\end_inset
-
- foi imputado no software através das densidades individuais de 
-\begin_inset Formula $1000\text{ kg/m}^{3}$
-\end_inset
-
- (água) e 
-\begin_inset Formula $800\text{ kg/m}^{3}$
-\end_inset
-
- (óleo).
-\end_layout
-
-\begin_layout Standard
-As simulações foram executadas para um tempo adimensional de 
-\begin_inset Formula $t_{D}=0.2\text{ PVI}$
-\end_inset
-
-,
- variando-se os ângulos de inclinação estrutural (
-\begin_inset Formula $\alpha$
-\end_inset
-
-) em 
-\begin_inset Formula $0^{\circ}$
-\end_inset
-
-,
- 
-\begin_inset Formula $30^{\circ}$
-\end_inset
-
- (aclive) e 
-\begin_inset Formula $-30^{\circ}$
-\end_inset
-
- (declive).
-\end_layout
-
-\begin_layout Standard
-O sistema será validado pela análise morfológica das frentes de choque.
- Fisicamente,
- em aclives (
-\begin_inset Formula $30^{\circ}$
-\end_inset
-
-),
- a gravidade atua contra o sentido do fluxo da água (mais densa),
- retardando a frente de avanço.
- Em declives (
-\begin_inset Formula $-30^{\circ}$
-\end_inset
-
-),
- a água flui a favor da gravidade,
- acelerando o choque.
- O software deve ser capaz de capturar essa distinção no perfil espacial (
-\begin_inset Formula $S_{w}\times x_{D}$
-\end_inset
-
-).
-\end_layout
-
-\begin_layout Standard
-O simulador computou adequadamente a influência do peso da coluna de fluido.
- Para o ângulo de 
-\begin_inset Formula $0^{\circ}$
-\end_inset
-
-,
- o Número de Gravidade (
-\begin_inset Formula $N_{g}$
-\end_inset
-
-) resulta em zero,
- refletindo um deslocamento estritamente dominado por forças viscosas.
- Ao se introduzir a inclinação de 
-\begin_inset Formula $30^{\circ}$
-\end_inset
-
-,
- o termo gravitacional torna-se resistivo ao fluxo de água,
- provocando um atraso posicional da frente de choque em relação ao cenário horizontal.
- De modo inverso,
- a injeção descendente (
-\begin_inset Formula $-30^{\circ}$
-\end_inset
-
-) demonstrou o adiantamento da frente de saturação,
- confirmando que o software computa corretamente os efeitos vetoriais da segregação gravitacional no escoamento imiscível bidirecional.
+ Explicar o enunciado.
+ Citar a tabela.
+ O dados de reservatório:
+ comprometo,
+ área,
+ porosidade e permeabilidade absoluta foram os mesmos em todos o cenários para se manter um padrão comparativo;
+ Sempre com atenção dobrada as unidades e conversões,
+ pois usamos o SI.
 \end_layout
 
 \begin_layout Standard
@@ -2992,176 +1419,388 @@ name "fig:Exercício-5.2."
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="11" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,010$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
 O carregamento da parametrização de Corey foi realizado pelo leitor de disco integrado ao software,
- utilizando a formatação padronizada sem cabeçalhos (ordem:
+ utilizando a formatação padronizada sem cabeçalhos .
  
-\begin_inset Formula $S_{wir}$
-\end_inset
-
-,
-\begin_inset Formula $S_{or}$
-\end_inset
-
-,
- 
-\begin_inset Formula $K^{0}_{ro}$
-\end_inset
-
-,
- 
-\begin_inset Formula $K^{0}_{rw}$
-\end_inset
-
-,
- 
-\begin_inset Formula $n_{o}$
-\end_inset
-
-,
- 
-\begin_inset Formula $n_{w}$
-\end_inset
-
-).
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+\series bold
 NOTA:
- Considere adicionar na primeira linha do arquivo o seguinte
-\end_layout
-
-\begin_layout Plain Layout
-#swir sor kro krw no nw
-\end_layout
-
-\begin_layout Plain Layout
-no código pode descartar a primeira linha ou toda linha iniciada com #
-\end_layout
-
-\begin_layout Plain Layout
-Se colocar desconsiderar todas as linhas iniciadas com # poderá colocar outras instruções no arquivo
-\end_layout
-
-\begin_layout Plain Layout
-para futuro aceitar arquivos no formato json;
-\end_layout
-
-\begin_layout Plain Layout
-c++ tem arquivo de cabecalho que permite ler arquivos json diretamente;
-\end_layout
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-.
-\end_layout
-
-\begin_layout Plain Layout
-Abaixo,
- um exemplo de como os dados da Listagem 8.2 (Corey) seriam estruturados em JSON para o simulador:
-\end_layout
-
-\begin_layout Plain Layout
-{
-\end_layout
-
-\begin_layout Plain Layout
-"simulacao":
- {
-\end_layout
-
-\begin_layout Plain Layout
-"modelo_permeabilidade":
- "Corey",
-\end_layout
-
-\begin_layout Plain Layout
-"parametros":
- {
-\end_layout
-
-\begin_layout Plain Layout
-"swir":
- 0.2,
-\end_layout
-
-\begin_layout Plain Layout
-"sor":
- 0.2,
-\end_layout
-
-\begin_layout Plain Layout
-"kro_max":
- 0.8,
-\end_layout
-
-\begin_layout Plain Layout
-"krw_max":
- 0.1,
-\end_layout
-
-\begin_layout Plain Layout
-"expoente_oleo_no":
- 2,
-\end_layout
-
-\begin_layout Plain Layout
-"expoente_agua_nw":
- 1
-\end_layout
-
-\begin_layout Plain Layout
-},
-\end_layout
-
-\begin_layout Plain Layout
-"condicoes_contorno":
- {
-\end_layout
-
-\begin_layout Plain Layout
-"angulo_inclinacao_graus":
- 0.0,
-\end_layout
-
-\begin_layout Plain Layout
-"tempo_pvi":
- 0.2
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-}
-\end_layout
-
-\begin_layout Plain Layout
-exemplos de uso de json em c++ aqui:
-\end_layout
-
-\begin_layout Plain Layout
-https://github.com/nlohmann/json
-\end_layout
-
-\end_inset
-
-
+ citar listagem.
+ 
 \end_layout
 
 \begin_layout Standard
 \begin_inset listings
 inline false
 status open
+
+\begin_layout Plain Layout
+# Dados do Exercício 5.2 (Lake,
+ 2014)
+\end_layout
+
+\begin_layout Plain Layout
+# Swirr Sor KroMax KrwMax No Nw 
+\end_layout
 
 \begin_layout Plain Layout
 0.2 0.2 0.8 0.1 2 1
@@ -3179,7 +1818,7 @@ name "lis:Arquivo-de-texto2"
 
 \end_inset
 
-.
+
 \end_layout
 
 \end_inset
@@ -3193,6 +1832,26 @@ name "lis:Arquivo-de-texto2"
 \end_layout
 
 \begin_layout Subsection
+Cenário A
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+) 
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Arquivo de saída de dados (resultados da tela)
 \end_layout
 
@@ -3210,19 +1869,11 @@ nolink "false"
 \end_inset
 
 .
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+ 
+\series bold
 NOTA:
- o livro que tem o exercício tem a resposta?
- se tiver coloque do lado do resultado que obteve mostrando a validação Fabiane:
- Não.
-\end_layout
-
-\end_inset
-
-
+ Parágrafo conectivo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3234,17 +1885,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/teste-2.png
+	filename imagens/2A_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3269,6 +1917,151 @@ name "fig:Cenário-horizontal."
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/2A_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ as Figuras 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-3"
+
+\end_inset
+
+.
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/2a.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa exibindo o perfil de saturação e a eficiência de deslocamento para injeção em reservatório horizontal (
+\begin_inset Formula $\alpha=0^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
+\begin_layout Subsection
+Cenário B
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+) 
+\begin_inset Formula $30\text{º}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
 Abaixo destacam-se os indicadores globais extraídos para o cenário com ângulo de 30º,
  Figura 
 \begin_inset CommandInset ref
@@ -3282,6 +2075,11 @@ nolink "false"
 \end_inset
 
 .
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3295,7 +2093,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste-2.1.png
+	filename imagens/2B_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3322,6 +2121,140 @@ name "fig:Cenário-com-ângulo"
 \end_inset
 
 
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/2B_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Citar a imagem a seguir.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/2b.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa exibindo o perfil de saturação retardado para injeção ascendente em aclive (
+\begin_inset Formula $\alpha=30^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-1-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
+\begin_layout Subsection
+Cenário C
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Descrição do cenário.
+ Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+) 
+\begin_inset Formula $-30\text{º}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
@@ -3338,6 +2271,11 @@ nolink "false"
 \end_inset
 
 .
+ 
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3351,7 +2289,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste-2.2.png
+	filename imagens/2C_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3380,119 +2319,57 @@ name "fig:Cenário-com-ângulo-1"
 
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/2C_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Figuras
 \end_layout
 
 \begin_layout Standard
-Adicionalmente,
- as Figuras l
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Tela-do-programa-3"
 
-\end_inset
-
-
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Tela-do-programa"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
-,
- 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Tela-do-programa-1-1"
-
-\end_inset
-
- e 
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:Tela-do-programa-2"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-
-\end_inset
-
- apresentam os painéis operacionais completos do software para os cenários de inclinação de 
-\begin_inset Formula $0^{\circ}$
-\end_inset
-
-,
- 
-\begin_inset Formula $30^{\circ}$
-\end_inset
-
- e 
-\begin_inset Formula $-30^{\circ}$
-\end_inset
-
-,
- respectivamente.
- Nelas,
- é possível visualizar o adiantamento da frente de saturação para injeções descendentes e o atraso para injeções ascendentes,
- confirmando a robustez da integração do termo gravitacional.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
+\series bold
 NOTA:
- o lyx identificou que algumas figura estavam com nome repetido e renomeou;
- verifique se as referencias estão corretas e corrija o nome do label das figuras;
- quando corrige o nome do label o lyx já corrige o nome na referencia
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/resultado-2.png
-	width 100text%
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-Tela do programa exibindo o perfil de saturação e a eficiência de deslocamento para injeção em reservatório horizontal (
-\begin_inset Formula $\alpha=0^{\circ}$
-\end_inset
-
-)
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Tela-do-programa-3"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
+ Parágrafo conectivo.
+ Citar a imagem a seguir.
 \end_layout
 
 \begin_layout Standard
@@ -3506,42 +2383,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/resultado-2-1.png
-	width 100text%
-
-\end_inset
-
-Tela do programa exibindo o perfil de saturação retardado para injeção ascendente em aclive (
-\begin_inset Formula $\alpha=30^{\circ}$
-\end_inset
-
-)
-\begin_inset CommandInset label
-LatexCommand label
-name "fig:Tela-do-programa-1-1"
-
-\end_inset
-
-.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement document
-alignment document
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/resultado-2-1-1.png
+	filename imagens/2c.png
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3574,6 +2417,21 @@ name "fig:Tela-do-programa-2"
 
 \end_layout
 
+\begin_layout Subsubsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
 \begin_layout Section
 Teste 3
 \begin_inset CommandInset label
@@ -3603,64 +2461,57 @@ Este teste tem o objetivo de verificar a estabilidade do motor matemático do si
 
 \begin_layout Standard
 Os coeficientes empíricos foram extraídos da literatura especializada,
- especificamente dos cenários base avaliados pela Sociedade Brasileira de Matemática Aplicada e Computacional (SBMAC,
- 2020).
- Na fase aquosa,
- os parâmetros de forma,
- elevação e translação foram definidos como 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NOTA:
- termos fisicos,
- matematicos,
- valores,
- sempre dentro de equacao assim usarão as mesmas fontes
-\end_layout
+ especificamente dos cenários base avaliados pela Sociedade Brasileira de Matemática Aplicada e Computacional 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
 
 \end_inset
 
-
-\begin_inset Formula $Lw=4.02$
+.
+ Na fase aquosa,
+ os parâmetros de forma,
+ elevação e translação foram definidos como 
+\begin_inset Formula $L_{w}=4.02$
 \end_inset
 
 ,
  
-\begin_inset Formula $Ew=2.00$
+\begin_inset Formula $E_{w}=2.00$
 \end_inset
 
  e 
-\begin_inset Formula $Tw=0.41$
+\begin_inset Formula $T_{w}=0.41$
 \end_inset
 
 .
  Para a fase oleica,
  utilizou-se 
-\begin_inset Formula $Lo=1.00$
+\begin_inset Formula $L_{o}=1.00$
 \end_inset
 
 ,
  
-\begin_inset Formula $Eo=1.18$
+\begin_inset Formula $E_{o}=1.18$
 \end_inset
 
  e 
-\begin_inset Formula $To=1.28$
+\begin_inset Formula $T_{o}=1.28$
 \end_inset
 
 .
  O cenário fluido-dinâmico foi mantido idêntico ao Teste 1,
  com injeção horizontal e viscosidades de 
-\begin_inset Formula $1mPa.s$
+\begin_inset Formula $1m\thinspace Pa.s$
 \end_inset
 
  (água) e 
-\begin_inset Formula $5mPa.s$
+\begin_inset Formula $5m\thinspace Pa.s$
 \end_inset
 
  (óleo) aos 
-\begin_inset Formula $0.3PVI$
+\begin_inset Formula $0.3\thinspace PVI$
 \end_inset
 
 .
@@ -3701,9 +2552,37 @@ A implementação do modelo LET apresentou estabilidade incondicional.
  Diferentemente do modelo tabelado,
  a natureza analítica contínua da função racional produziu um perfil de saturação perfeitamente liso (suave),
  eliminando o ruído numérico na derivada espacial.
- A curva de fluxo fracionário gerada demonstrou um atraso natural na mobilidade da água em baixas saturações (efeito do alto Lw de 4.02),
+ A curva de fluxo fracionário gerada demonstrou um atraso natural na mobilidade da água em baixas saturações (efeito do alto 
+\begin_inset Formula $L_{w}$
+\end_inset
+
+ de 
+\begin_inset Formula $4.02$
+\end_inset
+
+),
  o que alterou significativamente a posição da frente de choque e a eficiência de varrido quando comparado aos modelos puramente polinomiais,
  ratificando a flexibilidade do LET para modelar rochas com molhabilidades complexas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Citar a tabela de dados de reservatório e dados de injeção.
+ O dados de reservatório:
+ comprometo,
+ área,
+ porosidade e permeabilidade absoluta foram os mesmos em todos o cenários para se manter um padrão comparativo;
+ os dados de injeção:
+ Massa específica do óleo e da água(nesse caso ta certo ser Massa específica ou é massa específica?) e velocidade de darcy se basearam no exercício 5.2 do lake que é o próximo teste,
+ .
+ Sempre com atenção dobrada as unidades e conversões,
+ pois usamos o SI.
+ Outros dados do cenário como:
+ ângulo de inclinação,
+ viscosidade do óleo e da água foram iguais os do execício 5.2 cenário A do lake.
+ Sor e Swir igual o do exercício 5.2 cenário A do lake.
 \end_layout
 
 \begin_layout Standard
@@ -3719,21 +2598,6 @@ status open
 \begin_inset Graphics
 	filename imagens/teste-3 e 4.png
 	width 100text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NOTA:
- imagem pouco legivel considere pedir a IA para reproduzir fielmente com mais qualidade gráfica
-\end_layout
-
-\begin_layout Plain Layout
-ou crie uma tabela e reproduza o texto
-\end_layout
 
 \end_inset
 
@@ -3772,6 +2636,396 @@ name "fig:Tabela-de-coeficientes"
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+NOTA:
+ mudar a imagem(a imagem não pra ver direito) pela escrita da tabela pois é melhor refazer uma tabela e dizer que é baseada na tabela da referência citada,
+ não sei se devo incluir em qual página está essa tabela 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,010$
+\end_inset
+
+ Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Massa específica da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+ kg/m³
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,3$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Arquivo de entrada de dados
 \end_layout
@@ -3779,25 +3033,10 @@ Arquivo de entrada de dados
 \begin_layout Standard
 Os coeficientes do modelo LET foram carregados no simulador através da interface gráfica,
  parametrizados em conformidade com o cenário base de incertezas publicado na literatura.
-\begin_inset Note Note
-status open
 
-\begin_layout Plain Layout
-NOTA:
- explique a ordem dos dados do arquivo
-\end_layout
-
-\begin_layout Plain Layout
-considere colocar
-\end_layout
-
-\begin_layout Plain Layout
-#bla bla bla na primeira linha
-\end_layout
-
-\end_inset
-
-
+\series bold
+ NOTA:
+ citar listagem.
 \end_layout
 
 \begin_layout Standard
@@ -3806,7 +3045,18 @@ inline false
 status open
 
 \begin_layout Plain Layout
-\align center
+\align left
+# Dados de LET (Valdez,
+ 2020)
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+# Lw Ew Tw Lo Eo To Swirr Sor
+\end_layout
+
+\begin_layout Plain Layout
+\align left
 4.02 2.00 0.41 1.00 1.18 1.28 0.2 0.2
 \begin_inset Caption Standard
 
@@ -3853,6 +3103,7 @@ nolink "false"
 breakthrough
 \emph default
 ) gerados pelo relatório executivo do simulador para a rocha avaliada pelo modelo LET.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3866,7 +3117,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste-3.png
+	filename imagens/3_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -3887,6 +3139,44 @@ name "fig:Diagnóstico-numérico-do"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/3_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3914,17 +3204,7 @@ nolink "false"
 
  apresenta o painel da interface gráfica,
  evidenciando o formato singular em "S" da curva de fluxo fracionário gerada por este modelo empírico flexível.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NOTA:
- confira se os dados de entrada da figura estão corretos
-\end_layout
-
-\end_inset
-
-
+ 
 \end_layout
 
 \begin_layout Standard
@@ -3936,18 +3216,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/resultado-3.png
+	filename imagens/3.png
 	lyxscale 50
 	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3971,6 +3247,21 @@ name "fig:Painel-principal-do"
 
 \end_layout
 
+\begin_layout Subsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
+\end_layout
+
 \begin_layout Section
 Teste 4
 \begin_inset CommandInset label
@@ -3992,30 +3283,46 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Este cenário testa a resolução termodinâmica do software frente ao modelo de Chierici (1984),
+Este cenário testa a resolução termodinâmica do software frente ao modelo de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Chierici1984"
+literal "false"
+
+\end_inset
+
+,
  que impõe funções de decaimento exponencial sobre a saturação normalizada.
  O foco é atestar o tratamento computacional em limites assintóticos para evitar divisões por zero e singularidades,
  características inerentes a equações exponenciais inversas.
 \end_layout
 
 \begin_layout Standard
-As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pela SBMAC (2020).
+As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pela 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+.
  Os parâmetros aplicados à fase aquosa foram 
-\begin_inset Formula $Aw=3.21$
+\begin_inset Formula $A_{w}=3.21$
 \end_inset
 
  e 
-\begin_inset Formula $Bw=0.86$
+\begin_inset Formula $B_{w}=0.86$
 \end_inset
 
 ;
  e para a fase oleica,
  
-\begin_inset Formula $Ao=0.87$
+\begin_inset Formula $A_{o}=0.87$
 \end_inset
 
  e 
-\begin_inset Formula $Bo=0.84$
+\begin_inset Formula $B_{o}=0.84$
 \end_inset
 
 .
@@ -4025,6 +3332,13 @@ As constantes de curvatura e decaimento foram obtidas da mesma base de dados ado
 
 ,
  assegurando uma comparação simétrica de volume poroso móvel com os testes anteriores.
+ 
+\series bold
+NOTA:
+ na imagem da tabela tam A(Ao),B(Aw),
+ L(Bo) e M(Bw),
+ mas vc associou com Ao,Bo Aw e Bw,
+ tem que explicar essa pequena distinção de escrita no texto.
 \end_layout
 
 \begin_layout Standard
@@ -4034,11 +3348,11 @@ Espera-se que o simulador compute as exponenciais respeitando as assíntotas do 
 crash
 \emph default
 ) nas saturações críticas próximas a 
-\begin_inset Formula $Swir$
+\begin_inset Formula $S_{wir}$
 \end_inset
 
  e 
-\begin_inset Formula $1-Sor$
+\begin_inset Formula $1-S_{or}$
 \end_inset
 
 .
@@ -4052,7 +3366,7 @@ clamping
 \emph default
 ") inserida no código-fonte evitou anomalias nos limites do domínio.
  Devido à natureza do decaimento exponencial rápido imposto pelo parâmetro 
-\begin_inset Formula $Bw=0.86$
+\begin_inset Formula $B_{w}=0.86$
 \end_inset
 
 ,
@@ -4063,6 +3377,26 @@ breakthrough
 ) mais agressivo do que os modelos avaliados anteriormente.
  O algoritmo da secante de Welge encontrou o ponto máximo de inclinação com precisão,
  confirmando que o software está homologado e robusto para trabalhar com qualquer família de funções de permeabilidade relativa aplicada à indústria de simulação de reservatórios.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Citar a tabela 8.3-Parâmetros de Entrada configurados para o Teste 3(é os mesmos dados) de dados de reservatório e dados de injeção.
+ O dados de reservatório:
+ comprometo,
+ área,
+ porosidade e permeabilidade absoluta foram os mesmos em todos o cenários para se manter um padrão comparativo;
+ os dados de injeção:
+ Massa específica do óleo e da água(nesse caso ta certo ser Massa específica ou é massa específica?) e velocidade de darcy se basearam no exercício 5.2 do lake que é o próximo teste,
+ .
+ Sempre com atenção dobrada as unidades e conversões,
+ pois usamos o SI.
+ Outros dados do cenário como:
+ ângulo de inclinação,
+ viscosidade do óleo e da água foram iguais os do execício 5.2 cenário A do lake.
+ Sor e Swir igual o do exercício 5.2 cenário A do lake.
 \end_layout
 
 \begin_layout Subsection
@@ -4079,8 +3413,21 @@ inline false
 status open
 
 \begin_layout Plain Layout
+\align left
+# Dados de Chierici (Valdez,
+ 2020)
+\end_layout
+
+\begin_layout Plain Layout
+# Aw Bw Ao Bo Swirr Sor KroMax KrwMax
+\end_layout
+
+\begin_layout Plain Layout
+3.21 0.86 0.87 0.84 0.2 0.2 0.78 0.53
+\end_layout
+
+\begin_layout Plain Layout
 \align center
-3.21 0.86 0.87 0.84 0.2 0.2 1.0 1.0
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -4135,7 +3482,8 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename imagens/teste-4.png
+	filename imagens/4_page-0001.jpg
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -4160,6 +3508,44 @@ name "fig:Resultados-analíticos-do"
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/4_page-0002.jpg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -4191,31 +3577,16 @@ nolink "false"
 \end_inset
 
 ).
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-NOTA:
- você tem de adicionar um teste,
- rodar os mesmos exemplos no linux usando os mesmos arquivos de entrada;
 \end_layout
 
-\begin_layout Plain Layout
-a ideia é testar os arquivos de entrada;
-\end_layout
+\begin_layout Standard
 
-\begin_layout Plain Layout
-seria interessante colocar a informação de conformidade dos arquivos de entrada,
+\series bold
+NOTA (do orientador,
+ e eu não sei a resposta para isso):
+ seria interessante colocar a informação de conformidade dos arquivos de entrada,
  se podem ser UTF-8 e ISO-8859-1 ou apenas um formato;
-\end_layout
-
-\begin_layout Plain Layout
-normalmente acentos geram problemas
-\end_layout
-
-\end_inset
-
-
+ normalmente acentos geram problemas.
 \end_layout
 
 \begin_layout Standard
@@ -4227,18 +3598,14 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
 \begin_inset Graphics
-	filename imagens/resulta-4.png
+	filename imagens/4.png
 	lyxscale 50
 	width 100text%
 
 \end_inset
 
 
-\end_layout
-
-\begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -4260,16 +3627,33 @@ name "fig:Painel-de-resultados"
 \end_inset
 
 
-\change_inserted 258712344 1781859889
+\end_layout
 
+\begin_layout Subsection
+Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Parágrafo conectivo.
+ Parte mais importante,
+ apresentar detalhadamente os cálculos realizados analiticamente,
+ comparativa entre valos analíticos e valores de simulação,
+ erros e conclusão dos resultados.
 \end_layout
 
 \begin_layout Section
-
-\change_inserted 258712344 1781859904
 Teste de Portabilidade
-\change_unchanged
+\end_layout
 
+\begin_layout Standard
+
+\series bold
+NOTA:
+ Réplica do teste 2 cenário A no Linux.
+ Última coisa a se fazer.
 \end_layout
 
 \end_body

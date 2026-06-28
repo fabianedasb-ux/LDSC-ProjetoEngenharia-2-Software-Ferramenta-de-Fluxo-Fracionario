@@ -197,7 +197,7 @@ O desenvolvimento de simuladores computacionais robustos é fundamental para a o
  Chierici e o modelo experimental tabelado.
  O simulador permite a configuração de parâmetros geomorfológicos,
  viscosidades,
- densidades e efeitos gravitacionais,
+ massas específicas e efeitos gravitacionais,
  gerando diagnósticos automatizados sobre o instante de ruptura (breakthrough) e a eficiência de varrido.
  A validação do motor matemático foi realizada através da comparação com cenários clássicos da literatura,
  demonstrando alta precisão na ancoragem da tangente de Welge e na aplicação da condição de entropia para frentes de choque.
@@ -298,7 +298,7 @@ The development of robust computational simulators is fundamental for optimizing
  and the experimental tabulated model.
  The simulator allows for the configuration of geomorphological parameters,
  viscosities,
- densities,
+ specific masses,
  and gravitational effects,
  generating automated diagnostics on breakthrough time and sweep efficiency.
  Mathematical engine validation was performed through comparison with classical scenarios from technical literature,

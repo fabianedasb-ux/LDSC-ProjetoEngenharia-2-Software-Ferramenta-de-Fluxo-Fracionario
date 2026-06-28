@@ -47,18 +47,30 @@ void CRelatorio::limpar() {
 // --- Geração de Tabelas Analíticas ---
 void CRelatorio::gerarCabecalho(double comp, double area, double phi, double k, double angulo, double mio, double miw) {
     std::stringstream ss;
-    ss << std::fixed << std::setprecision(2);
 
     ss << "<h2>1. Parâmetros Estáticos do Meio Poroso e Fluidos</h2>";
     ss << "<table>";
     ss << "<tr><th width='60%'>Propriedade Operacional / Geométrica</th><th width='20%'>Valor</th><th width='20%'>Unidade</th></tr>";
+
+    // Formatação Padrão (2 casas decimais)
+    ss << std::fixed << std::setprecision(2);
     ss << "<tr><td>Comprimento Geométrico do Reservatório (L)</td><td class='metric-value'>" << comp << "</td><td>m</td></tr>";
-    ss << "<tr><td>Área da Seção Transversal Hidráulica (A)</td><td class='metric-value'>" << area << "</td><td>m²</td></tr>";
-    ss << "<tr><td>Porosidade Efetiva (&phi;)</td><td class='metric-value'>" << phi * 100.0 << "</td><td>%</td></tr>";
-    ss << "<tr><td>Permeabilidade Absoluta da Rocha (k)</td><td class='metric-value'>" << k << "</td><td>mD</td></tr>";
+    ss << "<tr><td>Área da Seção Transversal Hidráulica (A)</td><td class='metric-value'>" << area << "</td><td>m&sup2;</td></tr>";
+    ss << "<tr><td>Porosidade (&Phi;)</td><td class='metric-value'>" << phi * 100.0 << "</td><td>%</td></tr>";
+
+    // Formatação Científica (Mantém precisão para valores muito pequenos/grandes)
+    ss << std::scientific << std::setprecision(2);
+    ss << "<tr><td>Permeabilidade Absoluta da Rocha (k)</td><td class='metric-value'>" << k << "</td><td>m&sup2;</td></tr>";
+
+    // Retorno para Formatação Padrão
+    ss << std::fixed << std::setprecision(2);
     ss << "<tr><td>Ângulo de Inclinação Estrutural (&alpha;)</td><td class='metric-value'>" << angulo << "</td><td>graus</td></tr>";
-    ss << "<tr><td>Viscosidade Dinâmica da Água (&mu;<sub>w</sub>)</td><td class='metric-value'>" << miw << "</td><td>cP</td></tr>";
-    ss << "<tr><td>Viscosidade Dinâmica do Óleo (&mu;<sub>o</sub>)</td><td class='metric-value'>" << mio << "</td><td>cP</td></tr>";
+
+    // Formatação de Viscosidade (3 casas decimais obrigatórias para Pa.s)
+    ss << std::fixed << std::setprecision(3);
+    ss << "<tr><td>Viscosidade Dinâmica da Água (&mu;<sub>w</sub>)</td><td class='metric-value'>" << miw << "</td><td>Pa.s</td></tr>";
+    ss << "<tr><td>Viscosidade Dinâmica do Óleo (&mu;<sub>o</sub>)</td><td class='metric-value'>" << mio << "</td><td>Pa.s</td></tr>";
+
     ss << "</table>";
 
     _textoRelatorio += ss.str();

@@ -1,0 +1,3371 @@
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass extbook
+\begin_preamble
+\usepackage {graphicx}
+\usepackage {longtable}
+\usepackage {indentfirst}
+\renewenvironment{center}{\par\centering}{\par}
+% Comentar linhas abaixo se não estiver usando pacote abntex
+% ou se o pacote ainda não foi instalado.
+% neste caso sugere-se usar citações no padrão apalike (lembra o da anbt).
+%\usepackage[alf ,abnt-etal-cite=2 , abnt-year-extra-label=yes , abnt-etal-list=0]{abntcite}
+%\usepackage {helvet}
+%\renewcommand {\familydefault}{\sfdefault}
+% Para uso de listagens de código
+\usepackage{color}
+\definecolor{azulclaro}{rgb}{0.6,1,1}%   rgb color model
+% Informa que vai usar o pacote listings,
+% disponibilizado em /usr/share/texmf/doc/latex/styles/listings.dvi
+\usepackage{listings}
+\end_preamble
+\use_default_options false
+\master Mestre-V2.lyx
+\maintain_unincluded_children no
+\language brazilian
+\language_package auto
+\inputencoding auto-legacy
+\fontencoding auto
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts true
+\font_sc false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement p
+\float_alignment class
+\paperfontsize 12
+\spacing onehalf
+\use_hyperref false
+\papersize a4
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 0
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification default
+\crossref_package prettyref
+\use_formatted_ref 0
+\use_minted 0
+\use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
+\index Índice
+\shortcut idx
+\color #008000
+\end_index
+\paperwidth 210mm
+\paperheight 297mm
+\leftmargin 30mm
+\topmargin 25mm
+\rightmargin 20mm
+\bottommargin 20mm
+\secnumdepth 2
+\tocdepth 2
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tablestyle default
+\tracking_changes true
+\output_changes false
+\change_bars false
+\postpone_fragile_content false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
+\docbook_mathml_version 0
+\author 258712344 "fabia"
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Teste
+\begin_inset CommandInset label
+LatexCommand label
+name "chap:Teste"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Fabiane:
+ Esse capítulo ainda falta terminar de ser corrigido
+\end_layout
+
+\end_inset
+
+Todo projeto de engenharia passa por uma etapa de testes.
+ Neste capítulo apresentamos alguns testes do software desenvolvido.
+ Estes testes devem dar resposta aos diagramas de caso de uso inicialmente apresentados (diagramas de caso de uso geral e específicos).
+\end_layout
+
+\begin_layout Section
+Teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-1"
+
+\end_inset
+
+:
+ Validação com Modelo Tabelado (
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Este teste tem o objetivo de validar o motor matemático do simulador (Método das Características e a Tangente de Welge) ao processar dados experimentais discretos interpolados linearmente.
+\end_layout
+
+\begin_layout Standard
+Utiliza-se o cenário do Exercício 5.1 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Exercício-5.1."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+),
+ proposto por 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+,
+ para validar o motor matemático do simulador.
+ Os dados discretos de permeabilidade relativa (
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+) foram carregados via arquivo de texto (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+).
+ Configurou-se um cenário de injeção unidimensional horizontal (
+\begin_inset Formula $\alpha=0^{\circ}$
+\end_inset
+
+),
+ com permeabilidade absoluta de 
+\begin_inset Formula $0.5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+ e velocidade de Darcy de 
+\begin_inset Formula $0.6\text{ cm/d}$
+\end_inset
+
+ (convertida para a vazão volumétrica de 
+\begin_inset Formula $6.944\times10^{-8}\text{ m}^{3}/\text{s}$
+\end_inset
+
+ para uma área unitária de 
+\begin_inset Formula $1\text{ m}^{2}$
+\end_inset
+
+);
+ estes parâmetros operacionais foram extraídos do Exercício 5.2 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+,
+ apresentado e detalhado na seção subsequente deste capítulo,
+ garantindo a padronização estrutural de todas as validações realizadas.Para a validação,
+ o simulador foi submetido a três cenários de razão de mobilidade (
+\begin_inset Formula $M=\mu_{o}/\mu_{w}$
+\end_inset
+
+),
+ variando-se a viscosidade do óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+) em 
+\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $5\text{ mPa}\cdot\text{s}$
+\end_inset
+
+ e 
+\begin_inset Formula $50\text{ mPa}\cdot\text{s}$
+\end_inset
+
+,
+ enquanto a viscosidade da água foi mantida em 
+\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
+\end_inset
+
+.
+ O software foi validado através da extração dos indicadores críticos de breakthrough (saturação na frente de choque,
+ saturação média na ruptura e tempo adimensional de ruptura),
+ comparando-se a resposta física do modelo às variações de viscosidade e à condição de entropia de Buckley-Leverett.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/5.1-lake.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exercício 5.1
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Exercício-5.1."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+O programa será validado avaliando-se a detecção automática da saturação irredutível de água (
+\begin_inset Formula $S_{wi}=0.40$
+\end_inset
+
+),
+ a ancoragem correta da tangente de Welge neste ponto inicial e o cálculo coerente da saturação da frente de choque (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+) e do tempo de ruptura.
+ Espera-se que o simulador corrija o perfil multivalorado,
+ gerando uma frente de choque perfeitamente vertical (condição de entropia).
+\end_layout
+
+\begin_layout Standard
+O simulador foi capaz de ler a tabela dinâmica,
+ extraindo automaticamente 
+\begin_inset Formula $S_{wi}=0.40$
+\end_inset
+
+ e 
+\begin_inset Formula $S_{or}=0.30$
+\end_inset
+
+.
+ Observou-se a ancoragem perfeita da secante de entropia e o corte da curva original sem a ocorrência de singularidades (divisão por zero).
+ Um aspecto analítico importante revelado pelo simulador foi o leve ruído numérico ("
+\emph on
+ringing
+\emph default
+") na porção superior do perfil de saturação de água (platô viscoso,
+ visível no painel inferior esquerdo da Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+).
+ Este fenômeno atesta o rigor do cálculo da derivada de diferenças finitas centrais do simulador:
+ como os dados de entrada são esparsos e interpolados por retas,
+ a função de fluxo fracionário apresenta quinas de classe 
+\begin_inset Formula $C^{1}$
+\end_inset
+
+,
+ refletindo-se em pequenas oscilações locais na velocidade da onda (
+\begin_inset Formula $\frac{df_{w}}{dS_{w}}$
+\end_inset
+
+).
+ Na engenharia prática,
+ isso evidencia a necessidade de modelos matemáticos contínuos (como Corey ou LET) para suavização de dados de laboratório.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 1
+\change_inserted 258712344 1782008757
+ cenário A
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 1
+\change_inserted 258712344 1782008766
+ cenário B
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $0,005$
+\end_inset
+
+ Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parâmetros de Entrada configurados para o Teste 1
+\change_inserted 258712344 1782008777
+ cenário C
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro Físico / Operacional
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Valor
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Comprimento (
+\begin_inset Formula $L$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $100$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Área (
+\begin_inset Formula $A$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+m²
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Porosidade (
+\begin_inset Formula $\phi$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $20$
+\end_inset
+
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Permeabilidade (
+\begin_inset Formula $K$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ângulo de inclinação (
+\begin_inset Formula $\alpha$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade do Óleo (
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $0,050$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Viscosidade da Água (
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,001$
+\end_inset
+
+Pa.s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade do Óleo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $800$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Densidade da Água
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $1000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Vazão volumétrica
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Volumes de Poros Injetados
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0,2$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de entrada de dados
+\end_layout
+
+\begin_layout Standard
+A seguir apresenta-se o arquivo de texto formatado com as matrizes de saturação e permeabilidade do ensaio de laboratório.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+# Dados experimentais do Exercício 5.1 (Lake,
+ 1989)
+\end_layout
+
+\begin_layout Plain Layout
+# Colunas:
+ Sw Krw Kro
+\end_layout
+
+\begin_layout Plain Layout
+DADOS_KR_INICIO
+\end_layout
+
+\begin_layout Plain Layout
+0.40 0.000 0.360
+\end_layout
+
+\begin_layout Plain Layout
+0.45 0.005 0.260
+\end_layout
+
+\begin_layout Plain Layout
+0.50 0.009 0.140
+\end_layout
+
+\begin_layout Plain Layout
+0.55 0.020 0.080
+\end_layout
+
+\begin_layout Plain Layout
+0.60 0.035 0.036
+\end_layout
+
+\begin_layout Plain Layout
+0.65 0.050 0.020
+\end_layout
+
+\begin_layout Plain Layout
+0.70 0.080 0.000
+\end_layout
+
+\begin_layout Plain Layout
+FIM_DADOS
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo de texto,
+ teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Arquivo-de-texto-"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+A seguir apresenta-se a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Extração-dos-diagnósticos-"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ a extração dos diagnósticos de ruptura calculados pelo motor analítico do simulador.
+ Estes dados foram capturados diretamente da tabela de resultados do relatório executivo em PDF gerado autonomamente pelo motor analítico do simulador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-1-resul.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Extração dos diagnósticos,
+ teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Extração-dos-diagnósticos-"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Teste-TelaPrograma-Captura1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ ilustra o painel de diagnósticos operacionais do software,
+ evidenciando a curva de fluxo fracionário associada à tangente construtiva de Welge,
+ o perfil de saturação ancorado no poço injetor com a descontinuidade de choque evidente,
+ e a evolução temporal da eficiência de deslocamento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resultado.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa mostrando
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Teste-TelaPrograma-Captura1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 2
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-2"
+
+\end_inset
+
+:
+ Gravidade e Teoria do Fluxo Fracionário 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este teste visa validar o acoplamento do termo gravitacional na equação de Buckley-Leverett generalizada.
+ O objetivo é verificar se o simulador responde fisicamente de forma correta aos efeitos de segregação gravitacional em reservatórios inclinados (aclive e declive),
+ alterando a velocidade da frente de choque e a morfologia da curva de fluxo fracionário.
+\end_layout
+
+\begin_layout Standard
+Utiliza-se o Exercício 5.2 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Exercício-5.2."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ que define funções de permeabilidade relativa exponenciais equivalentes ao modelo analítico de Corey.
+ Os parâmetros empíricos de entrada são:
+ 
+\begin_inset Formula $S_{wir}=S_{or}=0.20$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{w}=1$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{o}=2$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k^{0}_{rw}=0.1$
+\end_inset
+
+ e 
+\begin_inset Formula $k^{0}_{ro}=0.8$
+\end_inset
+
+.
+ Para garantir a coerência com o Sistema Internacional (SI) exigido pelo motor físico do software,
+ os dados originais da literatura sofreram as seguintes conversões:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ no capítulo de projeto coloque uma seção informando que os dados devem ser entrados sempre em SI;
+\end_layout
+
+\begin_layout Plain Layout
+no manual esta informação deve ser repetida;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Viscosidades:
+ 
+\begin_inset Formula $1\text{ mPa}\cdot\text{s}$
+\end_inset
+
+ (água) e 
+\begin_inset Formula $10\text{ mPa}\cdot\text{s}$
+\end_inset
+
+ (óleo) foram convertidos para 
+\begin_inset Formula $0.001\text{ Pa}\cdot\text{s}$
+\end_inset
+
+ e 
+\begin_inset Formula $0.010\text{ Pa}\cdot\text{s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Permeabilidade Absoluta:
+ O valor de 
+\begin_inset Formula $0.5\mu\text{m}^{2}$
+\end_inset
+
+ (aproximadamente 
+\begin_inset Formula $0.5\text{ Darcy}$
+\end_inset
+
+) equivale a 
+\begin_inset Formula $0.5\times10^{-12}\text{ m}^{2}$
+\end_inset
+
+ no SI.
+\end_layout
+
+\begin_layout Itemize
+Velocidade de Darcy (
+\begin_inset Formula $u$
+\end_inset
+
+):
+ O valor original de 
+\begin_inset Formula $0.6\text{ cm/d}$
+\end_inset
+
+ foi convertido para vazão volumétrica em uma área unitária (
+\begin_inset Formula $A=1\text{ m}^{2}$
+\end_inset
+
+),
+ resultando em 
+\begin_inset Formula $6.944\times10^{-8}\text{ m}^{3}\text{/s}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Diferença de Densidade (
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+):
+ O gradiente de 
+\begin_inset Formula $0.2\text{ g/cm}^{3}$
+\end_inset
+
+ foi imputado no software através das densidades individuais de 
+\begin_inset Formula $1000\text{ kg/m}^{3}$
+\end_inset
+
+ (água) e 
+\begin_inset Formula $800\text{ kg/m}^{3}$
+\end_inset
+
+ (óleo).
+\end_layout
+
+\begin_layout Standard
+As simulações foram executadas para um tempo adimensional de 
+\begin_inset Formula $t_{D}=0.2\text{ PVI}$
+\end_inset
+
+,
+ variando-se os ângulos de inclinação estrutural (
+\begin_inset Formula $\alpha$
+\end_inset
+
+) em 
+\begin_inset Formula $0^{\circ}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+ (aclive) e 
+\begin_inset Formula $-30^{\circ}$
+\end_inset
+
+ (declive).
+\end_layout
+
+\begin_layout Standard
+O sistema será validado pela análise morfológica das frentes de choque.
+ Fisicamente,
+ em aclives (
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+),
+ a gravidade atua contra o sentido do fluxo da água (mais densa),
+ retardando a frente de avanço.
+ Em declives (
+\begin_inset Formula $-30^{\circ}$
+\end_inset
+
+),
+ a água flui a favor da gravidade,
+ acelerando o choque.
+ O software deve ser capaz de capturar essa distinção no perfil espacial (
+\begin_inset Formula $S_{w}\times x_{D}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+O simulador computou adequadamente a influência do peso da coluna de fluido.
+ Para o ângulo de 
+\begin_inset Formula $0^{\circ}$
+\end_inset
+
+,
+ o Número de Gravidade (
+\begin_inset Formula $N_{g}$
+\end_inset
+
+) resulta em zero,
+ refletindo um deslocamento estritamente dominado por forças viscosas.
+ Ao se introduzir a inclinação de 
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+,
+ o termo gravitacional torna-se resistivo ao fluxo de água,
+ provocando um atraso posicional da frente de choque em relação ao cenário horizontal.
+ De modo inverso,
+ a injeção descendente (
+\begin_inset Formula $-30^{\circ}$
+\end_inset
+
+) demonstrou o adiantamento da frente de saturação,
+ confirmando que o software computa corretamente os efeitos vetoriais da segregação gravitacional no escoamento imiscível bidirecional.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/5.2-lake.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Exercício 5.2
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Exercício-5.2."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de entrada de dados
+\end_layout
+
+\begin_layout Standard
+O carregamento da parametrização de Corey foi realizado pelo leitor de disco integrado ao software,
+ utilizando a formatação padronizada sem cabeçalhos (ordem:
+ 
+\begin_inset Formula $S_{wir}$
+\end_inset
+
+,
+\begin_inset Formula $S_{or}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $K^{0}_{ro}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $K^{0}_{rw}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{o}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $n_{w}$
+\end_inset
+
+).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ Considere adicionar na primeira linha do arquivo o seguinte
+\end_layout
+
+\begin_layout Plain Layout
+#swir sor kro krw no nw
+\end_layout
+
+\begin_layout Plain Layout
+no código pode descartar a primeira linha ou toda linha iniciada com #
+\end_layout
+
+\begin_layout Plain Layout
+Se colocar desconsiderar todas as linhas iniciadas com # poderá colocar outras instruções no arquivo
+\end_layout
+
+\begin_layout Plain Layout
+para futuro aceitar arquivos no formato json;
+\end_layout
+
+\begin_layout Plain Layout
+c++ tem arquivo de cabecalho que permite ler arquivos json diretamente;
+\end_layout
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+.
+\end_layout
+
+\begin_layout Plain Layout
+Abaixo,
+ um exemplo de como os dados da Listagem 8.2 (Corey) seriam estruturados em JSON para o simulador:
+\end_layout
+
+\begin_layout Plain Layout
+{
+\end_layout
+
+\begin_layout Plain Layout
+"simulacao":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+"modelo_permeabilidade":
+ "Corey",
+\end_layout
+
+\begin_layout Plain Layout
+"parametros":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+"swir":
+ 0.2,
+\end_layout
+
+\begin_layout Plain Layout
+"sor":
+ 0.2,
+\end_layout
+
+\begin_layout Plain Layout
+"kro_max":
+ 0.8,
+\end_layout
+
+\begin_layout Plain Layout
+"krw_max":
+ 0.1,
+\end_layout
+
+\begin_layout Plain Layout
+"expoente_oleo_no":
+ 2,
+\end_layout
+
+\begin_layout Plain Layout
+"expoente_agua_nw":
+ 1
+\end_layout
+
+\begin_layout Plain Layout
+},
+\end_layout
+
+\begin_layout Plain Layout
+"condicoes_contorno":
+ {
+\end_layout
+
+\begin_layout Plain Layout
+"angulo_inclinacao_graus":
+ 0.0,
+\end_layout
+
+\begin_layout Plain Layout
+"tempo_pvi":
+ 0.2
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+}
+\end_layout
+
+\begin_layout Plain Layout
+exemplos de uso de json em c++ aqui:
+\end_layout
+
+\begin_layout Plain Layout
+https://github.com/nlohmann/json
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+0.2 0.2 0.8 0.1 2 1
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo de texto,
+ teste 2
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Arquivo-de-texto2"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+Abaixo destacam-se os indicadores globais extraídos para o cenário horizontal,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cenário-horizontal."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ o livro que tem o exercício tem a resposta?
+ se tiver coloque do lado do resultado que obteve mostrando a validação Fabiane:
+ Não.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cenário horizontal
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cenário-horizontal."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abaixo destacam-se os indicadores globais extraídos para o cenário com ângulo de 30º,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cenário-com-ângulo"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-2.1.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cenário com ângulo de 30º
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cenário-com-ângulo"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Abaixo destacam-se os indicadores globais extraídos para o cenário com ângulo de -30º,
+ Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Cenário-com-ângulo-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-2.2.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cenário com ângulo de -30º
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Cenário-com-ângulo-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ as Figuras l
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-3"
+
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+,
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-1-1"
+
+\end_inset
+
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tela-do-programa-2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresentam os painéis operacionais completos do software para os cenários de inclinação de 
+\begin_inset Formula $0^{\circ}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $30^{\circ}$
+\end_inset
+
+ e 
+\begin_inset Formula $-30^{\circ}$
+\end_inset
+
+,
+ respectivamente.
+ Nelas,
+ é possível visualizar o adiantamento da frente de saturação para injeções descendentes e o atraso para injeções ascendentes,
+ confirmando a robustez da integração do termo gravitacional.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ o lyx identificou que algumas figura estavam com nome repetido e renomeou;
+ verifique se as referencias estão corretas e corrija o nome do label das figuras;
+ quando corrige o nome do label o lyx já corrige o nome na referencia
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resultado-2.png
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Tela do programa exibindo o perfil de saturação e a eficiência de deslocamento para injeção em reservatório horizontal (
+\begin_inset Formula $\alpha=0^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-3"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resultado-2-1.png
+	width 100text%
+
+\end_inset
+
+Tela do programa exibindo o perfil de saturação retardado para injeção ascendente em aclive (
+\begin_inset Formula $\alpha=30^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-1-1"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resultado-2-1-1.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tela do programa exibindo o perfil de saturação acelerado para injeção descendente em declive (
+\begin_inset Formula $\alpha=-30^{\circ}$
+\end_inset
+
+)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tela-do-programa-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 3
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-3"
+
+\end_inset
+
+:
+ Validação do Modelo Racional LET 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este teste tem o objetivo de verificar a estabilidade do motor matemático do simulador ao processar o modelo empírico de Lombez,
+ Escovedo e Trindade (LET),
+ que utiliza funções racionais flexíveis para descrever as curvas de permeabilidade relativa.
+ Testa-se a capacidade do software em ancorar a tangente de Welge em curvas com formatos não-convencionais.
+\end_layout
+
+\begin_layout Standard
+Os coeficientes empíricos foram extraídos da literatura especializada,
+ especificamente dos cenários base avaliados pela Sociedade Brasileira de Matemática Aplicada e Computacional (SBMAC,
+ 2020).
+ Na fase aquosa,
+ os parâmetros de forma,
+ elevação e translação foram definidos como 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ termos fisicos,
+ matematicos,
+ valores,
+ sempre dentro de equacao assim usarão as mesmas fontes
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $Lw=4.02$
+\end_inset
+
+,
+ 
+\begin_inset Formula $Ew=2.00$
+\end_inset
+
+ e 
+\begin_inset Formula $Tw=0.41$
+\end_inset
+
+.
+ Para a fase oleica,
+ utilizou-se 
+\begin_inset Formula $Lo=1.00$
+\end_inset
+
+,
+ 
+\begin_inset Formula $Eo=1.18$
+\end_inset
+
+ e 
+\begin_inset Formula $To=1.28$
+\end_inset
+
+.
+ O cenário fluido-dinâmico foi mantido idêntico ao Teste 1,
+ com injeção horizontal e viscosidades de 
+\begin_inset Formula $1mPa.s$
+\end_inset
+
+ (água) e 
+\begin_inset Formula $5mPa.s$
+\end_inset
+
+ (óleo) aos 
+\begin_inset Formula $0.3PVI$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Os parâmetros do modelo LET utilizados como entrada estão listados na Tabela 1 (Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Tabela-de-coeficientes"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+),
+ retirados diretamente do referencial bibliográfico citado.
+\end_layout
+
+\begin_layout Standard
+O programa será validado pela geração da curva em "S" característica do fluxo fracionário,
+ confirmando que as ramificações matemáticas do modelo LET (elevação e translação) não geram instabilidades numéricas,
+ singularidades ou limites fora do intervalo físico (
+\begin_inset Formula $0$
+\end_inset
+
+ a 
+\begin_inset Formula $1$
+\end_inset
+
+) durante a interpolação ou no cálculo de derivadas centrais.
+\end_layout
+
+\begin_layout Standard
+A implementação do modelo LET apresentou estabilidade incondicional.
+ Diferentemente do modelo tabelado,
+ a natureza analítica contínua da função racional produziu um perfil de saturação perfeitamente liso (suave),
+ eliminando o ruído numérico na derivada espacial.
+ A curva de fluxo fracionário gerada demonstrou um atraso natural na mobilidade da água em baixas saturações (efeito do alto Lw de 4.02),
+ o que alterou significativamente a posição da frente de choque e a eficiência de varrido quando comparado aos modelos puramente polinomiais,
+ ratificando a flexibilidade do LET para modelar rochas com molhabilidades complexas.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-3 e 4.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ imagem pouco legivel considere pedir a IA para reproduzir fielmente com mais qualidade gráfica
+\end_layout
+
+\begin_layout Plain Layout
+ou crie uma tabela e reproduza o texto
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabela de coeficientes extraída de 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+ utilizada para os modelos LET e Chierici
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Tabela-de-coeficientes"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de entrada de dados
+\end_layout
+
+\begin_layout Standard
+Os coeficientes do modelo LET foram carregados no simulador através da interface gráfica,
+ parametrizados em conformidade com o cenário base de incertezas publicado na literatura.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ explique a ordem dos dados do arquivo
+\end_layout
+
+\begin_layout Plain Layout
+considere colocar
+\end_layout
+
+\begin_layout Plain Layout
+#bla bla bla na primeira linha
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+\align center
+4.02 2.00 0.41 1.00 1.18 1.28 0.2 0.2
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo de texto,
+ teste 3
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Arquivo-de-texto3"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagnóstico-numérico-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ extrai os indicadores de ruptura (
+\emph on
+breakthrough
+\emph default
+) gerados pelo relatório executivo do simulador para a rocha avaliada pelo modelo LET.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-3.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagnóstico numérico do instante de ruptura para o modelo racional LET
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagnóstico-numérico-do"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Painel-principal-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ apresenta o painel da interface gráfica,
+ evidenciando o formato singular em "S" da curva de fluxo fracionário gerada por este modelo empírico flexível.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ confira se os dados de entrada da figura estão corretos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resultado-3.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Painel principal do simulador processando o escoamento governado pelas curvas de permeabilidade do modelo LET
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Painel-principal-do"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste 4
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-4"
+
+\end_inset
+
+:
+ Validação do Modelo Exponencial de Chierici 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este cenário testa a resolução termodinâmica do software frente ao modelo de Chierici (1984),
+ que impõe funções de decaimento exponencial sobre a saturação normalizada.
+ O foco é atestar o tratamento computacional em limites assintóticos para evitar divisões por zero e singularidades,
+ características inerentes a equações exponenciais inversas.
+\end_layout
+
+\begin_layout Standard
+As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pela SBMAC (2020).
+ Os parâmetros aplicados à fase aquosa foram 
+\begin_inset Formula $Aw=3.21$
+\end_inset
+
+ e 
+\begin_inset Formula $Bw=0.86$
+\end_inset
+
+;
+ e para a fase oleica,
+ 
+\begin_inset Formula $Ao=0.87$
+\end_inset
+
+ e 
+\begin_inset Formula $Bo=0.84$
+\end_inset
+
+.
+ Os pontos de saturação irredutível e residual foram fixados em 
+\begin_inset Formula $0.20$
+\end_inset
+
+,
+ assegurando uma comparação simétrica de volume poroso móvel com os testes anteriores.
+\end_layout
+
+\begin_layout Standard
+Espera-se que o simulador compute as exponenciais respeitando as assíntotas do fluxo fracionário,
+ sem corromper a matriz da malha espacial ou travar (
+\emph on
+crash
+\emph default
+) nas saturações críticas próximas a 
+\begin_inset Formula $Swir$
+\end_inset
+
+ e 
+\begin_inset Formula $1-Sor$
+\end_inset
+
+.
+ A integridade do método da tangente de Welge também será observada.
+\end_layout
+
+\begin_layout Standard
+O modelo de Chierici foi executado com sucesso e a rotina de segurança matemática ("
+\emph on
+clamping
+\emph default
+") inserida no código-fonte evitou anomalias nos limites do domínio.
+ Devido à natureza do decaimento exponencial rápido imposto pelo parâmetro 
+\begin_inset Formula $Bw=0.86$
+\end_inset
+
+,
+ a frente de avanço da água demonstrou um perfil de ruptura (
+\emph on
+breakthrough
+\emph default
+) mais agressivo do que os modelos avaliados anteriormente.
+ O algoritmo da secante de Welge encontrou o ponto máximo de inclinação com precisão,
+ confirmando que o software está homologado e robusto para trabalhar com qualquer família de funções de permeabilidade relativa aplicada à indústria de simulação de reservatórios.
+\end_layout
+
+\begin_layout Subsection
+Arquivo de entrada de dados
+\end_layout
+
+\begin_layout Standard
+Os parâmetros empíricos de decaimento do modelo exponencial foram parametrizados diretamente no painel operacional do simulador.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+\align center
+3.21 0.86 0.87 0.84 0.2 0.2 1.0 1.0
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Arquivo de texto,
+ teste 4
+\begin_inset CommandInset label
+LatexCommand label
+name "lis:Arquivo-de-texto-2"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Arquivo de saída de dados (resultados da tela)
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Resultados-analíticos-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ demonstra as métricas de tempo e eficiência de deslocamento no momento da ruptura para o modelo exponencial.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/teste-4.png
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultados analíticos do choque de 
+\emph on
+Buckley-Leverett
+\emph default
+ empregando o modelo de decaimento exponencial de Chierici
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Resultados-analíticos-do"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Figuras
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Painel-de-resultados"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+ exibe a interface de solução do software,
+ onde a modelagem de Chierici resulta em um avanço mais severo da água,
+ visível tanto no perfil de saturação quanto na curva de eficiência (
+\begin_inset Formula $E_{d}$
+\end_inset
+
+).
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+NOTA:
+ você tem de adicionar um teste,
+ rodar os mesmos exemplos no linux usando os mesmos arquivos de entrada;
+\end_layout
+
+\begin_layout Plain Layout
+a ideia é testar os arquivos de entrada;
+\end_layout
+
+\begin_layout Plain Layout
+seria interessante colocar a informação de conformidade dos arquivos de entrada,
+ se podem ser UTF-8 e ISO-8859-1 ou apenas um formato;
+\end_layout
+
+\begin_layout Plain Layout
+normalmente acentos geram problemas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/resulta-4.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Painel de resultados da interface gráfica demonstrando a estabilidade computacional na interpolação do modelo de Chierici
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Painel-de-resultados"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Teste de Portabilidade
+\end_layout
+
+\end_body
+\end_document

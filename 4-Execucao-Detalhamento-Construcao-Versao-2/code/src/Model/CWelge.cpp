@@ -35,8 +35,9 @@ bool CWelge::calcularTangente(CCalculadoraFluxoFracionario* calc, double swi, do
     double fw_swi = calc->calcularFw(swi);
 
     // Varredura da secante ancorada fortemente em (Swi, fw(Swi))
-    // O passo de discretização (0.001) define a precisão da localização do choque
-    for (double s = swi + 0.001; s <= sw_max; s += 0.001) {
+    // Correção: Offset de 0.01 na origem da varredura elimina a captura de
+    // assíntotas falsas geradas pela continuidade C0 da interpolação linear.
+    for (double s = swi + 0.01; s <= sw_max; s += 0.001) {
 
         // Avaliação do coeficiente angular da secante
         double slope = (calc->calcularFw(s) - fw_swi) / (s - swi);

@@ -67,13 +67,43 @@ void CSolver::calcularPerfilSaturacao(double tempoInjetado, double swi, double s
         vecPos.push_back(pos);
     }
 
-    // Passo 2: Verificação do Front de Choque Instável
-    // Avalia a necessidade termodinâmica do choque limitando ao espectro de móveis
-    bool choqueEncontrado = _welge->calcularTangente(_calc, swi, sw_max);
+    // Passo 2: Verificação da Condição de Entropia de Oleinik
+    // Uma onda contínua é válida se a velocidade (derivada) for monotonicamente decrescente.
+    bool necessitaWelge = false;
 
-    // Atributos definidores da frente estabilizada
-    double swFrente = _welge->getSwFrente();
-    double velocidadeChoque = _welge->getInclinacaoChoque();
+    // Varredura para encontrar violação da entropia (inversão de velocidades) no domínio móvel
+    for (size_t i = 1; i < vecSw.size(); ++i) {
+        if (vecSw[i] > swi && vecSw[i] < sw_max) {
+            // Se a velocidade da saturação MAIOR for MAIOR que a da saturação MENOR:
+            // Ocorre "atropelamento" de ondas (multivaloração irreal). A entropia falhou.
+            if (vecVel[i] > vecVel[i - 1]) {
+                necessitaWelge = true;
+                break;
+            }
+        }
+    }
+
+    bool choqueEncontrado = false;
+    double swFrente = swi;
+    double velocidadeChoque = 0.0;
+
+    // Árvore de Decisão Metodológica
+    if (necessitaWelge) {
+        // Solução de Choque: A entropia foi violada, invoca-se a tangente de Welge
+        choqueEncontrado = _welge->calcularTangente(_calc, swi, sw_max);
+        if (choqueEncontrado) {
+            swFrente = _welge->getSwFrente();
+            velocidadeChoque = _welge->getInclinacaoChoque();
+        }
+    } else {
+        // Solução Clássica Contínua: Não há choque (Onda de Rarefação Pura)
+        // A frente de avanço é ditada puramente pela maior velocidade natural (no caso, a base da curva)
+        choqueEncontrado = false;
+        swFrente = swi;
+        velocidadeChoque = _calc->calcularDerivadaFw(swi);
+    }
+
+    // Passo 3: Identificação Topológica da Dupla Valoração (Efeito "Quebra de Onda" de Choque)
 
     // Passo 3: Identificação Topológica da Dupla Valoração (Efeito "Quebra de Onda" de Choque)
     bool cruzamento = false;

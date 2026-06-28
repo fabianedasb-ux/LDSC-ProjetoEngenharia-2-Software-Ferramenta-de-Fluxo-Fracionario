@@ -2249,13 +2249,13 @@ Agrupando-se os termos viscosos e gravitacionais,
 
 \begin_layout Standard
 Neste ponto,
- é conveniente definir a diferença de densidade entre as fases,
+ é conveniente definir a diferença de massa específica entre as fases,
  
 \begin_inset Formula $\Delta\rho$
 \end_inset
 
 ,
- como a diferença entre a densidade da fase molhante (água) e a fase não-molhante (óleo):
+ como a diferença entre a massa específica da fase molhante (água) e a fase não-molhante (óleo):
 \end_layout
 
 \begin_layout Standard
@@ -2486,7 +2486,7 @@ Forças Gravitacionais
 \end_inset
 
 .
- Este componente quantifica a segregação de fluidos devido à diferença de densidade (
+ Este componente quantifica a segregação de fluidos devido à diferença de massa específica (
 \begin_inset Formula $\Delta\rho$
 \end_inset
 
@@ -3605,7 +3605,7 @@ Para o desenvolvimento da solução analítica clássica,
 \end_layout
 
 \begin_layout Enumerate
-A densidade da água (
+A massa específica da água (
 \begin_inset Formula $\rho_{w}$
 \end_inset
 

@@ -1,4 +1,4 @@
-# Dados experimentais do Exercício 5.1 (Lake, 1989)
+# Dados experimentais do Exercício 5.1 (Lake, 2014)
 # Colunas: Sw Krw Kro
 DADOS_KR_INICIO
 0.40 0.000 0.360
