@@ -2610,8 +2610,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-especifico-um.png
-	lyxscale 50
-	width 100text%
+	lyxscale 30
 
 \end_inset
 

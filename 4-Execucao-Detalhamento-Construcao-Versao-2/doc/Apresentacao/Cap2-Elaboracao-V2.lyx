@@ -642,10 +642,10 @@ status open
 \align center
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="3">
-<features tabularvalignment="middle" tabularwidth="100text%">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
-<column alignment="center" valignment="top">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="4cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -739,10 +739,11 @@ Comprimento / Distância
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $x,L$
+\begin_inset Formula $x$
 \end_inset
 
-
+,
+ L
 \end_layout
 
 \end_inset
@@ -1122,7 +1123,7 @@ Permeabilidade Absoluta
 \begin_inset Text
 
 \begin_layout Plain Layout
-\begin_inset Formula $k$
+\begin_inset Formula $K$
 \end_inset
 
 
@@ -1248,7 +1249,7 @@ Símbolos
 
  
 \begin_inset Argument post:1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Viscosidade Dinâmica(Pa.s)
@@ -1388,7 +1389,7 @@ Símbolos
 
 
 \begin_inset Argument post:1
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Pressão (Pa(N/m²)
@@ -1779,6 +1780,765 @@ name "tab:Sistema-de-unidades"
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Permeabilidades Relativas
+\end_layout
+
+\begin_layout Standard
+Para a correta execução da modelagem analítica,
+ além da padronização de todas as variáveis operacionais no Sistema Internacional (SI),
+ o simulador demanda a definição precisa das propriedades de transporte multifásico.
+ No escoamento multifásico em meios porosos,
+ a presença simultânea de dois ou mais fluidos resulta em uma competição pela rede de poros interconectados.
+ A permeabilidade relativa (
+\begin_inset Formula $k_{r}$
+\end_inset
+
+) é definida como a razão entre a permeabilidade efetiva de uma dada fase fluida (
+\begin_inset Formula $k_{e}$
+\end_inset
+
+) e a permeabilidade absoluta da rocha (
+\begin_inset Formula $K$
+\end_inset
+
+).
+ Trata-se de um parâmetro fenomenológico adimensional,
+ dependente da saturação dos fluidos,
+ da molhabilidade da rocha,
+ da geometria dos poros e do histórico de saturação (histerese).
+\end_layout
+
+\begin_layout Standard
+Matematicamente,
+ para um sistema bifásico água-óleo,
+ as permeabilidades relativas são expressas como funções não lineares da saturação de água (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+).
+ Na modelagem de reservatórios e na solução analítica da equação de Buckley-Leverett,
+ a representação contínua ou discreta destas curvas é essencial para a determinação da função de fluxo fracionário.
+ Os métodos de representação dividem-se em dados tabelados experimentais e correlações empíricas
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Trata-se de um parâmetro fenomenológico adimensional,
+ dependente da saturação das fases,
+ da molhabilidade da rocha e da geometria dos poros.
+ Na solução da equação de Buckley-Leverett,
+ a formulação destas curvas dita o comportamento da função de fluxo fracionário.
+ Para atender à diversidade de cenários de engenharia,
+ o software processa tanto dados empíricos discretos quanto correlações analíticas contínuas,
+ detalhados a seguir.
+\end_layout
+
+\begin_layout Subsubsection
+Modelo Tabelado (Dados Experimentais)
+\end_layout
+
+\begin_layout Standard
+O modelo tabelado consiste na representação discreta das curvas de permeabilidade relativa a partir de dados obtidos diretamente em ensaios de laboratório,
+ comumente através de testes de deslocamento em estado estático ou dinâmico.
+\end_layout
+
+\begin_layout Standard
+Neste formato,
+ os valores de 
+\begin_inset Formula $k_{rw}$
+\end_inset
+
+ e 
+\begin_inset Formula $k_{ro}$
+\end_inset
+
+ são tabelados em função de incrementos discretos de saturação (
+\begin_inset Formula $S_{w}$
+\end_inset
+
+).
+ Computacionalmente,
+ para a determinação de valores intermediários necessários à simulação numérica ou à traçagem da secante de Welge,
+ emprega-se a interpolação linear ou polinomial entre os nós adjacentes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
+
+\end_inset
+
+.
+ Apesar de refletirem diretamente o ensaio físico,
+ dados tabelados esparsos podem introduzir ruídos numéricos na derivada da função de fluxo fracionário,
+ exigindo suavização matemática para garantir a integridade da Condição de Entropia.
+\end_layout
+
+\begin_layout Subsubsection
+Modelo Analítico de Corey
+\end_layout
+
+\begin_layout Standard
+O modelo de Corey,
+ proposto inicialmente por 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Corey1954"
+literal "false"
+
+\end_inset
+
+e expandido por Brooks & Corey (1964),
+ é uma das correlações empíricas clássicas mais utilizadas na indústria do petróleo devido à sua simplicidade e base em aproximações de tubos capilares.
+ O modelo descreve as permeabilidades relativas através de leis de potência fundamentadas na saturação efetiva (ou normalizada) da fase molhante
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A saturação de água normalizada (
+\begin_inset Formula $S_{wn}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S_{wn}$
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação de água normalizada (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) é definida como a fração do volume poroso móvel:
+\begin_inset Formula 
+\[
+S_{wn}=\frac{S_{w}-S_{wi}}{1-S_{wi}-S_{or}}
+\]
+
+\end_inset
+
+As funções de permeabilidade relativa para a água e para o óleo são dadas,
+ respectivamente,
+ por:
+\begin_inset Formula 
+\[
+k_{rw}=k^{o}_{rw}(S_{wn})^{n_{w}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k_{ro}=k^{o}_{ro}(1-S_{wn})^{n_{o}}
+\]
+
+\end_inset
+
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+:
+ Saturação de água irredutível (adimensional).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $S_{or}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S_{or}$
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação de óleo residual (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+ Saturação de óleo residual (adimensional).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k^{o}_{rw}$
+\end_inset
+
+:
+ Permeabilidade relativa máxima da água no ponto 
+\begin_inset Formula $1-S_{or}$
+\end_inset
+
+ (adimensional)
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $k^{o}_{rw}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Permeabilidade relativa máxima da água no ponto final (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $k^{o}_{ro}$
+\end_inset
+
+:
+ Permeabilidade relativa máxima do óleo no ponto 
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+ (adimensional)
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $k^{o}_{ro}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Permeabilidade relativa máxima do óleo no ponto final (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $n_{w},n_{o}$
+\end_inset
+
+:
+ Expoentes empíricos de curvatura de Corey para a água e para o óleo.
+\end_layout
+
+\begin_layout Subsubsection
+Modelo Empírico LET
+\end_layout
+
+\begin_layout Standard
+O modelo LET foi estruturado para conferir flexibilidade ao ajuste de histórico de ensaios laboratoriais complexos,
+ mitigando as limitações dos modelos polinomiais em representar as caudas assintóticas das curvas de permeabilidade,
+ comportamento comum em rochas carbonáticas de molhabilidade mista 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A correlação utiliza funções racionais com três parâmetros independentes de ajuste por fase (
+\begin_inset Formula $L,E,T$
+\end_inset
+
+).
+ A formulação matemática,
+ expressa em função da saturação normalizada (
+\begin_inset Formula $S_{wn}$
+\end_inset
+
+) [adimensional],
+ é dada por:
+\begin_inset Formula 
+\[
+k_{rw}=k^{o}_{rw}\frac{(S_{wn})^{L_{w}}}{(S_{wn})^{L_{w}}+E_{w}(1-S_{wn})^{T_{w}}}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k_{ro}=k^{o}_{ro}\frac{(1-S_{wn})^{L_{o}}}{(1-S_{wn})^{L_{o}}+E_{o}(S_{wn})^{T_{o}}}
+\]
+
+\end_inset
+
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L$
+\end_inset
+
+ (Parâmetro de Forma) [adimensional]:
+ Controla a curvatura na região de baixas saturações da fase correspondente.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $L$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro de Forma - Modelo de LET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $E$
+\end_inset
+
+ (Parâmetro de Elevação [adimensional]):
+ Ajusta a posição vertical e a inclinação da porção central da curva.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $E$
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro de Elevação - Modelo de LET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T$
+\end_inset
+
+ (Parâmetro de Translação) [adimensional]:
+ Modifica o comportamento assintótico na região de altas saturações.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro de Translação - Modelo de LET
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Modelo Exponencial de Chierici
+\end_layout
+
+\begin_layout Standard
+O modelo proposto originalmente por Chierici (1984) emprega funções exponenciais inversas.
+ Sua formulação garante matematicamente que a derivada da curva de permeabilidade convirja para zero de forma assintótica nas proximidades das saturações residuais,
+ mitigando anomalias no cálculo da mobilidade 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valdez2020estudo"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+A equação requer a prévia definição de uma razão de saturação móvel normalizada (
+\begin_inset Formula $R_{m}$
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $R_{m}$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Razão de saturação móvel normalizada (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+) [adimensional]:
+\begin_inset Formula 
+\[
+R_{m}=\frac{S_{w}-S_{wi}}{1-S_{w}-S_{or}}
+\]
+
+\end_inset
+
+As funções de permeabilidade relativa para o óleo e para a água são definidas,
+ respectivamente,
+ pelas seguintes correlações empíricas:
+\begin_inset Formula 
+\[
+k_{ro}=k^{o}_{ro}\exp(-A\cdot R^{L}_{m})
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+k_{rw}=k^{o}_{rw}\exp(-B\cdot R^{-M}_{m})
+\]
+
+\end_inset
+
+Onde:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $A$
+\end_inset
+
+ [adimensional]:
+ Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa do óleo.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $A$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa do óleo (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $B$
+\end_inset
+
+ [adimensional]:
+ Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa da água.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa da água (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $L$
+\end_inset
+
+ [adimensional]:
+ Parâmetro de curvatura geométrica para a fase oleica.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $L$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro de curvatura geométrica para a fase oleica (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $M$
+\end_inset
+
+ [adimensional]:
+ Parâmetro de curvatura geométrica para a fase aquosa.
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $M$
+\end_inset
+
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Parâmetro de curvatura geométrica para a fase aquosa (adimensional)
 \end_layout
 
 \end_inset
