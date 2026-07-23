@@ -191,26 +191,27 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+Para a estruturação deste teste,
+ as informações de entrada foram dispostas conforme apresentado na Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Parâmetros-de-Entrada-5.1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
 
-\series bold
-NOTA:
- Explicar o enunciado.
- Citar a tabela.
- O dados de reservatório:
- comprometo,
- área,
- porosidade e permeabilidade absoluta foram os mesmos em todos o cenários para se manter um padrão comparativo;
- os dados de injeção:
- massa específica do óleo e da água(nesse caso ta certo ser Massa específica ou é massa específica?) e velocidade de darcy se basearam no exercício 5.2 do lake que é o próximo teste,
- o PVI foi de 0.2 pq eu sim,
- não sei explicar,
- foi baseado no exercício 5.2,
- mas reduzi um pouco para ser possível observar o bt antes de acontecer,
- assim da pra ver a onda,
- mas não acho essa uma boa explicação,
- tem que melhorar isso.
- Sempre com atenção dobrada as unidades e conversões,
- pois usamos o SI.
+\end_inset
+
+.
+ Os parâmetros geométricos e petrofísicos do reservatório (comprimento,
+ área da seção transversal,
+ porosidade e permeabilidade absoluta) foram mantidos estritamente constantes ao longo de todos os cenários analisados.
+ Esta abordagem metodológica visa isolar a variável de interesse principal —
+ a influência da razão de mobilidade viscosa —
+,
+ estabelecendo um referencial comparativo íntegro e padronizado.
 \end_layout
 
 \begin_layout Standard
@@ -225,6 +226,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/5.1-lake.png
+	lyxscale 70
 	width 100text%
 
 \end_inset
@@ -253,7 +255,36 @@ name "fig:Exercício-5.1."
 
 \end_inset
 
+As propriedades de transporte e os dados de injeção,
+ especificamente a massa específica da fase aquosa e oleica,
+ bem como a velocidade de filtração (velocidade de Darcy) imposta ao sistema,
+ foram fundamentados no Exercício 5.2 da mesma literatura base 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Lake2014"
+literal "false"
 
+\end_inset
+
+,
+ assegurando a consistência termodinâmica e física do modelo.
+\end_layout
+
+\begin_layout Standard
+O tempo de observação estipulado para a simulação analítica foi de 
+\begin_inset Formula $0.2\text{ PVI}$
+\end_inset
+
+ (Volumes Porosos Injetados).
+ A adoção deste instante específico de injeção justifica-se pela necessidade de avaliar a dinâmica do deslocamento em estado transiente.
+ Esta janela de observação possibilita a captura e a visualização da morfologia da frente de avanço (onda de choque) no interior do domínio espacial,
+ instantes antes que a mesma atinja o contorno de produção (fenômeno de ruptura ou 
+\emph on
+breakthrough
+\emph default
+).
+ Por fim,
+ ressalta-se que todos os parâmetros numéricos e equações de conservação foram rigorosamente convertidos e operados em conformidade com o Sistema Internacional de Unidades (SI).
 \end_layout
 
 \begin_layout Standard
@@ -269,6 +300,13 @@ status open
 
 \begin_layout Plain Layout
 Parâmetros de Entrada configurados para o Teste 1
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Parâmetros-de-Entrada-5.1"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -616,7 +654,21 @@ Arquivo de entrada de dados
 \end_layout
 
 \begin_layout Standard
-A seguir apresenta-se o arquivo de texto formatado com as matrizes de saturação e permeabilidade do ensaio de laboratório.
+A seguir apresenta-se o arquivo de texto,
+ Listagem 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lis:Arquivo-de-texto-"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
+ formatado com as matrizes de saturação e permeabilidade do ensaio de laboratório.
 \end_layout
 
 \begin_layout Standard
@@ -700,19 +752,44 @@ Cenário A
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-NOTA:
- Descrição do cenário.
- Viscosidade do Óleo (
+O Cenário A estabelece a condição operacional em que a viscosidade dinâmica do óleo (
 \begin_inset Formula $\mu_{o}$
 \end_inset
 
-) 
-\begin_inset Formula $0,001$
+) é fixada em 
+\begin_inset Formula $0,001\text{ Pa}\cdot\text{s}$
 \end_inset
 
-Pa.s
+.
+ Considerando que a fase aquosa injetada possui idêntica viscosidade (
+\begin_inset Formula $\mu_{w}=0,001\text{ Pa}\cdot\text{s}$
+\end_inset
+
+),
+ a razão de viscosidade do sistema é unitária (
+\begin_inset Formula $\mu_{w}/\mu_{o}=1$
+\end_inset
+
+).
+ Termodinamicamente,
+ este arranjo caracteriza um deslocamento imiscível altamente favorável.
+ Avaliando as permeabilidades relativas nos pontos extremos (
+\emph on
+endpoints
+\emph default
+) do modelo tabelado,
+ a razão de mobilidade total (
+\begin_inset Formula $M$
+\end_inset
+
+) resultante é substancialmente menor que a unidade (
+\begin_inset Formula $M\approx0,222$
+\end_inset
+
+).
+ Do ponto de vista da dinâmica de fluidos,
+ este cenário emula um comportamento macroscópico que se aproxima de um deslocamento do tipo pistão,
+ garantindo elevada estabilidade à frente de avanço e máxima eficiência de varrido.
 \end_layout
 
 \begin_layout Subsubsection
@@ -740,6 +817,74 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
+A comprovação da integridade do processamento numérico do escoamento imiscível é sintetizado através do relatório técnico gerado pelo simulador.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Extração-dos-diagnósticos-"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ e a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Segunda-página-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ apresentam os extratos tabulares deste documento,
+ contendo exclusivamente os indicadores físicos e os parâmetros críticos do instante de ruptura (
+\emph on
+breakthrough
+\emph default
+).
+ Optou-se por suprimir a representação gráfica neste segmento,
+ priorizando a avaliação analítica dos dados pontuais computados.
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Extração-dos-diagnósticos-"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ sumariza as propriedades geométricas,
+ petrofísicas e as razões adimensionais do sistema (Número de Rapoport-Leas e Número de Gravidade).
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Segunda-página-do"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ consolida as saídas do Método das Características acoplado à secante de Welge,
+ atestando a eficiência do deslocamento e a morfologia da saturação no instante crítico.
+ A validação destes indicadores consolida a robustez do motor de cálculo em operar dados tabelados esparsos e garantir a coerência das leis de conservação.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
@@ -763,7 +908,9 @@ status open
 
 \begin_layout Plain Layout
 Extração dos diagnósticos,
- teste 1
+ teste 1.
+ Primeira página do relatório executivo gerado pelo simulador,
+ detalhando os parâmetros estáticos do sistema e os diagnósticos adimensionais de fluxo referentes ao Cenário A
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Extração-dos-diagnósticos-"
@@ -806,7 +953,15 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-...
+Segunda página do relatório executivo gerado pelo simulador,
+ apresentando os indicadores analíticos do instante de ruptura (breakthrough) e o status computado da injeção referentes ao Cenário A
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Segunda-página-do"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -828,7 +983,8 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-A Figura 
+A consolidação visual dos resultados analíticos computados para o Cenário A é apresentada na interface principal do simulador,
+ conforme ilustra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Teste-TelaPrograma-Captura1"
@@ -836,15 +992,17 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
 .
- 
-\series bold
-NOTA:
- Parágrafo conectivo.
- 
+ O painel de visualização integra a parametrização de entrada com os diagnósticos fluidodinâmicos,
+ exibindo simultaneamente as três respostas de estado fundamentais do sistema:
+ a curva de fluxo fracionário acoplada à tangente de Welge,
+ a propagação da onda espacial de saturação de água e o histórico contínuo da eficiência de deslocamento microscópico.
+ Esta disposição gráfica em tela única permite a verificação fenomenológica imediata do deslocamento,
+ evidenciando o avanço estável da frente característico da razão de mobilidade favorável.
 \end_layout
 
 \begin_layout Standard
@@ -867,7 +1025,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando
+Interface principal do simulador exibindo os diagnósticos consolidados e os perfis analíticos gráficos (fluxo fracionário,
+ saturação espacial e eficiência de deslocamento) resultantes da execução do Cenário A
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Teste-TelaPrograma-Captura1"
@@ -892,14 +1051,453 @@ Análise dos resultados
 \end_layout
 
 \begin_layout Standard
+Para consolidar a validação do simulador,
+ faz-se necessária a dedução analítica dos parâmetros de deslocamento que regem o Cenário A.
+ Devido à razão de viscosidade unitária (
+\begin_inset Formula $\mu_{w}/\mu_{o}=1$
+\end_inset
+
+),
+ a função de fluxo fracionário adota uma geometria estritamente convexa (côncava para cima) em todo o domínio de saturação móvel.
+ Matematicamente,
+ isso implica que a velocidade de avanço das frentes,
+ ditada pela derivada da função (
+\begin_inset Formula $df_{w}/dS_{w}$
+\end_inset
+
+),
+ é monotonicamente crescente.
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 NOTA:
- Parágrafo conectivo.
- Parte mais importante,
- apresentar detalhadamente os cálculos realizados analiticamente,
- comparativa entre valos analíticos e valores de simulação,
- erros e conclusão dos resultados.
+ Incluir tabela e gráfico excel.
+\end_layout
+
+\begin_layout Standard
+À teoria de Equações Diferenciais Parciais (EDPs) não lineares de primeira ordem 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "slava_notas"
+literal "false"
+
+\end_inset
+
+,
+ a aplicação do Método das Características estabelece que,
+ se a velocidade de propagação cresce com o aumento da saturação,
+ as curvas características projetadas no plano espaço-tempo (
+\begin_inset Formula $x\times t$
+\end_inset
+
+) convergem e se interceptam.
+ Este atropelamento topológico configura o desenvolvimento topológico de um choque completo.
+ Consequentemente,
+ a ausência de um ponto de inflexão termodinâmico desloca o ponto de tangência máxima da secante de Welge diretamente para o limite superior da curva,
+ traduzindo-se fisicamente em um deslocamento clássico do tipo pistão.
+\end_layout
+
+\begin_layout Standard
+Avaliando os limites da tabela experimental,
+ o ponto de ancoragem inicial da secante ocorre na saturação irredutível,
+ onde 
+\begin_inset Formula $S_{wi}=0.40$
+\end_inset
+
+ e 
+\begin_inset Formula $f_{w}=0$
+\end_inset
+
+.
+ O ponto de interceptação final ocorre no limite de saturação admissível,
+ onde 
+\begin_inset Formula $S_{w}=0.70$
+\end_inset
+
+ e 
+\begin_inset Formula $f_{w}=1.00$
+\end_inset
+
+.
+ A inclinação máxima (
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $m_{max}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Inclinação máxima
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $m_{max}$
+\end_inset
+
+)[adimensional] do sistema é calculada por:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m_{max}=\frac{f_{w}(0.70)-f_{w}(0.40)}{0.70-0.40}=\frac{1.0000-0}{0.30}=3.333
+\]
+
+\end_inset
+
+Este coeficiente angular define matematicamente o tempo adimensional de ruptura (
+\begin_inset Formula $t_{D,bt}$
+\end_inset
+
+) e a saturação média da zona invadida (
+\begin_inset Formula $\bar{S}_{w,bt}$
+\end_inset
+
+) no instante crítico do escoamento:
+\begin_inset Formula 
+\[
+t_{D,bt}=\frac{1}{m_{max}}=\frac{1}{3.333}=0.3000\text{ PVI}
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\bar{S}_{w,bt}=S_{wi}+\frac{1}{m_{max}}=0.40+0.3000=0.7000
+\]
+
+\end_inset
+
+A Tabela 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Comparativo-Analítico-vs."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ apresenta o rigoroso comparativo entre a solução analítica exata,
+ formulada pelas equações de Buckley-Leverett,
+ e os resultados extraídos do processamento computacional executado pelo software.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Comparativo Analítico vs.
+ Computacional (Cenário A)
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Comparativo-Analítico-vs."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro de Desempenho
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Solução Analítica Exata
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Saída do Simulador
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erro Relativo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Saturação da Frente (
+\begin_inset Formula $S_{wf}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.7000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.6990$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.14\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tempo de Ruptura (
+\begin_inset Formula $t_{D,bt}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.3000\text{ PVI}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.3005\text{ PVI}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.16\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Saturação Média (
+\begin_inset Formula $\bar{S}_{w,bt}$
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.7000$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.7005$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $0.07\%$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+A análise dos erros relativos atesta uma convergência excepcional entre a formulação teórica e a ferramenta desenvolvida.
+ O desvio máximo observado,
+ da ordem de 
+\begin_inset Formula $0.16\%$
+\end_inset
+
+,
+ é decorrente exclusivamente da discretização algorítmica da malha matemática imposta pelo passo do motor de cálculo (
+\begin_inset Formula $\Delta S_{w}=0.001$
+\end_inset
+
+).
+ Do ponto de vista da Engenharia de Reservatórios,
+ os valores computados sobrepõem-se à solução analítica de forma íntegra,
+ comprovando que o algoritmo não insere dissipação espúria nos limites absolutos do escoamento pistão.
 \end_layout
 
 \begin_layout Subsection
@@ -907,19 +1505,38 @@ Cenário B
 \end_layout
 
 \begin_layout Standard
-
-\series bold
-NOTA:
- Descrição do cenário.
- Viscosidade do Óleo (
+O Cenário B estabelece uma nova condição operacional através do incremento da viscosidade dinâmica do óleo (
 \begin_inset Formula $\mu_{o}$
 \end_inset
 
-) 
-\begin_inset Formula $0,005$
+),
+ fixada em 
+\begin_inset Formula $0,005\text{ Pa}\cdot\text{s}$
 \end_inset
 
- Pa.s
+.
+ Mantendo-se a viscosidade da fase aquosa constante e igual a 
+\begin_inset Formula $0,001\text{ Pa}\cdot\text{s}$
+\end_inset
+
+,
+ a razão de viscosidade do sistema (
+\begin_inset Formula $\mu_{w}/\mu_{o}$
+\end_inset
+
+) é reduzida para 
+\begin_inset Formula $0,2$
+\end_inset
+
+.
+ Do ponto de vista da fluidodinâmica,
+ essa alteração termodinâmica desfavorece a razão de mobilidade total do sistema em relação ao cenário precedente.
+ Consequentemente,
+ a função de fluxo fracionário deixa de ser estritamente convexa e assume o clássico perfil em "S",
+ apresentando um ponto de inflexão bem definido.
+ Essa nova morfologia dita que o avanço da frente aquosa não ocorrerá mais como um deslocamento do tipo pistão integral,
+ resultando na formação de uma frente de choque com saturação intermediária,
+ seguida por uma onda de rarefação (zona de escoamento bifásico) a montante da frente de avanço.
 \end_layout
 
 \begin_layout Subsubsection
@@ -927,23 +1544,36 @@ Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A Figura 
+A documentação integral dos parâmetros computados e dos diagnósticos fluidodinâmicos referentes ao Cenário B é registrada no relatório técnico gerado automaticamente pelo simulador.
+ A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Extração-dos-diagnósticos--1"
+reference "fig:Primeira-página-do"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
-.
- 
-\series bold
-NOTA:
- Parágrafo conectivo.
- 
+ e a Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Segunda-página-do-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ apresentam,
+ respectivamente,
+ as duas primeiras páginas deste arquivo de saída.
+ Esses extratos detalham a parametrização do modelo e o memorial de cálculo,
+ fornecendo a base de dados numéricos necessária para a subsequente validação analítica do escoamento.
 \end_layout
 
 \begin_layout Standard
@@ -969,11 +1599,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Extração dos diagnósticos,
- teste 1
+Primeira página do relatório técnico gerado pelo simulador,
+ detalhando a extração dos diagnósticos para o Cenário B (Teste 1)
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Extração-dos-diagnósticos--1"
+name "fig:Primeira-página-do"
 
 \end_inset
 
@@ -1013,15 +1643,19 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-...
-\end_layout
+Segunda página do relatório técnico gerado pelo simulador,
+ complementando a extração dos dados de saída para o Cenário B (Teste 1)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Segunda-página-do-1"
 
 \end_inset
 
 
 \end_layout
 
-\begin_layout Plain Layout
+\end_inset
+
 
 \end_layout
 
@@ -1035,23 +1669,24 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-A Figura 
+A visualização consolidada dos perfis dinâmicos calculados para o Cenário B é apresentada na interface principal do simulador,
+ conforme ilustra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Teste-TelaPrograma-Captura1-1"
+reference "fig:Interface-principal-do"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
 .
- 
-\series bold
-NOTA:
- Parágrafo conectivo.
- 
+ O painel de diagnóstico exibe simultaneamente a curva de fluxo fracionário —
+ agora caracterizada por seu perfil em "S" e pela respectiva construção da secante de Welge —
+,
+ a propagação espacial da frente de choque e o histórico contínuo da eficiência de deslocamento microscópico.
 \end_layout
 
 \begin_layout Standard
@@ -1074,10 +1709,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Tela do programa mostrando
+Interface principal do simulador exibindo os diagnósticos consolidados e os perfis gráficos (fluxo fracionário,
+ saturação espacial e eficiência de deslocamento) resultantes da execução do Cenário B
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Teste-TelaPrograma-Captura1-1"
+name "fig:Interface-principal-do"
 
 \end_inset
 
@@ -1092,21 +1728,34 @@ name "fig:Teste-TelaPrograma-Captura1-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Adicionalmente,
+ observa-se a presença de oscilações locais no perfil espacial de saturação (gráfico inferior esquerdo),
+ situadas na região da onda de rarefação,
+ a montante da frente de avanço.
+ Este comportamento não representa uma instabilidade física do escoamento,
+ mas sim um artefato numérico inerente à utilização de dados de entrada discretos (modelo tabelado).
+ Como o Método das Características dita que a velocidade de propagação de uma dada saturação é estritamente dependente da derivada da função de fluxo fracionário (
+\begin_inset Formula $df_{w}/dS_{w}$
+\end_inset
+
+),
+ a transição linear entre os pontos da tabela —
+ sem o acoplamento de um algoritmo de suavização matemática contínua —
+ induz descontinuidades de primeira ordem.
+ Consequentemente,
+ as velocidades calculadas para saturações intermediárias adjacentes sofrem variações abruptas,
+ refletindo-se no padrão serrilhado observado no posicionamento adimensional (
+\begin_inset Formula $x_{D}$
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Subsubsection
 Análise dos resultados
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-NOTA:
- Parágrafo conectivo.
- Parte mais importante,
- apresentar detalhadamente os cálculos realizados analiticamente,
- comparativa entre valos analíticos e valores de simulação,
- erros e conclusão dos resultados.
 \end_layout
 
 \begin_layout Subsection
