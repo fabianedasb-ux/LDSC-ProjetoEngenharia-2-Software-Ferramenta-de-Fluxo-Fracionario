@@ -34,8 +34,8 @@ private:
     // --- Propriedades PVT dos Fluidos ---
     double _mi_o;   ///< Viscosidade dinâmica da fase oleica (\f$ \mu_o \f$) [cP].
     double _mi_w;   ///< Viscosidade dinâmica da fase aquosa (\f$ \mu_w \f$) [cP].
-    double _rho_o;  ///< Densidade da fase oleica (\f$ \rho_o \f$) [kg/m³].
-    double _rho_w;  ///< Densidade da fase aquosa (\f$ \rho_w \f$) [kg/m³].
+    double _rho_o;  ///< Massa específica da fase oleica (\f$ \rho_o \f$) [kg/m³].
+    double _rho_w;  ///< Massa específica da fase aquosa (\f$ \rho_w \f$) [kg/m³].
 
     // --- Propriedades Estruturais e Operacionais ---
     double _k;      ///< Permeabilidade absoluta do meio poroso (\f$ k \f$) [mD].
@@ -64,8 +64,8 @@ public:
      *
      * @param mi_w Viscosidade da água [cP].
      * @param mi_o Viscosidade do óleo [cP].
-     * @param rho_w Densidade da água [kg/m³].
-     * @param rho_o Densidade do óleo [kg/m³].
+     * @param rho_w Massa específica da água [kg/m³].
+     * @param rho_o Massa específica do óleo [kg/m³].
      * @param k Permeabilidade absoluta [mD].
      * @param angulo Inclinação do estrato em graus (convertido para radianos internamente).
      * @param qt Vazão de injeção [m³/d].

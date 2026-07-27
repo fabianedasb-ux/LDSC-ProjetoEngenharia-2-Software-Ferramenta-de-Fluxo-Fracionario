@@ -103,41 +103,44 @@ void CSolver::calcularPerfilSaturacao(double tempoInjetado, double swi, double s
         velocidadeChoque = _calc->calcularDerivadaFw(swi);
     }
 
-    // Passo 3: Identificação Topológica da Dupla Valoração (Efeito "Quebra de Onda" de Choque)
-
-    // Passo 3: Identificação Topológica da Dupla Valoração (Efeito "Quebra de Onda" de Choque)
-    bool cruzamento = false;
-    double posSwFrente = 0.0;
-
-    for (size_t i = 0; i < vecSw.size(); ++i) {
-        if (vecSw[i] >= swFrente) {
-            posSwFrente = vecPos[i];
-            break;
-        }
+    // Passo 3 e 4: Construção Exata do Perfil Analítico
+    double pos_choque = 0.0;
+    if (choqueEncontrado) {
+        pos_choque = velocidadeChoque * tempoInjetado;
     }
 
-    // Checa se há porções do vetor que geometricamente estão a frente da linha crítica (sobreposição não-física)
-    for (size_t i = 0; i < vecSw.size(); ++i) {
-        if (vecSw[i] < swFrente && vecPos[i] > posSwFrente + 1e-12) {
-            cruzamento = true;
-            break;
-        }
-    }
-
-    // Passo 4: Filtragem de Entropia - Remoção dos perfis lentos "comidos" pela onda frontal de Choque (Pistonamento ideal)
     for (size_t i = 0; i < vecSw.size(); ++i) {
         double sw = vecSw[i];
-        double pos = vecPos[i];
         double vel = vecVel[i];
+        double pos = vel * tempoInjetado;
 
-        if (choqueEncontrado && cruzamento && sw < swFrente) {
-            pos = velocidadeChoque * tempoInjetado; // Fixa todas essas saturações lentas na parede vetorial do choque vertical
-            vel = velocidadeChoque;
+        // Ignora valores fora da janela de injeção física
+        if (sw < swi || sw > sw_max) continue;
+
+        if (choqueEncontrado) {
+            // Plota APENAS a onda de rarefação (saturações maiores que a frente)
+            if (sw > swFrente) {
+                if (pos > pos_choque) pos = pos_choque; // Trava de segurança
+                _malha->adicionarCelula(CCelula(sw, pos, vel));
+            }
+        } else {
+            // Deslocamento contínuo sem choque
+            _malha->adicionarCelula(CCelula(sw, pos, vel));
         }
-
-        _malha->adicionarCelula(CCelula(sw, pos, vel));
     }
 
-    // Passo 5: Restauração da Integridade do Plot Vectorial
+    // Passo 5: A Injeção da Descontinuidade (O DEGRAU)
+    if (choqueEncontrado) {
+        // Cravamos o topo e a base EXATAMENTE na mesma coordenada X
+        _malha->adicionarCelula(CCelula(swFrente, pos_choque, velocidadeChoque));
+        _malha->adicionarCelula(CCelula(swi, pos_choque, velocidadeChoque));
+    }
+
+    // Fecha o reservatório com a saturação inicial intocada
+    _malha->adicionarCelula(CCelula(swi, 1.0, 0.0));
+
+    _malha->adicionarCelula(CCelula(sw_max, 0.0, 0.0));
+
+    // Passo 6: Ordenação da malha
     _malha->ordenarPorPosicao();
-}
+} // Fim da função calcularPerfilSaturacao

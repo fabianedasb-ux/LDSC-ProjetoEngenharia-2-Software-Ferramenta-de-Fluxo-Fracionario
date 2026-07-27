@@ -50,8 +50,8 @@ private:
     // --- Propriedades PVT dos Fluidos ---
     double _mi_o;           ///< Viscosidade dinâmica da fase óleo ($\mu_o$) [cP].
     double _mi_w;           ///< Viscosidade dinâmica da fase água ($\mu_w$) [cP].
-    double _rho_o;          ///< Densidade da fase óleo ($\rho_o$) [kg/m³].
-    double _rho_w;          ///< Densidade da fase água ($\rho_w$) [kg/m³].
+    double _rho_o;          ///< Massa específica da fase óleo ($\rho_o$) [kg/m³].
+    double _rho_w;          ///< Massa específica da fase água ($\rho_w$) [kg/m³].
 
     // --- Propriedade Petrofísica Absoluta ---
     double _k;              ///< Permeabilidade escalar primária ($k$) [mD].
@@ -86,8 +86,8 @@ public:
      * @brief Injeta as propriedades de transporte dos fluidos bifásicos.
      * @param mi_o Viscosidade óleo.
      * @param mi_w Viscosidade água.
-     * @param rho_o Densidade óleo.
-     * @param rho_w Densidade água.
+     * @param rho_o Massa específica óleo.
+     * @param rho_w Massa específica água.
      */
     void setFluidos(double mi_o, double mi_w, double rho_o, double rho_w);
 

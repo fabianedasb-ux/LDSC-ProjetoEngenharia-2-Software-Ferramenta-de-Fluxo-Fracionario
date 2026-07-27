@@ -118,11 +118,22 @@ double CCalculadoraFluxoFracionario::calcularFw(double sw) const {
 
 // --- Diferenciação Numérica (fw') ---
 double CCalculadoraFluxoFracionario::calcularDerivadaFw(double sw) {
-    // Abordagem de Diferenças Finitas Centrais (h = 10^-5 para mitigar erro de truncamento)
     double h = 1e-5;
+    double fw_meio = calcularFw(sw);
     double fw_mais = calcularFw(sw + h);
     double fw_menos = calcularFw(sw - h);
-    return (fw_mais - fw_menos) / (2.0 * h);
+
+    // --- Borda de Dados Tabelados ---
+    // Previne que a extrapolação plana nas extremidades (ex: Sw > Smax)
+    // amorteça artificialmente a velocidade da característica.
+    if (fw_mais == fw_meio && fw_menos != fw_meio) {
+        return (fw_meio - fw_menos) / h; // Força diferença atrasada
+    }
+    if (fw_menos == fw_meio && fw_mais != fw_meio) {
+        return (fw_mais - fw_meio) / h;  // Força diferença adiantada
+    }
+
+    return (fw_mais - fw_menos) / (2.0 * h); // Diferença central padrão
 }
 
 // --- Varredura Discreta ---

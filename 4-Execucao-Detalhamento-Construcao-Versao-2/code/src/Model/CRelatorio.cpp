@@ -131,7 +131,7 @@ void CRelatorio::registrarEficiencia(double tempo, double fatorRecuperacao) {
     ss << "<table>";
     ss << "<tr><th width='60%'>Parâmetro Dinâmico Atual</th><th width='20%'>Valor Computado</th><th width='20%'>Unidade</th></tr>";
     ss << "<tr><td>Volume Acumulado Injetado (PVI)</td><td class='metric-value'>" << tempo << "</td><td>Volumes Porosos</td></tr>";
-    ss << "<tr><td>Eficiência de Deslocamento Atual (E<sub>d</sub>)</td><td class='metric-value' style='color:#1a5276;'>" << (fatorRecuperacao * 100.0) << "</td><td>% (Óleo Original)</td></tr>";
+    ss << "<tr><td>Eficiência de Deslocamento Atual (E<sub>d</sub>)</td><td class='metric-value'>" << (fatorRecuperacao * 100.0) << "</td><td>% (Óleo Original)</td></tr>";
     ss << "</table>";
 
     _textoRelatorio += ss.str();

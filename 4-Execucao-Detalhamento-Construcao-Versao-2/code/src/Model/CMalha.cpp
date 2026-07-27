@@ -29,10 +29,16 @@ void CMalha::adicionarCelula(const CCelula& celula) {
 }
 
 void CMalha::ordenarPorPosicao() {
-    // Utiliza std::sort da STL com uma função lambda para comparar as posições (x)
+    // Utiliza std::sort da STL com uma função lambda robusta
     std::sort(_celulas.begin(), _celulas.end(),
               [](const CCelula& a, const CCelula& b) {
-                  return a.getPosicao() < b.getPosicao();
+                  // Regra 1: Ordena as posições (x) da esquerda para a direita
+                  if (std::abs(a.getPosicao() - b.getPosicao()) > 1e-9) {
+                      return a.getPosicao() < b.getPosicao();
+                  }
+                  // Regra 2 (DESEMPATE DO CHOQUE): Se estiverem na mesma posição (parede vertical),
+                  // ordena de cima (maior saturação) para baixo (menor saturação).
+                  return a.getSaturacao() > b.getSaturacao();
               }
               );
 }

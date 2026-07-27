@@ -347,39 +347,13 @@ void MainWindow::plotarResultados() {
     // 1. PERFIL DE SATURAÇÃO (Sw vs xD)
     // -----------------------------------------------------------------
     QVector<double> xD, Sw;
-    double pos_choque = vel_choque * pvi_input;
 
-    xD.append(0.0);
-    Sw.append(sw_max);
+    // Busca os dados oficiais já calculados, filtrados (Entropia) e ordenados pelo CSolver/CMalha
+    const std::vector<CCelula>& malha_celulas = simulador->getMalha()->getCelulas();
 
-    for (double s = sw_max; s >= swFrente; s -= 0.001) {
-        double vel = calc->calcularDerivadaFw(s);
-        double pos = vel * pvi_input;
-
-        if (pos > pos_choque) pos = pos_choque;
-
-        if (pos <= 1.0) {
-            xD.append(pos);
-            Sw.append(s);
-        }
-    }
-
-    if (pos_choque <= 1.0) {
-        xD.append(pos_choque); Sw.append(swi);
-        xD.append(1.0);        Sw.append(swi);
-    } else {
-        double target_vel = 1.0 / pvi_input;
-        double sw_out = swFrente;
-        for (double s = sw_max; s >= swFrente; s -= 0.001) {
-            if (calc->calcularDerivadaFw(s) >= target_vel) {
-                sw_out = s;
-                break;
-            }
-        }
-        if (!xD.isEmpty() && xD.last() < 1.0) {
-            xD.append(1.0);
-            Sw.append(sw_out);
-        }
+    for (const CCelula& celula : malha_celulas) {
+        xD.append(celula.getPosicao());
+        Sw.append(celula.getSaturacao());
     }
 
     ui->plotSvsX->graph(0)->setData(xD, Sw);
