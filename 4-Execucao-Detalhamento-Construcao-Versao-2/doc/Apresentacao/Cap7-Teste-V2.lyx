@@ -1087,7 +1087,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1ca1.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1126,7 +1126,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1ca2.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1165,7 +1165,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1ca3.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1368,6 +1368,7 @@ status open
 \end_layout
 
 \begin_layout Plain Layout
+\align center
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -1388,10 +1389,10 @@ name "tab:Comparativo-Analítico-vs."
 \begin_inset Tabular
 <lyxtabular version="3" rows="4" columns="4">
 <features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
-<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" width="3cm" color="default">
+<column alignment="center" valignment="top" width="3cm" color="default">
+<column alignment="center" valignment="top" width="3cm" color="default">
+<column alignment="center" valignment="top" width="2cm" color="default">
 <row color="default">
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
 \begin_inset Text
@@ -1886,7 +1887,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cb1.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1922,7 +1923,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cb2.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -1954,7 +1955,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cb3.png
-	width 100text%
+	width 80text%
 
 \end_inset
 
@@ -2187,6 +2188,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cc1.png
+	width 80text%
 
 \end_inset
 
@@ -2221,6 +2223,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cc2.png
+	width 80text%
 
 \end_inset
 
@@ -2256,6 +2259,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t1cc3.png
+	width 80text%
 
 \end_inset
 
@@ -3022,6 +3026,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2ca1.png
+	width 80text%
 
 \end_inset
 
@@ -3061,6 +3066,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2ca2.png
+	width 80text%
 
 \end_inset
 
@@ -3096,6 +3102,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2ca3.png
+	width 80text%
 
 \end_inset
 
@@ -3334,6 +3341,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2cb1.png
+	width 80text%
 
 \end_inset
 
@@ -3369,6 +3377,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2cb2.png
+	width 80text%
 
 \end_inset
 
@@ -3408,6 +3417,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2cb3.png
+	width 80text%
 
 \end_inset
 
@@ -3642,6 +3652,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2cc1.png
+	width 80text%
 
 \end_inset
 
@@ -3680,6 +3691,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename imagens/t2cc2.png
+	width 80text%
 
 \end_inset
 
@@ -3692,6 +3704,46 @@ status open
 
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t2cc3.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
 
 \end_layout
 
@@ -3786,14 +3838,15 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Os parâmetros do modelo LET utilizados como entrada estão listados na Tabela 1 (Figura 
+Os parâmetros do modelo LET utilizados como entrada estão listados na Tabela 1 (Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "fig:Tabela-de-coeficientes"
+reference "tab:Tabela-de-coeficientes"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -3854,7 +3907,7 @@ NOTA:
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float figure
+\begin_inset Float table
 placement document
 alignment document
 wide false
@@ -3862,17 +3915,229 @@ sideways false
 status open
 
 \begin_layout Plain Layout
-\align center
-\begin_inset Graphics
-	filename imagens/teste-3 e 4.png
-	width 100text%
 
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features borderColor="default" oddRowsColor="default" evenRowsColor="default" tabularvalignment="middle">
+<column alignment="center" valignment="top" width="3cm" color="default">
+<column alignment="center" valignment="top" color="default">
+<column alignment="center" valignment="top" color="default">
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Modelo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Parâmetro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Média
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Todos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{
+\begin_inset Formula $k^{0}_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $k^{0}_{o}$
+\end_inset
+
+}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{
+\begin_inset Formula $0,53$
+\end_inset
+
+,
+ 
+\begin_inset Formula $0,78$
+\end_inset
+
+}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Corey
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\lambda$
 \end_inset
 
 
 \end_layout
 
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
 \begin_layout Plain Layout
+\begin_inset Formula $0,88$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Chierici
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{A,
+ B,
+ L,
+ M}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{0,87,
+ 3,21,
+ 0,84,
+ 0,86}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row color="default">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+LET
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{
+\begin_inset Formula $L_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $E_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $T_{w}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $L_{o}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $E_{o}$
+\end_inset
+
+,
+ 
+\begin_inset Formula $T_{o}$
+\end_inset
+
+}
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" color="default" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+{4,02,
+ 2,
+ 0,41,
+ 1 1,18 1,28}
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -3887,7 +4152,7 @@ literal "false"
  utilizada para os modelos LET e Chierici
 \begin_inset CommandInset label
 LatexCommand label
-name "fig:Tabela-de-coeficientes"
+name "tab:Tabela-de-coeficientes"
 
 \end_inset
 
@@ -3899,17 +4164,13 @@ name "fig:Tabela-de-coeficientes"
 
 \end_layout
 
-\end_inset
-
+\begin_layout Plain Layout
 
 \end_layout
 
-\begin_layout Standard
+\end_inset
 
-\series bold
-NOTA:
- mudar a imagem(a imagem não pra ver direito) pela escrita da tabela pois é melhor refazer uma tabela e dizer que é baseada na tabela da referência citada,
- não sei se devo incluir em qual página está essa tabela 
+
 \end_layout
 
 \begin_layout Standard
@@ -4520,6 +4781,102 @@ Análise dos resultados
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t31.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t32.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t33.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 NOTA:
@@ -4899,6 +5256,102 @@ name "fig:Painel-de-resultados"
 
 \begin_layout Subsection
 Análise dos resultados
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t41.png
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t42.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagens/t43.png
+	width 80text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
