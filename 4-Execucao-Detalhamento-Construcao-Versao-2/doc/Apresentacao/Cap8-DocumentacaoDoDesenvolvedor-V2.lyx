@@ -319,6 +319,19 @@ tuple "list"
 
 \end_inset
 
+ e 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:doxygen-4"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+,
  provê uma visão hierárquica do sistema,
  essencial para entender a abstração polimórfica utilizada na estratégia (
 \emph on
@@ -395,10 +408,6 @@ name "fig:doxygen-1"
 
 \end_layout
 
-\begin_layout Plain Layout
-
-\end_layout
-
 \end_inset
 
 
@@ -447,10 +456,6 @@ name "fig:doxygen-2"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
 
 \end_layout
 
