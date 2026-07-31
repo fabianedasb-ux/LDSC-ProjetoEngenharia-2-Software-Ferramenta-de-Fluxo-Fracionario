@@ -34,7 +34,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="pgCorey">
      <widget class="QLabel" name="label">
@@ -443,7 +443,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Aw:</string>
+       <string>B:</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="leChiericiAw">
@@ -466,7 +466,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Bw:</string>
+       <string>M:</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="leChiericiBw">
@@ -499,7 +499,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Ao:</string>
+       <string>A:</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_24">
@@ -512,7 +512,7 @@
        </rect>
       </property>
       <property name="text">
-       <string>Bo:</string>
+       <string>L:</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="leChiericiBo">
