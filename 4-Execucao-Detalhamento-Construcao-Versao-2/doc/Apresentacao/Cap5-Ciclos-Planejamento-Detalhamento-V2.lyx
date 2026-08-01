@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -77,19 +77,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -121,7 +113,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -185,40 +176,18 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
 ,
  o foco foi a validação do núcleo matemático fundamental.
  O software foi concebido como uma ferramenta de linha de comando (CLI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-CLI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-Command Line Interface
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "CLI"
+description "\\em{}Command Line Interface"
+literal "false"
 
 \end_inset
 
@@ -239,12 +208,20 @@ Command Line Interface
 \end_layout
 
 \begin_layout Itemize
-Escopo:
+
+\series bold
+Escopo
+\series default
+:
  Implementação dos modelos de permeabilidade relativa de Corey e Tabelado.
 \end_layout
 
 \begin_layout Itemize
-Funcionalidades:
+
+\series bold
+Funcionalidades
+\series default
+:
  Execução via arquivo de configuração (.in),
  leitura de dados tabulares de permeabilidade e integração externa com o 
 \emph on
@@ -254,7 +231,11 @@ Gnuplot
 \end_layout
 
 \begin_layout Itemize
-Resultados:
+
+\series bold
+Resultados
+\series default
+:
  Esta versão provou a viabilidade da solução analítica,
  permitindo a validação dos cálculos matemáticos contra os dados experimentais carregados,
  servindo como o alicerce fundamental para a transição para um ambiente gráfico.
@@ -396,7 +377,11 @@ Gnuplot
 \end_layout
 
 \begin_layout Itemize
-Escopo:
+
+\series bold
+Escopo
+\series default
+:
  Criação da estrutura de classes 
 \family typewriter
 \nospellcheck on
@@ -407,7 +392,11 @@ MainWindow
 \end_layout
 
 \begin_layout Itemize
-Funcionalidades:
+
+\series bold
+Funcionalidades
+\series default
+:
  Implementação do motor de simulação dinâmica,
  dos gráficos interativos via 
 \family typewriter
@@ -419,7 +408,11 @@ QCustomPlot
 \end_layout
 
 \begin_layout Itemize
-Resultados:
+
+\series bold
+Resultados
+\series default
+:
  O sistema tornou-se uma ferramenta de engenharia completa,
  onde o usuário passou a interagir com os dados em tempo real.
  Apesar da funcionalidade robusta,
@@ -442,6 +435,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/v-2.1.png
+	lyxscale 120
 	width 100text%
 
 \end_inset
@@ -488,33 +482,12 @@ name "sec:Versão-2.3"
 \end_inset
 
 - Refinamento de Engenharia e Experiência do Usuário (UX
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-UX
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-User Experience
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "UX"
+description "\\em{}User Experience"
+literal "false"
 
 \end_inset
 
@@ -541,13 +514,21 @@ nolink "false"
 \end_layout
 
 \begin_layout Itemize
-Escopo:
+
+\series bold
+Escopo
+\series default
+:
  Padronização estética,
  otimização da usabilidade e implementação de recursos profissionais de relatório técnico.
 \end_layout
 
 \begin_layout Itemize
-Funcionalidades:
+
+\series bold
+Funcionalidades
+\series default
+:
  Implementação do sistema dinâmico de temas (Modo Claro/Escuro),
  padronização tipográfica (Segoe UI),
  arredondamento ergonômico de componentes,
@@ -556,7 +537,11 @@ Funcionalidades:
 \end_layout
 
 \begin_layout Itemize
-Resultados:
+
+\series bold
+Resultados
+\series default
+:
  O sistema atingiu um nível de acabamento profissional,
  com alta conformidade às boas práticas de UI/UX para engenharia.
  A versão atual consolidou o simulador como uma ferramenta educativa completa,
