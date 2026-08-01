@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -63,19 +63,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -107,7 +99,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -157,41 +149,41 @@ name "sec:AOO"
 \begin_layout Standard
 Neste capítulo,
  apresenta-se a Análise Orientada a Objetos (AOO
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-AOO
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Análise Orientada a Objetos
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "AOO"
+description "Análise Orientada a Objetos"
+literal "false"
 
 \end_inset
 
 ) do simulador educacional,
- detalhando como as equações de Buckley-Leverett e as correlações de permeabilidade foram encapsuladas em classes e como esses objetos interagem para resolver o problema de fluxo fracionário.
+ detalhando como as equações de 
+\emph on
+Buckley-Leverett
+\emph default
+ e as correlações de permeabilidade foram encapsuladas em classes e como esses objetos interagem para resolver o problema de fluxo fracionário.
 \end_layout
 
 \begin_layout Standard
 A AOO constitui uma etapa fundamental no desenvolvimento de software científico,
- pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica para uma estrutura computacional lógica e coesa.
+ pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica
+\change_inserted 643308733 1785612595
+ (Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Elaboração"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+)
+\change_unchanged
+ para uma estrutura computacional lógica e coesa.
  Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -279,6 +271,7 @@ status open
 
 \begin_layout Plain Layout
 
+
 \backslash
 begin{landscape}
 \end_layout
@@ -300,9 +293,9 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-classes.png
-	lyxscale 30
 	width 100page%
 	height 90theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -338,6 +331,7 @@ name "cap:Diagrama-de-classes"
 status open
 
 \begin_layout Plain Layout
+
 
 \backslash
 end{landscape}
@@ -692,15 +686,35 @@ CCurvasCorey
 :
  Implementação do modelo de Corey,
  utilizando os expoentes 
+\change_deleted 643308733 1785612901
+
 \family typewriter
 \nospellcheck on
 no
+\change_inserted 643308733 1785612901
+
+\begin_inset Formula $no$
+\end_inset
+
+
+\change_unchanged
+
 \family default
 \nospellcheck default
  e 
+\change_deleted 643308733 1785612905
+
 \family typewriter
 \nospellcheck on
 nw
+\change_inserted 643308733 1785612905
+
+\begin_inset Formula $nw$
+\end_inset
+
+
+\change_unchanged
+
 \family default
 \nospellcheck default
  para definir a curvatura das permeabilidades.
@@ -763,17 +777,57 @@ CCurvasChierici
 \nospellcheck default
 :
  Implementa o modelo exponencial de Chierici,
- utilizando os parâmetros A_w e B_w para a fase aquosa e 
+ utilizando os parâmetros 
+\change_deleted 643308733 1785612886
+A_w
+\change_inserted 643308733 1785612886
+
+\begin_inset Formula $A_{w}$
+\end_inset
+
+
+\change_unchanged
+ e 
+\change_deleted 643308733 1785612889
+B_w
+\change_inserted 643308733 1785612890
+
+\begin_inset Formula $B_{w}$
+\end_inset
+
+
+\change_unchanged
+ para a fase aquosa e 
+\change_deleted 643308733 1785612893
+
 \family typewriter
 \nospellcheck on
 A_o
+\change_inserted 643308733 1785612893
+
 \family default
 \nospellcheck default
+
+\begin_inset Formula $A_{o}$
+\end_inset
+
+
+\change_unchanged
 ,
  
+\change_deleted 643308733 1785612896
+
 \family typewriter
 \nospellcheck on
 B_o
+\change_inserted 643308733 1785612896
+
+\begin_inset Formula $B_{o}$
+\end_inset
+
+
+\change_unchanged
+
 \family default
 \nospellcheck default
  para a fase óleo.
@@ -960,6 +1014,8 @@ name "subsec: Diagrama de sequência geral"
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 643308733 1785612967
 Enquanto o Diagrama de Classes descreve a estrutura estática do sistema,
  os Diagramas de Sequência são utilizados para modelar o comportamento dinâmico e a troca de mensagens entre os objetos ao longo do tempo 
 \begin_inset CommandInset citation
@@ -970,6 +1026,24 @@ literal "true"
 \end_inset
 
 .
+\change_inserted 643308733 1785612987
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+
+\change_inserted 643308733 1785612989
+repete
+\change_unchanged
+
+\end_layout
+
+\end_inset
+
+
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
@@ -1046,8 +1120,10 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-geral.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
+	height 90theight%
+	keepAspectRatio
 
 \end_inset
 
@@ -1180,7 +1256,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-especifico-um.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1333,7 +1409,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-sequencia-especifico-dois.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1552,7 +1628,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-comunicacao.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1746,7 +1822,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-estado.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -1884,6 +1960,11 @@ literal "true"
 
 \end_inset
 
+
+\change_inserted 643308733 1785613572
+,
+ é a representação do fluxo de processamento de um determinado método
+\change_unchanged
 .
  Neste projeto,
  ele foi utilizado para detalhar a lógica crítica implementada no método 
@@ -1926,7 +2007,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-atividades.png
-	lyxscale 30
+	lyxscale 50
 	width 100text%
 
 \end_inset
