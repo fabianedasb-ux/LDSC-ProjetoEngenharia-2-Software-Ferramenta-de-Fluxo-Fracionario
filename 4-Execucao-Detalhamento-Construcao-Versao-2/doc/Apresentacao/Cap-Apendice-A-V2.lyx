@@ -155,6 +155,25 @@ Esta seção detalha a estrutura sintática dos arquivos de dados utilizados pel
  respeitando a ordem estrita de parâmetros definida para cada modelo matemático.
 \end_layout
 
+\begin_layout Subsubsection
+Conformidade de Entrada de Dados
+\end_layout
+
+\begin_layout Standard
+Para assegurar a estabilidade das simulações analíticas frente a diferentes sistemas operacionais e editores de texto,
+ a arquitetura de leitura de dados do software foi padronizada para o formato de codificação universal UTF-8.
+ A exigência deste formato para a importação de arquivos de texto previne anomalias de decodificação associadas a caracteres especiais e acentuações —
+ falhas comuns quando se utilizam codificações regionais legadas,
+ como o ISO-8859-1.
+ Dessa forma,
+ a rotina interna em C++ que converte as cadeias de caracteres para variáveis numéricas de dupla precisão (
+\emph on
+double
+\emph default
+) opera de maneira segura,
+ independentemente do idioma nativo da máquina do usuário.
+\end_layout
+
 \begin_layout Section
 Modelo de Tabela 
 \end_layout
