@@ -6,6 +6,7 @@
 
 * Nome do Software:
 - Ferramenta de Fluxo Fracionário
+- SOFTWARE EDUCACIONAL COM INTERFACE INTERATIVA PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS - SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
 
 * Resumo e/ou informação extra: 
 - Funcionalidades:
@@ -15,25 +16,45 @@
   - Geração automática de gráficos via **Gnuplot**.
   - Validação com dados da literatura (Tarek Ahmed).
 
+* Pré-requisitos
+- Compilador C++ (g++)
+- GNU Make
+- Gnuplot (versão 1)
+- Qt e QCustomPlot  (versão 2)
+
+** Instalação
+Baixar e descompactar o arquivo:
+LDSC-ProjetoEngenharia-2-Software-Ferramenta-de-Fluxo-Fracionario/4-Execucao-Detalhamento-Construcao-Versao-2/code/Instalador_Simulador.zip
+
+** Compilação
+No terminal, execute:
+make
+
+** Execução
+Windows rode o arquivo:
+Simulador.exe
+
+Para rodar a validação com dados de Tarek Ahmed:
+./bin/fw_calctest/Teste-Tarek-1cp.in
+
 * Versão: 
-- 1.0.
+- 2.3.
 
 * Data:
-- 2025/2 - segundo semestre.
+- 2026/8 - Agosto de 2026.
   
 * Autor de Contato:
-- André Duarte Bueno <andreduartebueno@gmail.com>
 - Fabiane da Silva Barros <fabianedas.b@gmail.com>
+- André Duarte Bueno <andreduartebueno@gmail.com> [orientador]
   
 * Lista dos Autores:
-- André Duarte Bueno <andreduartebueno@gmail.com>
 - Fabiane da Silva Barros <fabianedas.b@gmail.com>
+- André Duarte Bueno <andreduartebueno@gmail.com> <bueno@lenep.uenf.br> [orientador]
 
 * Áreas de pesquisa vinculadas: 
 - Modelagem Matemática Computacional
 - Engenharia de Reservatório
 - Petrofísica
-
 
 * Vinculo com: 
 - [[https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado][Trabalho da disciplina Projeto de Software Aplicado à Engenharia]].
@@ -44,7 +65,8 @@
 - POO - Programação Orientada a Objeto (códigos em C++)
 
 * Tipo de Interface: 
-- Terminal e gráfica (gnuplot).
+- Terminal e gráfica (gnuplot) - versão 1.
+- Gráfica (Qt, QCustomPlot) - versão 2.
 
 * Plataformas Suportadas: 
 - Windows e GNU/Linux.
@@ -54,7 +76,8 @@
 
 * Bibliotecas Utilizadas (dependências):
 - CGnuplot - https://github.com/ldsc/CGnuplot
-  
+- QCustomPlot - https://www.qcustomplot.com/
+
 * Softwares utilizados (dependências)
 - gnuplot http://www.gnuplot.info/
 
@@ -64,7 +87,7 @@
 * Novas Versões
 - Entre em contato com o Prof. André Duarte Bueno <bueno@lenep.uenf.br>
   para que o mesmo gere um novo projeto no github do ldsc para que você (e sua equipe) possam trabalhar na nova versão.
-- Se este projeto tem como número de versão 1.0 a nova versão deverá ser 2.0 e assim sucessivamente.
+- Se este projeto tem como número de versão 2.0 a nova versão deverá ser 3.0 e assim sucessivamente.
 - Os nomes dos autores originais deve ser preservada na nova versão, ou seja, adicione a informação do número da versão, os nomes dos membros da nova equipe, mas jamais apague os nomes dos autores originais (isto seria plágio).
 - Na descrição do projeto informe que trata-se de uma nova versão, que tem como base a versão anterior e DESTAQUE COM CLAREZA E OBJETIVIDADE QUAIS AS NOVIDADES DA NOVA VERSÃO.
   
@@ -79,39 +102,6 @@
 - [[https://sites.google.com/view/professorandreduartebueno/ensino/projeto-de-software-aplicado][Trabalho da disciplina Projeto de Software Aplicado à Engenharia]].
 - Uma lista de outros projetos desenvolvidos no LDSC é disponibilizado [[https://github.com/ldsc/LDSC-ProjetoEngenharia-0-Metodologia-Instrucoes-Etapas][aqui]].
 
-* Links:
-- [[https://sites.google.com/view/professorandreduartebueno/][Site do Professor André Duarte Bueno]].
-- [[https://github.com/ldsc][Site do LDSC no github]].
-- [[https://uenf.br/cct/lenep][Site do LENEP]].
-
 * Todo
-
 # Ferramenta de Fluxo Fracionário
-
 Projeto de Engenharia de Software desenvolvido para a disciplina de Programação Prática. O software calcula e plota curvas de fluxo fracionário ($f_w$) considerando modelos de permeabilidade relativa.
-
-## Autora
-* **Fabiane da Silva Barros**
-* Orientador: Prof. André Duarte Bueno
-
-## Funcionalidades
-* Cálculo da curva de fluxo fracionário (Buckley-Leverett).
-* Suporte a **Modelo Tabelado** (interpolação linear).
-* Suporte a **Modelo de Corey** (correlação analítica).
-* Geração automática de gráficos via **Gnuplot**.
-* Validação com dados da literatura (Tarek Ahmed).
-
-## Como Compilar e Rodar
-
-### Pré-requisitos
-* Compilador C++ (g++)
-* GNU Make
-* Gnuplot
-
-### Compilação
-No terminal, execute:
-make
-
-### Execução
-Para rodar a validação com dados de Tarek Ahmed:
-./bin/fw_calc test/Teste-Tarek-1cp.in

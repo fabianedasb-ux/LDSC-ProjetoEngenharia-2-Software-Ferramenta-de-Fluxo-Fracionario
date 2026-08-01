@@ -3,6 +3,44 @@
 #+AUTHOR: Revisor Técnico
 #+STARTUP: overview
 
+* Roteiro de Tarefas: Aplicação da Revisão 2 (Fabiane)
+** 1. Baixar as atualizações do orientador
+Abra o terminal na pasta do projeto e execute os comandos abaixo para baixar a nova branch de revisão:
+git fetch origin
+git checkout revisao2Bueno
+git pull origin revisao2Bueno
+
+** 2. Abrir o LyX e revisar as alterações
+1. Abra os arquivos ~.lyx~ atualizados pelo orientador.
+2. Utilize o recurso de *Controle de Alterações* do LyX (~Documento > Alterações~ ou clique com o botão direito nos trechos marcados).
+3. Aceite ou rejeite cada uma das sugestões/correções texto a texto.
+
+** 3. Gerar o PDF da Versão 2.3
+1. Após aceitar/rejeitar as alterações, salve todos os arquivos no LyX (~Ctrl + S~).
+2. Gere o novo PDF atualizado (~Ctrl + R~ ou ~Arquivo > Exportar > PDF~).
+3. Verifique se o PDF final foi gerado corretamente sem erros de compilação. Salve o pdf.
+
+** 4. Salvar o seu trabalho no Git (Commit e Push)
+No terminal, salve suas decisões e envie para o GitHub:
+
+git add .
+git commit -m "Aceitas alterações da revisão 2 e gerado PDF v2.3"
+git push origin revisao2Bueno
+
+** 5. Atualizar a branch principal (main)
+Agora que a revisão 2 está finalizada, incorpore tudo na branch principal (~main~):
+
+git checkout main
+git pull origin main
+git merge revisao2Bueno
+git push origin main
+
+** 6. Confirmação Final
+Para garantir que tudo ficou sincronizado e correto:
+
+git status
+> Deve exibir: "Your branch is up to date with 'origin/main'." e "nothing to commit, working tree clean".
+
 * TODO [0/4] REGRAS GERAIS DE REDAÇÃO CIENTÍFICA (Referência: P04-C05)
   - [ ] Verificar objetividade e clareza: evitar julgamentos e pré-conceitos [19].
   - [ ] Sinceridade e Humildade: garantir que a validação das hipóteses seja honesta [15].
@@ -13,7 +51,9 @@
 Software Educacional com Interface Interativa para Implementação Computacional do Método das Características - Solução Analítica de Buckley-Leverett
 
 ** TODO Uso de IA
-- Informar de forma clara que o trabalho contou com o uso de IA, informando o nome e link das ferramentas utilizadas.
+- [ ] Informar de forma clara que o trabalho contou com o uso de IA, informando o nome e link das ferramentas utilizadas.
+- [ ] Criar uma seção Uso de IA
+  - Descrever em detalhes onde e como a IA foi usada.
 
 ** TODO Adicionar um apendice com informacoes dos softwares utilizados; git/github/lyx/modelador uml?
 
@@ -45,6 +85,7 @@ Software Educacional com Interface Interativa para Implementação Computacional
 - [ ] Conferir a dedução da Equação do Fluxo Fracionário e a Lei de Darcy Generalizada [32, 33].
 - [ ] Verificar se os parâmetros "default" (tensão interfacial, ângulo de contato) estão justificados pela literatura [34].
 - [ ] Revisar a explicação do Método das Características e a Condição de Entropia [35-37].
+- [ ] Verificar se as simplificacoes da seção "3.2.7 Análise Dimensional e Simplificação do Modelo Matemático" estão ok.
 
 ** TODO Capítulo 3: AOO (Análise Orientada a Objeto)
    - [ ] Conferir o Diagrama de Classes: a aplicação do padrão Strategy está clara? [38].
@@ -100,6 +141,10 @@ voce pode brincar alterando os parametros e vendo como fica; mas faça isso depo
 ** TODO FORMATO FINAL E ENTREGA (Referência: P04-C06)
    - [ ] Gerar versão PDF final e realizar commit no Git [217].
    - [ ] Preparar apresentação seguindo a regra de "uma ideia por página" e letras com fonte >= 14 [218].
+
+* TODO Fazer correções solicitadas pela banca, gerar pdf e enviar para orientador.
+** Uma versão impressa tem de ser entregue na biblioteca.
+
 
 * TODO Trabalhos futuros
 ** TODO permitir o uso de analises PVT
