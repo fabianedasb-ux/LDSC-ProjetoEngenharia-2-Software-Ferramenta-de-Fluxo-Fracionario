@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -73,19 +73,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -117,7 +109,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -139,7 +131,11 @@ Dependências para compilar o software
 \end_layout
 
 \begin_layout Standard
-Para compilar o código-fonte da Ferramenta para Geração da Curva de Fluxo Fracionário,
+Para compilar o código-fonte da Ferramenta para Geração da Curva de Fluxo Fracionário
+\change_deleted 643308733 1785620310
+,
+
+\change_unchanged
  é necessário atender às seguintes dependências de ambiente e bibliotecas:
 \end_layout
 
@@ -308,14 +304,18 @@ nolink "false"
 
 ,
  
-\begin_inset CommandInset ref
-LatexCommand ref
-reference "fig:doxygen-3,fig:doxygen-4"
-plural "false"
-caps "false"
-noprefix "false"
-nolink "false"
-tuple "list"
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+ref{fig:doxygen-3},
+ 
+\backslash
+ref{fig:doxygen-4}
+\end_layout
 
 \end_inset
 
@@ -327,7 +327,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -384,7 +383,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/doxygen-1.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -425,7 +423,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/doxygen-2.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -476,7 +473,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/doxygen-3.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -524,7 +520,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/doxygen-4.png
-	lyxscale 50
 	width 100text%
 
 \end_inset

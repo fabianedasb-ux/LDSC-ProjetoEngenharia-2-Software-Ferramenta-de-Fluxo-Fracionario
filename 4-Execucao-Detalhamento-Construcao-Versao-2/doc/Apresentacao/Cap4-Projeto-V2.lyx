@@ -1206,7 +1206,12 @@ CCurvasPermeabilidadeCorey
  
 \family typewriter
 \nospellcheck on
-CCurvasPermeabilidade\SpecialChar nobreakdash
+CCurvas
+\change_inserted 643308733 1785621416
+\SpecialChar nobreakdash
+
+\change_unchanged
+Permeabilidade\SpecialChar nobreakdash
 LET
 \family default
 \nospellcheck default
@@ -2184,7 +2189,11 @@ vitou-se a transgressão da Lei de Demeter (ex:
  
 \family typewriter
 \nospellcheck on
-Janela->Simulador->Welge->Calculadora->derivada()
+Janela->Simulador->Welge
+\change_inserted 643308733 1785621461
+ 
+\change_unchanged
+->Calculadora->derivada()
 \family default
 \nospellcheck default
 ).
@@ -2821,11 +2830,7 @@ v2.2 - Motor Matemático e Física do Deslocamento
 
 \begin_deeper
 \begin_layout Itemize
-Implementação d
-\change_deleted 643308733 1785615562
-S
-\change_unchanged
-a lógica sequencial do Método das Características (MOC) e malha discreta.
+Implementação dSa lógica sequencial do Método das Características (MOC) e malha discreta.
 \end_layout
 
 \begin_layout Itemize
