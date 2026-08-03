@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -81,19 +81,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package prettyref
+\justification true
+\use_refstyle 0
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -125,7 +117,6 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -198,7 +189,11 @@ O desenvolvimento de simuladores computacionais robustos é fundamental para a o
  O simulador permite a configuração de parâmetros geomorfológicos,
  viscosidades,
  massas específicas e efeitos gravitacionais,
- gerando diagnósticos automatizados sobre o instante de ruptura (breakthrough) e a eficiência de varrido.
+ gerando diagnósticos automatizados sobre o instante de ruptura (
+\emph on
+breakthrough
+\emph default
+) e a eficiência de varrido.
  A validação do motor matemático foi realizada através da comparação com cenários clássicos da literatura,
  demonstrando alta precisão na ancoragem da tangente de Welge e na aplicação da condição de entropia para frentes de choque.
  Os resultados indicam que a ferramenta é eficaz tanto para o ensino de engenharia de reservatórios quanto como suporte à tomada de decisão em projetos de injeção de água.
@@ -214,7 +209,10 @@ Palavras chave:
  
 \series default
 \size default
-Buckley-Leverett.
+\emph on
+Buckley-Leverett
+\emph default
+.
  Permeabilidade Relativa.
  Fluxo Fracionário.
  Engenharia de Reservatórios.

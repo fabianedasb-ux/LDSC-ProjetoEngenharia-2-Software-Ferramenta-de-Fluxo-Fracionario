@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,19 +62,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -106,7 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -149,13 +141,24 @@ literal "true"
 ,
  esta fase é caracterizada pela expansão e refinamento das representações preliminares do software,
  transformando os requisitos abstratos em um modelo técnico mais detalhado.
- É o momento em que a ênfase transita do entendimento do problema para a estruturação da solução,
+ É o momento em que 
+\change_inserted 643308733 1785594684
+fazemos uma revisão da literatura técnica com vistas a garantir que temos pleno domínio dos modelos físico-matemático,
+ das equações,
+ e dos modelos numéricos a serem utilizados.
+ Nesta fase 
+\change_unchanged
+a ênfase transita do entendimento do problema para a estruturação da solução,
  focando na arquitetura do sistema e na consistência dos dados.
 \end_layout
 
 \begin_layout Standard
 Neste contexto,
- o processo de elaboração busca estabelecer uma base arquitetural sólida antes que a construção do código se inicie massivamente.
+ o processo de elaboração busca 
+\change_inserted 643308733 1785594756
+garantir o entendimento do problema de engenharia e visa 
+\change_unchanged
+estabelecer uma base arquitetural sólida antes que a construção do código se inicie massivamente.
  Conforme destaca 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -225,59 +228,12 @@ full-field
 \lang brazilian
 ),
  o domínio deste software é delimitado à simulação analítica unidimensional (1D
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-1D
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Uma dimensão
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color none1D\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit"
+description "Uma dimensão"
+literal "false"
 
 \end_inset
 
@@ -322,31 +278,12 @@ Matemática Aplicada
 \series default
 :
  Envolve a resolução de Equações Diferenciais Parciais (EDPs
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-EDPs
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Equações Diferenciais Parciais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "EDPs"
+description "Equações Diferenciais Parciais"
+literal "false"
 
 \end_inset
 
@@ -365,7 +302,12 @@ literal "true"
 \begin_layout Itemize
 
 \series bold
-Engenharia de Software e Programação
+Engenharia de Software
+\change_inserted 643308733 1785595013
+,
+ Modelagem Numérica
+\change_unchanged
+ e Programação
 \series default
 :
  Aplica-se na estruturação da arquitetura do sistema utilizando o paradigma de Orientação a Objetos 
@@ -411,31 +353,12 @@ Tempo (Dinâmica)
  O domínio envolve processos dinâmicos que evoluem com o tempo.
  O software deve lidar com a variável temporal não apenas em segundos (tempo de processamento),
  mas principalmente em "Volumes de Poros Injetados" (PVI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-PVI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Volumes de Poros Injetados
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "PVI"
+description "Volumes de Poros Injetados"
+literal "false"
 
 \end_inset
 
@@ -489,7 +412,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/perfil-sat.png
-	lyxscale 50
 	width 100text%
 
 \end_inset
@@ -581,31 +503,12 @@ Padronização de Unidades
 
 \begin_layout Standard
 O desenvolvimento matemático e a implementação computacional do núcleo deste trabalho adotam estritamente o Sistema Internacional de Unidades (SI
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-SI
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Sistema Internacional de Unidades
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "SI"
+description "Sistema Internacional de Unidades"
+literal "false"
 
 \end_inset
 
@@ -643,9 +546,9 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="18" columns="3">
 <features tabularvalignment="middle">
-<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="6cm">
 <column alignment="center" valignment="top" width="0pt">
-<column alignment="center" valignment="top" width="4cm">
+<column alignment="center" valignment="top" width="6cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -781,35 +684,12 @@ metros,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $A$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Área da Seção Transversal (m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$A\\$"
+description "Área da Seção Transversal (m²)"
+literal "false"
 
 \end_inset
 
@@ -851,35 +731,12 @@ Tempo
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $t$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo (s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\$"
+description "Tempo (s)"
+literal "false"
 
 \end_inset
 
@@ -921,35 +778,12 @@ Tempo Adimensional
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $t_{D}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo Adimensional (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\_{D}\\$"
+description "Tempo Adimensional (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -987,35 +821,12 @@ Vazão Volumétrica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $q$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Vazão Volumétrica (m³/s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$q\\$"
+description "Vazão Volumétrica (m³/s)"
+literal "false"
 
 \end_inset
 
@@ -1057,35 +868,12 @@ Velocidade de Darcy (Superficial)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $u$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade de Darcy (Superficial) (m/s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$u\\$"
+description "Velocidade de Darcy (Superficial) (m/s)"
+literal "false"
 
 \end_inset
 
@@ -1164,35 +952,12 @@ Permeabilidade Relativa
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $k_{r}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade Relativa (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$k\\_{r}\\$"
+description "Permeabilidade Relativa (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1230,35 +995,12 @@ Viscosidade Dinâmica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status collapsed
-
-\begin_layout Plain Layout
-Viscosidade Dinâmica(Pa.s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\$"
+description "Viscosidade Dinâmica(Pa.s)"
+literal "false"
 
 \end_inset
 
@@ -1300,35 +1042,12 @@ Massa Específica
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\rho$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Massa Específica (kg/m³)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\rho\\$"
+description "Massa Específica (kg/m³)"
+literal "false"
 
 \end_inset
 
@@ -1370,35 +1089,12 @@ Pressão
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $P$
-\end_inset
-
-
-\begin_inset Argument post:1
-status collapsed
-
-\begin_layout Plain Layout
-Pressão (Pa(N/m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$P\\$"
+description "Pressão (Pa(N/m²)"
+literal "false"
 
 \end_inset
 
@@ -1440,35 +1136,12 @@ Tensão Interfacial
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\sigma$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tensão Interfacial (N/m)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\sigma\\$"
+description "Tensão Interfacial (N/m)"
+literal "false"
 
 \end_inset
 
@@ -1543,35 +1216,12 @@ Saturação
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\$"
+description "Saturação (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1609,35 +1259,12 @@ Fluxo Fracionário
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $f$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Fluxo Fracionário (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$f\\$"
+description "Fluxo Fracionário (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1712,35 +1339,12 @@ radianos,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $\theta$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Ângulo de contato de molhabilidade rocha-fluido (radianos)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\theta\\$"
+description "Ângulo de contato de molhabilidade rocha-fluido (radianos)"
+literal "false"
 
 \end_inset
 
@@ -1797,9 +1401,13 @@ Permeabilidades Relativas
 \end_layout
 
 \begin_layout Standard
-Para a correta execução da modelagem analítica,
+Para a correta execução da modelagem analítica
+\change_deleted 643308733 1785595312
+,
  além da padronização de todas as variáveis operacionais no Sistema Internacional (SI),
- o simulador demanda a definição precisa das propriedades de transporte multifásico.
+ 
+\change_unchanged
+o simulador demanda a definição precisa das propriedades de transporte multifásico.
  No escoamento multifásico em meios porosos,
  a presença simultânea de dois ou mais fluidos resulta em uma competição pela rede de poros interconectados.
  A permeabilidade relativa (
@@ -1910,6 +1518,10 @@ literal "false"
 e expandido por Brooks & Corey (1964),
  é uma das correlações empíricas clássicas mais utilizadas na indústria do petróleo devido à sua simplicidade e base em aproximações de tubos capilares.
  O modelo descreve as permeabilidades relativas através de leis de potência fundamentadas na saturação efetiva (ou normalizada) da fase molhante
+\change_inserted 643308733 1785595448
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rosa2006"
@@ -1926,35 +1538,12 @@ A saturação de água normalizada (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{wn}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água normalizada (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{wn}\\$"
+description "Saturação de água normalizada (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2000,35 +1589,12 @@ Onde:
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{or}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de óleo residual (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{or}\\$"
+description "Saturação de óleo residual (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2046,35 +1612,12 @@ Saturação de óleo residual (adimensional)
 \end_inset
 
  (adimensional)
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $k^{o}_{rw}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade relativa máxima da água no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$k\\textasciicircum{}{o}\\_{rw}\\$"
+description "Permeabilidade relativa máxima da água no ponto final (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2091,35 +1634,12 @@ Permeabilidade relativa máxima da água no ponto final (adimensional)
 \end_inset
 
  (adimensional)
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $k^{o}_{ro}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade relativa máxima do óleo no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$k\\textasciicircum{}{o}\\_{ro}\\$"
+description "Permeabilidade relativa máxima do óleo no ponto final (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2189,35 +1709,12 @@ Onde:
 
  (Parâmetro de Forma) [adimensional]:
  Controla a curvatura na região de baixas saturações da fase correspondente.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $L$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro de Forma - Modelo de LET
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$L\\$"
+description "Parâmetro de Forma - Modelo de LET"
+literal "false"
 
 \end_inset
 
@@ -2230,35 +1727,12 @@ Parâmetro de Forma - Modelo de LET
 
  (Parâmetro de Elevação [adimensional]):
  Ajusta a posição vertical e a inclinação da porção central da curva.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $E$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro de Elevação - Modelo de LET
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$E\\$"
+description "Parâmetro de Elevação - Modelo de LET"
+literal "false"
 
 \end_inset
 
@@ -2271,31 +1745,11 @@ Parâmetro de Elevação - Modelo de LET
 
  (Parâmetro de Translação) [adimensional]:
  Modifica o comportamento assintótico na região de altas saturações.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro de Translação - Modelo de LET
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+description "Parâmetro de Translação - Modelo de LET"
+literal "false"
 
 \end_inset
 
@@ -2326,35 +1780,12 @@ A equação requer a prévia definição de uma razão de saturação móvel nor
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $R_{m}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Razão de saturação móvel normalizada (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$R\\_{m}\\$"
+description "Razão de saturação móvel normalizada (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2393,35 +1824,12 @@ Onde:
 
  [adimensional]:
  Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa do óleo.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $A$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa do óleo (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$A\\$"
+description "Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa do óleo (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2434,35 +1842,12 @@ Parâmetro empírico que governa o decaimento exponencial da curva de permeabili
 
  [adimensional]:
  Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa da água.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $B$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa da água (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$B\\$"
+description "Parâmetro empírico que governa o decaimento exponencial da curva de permeabilidade relativa da água (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2475,35 +1860,12 @@ Parâmetro empírico que governa o decaimento exponencial da curva de permeabili
 
  [adimensional]:
  Parâmetro de curvatura geométrica para a fase oleica.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $L$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro de curvatura geométrica para a fase oleica (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$L\\$"
+description "Parâmetro de curvatura geométrica para a fase oleica (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2516,35 +1878,12 @@ Parâmetro de curvatura geométrica para a fase oleica (adimensional)
 
  [adimensional]:
  Parâmetro de curvatura geométrica para a fase aquosa.
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $M$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Parâmetro de curvatura geométrica para a fase aquosa (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$M\\$"
+description "Parâmetro de curvatura geométrica para a fase aquosa (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2759,49 +2098,12 @@ Para a resolução do sistema de equações de fluxo,
 \end_inset
 
  
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $P_{c}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Pressão capilar (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-Pa(N/m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$P\\_{c}\\$"
+description "Pressão capilar (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonePa(N/m\\texttwosuperior{})"
+literal "false"
 
 \end_inset
 
@@ -3300,35 +2602,12 @@ A influência das forças capilares na frente de avanço é regida pelo Número 
 \end_inset
 
  
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $N_{RL}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Número de Rapoport-Leas (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\_{RL}\\$"
+description "Número de Rapoport-Leas (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -3615,37 +2894,12 @@ Razão de mobilidade no ponto final (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $M^{0}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\series bold
-Razão de mobilidade no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$M\\textasciicircum{}{0}\\$"
+description "\\bfseries{}Raz\\~{a}o de mobilidade no ponto final (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -3671,35 +2925,12 @@ Número de gravidade no ponto final (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $N^{0}_{g}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Número de gravidade no ponto final (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\textasciicircum{}{0}\\_{g}\\$"
+description "Número de gravidade no ponto final (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -3776,7 +3007,12 @@ Número de Gravidade no Ponto Final (
 \end_inset
 
 ),
- quantifica o gradiente segregativo gerado pela diferença de massas específicas.A presença do termo gravitacional (
+ quantifica o gradiente segregativo gerado pela diferença de massas específicas.
+
+\change_inserted 643308733 1785596176
+ 
+\change_unchanged
+A presença do termo gravitacional (
 \begin_inset Formula $\sin\alpha$
 \end_inset
 
@@ -3806,32 +3042,12 @@ Para a implementação computacional desta análise dimensional e o cálculo aut
 
 ).
  Na ausência de dados laboratoriais específicos (análises PVT
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-PVT
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Pressão,
- Volume e Tempo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "PVT"
+description "Pressão, Volume e Tempo"
+literal "false"
 
 \end_inset
 
@@ -4036,31 +3252,12 @@ literal "true"
 Fisicamente,
  isso implica que,
  para um Volume Elementar Representativo (REV
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-REV
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Volume Elementar Representativo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "REV"
+description "Volume Elementar Representativo"
+literal "false"
 
 \end_inset
 
@@ -4797,31 +3994,12 @@ Desenvolvimento Matemático
 
 \begin_layout Standard
 O princípio central do MOC consiste em transformar a EDP original em um sistema de Equações Diferenciais Ordinárias (EDOs
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-EDOs
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Equações Diferenciais Ordinárias
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "EDOs"
+description "Equações Diferenciais Ordinárias"
+literal "false"
 
 \end_inset
 
@@ -5082,35 +4260,12 @@ Esta condição estabelece que uma descontinuidade (choque) só é estável se a
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $\nu_{\sigma}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da frente de choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\nu\\_{\\sigma}\\$"
+description "Velocidade da frente de choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5119,35 +4274,12 @@ Velocidade da frente de choque (adimensional)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\nu_{L}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da saturação imediatamente atrás do choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\nu\\_{L}\\$"
+description "Velocidade da saturação imediatamente atrás do choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5156,35 +4288,12 @@ Velocidade da saturação imediatamente atrás do choque (adimensional)
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\nu_{R}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Velocidade da saturação imediatamente à frente do choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\nu\\_{R}\\$"
+description "Velocidade da saturação imediatamente à frente do choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5237,35 +4346,12 @@ Onda de Choque
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{wi}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água inicial (adimencional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{wi}\\$"
+description "Saturação de água inicial (adimencional)"
+literal "false"
 
 \end_inset
 
@@ -5383,35 +4469,12 @@ Onde:
 \end_inset
 
 )
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{wirr}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água irredutível
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{wirr}\\$"
+description "Saturação de água irredutível"
+literal "false"
 
 \end_inset
 
@@ -5503,35 +4566,12 @@ Determinação da Saturação Média (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\bar{S_{w}}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação Média (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\bar{S\\_{w}}\\$"
+description "Saturação Média (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5546,35 +4586,12 @@ Além de localizar a frente de avanço,
 \end_inset
 
 ) [adimensional] 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $N_{p}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Recuperação de óleo acumulada (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$N\\_{p}\\$"
+description "Recuperação de óleo acumulada (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5591,35 +4608,12 @@ Integrando o perfil de saturação desde a entrada (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $x_{Df}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Posição adimensional da frente de choque (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$x\\_{Df}\\$"
+description "Posição adimensional da frente de choque (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5693,35 +4687,12 @@ Eficiência de Deslocamento (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Formula $E_{D}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Eficiência de Deslocamento (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$E\\_{D}\\$"
+description "Eficiência de Deslocamento (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5779,39 +4750,12 @@ Para o período pós-ruptura (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $t_{bt}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Tempo de Ruptura (
-\emph on
-Breakthrough
-\emph default
-) (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$t\\_{bt}\\$"
+description "Tempo de Ruptura (\\em{}Breakthrough\\em{}) (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5822,35 +4766,12 @@ Breakthrough
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{w,out}$
-\end_inset
-
-
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água na face de saída do reservatório (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{w,out}\\$"
+description "Saturação de água na face de saída do reservatório (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -5965,31 +4886,12 @@ Antes deste instante (
 ),
  a água começa a ser coproduzida,
  e a razão de água no fluxo (BSW
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-BSW
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Razão de água no fluxo
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "BSW"
+description "Razão de água no fluxo"
+literal "false"
 
 \end_inset
 

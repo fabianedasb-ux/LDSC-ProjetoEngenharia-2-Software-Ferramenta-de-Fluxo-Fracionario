@@ -1,5 +1,5 @@
-#LyX 2.5 created this file. For more info see https://www.lyx.org/
-\lyxformat 643
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,19 +62,11 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification default
-\crossref_package refstyle
+\justification true
+\use_refstyle 1
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
-\backgroundcolor none
-\fontcolor none
-\notefontcolor lightgray
-\boxbgcolor red
-\table_border_color default
-\table_odd_row_color default
-\table_even_row_color default
-\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -106,7 +98,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\docbook_mathml_version 0
+\author 643308733 "bueno" andreduartebueno@gmail.com
 \end_header
 
 \begin_body
@@ -156,7 +148,11 @@ literal "true"
 O resultado desta etapa consolida-se em um conjunto formal de especificações que definem a identidade do Software Educacional com Interface Interativa.
  Neste contexto,
  detalha-se como a ferramenta deve operar para cumprir sua missão pedagógica de auxiliar na análise de Engenharia de Reservatórios,
- estabelecendo os requisitos necessários para a modelagem computacional da solução analítica de Buckley-Leverett.
+ estabelecendo os requisitos necessários para a modelagem computacional da solução analítica de 
+\emph on
+Buckley-Leverett
+\emph default
+.
  O objetivo é assegurar que o produto final ofereça não apenas precisão matemática,
  mas também a interatividade necessária para a visualização dinâmica do avanço da frente de saturação.
 \end_layout
@@ -229,7 +225,7 @@ name "tab:Nome-do-sistema/produto"
 <lyxtabular version="3" rows="3" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="3cm">
-<column alignment="center" valignment="top" width="7cm">
+<column alignment="center" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -246,7 +242,9 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de Buckley-Leverett
+Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de 
+\emph on
+Buckley-Leverett
 \end_layout
 
 \end_inset
@@ -509,32 +507,12 @@ literal "true"
  amplamente utilizado devido à sua simplicidade e base física,
  mas também incorpora correlações paramétricas avançadas para maior precisão em cenários complexos,
  como o modelo LET
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-LET
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Lombez,
- Escovedo e Trindade
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "LET"
+description "Lombez, Escovedo e Trindade"
+literal "false"
 
 \end_inset
 
@@ -572,36 +550,12 @@ Independentemente do modelo escolhido,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $S_{w}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Saturação de água (adimensional,
- fração)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$S\\_{w}\\$"
+description "Saturação de água (adimensional, fra\\c{c}\\~{a}o)"
+literal "false"
 
 \end_inset
 
@@ -610,36 +564,12 @@ Saturação de água (adimensional,
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $x$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Comprimento,
- distância (metros)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$x\\$"
+description "Comprimento, dist\\^{a}ncia (metros)"
+literal "false"
 
 \end_inset
 
@@ -708,7 +638,11 @@ Para o desenvolvimento desta ferramenta,
 \end_layout
 
 \begin_layout Standard
-A correta definição destes requisitos assegura que o software final não apenas resolva as equações de Buckley-Leverett,
+A correta definição destes requisitos assegura que o software final não apenas resolva as equações de 
+\emph on
+Buckley-Leverett
+\emph default
+,
  mas o faça de maneira didática e responsiva para o usuário.
 \end_layout
 
@@ -737,31 +671,12 @@ name "subsec:Requisitos-funcionais"
 
 \begin_layout Standard
 Os requisitos funcionais (RF
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-RF
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Requisitos Funcionais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "RF"
+description "Requisitos Funcionais"
+literal "false"
 
 \end_inset
 
@@ -798,7 +713,7 @@ nolink "false"
 <lyxtabular version="3" rows="2" columns="2">
 <features islongtable="true" longtabularalignment="center">
 <column alignment="block" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row endfirsthead="true" caption="true">
 <cell multicolumn="1" alignment="block" valignment="top" usebox="none">
 \begin_inset Text
@@ -871,7 +786,7 @@ O sistema deve permitir a entrada manual de dados petrofísicos (porosidade,
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
@@ -915,7 +830,7 @@ O sistema deve permitir o carregamento de dados de permeabilidade relativa de du
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -954,7 +869,7 @@ O sistema deve implementar algoritmos para calcular permeabilidades relativas ba
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -991,7 +906,7 @@ O sistema deve validar os dados de entrada,
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1013,35 +928,12 @@ O sistema deve recalcular instantaneamente a Razão de Mobilidade (
 \end_inset
 
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $M$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Razão de mobilidade (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$M\\$"
+description "Razão de mobilidade (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -1050,68 +942,22 @@ Razão de mobilidade (adimensional)
 \end_inset
 
 )[Pa.s]
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu_{o}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Viscosidade do óleo (Pa.s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\_{o}\\$"
+description "Viscosidade do óleo (Pa.s)"
+literal "false"
 
 \end_inset
 
  
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\mu_{w}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Viscosidade da água (Pa.s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\mu\\_{w}\\$"
+description "Viscosidade da água (Pa.s)"
+literal "false"
 
 \end_inset
 
@@ -1134,7 +980,7 @@ Viscosidade da água (Pa.s)
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1176,7 +1022,7 @@ O sistema deve permitir a alteração dinâmica dos parâmetros dos modelos anal
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1203,129 +1049,32 @@ O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
 \end_inset
 
 ).
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\Delta\\rho\\$"
+description "Variação das massas específicas (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonekg/m\\textthreesuperior{}\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit)"
+literal "false"
 
 \end_inset
 
 
-\begin_inset Formula $\Delta\rho$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Variação das massas específicas (
-\family roman
-\series medium
-\shape up
-\size normal
-\emph off
-\nospellcheck off
-\bar no
-\strikeout off
-\xout off
-\uuline off
-\uwave off
-\noun off
-\color none
-kg/m³
-\family default
-\series default
-\shape default
-\size default
-\emph default
-\nospellcheck default
-\bar default
-\strikeout default
-\xout default
-\uuline default
-\uwave default
-\noun default
-\color inherit
-)
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$g\\$"
+description "Gravidade (m²/s)"
+literal "false"
 
 \end_inset
 
 
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $g$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Gravidade (m²/s)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\alpha$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Ângulo de inclinação do reservatório (radianos)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\alpha\\$"
+description "Ângulo de inclinação do reservatório (radianos)"
+literal "false"
 
 \end_inset
 
@@ -1348,7 +1097,7 @@ status open
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1384,7 +1133,7 @@ O sistema deve calcular as velocidades de avanço e o perfil preliminar de satur
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1428,7 +1177,7 @@ O sistema deve analisar a estabilidade física da solução MOC.
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1465,7 +1214,7 @@ O sistema deve simular e renderizar graficamente o cenário de injeção 1D entr
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1530,31 +1279,12 @@ Enquanto os requisitos funcionais definem
 \emph default
  o sistema faz,
  os requisitos não funcionais (RNF
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-RNF
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Requisitos não funcionais
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "RNF"
+description "Requisitos não funcionais"
+literal "false"
 
 \end_inset
 
@@ -1580,7 +1310,6 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
-tuple "list"
 
 \end_inset
 
@@ -1614,7 +1343,7 @@ literal "true"
 <lyxtabular version="3" rows="2" columns="2">
 <features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row endfirsthead="true" caption="true">
 <cell multicolumn="1" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -1685,7 +1414,7 @@ O software deve ser desenvolvido utilizando a linguagem C++ (padrão C++17) e o 
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1730,7 +1459,7 @@ sliders
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1774,7 +1503,7 @@ Strategy
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1818,7 +1547,7 @@ QCustomPlot
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1859,7 +1588,7 @@ O sistema deve garantir um tempo de resposta inferior a
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -1903,7 +1632,7 @@ O sistema deve possuir tratamento de exceções para a leitura de arquivos exter
 <lyxtabular version="3" rows="1" columns="2">
 <features tabularvalignment="middle">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="block" valignment="top" width="8cm">
+<column alignment="block" valignment="top" width="12cm">
 <row>
 <cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -2138,35 +1867,12 @@ Entrada de Dados de Fluidos e Rocha:
  [Porcentagem]
 \size default
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $\phi$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Porosidade (porcentagem)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$\\phi\\$"
+description "Porosidade (porcentagem)"
+literal "false"
 
 \end_inset
 
@@ -2180,35 +1886,12 @@ Porosidade (porcentagem)
  [m²]
 \size default
 
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $K$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Permeabilidade absoluta (m²)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$K\\$"
+description "Permeabilidade absoluta (m²)"
+literal "false"
 
 \end_inset
 
@@ -2239,68 +1922,22 @@ Opção A (Modelos Analíticos):
 
 \size default
 [adimensional]
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$n\\_{o}\\$"
+description "Expoente de Corey para a fase oleica (adimensional)"
+literal "false"
 
 \end_inset
 
 
-\begin_inset Formula $n_{o}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Expoente de Corey para a fase oleica (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Símbolos
-\end_layout
-
-\end_inset
-
-
-\begin_inset Formula $n_{w}$
-\end_inset
-
- 
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-Expoente de Corey para a fase aquosa (adimensional)
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Símbolos"
+symbol " \\$n\\_{w}\\$"
+description "Expoente de Corey para a fase aquosa (adimensional)"
+literal "false"
 
 \end_inset
 
@@ -2481,6 +2118,10 @@ literal "true"
 \end_inset
 
  e Chierici
+\change_inserted 643308733 1785593502
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Chierici1984"
@@ -2505,7 +2146,6 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-geral.png
-	lyxscale 50
 	width 100text%
 	special height=0.8\textheight
 
@@ -2610,7 +2250,8 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-especifico-um.png
-	lyxscale 30
+	lyxscale 50
+	width 100text%
 
 \end_inset
 
@@ -2668,34 +2309,12 @@ nolink "false"
 \begin_layout Standard
 O ponto crítico de validação arquitetural e física deste diagrama é a modelagem do relacionamento entre o MOC e o caso de uso 'Verificar Condição de Entropia'.
  Na sintaxe da UML
-\begin_inset Nomenclature
-status open
-
-\begin_layout Plain Layout
-\begin_inset Argument 1
-status open
-
-\begin_layout Plain Layout
-Abreviaturas
-\end_layout
-
-\end_inset
-
-UML
-\begin_inset Argument post:1
-status open
-
-\begin_layout Plain Layout
-
-\emph on
-\lang english
-Unified Modeling Language
-\end_layout
-
-\end_inset
-
-
-\end_layout
+\begin_inset CommandInset nomenclature
+LatexCommand nomenclature
+prefix "Abreviaturas"
+symbol "UML"
+description "\\em{}Unified Modeling Language"
+literal "false"
 
 \end_inset
 
