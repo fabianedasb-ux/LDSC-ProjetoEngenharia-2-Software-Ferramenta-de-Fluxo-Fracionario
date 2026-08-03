@@ -5,8 +5,8 @@
  * @date Janeiro 2026
  */
 
-#include "MainWindow.h"
-#include "ui_mainwindow.h"
+#include "Mainwindow.h"
+#include "ui_Mainwindow.h"
 #include <QMessageBox>
 #include <QFileDialog>
 #include <QInputDialog>
