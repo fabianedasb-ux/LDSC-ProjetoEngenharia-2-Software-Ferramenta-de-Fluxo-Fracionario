@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -63,11 +63,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -99,7 +107,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -149,12 +157,31 @@ name "sec:AOO"
 \begin_layout Standard
 Neste capítulo,
  apresenta-se a Análise Orientada a Objetos (AOO
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "AOO"
-description "Análise Orientada a Objetos"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+AOO
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Análise Orientada a Objetos
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -168,9 +195,7 @@ Buckley-Leverett
 
 \begin_layout Standard
 A AOO constitui uma etapa fundamental no desenvolvimento de software científico,
- pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica
-\change_inserted 643308733 1785612595
- (Capítulo 
+ pois permite transpor os modelos matemáticos e físicos definidos na fundamentação teórica (Capítulo 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "sec:Elaboração"
@@ -181,9 +206,7 @@ nolink "false"
 
 \end_inset
 
-)
-\change_unchanged
- para uma estrutura computacional lógica e coesa.
+) para uma estrutura computacional lógica e coesa.
  Segundo 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -271,7 +294,6 @@ status open
 
 \begin_layout Plain Layout
 
-
 \backslash
 begin{landscape}
 \end_layout
@@ -331,7 +353,6 @@ name "cap:Diagrama-de-classes"
 status open
 
 \begin_layout Plain Layout
-
 
 \backslash
 end{landscape}
@@ -686,34 +707,22 @@ CCurvasCorey
 :
  Implementação do modelo de Corey,
  utilizando os expoentes 
-\change_deleted 643308733 1785612901
-
 \family typewriter
 \nospellcheck on
-no
-\change_inserted 643308733 1785612901
 
-\begin_inset Formula $no$
+\begin_inset Formula $n_{o}$
 \end_inset
 
-
-\change_unchanged
 
 \family default
 \nospellcheck default
  e 
-\change_deleted 643308733 1785612905
-
 \family typewriter
 \nospellcheck on
-nw
-\change_inserted 643308733 1785612905
 
-\begin_inset Formula $nw$
+\begin_inset Formula $n_{w}$
 \end_inset
 
-
-\change_unchanged
 
 \family default
 \nospellcheck default
@@ -778,55 +787,25 @@ CCurvasChierici
 :
  Implementa o modelo exponencial de Chierici,
  utilizando os parâmetros 
-\change_deleted 643308733 1785612886
-A_w
-\change_inserted 643308733 1785612886
-
 \begin_inset Formula $A_{w}$
 \end_inset
 
-
-\change_unchanged
  e 
-\change_deleted 643308733 1785612889
-B_w
-\change_inserted 643308733 1785612890
-
 \begin_inset Formula $B_{w}$
 \end_inset
 
-
-\change_unchanged
  para a fase aquosa e 
-\change_deleted 643308733 1785612893
-
-\family typewriter
-\nospellcheck on
-A_o
-\change_inserted 643308733 1785612893
-
-\family default
-\nospellcheck default
-
 \begin_inset Formula $A_{o}$
 \end_inset
 
-
-\change_unchanged
 ,
  
-\change_deleted 643308733 1785612896
-
 \family typewriter
 \nospellcheck on
-B_o
-\change_inserted 643308733 1785612896
 
 \begin_inset Formula $B_{o}$
 \end_inset
 
-
-\change_unchanged
 
 \family default
 \nospellcheck default
@@ -1014,35 +993,15 @@ name "subsec: Diagrama de sequência geral"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 643308733 1785612967
-Enquanto o Diagrama de Classes descreve a estrutura estática do sistema,
- os Diagramas de Sequência são utilizados para modelar o comportamento dinâmico e a troca de mensagens entre os objetos ao longo do tempo 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "booch2007object"
-literal "true"
-
-\end_inset
-
-.
-\change_inserted 643308733 1785612987
-
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-\change_inserted 643308733 1785612989
 repete
-\change_unchanged
-
 \end_layout
 
 \end_inset
 
-
-\change_unchanged
 
 \end_layout
 
@@ -1960,12 +1919,8 @@ literal "true"
 
 \end_inset
 
-
-\change_inserted 643308733 1785613572
 ,
- é a representação do fluxo de processamento de um determinado método
-\change_unchanged
-.
+ é a representação do fluxo de processamento de um determinado método.
  Neste projeto,
  ele foi utilizado para detalhar a lógica crítica implementada no método 
 \family typewriter

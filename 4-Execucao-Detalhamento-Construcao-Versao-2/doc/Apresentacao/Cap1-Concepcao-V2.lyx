@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -62,11 +62,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 1
+\justification default
+\crossref_package refstyle
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -98,7 +106,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -507,12 +515,32 @@ literal "true"
  amplamente utilizado devido à sua simplicidade e base física,
  mas também incorpora correlações paramétricas avançadas para maior precisão em cenários complexos,
  como o modelo LET
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "LET"
-description "Lombez, Escovedo e Trindade"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+LET
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Lombez,
+ Escovedo e Trindade
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -550,12 +578,32 @@ Independentemente do modelo escolhido,
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$S\\_{w}\\$"
-description "Saturação de água (adimensional, fra\\c{c}\\~{a}o)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Saturação de água (adimensional,
+ fra
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -564,12 +612,32 @@ literal "false"
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$x\\$"
-description "Comprimento, dist\\^{a}ncia (metros)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Comprimento,
+ dist
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -671,12 +739,31 @@ name "subsec:Requisitos-funcionais"
 
 \begin_layout Standard
 Os requisitos funcionais (RF
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "RF"
-description "Requisitos Funcionais"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RF
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Requisitos Funcionais
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -928,12 +1015,31 @@ O sistema deve recalcular instantaneamente a Razão de Mobilidade (
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$M\\$"
-description "Razão de mobilidade (adimensional)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Razão de mobilidade (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -942,22 +1048,60 @@ literal "false"
 \end_inset
 
 )[Pa.s]
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$\\mu\\_{o}\\$"
-description "Viscosidade do óleo (Pa.s)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
 
 \end_inset
 
  
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$\\mu\\_{w}\\$"
-description "Viscosidade da água (Pa.s)"
-literal "false"
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Viscosidade do óleo (Pa.s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Viscosidade da água (Pa.s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1049,32 +1193,89 @@ O sistema deve calcular a curva de Fluxo Fracionário Generalizada (
 \end_inset
 
 ).
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$\\Delta\\rho\\$"
-description "Variação das massas específicas (\\rmfamily{}\\series medium\\shape up\\size normal\\emph off\\nospellcheck off\\bar no\\strikeout off\\xout off\\uuline off\\uwave off\\noun off\\color nonekg/m\\textthreesuperior{}\\normalfont{}\\mdseries{}\\upshape{}\\size default\\em{}\\nospellcheck default}\\strikeout default\\xout default\\uuline default\\uwave default\\upshape{}\\color inherit)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Variação das massas específicas (
+\end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$g\\$"
-description "Gravidade (m²/s)"
-literal "false"
+\end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$\\alpha\\$"
-description "Ângulo de inclinação do reservatório (radianos)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Gravidade (m²/s)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Ângulo de inclinação do reservatório (radianos)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1279,12 +1480,31 @@ Enquanto os requisitos funcionais definem
 \emph default
  o sistema faz,
  os requisitos não funcionais (RNF
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "RNF"
-description "Requisitos não funcionais"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RNF
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Requisitos não funcionais
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1867,12 +2087,31 @@ Entrada de Dados de Fluidos e Rocha:
  [Porcentagem]
 \size default
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$\\phi\\$"
-description "Porosidade (porcentagem)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Porosidade (porcentagem)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1886,12 +2125,31 @@ literal "false"
  [m²]
 \size default
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$K\\$"
-description "Permeabilidade absoluta (m²)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Permeabilidade absoluta (m²)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1922,22 +2180,60 @@ Opção A (Modelos Analíticos):
 
 \size default
 [adimensional]
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$n\\_{o}\\$"
-description "Expoente de Corey para a fase oleica (adimensional)"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Expoente de Corey para a fase oleica (adimensional)
+\end_layout
 
 \end_inset
 
 
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Símbolos"
-symbol " \\$n\\_{w}\\$"
-description "Expoente de Corey para a fase aquosa (adimensional)"
-literal "false"
+\end_layout
+
+\end_inset
+
+
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Símbolos
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Expoente de Corey para a fase aquosa (adimensional)
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2117,11 +2413,7 @@ literal "true"
 
 \end_inset
 
- e Chierici
-\change_inserted 643308733 1785593502
- 
-\change_unchanged
-
+ e Chierici 
 \begin_inset CommandInset citation
 LatexCommand citep
 key "Chierici1984"
@@ -2309,12 +2601,31 @@ nolink "false"
 \begin_layout Standard
 O ponto crítico de validação arquitetural e física deste diagrama é a modelagem do relacionamento entre o MOC e o caso de uso 'Verificar Condição de Entropia'.
  Na sintaxe da UML
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "UML"
-description "\\em{}Unified Modeling Language"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+UML
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 

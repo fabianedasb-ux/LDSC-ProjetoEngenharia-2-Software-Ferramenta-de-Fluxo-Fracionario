@@ -1,5 +1,5 @@
-#LyX 2.4 created this file. For more info see https://www.lyx.org/
-\lyxformat 620
+#LyX 2.5 created this file. For more info see https://www.lyx.org/
+\lyxformat 643
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -77,11 +77,19 @@
 \use_indices false
 \paperorientation portrait
 \suppress_date false
-\justification true
-\use_refstyle 0
+\justification default
+\crossref_package prettyref
 \use_formatted_ref 0
 \use_minted 0
 \use_lineno 0
+\backgroundcolor none
+\fontcolor none
+\notefontcolor lightgray
+\boxbgcolor red
+\table_border_color default
+\table_odd_row_color default
+\table_even_row_color default
+\table_alt_row_colors_start 1
 \index Índice
 \shortcut idx
 \color #008000
@@ -113,7 +121,7 @@
 \html_be_strict false
 \docbook_table_output 0
 \docbook_mathml_prefix 1
-\author 643308733 "bueno" andreduartebueno@gmail.com
+\docbook_mathml_version 0
 \end_header
 
 \begin_body
@@ -179,12 +187,31 @@ name "sec:Projeto-do-sistema"
 Depois da análise orientada a objeto desenvolve-se o projeto do sistema,
  o qual envolve etapas como a definição dos protocolos,
  da interface API
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "API"
-description "Interface de Programação de Aplicações"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+API
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Interface de Programação de Aplicações
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -237,20 +264,9 @@ Definição dos protocolos de comunicação entre os diversos elementos externos
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614377
-Neste projeto,
- p
-\change_inserted 643308733 1785614377
-P
-\change_unchanged
-or se tratar de um software científico do tipo 
+Por se tratar de um software científico do tipo 
 \emph on
-desktop
-\change_inserted 643308733 1785614091
-,
-
-\change_unchanged
+desktop,
 
 \emph default
  voltado para a execução local em estações de trabalho de engenharia,
@@ -269,26 +285,7 @@ clusters
 \end_deeper
 \begin_layout Itemize
 Definição dos protocolos de comunicação entre os diversos elementos internos (como objetos):
-\change_inserted 643308733 1785614384
-z
-\change_deleted 643308733 1785614382
-
-\begin_inset Separator latexpar
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-
-\change_deleted 643308733 1785614387
-Neste projeto,
- a
-\change_inserted 643308733 1785614387
-A
-\change_unchanged
- comunicação interobjeto ocorre de maneira síncrona através da invocação direta de métodos públicos e da passagem de referências e ponteiros na memória primária.
+ A comunicação interobjeto ocorre de maneira síncrona através da invocação direta de métodos públicos e da passagem de referências e ponteiros na memória primária.
  Adicionalmente,
  a comunicação entre o motor matemático de cálculo e a interface gráfica é regida pelo protocolo de 
 \emph on
@@ -303,16 +300,11 @@ Slots
 \emph on
 framework
 \emph default
- 
-\change_inserted 643308733 1785614125
-QT 
-\change_unchanged
-adotado.
+ QT adotado.
  Esse mecanismo garante o desacoplamento entre as classes de visualização e as classes de modelo físico,
  permitindo que eventos gerados na interface (como a alteração de um parâmetro) disparem atualizações automáticas nos subcomponentes de cálculo.
 \end_layout
 
-\end_deeper
 \begin_layout Itemize
 Definição da interface API de suas bibliotecas e sistemas:
 \begin_inset Separator latexpar
@@ -323,14 +315,7 @@ Definição da interface API de suas bibliotecas e sistemas:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614392
-Neste projeto,
- a
-\change_inserted 643308733 1785614392
-A
-\change_unchanged
- interface de programação de aplicação (API) interna é estruturada por meio de contratos rígidos de desenvolvimento baseados em classes abstratas e interfaces puramente virtuais.
+A interface de programação de aplicação (API) interna é estruturada por meio de contratos rígidos de desenvolvimento baseados em classes abstratas e interfaces puramente virtuais.
  A API do subsistema rocha-fluido é exposta pela interface 
 \family typewriter
 \nospellcheck on
@@ -392,22 +377,34 @@ Definição do formato dos arquivos gerados pelo software:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614397
-Neste projeto,
- o
-\change_inserted 643308733 1785614397
-O
-\change_unchanged
- software utiliza dois formatos distintos para a entrada e saída de dados.
+O software utiliza dois formatos distintos para a entrada e saída de dados.
  Para a importação de dados externos associados ao modelo de permeabilidade relativa tabelada,
  o sistema faz a leitura de arquivos de texto plano com codificação ASCII
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "ASCII"
-description "\\em{}American Standard Code for Information Interchange"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+ASCII
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -471,37 +468,64 @@ Identificação e alocação dos recursos globais,
 
 \begin_deeper
 \begin_layout Itemize
+Os recursos globais referem-se à memória RAM
+\begin_inset Nomenclature
+status open
 
-\change_deleted 643308733 1785614404
-Neste projeto,
- o
-\change_inserted 643308733 1785614405
-O
-\change_unchanged
-s recursos globais referem-se à memória RAM
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "RAM"
-description "\\em{}Random-access memory"
-literal "false"
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+RAM
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
  de curta duração e ao ciclo de processamento da CPU
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "CPU"
-description "Unidade central de processamento"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+CPU
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Unidade central de processamento
+\end_layout
 
 \end_inset
 
 
-\change_deleted 643308733 1785614354
- 
-\change_unchanged
+\end_layout
+
+\end_inset
+
 .
  A alocação ocorre dinamicamente durante a inicialização da janela principal,
  onde o simulador central e as calculadoras são instanciados.
@@ -538,14 +562,7 @@ Identificação da necessidade do uso de banco de dados:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614410
-Neste projeto,
- d
-\change_inserted 643308733 1785614410
-D
-\change_unchanged
-evido à natureza estritamente analítica e matemática do problema de 
+Devido à natureza estritamente analítica e matemática do problema de 
 \emph on
 Buckley-Leverett,
 
@@ -569,22 +586,34 @@ Identificação da necessidade de sistemas de armazenamento de massa:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614416
-Neste projeto,
- n
-\change_inserted 643308733 1785614422
-N
-\change_unchanged
-ão há necessidade de infraestruturas corporativas de armazenamento de massa,
+Não há necessidade de infraestruturas corporativas de armazenamento de massa,
  tais como servidores de arquivos dedicados,
  redes de armazenamento (SAN
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "SAN"
-description "\\em{}Storage Area Network"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SAN
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -633,14 +662,7 @@ Identificação e seleção da implementação de controle,
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614434
-Neste projeto,
- a
-\change_inserted 643308733 1785614434
-A
-\change_unchanged
-dota-se um modelo de controle híbrido perfeitamente segmentado por responsabilidade de camadas.
+Adota-se um modelo de controle híbrido perfeitamente segmentado por responsabilidade de camadas.
  O fluxo de controle da interface gráfica é totalmente orientado a eventos,
  permanecendo em estado de espera (
 \emph on
@@ -663,14 +685,7 @@ Identificação das condições extremas e de prioridades:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614438
-Neste projeto,
- a
-\change_inserted 643308733 1785614438
-A
-\change_unchanged
-s condições extremas foram mapeadas para evitar falhas de execução e colapsos numéricos.
+As condições extremas foram mapeadas para evitar falhas de execução e colapsos numéricos.
  Elas englobam:
  razões de viscosidade excessivamente desfavoráveis (onde a cauda da derivada do fluxo fracionário aproxima-se assintoticamente de zero),
  divisões por zero em tempos avançados de injeção pós-ruptura (
@@ -699,14 +714,7 @@ Identificação da necessidade de otimização:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614441
-Neste projeto,
- a
-\change_inserted 643308733 1785614441
-A
-\change_unchanged
- necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica 
+A necessidade de otimização concentrou-se na estabilidade numérica da curva assintótica 
 \emph on
 pós-breakthrough
 \emph default
@@ -740,14 +748,7 @@ loops
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614452
-Neste projeto,
- o
-\change_inserted 643308733 1785614452
-O
-\change_unchanged
-s laços de controle executam 
+Os laços de controle executam 
 \emph on
 loops
 \emph default
@@ -787,19 +788,8 @@ Identificação de concorrências – quais algoritmos podem ser implementados u
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614456
-Neste projeto,
- p
-\change_inserted 643308733 1785614456
-P
-\change_unchanged
-or se tratar de uma solução analítica pelo Método das Características (MOC) e não de um simulador numérico tridimensional baseado em malhas de blocos por diferenças finitas,
- o esforço computacional é 
-\change_deleted 643308733 1785614469
-extremamente
-\change_unchanged
- baixo.
+Por se tratar de uma solução analítica pelo Método das Características (MOC) e não de um simulador numérico tridimensional baseado em malhas de blocos por diferenças finitas,
+ o esforço computacional é baixo.
  Os 
 \emph on
 loops
@@ -855,24 +845,36 @@ Identificação das estruturas arquitetônicas comuns:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614555
-Neste projeto,
- a
-\change_inserted 643308733 1785614555
-A
-\change_unchanged
- estrutura arquitetônica comum adotada fundamenta-se no padrão arquitetural MVC (
+A estrutura arquitetônica comum adotada fundamenta-se no padrão arquitetural MVC (
 \emph on
 Model-View-Controller
 \emph default
 )
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "MVC"
-description "\\em{}Model-View-Controller"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+MVC
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -925,14 +927,7 @@ Identificação de subsistemas relacionados à plataforma selecionada:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614559
-Neste projeto,
- o
-\change_inserted 643308733 1785614559
-O
-\change_unchanged
-s subsistemas estão intimamente ligados à API de classes do 
+Os subsistemas estão intimamente ligados à API de classes do 
 \emph on
 framework
 \emph default
@@ -972,34 +967,11 @@ Identificação e definição das plataformas a serem suportadas:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614562
-Neste projeto,
- a
-\change_inserted 643308733 1785614562
-A
-\change_unchanged
- plataforma de software suportada baseia-se na linguagem C++ nativa (padrão ISO/IEC C++1
-\change_deleted 643308733 1785614605
-1
-\change_inserted 643308733 1785614605
-7
-\change_unchanged
- ou superior),
+A plataforma de software suportada baseia-se na linguagem C++ nativa (padrão ISO/IEC C++17 ou superior),
  garantindo compilação eficiente.
  O sistema operacional alvo prioritário é o Microsoft Windows (7,
  10 e 11),
- mas a escolha tecnológica confere portabilidade total para os sistemas 
-\change_inserted 643308733 1785614622
-GNU/
-\change_unchanged
-Linux e 
-\change_inserted 643308733 1785614617
-M
-\change_deleted 643308733 1785614616
-m
-\change_unchanged
-acOS.
+ mas a escolha tecnológica confere portabilidade total para os sistemas GNU/Linux e MacOS.
  Em termos de hardware,
  o software é extremamente leve,
  exigindo apenas uma estação de trabalho padrão de engenharia com processador x86 ou x64 e um mínimo de 2 GB de memória RAM livre.
@@ -1016,14 +988,7 @@ Seleção das bibliotecas externas a serem utilizadas:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614567
-Neste projeto,
- a
-\change_inserted 643308733 1785614567
-A
-\change_unchanged
- principal biblioteca externa selecionada foi a 
+A principal biblioteca externa selecionada foi a 
 \family typewriter
 \nospellcheck on
 QCustomPlot
@@ -1055,12 +1020,31 @@ literal "false"
 \end_deeper
 \begin_layout Itemize
 Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "GDI"
-description "\\em{}Graphics Device Interface"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+GDI
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1073,14 +1057,7 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614570
-Neste projeto,
- a 
-\change_inserted 643308733 1785614570
-A 
-\change_unchanged
-biblioteca de interface gráfica (
+A biblioteca de interface gráfica (
 \emph on
 Graphics Device Interface
 \emph default
@@ -1098,12 +1075,31 @@ Graphics Device Interface
 \end_deeper
 \begin_layout Itemize
 Seleção do ambiente de desenvolvimento para montar a interface de desenvolvimento – IDE
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "IDE"
-description "\\em{}Integrated Development Environment"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+IDE
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1116,14 +1112,7 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614575
-Neste projeto,
- o
-\change_inserted 643308733 1785614575
-O
-\change_unchanged
- ambiente integrado de desenvolvimento adotado foi a IDE oficial Qt Creator em sua versão estável.
+O ambiente integrado de desenvolvimento adotado foi a IDE oficial Qt Creator em sua versão estável.
  A ferramenta foi selecionada por centralizar de forma unificada o editor de código C++,
  o compilador GCC/MinGW,
  o gerenciador de automação de compilação 
@@ -1177,14 +1166,7 @@ Identificação dos padrões de projeto incorporados:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614579
-Neste projeto,
- o
-\change_inserted 643308733 1785614579
-O
-\change_unchanged
- padrão de projeto comportamental 
+O padrão de projeto comportamental 
 \emph on
 Strategy
 \emph default
@@ -1206,11 +1188,7 @@ CCurvasPermeabilidadeCorey
  
 \family typewriter
 \nospellcheck on
-CCurvas
-\change_inserted 643308733 1785621416
-\SpecialChar nobreakdash
-
-\change_unchanged
+CCurvas\SpecialChar nobreakdash
 Permeabilidade\SpecialChar nobreakdash
 LET
 \family default
@@ -1356,13 +1334,7 @@ O projeto orientado a objeto é a etapa posterior ao projeto do sistema.
 Envolve a otimização da estrutura de dados e dos algoritmos,
  a minimização do tempo de execução,
  da alocação de memória e de custos computacionais.
- Existe um desvio de ênfase para os conceitos da plataforma selecionada (C++1
-\change_deleted 643308733 1785614749
-1
-\change_inserted 643308733 1785614749
-7
-\change_unchanged
- e 
+ Existe um desvio de ênfase para os conceitos da plataforma selecionada (C++17 e 
 \emph on
 framework
 \emph default
@@ -1402,14 +1374,7 @@ Adicionar nos diagramas de pacotes as bibliotecas e subsistemas selecionados no 
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614878
-Neste projeto,
- o
-\change_inserted 643308733 1785614878
-O
-\change_unchanged
- modelo estrutural foi expandido para acomodar os pacotes externos do 
+O modelo estrutural foi expandido para acomodar os pacotes externos do 
 \emph on
 framework
 \emph default
@@ -1455,14 +1420,7 @@ Novas classes e associações oriundas das bibliotecas selecionadas e da linguag
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614911
-Neste projeto,
- a
-\change_inserted 643308733 1785614911
-A
-\change_unchanged
- classe de geração de relatórios (
+A classe de geração de relatórios (
 \family typewriter
 \nospellcheck on
 CRelatorio
@@ -1507,14 +1465,7 @@ Estabelecer as dependências e restrições associadas à plataforma escolhida:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614915
-Neste projeto,
- e
-\change_inserted 643308733 1785614915
-E
-\change_unchanged
-stabeleceu-se a restrição de separação estrita (desacoplamento) entre o domínio (lógica física) e a interface.
+Estabeleceu-se a restrição de separação estrita (desacoplamento) entre o domínio (lógica física) e a interface.
  As classes do núcleo matemático (
 \family typewriter
 \nospellcheck on
@@ -1571,14 +1522,7 @@ Revisar os diagramas de sequência e de comunicação considerando a plataforma 
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614828
-Neste projeto,
- o
-\change_inserted 643308733 1785614828
-O
-\change_unchanged
-s diagramas de sequência foram atualizados para refletir o paradigma de comunicação do Qt (
+Os diagramas de sequência foram atualizados para refletir o paradigma de comunicação do Qt (
 \emph on
 Signals and Slots
 \emph default
@@ -1613,14 +1557,7 @@ Verificar a necessidade de se revisar,
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614833
-Neste projeto,
- a
-\change_inserted 643308733 1785614833
-A
-\change_unchanged
-s máquinas de estado da interface gráfica foram refinadas.
+As máquinas de estado da interface gráfica foram refinadas.
  Foi adicionado um controlo de estado booleano (
 \family typewriter
 \nospellcheck on
@@ -1635,12 +1572,31 @@ MainWindow
 \nospellcheck default
 ,
  que gere a transição visual das folhas de estilo (QSS
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "QSS"
-description "Qt \\em{}Style Sheets"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+QSS
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+Qt 
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1689,14 +1645,7 @@ Atributos novos podem ser adicionados a uma classe,
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614840
-Neste projeto,
- o
-\change_inserted 643308733 1785614840
-O
-\change_unchanged
-s vetores matemáticos concebidos na análise foram traduzidos para estruturas otimizadas da linguagem C++.
+Os vetores matemáticos concebidos na análise foram traduzidos para estruturas otimizadas da linguagem C++.
  Utilizou-se o 
 \family typewriter
 \nospellcheck on
@@ -1759,14 +1708,7 @@ Em função da plataforma escolhida,
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614875
-Neste projeto,
- o
-\change_inserted 643308733 1785614875
-O
-\change_unchanged
-s métodos de acesso a arquivos foram completamente alterados para utilizar as caixas de diálogo nativas do sistema operacional através da classe 
+Os métodos de acesso a arquivos foram completamente alterados para utilizar as caixas de diálogo nativas do sistema operacional através da classe 
 \family typewriter
 \nospellcheck on
 QFileDialog
@@ -1774,8 +1716,6 @@ QFileDialog
 \nospellcheck default
 .
  
-\change_inserted 643308733 1785615001
-
 \end_layout
 
 \begin_layout Itemize
@@ -1806,21 +1746,8 @@ Divisão de métodos (Tomada de decisões/controlo vs.
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614922
-Neste projeto,
- i
-\change_inserted 643308733 1785614926
-I
-\change_unchanged
-mplementou-se uma clara bifurcação.
- Métodos de decisão e control
-\change_deleted 643308733 1785615013
-o
-\change_inserted 643308733 1785615013
-e
-\change_unchanged
- operam na classe 
+Implementou-se uma clara bifurcação.
+ Métodos de decisão e controle operam na classe 
 \family typewriter
 \nospellcheck on
 MainWindow
@@ -1860,12 +1787,31 @@ loops
 \end_deeper
 \begin_layout Itemize
 Algoritmos complexos podem ser subdivididos e otimizados utilizando STL
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "STL"
-description "\\em{}Standard Template Library"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+STL
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -1878,14 +1824,7 @@ literal "false"
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614876
-Neste projeto,
- o
-\change_inserted 643308733 1785614876
-O
-\change_unchanged
- algoritmo clássico de identificação da velocidade da frente de choque foi subdividido para ancorar rigorosamente o ponto inicial da secante na saturação de água irredutível (
+O algoritmo clássico de identificação da velocidade da frente de choque foi subdividido para ancorar rigorosamente o ponto inicial da secante na saturação de água irredutível (
 \begin_inset Formula $S_{wi}$
 \end_inset
 
@@ -1926,20 +1865,32 @@ Os métodos da classes estão a dar resposta às responsabilidades da classe?
 
 \begin_deeper
 \begin_layout Itemize
+Reviu-se o Princípio da Responsabilidade Única (SRP
+\begin_inset Nomenclature
+status open
 
-\change_deleted 643308733 1785614930
-Neste projeto,
- r
-\change_inserted 643308733 1785614930
-R
-\change_unchanged
-eviu-se o Princípio da Responsabilidade Única (SRP
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "SRP"
-description "\\em{}Single Responsibility Principle"
-literal "false"
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+SRP
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2011,14 +1962,7 @@ Reorganização das classes e dos métodos:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614935
-Neste projeto,
- c
-\change_inserted 643308733 1785614935
-C
-\change_unchanged
-onsolidou-se a hierarquia baseada em classes abstratas.
+Consolidou-se a hierarquia baseada em classes abstratas.
  Os métodos de cálculo do fluxo fracionário (
 \begin_inset Formula $f_{w}$
 \end_inset
@@ -2039,14 +1983,7 @@ Abstração do comportamento comum:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614938
-Neste projeto,
- 
-\change_inserted 643308733 1785614938
-A
-\change_unchanged
-a interface 
+A interface 
 \family typewriter
 \nospellcheck on
 ICurvasPermeabilidade
@@ -2077,14 +2014,7 @@ Utilização de delegação para partilhar a implementação:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785615067
-Neste projeto,
- e
-\change_inserted 643308733 1785615067
-E
-\change_unchanged
-vitou-se a herança profunda e irrealista através da delegação (composição).
+Evitou-se a herança profunda e irrealista através da delegação (composição).
  A classe 
 \family typewriter
 \nospellcheck on
@@ -2147,14 +2077,7 @@ Definição de como as associações serão implementadas:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614942
-Neste projeto,
- a
-\change_inserted 643308733 1785614942
-A
-\change_unchanged
-s associações fortes de composição (tempo de vida dependente) foram implementadas com alocação dinâmica de ponteiros (
+As associações fortes de composição (tempo de vida dependente) foram implementadas com alocação dinâmica de ponteiros (
 \emph on
 new
 \emph default
@@ -2178,22 +2101,11 @@ Associações diretas (evitar percorrer vários nós de classes distantes):
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614946
-Neste projeto,
- e
-\change_inserted 643308733 1785614946
-E
-\change_unchanged
-vitou-se a transgressão da Lei de Demeter (ex:
+Evitou-se a transgressão da Lei de Demeter (ex:
  
 \family typewriter
 \nospellcheck on
-Janela->Simulador->Welge
-\change_inserted 643308733 1785621461
- 
-\change_unchanged
-->Calculadora->derivada()
+Janela->Simulador->Welge ->Calculadora->derivada()
 \family default
 \nospellcheck default
 ).
@@ -2238,14 +2150,7 @@ Análise de aspetos relativos à otimização do sistema:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614951
-Neste projeto,
- a
-\change_inserted 643308733 1785614951
-A
-\change_unchanged
- principal otimização foi realizada na zona pós-
+A principal otimização foi realizada na zona pós-
 \emph on
 breakthrough
 \emph default
@@ -2271,14 +2176,7 @@ Inclusão de bibliotecas otimizadas e atributos auxiliares:
 
 \begin_deeper
 \begin_layout Itemize
-
-\change_deleted 643308733 1785614954
-Neste projeto,
- f
-\change_inserted 643308733 1785614954
-F
-\change_unchanged
-oram criados atributos auxiliares calculados prematuramente em memória (como o 
+Foram criados atributos auxiliares calculados prematuramente em memória (como o 
 \family typewriter
 \nospellcheck on
 max_ed
@@ -2329,12 +2227,31 @@ name "sec:Diagrama-de-componentes"
 O diagrama de componentes mostra a forma como os componentes do software se relacionam e suas dependências arquiteturais estruturais.
  Inclui itens como bibliotecas estáticas,
  bibliotecas dinâmicas (DLLs
-\begin_inset CommandInset nomenclature
-LatexCommand nomenclature
-prefix "Abreviaturas"
-symbol "DLLs"
-description "\\em{}Dynamic Link Library"
-literal "false"
+\begin_inset Nomenclature
+status open
+
+\begin_layout Plain Layout
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+Abreviaturas
+\end_layout
+
+\end_inset
+
+DLLs
+\begin_inset Argument post:1
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
@@ -2344,14 +2261,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 643308733 1785614877
-Neste projeto,
- o
-\change_inserted 643308733 1785614877
-O
-\change_unchanged
- diagrama de componentes reflete a arquitetura modular e multiplataforma do 
+O diagrama de componentes reflete a arquitetura modular e multiplataforma do 
 \emph on
 framework
 \emph default
@@ -2387,11 +2297,6 @@ CSimulador
 \nospellcheck default
 ).
  Ele atua como o maestro do fluxo de execução.
-
-\change_inserted 643308733 1785615316
- 
-\change_unchanged
-
 \end_layout
 
 \begin_layout Itemize
@@ -2528,16 +2433,12 @@ nolink "false"
 
 \end_inset
 
- o 
-\change_deleted 643308733 1785615266
-de
-\change_unchanged
- diagrama de componentes
-\change_inserted 643308733 1785615348
-,
- note que ele ilustra os arquivos que precisam estar instalados na workstation para que o simulador rode
-\change_unchanged
-:
+ o diagrama de componentes,
+ note que ele ilustra os arquivos que precisam estar instalados na 
+\emph on
+workstation
+\emph default
+ para que o simulador rode:
 \end_layout
 
 \begin_layout Standard
@@ -2625,14 +2526,7 @@ O diagrama de implantação é um diagrama de alto nível que ilustra as relaç�
 \end_layout
 
 \begin_layout Standard
-
-\change_deleted 643308733 1785614963
-Neste projeto,
- d
-\change_inserted 643308733 1785614963
-D
-\change_unchanged
-evido à opção metodológica por uma ferramenta de natureza analítica e resposta em tempo real,
+Devido à opção metodológica por uma ferramenta de natureza analítica e resposta em tempo real,
  dispensou-se a infraestrutura de rede complexa.
  O diagrama de implantação concentra-se em um único nó principal de execução (
 \emph on
@@ -2713,11 +2607,7 @@ nolink "false"
 \end_inset
 
  o de diagrama de implantação.
-
-\change_inserted 643308733 1785615475
  O mesmo ilustra os componentes físicos e os arquivos necessários para que o sistema seja implantado e usado.
-\change_unchanged
-
 \end_layout
 
 \begin_layout Standard
