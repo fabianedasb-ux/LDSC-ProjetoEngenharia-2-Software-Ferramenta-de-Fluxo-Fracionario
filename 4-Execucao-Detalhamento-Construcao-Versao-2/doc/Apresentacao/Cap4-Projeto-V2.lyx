@@ -122,6 +122,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -399,6 +400,14 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted 258712344 1785814013
+
+\emph on
+American Standard Code for Information Interchange 
+\emph default
+(Código Padrão Americano para Intercâmbio de Informação)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -487,6 +496,14 @@ RAM
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785814088
+
+\emph on
+Random Access Memory
+\emph default
+ (Memória de Acesso Aleatório)
+\change_unchanged
 
 \end_layout
 
@@ -607,6 +624,14 @@ SAN
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785814998
+
+\emph on
+Storage Area Network
+\emph default
+ (Rede de Área de Armazenamento)
+\change_unchanged
 
 \end_layout
 
@@ -869,6 +894,14 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted 258712344 1785814810
+
+\emph on
+Model-View-Controller
+\emph default
+ (Modelo-Visão-Controlador)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1039,6 +1072,14 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted 258712344 1785814687
+
+\emph on
+Graphics Device Interface
+\emph default
+ (Interface de Dispositivo Gráfico)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1093,6 +1134,14 @@ IDE
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785814747
+
+\emph on
+Integrated Development Environment
+\emph default
+ (Ambiente de Desenvolvimento Integrado)
+\change_unchanged
 
 \end_layout
 
@@ -1590,7 +1639,17 @@ QSS
 status open
 
 \begin_layout Plain Layout
-Qt 
+
+\change_deleted 258712344 1785814907
+Qt
+\change_inserted 258712344 1785814907
+
+\emph on
+Qt Style Sheets
+\emph default
+ (Folhas de Estilo do Qt)
+\change_unchanged
+ 
 \end_layout
 
 \end_inset
@@ -1665,7 +1724,13 @@ std::map<double,
 \end_inset
 
 ).
- Constantes de precisão (SWI_EPS) foram explicitamente declaradas.
+ Constantes de precisão (
+\family typewriter
+\nospellcheck on
+SWI_EPS
+\family default
+\nospellcheck default
+) foram explicitamente declaradas.
 \end_layout
 
 \end_deeper
@@ -1806,6 +1871,14 @@ status open
 
 \begin_layout Plain Layout
 
+\change_inserted 258712344 1785815132
+
+\emph on
+Standard Template Library
+\emph default
+ (Biblioteca Padrão de Modelos)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1884,6 +1957,14 @@ SRP
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785815112
+
+\emph on
+Single Responsibility Principle
+\emph default
+ (Princípio da Responsabilidade Única)
+\change_unchanged
 
 \end_layout
 
@@ -2245,6 +2326,14 @@ DLLs
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785814473
+
+\emph on
+Dynamic-Link Libraries
+\emph default
+ (Bibliotecas de Ligação Dinâmica)
+\change_unchanged
 
 \end_layout
 

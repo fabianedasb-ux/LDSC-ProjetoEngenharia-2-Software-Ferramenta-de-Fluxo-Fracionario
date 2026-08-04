@@ -1475,7 +1475,7 @@ Excel
 \end_inset
 
 ) e,
- devido à ausência de dados intra-intervalo (resolução grossa),
+ devido à ausência de dados intra intervalo (resolução grossa),
  assumiu interceptação direta no ponto final (
 \begin_inset Formula $S_{w}=0,70$
 \end_inset
@@ -1493,10 +1493,6 @@ A inclinação máxima teórica da frente (
 \begin_inset Formula $m_{max}$
 \end_inset
 
-)(
-\begin_inset Formula $m_{max}$
-\end_inset
-
 )
 \begin_inset Nomenclature
 status open
@@ -1509,6 +1505,10 @@ status open
 Símbolos
 \end_layout
 
+\end_inset
+
+
+\begin_inset Formula $m_{max}$
 \end_inset
 
 
@@ -9272,6 +9272,13 @@ Com a verificação de resultados consistentes frente às assíntotas exponencia
 
 \begin_layout Section
 Teste de Portabilidade
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Teste-de-Portabilidade"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

@@ -393,7 +393,11 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Página Class Hirrarchy da documentação técnica do sistema gerada via Doxygen
+Página 
+\emph on
+Class Hirrarchy 
+\emph default
+da documentação técnica do sistema gerada via Doxygen
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:doxygen-1"

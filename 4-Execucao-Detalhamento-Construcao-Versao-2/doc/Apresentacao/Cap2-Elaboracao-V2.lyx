@@ -107,6 +107,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -241,6 +242,10 @@ Abreviaturas
 
 \end_inset
 
+
+\change_inserted 258712344 1785813194
+1D
+\change_unchanged
 
 \begin_inset Argument post:1
 status open
@@ -770,6 +775,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813226
+
+\begin_inset Formula $A$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -835,6 +848,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813229
+
+\begin_inset Formula $t$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -902,6 +923,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813234
+
+\begin_inset Formula $t_{D}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -963,6 +992,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813238
+
+\begin_inset Formula $q$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1030,6 +1067,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813241
+
+\begin_inset Formula $u$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -1133,6 +1178,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813245
+
+\begin_inset Formula $k_{r}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -1194,6 +1247,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813248
+
+\begin_inset Formula $\mu$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1260,6 +1321,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813252
+
+\begin_inset Formula $\rho$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1326,6 +1395,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813255
+
+\begin_inset Formula $P$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1392,6 +1469,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813259
+
+\begin_inset Formula $\sigma$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1491,6 +1576,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813262
+
+\begin_inset Formula $S$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1553,6 +1646,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813268
+
+\begin_inset Formula $f$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1652,6 +1753,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813272
+
+\begin_inset Formula $\theta$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1720,7 +1829,13 @@ Permeabilidades Relativas
 \end_layout
 
 \begin_layout Standard
-Para a correta execução da modelagem analíticao simulador demanda a definição precisa das propriedades de transporte multifásico.
+Para a correta execução da modelagem 
+\change_deleted 258712344 1785813281
+analíticao
+\change_inserted 258712344 1785813284
+analítica o
+\change_unchanged
+ simulador demanda a definição precisa das propriedades de transporte multifásico.
  No escoamento multifásico em meios porosos,
  a presença simultânea de dois ou mais fluidos resulta em uma competição pela rede de poros interconectados.
  A permeabilidade relativa (
@@ -1861,6 +1976,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813297
+
+\begin_inset Formula $S_{wn}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -1931,6 +2054,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813306
+
+\begin_inset Formula $S_{or}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -1973,6 +2104,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813312
+
+\begin_inset Formula $k^{o}_{rw}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -2014,6 +2153,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813318
+
+\begin_inset Formula $k^{o}_{ro}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -2107,6 +2254,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813330
+
+\begin_inset Formula $L$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2144,6 +2299,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813333
+
+\begin_inset Formula $E$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2181,6 +2344,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813345
+
+\begin_inset Formula $T$
+\end_inset
+
+
+\change_unchanged
 
 \begin_inset Argument post:1
 status open
@@ -2237,6 +2408,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813352
+
+\begin_inset Formula $R_{m}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -2299,6 +2478,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813360
+
+\begin_inset Formula $A$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2336,6 +2523,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813364
+
+\begin_inset Formula $B$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2373,6 +2568,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813367
+
+\begin_inset Formula $L$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2410,6 +2613,42 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813378
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $M$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
@@ -2650,11 +2889,23 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813396
+
+\begin_inset Formula $P_{c}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
-Pressão capilar (
+Pressão capilar 
+\change_deleted 258712344 1785813391
+(
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -3172,6 +3423,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813410
+
+\begin_inset Formula $N_{RL}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -3483,11 +3742,27 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813421
+
+\series bold
+
+\begin_inset Formula $M^{0}$
+\end_inset
+
+
+\change_unchanged
+
+\series default
  
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785815465
+Razão de mobilidade no ponto final
+\change_unchanged
 
 \end_layout
 
@@ -3534,6 +3809,18 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813426
+
+\series bold
+
+\begin_inset Formula $N^{0}_{g}$
+\end_inset
+
+
+\change_unchanged
+
+\series default
+
 \begin_inset Argument post:1
 status open
 
@@ -4942,6 +5229,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813458
+
+\begin_inset Formula $v_{\sigma}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -4974,6 +5269,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813462
+
+\begin_inset Formula $v_{L}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -5008,6 +5311,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813466
+
+\begin_inset Formula $v_{R}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -5084,6 +5395,42 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813473
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $S_{wi}$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
@@ -5209,7 +5556,7 @@ Onde:
  Saturação de água inicial do reservatório (estado à frente do choque).
  Para os cenários clássicos de deslocamento secundário modelados por este simulador,
  assume-se que o reservatório encontra-se no estado de saturação de água irredutível (
-\begin_inset Formula $S_{wi}=S_{wirr}$
+\begin_inset Formula $S_{wi}=S_{wir}$
 \end_inset
 
 )
@@ -5227,6 +5574,42 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813498
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $S_{wir}$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+
 \begin_inset Argument post:1
 status open
 
@@ -5343,6 +5726,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813527
+
+\begin_inset Formula $\bar{S}_{w}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -5381,6 +5772,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813533
+
+\begin_inset Formula $N_{p}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -5423,6 +5822,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813537
+
+\begin_inset Formula $x_{Df}$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -5520,6 +5927,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813556
+
+\begin_inset Formula $E_{D}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -5602,12 +6017,52 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813568
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $t_{bt}$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Ruptura 
+\change_deleted 258712344 1785813561
+(
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -5637,6 +6092,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813578
+
+\begin_inset Formula $S_{w,out}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open

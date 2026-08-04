@@ -107,6 +107,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -591,13 +592,16 @@ Símbolos
 
 \end_inset
 
- 
+
+\begin_inset Formula $S_{w}$
+\end_inset
+
+
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
-Saturação de água (adimensional,
- fra
+Saturação de água (adimensional)
 \end_layout
 
 \end_inset
@@ -625,6 +629,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785812931
+
+\begin_inset Formula $x$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1028,6 +1040,42 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785812959
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $M$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
@@ -1061,6 +1109,42 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785812978
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mu_{o}$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
@@ -1090,6 +1174,42 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785812991
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $\mu_{w}$
+\end_inset
+
+
+\change_unchanged
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
  
 \begin_inset Argument post:1
 status open
@@ -1207,11 +1327,55 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813038
+
+\begin_inset Formula $\Delta\rho$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
 \begin_layout Plain Layout
 Variação das massas específicas (
+\change_inserted 258712344 1785813102
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $kg/m^{3}$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1235,6 +1399,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813046
+
+\begin_inset Formula $g$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -1265,6 +1437,14 @@ Símbolos
 \end_inset
 
  
+\change_inserted 258712344 1785813055
+
+\begin_inset Formula $\sin\alpha$
+\end_inset
+
+
+\change_unchanged
+
 \begin_inset Argument post:1
 status open
 
@@ -1948,7 +2128,7 @@ breakthrough
 <lyxtabular version="3" rows="6" columns="2">
 <features islongtable="true" longtabularalignment="center">
 <column alignment="center" valignment="top" width="2cm">
-<column alignment="left" valignment="top" width="90text%">
+<column alignment="left" valignment="top" width="70text%">
 <row caption="true">
 <cell multicolumn="1" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
@@ -2084,7 +2264,13 @@ Entrada de Dados de Fluidos e Rocha:
 \begin_inset Formula $\phi$
 \end_inset
 
- [Porcentagem]
+ [
+\change_deleted 258712344 1785813133
+P
+\change_inserted 258712344 1785813133
+p
+\change_unchanged
+orcentagem]
 \size default
 
 \begin_inset Nomenclature
@@ -2100,6 +2286,18 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813121
+
+\size footnotesize
+ 
+\begin_inset Formula $\phi$
+\end_inset
+
+
+\change_unchanged
+
+\size default
  
 \begin_inset Argument post:1
 status open
@@ -2138,6 +2336,18 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813131
+
+\size footnotesize
+ 
+\begin_inset Formula $K$
+\end_inset
+
+
+\change_unchanged
+
+\size default
  
 \begin_inset Argument post:1
 status open
@@ -2193,6 +2403,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813144
+
+\begin_inset Formula $n_{o}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2222,6 +2440,14 @@ Símbolos
 
 \end_inset
 
+
+\change_inserted 258712344 1785813150
+
+\begin_inset Formula $n_{w}$
+\end_inset
+
+
+\change_unchanged
  
 \begin_inset Argument post:1
 status open
@@ -2438,6 +2664,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-geral.png
+	lyxscale 10
 	width 100text%
 	special height=0.8\textheight
 
@@ -2489,8 +2716,7 @@ Para detalhar a complexidade do sistema,
 \end_layout
 
 \begin_layout Subsubsection
-Diagrama Específico 1:
- Gerenciamento de Propriedades e Interatividade
+Diagrama de caso de uso específico um
 \end_layout
 
 \begin_layout Standard
@@ -2502,26 +2728,47 @@ plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
- detalha o subsistema de 'Gerenciamento de Propriedades'.
+ detalha o subsistema de 'Gerenciamento de Propriedades',
+ estabelecendo a rastreabilidade direta com o Teste 1 do Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
  Este diagrama ilustra o cumprimento dos requisitos de flexibilidade (RF-02) e extensibilidade (RNF-03).
- A estrutura evidencia a aplicação do padrão de projeto 
-\emph on
-Strategy
-\emph default
-,
- onde o usuário seleciona a fonte dos dados de permeabilidade relativa:
- seja através de modelos analíticos parametrizáveis (como Corey,
- LET ou Chierici) ou pela importação direta de dados experimentais via arquivos externos.
+ A estrutura evidencia a etapa de configuração onde o usuário seleciona a fonte dos dados de permeabilidade relativa,
+ focando-se,
+ neste cenário de validação,
+ na importação direta de dados experimentais via arquivos externos (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+).
 \end_layout
 
 \begin_layout Standard
 Adicionalmente,
  o diagrama destaca o ciclo de 'Análise de Sensibilidade' (RF-06).
- A modelagem demonstra que a alteração de parâmetros na interface permite a exploração rápida de cenários,
+ A modelagem demonstra que a alteração de parâmetros de viscosidade na interface permite a exploração rápida de cenários,
  onde o motor de cálculo é acionado sob demanda pelo usuário.
+ Para validar a resiliência desta interatividade,
+ o caso de uso prevê a extensão operacional em três condições fluidodinâmicas distintas,
+ conforme homologado no Teste 1:
+ deslocamento com razão unitária (Cenário A),
+ razão desfavorável (Cenário B) e razão extrema (Cenário C).
  Esta arquitetura de execução sob demanda garante que o processamento matemático intensivo (cálculo de 
 \begin_inset Formula $f_{w}$
 \end_inset
@@ -2542,7 +2789,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-especifico-um.png
-	lyxscale 50
+	lyxscale 10
 	width 100text%
 
 \end_inset
@@ -2554,7 +2801,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Gerenciamento de Propriedades e Interatividade
+Diagrama de caso de uso específico um – Validação com Modelo Tabelado (Teste 1)
 \begin_inset CommandInset label
 LatexCommand label
 name "cap:Diagrama-de-caso-de-uso-especifico:Gerenciamento de Propriedades e Interatividade"
@@ -2575,8 +2822,7 @@ name "cap:Diagrama-de-caso-de-uso-especifico:Gerenciamento de Propriedades e Int
 \end_layout
 
 \begin_layout Subsubsection
-Diagrama Específico 2:
- Motor de Simulação de Deslocamento
+Diagrama de caso de uso específico dois
 \end_layout
 
 \begin_layout Standard
@@ -2584,7 +2830,7 @@ Complementarmente,
  a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "cap:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
+reference "fig:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
 plural "false"
 caps "false"
 noprefix "false"
@@ -2592,8 +2838,28 @@ nolink "false"
 
 \end_inset
 
- apresenta o subsistema do 'Motor de Simulação',
- focando no rigor físico do algoritmo de avanço frontal.
+ aapresenta o subsistema do 'Motor de Simulação',
+ focando no rigor físico do algoritmo de avanço frontal e estabelecendo rastreabilidade direta com o Teste 2 do Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ O fluxo de configuração explicita a entrada de dados baseada no modelo de permeabilidade relativa de Corey,
+ importada pelo usuário por meio de arquivo de texto (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+).
  O fluxo principal (caso de uso base) consiste no 'Cálculo da Solução Analítica Direta',
  responsável pela execução primária do Método das Características (MOC) e pela derivação da curva de fluxo fracionário.
 \end_layout
@@ -2619,6 +2885,13 @@ UML
 status open
 
 \begin_layout Plain Layout
+
+\change_inserted 258712344 1785813166
+
+\emph on
+\lang english
+Unified Modeling Language
+\change_unchanged
 
 \end_layout
 
@@ -2667,7 +2940,15 @@ CWelge
 \emph on
 breakthrough
 \emph default
-) e da eficiência de recuperação em ambos os cenários.
+) e da eficiência de recuperação em todos os cenários.
+\end_layout
+
+\begin_layout Standard
+Para atestar o comportamento cinemático frente às forças de segregação,
+ o caso de uso prevê a extensão do cenário base de injeção em três configurações topográficas,
+ conforme homologado no Teste 2:
+ escoamento puramente horizontal (Cenário A),
+ injeção ascendente sujeita ao retardo gravitacional (Cenário B) e injeção descendente acelerada pelo declive estrutural (Cenário C).
 \begin_inset Float figure
 placement H
 alignment document
@@ -2679,7 +2960,7 @@ status open
 \align center
 \begin_inset Graphics
 	filename imagens/diagrama-de-caso-de-uso-especifico-dois.png
-	lyxscale 50
+	lyxscale 10
 	width 100text%
 
 \end_inset
@@ -2691,10 +2972,232 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Diagrama de caso de uso específico – Motor de Simulação de Deslocamento
+Diagrama de caso de uso específico dois – Acoplamento Gravitacional e Modelo de Corey (Teste 2)
 \begin_inset CommandInset label
 LatexCommand label
-name "cap:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
+name "fig:Diagrama-de-caso-de-uso-especifico:Motor de Simulação de Deslocamento"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama de caso de uso específico três
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-caso"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ esquematiza o terceiro fluxo operacional da arquitetura,
+ estabelecendo a rastreabilidade direta com o Teste 3 do Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ Este diagrama descreve o subsistema de saída de dados,
+ focando na Geração de Relatórios e Diagnósticos frente a formulações empíricas complexas.
+ O fluxo de entrada é deflagrado pela importação,
+ via arquivo de texto (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+),
+ dos parâmetros de forma,
+ elevação e translação correspondentes ao modelo racional de Lombez,
+ Escovedo e Trindade (LET).
+\end_layout
+
+\begin_layout Standard
+O compromisso funcional modelado neste cenário assegura que o sistema é capaz de processar as ramificações não-lineares da curva LET e compilar os indicadores de ruptura (
+\emph on
+breakthrough
+\emph default
+) em um relatório técnico estruturado.
+ A modelagem evidencia a transição entre o cálculo contínuo da tangente de Welge e a exportação dos diagnósticos de engenharia,
+ atestando a confiabilidade da ferramenta na documentação analítica do escoamento imiscível.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-caso-de-uso-especifico-tres.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico três – Geração de Relatórios e Modelo LET (Teste 3)
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama de caso de uso específico quatro
+\end_layout
+
+\begin_layout Standard
+A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Diagrama-de-caso-1"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ consolida o quarto e último fluxo operacional do sistema,
+ assegurando a rastreabilidade conjunta com o Teste 4 e o Teste de Portabilidade (Seção 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Teste-de-Portabilidade"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+) do Capítulo 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "chap:Teste"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+.
+ O fluxo de configuração é iniciado mediante a seleção e importação,
+ estritamente via arquivo de texto (
+\family typewriter
+\nospellcheck on
+.txt
+\family default
+\nospellcheck default
+),
+ das constantes de curvatura exponencial que regem o modelo de Chierici.
+\end_layout
+
+\begin_layout Standard
+O diagrama modela o compromisso de estabilidade algorítmica frente a formulações empíricas com limites assintóticos.
+ Evidencia-se a invocação da rotina interna de limitação matemática (
+\emph on
+clamping
+\emph default
+),
+ um requisito operacional para prevenir singularidades divisionais ao calcular a secante de Welge nas proximidades das saturações residuais.
+ Adicionalmente,
+ o caso de uso expande a modelagem funcional para incorporar a verificação de infraestrutura,
+ representando o acionamento do simulador em diferentes plataformas operacionais.
+ Este módulo atesta a capacidade de execução multiplataforma,
+ garantindo que o processamento do 
+\emph on
+framework Qt
+\emph default
+ e a precisão do ponto flutuante sejam idênticos em ambientes 
+\emph on
+Linux
+\emph default
+ e 
+\emph on
+Windows
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/diagrama-de-caso-de-uso-especifico-quatro.png
+	lyxscale 10
+	width 100text%
+
+\end_inset
+
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de caso de uso específico quatro – Modelo Chierici e Portabilidade do Sistema
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-caso-1"
 
 \end_inset
 

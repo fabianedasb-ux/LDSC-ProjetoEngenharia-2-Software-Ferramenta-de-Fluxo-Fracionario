@@ -210,6 +210,10 @@ status open
 
 \begin_layout Plain Layout
 
+\emph on
+Command Line Interface 
+\emph default
+(Interface de Linha de Comando)
 \end_layout
 
 \end_inset
@@ -509,7 +513,10 @@ name "sec:Versão-2.3"
 
 \end_inset
 
-- Refinamento de Engenharia e Experiência do Usuário (UX
+- Refinamento de Engenharia e Experiência do Usuário (UX)
+\end_layout
+
+\begin_layout Standard
 \begin_inset Nomenclature
 status open
 
@@ -529,6 +536,10 @@ status open
 
 \begin_layout Plain Layout
 
+\emph on
+User Experience
+\emph default
+ (Experiência do Usuário)
 \end_layout
 
 \end_inset
@@ -538,7 +549,7 @@ status open
 
 \end_inset
 
-)
+
 \end_layout
 
 \begin_layout Standard
