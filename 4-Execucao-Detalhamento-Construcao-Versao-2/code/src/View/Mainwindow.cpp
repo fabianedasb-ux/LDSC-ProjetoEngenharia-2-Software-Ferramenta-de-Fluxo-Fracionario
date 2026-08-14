@@ -31,6 +31,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    // Forçar a janela a iniciar maximizada
+    this->showMaximized();
+    // ou trava a janela na resolução 1920 x 1080
+    //this->setFixedSize(1920, 1080);
+
     // Ajuste ergonômico do botão de Tema
     ui->btnTema->setText("");
     ui->btnTema->setIconSize(QSize(24, 24));
