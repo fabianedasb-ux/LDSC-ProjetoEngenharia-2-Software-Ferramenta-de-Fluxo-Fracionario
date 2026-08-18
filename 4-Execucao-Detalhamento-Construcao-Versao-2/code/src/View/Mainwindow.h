@@ -78,10 +78,11 @@ private slots:
     void on_cbModeloPerm_currentIndexChanged(int index);
 
     // --- Slots de Manipulação de Arquivos ---
-    void on_btlCarregarCorey_clicked();
-    void on_btnCarregarLET_clicked();
-    void on_btnCarregarChierici_clicked();
-    void on_btnCarregarTabela_clicked();
+    void on_btlCarregar_clicked();
+    // void on_btlCarregarCorey_clicked();
+    // void on_btnCarregarLET_clicked();
+    // void on_btnCarregarChierici_clicked();
+    // void on_btnCarregarTabela_clicked();
 
     /**
      * @brief Slot acionado para alternar entre os Modos Claro e Escuro da UI.

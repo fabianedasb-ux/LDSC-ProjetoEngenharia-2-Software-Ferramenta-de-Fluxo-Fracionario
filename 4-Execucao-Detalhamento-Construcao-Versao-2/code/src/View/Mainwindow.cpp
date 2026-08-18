@@ -128,7 +128,7 @@ void MainWindow::sincronizarDadosComSimulador() {
     int indiceModelo = ui->cbModeloPerm->currentIndex();
 
     if (indiceModelo == 0) { // COREY
-        QString arq = ui->lblArquivoCorey->text();
+        QString arq = ui->lblArquivo->text();
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto corey = new CCurvasPermeabilidadeCorey();
             // Corrigir: os dados devem ser lidos para a interface!
@@ -156,7 +156,7 @@ void MainWindow::sincronizarDadosComSimulador() {
         }
 
     } else if (indiceModelo == 1) { // LET
-        QString arq = ui->lblArquivoLET->text();
+        QString arq = ui->lblArquivo->text();
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto let = new CCurvasPermeabilidadeLET();
             let->carregarDados(arq.toStdString());
@@ -186,7 +186,7 @@ void MainWindow::sincronizarDadosComSimulador() {
         }
 
     } else if (indiceModelo == 2) { // CHIERICI
-        QString arq = ui->lblArquivoChierici->text();
+        QString arq = ui->lblArquivo->text();
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto chierici = new CCurvasPermeabilidadeChierici();
             chierici->carregarDados(arq.toStdString());
@@ -216,7 +216,7 @@ void MainWindow::sincronizarDadosComSimulador() {
         }
 
     } else { // TABELA
-        QString arq = ui->lblArquivoTabela->text();
+        QString arq = ui->lblArquivo->text();
         if (arq == "Arquivo" || arq.isEmpty()) {
             throw std::runtime_error("Selecione um arquivo de tabela primeiro.");
         }
@@ -239,19 +239,19 @@ double MainWindow::obterSaturacaoInicialUI() const {
     switch (indiceAtivo) {
     case 0: { // Corey
         auto corey = dynamic_cast<CCurvasPermeabilidadeCorey*>(modelo);
-        if (corey && ui->lblArquivoCorey->text() != "Arquivo" && !ui->lblArquivoCorey->text().isEmpty())
+        if (corey && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return corey->getSwi();
         return ui->leCoreySwi->text().toDouble();
     }
     case 1: { // LET
         auto let = dynamic_cast<CCurvasPermeabilidadeLET*>(modelo);
-        if (let && ui->lblArquivoLET->text() != "Arquivo" && !ui->lblArquivoLET->text().isEmpty())
+        if (let && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return let->getSwi();
         return ui->leLetSwir->text().toDouble();
     }
     case 2: { // Chierici
         auto chierici = dynamic_cast<CCurvasPermeabilidadeChierici*>(modelo);
-        if (chierici && ui->lblArquivoChierici->text() != "Arquivo" && !ui->lblArquivoChierici->text().isEmpty())
+        if (chierici && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return chierici->getSwi();
         return ui->leChiericiSwir->text().toDouble();
     }
@@ -272,19 +272,19 @@ double MainWindow::obterSaturacaoOleoResidualUI() const {
     switch (indiceAtivo) {
     case 0: { // Corey
         auto corey = dynamic_cast<CCurvasPermeabilidadeCorey*>(modelo);
-        if (corey && ui->lblArquivoCorey->text() != "Arquivo" && !ui->lblArquivoCorey->text().isEmpty())
+        if (corey && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return corey->getSor();
         return ui->leCoreySor->text().toDouble();
     }
     case 1: { // LET
         auto let = dynamic_cast<CCurvasPermeabilidadeLET*>(modelo);
-        if (let && ui->lblArquivoLET->text() != "Arquivo" && !ui->lblArquivoLET->text().isEmpty())
+        if (let && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return let->getSor();
         return ui->leLetSor->text().toDouble();
     }
     case 2: { // Chierici
         auto chierici = dynamic_cast<CCurvasPermeabilidadeChierici*>(modelo);
-        if (chierici && ui->lblArquivoChierici->text() != "Arquivo" && !ui->lblArquivoChierici->text().isEmpty())
+        if (chierici && ui->lblArquivo->text() != "Arquivo" && !ui->lblArquivo->text().isEmpty())
             return chierici->getSor();
         return ui->leChiericiSor->text().toDouble();
     }
@@ -486,37 +486,69 @@ void MainWindow::plotarResultados() {
 
 // --- Carregamento de Arquivos ---
 
-void MainWindow::on_btlCarregarCorey_clicked() {
-    QString path = QFileDialog::getOpenFileName(this, "Abrir Corey", "", "Text Files (*.txt)");
-    if(path.isEmpty()) return;
-    ui->lblArquivoCorey->setText(path);
+// void MainWindow::on_btlCarregarCorey_clicked() {
+//     QString path = QFileDialog::getOpenFileName(this, "Abrir Corey", "", "Text Files (*.txt)");
+//     if(path.isEmpty()) return;
+//     ui->lblArquivo->setText(path);
 
-    // Opcional: Carregar do arquivo para os LineEdits agora
-    try {
-        CCurvasPermeabilidadeCorey temp;
-        temp.carregarDados(path.toStdString());
-        // Aqui poderíamos ter getters na classe Corey para preencher a tela...
-        // Como não implementamos getters nas classes de curva, apenas armazenamos o path.
-        QMessageBox::information(this, "Sucesso", "Arquivo selecionado. Clique em Solução para usar.");
-    } catch (const std::exception& e) {
-        QMessageBox::critical(this, "Erro", e.what());
+//     // Opcional: Carregar do arquivo para os LineEdits agora
+//     try {
+//         CCurvasPermeabilidadeCorey temp;
+//         temp.carregarDados(path.toStdString());
+//         // Aqui poderíamos ter getters na classe Corey para preencher a tela...
+//         // Como não implementamos getters nas classes de curva, apenas armazenamos o path.
+//         QMessageBox::information(this, "Sucesso", "Arquivo selecionado. Clique em Solução para usar.");
+//     } catch (const std::exception& e) {
+//         QMessageBox::critical(this, "Erro", e.what());
+//     }
+// }
+
+// void MainWindow::on_btnCarregarLET_clicked() {
+//     QString path = QFileDialog::getOpenFileName(this, "Abrir LET", "", "Text Files (*.txt)");
+//     if(!path.isEmpty()) ui->lblArquivo->setText(path);
+// }
+
+// void MainWindow::on_btnCarregarChierici_clicked() {
+//     QString path = QFileDialog::getOpenFileName(this, "Abrir Chierici", "", "Text Files (*.txt)");
+//     if(!path.isEmpty()) ui->lblArquivo->setText(path);
+// }
+
+// void MainWindow::on_btnCarregarTabela_clicked() {
+//     QString path = QFileDialog::getOpenFileName(this, "Abrir Tabela", "", "Text Files (*.txt)");
+//     if(!path.isEmpty()) ui->lblArquivo->setText(path);
+// }
+
+void MainWindow::on_btlCarregar_clicked() {
+
+    int indiceModelo = ui->cbModeloPerm->currentIndex();
+    QString path;
+    if (indiceModelo == 0) { // COREY
+            path = QFileDialog::getOpenFileName(this, "Abrir Corey", "", "Text Files (*.txt)");
+            if(path.isEmpty()) return;
+            ui->lblArquivo->setText(path);
+
+           // Opcional: Carregar do arquivo para os LineEdits agora
+             try {
+                CCurvasPermeabilidadeCorey temp;
+                temp.carregarDados(path.toStdString());
+                // Aqui poderíamos ter getters na classe Corey para preencher a tela...
+                // Como não implementamos getters nas classes de curva, apenas armazenamos o path.
+                QMessageBox::information(this, "Sucesso", "Arquivo selecionado. Clique em Solução para usar.");
+             } catch (const std::exception& e) {
+                QMessageBox::critical(this, "Erro", e.what());
+             }
+    } else if (indiceModelo == 1) { // LET
+            path = QFileDialog::getOpenFileName(this, "Abrir LET", "", "Text Files (*.txt)");
+            if(!path.isEmpty()) ui->lblArquivo->setText(path);
+    } else if (indiceModelo == 2) { // CHIERICI
+            path = QFileDialog::getOpenFileName(this, "Abrir Chierici", "", "Text Files (*.txt)");
+            if(!path.isEmpty()) ui->lblArquivo->setText(path);
+    } else { // TABELA
+            path = QFileDialog::getOpenFileName(this, "Abrir Tabela", "", "Text Files (*.txt)");
+            if(!path.isEmpty()) ui->lblArquivo->setText(path);
     }
 }
 
-void MainWindow::on_btnCarregarLET_clicked() {
-    QString path = QFileDialog::getOpenFileName(this, "Abrir LET", "", "Text Files (*.txt)");
-    if(!path.isEmpty()) ui->lblArquivoLET->setText(path);
-}
-
-void MainWindow::on_btnCarregarChierici_clicked() {
-    QString path = QFileDialog::getOpenFileName(this, "Abrir Chierici", "", "Text Files (*.txt)");
-    if(!path.isEmpty()) ui->lblArquivoChierici->setText(path);
-}
-
-void MainWindow::on_btnCarregarTabela_clicked() {
-    QString path = QFileDialog::getOpenFileName(this, "Abrir Tabela", "", "Text Files (*.txt)");
-    if(!path.isEmpty()) ui->lblArquivoTabela->setText(path);
-}
 
 void MainWindow::on_btnRelatorio_clicked() {
     try {
