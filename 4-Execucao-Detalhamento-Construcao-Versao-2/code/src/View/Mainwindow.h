@@ -67,6 +67,11 @@ private slots:
     void slotMostrarCoordenadasMouse(QMouseEvent *event);
 
     /**
+     * @brief Copiar coordenadas do mouse no grafico [bueno]
+     */
+    void slotCopiarCoordenadasMouse(QMouseEvent *event);
+
+    /**
      * @brief Slot acionado para invocar a exportação do documento executivo em PDF.
      */
     void on_btnRelatorio_clicked();

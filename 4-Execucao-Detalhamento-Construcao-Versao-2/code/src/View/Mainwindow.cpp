@@ -12,8 +12,10 @@
 #include <QInputDialog>
 #include <algorithm>
 #include <map>
-#include <QToolTip> //[bueno]
-
+//[bueno]
+#include <QToolTip>
+#include <QApplication>
+#include <QClipboard>
 
 // Constante global de precisão para contornos
 static constexpr double SWI_EPS = 1e-3;
@@ -91,6 +93,12 @@ void MainWindow::configurarGraficos() {
     connect(ui->plotFluxo, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
     connect(ui->plotSvsX, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
     connect(ui->plotEfDesl, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
+
+    // Conecta o clique do mouse para copiar coordenadas ao clicar com o botão direito
+    connect(ui->plotFluxo, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+    connect(ui->plotSvsX, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+    connect(ui->plotEfDesl, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+
 }
 
 void MainWindow::on_cbModeloPerm_currentIndexChanged(int index) {
@@ -802,4 +810,32 @@ void MainWindow::slotMostrarCoordenadasMouse(QMouseEvent *event) {
 
     // Opção 2: Exibe o balãozinho (Tooltip) diretamente ao lado do ponteiro do mouse
     QToolTip::showText(QCursor::pos(), texto, plot);
+}
+
+void MainWindow::slotCopiarCoordenadasMouse(QMouseEvent *event) {
+    //
+    if (event->button() == Qt::LeftButton || event->button() == Qt::RightButton) {
+        QCustomPlot *plot = qobject_cast<QCustomPlot*>(sender());
+        if (!plot) return;
+
+        // Converte a posição em pixels do clique para as coordenadas reais do gráfico
+        double x = plot->xAxis->pixelToCoord(event->pos().x());
+        double y = plot->yAxis->pixelToCoord(event->pos().y());
+
+        // Formata o texto. O caractere '\t' (TAB) facilita colar direto no Excel
+        QString textoCopiado = QString("%1\t%2").arg(x, 0, 'g', 6).arg(y, 0, 'g', 6);
+
+        // Envia o texto para a Área de Transferência do sistema operacional e anota na barra de status
+        if (event->button() == Qt::RightButton) {
+            QApplication::clipboard()->setText(textoCopiado);
+            // Mensagem de feedback temporária na StatusBar (desaparece após 3 segundos)
+            ui->statusbar->showMessage(QString("Copiado para a área de transferência: X=%1, Y=%2")
+                                           .arg(x, 0, 'f', 4).arg(y, 0, 'f', 4), 3000);
+        }
+        // Envia para arquivo de log
+        else if (event->button() == Qt::RightButton) {
+            ui->txtLog->appendHtml(textoCopiado);
+            ui->txtLog->show();
+      }
+    }
 }
