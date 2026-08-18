@@ -785,6 +785,13 @@
           <item row="1" column="1">
            <layout class="QVBoxLayout" name="botoes">
             <item>
+             <widget class="QPushButton" name="btnAjuda">
+              <property name="text">
+               <string>Ajuda</string>
+              </property>
+             </widget>
+            </item>
+            <item>
              <widget class="QPushButton" name="btnTema">
               <property name="enabled">
                <bool>true</bool>
@@ -825,6 +832,13 @@
              <widget class="QPushButton" name="btnRelatorio">
               <property name="text">
                <string>Relatório</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnSobre">
+              <property name="text">
+               <string>Sobre o LDSC/LENEP</string>
               </property>
              </widget>
             </item>

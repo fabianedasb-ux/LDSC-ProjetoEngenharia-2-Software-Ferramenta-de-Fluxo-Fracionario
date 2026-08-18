@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CJanelaSobreSofware</class>
+ <widget class="QDialog" name="CJanelaSobreSofware">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>471</width>
+    <height>550</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QTextEdit" name="textEditSobreSoftware">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>10</y>
+     <width>451</width>
+     <height>101</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adwaita Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-weight:700;&quot;&gt;Sobre o Software&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;Software didático para a disciplina de Engenharia de Reservatório, desenvolvido pela Fabiane da Silva Barros&lt;/span&gt;&lt;a href=&quot;https://academico.uenf.br/alunos/24061&quot;&gt;&lt;span style=&quot; font-family:'Inter Var','Inter','-apple-system','BlinkMacSystemFont','San Francisco','Segoe UI','Roboto','Helvetica Neue','sans-serif'; font-weight:700; text-decoration: underline; color:#000000; background-color:#ffffff;&quot;&gt; &lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;com apoio e suporte do professor André Duarte Bueno.&lt;br /&gt; &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;GitHub do Projeto:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://github.com/ldsc/ProjetoEngenharia-SoftwareEducacionalParaAnaliseESolucaoDeProblemasEmEngenhariaDePoco&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://github.com/ldsc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditSobreLDSC">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>120</y>
+     <width>451</width>
+     <height>81</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adwaita Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-weight:700;&quot;&gt;Sobre o LDSC&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  Laboratório de Desenvolvimento de Software Científico e Aplicado&lt;br /&gt;  GitHub: &lt;/span&gt;&lt;a href=&quot;https://github.com/ldsc/&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://github.com/ldsc/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditSobreDesenvolvimento">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>210</y>
+     <width>451</width>
+     <height>201</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adwaita Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-weight:700;&quot;&gt;Sobre a Equipe de Desenvolvimento:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://academico.uenf.br/alunos/24061&quot;&gt;&lt;span style=&quot; font-family:'Inter Var','Inter','-apple-system','BlinkMacSystemFont','San Francisco','Segoe UI','Roboto','Helvetica Neue','sans-serif'; font-size:14px; font-weight:700; text-decoration: underline; color:#000000; background-color:#ffffff;&quot;&gt;Fabiane da Silva Barros&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;Email:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;fabianedas.b@hotmail.com&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1f9b5d;&quot;&gt;fabianedas.b@hotmail.com&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;GitHub:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://github.com/fabianedasb-ux&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1f9b5d;&quot;&gt;https://github.com/fabianedasb-ux&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;Linkedin:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://www.linkedin.com/in/fabianedasb-ux&quot;&gt;&lt;span style=&quot; text-decoration: underline; color:#1f9b5d;&quot;&gt;https://www.linkedin.com/in/fabianedasb-ux&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; font-weight:700;&quot;&gt;André Duarte Bueno&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;GitHub:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://github.com/ldsc&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://github.com/ldsc&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;Site:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://sites.google.com/view/professorandreduartebueno/&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://sites.google.com/view/professor-andreduartebueno/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;Linkedin:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://www.linkedin.com/in/andre-duarte-bueno-a685b134/&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://www.linkedin.com/in/andre-duarte-bueno-a685b134/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="textEditSobrePlataforma">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>420</y>
+     <width>451</width>
+     <height>121</height>
+    </rect>
+   </property>
+   <property name="html">
+    <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+hr { height: 1px; border-width: 0; }
+li.unchecked::marker { content: &quot;\2610&quot;; }
+li.checked::marker { content: &quot;\2612&quot;; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Adwaita Sans'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-weight:700;&quot;&gt;Sobre a Plataforma:&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;Qt Framework:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://www.qt.io/product/framework&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://www.qt.io/product/framework&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;QtCreator:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://www.qt.io/product/development-tools&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://www.qt.io/product/development-tools&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;cppreference:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://en.cppreference.com/w/&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://en.cppreference.com/w/&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;&lt;br /&gt;  &lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline;&quot;&gt;isocpp:&lt;/span&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt;&quot;&gt;  &lt;/span&gt;&lt;a href=&quot;https://isocpp.org/&quot;&gt;&lt;span style=&quot; font-family:'Segoe UI'; font-size:9pt; text-decoration: underline; color:#003e92;&quot;&gt;https://isocpp.org/&lt;/span&gt;&lt;/a&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

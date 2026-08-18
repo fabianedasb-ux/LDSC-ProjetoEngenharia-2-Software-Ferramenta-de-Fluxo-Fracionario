@@ -31,6 +31,10 @@ SOURCES += \
     src/View/Mainwindow.cpp \
     src/View/QCustomplot.cpp
 
+# bueno
+SOURCES += \
+    src/View/CJanelaSobreSoftware.cpp
+
 # --- CABEÇALHOS (.H) ---
 HEADERS += \
     src/Model/CCalculadoraFluxoFracionario.h \
@@ -48,9 +52,17 @@ HEADERS += \
     src/View/Mainwindow.h \
     src/View/QCustomplot.h
 
+# bueno
+HEADERS += \
+    src/View/CJanelaSobreSoftware.h
+
 # --- INTERFACE (.UI) ---
 FORMS += \
     src/View/Mainwindow.ui
+
+# bueno
+FORMS += \
+    src/View/CJanelaSobreSoftware.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

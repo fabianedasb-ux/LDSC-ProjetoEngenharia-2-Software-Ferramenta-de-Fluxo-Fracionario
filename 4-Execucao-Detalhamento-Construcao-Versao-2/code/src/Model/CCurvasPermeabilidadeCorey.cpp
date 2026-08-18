@@ -31,6 +31,7 @@ double CCurvasPermeabilidadeCorey::calcularSwNorm(double sw) const {
     double denominador = 1.0 - _swir - _sor;
 
     // Tratamento numérico para evitar singularidade e divisão por zero
+    // corrigir: numero magico, 1e-6 deve estar na interface
     if (denominador <= 1e-6) return 0.0;
 
     double sw_norm = (sw - _swir) / denominador;

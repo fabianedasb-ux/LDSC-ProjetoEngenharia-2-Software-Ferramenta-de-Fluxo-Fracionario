@@ -16,6 +16,7 @@
 #include <QToolTip>
 #include <QApplication>
 #include <QClipboard>
+#include "CJanelaSobreSoftware.h"
 
 // Constante global de precisão para contornos
 static constexpr double SWI_EPS = 1e-3;
@@ -99,6 +100,10 @@ void MainWindow::configurarGraficos() {
     connect(ui->plotSvsX, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
     connect(ui->plotEfDesl, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
 
+    // Conecta o duplo clique nos 3 gráficos para abrir a janela de exportação
+    connect(ui->plotFluxo, &QCustomPlot::mouseDoubleClick, this, &MainWindow::slotExportarGrafico);
+    connect(ui->plotSvsX, &QCustomPlot::mouseDoubleClick, this, &MainWindow::slotExportarGrafico);
+    connect(ui->plotEfDesl, &QCustomPlot::mouseDoubleClick, this, &MainWindow::slotExportarGrafico);
 }
 
 void MainWindow::on_cbModeloPerm_currentIndexChanged(int index) {
@@ -833,9 +838,70 @@ void MainWindow::slotCopiarCoordenadasMouse(QMouseEvent *event) {
                                            .arg(x, 0, 'f', 4).arg(y, 0, 'f', 4), 3000);
         }
         // Envia para arquivo de log
-        else if (event->button() == Qt::RightButton) {
+        else if (event->button() == Qt::LeftButton) {
             ui->txtLog->appendHtml(textoCopiado);
             ui->txtLog->show();
       }
     }
 }
+
+void MainWindow::slotExportarGrafico(QMouseEvent *event) {
+    Q_UNUSED(event); // Evita aviso de variável não utilizada no compilador
+
+    QCustomPlot *plot = qobject_cast<QCustomPlot*>(sender());
+    if (!plot) return;
+
+    // Abre a caixa de diálogo para o usuário escolher o nome, local e formato
+    QString fileName = QFileDialog::getSaveFileName(
+        this,
+        "Exportar Gráfico",
+        "grafico_simulacao.png",
+        "Imagem PNG (*.png);;Imagem JPG (*.jpg);;Documento PDF (*.pdf)"
+        );
+
+    // Se o usuário cancelou a janela de salvamento, não faz nada
+    if (fileName.isEmpty()) return;
+
+    bool sucesso = false;
+
+    // Identifica a extensão escolhida e salva na resolução atual da tela
+    if (fileName.endsWith(".png", Qt::CaseInsensitive)) {
+        sucesso = plot->savePng(fileName, plot->width(), plot->height());
+    }
+    else if (fileName.endsWith(".jpg", Qt::CaseInsensitive) || fileName.endsWith(".jpeg", Qt::CaseInsensitive)) {
+        sucesso = plot->saveJpg(fileName, plot->width(), plot->height());
+    }
+    else if (fileName.endsWith(".pdf", Qt::CaseInsensitive)) {
+        sucesso = plot->savePdf(fileName, plot->width(), plot->height());
+    }
+
+    // Feedback visual na interface
+    if (sucesso) {
+        ui->statusbar->showMessage("Gráfico exportado com sucesso: " + fileName, 4000);
+    } else {
+        QMessageBox::warning(this, "Erro ao Exportar", "Não foi possível salvar a imagem no local selecionado.");
+    }
+}
+
+void MainWindow::on_btnSobre_clicked()
+{
+    // Ação ao clicar no botão SOBRE
+    // Nota: O nome da classe no seu arquivo original está escrito "CJanelaSobreSofware" (sem o 't')
+    CJanelaSobreSofware janelaSobre(this);
+    janelaSobre.exec(); // Abre a janela de forma modal (bloqueia a de trás até fechar)
+}
+
+// Ação ao clicar no botão AJUDA
+void MainWindow::on_btnAjuda_clicked() {
+    // Exemplo simples usando uma caixa de mensagem nativa do Qt:
+     QMessageBox::information(this, "Ajuda do Simulador de Fluxo Fracionário",
+                                "<b>Como usar o simulador:</b><br><br>"
+                                "- Ajuste os parâmetros de entrada, ex: permeabilidade e saturação.<br>"
+                                "- Clique em 'Fluxo Fracionário' para calcular.<br>"
+                                "- Clique em 'Solução' para ajustar a tangente.<br>"
+                                "- Clique em 'Relatório' para obter um relatório em pdf.<br>\n"
+                                "<b>Como usar os gráficos:</b><br><br>"
+                                "- Clique com o <b>botão direito</b> sobre o gráfico para copiar coordenadas.<br>"
+                                "- Dê um <b>duplo clique</b> no gráfico para exportá-lo como imagem.");
+}
+

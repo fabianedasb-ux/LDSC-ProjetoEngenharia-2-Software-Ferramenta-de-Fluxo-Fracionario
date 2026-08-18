@@ -140,7 +140,58 @@ lembrar que a adimensionalização trás a vantagem de termos gráficos nas mesm
   // void MainWindow::on_btnCarregarTabela_clicked() {
   criei a função única
   void MainWindow::on_btlCarregar_clicked()
+*** TODO [100%] Copiar par x,y para clipboard
+#include <QApplication>
+#include <QClipboard>
+void MainWindow::configurarGraficos() {
+    // ... [conexões do mouseMove anteriores] ...
 
+    // Conecta o clique do mouse para copiar coordenadas ao clicar com o botão direito
+    connect(ui->plotFluxo, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+    connect(ui->plotSvsX, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+    connect(ui->plotEfDesl, &QCustomPlot::mousePress, this, &MainWindow::slotCopiarCoordenadasMouse);
+}
+void MainWindow::slotCopiarCoordenadasMouse(QMouseEvent *event) {
+    // Verifica se o clique foi com o BOTÃO DIREITO
+    if (event->button() == Qt::RightButton) {
+        QCustomPlot *plot = qobject_cast<QCustomPlot*>(sender());
+        if (!plot) return;
+
+        // Converte a posição em pixels do clique para as coordenadas reais do gráfico
+        double x = plot->xAxis->pixelToCoord(event->pos().x());
+        double y = plot->yAxis->pixelToCoord(event->pos().y());
+
+        // Formata o texto. O caractere '\t' (TAB) facilita colar direto no Excel
+        QString textoCopiado = QString("%1\t%2").arg(x, 0, 'g', 6).arg(y, 0, 'g', 6);
+
+        // Envia o texto para a Área de Transferência do sistema operacional
+        QApplication::clipboard()->setText(textoCopiado);
+
+        // Mensagem de feedback temporária na StatusBar (desaparece após 3 segundos)
+        ui->statusbar->showMessage(QString("Copiado para a área de transferência: X=%1, Y=%2")
+                                   .arg(x, 0, 'f', 4).arg(y, 0, 'f', 4), 3000);
+    }
+}
+0.457527	0.639333
+0.657961	0.567112
+*** Para elevar o nível do simulador e torná-lo ainda mais intuitivo, profissional e agradável para ensino e análise de reservatórios, aqui estão as melhores melhorias de UI/UX aplicáveis ao seu projeto Qt:{sugestoes gemini}
+*** TODO [50%]  Interatividade nos Gráficos (QCustomPlot)
+- [X] Exportação Direta de Imagem: No menu de contexto (clique direito), inclua a opção de salvar o plot diretamente como PNG, PDF ou SVG.
+- [X] Botão de Ajuda
+- [X] Botão Sobre - janela sobre
+- [ ] Pan e Zoom Nativos: Permita navegar nos gráficos com o mouse ativando os sinalizadores do QCustomPlot:ui->plotFluxo->setInteractions(QCP::iRangeDrag | QCP::iRangeZoom)
+- [ ] Botão "Resetar Escala": Adicione um pequeno botão flutuante ou no menu de contexto de cada gráfico para restaurar os limites originais (rescaleAxes()) após o zoom.
+- [ ] Modo Comparativo (Histórico): Mantenha a curva da simulação anterior desenhada em cinza/pontilhado ao rodar uma nova simulação, permitindo comparar visualmente o impacto de alterar um parâmetro.
+*** TODO [100%]  Ergonomia e Validação de Entradas
+**** Sufixos de Unidades Integrados: Se usar QDoubleSpinBox, adicione unidades diretamente no campo com setSuffix(" cP"), setSuffix(" mD") ou setSuffix(" %"). Isso limpa o visual das QFormLayout.
+**** Casos de Teste Pré-configurados (Presets): Adicione um QComboBox com cenários clássicos da literatura (ex: "Caso Base - Craig", "Efeito Gravitacional Forte", "Viscosidade Alta"). Ao selecionar, os inputs são preenchidos automaticamente.
+**** Tooltips Explicativos: Adicione dicas de contexto ao passar o mouse sobre os parâmetros petrofísicos com a faixa física aceitável (ex: "$S_{wi}$: Saturação irredutível de água. Intervalo típico: $0.05 \text{ a } 0.40$").
+*** TODO [100%]  Análise de Dados e Layout
+**** Painéis Redimensionáveis (QSplitter): Envolva a coluna de parâmetros e a coluna de gráficos em um QSplitter. Isso permite que o usuário expanda a área dos gráficos quando quiser focar na visualização.
+**** Aba de Tabela de Dados (QTableWidget): Crie uma aba para exibir a tabela numérica com os pontos ($S_w$, $x_D$, $f_w$) gerados na malha, acompanhada de um botão "Exportar para CSV".
+**** Indicador Visual de Consistência: Adicione um pequeno ícone de status (verde/vermelho) indicando se as condições físicas básicas são válidas (ex: avisar visualmente se $S_{wi} + S_{or} \ge 1.0$).
+***
+***
 *** TODO [0%] Arquivos de entrada poderão aceitar arquivos no formato json.
 - [ ] Arquivos de entrada poderão aceitar arquivos no formato json.
 #swir sor kro krw no nw

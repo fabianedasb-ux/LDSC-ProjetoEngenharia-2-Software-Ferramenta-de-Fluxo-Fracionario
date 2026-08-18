@@ -7,6 +7,7 @@
  */
 
 #include <QMainWindow>
+// Bueno
 #include <QMouseEvent> // Captura do mouse e uso de seus eventos(como mover o mouse sobre o gráfico)
 #include <map>
 #include "CSimulador.h"
@@ -72,6 +73,11 @@ private slots:
     void slotCopiarCoordenadasMouse(QMouseEvent *event);
 
     /**
+     * @brief Exportar grafico [bueno]
+     */
+    void slotExportarGrafico(QMouseEvent *event);
+
+    /**
      * @brief Slot acionado para invocar a exportação do documento executivo em PDF.
      */
     void on_btnRelatorio_clicked();
@@ -93,6 +99,10 @@ private slots:
      * @brief Slot acionado para alternar entre os Modos Claro e Escuro da UI.
      */
     void on_btnTema_clicked();
+
+    void on_btnAjuda_clicked();
+
+    void on_btnSobre_clicked();
 
 private:
     Ui::MainWindow *ui;         ///< Ponteiro gerenciado pelo Qt contendo os elementos do XML (.ui).
