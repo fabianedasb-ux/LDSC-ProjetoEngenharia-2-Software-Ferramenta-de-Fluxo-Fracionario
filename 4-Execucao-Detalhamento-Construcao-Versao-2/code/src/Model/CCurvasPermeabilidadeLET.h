@@ -100,6 +100,16 @@ public:
 
     /** @brief Retorna a Saturação de óleo residual. */
     double getSor() const { return _Sor; }
+
+    //Bueno documentar
+    double getLw() { return _Lw; }
+    double getEw() { return _Ew; };
+    double getTw() { return _Tw; };
+    double getLo() { return _Lo; };
+    double getEo() { return _Eo; };
+    double getTo() { return _To; };
 };
 
 #endif // CCURVASPERMEABILIDADELET_H
+
+

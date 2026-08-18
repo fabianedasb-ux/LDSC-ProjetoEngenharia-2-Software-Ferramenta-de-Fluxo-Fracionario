@@ -92,13 +92,15 @@ void MainWindow::on_cbModeloPerm_currentIndexChanged(int index) {
 
 void MainWindow::sincronizarDadosComSimulador() {
     // 1. Coleta e Conversão de Dados Escalares
+    // reservatório
     double L     = ui->leComprimento->text().toDouble(); // 100 m
+    //simulador->Reservatorio()->L(ui->leComprimento->text().toDouble());
     double A     = ui->leArea->text().toDouble(); // 1 m²
     double phi   = ui->lePorosidade->text().toDouble() / 100.0; // 20 %
     double ang   = ui->leAngulo->text().toDouble(); // 0 graus
     double vazao = ui->leVazao->text().toDouble(); // 1 m³/d
     double k     = ui->lePerm->text().toDouble(); // 100 mD
-
+    // fluido
     double mi_o  = ui->leViscOleo->text().toDouble(); // 1 cP
     double mi_w  = ui->leViscAgua->text().toDouble(); // 1 cP
     double rho_o = ui->leDensOleo->text().toDouble(); // 800 kg/m³
@@ -122,7 +124,19 @@ void MainWindow::sincronizarDadosComSimulador() {
         QString arq = ui->lblArquivoCorey->text();
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto corey = new CCurvasPermeabilidadeCorey();
+            // Corrigir: os dados devem ser lidos para a interface!
             corey->carregarDados(arq.toStdString());
+
+            // Bueno inicio
+            // Puxando os dados do model para a interface
+            ui->leCoreyNo->setText(QString::number(corey->getno()));
+            ui->leCoreyNw->setText(QString::number(corey->getnw()));
+            ui->leCoreySwi->setText(QString::number(corey->getSwi()));
+            ui->leCoreySor->setText(QString::number(corey->getSor()));
+            ui->leCoreyKrwm->setText(QString::number(corey->getKrw_max()));
+            ui->leCoreyKrom->setText(QString::number(corey->getKro_max()));
+            // fim
+
             modelo = corey;
         } else {
             double no = ui->leCoreyNo->text().toDouble();
@@ -139,6 +153,18 @@ void MainWindow::sincronizarDadosComSimulador() {
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto let = new CCurvasPermeabilidadeLET();
             let->carregarDados(arq.toStdString());
+
+            // Bueno inicio
+            // Puxando os dados do model para a interface
+            ui->leLetLw->setText(QString::number(let->getSor()));
+            ui->leLetEw->setText(QString::number(let->getEw()));
+            ui->leLetTw->setText(QString::number(let->getTw()));
+            ui->leLetLo->setText(QString::number(let->getLo()));
+            ui->leLetEo->setText(QString::number(let->getEo()));
+            ui->leLetTo->setText(QString::number(let->getTo()));
+            ui->leLetSwir->setText(QString::number(let->getSwi()));//swir?
+            ui->leLetSor->setText(QString::number(let->getSor()));
+            // fim
             modelo = let;
         } else {
             double Lw = ui->leLetLw->text().toDouble();
@@ -157,6 +183,18 @@ void MainWindow::sincronizarDadosComSimulador() {
         if (arq != "Arquivo" && !arq.isEmpty()) {
             auto chierici = new CCurvasPermeabilidadeChierici();
             chierici->carregarDados(arq.toStdString());
+
+            // Bueno inicio
+            // Puxando os dados do model para a interface
+            ui->leChiericiAw->setText(QString::number(chierici->getAw()));
+            ui->leChiericiBw->setText(QString::number(chierici->getBw()));
+            ui->leChiericiAo->setText(QString::number(chierici->getAo()));
+            ui->leChiericiBo->setText(QString::number(chierici->getBo()));
+            ui->leChiericiSwir->setText(QString::number(chierici->getSwi()));
+            ui->leChiericiSor->setText(QString::number(chierici->getSor()));
+            ui->leChiericiKrwMax->setText(QString::number(chierici->getkroMax()));
+            ui->leChiericiKroMax->setText(QString::number(chierici->getkrwMax()));
+            // fim
             modelo = chierici;
         } else {
             double Aw = ui->leChiericiAw->text().toDouble();
@@ -213,10 +251,10 @@ double MainWindow::obterSaturacaoInicialUI() const {
     case 3: { // Tabela
         auto tabela = dynamic_cast<CCurvasPermeabilidadeTabelada*>(modelo);
         if (tabela) return tabela->getSwi();
-        return 0.40;
+        return 0.40; // numeros mágicos?
     }
     default:
-        return 0.0;
+        return 0.0; // numeros mágicos?
     }
 }
 

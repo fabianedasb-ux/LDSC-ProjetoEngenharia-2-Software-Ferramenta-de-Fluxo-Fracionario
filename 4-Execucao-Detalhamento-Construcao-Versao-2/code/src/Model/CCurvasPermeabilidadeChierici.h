@@ -96,6 +96,13 @@ public:
 
     /** @brief Retorna a Saturação de óleo residual. */
     double getSor() const { return _Sor; }
-};
 
+    //bueno; documentar
+    double getAw() { return _Aw; }
+    double getBw() { return _Bw; }
+    double getAo() { return _Ao; }
+    double getBo() { return _Bo; }
+    double getkroMax() { return _kroMax; }
+    double getkrwMax() { return _krwMax; }
+};
 #endif // CCURVASPERMEABILIDADECHIERICI_H

@@ -93,12 +93,18 @@ public:
      * @return Valor adimensional interpolado.
      */
     double getKro(double sw) const override;
-
     /** @brief Retorna a Saturação Irredutível. */
     double getSwi() const { return _swir; } // Verifique se o atributo interno chama-se _swir ou _swirr na sua classe
 
     /** @brief Retorna a Saturação de óleo residual. */
     double getSor() const { return _sor; }
+
+    // Bueno: documentar; acessadas em void MainWindow::sincronizarDadosComSimulador()
+    double getKro_max() const { return _kro_max; };
+    double getKrw_max() const { return _krw_max; };
+    double getnw() const { return _nw; };
+    double getno() const { return _no; };
 };
+
 
 #endif // CCURVASPERMEABILIDADECOREY_H
