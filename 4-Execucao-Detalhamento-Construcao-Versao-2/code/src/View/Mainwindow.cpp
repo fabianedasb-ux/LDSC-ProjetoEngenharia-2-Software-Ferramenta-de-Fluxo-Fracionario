@@ -12,6 +12,8 @@
 #include <QInputDialog>
 #include <algorithm>
 #include <map>
+#include <QToolTip> //[bueno]
+
 
 // Constante global de precisão para contornos
 static constexpr double SWI_EPS = 1e-3;
@@ -84,6 +86,11 @@ void MainWindow::configurarGraficos() {
     ui->plotEfDesl->addGraph(); // Ponto de Breakthrough (Destaque)
     ui->plotEfDesl->graph(1)->setLineStyle(QCPGraph::lsNone);
     ui->plotEfDesl->graph(1)->setScatterStyle(QCPScatterStyle::ssDisc);
+
+    // Conecta o movimento do mouse de cada gráfico ao slot de leitura de coordenadas [bueno]
+    connect(ui->plotFluxo, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
+    connect(ui->plotSvsX, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
+    connect(ui->plotEfDesl, &QCustomPlot::mouseMove, this, &MainWindow::slotMostrarCoordenadasMouse);
 }
 
 void MainWindow::on_cbModeloPerm_currentIndexChanged(int index) {
@@ -308,11 +315,11 @@ void MainWindow::on_btnPlotarFw_clicked() {
         ui->txtLog->appendHtml(QString("N. Rapoport-Leas: %1").arg(calc->calcularRapoportLeas(comp_fw, phi_fw, 0.03), 0, 'f', 2));
 
         // 3. Define a saturação para exibição e calcula as constantes globais
-        double sw_report = 1 - sor;
-        double M_sw = calc->calcularM0();
-        double Ng_sw = calc->calcularNg0();
+        double sw_report = 1 - sor;// bug? não usa?
+        double M_sw = calc->calcularM0();// bug? não usa?
+        double Ng_sw = calc->calcularNg0();// bug? não usa?
 
-        auto modelo = simulador->getModeloPermeabilidade();
+        auto modelo = simulador->getModeloPermeabilidade();// bug? não usa?
 
 
         QVector<double> xFw(101), yFw(101);
@@ -374,7 +381,7 @@ void MainWindow::plotarResultados() {
     auto calc = simulador->getCalculadora();
     auto welge = simulador->getWelge();
 
-    double pvi_input = ui->lePVI->text().toDouble();
+    double pvi_input = ui->lePVI->text().toDouble();// bug? não usa?
     double swi = obterSaturacaoInicialUI();
     double sor = obterSaturacaoOleoResidualUI();
     double sw_max = 1.0 - sor;
@@ -744,4 +751,23 @@ void MainWindow::atualizarCoresGraficos() {
 
         plot->replot();
     }
+}
+
+void MainWindow::slotMostrarCoordenadasMouse(QMouseEvent *event) {
+    // Identifica qual dos 3 gráficos enviou o evento
+    QCustomPlot *plot = qobject_cast<QCustomPlot*>(sender());
+    if (!plot) return;
+
+    // Converte os pixels do cursor para as coordenadas reais do gráfico (X e Y)
+    double x = plot->xAxis->pixelToCoord(event->pos().x());
+    double y = plot->yAxis->pixelToCoord(event->pos().y());
+
+    // Formata o texto com 4 casas decimais
+    QString texto = QString("X: %1 | Y: %2").arg(x, 0, 'f', 4).arg(y, 0, 'f', 4);
+
+    // Opção 1: Exibe na QStatusBar (barra inferior da tela)
+    ui->statusbar->showMessage(texto);
+
+    // Opção 2: Exibe o balãozinho (Tooltip) diretamente ao lado do ponteiro do mouse
+    QToolTip::showText(QCursor::pos(), texto, plot);
 }

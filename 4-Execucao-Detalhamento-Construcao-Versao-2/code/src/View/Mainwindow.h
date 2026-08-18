@@ -7,6 +7,7 @@
  */
 
 #include <QMainWindow>
+#include <QMouseEvent> // Captura do mouse e uso de seus eventos(como mover o mouse sobre o gráfico)
 #include <map>
 #include "CSimulador.h"
 
@@ -59,6 +60,11 @@ private slots:
      * @brief Slot acionado para executar a varredura completa da simulação (MOC + Welge).
      */
     void on_btnPlotarSolucao_clicked();
+
+    /**
+     * @brief Mostrar coordenadas do mouse no grafico [bueno]
+     */
+    void slotMostrarCoordenadasMouse(QMouseEvent *event);
 
     /**
      * @brief Slot acionado para invocar a exportação do documento executivo em PDF.
