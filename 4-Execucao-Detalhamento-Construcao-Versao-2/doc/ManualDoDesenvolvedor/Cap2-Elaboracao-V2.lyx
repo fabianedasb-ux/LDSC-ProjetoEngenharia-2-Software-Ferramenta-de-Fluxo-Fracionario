@@ -380,7 +380,31 @@ Espaço (Físico/Simulado)
  O sistema opera sobre um domínio espacial que representa um meio poroso.
  Neste projeto,
  o espaço é simplificado para uma dimensão linear (1D),
- correspondendo à distância entre um poço injetor e um produtor.
+ correspondendo à distância entre um
+\change_inserted 258712344 1787362744
+a
+\change_unchanged
+ 
+\change_deleted 258712344 1787362745
+poço
+\change_inserted 258712344 1787362746
+face
+\change_unchanged
+ injetor
+\change_inserted 258712344 1787362748
+a
+\change_unchanged
+ e 
+\change_deleted 258712344 1787362750
+um
+\change_inserted 258712344 1787362752
+uma
+\change_unchanged
+ produtor
+\change_inserted 258712344 1787362753
+a
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Itemize
@@ -543,7 +567,7 @@ literal "true"
 
 \end_inset
 
- e o tratamento matemático para descontinuidades físicas (frentes de choque) através da técnica de 
+ e o tratamento matemático para descontinuidades matemáticas (frentes de choque) através da técnica de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Welge1952"
@@ -1868,6 +1892,10 @@ Matematicamente,
  Na modelagem de reservatórios e na solução analítica da equação de Buckley-Leverett,
  a representação contínua ou discreta destas curvas é essencial para a determinação da função de fluxo fracionário.
  Os métodos de representação dividem-se em dados tabelados experimentais e correlações empíricas
+\change_inserted 258712344 1787338762
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "rosa2006"
@@ -1879,10 +1907,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Trata-se de um parâmetro fenomenológico adimensional,
- dependente da saturação das fases,
- da molhabilidade da rocha e da geometria dos poros.
- Na solução da equação de Buckley-Leverett,
+Na solução da equação de Buckley-Leverett,
  a formulação destas curvas dita o comportamento da função de fluxo fracionário.
  Para atender à diversidade de cenários de engenharia,
  o software processa tanto dados empíricos discretos quanto correlações analíticas contínuas,
@@ -1914,7 +1939,7 @@ Neste formato,
 
 ).
  Computacionalmente,
- para a determinação de valores intermediários necessários à simulação numérica ou à traçagem da secante de Welge,
+ para a determinação de valores intermediários necessários à simulação numérica ou à determinação da secante de Welge,
  emprega-se a interpolação linear ou polinomial entre os nós adjacentes 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1943,6 +1968,10 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted 258712344 1787338850
+ 
+\change_unchanged
 e expandido por Brooks & Corey (1964),
  é uma das correlações empíricas clássicas mais utilizadas na indústria do petróleo devido à sua simplicidade e base em aproximações de tubos capilares.
  O modelo descreve as permeabilidades relativas através de leis de potência fundamentadas na saturação efetiva (ou normalizada) da fase molhante 
@@ -2438,6 +2467,26 @@ R_{m}=\frac{S_{w}-S_{wi}}{1-S_{w}-S_{or}}
 
 \end_inset
 
+
+\change_inserted 258712344 1787339113
+
+\end_layout
+
+\begin_layout Standard
+
+\change_inserted 258712344 1787339126
+Cabe ressaltar que a razão 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+ é conceitualmente análoga à saturação normalizada (
+\begin_inset Formula $S_{wn}$
+\end_inset
+
+),
+ pois ambas quantificam a fração de saturação móvel no meio poroso.
+ 
+\change_unchanged
 As funções de permeabilidade relativa para o óleo e para a água são definidas,
  respectivamente,
  pelas seguintes correlações empíricas:
@@ -2856,11 +2905,11 @@ As propriedades físicas dos fluidos são representadas pela viscosidade dinâmi
 \end_inset
 
  é o ângulo de inclinação do reservatório [radianos],
- convencionado como positivo para o fluxo no sentido ascendente ( 
+ convencionado como positivo para o fluxo no sentido ascendente (
 \emph on
 updip
 \emph default
- ).
+).
 \end_layout
 
 \begin_layout Subsection
@@ -2944,6 +2993,12 @@ P_{c}=P_{o}-P_{w}\implies P_{o}=P_{w}+P_{c}\label{eq:pressao-c}
 \end_layout
 
 \begin_layout Standard
+
+\change_inserted 258712344 1787339238
+Esta convenção matemática pressupõe que o meio poroso é preferencialmente molhável à água,
+ atuando a fase oleosa como o fluido não molhante.
+ 
+\change_unchanged
 Desta forma,
  os gradientes de pressão relacionam-se através da derivada espacial:
 \end_layout
@@ -3108,9 +3163,9 @@ Agrupando-se os termos viscosos e gravitacionais,
 
 \begin_layout Standard
 \begin_inset Formula 
-\[
-\frac{\partial P_{c}}{\partial x}=\left(\frac{u_{w}\mu_{w}}{kk_{rw}}-\frac{u_{o}\mu_{o}}{kk_{ro}}\right)+(\rho_{w}-\rho_{o})g\sin\alpha
-\]
+\begin{equation}
+\frac{\partial P_{c}}{\partial x}=\left(\frac{u_{w}\mu_{w}}{kk_{rw}}-\frac{u_{o}\mu_{o}}{kk_{ro}}\right)+(\rho_{w}-\rho_{o})g\sin\alpha\label{eq:desenvolvimento}
+\end{equation}
 
 \end_inset
 
@@ -3131,7 +3186,7 @@ Neste ponto,
 \begin_layout Standard
 \begin_inset Formula 
 \begin{equation}
-\Delta\rho=\rho_{w}-\rho_{o}\label{eq:delta-rho}
+\Delta\rho=\rho_{w}-\rho_{o}\label{eq:}
 \end{equation}
 
 \end_inset
@@ -3143,11 +3198,12 @@ Neste ponto,
 Reescrevendo a equação com 
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "eq:delta-rho"
+reference "eq:desenvolvimento"
 plural "false"
 caps "false"
 noprefix "false"
 nolink "false"
+tuple "list"
 
 \end_inset
 
@@ -3170,12 +3226,22 @@ Para expressar a equação unicamente em termos da velocidade total (
 \begin_inset Formula $u_{t}$
 \end_inset
 
-) e da fração de fluxo (
+) e d
+\change_deleted 258712344 1787339464
+a fração de fluxo
+\change_inserted 258712344 1787339469
+o fluxo fracionário
+\change_unchanged
+ (
 \begin_inset Formula $f_{w}$
 \end_inset
 
 ),
- utiliza-se a relação de continuidade 
+ utiliza-se a relação 
+\change_deleted 258712344 1787339450
+de continuidade
+\change_unchanged
+ 
 \begin_inset Formula $u_{o}=u_{t}-u_{w}$
 \end_inset
 
@@ -3287,7 +3353,13 @@ Equação do Fluxo Fracionário Generalizada
 
 \begin_layout Standard
 A partir da relação obtida na etapa anterior,
- isola-se explicitamente a fração de fluxo da água (
+ isola-se explicitamente 
+\change_deleted 258712344 1787339495
+a fração de fluxo da água
+\change_inserted 258712344 1787339501
+o fluxo fracionário da água
+\change_unchanged
+ (
 \begin_inset Formula $f_{w}$
 \end_inset
 
@@ -3352,6 +3424,10 @@ Forças Gravitacionais
 \series default
 :
  Representadas pelo termo
+\change_inserted 258712344 1787339543
+ 
+\change_unchanged
+
 \begin_inset Formula $\frac{kk_{ro}\Delta\rho g\sin\alpha}{u_{t}\mu_{o}}$
 \end_inset
 
@@ -3468,7 +3544,7 @@ literal "true"
 \begin_inset Formula $L$
 \end_inset
 
-) [m],
+),
  a velocidade de fluxo (
 \begin_inset Formula $u$
 \end_inset
@@ -3688,7 +3764,11 @@ f_{w}=\frac{1-\frac{kk_{ro}}{u_{t}\mu_{o}}\Delta\rho g\sin\alpha}{1+\frac{k_{ro}
 \begin_layout Standard
 Nesta formulação geral,
  adequada para a aplicação do Método das Características (MOC),
- a fração de fluxo 
+ 
+\change_inserted 258712344 1787339610
+o fluxo fracionário
+\change_unchanged
+ 
 \begin_inset Formula $f_{w}$
 \end_inset
 
@@ -3696,7 +3776,11 @@ Nesta formulação geral,
 \begin_inset Formula $S_{w}$
 \end_inset
 
-) [adimensional] ,
+) [adimensional]
+\change_deleted 258712344 1787339824
+ 
+\change_unchanged
+,
  dado que as permeabilidades relativas (
 \begin_inset Formula $k_{rw}$
 \end_inset
@@ -3908,7 +3992,7 @@ Número de Gravidade no Ponto Final (
 \end_inset
 
 ),
- quantifica o gradiente segregativo gerado pela diferença de massas específicas.
+ quantifica o gradiente gerado pela diferença de massas específicas.
  A presença do termo gravitacional (
 \begin_inset Formula $\sin\alpha$
 \end_inset
@@ -3916,7 +4000,7 @@ Número de Gravidade no Ponto Final (
 ) é mantida pois atua como uma força aditiva de primeira ordem.
  Em reservatórios inclinados,
  ela altera de forma permanente a curvatura da função de fluxo fracionário,
- sendo capaz de gerar fenômenos de fluxo em contracorrente ou segregação gravitacional que são capturados com exatidão pela solução analítica hiperbólica do MOC.
+ sendo capaz de gerar fenômenos de fluxo em contracorrente ou segregação gravitacional que são capturados com exatidão pela solução analítica do MOC.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3974,16 +4058,6 @@ Pressão,
 defaults
 \emph default
 ) estritamente fundamentados na literatura clássica para sistemas convencionais de recuperação secundária.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-trabalho futuro permitir o uso de analises PVT
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -4007,7 +4081,11 @@ strongly water-wet
 
 ),
  refletindo a máxima expressão das forças capilares de embebição no meio,
- uma hipótese amplamente validada em estudos de escalonamento linear (
+ uma hipótese amplamente validada em estudos de escoamento linear 
+\change_deleted 258712344 1787340606
+(
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "craig1971,Rapoport1953"
@@ -4015,7 +4093,11 @@ literal "false"
 
 \end_inset
 
-).
+
+\change_deleted 258712344 1787340603
+)
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -4024,9 +4106,49 @@ Para a tensão interfacial entre a água de injeção (salmoura) e um óleo cru 
 \begin_inset Formula $\sigma=30$
 \end_inset
 
- mN/m (numericamente equivalente a dinas/cm).
+ mN/m (numericamente equivalente a 
+\change_inserted 258712344 1787340676
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\nospellcheck off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $30$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\nospellcheck default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ 
+\change_unchanged
+dinas/cm).
  Esta magnitude é representativa para escoamentos imiscíveis de água e óleo em condições de reservatório,
- na ausência de agentes tensoativos ou métodos químicos de recuperação (
+ na ausência de agentes tensoativos ou métodos químicos de recuperação 
+\change_deleted 258712344 1787340622
+(
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "craig1971,Lake2014"
@@ -4034,7 +4156,11 @@ literal "false"
 
 \end_inset
 
-).
+
+\change_deleted 258712344 1787340620
+)
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Standard
@@ -4109,7 +4235,13 @@ literal "true"
  a evolução temporal do deslocamento.
  Ela atua,
  na verdade,
- como uma propriedade constitutiva estática do sistema trino formado pela:
+ como uma propriedade constitutiva estática do sistema formado
+\change_inserted 258712344 1787340786
+ por
+\change_deleted 258712344 1787340778
+ 
+\change_unchanged
+:
 \end_layout
 
 \begin_layout Itemize
@@ -4152,7 +4284,11 @@ Fase Deslocada (definida por
 
 \begin_layout Standard
 Analiticamente,
- a equação afirma que a fração de fluxo é uma função de estado,
+ a equação afirma que 
+\change_inserted 258712344 1787339641
+o fluxo fracionário
+\change_unchanged
+ é uma função de estado,
  dependente exclusivamente das propriedades instantâneas dos fluidos e da rocha em um ponto específico.
  
 \begin_inset CommandInset citation
@@ -4163,6 +4299,19 @@ literal "true"
 \end_inset
 
  reforça essa interpretação ao tratar o fluxo fracionário como uma medida da eficiência de deslocamento pontual.
+
+\change_inserted 258712344 1787341015
+ O sentido matemático dessa afirmação é que 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ compõe uma relação algébrica estrita 
+\begin_inset Formula $f_{w}=f(S_{w})$
+\end_inset
+
+,
+ onde o resultado depende exclusivamente da saturação local naquele instante,
+ independentemente do histórico de injeção ou das coordenadas espaciais.
 \end_layout
 
 \begin_layout Standard
@@ -4226,7 +4375,23 @@ Esta característica "estática" impõe uma limitação:
 
  [segundos]) explícita.
  Portanto,
- ela não é capaz de prever a posição dos fluidos no reservatório ou quando a água atingirá o poço produtor.
+ ela não é capaz de prever a posição dos fluidos no reservatório ou quando a água atingirá 
+\change_deleted 258712344 1787362762
+o
+\change_inserted 258712344 1787362762
+a
+\change_unchanged
+ 
+\change_deleted 258712344 1787362763
+poço
+\change_inserted 258712344 1787362764
+face
+\change_unchanged
+ produtor
+\change_inserted 258712344 1787362766
+a
+\change_unchanged
+.
  Para transformar essa "fotografia" das forças atuantes em um "filme" do deslocamento de fluidos,
  torna-se necessário acoplar esta relação constitutiva a uma lei de conservação fundamental.
 \end_layout
@@ -4243,6 +4408,10 @@ A transição de uma descrição estática das propriedades de fluxo (
 ) para um modelo dinâmico de previsão de reservatórios exige a aplicação de uma lei de conservação fundamental.
  Para determinar como a saturação de água evolui no tempo e no espaço,
  realiza-se um balanço de massa em um volume de controle fixo no meio poroso
+\change_inserted 258712344 1787341066
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Dake1978"
@@ -4327,10 +4496,14 @@ name "fig:Volume-Elementar-Representativo"
 \end_layout
 
 \begin_layout Standard
-Assume-se a hipótese de imiscibilidade total,
+Assume-se a hipótese de imiscibilidade,
  onde não há transferência de massa entre as fases (o componente água permanece restrito à fase aquosa).
  Desta forma,
  a lei de conservação de massa aplicada à fase água estabelece que o acúmulo de massa no volume é resultante do saldo líquido entre o fluxo de entrada e saída
+\change_inserted 258712344 1787341106
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lake2014"
@@ -4339,7 +4512,13 @@ literal "true"
 \end_inset
 
 .
- Da forma que:
+ D
+\change_inserted 258712344 1787341110
+E
+\change_deleted 258712344 1787341110
+a
+\change_unchanged
+ forma que:
 \begin_inset Formula 
 \[
 [\text{Taxa de Acúmulo}]=[\text{Taxa de Entrada}]-[\text{Taxa de Saída}]
@@ -4655,7 +4834,11 @@ O procedimento consiste em normalizar as coordenadas de tempo e espaço,
 \begin_inset Formula $\phi$
 \end_inset
 
-),
+)
+\change_deleted 258712344 1787341154
+,
+
+\change_unchanged
  .
  Cabe ressaltar que,
  embora a adimensionalização traga a vantagem de padronizar os gráficos em uma mesma escala para facilitar a comparação de diferentes cenários,
@@ -4675,7 +4858,15 @@ Define-se a distância adimensional (
 \begin_inset Formula $x_{D}$
 \end_inset
 
-) [adimensional] como a fração do comprimento total do sistema linear (
+) [adimensional] como a fração
+\change_inserted 258712344 1787341265
+ (
+\begin_inset Formula $x$
+\end_inset
+
+)
+\change_unchanged
+ do comprimento total do sistema linear (
 \begin_inset Formula $L$
 \end_inset
 
@@ -4775,7 +4966,7 @@ nolink "false"
 \end_layout
 
 \begin_layout Standard
-Simplificando os termos algébricos,
+Simplificando,
  observa-se o cancelamento das variáveis dimensionais 
 \begin_inset Formula $\phi$
 \end_inset
@@ -4804,11 +4995,15 @@ Simplificando os termos algébricos,
 \end_layout
 
 \begin_layout Standard
-Como a fração de fluxo 
+Como 
+\change_inserted 258712344 1787339643
+o fluxo fracionário
+\change_unchanged
+ 
 \begin_inset Formula $f_{w}$
 \end_inset
 
- é uma função exclusiva da saturação (
+ é uma função da saturação (
 \begin_inset Formula $S_{w}$
 \end_inset
 
@@ -4845,7 +5040,11 @@ Substituindo este resultado na equação de transporte,
 \end_layout
 
 \begin_layout Standard
-Esta Equação Diferencial Parcial (EDP) quase-linear e hiperbólica relaciona a taxa de variação da saturação no tempo adimensional com o gradiente de saturação no espaço adimensional.
+Esta Equação Diferencial Parcial (EDP) quase linear
+\change_deleted 258712344 1787341352
+ 
+\change_unchanged
+ hiperbólica relaciona a taxa de variação da saturação no tempo adimensional com o gradiente de saturação no espaço adimensional.
  O termo 
 \begin_inset Formula $\frac{df_{w}}{dS_{w}}$
 \end_inset
@@ -4894,9 +5093,9 @@ Justificativa da Escolha do Método
 \end_layout
 
 \begin_layout Standard
-A seleção do MOC fundamenta-se na sua capacidade de descrever o fenômeno de deslocamento com clareza física superior.
+A seleção do MOC fundamenta-se na sua capacidade de descrever o fenômeno de deslocamento com clareza física.
  Métodos numéricos tradicionais tendem a introduzir erros de truncamento que se manifestam como uma "dispersão numérica" artificial,
- suavizando artificialmente frentes de choque que deveriam ser abruptas 
+ suavizando artificialmente frentes de choque 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lake2014"
@@ -5116,9 +5315,17 @@ Este resultado analítico expõe a natureza não-linear do problema:
 
  não é linear (devido à gravidade e viscosidade),
  saturações diferentes viajam a velocidades diferentes.
- Isso leva inevitavelmente à sobreposição matemática de ondas ("quebra da onda"),
- exigindo a imposição de uma descontinuidade física (choque) para garantir a unicidade da solução,
- tema que será tratado na próxima seção sob a ótica da condição de entropia.
+ Condicionado à forma da curva 
+\begin_inset Formula $f_{w}$
+\end_inset
+
+ vs.
+ 
+\begin_inset Formula $S_{w}$
+\end_inset
+
+,
+ esse comportamento pode levar à sobreposição matemática de ondas.
 \end_layout
 
 \begin_layout Subsection
@@ -5126,16 +5333,16 @@ Condição de Entropia e Soluções Descontínuas
 \end_layout
 
 \begin_layout Standard
-A aplicação direta do Método das Características à equação de 
-\emph on
-Buckley-Leverett
-\emph default
- revela uma limitação fundamental quando a função de fluxo fracionário (
+A aplicação direta da solução clássica (contínua) do Método das Características à equação de Buckley-Leverett demonstra-se insuficiente por si só quando a função de fluxo fracionário (
+\change_inserted 258712344 1787342019
+
 \begin_inset Formula $f_{w}$
 \end_inset
 
-) não é convexa,
- como é o caso típico no deslocamento de óleo por água (formato em "S").
+
+\change_unchanged
+) apresenta ponto de inflexão,
+ como ocorre tipicamente no deslocamento de óleo por água (formato em "S").
 \end_layout
 
 \begin_layout Standard
@@ -5193,8 +5400,12 @@ Para resolver este impasse físico,
  recorre-se à teoria das leis de conservação hiperbólicas,
  conforme estudado em Métodos da Física-Matemática.
  É necessário abandonar a exigência de continuidade e buscar uma solução fraca (integral) que admita descontinuidades.
+
+\change_deleted 258712344 1787341747
  No contexto do deslocamento de fluidos,
  essa descontinuidade manifesta-se como uma Frente de Choque.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -5203,7 +5414,7 @@ A Condição de Entropia
 
 \begin_layout Standard
 A introdução de descontinuidades matemáticas permite infinitas soluções fracas possíveis para a EDP.
- Para selecionar a única solução fisicamente admissível,
+ Para selecionar uma solução fisicamente admissível,
  aplica-se a Condição de Entropia (ou Condição de Oleinik).
 \end_layout
 
@@ -5377,7 +5588,7 @@ A aplicação deste critério resulta na decomposição do perfil de saturação
 Onda de Choque
 \series default
 :
- Uma frente abrupta onde a saturação salta instantaneamente de um valor inicial (geralmente a Saturação de água inicial 
+ Uma frente abrupta onde a saturação salta instantaneamente de um valor (geralmente a Saturação de água inicial 
 \begin_inset Formula $S_{wi}$
 \end_inset
 
@@ -5461,24 +5672,9 @@ Saturação de água inicial (adimencional)
 Onda de Rarefação
 \series default
 :
- Uma zona de variação suave da saturação,
- que ocorre atrás da frente de choque (entre 
-\begin_inset Formula $S_{wf}$
-\end_inset
-
- e 
-\begin_inset Formula $1-S_{or}$
-\end_inset
-
-,
- onde a Saturação de óleo residual é 
-\begin_inset Formula $S_{or}$
-\end_inset
-
- [adimensional]).
+ Uma zona de variação suave da saturação.
  Nesta região,
- as características divergem ("se espalham") sem se cruzar,
- permitindo que a solução contínua do MOC permaneça válida.
+ as características divergem ("se espalham") sem se cruzar.
 \end_layout
 
 \begin_layout Standard
@@ -5486,27 +5682,20 @@ A determinação exata da saturação onde ocorre a transição entre a rarefaç
 \begin_inset Formula $S_{wf}$
 \end_inset
 
-) é obtida através da relação de balanço de massa através da descontinuidade (Condição de Rankine-Hugoniot),
- geometricamente resolvida pela Construção de Welge.
+) é obtida através da relação de balanço de massa através da descontinuidade (Condição de Rankine-Hugoniot).
 \end_layout
 
 \begin_layout Subsection
-Solução da Frente de Choque:
+Solução da Frente de Choque
+\change_deleted 258712344 1787342170
+:
  A Construção de Welge
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard
-A imposição da condição de entropia exige que a solução física para o deslocamento contenha uma descontinuidade abrupta de saturação (choque) na região onde a velocidade das ondas é multivalorada.
- Para determinar a magnitude e a posição deste choque,
- utiliza-se a técnica analítica desenvolvida por 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Welge1952"
-literal "true"
-
-\end_inset
-
-.
+A imposição da condição de entropia exige que a solução física para o deslocamento contenha uma descontinuidade de saturação (choque) na região onde a velocidade das ondas é multivalorada.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5514,7 +5703,11 @@ A Condição de Rankine-Hugoniot
 \end_layout
 
 \begin_layout Standard
-Em problemas de leis de conservação hiperbólicas,
+Em problemas de leis de conservação
+\change_deleted 258712344 1787342215
+ hiperbólicas
+\change_unchanged
+,
  a velocidade de propagação de uma descontinuidade (
 \begin_inset Formula $v_{\sigma}$
 \end_inset
@@ -5649,12 +5842,13 @@ literal "false"
 \end_layout
 
 \begin_layout Subsubsection
-O Princípio da Tangência
+A Condição de Lax
 \end_layout
 
 \begin_layout Standard
 Para que a solução seja contínua e fisicamente consistente,
- a velocidade da frente de choque deve ser exatamente igual à velocidade da onda de saturação imediatamente atrás dela (o último ponto da zona de rarefação).
+ a velocidade da frente de choque deve obedecer à Condição de Lax (também referida como condição de entropia).
+ Esta condição estabelece que a velocidade da onda de saturação imediatamente atrás da frente (o último ponto da zona de rarefação) deve ser igual à velocidade da própria descontinuidade.
  Matematicamente,
  isso implica igualar a velocidade do choque (Rankine-Hugoniot) à velocidade característica (derivada da função 
 \begin_inset Formula $f_{w}$
@@ -5681,6 +5875,11 @@ Para que a solução seja contínua e fisicamente consistente,
 \begin_layout Standard
 Geometricamente,
  esta igualdade descreve uma reta que parte do ponto inicial 
+\change_inserted 258712344 1787518018
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $(S_{wi},f_{w}(S_{wi}))$
 \end_inset
 
@@ -5693,17 +5892,18 @@ Geometricamente,
 
 \begin_layout Standard
 Esta construção gráfica,
- denominada Tangente de Welge,
+ denominada 
+\change_deleted 258712344 1787339758
+Tangente de Welge
+\change_inserted 258712344 1787339758
+Condição de choque
+\change_unchanged
+,
  permite determinar univocamente a saturação da frente de choque (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
-) mesmo em cenários complexos com efeitos gravitacionais,
- onde a curva 
-\begin_inset Formula $f_{w}$
-\end_inset
-
- pode apresentar pontos de inflexão.
+) mesmo em cenários complexos com efeitos gravitacionais.
 \end_layout
 
 \begin_layout Subsubsection
@@ -5752,8 +5952,7 @@ Saturação Média (adimensional)
 \end_layout
 
 \begin_layout Standard
-Além de localizar a frente de avanço,
- o método de Welge fornece uma maneira direta de calcular a saturação média de água em todo o reservatório atrás da frente,
+O método de Welge fornece uma maneira direta de calcular a saturação média de água em todo o reservatório atrás da frente,
  uma variável fundamental para o cálculo da recuperação de óleo acumulada (
 \begin_inset Formula $N_{p}$
 \end_inset
@@ -5857,7 +6056,7 @@ literal "true"
 \begin_inset Formula $\bar{S}_{w}$
 \end_inset
 
-) [adimensional] na zona varrida é dada pela interceptação da reta tangente com a linha de topo do gráfico (
+) [adimensional] na zona varrida é dada pela interceptação da reta tangente com o ponto onde (
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
@@ -5876,9 +6075,9 @@ literal "true"
 \end_layout
 
 \begin_layout Standard
-Esta relação simplifica drasticamente o cálculo da recuperação de óleo,
+Esta relação simplifica o cálculo da recuperação de óleo,
  eliminando a necessidade de integração numérica do perfil de saturação a cada passo de tempo.
- Basta estender a reta tangente até o eixo 
+ Basta estender a reta tangente até o ponto onde 
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
@@ -5999,7 +6198,13 @@ Onde
 \end_layout
 
 \begin_layout Standard
-Para o período pós-ruptura (
+Para o período pós-
+\change_deleted 258712344 1787339713
+ruptura
+\change_inserted 258712344 1787339713
+irrupção
+\change_unchanged
+ (
 \begin_inset Formula $t_{D}>t_{bt}$
 \end_inset
 
@@ -6058,7 +6263,11 @@ Símbolos
 status open
 
 \begin_layout Plain Layout
-Tempo de Ruptura 
+Tempo de 
+\change_deleted 258712344 1787339692
+Ruptura 
+\change_inserted 258712344 1787339692
+Irrupção
 \change_deleted 258712344 1785813561
 (
 \change_unchanged
@@ -6073,7 +6282,7 @@ Tempo de Ruptura
 \end_inset
 
 ),
- a frente de choque já abandonou o meio poroso,
+ a frente de choque já ultrapassou o meio poroso,
  e a saturação de água na face de saída do reservatório (
 \begin_inset Formula $S_{w,out}$
 \end_inset
@@ -6121,7 +6330,23 @@ Saturação de água na face de saída do reservatório (adimensional)
 \end_inset
 
 ,
- a saturação que atinge o poço produtor num dado tempo 
+ a saturação que atinge 
+\change_deleted 258712344 1787362770
+o
+\change_inserted 258712344 1787362770
+a
+\change_unchanged
+ 
+\change_deleted 258712344 1787362772
+poço
+\change_inserted 258712344 1787362772
+face
+\change_unchanged
+ produtor
+\change_inserted 258712344 1787362774
+a
+\change_unchanged
+ num dado tempo 
 \begin_inset Formula $t_{D}$
 \end_inset
 
@@ -6137,7 +6362,7 @@ A extensão do método de Welge demonstra que a saturação média de água no r
 \begin_inset Formula $\bar{S}_{w}$
 \end_inset
 
-) continua sendo determinada pela interceptação da tangente geométrica com a linha 
+) continua sendo determinada pela interceptação da tangente com a linha 
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
@@ -6174,7 +6399,11 @@ A extensão do método de Welge demonstra que a saturação média de água no r
 \end_layout
 
 \begin_layout Subsubsection
-Tempo de Ruptura (
+Tempo de 
+\change_inserted 258712344 1787361930
+Irrupção da Água
+\change_unchanged
+ (
 \emph on
 Breakthrough
 \emph default
@@ -6182,18 +6411,46 @@ Breakthrough
 \end_layout
 
 \begin_layout Standard
-Um dos parâmetros mais críticos fornecidos pela solução analítica é o tempo de ruptura (
+Um dos parâmetros mais 
+\change_deleted 258712344 1787361971
+críticos
+\change_inserted 258712344 1787361973
+importantes
+\change_unchanged
+ fornecidos pela solução analítica é o tempo de 
+\change_deleted 258712344 1787339714
+ruptura
+\change_inserted 258712344 1787339714
+irrupção
+\change_unchanged
+ (
 \begin_inset Formula $t_{bt}$
 \end_inset
 
 ) [adimensional],
- que marca o instante exato em que a frente de choque alcança o poço produtor (
+ que marca o instante exato em que a frente de choque alcança 
+\change_deleted 258712344 1787362792
+o poço
+\change_inserted 258712344 1787362792
+a face
+\change_unchanged
+ produtor
+\change_inserted 258712344 1787362796
+a
+\change_unchanged
+ (
 \begin_inset Formula $x_{D}=1$
 \end_inset
 
 ).
  Utilizando a equação da velocidade da frente derivada pelo MOC,
- o tempo adimensional de ruptura é calculado pelo inverso da derivada do fluxo fracionário na saturação de choque:
+ o tempo adimensional de 
+\change_deleted 258712344 1787339715
+ruptura
+\change_inserted 258712344 1787339715
+irrupção
+\change_unchanged
+ é calculado pelo inverso da derivada do fluxo fracionário na saturação de choque:
 \end_layout
 
 \begin_layout Standard
@@ -6213,18 +6470,34 @@ Antes deste instante (
 \end_inset
 
 ),
- apenas óleo é produzido no poço de saída,
- e a recuperação acumulada é linearmente igual ao volume injetado (
+ apenas óleo é produzido n
+\change_deleted 258712344 1787362802
+o poço
+\change_inserted 258712344 1787362802
+a face
+\change_unchanged
+ de saída,
+ e a recuperação acumulada é
+\change_deleted 258712344 1787362150
+ linearmente
+\change_unchanged
+ igual ao volume injetado (
 \begin_inset Formula $N_{p}=t_{D}$
 \end_inset
 
 ).
- Após a ruptura (
+ Após a 
+\change_deleted 258712344 1787339716
+ruptura
+\change_inserted 258712344 1787339716
+irrupção
+\change_unchanged
+ (
 \begin_inset Formula $t_{D}>t_{bt}$
 \end_inset
 
 ),
- a água começa a ser coproduzida,
+ a água começa a ser produzida,
  e a razão de água no fluxo (BSW
 \begin_inset Nomenclature
 status open
@@ -6254,8 +6527,11 @@ Razão de água no fluxo
 
 \end_inset
 
-) aumenta progressivamente,
- reduzindo a eficiência econômica do projeto 
+) aumenta progressivamente
+\change_inserted 258712344 1787362198
+ 
+\change_unchanged
+
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lake2014"
@@ -6267,6 +6543,8 @@ literal "true"
 \end_layout
 
 \begin_layout Subsubsection
+
+\change_deleted 258712344 1787362469
 Recuperação de Óleo Acumulada (
 \begin_inset Formula $N_{p}$
 \end_inset
@@ -6275,6 +6553,8 @@ Recuperação de Óleo Acumulada (
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 258712344 1787362469
 Por fim,
  a integração desses conceitos permite prever a curva de produção acumulada de óleo (
 \begin_inset Formula $N_{p}$
@@ -6286,6 +6566,8 @@ Por fim,
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 258712344 1787362469
 \begin_inset Formula 
 \[
 N_{p(PVI)}=\bar{S}_{w}-S_{wi}
@@ -6297,6 +6579,8 @@ N_{p(PVI)}=\bar{S}_{w}-S_{wi}
 \end_layout
 
 \begin_layout Standard
+
+\change_deleted 258712344 1787362469
 Portanto,
  todo o esforço matemático de deduzir 
 \begin_inset Formula $f_{w}$
@@ -6306,6 +6590,8 @@ Portanto,
  aplicar a conservação de massa e resolver via Welge culmina nesta capacidade preditiva:
  estimar quanto óleo será produzido e em que momento a água invadirá os poços produtores,
  permitindo a análise técnica e econômica de diferentes cenários de injeção e molhabilidade.
+\change_unchanged
+
 \end_layout
 
 \begin_layout Section

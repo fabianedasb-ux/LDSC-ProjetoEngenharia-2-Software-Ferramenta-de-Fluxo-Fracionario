@@ -108,6 +108,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -552,7 +553,7 @@ CWelge
 \family default
 \nospellcheck default
 :
- Responsável pela aplicação do método da tangente de Welge.
+ Responsável pela aplicação do método da condição de choque.
  É acionada pelo solver quando há necessidade de determinar a saturação da frente de choque (
 \family typewriter
 \nospellcheck on
@@ -1161,7 +1162,17 @@ avancarAteBreakthrough()
 \nospellcheck default
  encapsula todo o processo iterativo do Método das Características.
  Somente após o retorno deste método —
- indicando que a frente de saturação atingiu o poço produtor ou o tempo final —
+ indicando que a frente de saturação atingiu 
+\change_deleted 258712344 1787363101
+o poço 
+\change_inserted 258712344 1787363103
+a face 
+\change_unchanged
+produtor
+\change_inserted 258712344 1787363106
+a
+\change_unchanged
+ ou o tempo final —
  o controle retorna à interface para a renderização dos gráficos.
 \end_layout
 
@@ -1381,7 +1392,7 @@ status open
 
 \begin_layout Plain Layout
 Diagrama de Sequência:
- Cálculo da Tangente de Welge
+ Cálculo da Condição de choque
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Diagrama-de-Sequência:dois"

@@ -140,27 +140,7 @@ name "chap:Teste"
 \begin_layout Standard
 Todo projeto de engenharia requer uma etapa de validação.
  Este capítulo apresenta os testes do software desenvolvido,
- estruturados para atender e validar os diagramas de caso de uso inicialmente propostos
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-você tem aqui 4 testes,
- você criou 4 casos de uso?
-\end_layout
-
-\begin_layout Plain Layout
-para a versao final criar os 4 casos de uso associados aquilo que testa aqui.
-\end_layout
-
-\begin_layout Plain Layout
-caso de uso é compromisso,
- teste é compromisso cumprido
-\end_layout
-
-\end_inset
-
-.
+ estruturados para atender e validar os diagramas de caso de uso inicialmente propostos.
  Para balizar quantitativamente a precisão do simulador em relação aos métodos analíticos discretos convencionais,
  adotou-se o cálculo do erro relativo percentual.
  Este erro é definido pela razão entre o módulo da diferença do valor obtido no simulador e o valor analítico de referência (planilha),
@@ -176,7 +156,7 @@ name "sec:Teste-1"
 \end_inset
 
 :
- Validação com Modelo Tabelado (
+ Validação com Modelo Tabelado 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Lake2014"
@@ -184,11 +164,11 @@ literal "false"
 
 \end_inset
 
-)
+
 \end_layout
 
 \begin_layout Standard
-Este teste tem o objetivo de validar o motor matemático do simulador (Método das Características e a Tangente de Welge) ao processar dados experimentais discretos interpolados linearmente.
+Este teste tem o objetivo de validar o motor matemático do simulador (Método das Características e a condição de choque) ao processar dados experimentais discretos interpolados linearmente.
 \end_layout
 
 \begin_layout Standard
@@ -234,7 +214,7 @@ nolink "false"
  área da seção transversal,
  porosidade e permeabilidade absoluta) foram mantidos estritamente constantes ao longo de todos os cenários analisados.
  Esta abordagem metodológica visa isolar a variável de interesse principal —
- a influência da razão de mobilidade viscosa —
+ a influência da razão de mobilidades —
 ,
  estabelecendo um referencial comparativo íntegro e padronizado.
 \end_layout
@@ -282,7 +262,7 @@ name "fig:Exercício-5.1."
 
 As propriedades de transporte e os dados de injeção,
  especificamente a massa específica da fase aquosa e oleica,
- bem como a velocidade de filtração (velocidade de Darcy) imposta ao sistema,
+ bem como a velocidade de Darcy imposta ao sistema,
  foram fundamentados no Exercício 5.2 da mesma literatura base 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -292,7 +272,7 @@ literal "false"
 \end_inset
 
 ,
- assegurando a consistência termodinâmica e física do modelo.
+ assegurando a consistência do modelo.
 \end_layout
 
 \begin_layout Standard
@@ -302,8 +282,8 @@ O tempo de observação estipulado para a simulação analítica foi de
 
  (Volumes Porosos Injetados).
  A adoção deste instante específico de injeção justifica-se pela necessidade de avaliar a dinâmica do deslocamento em estado transiente.
- Esta janela de observação possibilita a captura e a visualização da morfologia da frente de avanço (onda de choque) no interior do domínio espacial,
- instantes antes que a mesma atinja o contorno de produção (fenômeno de ruptura ou 
+ Esta janela de observação possibilita a captura e a visualização da frente de avanço (onda de choque) no interior do domínio espacial,
+ instantes antes que a mesma atinja o contorno de produção (
 \emph on
 breakthrough
 \emph default
@@ -934,8 +914,7 @@ O Cenário A estabelece a condição operacional em que a viscosidade dinâmica 
 \end_inset
 
 ).
- Termodinamicamente,
- este arranjo caracteriza um deslocamento imiscível altamente favorável.
+ Este arranjo caracteriza um deslocamento imiscível altamente favorável.
  Avaliando as permeabilidades relativas nos pontos extremos (
 \emph on
 endpoints
@@ -984,11 +963,11 @@ nolink "false"
 \end_inset
 
  apresentam os extratos tabulares deste documento,
- contendo os indicadores físicos e os parâmetros críticos do instante de ruptura (
+ contendo os indicadores físicos e os parâmetros críticos do instante de 
 \emph on
 breakthrough
 \emph default
-).
+.
  Optou-se por suprimir a representação gráfica neste segmento,
  priorizando a avaliação analítica dos dados pontuais computados.
 \end_layout
@@ -1018,19 +997,8 @@ nolink "false"
 
 \end_inset
 
- consolida as saídas do Método das Características acoplado à secante de Welge.
+ consolida as saídas do Método das Características.
  A validação destes indicadores atesta a capacidade do motor de cálculo em operar com dados tabelados esparsos respeitando as leis de conservação.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-explique como os relatórios abaixo foram gerados;
- vão perguntar
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
@@ -1136,7 +1104,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório executivo gerado pelo simulador,
- apresentando os indicadores analíticos do instante de ruptura (breakthrough) e o status computado da injeção referentes ao Cenário A
+ apresentando os indicadores analíticos do instante de irrupção (breakthrough) e o status computado da injeção referentes ao Cenário A
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Segunda-página-do"
@@ -1180,8 +1148,8 @@ nolink "false"
 .
  O painel de visualização integra a parametrização de entrada com os diagnósticos fluidodinâmicos,
  exibindo simultaneamente as três respostas de estado fundamentais do sistema:
- a curva de fluxo fracionário acoplada à tangente de Welge,
- a propagação da onda espacial de saturação de água e o histórico contínuo da eficiência de deslocamento microscópico.
+ a curva de fluxo fracionário,
+ a propagação da onda espacial de saturação de água e o histórico contínuo da eficiência de deslocamento.
  Esta disposição gráfica em tela única permite a verificação fenomenológica imediata do deslocamento,
  evidenciando o avanço estável da frente característico da razão de mobilidade favorável.
 \end_layout
@@ -1249,21 +1217,11 @@ Microsoft Excel
 \emph default
 ),
  com o propósito de emular a metodologia tradicional de resolução gráfica/manual empregada na Engenharia de Reservatórios.
- Esta abordagem estabelece um referencial pragmático de comparação para avaliar a precisão algorítmica do software desenvolvido.
+ Esta abordagem estabelece um referencial de comparação para avaliar a precisão algorítmica do software desenvolvido.
 \end_layout
 
 \begin_layout Standard
-Devido à razão de viscosidade unitária (
-\begin_inset Formula $\mu_{w}/\mu_{o}=1$
-\end_inset
-
-),
- a função de fluxo fracionário gerada a partir dos dados experimentais discretos (
-\begin_inset Formula $\Delta S_{w}=0,05$
-\end_inset
-
-) adota uma geometria predominantemente convexa em quase todo o domínio.
- A Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Gráfico-analítico-do"
@@ -1278,7 +1236,7 @@ nolink "false"
 \emph on
 Excel
 \emph default
- do fluxo fracionário e o traçado da tangente geométrica.
+ do fluxo fracionário.
  O perfil espacial de saturação resultante e a curva de eficiência de deslocamento avaliadas neste método discreto são apresentados,
  respectivamente,
  na Figura 
@@ -1330,7 +1288,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico analítico do fluxo fracionário e da tangente de Welge computados em planilha eletrônica para o Teste 1 (Cenário A)
+Gráfico analítico do fluxo fracionário e da condição de choque computados em planilha eletrônica para o Teste 1 (Cenário A)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Gráfico-analítico-do"
@@ -1432,7 +1390,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário A)
+Histórico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário A)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Histórico-analítico-da"
@@ -1462,7 +1420,7 @@ literal "false"
 \end_inset
 
 ,
- o traçado manual/tabelado da secante de Welge no 
+ o traçado manual/tabelado do choque no 
 \emph on
 Excel
 \emph default
@@ -1526,7 +1484,7 @@ Inclinação máxima teórica
 
 \end_inset
 
- [adimensional] extraída pela avaliação linear dos limites da tabela é:
+ [adimensional] é dada por:
  
 \begin_inset Formula 
 \[
@@ -1535,7 +1493,7 @@ m_{max}=\frac{f_{w}(0,70)-f_{w}(0,40)}{0,70-0,40}=\frac{1,0000-0}{0,30}=3,333
 
 \end_inset
 
-Este coeficiente angular define matematicamente o tempo adimensional de ruptura macroscópico (
+Este coeficiente angular define matematicamente o tempo adimensional de irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -1578,7 +1536,7 @@ nolink "false"
 \emph on
 Excel
 \emph default
- e os resultados precisos processados no nível hiperbólico pela arquitetura em C++ do simulador.
+ e os resultados precisos processados pela arquitetura em C++ do simulador.
 \end_layout
 
 \begin_layout Standard
@@ -1713,7 +1671,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -1838,16 +1796,14 @@ A análise do erro relativo permite validar o rigor da ferramenta desenvolvida.
  perde-se o comportamento fino intra malha.
  O simulador em C++,
  operando com passos computacionais refinados,
- detectou que a estabilização do choque hiperbólico de Welge ocorre ligeiramente antes do limite adotado pela resolução discreta (0,6990 vs 0,7000).
+ detectou que o choque ocorre ligeiramente antes do limite adotado pela resolução discreta (0,6990 vs 0,7000).
  Consequentemente,
  ao calcular o coeficiente angular sem viés de truncamento,
- o simulador obteve um tempo de ruptura de 
+ o simulador obteve um tempo de irrupção de 
 \begin_inset Formula $t_{D,bt}=0,3005$
 \end_inset
 
  PVI.
- Isto demonstra a capacidade do algoritmo em processar os dados de forma contínua,
- atenuando os erros de truncamento associados à resolução analítica tradicional.
 \end_layout
 
 \begin_layout Subsection
@@ -1879,14 +1835,13 @@ O Cenário B estabelece uma nova condição operacional através do incremento d
 \end_inset
 
 .
- Do ponto de vista da fluidodinâmica,
- essa alteração termodinâmica desfavorece a razão de mobilidade total do sistema em relação ao cenário precedente.
+ Essa alteração desfavorece a razão de mobilidade total do sistema em relação ao cenário precedente.
  Consequentemente,
  a função de fluxo fracionário deixa de ser estritamente convexa e assume o clássico perfil em "S",
  apresentando um ponto de inflexão bem definido.
- Essa nova morfologia dita que o avanço da frente aquosa não ocorrerá mais como um deslocamento do tipo pistão integral,
+ Essa nova estrutura dita que o avanço da frente aquosa não ocorrerá mais como um deslocamento do tipo pistão,
  resultando na formação de uma frente de choque com saturação intermediária,
- seguida por uma onda de rarefação (zona de escoamento bifásico) a montante da frente de avanço.
+ seguida por uma onda de rarefação a montante da frente de avanço.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2031,7 +1986,7 @@ nolink "false"
 
 .
  O painel de diagnóstico exibe simultaneamente a curva de fluxo fracionário —
- agora caracterizada por seu perfil em "S" e pela respectiva construção da secante de Welge —
+ agora caracterizada por seu perfil em "S" —
 ,
  a propagação espacial da frente de choque e o histórico contínuo da eficiência de deslocamento microscópico.
 \end_layout
@@ -2094,7 +2049,7 @@ Adicionalmente,
  induz descontinuidades de primeira ordem.
  Consequentemente,
  as velocidades calculadas para saturações intermediárias adjacentes sofrem variações abruptas,
- refletindo-se no padrão serrilhado observado no posicionamento adimensional (
+ refletindo-se no padrão serrilhado (
 \begin_inset Formula $x_{D}$
 \end_inset
 
@@ -2117,7 +2072,7 @@ Microsoft Excel
 \begin_inset Formula $\Delta S_{w}=0,05$
 \end_inset
 
-) serve como parâmetro prático para balizar a precisão da detecção hiperbólica executada pelo algoritmo em C++.
+) serve como parâmetro prático para balizar a precisão da solução.
 \end_layout
 
 \begin_layout Standard
@@ -2128,8 +2083,8 @@ No Cenário B,
 
 ).
  Consequentemente,
- a função de fluxo fracionário perde a sua convexidade estrita e adota um perfil clássico em "S",
- apresentando um ponto de inflexão termodinâmico bem definido.
+ a função fluxo fracionário perde a sua convexidade estrita e apresenta um perfil clássico em "S",
+ apresentando um ponto de inflexão.
  A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2141,7 +2096,7 @@ nolink "false"
 
 \end_inset
 
- ilustra o cálculo analítico discreto do fluxo fracionário e a correspondente ancoragem da secante de Welge.
+ ilustra o cálculo analítico discreto do fluxo fracionário.
  Os perfis resultantes para a propagação da saturação (no instante 
 \begin_inset Formula $t_{D}=0,2$
 \end_inset
@@ -2194,7 +2149,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico analítico do fluxo fracionário e da tangente de Welge computados em planilha eletrônica para o Teste 1 (Cenário B)
+Gráfico analítico do fluxo fracionário e da condição de choque computados em planilha eletrônica para o Teste 1 (Cenário B)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Gráfico-analítico-do-1"
@@ -2285,7 +2240,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário B)
+Histórico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário B)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Histórico-analítico-da-1"
@@ -2306,22 +2261,8 @@ name "fig:Histórico-analítico-da-1"
 \end_layout
 
 \begin_layout Standard
-À teoria de Equações Diferenciais Parciais (EDPs) não lineares de primeira ordem ,
- a mudança morfológica para uma curva em "S" impõe um desafio analítico crítico.
- A aplicação direta do Método das Características (MOC) resulta em velocidades de propagação decrescentes para altas saturações,
- fazendo com que as curvas características no plano espaço-tempo (
-\begin_inset Formula $x\times t$
-\end_inset
-
-) convirjam e se cruzem.
- Matematicamente,
- isso geraria um perfil de saturação multivalorado,
- o que é fisicamente impossível.
-\end_layout
-
-\begin_layout Standard
 Diferentemente do Cenário A,
- a mudança morfológica para uma curva em "S" impõe a Condição de Entropia de Oleinik 
+ a mudança para uma curva em "S" impõe a Condição de Entropia de Oleinik 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "slava_notas"
@@ -2330,13 +2271,14 @@ literal "false"
 \end_inset
 
  em uma saturação intermediária.
- A ausência de convexidade força a tangente a encontrar seu ponto de máxima inclinação antes do limite da curva,
- dividindo o escoamento em uma frente de choque (salto abrupto) e uma onda de rarefação contínua a montante.Avaliando a matriz de dados tabelados no 
+ A ausência de convexidade força a tangente a encontrar seu ponto de máxima inclinação,
+ dividindo o escoamento em uma frente de choque (salto abrupto) e uma onda de rarefação contínua a montante.
+ Avaliando a matriz de dados tabelados no 
 \emph on
 Excel
 \emph default
 ,
- a reta secante ancorada na saturação inicial (
+ a reta tangente  ancorada na saturação inicial (
 \begin_inset Formula $S_{wi}=0,40$
 \end_inset
 
@@ -2354,11 +2296,11 @@ Excel
 \end_inset
 
 .
- A inclinação limite (
+ A inclinação (
 \begin_inset Formula $m_{max}$
 \end_inset
 
-) da frente de avanço extraída da avaliação linear da planilha é:
+) da frente de avanço extraída:
 \begin_inset Formula 
 \[
 m_{max}=\frac{f_{w}(0,60)-f_{w}(0,40)}{0,60-0,40}=\frac{0,8294-0}{0,20}=4,147
@@ -2378,7 +2320,7 @@ breakthrough
 \begin_inset Formula $\overline{S}_{w,bt}$
 \end_inset
 
-) no instante da ruptura:
+) nesse instante:
 \begin_inset Formula 
 \[
 t_{D,bt}=\frac{1}{m_{max}}=\frac{1}{4,147}=0,2411\text{ PVI}
@@ -2409,7 +2351,7 @@ nolink "false"
 
 \end_inset
 
- apresenta a comparação direta entre as grandezas obtidas pela validação em planilha e os resultados processados no nível infinitesimal pelo simulador computacional em C++.
+ apresenta a comparação direta entre as grandezas obtidas pela validação em planilha e os resultados processados pelo simulador computacional em C++.
 \end_layout
 
 \begin_layout Standard
@@ -2541,7 +2483,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -2654,15 +2596,12 @@ Diferentemente das leves variações de truncamento observadas no Cenário A,
 
 ).
  Esta concordância valida a implementação computacional:
- como o pico da velocidade hiperbólica coincidiu topologicamente com um dos nós da discretização esparsa (
+ porque o choque coincidiu com um dos nós da discretização esparsa (
 \begin_inset Formula $S_{w}=0,60$
 \end_inset
 
-),
- o simulador confirmou matematicamente a mesma saturação de fronteira,
- sem a presença de ruídos numéricos.
- A capacidade da ferramenta de localizar o nó de ruptura e processar a transição para a onda de rarefação —
- detalhe de difícil renderização contínua em planilhas —
+).
+ Detalhe de difícil renderização contínua em planilhas —
  indica que o motor numérico modela adequadamente tanto os choques físicos quanto a dispersão fracionária.
 \end_layout
 
@@ -2671,18 +2610,18 @@ Cenário C
 \end_layout
 
 \begin_layout Standard
-O Cenário C estabelece a condição operacional extrema desta etapa analítica através de um novo incremento da viscosidade dinâmica do óleo (
+O Cenário C estabelece a condição operacional desta etapa analítica através de um novo incremento da viscosidade dinâmica do óleo (
 \begin_inset Formula $\mu_{o}$
 \end_inset
 
 ),
  fixada em 
-\begin_inset Formula $0,050Pa·s$
+\begin_inset Formula $0,050\ Pa·s$
 \end_inset
 
 .
  Mantendo-se a viscosidade da fase aquosa constante e igual a 
-\begin_inset Formula $0,001Pa·s$
+\begin_inset Formula $0,001\ Pa·s$
 \end_inset
 
 ,
@@ -2690,17 +2629,21 @@ O Cenário C estabelece a condição operacional extrema desta etapa analítica 
 \begin_inset Formula $\mu_{w}/\mu_{o}$
 \end_inset
 
-) é reduzida drasticamente para 
+) é reduzida para 
 \begin_inset Formula $0,02$
 \end_inset
 
 .
  Do ponto de vista da fluidodinâmica,
- essa alteração termodinâmica torna a razão de mobilidade total do sistema altamente desfavorável em relação aos cenários precedentes.
+ essa alteração torna a razão de mobilidade total do sistema desfavorável em relação aos cenários precedentes.
  Consequentemente,
- a função de fluxo fracionário acentua severamente o seu perfil em "S".
- Essa nova morfologia dita que o avanço da frente aquosa se dará de forma muito menos eficiente,
- resultando na formação de uma frente de choque com saturação de água significativamente mais baixa (antecipando o tempo de ruptura),
+ a função de fluxo fracionário acentua o seu perfil em "S".
+ Essa nova forma dita que o avanço da frente aquosa se dará de forma muito menos eficiente,
+ resultando na formação de uma frente de choque com saturação de água significativamente mais baixa (antecipando o tempo de 
+\emph on
+breakthrough
+\emph default
+),
  seguida por uma extensa onda de rarefação (longa zona de escoamento bifásico) a montante da frente de avanço.
 \end_layout
 
@@ -2709,7 +2652,7 @@ Arquivo de saída de dados (resultados da tela)
 \end_layout
 
 \begin_layout Standard
-A comprovação da integridade do processamento numérico para este regime de alta instabilidade viscosa é documentada através do relatório técnico emitido pelo simulador.
+A comprovação da integridade do processamento numérico para este regime é documentada através do relatório técnico emitido pelo simulador.
  A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2734,7 +2677,7 @@ nolink "false"
 
  apresentam os extratos deste documento,
  sumarizando as propriedades do sistema,
- a elevação crítica da Razão de Mobilidade Total (
+ a elevação da Razão de Mobilidade Total (
 \begin_inset Formula $M$
 \end_inset
 
@@ -2743,7 +2686,7 @@ nolink "false"
 \end_inset
 
 ,
- e os indicadores analíticos do instante de ruptura (
+ e os indicadores analíticos do instante de irrupção (
 \emph on
 breakthrough
 \emph default
@@ -2813,7 +2756,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório técnico gerado pelo simulador,
- apresentando os indicadores analíticos de ruptura e o status da injeção para o Cenário C (Teste 1)
+ apresentando os indicadores analíticos de irrupção e o status da injeção para o Cenário C (Teste 1)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Segunda-página-do-2"
@@ -2842,7 +2785,7 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-A consolidação visual dos resultados computados para o regime de injeção altamente desfavorável é apresentada na interface principal do simulador,
+A consolidação visual dos resultados computados para o regime de injeção desfavorável é apresentada na interface principal do simulador,
  conforme ilustra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2855,8 +2798,7 @@ nolink "false"
 \end_inset
 
 .
- O painel de diagnóstico exibe a acentuada deformação da curva de fluxo fracionário,
- obrigando a tangente de Welge a ancorar-se prematuramente.
+ O painel de diagnóstico exibe a acentuada deformação da curva de fluxo fracionário.
  Como consequência direta,
  observa-se no perfil espacial a formação de uma frente de choque de baixa saturação,
  seguida por uma longa e instável onda de rarefação,
@@ -2908,15 +2850,6 @@ Análise dos resultados
 \end_layout
 
 \begin_layout Standard
-Para assegurar a confiabilidade do motor numérico em regimes de extrema instabilidade termodinâmica,
- a avaliação do Cenário C foi processada paralelamente na planilha eletrônica de suporte.
- A análise deste cenário severo —
- regido por uma fração de mobilidade extremamente desfavorável —
- consiste no desafio mais agressivo do Teste 1,
- pois submete o cômputo hiperbólico do Método das Características a gradientes quase assintóticos de saturação.
-\end_layout
-
-\begin_layout Standard
 A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -2928,8 +2861,12 @@ nolink "false"
 
 \end_inset
 
- apresenta a construção da curva de fluxo fracionário gerada a partir da tabela e a respectiva ancoragem da tangente de Welge estimada pelo referencial de planilha.
- Os perfis gerados para o histórico de eficiência microscópica ($E_d$) e para o avanço espacial das frentes de saturação são exibidos na Figura 
+ apresenta a construção da curva de fluxo fracionário gerada a partir da tabela.
+ Os perfis gerados para o histórico de eficiência de deslocamento (
+\begin_inset Formula $E_{d}$
+\end_inset
+
+) e para o avanço espacial das frentes de saturação são exibidos na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Perfil-espacial-de-2"
@@ -2979,7 +2916,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico analítico do fluxo fracionário e da tangente de Welge computados em planilha eletrônica para o Teste 1 (Cenário C)
+Gráfico analítico do fluxo fracionário e da condição de choque computados em planilha eletrônica para o Teste 1 (Cenário C)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Gráfico-analítico-do-2"
@@ -3073,7 +3010,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário C)
+Histórico da eficiência de deslocamento em função do tempo adimensional para o Teste 1 (Cenário C)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Histórico-analítico-da-2"
@@ -3094,27 +3031,6 @@ name "fig:Histórico-analítico-da-2"
 \end_layout
 
 \begin_layout Standard
-Sob a ótica hiperbólica 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "slava_notas"
-literal "false"
-
-\end_inset
-
-,
- o drástico incremento da razão de viscosidade deforma violentamente o fluxo fracionário logo nos instantes iniciais da saturação móvel.
- O método preveria velocidades irrealmente altas e fisicamente impossíveis (
-\begin_inset Formula $f'_{w}>1$
-\end_inset
-
-).
- Para evitar a dupla valoração do perfil e preservar a conservação de massa (Condição de Entropia de Oleinik),
- a técnica impõe a formação de um choque de saturação truncando o pico de mobilidade,
- forçando a ancoragem da reta secante em um nó incipiente da curva e gerando o escoamento governado predominantemente pela subsequente onda de rarefação.
-\end_layout
-
-\begin_layout Standard
 Ao processarmos a matriz base em planilha e inserirmos um pequeno incremento experimental adjacente à saturação irredutível (nó introduzido em 
 \begin_inset Formula $S_{w}=0,401$
 \end_inset
@@ -3132,7 +3048,7 @@ Excel
 \begin_inset Formula $\approx13,7741$
 \end_inset
 
-) e estimula de forma rudimentar o ponto de inflexão de Welge.
+).
 \end_layout
 
 \begin_layout Standard
@@ -3140,7 +3056,7 @@ Esta inclinação limite estimada na planilha resulta no seguinte equacionamento
 \emph on
 breakthrough
 \emph default
- (ruptura) macroscópico:
+ (irrupção) macroscópico:
 \begin_inset Formula 
 \[
 t_{D,bt}\approx\frac{1}{13,7741}\approx0,0726\text{ PVI}
@@ -3317,7 +3233,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -3429,14 +3345,14 @@ A comparação entre as métricas evidencia as limitações da discretização t
 \begin_inset Formula $0,401$
 \end_inset
 
-) em um sistema discreto gera uma secante artificial,
+) em um sistema discreto gera uma tangente  artificial,
  subestimando fisicamente o momento do breakthrough.
 \end_layout
 
 \begin_layout Standard
 O motor numérico em C++,
  em contrapartida,
- iterou a função em incrementos infinitesimais e identificou o ponto de ruptura estabilizado no nó de saturação 
+ iterou a função em incrementos infinitesimais e identificou o ponto de irrupção estabilizado no nó de saturação 
 \begin_inset Formula $S_{wf}=0,4100$
 \end_inset
 
@@ -3576,14 +3492,13 @@ nolink "false"
 \end_inset
 
 .
- Ressalta-se que as variáveis geométricas de contorno (comprimento,
+ Ressalta-se que a geometria (comprimento,
  área,
  porosidade e permeabilidade absoluta) e as saturações residuais (
 \begin_inset Formula $S_{wir}=S_{or}=0,20$
 \end_inset
 
-) foram rigorosamente mantidas idênticas aos cenários do Teste 1,
- com o intuito de estabelecer um referencial cruzado íntegro.
+) foram rigorosamente mantidas idênticas aos cenários do Teste 1.
  O contraste neste modelo repousa na razão de viscosidade,
  estabelecida em 
 \begin_inset Formula $0,1$
@@ -3606,7 +3521,7 @@ nolink "false"
 \begin_inset Formula $\Delta\rho=200\text{ kg/m}^{3}$
 \end_inset
 
- para instigar a segregação gravitacional.
+ para forçar a segregação gravitacional.
 \end_layout
 
 \begin_layout Standard
@@ -4057,16 +3972,15 @@ O Cenário A estabelece a condição base para o estudo termodinâmico do Teste 
 ).
  Consequentemente,
  o termo de gravidade na equação generalizada de fluxo fracionário de Buckley-Leverett é anulado,
- reduzindo o sistema a um deslocamento governado exclusivamente pelas forças viscosas e pela topologia das curvas de permeabilidade relativa do modelo de Corey.
+ reduzindo o sistema a um deslocamento governado exclusivamente pelas forças viscosas e pelas curvas de permeabilidade relativa do modelo de Corey.
  Do ponto de vista da fluidodinâmica,
- este cenário serve como referencial neutro.
+ este cenário serve como referencial.
  A curva de fluxo fracionário gerada assumirá o formato clássico em "S",
  induzido puramente pela razão de viscosidade (
 \begin_inset Formula $\mu_{w}/\mu_{o}=0,1$
 \end_inset
 
-),
- sem as distorções de mobilidade causadas pelo contraste de densidade entre os fluidos.
+).
  Esta condição de controle é fundamental para isolar e quantificar o real impacto do mergulho estrutural (aclive e declive) que será imposto nas etapas subsequentes.
 \end_layout
 
@@ -4101,7 +4015,7 @@ nolink "false"
  detalham,
  respectivamente,
  a compilação dos dados de entrada,
- a verificação das razões adimensionais e os cálculos de ruptura (
+ a verificação das razões adimensionais e os cálculos de irrupção (
 \emph on
 breakthrough
 \emph default
@@ -4207,7 +4121,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório executivo gerado pelo simulador,
- apresentando os dados críticos de ruptura e o progresso da injeção computados para o modelo exponencial sem inclinação (Teste 2,
+ apresentando os dados críticos de irrupção e o progresso da injeção computados para o modelo exponencial sem inclinação (Teste 2,
  Cenário A)
 \begin_inset CommandInset label
 LatexCommand label
@@ -4238,7 +4152,7 @@ Figuras
 
 \begin_layout Standard
 Adicionalmente,
- a consolidação visual do escoamento hiperbólico sem influência gravitacional é apresentada na interface principal do simulador,
+ a consolidação visual do escoamento sem influência gravitacional é apresentada na interface principal do simulador,
  conforme ilustra a Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -4255,10 +4169,10 @@ reference "fig:Tela-do-programa-3"
 \end_inset
 
 ),
- a propagação fluida é governada exclusivamente pelas forças viscosas parametrizadas no modelo de Corey.
+ a propagação é governada exclusivamente pelas forças viscosas parametrizadas no modelo de Corey.
  O perfil de saturação gerado (gráfico inferior esquerdo) exibe a formação de uma frente de choque perfeitamente definida,
  seguida por uma onda de rarefação suave.
- Esta assinatura visual limpa e contínua atesta a estabilidade do algoritmo numérico e servirá de base comparativa para avaliar as distorções fluidodinâmicas causadas pelo mergulho estrutural (aclive e declive) nos próximos cenários.
+ Esta assinatura visual limpa e contínua atesta a estabilidade do algoritmo numérico e servirá de base comparativa para avaliar as diferenças causadas pelo mergulho estrutural (aclive e declive) nos próximos cenários.
 \end_layout
 
 \begin_layout Standard
@@ -4336,8 +4250,7 @@ nolink "false"
 
 \end_inset
 
- ilustra o equacionamento da curva de fluxo fracionário gerada a partir da planilha de validação,
- acoplada à construção geométrica de Welge.
+ ilustra o equacionamento da curva de fluxo fracionário gerada a partir da planilha de validação.
  Os perfis espaciais da frente de saturação de água (computados para o instante imposto pelo problema de 
 \begin_inset Formula $t_{D}=0,30$
 \end_inset
@@ -4388,7 +4301,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico analítico do fluxo fracionário e da tangente de Welge computados em planilha discreta para o modelo de Corey (Teste 2,
+Gráfico analítico do fluxo fracionário e da condição de choque computados em planilha discreta para o modelo de Corey (Teste 2,
  Cenário A)
 \begin_inset CommandInset label
 LatexCommand label
@@ -4499,7 +4412,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da evolução da eficiência de deslocamento ao longo do tempo adimensional (Teste 2,
+Histórico da evolução da eficiência de deslocamento ao longo do tempo adimensional (Teste 2,
  Cenário A)
 \begin_inset CommandInset label
 LatexCommand label
@@ -4534,11 +4447,11 @@ Sob a formulação de Corey (
 \end_inset
 
 ),
- a ancoragem da tangente de Welge na saturação irredutível (
+ a ancoragem na saturação irredutível (
 \begin_inset Formula $S_{wir}=0,20$
 \end_inset
 
-) busca a derivada máxima da função hiperbólica.
+) busca a derivada máxima da função do fluxo fracionário.
  Ao processarmos a matriz de dados com espaçamento de 
 \begin_inset Formula $0,05$
 \end_inset
@@ -4552,7 +4465,7 @@ Excel
 \begin_inset Formula $m_{max}$
 \end_inset
 
-) atinge um platô avaliado em 
+) em 
 \begin_inset Formula $2,4193$
 \end_inset
 
@@ -4565,8 +4478,8 @@ Excel
 \end_inset
 
 .
- Adotando-se o limite inferior deste platô discreto como a frente de choque visual,
- a planilha aponta a estabilização da onda com os seguintes parâmetros:
+ Adotando-se o limite inferior como a frente de choque visual,
+ a planilha aponta:
 \begin_inset Formula 
 \[
 t_{D,bt(Excel)}=\frac{1}{2,4193}\approx0,4133\text{ PVI}
@@ -4731,7 +4644,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -4842,7 +4755,7 @@ Saturação Média (
 
 \begin_layout Standard
 A análise dos desvios relativos demonstra a precisão da arquitetura algorítmica desenvolvida em contraste às aproximações de planilhas de cálculo.
- O desvio na localização da saturação da frente ocorre porque a singularidade hiperbólica contínua deste modelo reside entre os nós esparsos da tabela (no valor de 
+ O desvio na localização da saturação da frente ocorre porque a singularidade deste modelo reside entre os nós esparsos da tabela (no valor de 
 \begin_inset Formula $S_{wf}=0,4250$
 \end_inset
 
@@ -4859,14 +4772,14 @@ A análise dos desvios relativos demonstra a precisão da arquitetura algorítmi
  a verdadeira inclinação máxima é truncada.
  O simulador em C++,
  operando com busca não-linear,
- localizou o ponto contínuo,
+ localizou o ponto,
  avaliando a inclinação analítica em 
 \begin_inset Formula $m=2,4242$
 \end_inset
 
 .
  Consequentemente,
- calculou o tempo de ruptura em 
+ calculou o tempo de irrupção em 
 \begin_inset Formula $0,4125$
 \end_inset
 
@@ -4880,7 +4793,7 @@ Cenário B
 \end_layout
 
 \begin_layout Standard
-O Cenário B avança na investigação fluidodinâmica do simulador ao acoplar o gradiente gravitacional à equação generalizada de conservação de massa.
+O Cenário B avança na investigação fluidodinâmica do simulador ao acoplar o gradiente gravitacional.
  Neste ensaio,
  o ângulo de inclinação estrutural do reservatório (
 \begin_inset Formula $\alpha$
@@ -4904,21 +4817,90 @@ O Cenário B avança na investigação fluidodinâmica do simulador ao acoplar o
 
 ),
  a segregação gravitacional atua "puxando" o fluido mais denso para baixo,
- o que retarda organicamente o avanço da frente de água ao longo do estrato produtor.
+ o que retarda o avanço da frente de água ao longo do estrato produtor.
 \end_layout
 
 \begin_layout Standard
 Do ponto de vista da teoria do fluxo fracionário,
- a inclusão deste termo dinâmico achata a curva de mobilidade no domínio de baixas saturações.
+ a inclusão deste termo achata a curva de mobilidade no domínio de baixas saturações.
  Fisicamente,
- isso desloca a ancoragem da tangente de Welge para um nível de saturação consideravelmente mais elevado em relação ao escoamento horizontal.
+ isso desloca o choque para um nível de saturação mais elevado em relação ao escoamento horizontal.
  Consequentemente,
- espera-se que o simulador compute uma onda de choque mais densa e estável,
- traduzindo-se em um atraso significativo no tempo de ruptura (
+ espera-se que o simulador compute um atraso significativo no tempo de irrupção (
 \emph on
 breakthrough
 \emph default
 ) e em um notório incremento na eficiência de varrido microscópico.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Injeção-no-topo."
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ ilustra esquematicamente a arquitetura de um reservatório inclinado submetido a processos de injeção.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/no topo.jpeg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Injeção no topo.
+ Retirada do livro 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Injeção-no-topo."
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -4945,7 +4927,7 @@ nolink "false"
 \end_inset
 
 ),
- que quantifica a forte influência das forças de segregação frente às forças viscosas no escoamento.
+ que quantifica a influência das forças de segregação frente às forças viscosas no escoamento.
  Em complemento,
  a Figura 
 \begin_inset CommandInset ref
@@ -4958,9 +4940,9 @@ nolink "false"
 
 \end_inset
 
- detalha os indicadores críticos resultantes da resolução hiperbólica,
+ detalha os indicadores críticos resultantes,
  evidenciando fisicamente o efeito do aclive:
- o retardo expressivo no tempo adimensional de ruptura (
+ o retardo no tempo adimensional de irrupção (
 \begin_inset Formula $t_{D,bt}=0,4802$
 \end_inset
 
@@ -4998,7 +4980,7 @@ status open
 
 \begin_layout Plain Layout
 Primeira página do relatório de saída do simulador,
- detalhando os parâmetros estáticos e o diagnóstico das forças balísticas para injeção ascendente (Teste 2,
+ detalhando os parâmetros estáticos e o diagnóstico das forças para injeção ascendente (Teste 2,
  Cenário B - aclive de 30º) 
 \begin_inset CommandInset label
 LatexCommand label
@@ -5071,9 +5053,7 @@ Figuras
 \end_layout
 
 \begin_layout Standard
-A resposta visual do simulador para o deslocamento sob efeito gravitacional ascendente é consolidada em sua interface gráfica principal,
- integrando o equacionamento balístico aos gráficos de desempenho.
- A Figura 
+A Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Tela-do-programa-1-1"
@@ -5089,15 +5069,13 @@ nolink "false"
 \end_inset
 
  e a inserção do contraste de densidades entre as fases.
- Os quadrantes de visualização ilustram simultaneamente a deformação da curva de fluxo fracionário —
- evidenciando a ancoragem da tangente de Welge em saturações consideravelmente mais altas —
-,
+ Os quadrantes de visualização ilustram simultaneamente a deformação da curva de fluxo fracionário ,
  o histórico da eficiência de deslocamento e o perfil espacial no instante 
 \begin_inset Formula $t_{D}=0,30$
 \end_inset
 
  PVI,
- onde fica visível o retardo cinemático da frente de choque em comparação ao sistema puramente horizontal.
+ onde fica visível o retardo da frente de choque em comparação ao sistema puramente horizontal.
 \end_layout
 
 \begin_layout Standard
@@ -5167,13 +5145,12 @@ nolink "false"
 
 \end_inset
 
- apresenta a construção da curva de fluxo fracionário modificada pela topografia no 
+ apresenta a construção da curva de fluxo fracionário no 
 \emph on
 Excel
 \emph default
-,
- juntamente com o traçado secante que determina as condições de ruptura.
- O comportamento cinemático resultante pode ser avaliado através do perfil espacial da frente de saturação (Figura 
+.
+ O comportamento resultante pode ser avaliado através do perfil espacial da frente de saturação (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Perfil-de-propagação"
@@ -5189,7 +5166,7 @@ nolink "false"
 \end_inset
 
  PVI,
- bem como pela evolução da eficiência do varrido microscópico (Figura 
+ bem como pela evolução da eficiência do varrido (Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Histórico-analítico-da-4"
@@ -5231,7 +5208,7 @@ Gráfico analítico do fluxo fracionário sob influência gravitacional (
 \begin_inset Formula $N_{g}=1,13$
 \end_inset
 
-) e determinação discreta da secante de Welge (Teste 2,
+) e determinação discreta da condição de choque (Teste 2,
  Cenário B)
 \begin_inset CommandInset label
 LatexCommand label
@@ -5269,16 +5246,6 @@ status open
 \begin_inset Graphics
 	filename imagens/t2cb2.png
 	width 80text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-deve ter linha vermelha
-\end_layout
 
 \end_inset
 
@@ -5340,7 +5307,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da evolução da eficiência de deslocamento volumétrico no escoamento ascendente (Teste 2,
+Histórico da evolução da eficiência de deslocamento volumétrico no escoamento ascendente (Teste 2,
  Cenário B)
 \begin_inset CommandInset label
 LatexCommand label
@@ -5374,18 +5341,18 @@ Fisicamente,
 ,
  o peso da coluna de água freia a onda de choque.
  Matematicamente,
- a consequência direta do achatamento inferior da curva de fluxo é o deslocamento do nó de tangência de Welge em direção a saturações mais elevadas.
+ a consequência direta do achatamento inferior da curva de fluxo é o deslocamento da condição de choque em direção a saturações mais elevadas.
  Ao inspecionarmos a malha discreta (
 \begin_inset Formula $\Delta S_{w}=0,05$
 \end_inset
 
 ) na planilha eletrônica,
- a avaliação dos limites incrementais aponta a inclinação máxima (velocidade característica) estabilizada no nó 
+ aponta a inclinação máxima (velocidade característica) estabilizada no nó 
 \begin_inset Formula $S_{w}=0,50$
 \end_inset
 
 ,
- registrando um coeficiente direcional de 
+ registrando um coeficiente de 
 \begin_inset Formula $m\approx2,0813$
 \end_inset
 
@@ -5393,7 +5360,7 @@ Fisicamente,
 \end_layout
 
 \begin_layout Standard
-Este equacionamento ditado pelas limitações do traçado discreto resulta nos seguintes marcadores macroscópicos:
+Este equacionamento ditado pelas limitações do traçado discreto resulta nos seguintes marcadores:
 \begin_inset Formula 
 \[
 t_{D,bt(Excel)}=\frac{1}{2,0813}\approx0,4805\text{ PVI}
@@ -5420,7 +5387,7 @@ nolink "false"
 
 \end_inset
 
- detalha o confronto entre os parâmetros induzidos pela aproximação visual tabelada (
+ detalha os parâmetros induzidos pela aproximação visual tabelada (
 \emph on
 Excel
 \emph default
@@ -5558,7 +5525,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -5666,7 +5633,7 @@ Saturação Média (
 
 A análise do erro evidencia a utilidade do simulador no cômputo de forças não-viscosas.
  Ao avaliar o deslocamento por meio de matrizes esparsas,
- a aproximação discreta limitou o ponto de ruptura a uma marca tabelada (
+ a aproximação discreta limitou a uma marca tabelada (
 \begin_inset Formula $0,5000$
 \end_inset
 
@@ -5682,7 +5649,7 @@ A análise do erro evidencia a utilidade do simulador no cômputo de forças nã
 \end_inset
 
 ).
- Essa precisão gerou uma correção no valor da saturação de ruptura em relação à estimativa discreta.
+ Essa precisão gerou uma correção no valor da saturação de irrupção em relação à estimativa discreta.
  A detecção dessa deflexão gravitacional comprova que o software soluciona adequadamente as limitações de resolução espacial,
  fornecendo uma avaliação rigorosa para o escoamento.
 \end_layout
@@ -5699,28 +5666,95 @@ O Cenário C encerra o ciclo de validações do Teste 2 ao inverter a topografia
 
  (declive).
  Nesta configuração de escoamento descendente,
- a componente vetorial da força gravitacional atua na mesma direção e sentido do empuxo viscoso gerado pelos poços injetores.
+ a componente vetorial da força gravitacional atua na mesma direção e sentido do empuxo viscoso gerado pelos faces injetoras.
  Devido ao contraste de massa específica favorável à fase aquosa injetada (mais densa que o óleo),
  a segregação gravitacional deixa de atuar como uma força de retardo e passa a acelerar o trânsito da água através do meio poroso.
 \end_layout
 
 \begin_layout Standard
-No equacionamento do fluxo fracionário,
- a soma da força gravitacional a favor do fluxo resulta em um abaulamento superior da curva para baixos valores de saturação de água.
- Fisicamente,
- esse comportamento termodinâmico antecipa a condição de estabilidade do choque,
- deslocando a ancoragem da tangente de Welge para um nível de saturação (
+Fisicamente,
+ esse comportamento antecipa o choque,
+ para um nível de saturação (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
-) notoriamente menor quando comparado ao deslocamento horizontal.
+) menor quando comparado ao deslocamento horizontal.
  Por conseguinte,
- espera-se que o simulador compute uma frente de avanço substancialmente mais veloz,
- culminando em uma ruptura prematura (
+ espera-se que o simulador compute uma frente de avanço mais veloz,
+ culminando em um
 \emph on
-breakthrough
+ breakthrough
 \emph default
- antecipado) e em uma consequente degradação da eficiência de varrido microscópico da malha.
+ antecipado e em uma consequente degradação da eficiência de varrido microscópico da malha.
+ A Figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Injeção-na-base"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+tuple "list"
+
+\end_inset
+
+ esquematiza o modelo de um estrato produtor em declive submetido ao escoamento descendente.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement document
+alignment document
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename imagens/na base.jpeg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Injeção na base Retirada do livro 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "rosa2006"
+literal "false"
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Injeção-na-base"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -5770,12 +5804,12 @@ nolink "false"
 \end_inset
 
 ),
- induzindo uma aceleração severa da onda que culmina em um tempo de ruptura prematuro (
+ induzindo uma aceleração severa da onda que culmina em um tempo de irrupção prematuro (
 \begin_inset Formula $t_{D,bt}=0,3066$
 \end_inset
 
  PVI).
- Esse comportamento agudo restringe a eficiência de varrido no momento do 
+ Esse comportamento restringe a eficiência de varrido no momento do 
 \emph on
 breakthrough
 \emph default
@@ -5854,7 +5888,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório técnico,
- evidenciando os indicadores críticos de ruptura prematura e a queda na eficiência volumétrica (Teste 2,
+ evidenciando os indicadores críticos de irrupção prematura e a queda na eficiência volumétrica (Teste 2,
  Cenário C)
 \begin_inset CommandInset label
 LatexCommand label
@@ -5902,18 +5936,10 @@ nolink "false"
 \end_inset
 
 .
- A disposição integrada dos quadrantes evidencia a profunda alteração na cinemática do deslocamento:
- a curva de fluxo fracionário denota uma tangente geométrica de inclinação severa (ancorada em saturações incipientes),
- enquanto o perfil espacial,
- gerado para o instante 
-\begin_inset Formula $t_{D}=0,30$
-\end_inset
-
- PVI,
- revela uma frente de choque altamente estirada.
+ A disposição integrada dos quadrantes evidencia a alteração do deslocamento.
  Fica evidente visualmente que,
  impulsionada a favor do fluxo pelo peso da fase aquosa,
- a onda avança com extrema rapidez e atinge o poço produtor precocemente,
+ a onda avança com extrema rapidez e atinge a face produtora precocemente,
  degradando a eficiência do processo.
 \end_layout
 
@@ -5967,15 +5993,14 @@ Análise dos resultados
 \end_layout
 
 \begin_layout Standard
-Para certificar o rigor do simulador sob condições de forte aceleração não-linear,
- o escoamento descendente (Cenário C) foi contrastado com a resolução analítica operada via planilha eletrônica (
+Para certificar o rigor do simulador sob condições,
+ o escoamento descendente (Cenário C) foi com a resolução analítica operada via planilha eletrônica (
 \emph on
 Microsoft Excel
 \emph default
 ).
  Neste caso,
- a ação cooperativa da gravidade e das forças viscosas deforma acentuadamente a função de fluxo fracionário logo nas saturações incipientes,
- impondo o desafio algorítmico de detectar um ponto de inflexão de Welge extremamente precoce.
+ a ação cooperativa da gravidade e das forças viscosas deforma acentuadamente a função de fluxo fracionário logo nas baixas saturações.
 \end_layout
 
 \begin_layout Standard
@@ -5990,9 +6015,9 @@ nolink "false"
 
 \end_inset
 
- ilustra o traçado analítico do fluxo fracionário distorcido pela topografia de declive,
- juntamente com a tentativa de ancoragem discreta da reta secante em planilha.
- O reflexo desta aceleração gravitacional no comportamento hidrodinâmico é elucidado pelo severo estiramento espacial da saturação exibido na Figura 
+ ilustra o traçado analítico do fluxo fracionário pela topografia de declive,
+ juntamente com a tentativa.
+ O reflexo desta aceleração gravitacional no comportamento hidrodinâmico é da saturação exibido na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Perfil-de-propagação-1"
@@ -6044,7 +6069,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico analítico do fluxo fracionário em escoamento descendente e a aproximação discreta da tangente de Welge (Teste 2,
+Gráfico analítico do fluxo fracionário em escoamento descendente e a aproximação discreta da condição de choque (Teste 2,
  Cenário C)
 \begin_inset CommandInset label
 LatexCommand label
@@ -6082,16 +6107,6 @@ status open
 \begin_inset Graphics
 	filename imagens/t2cc2.png
 	width 80text%
-
-\end_inset
-
-
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-deve ter linha vermelha
-\end_layout
 
 \end_inset
 
@@ -6149,7 +6164,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da degradação na evolução da eficiência de deslocamento volumétrico devido ao 
+Histórico da degradação na evolução da eficiência de deslocamento volumétrico devido ao 
 \emph on
 breakthrough
 \emph default
@@ -6181,7 +6196,7 @@ Fisicamente,
 \end_inset
 
 ) faz com que o empuxo gravitacional impulsione a fase aquosa.
- Esse fenômeno gera um abaulamento íngreme da curva logo no início do domínio móvel.
+ Esse fenômeno gera um arqueamento íngreme da curva logo no início .
  Ao avaliarmos este cenário no 
 \emph on
 Excel
@@ -6215,8 +6230,7 @@ m_{max}=\frac{f_{w}(0,25)-f_{w}(0,20)}{0,25-0,20}=\frac{0,1627-0}{0,05}=3,2533
 \end_inset
 
 Este coeficiente,
- ditado pela rigidez da malha de planilha,
- estabelece os marcadores de ruptura avaliados de forma discreta:
+ estabelece os marcadores de irrupção avaliados de forma discreta:
 \begin_inset Formula 
 \[
 t_{D,bt(Excel)}=\frac{1}{3,2533}\approx0,3074\text{ PVI}
@@ -6243,17 +6257,7 @@ nolink "false"
 
 \end_inset
 
- consolida a disparidade fundamental entre essa aproximação visual forçada e os parâmetros de alta precisão diagnosticados pela rotina infinitesimal do simulador em C++.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-voce pode aumentar o número de linhas no excel para melhorar a comparação?
-\end_layout
-
-\end_inset
-
-
+ consolida os dados resultantes do teste.
 \end_layout
 
 \begin_layout Standard
@@ -6401,7 +6405,7 @@ Saturação da Frente (
 
 \begin_layout Plain Layout
 \align center
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -6521,7 +6525,7 @@ A discrepância no valor computado para a saturação da frente reitera a relev�
 
  devido à falta de resolução intra intervalo.
  Contudo,
- a deformação da curva indica que a singularidade matemática (a inclinação secante máxima 
+ a deformação da curva indica que a singularidade matemática (a inclinação máxima 
 \begin_inset Formula $m\approx3,2616$
 \end_inset
 
@@ -6531,12 +6535,13 @@ A discrepância no valor computado para a saturação da frente reitera a relev�
 
 .
  O algoritmo em C++ identificou a exata coordenada deste ponto,
- calculando o tempo de ruptura em 
+ calculando o tempo de irrupção em 
 \begin_inset Formula $0,3066$
 \end_inset
 
  PVI.
- A limitação do método tabelado em estimar a severidade da onda de choque atesta que problemas regidos por forças capilares ou gravitacionais demandam a resolução numérica contínua fornecida pelo simulador,
+ A limitação do método tabelado em estimar,
+ atesta que problemas regidos por forças capilares ou gravitacionais demandam a resolução numérica contínua fornecida pelo simulador,
  evitando aproximações indesejadas em Engenharia de Reservatórios.
 \end_layout
 
@@ -6549,7 +6554,7 @@ name "sec:Teste-3"
 \end_inset
 
 :
- Validação do Modelo Racional LET 
+ Validação do Modelo LET 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "valdez2020estudo"
@@ -6564,13 +6569,12 @@ literal "false"
 Este teste tem o objetivo fundamental de verificar a estabilidade do motor matemático do simulador ao processar o modelo empírico de Lombez,
  Escovedo e Trindade (LET).
  Diferentemente das formulações puramente polinomiais,
- o modelo LET utiliza funções racionais flexíveis para descrever as curvas de permeabilidade relativa.
- A finalidade computacional deste ensaio é testar a capacidade da arquitetura em C++ de ancorar corretamente a tangente de Welge e calcular derivadas infinitesimais em curvas com formatos não-convencionais e ramificações complexas.
+ o modelo LET utiliza funções flexíveis para descrever as curvas de permeabilidade relativa.
+ A finalidade computacional deste ensaio é testar a capacidade da arquitetura em C++ e calcular derivadas infinitesimais em curvas com formatos não-convencionais.
 \end_layout
 
 \begin_layout Standard
-Os coeficientes empíricos adotados para a validação foram extraídos da literatura especializada,
- especificamente dos cenários base avaliados e documentados pela Sociedade Brasileira de Matemática Aplicada e Computacional 
+Os coeficientes empíricos adotados para a validação foram extraídos da literatura especializada 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "valdez2020estudo"
@@ -6914,7 +6918,7 @@ LET
 
 \end_inset
 
-Para isolar o efeito das funções racionais no solver numérico,
+Para isolar o efeito das funções no solver numérico,
  os dados estáticos do reservatório (comprimento,
  área da seção transversal,
  porosidade e permeabilidade absoluta) foram mantidos estritamente idênticos aos cenários anteriores,
@@ -6938,7 +6942,7 @@ nolink "false"
 
 \end_inset
 
- sumariza as grandezas físicas configuradas.
+ sumariza as grandezas físicas.
  Destaca-se a vazão volumétrica convertida para 
 \begin_inset Formula $6,944\times10^{-8}\text{ m}^{3}/\text{s}$
 \end_inset
@@ -7377,10 +7381,10 @@ A aprovação do programa neste módulo de teste está condicionada à geração
 \end_layout
 
 \begin_layout Standard
-A implementação do modelo LET no software apresentou estabilidade incondicional durante todo o envelope de simulação.
+A implementação do modelo LET no software apresentou estabilidade durante todo o envelope de simulação.
  Diferentemente de modelos interpolados via tabelas discretas,
- a natureza analítica contínua da função racional produziu um perfil de saturação perfeitamente liso (suave),
- eliminando por completo qualquer ruído nu
+ a natureza analítica contínua da função racional produziu um perfil de saturação perfeitamente (suave),
+ eliminando por completo qualquer ruído.
 \end_layout
 
 \begin_layout Standard
@@ -7390,7 +7394,7 @@ A curva de fluxo fracionário resultante demonstrou um atraso natural na mobilid
 \end_inset
 
 .
- Essa característica alterou significativamente a posição geométrica da frente de choque e a eficiência do varrido microscópico quando contrastada com os modelos puramente polinomiais (Corey).
+ Essa característica alterou significativamente a posição da frente de choque e a eficiência do varrido quando contrastada com os modelos de potência (Corey).
  O processamento isento de oscilações valida o algoritmo numérico e ratifica a robustez matemática do simulador em incorporar a flexibilidade do modelo LET no diagnóstico de rochas-reservatório com molhabilidades complexas.
 \end_layout
 
@@ -7499,11 +7503,11 @@ nolink "false"
 
 \end_inset
 
- extrai os indicadores críticos de ruptura (
+ extrai os indicadores críticos de
 \emph on
-breakthrough
+ breakthrough
 \emph default
-) computados para a rocha avaliada pelo modelo LET.
+ computados para a rocha avaliada pelo modelo LET.
  A capacidade do algoritmo em rastrear a derivada infinitesimal contínua da função racional refletiu-se na determinação exata da saturação da frente de choque (
 \begin_inset Formula $S_{wf}=0,6210$
 \end_inset
@@ -7513,7 +7517,7 @@ breakthrough
 \end_inset
 
  PVI).
- Estes marcadores atestam que a rotina de busca hiperbólica tratou as não-linearidades e os parâmetros de forma (
+ Estes marcadores atestam que a rotina tratou as não-linearidades e os parâmetros de forma (
 \begin_inset Formula $L,E,T$
 \end_inset
 
@@ -7522,7 +7526,7 @@ breakthrough
 \begin_inset Formula $61,70\%$
 \end_inset
 
- no momento da ruptura).
+ no momento da irrupção).
 \end_layout
 
 \begin_layout Standard
@@ -7547,7 +7551,7 @@ status open
 
 \begin_layout Plain Layout
 Primeira página do relatório técnico,
- exibindo a parametrização do reservatório e o diagnóstico adimensional para as curvas empíricas racionais (Teste 3 - Modelo LET)
+ exibindo a parametrização do reservatório e o diagnóstico adimensional para as curvas empíricas (Teste 3 - Modelo LET)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Primeira-página-do-5"
@@ -7590,7 +7594,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório técnico de saída,
- detalhando os indicadores de ruptura processados com estabilidade pelo simulador sob a formulação do modelo LET (Teste 3)
+ detalhando os indicadores de irrupção processados com estabilidade pelo simulador sob a formulação do modelo LET (Teste 3)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Segunda-página-do-6"
@@ -7634,16 +7638,16 @@ nolink "false"
 
  apresenta o painel principal em plena execução,
  evidenciando o formato singular em "S" alongado da curva de fluxo fracionário gerada pelas funções racionais do modelo LET.
- O gráfico superior direito ilustra como a ancoragem da tangente de Welge —
+ O gráfico superior direito ilustra como a ancoragem da condição de choque —
  operada de forma exata e contínua pelo algoritmo —
  ocorre de maneira perfeitamente estável,
  mesmo diante do notório atraso na mobilidade da fase aquosa imposto pelo parâmetro de forma da rocha.
- O reflexo cinemático dessa modelagem pode ser observado no quadrante inferior esquerdo,
+ O reflexo dessa modelagem pode ser observado no quadrante inferior esquerdo,
  onde o perfil espacial de saturação revela uma frente de avanço (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
-) verticalizada,
+),
  nítida e livre de dispersões,
  confirmando a robustez da solução analítica implementada no software.
 \end_layout
@@ -7705,7 +7709,7 @@ Microsoft Excel
 \begin_inset Formula $L,E,T$
 \end_inset
 
-) curva o escoamento bifásico de maneira não-linear,
+),
  demandando uma altíssima resolução de interpolação para que a Condição de Entropia de Oleinik seja satisfeita sem induzir erros de truncamento.
 \end_layout
 
@@ -7721,8 +7725,7 @@ nolink "false"
 
 \end_inset
 
- ilustra o traçado analítico do fluxo fracionário gerado pelo modelo LET,
- sobreposto pela tangente secante.
+ ilustra o traçado analítico do fluxo fracionário gerado pelo modelo LET.
  O reflexo cinemático deste modelo sobre o avanço da fase aquosa é exibido no perfil espacial da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -7770,7 +7773,7 @@ status open
 
 \begin_layout Plain Layout
 Gráfico do fluxo fracionário gerado a partir do modelo LET,
- evidenciando o extenso trecho convexo inicial e a determinação da tangente de Welge (Teste 3)
+ evidenciando o extenso trecho convexo inicial e a determinação da condição de choque (Teste 3)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Gráfico-do-fluxo-1"
@@ -7855,7 +7858,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Histórico analítico da eficiência de deslocamento volumétrico,
+Histórico da eficiência de deslocamento volumétrico,
  refletindo o atraso cinemático imposto pelos parâmetros da rocha no modelo LET (Teste 3)
 \begin_inset CommandInset label
 LatexCommand label
@@ -7882,9 +7885,9 @@ Do ponto de vista físico,
 \begin_inset Formula $L_{w}=4,02$
 \end_inset
 
-) reprime severamente o ganho inicial de mobilidade da água,
+) diminui o ganho inicial de mobilidade da água,
  gerando uma longa "cauda" convexa na base da curva de fluxo fracionário.
- Ao tentar capturar o ponto de inflexão de Welge através de um passo de discretização regular de 
+ Ao tentar capturar o ponto de inflexão através de um passo de discretização regular de 
 \begin_inset Formula $\Delta S_{w}=0,05$
 \end_inset
 
@@ -7898,7 +7901,7 @@ Excel
 
 \begin_layout Standard
 No método tabular discreto,
- a maior inclinação secante encontrada ocorre na ancoragem precoce em 
+ a maior inclinação encontrada ocorre em 
 \begin_inset Formula $S_{w}=0,65$
 \end_inset
 
@@ -7908,7 +7911,7 @@ No método tabular discreto,
 \end_inset
 
 .
- Isso estabelece o coeficiente angular máximo detectável pela planilha (
+ Isso estabelece o coeficiente angular (
 \begin_inset Formula $m_{max}$
 \end_inset
 
@@ -7920,12 +7923,12 @@ m_{max}=\frac{f_{w}(0,65)-f_{w}(0,20)}{0,65-0,20}=\frac{0,8630-0}{0,45}=1,9178
 
 \end_inset
 
-A partir desta derivada limitante,
- os indicadores de ruptura (
+A partir desta derivada,
+ os indicadores de irrupção (
 \emph on
 breakthrough
 \emph default
-) subestimados pelo 
+) pelo 
 \emph on
 Excel
 \emph default
@@ -7949,7 +7952,7 @@ Contudo,
  ao não depender de uma malha rígida,
  o simulador em C++ varre o domínio de forma contínua e infinitesimal,
  identificando que o verdadeiro ponto de tangência se localiza instantes antes,
- cravado em 
+ em 
 \begin_inset Formula $S_{wf}=0,6210$
 \end_inset
 
@@ -8103,7 +8106,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -8210,9 +8213,8 @@ Saturação Média (
 \end_inset
 
 A análise destes resultados evidencia que o uso de métodos analíticos discretos para modelos de permeabilidade relativa altamente não-lineares,
- como o LET,
- pode subestimar a cinemática do fluido.
- A variação percentual na previsão do tempo de ruptura demonstra que o método tabular superestima a estabilidade do deslocamento,
+ como o LET.
+ A variação percentual na previsão do tempo de irrupção demonstra que o método tabular superestima a estabilidade do deslocamento,
  uma vez que a discretização omite a verdadeira singularidade matemática.
 \end_layout
 
@@ -8221,8 +8223,7 @@ Dessa forma,
  o Teste 3 foi validado.
  O algoritmo numérico confirmou sua estabilidade em ancorar a tangente no domínio contínuo,
  entregando resultados precisos e convergentes.
- A ferramenta demonstra ser adequada e rigorosa,
- especialmente ao lidar com rochas de comportamento fluidodinâmico complexo.
+ A ferramenta demonstra ser adequada e rigorosa.
 \end_layout
 
 \begin_layout Section
@@ -8246,7 +8247,7 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
-Este cenário de teste avalia a resolução termodinâmica do software frente ao modelo empírico de 
+Este cenário de teste avalia a resolução do software frente ao modelo empírico de 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Chierici1984"
@@ -8256,13 +8257,13 @@ literal "false"
 
 ,
  que impõe funções de decaimento exponencial sobre a saturação normalizada para modelar as permeabilidades relativas.
- O foco desta etapa é atestar o tratamento computacional em limites assintóticos,
+ O foco desta etapa é atestar o tratamento computacional,
  garantindo que o motor matemático evite divisões por zero e singularidades numéricas —
  características inerentes à avaliação de equações exponenciais inversas nas proximidades das saturações residuais.
 \end_layout
 
 \begin_layout Standard
-As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pela Sociedade Brasileira de Matemática Aplicada e Computacional 
+As constantes de curvatura e decaimento foram obtidas da mesma base de dados adotada pelo teste 3 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "valdez2020estudo"
@@ -8369,10 +8370,10 @@ Para manter um padrão comparativo estrito que isole o efeito do modelo de Chier
 \begin_inset Formula $\mu_{o}=0,010$
 \end_inset
 
- Pa.s) baseiam-se na fundamentação do Exercício 5.2 (Cenário A) da obra de Lake.
+ Pa.s) baseiam-se na fundamentação do Exercício 5.2 (Cenário A).
  Todos os valores de entrada,
  rigorosamente convertidos para o Sistema Internacional (SI),
- permanecem os mesmos consolidados na matriz da Tabela
+ permanecem os mesmos consolidados na matriz da Tabela 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "tab:Matriz-de-parâmetros"
@@ -8398,7 +8399,7 @@ Neste ensaio,
 \end_inset
 
 .
- A convergência do método de busca da tangente de Welge também será observada sob esta forte não-linearidade.
+ A convergência do método de busca da tangente do fluxo fracionário.
 \end_layout
 
 \begin_layout Standard
@@ -8416,12 +8417,12 @@ clamping
 \end_inset
 
 ),
- a frente de avanço demonstrou um perfil de ruptura (
+ a frente de avanço demonstrou um perfil de irrupção (
 \emph on
 breakthrough
 \emph default
 ) mais pronunciado.
- O algoritmo analítico da secante de Welge localizou o ponto de máxima inclinação sem divergências,
+ O algoritmo analítico localizou o ponto de máxima inclinação sem divergências,
  atestando a adequação do software para processar funções não-lineares severas aplicadas à simulação de reservatórios.
 \end_layout
 
@@ -8533,18 +8534,18 @@ nolink "false"
 
 \end_inset
 
- demonstra as métricas críticas de tempo e eficiência de deslocamento no momento da ruptura (
+ demonstra as métricas críticas de tempo e eficiência de deslocamento no momento de 
 \emph on
 breakthrough
 \emph default
-) governado pelas equações exponenciais.
+ governado pelas equações exponenciais.
  Conforme atestado pelos indicadores numéricos,
- a rotina de busca hiperbólica operou com total estabilidade sobre o severo decaimento da função de Chierici,
- cravando a saturação da frente em 
+ a rotina de busca operou com total estabilidade sobre o decaimento da função de Chierici,
+ a saturação da frente em 
 \begin_inset Formula $S_{wf}=0,7290$
 \end_inset
 
- e projetando um tempo adimensional de ruptura de 
+ e projetando um tempo adimensional de irrupção de 
 \begin_inset Formula $t_{D,bt}=0,5440$
 \end_inset
 
@@ -8630,7 +8631,7 @@ status open
 
 \begin_layout Plain Layout
 Segunda página do relatório técnico,
- detalhando os indicadores de ruptura processados com estabilidade pelo simulador sob a formulação do modelo exponencial de Chierici (Teste 4)
+ detalhando os indicadores de irrupção processados com estabilidade pelo simulador sob a formulação do modelo exponencial de Chierici (Teste 4)
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:Segunda-página-do-7"
@@ -8668,15 +8669,8 @@ nolink "false"
 \end_inset
 
  exibe o painel principal processando o modelo de Chierici.
- O formato de decaimento imposto pelas constantes de curvatura resulta em um avanço cinemático mais severo da fase aquosa.
- Esse comportamento hidrodinâmico é nitidamente visível tanto no perfil espacial de saturação (quadrante inferior esquerdo),
- que exibe uma onda de choque de maior amplitude,
- quanto na curva de eficiência de deslocamento (
-\begin_inset Formula $E_{d}$
-\end_inset
-
-),
- que atinge seu platô de ruptura de forma muito mais abrupta em comparação aos modelos polinomiais clássicos.
+ O formato de decaimento imposto pelas constantes de curvatura resulta em um avanço da fase aquosa.
+ Esse comportamento é nitidamente visível tanto no perfil espacial de saturação (quadrante inferior esquerdo).
 \end_layout
 
 \begin_layout Standard
@@ -8747,14 +8741,13 @@ nolink "false"
 
 \end_inset
 
- ilustra o traçado analítico do fluxo fracionário sob o decaimento exponencial,
- destacando o método gráfico de Welge —
- onde a reta secante tangencia a curva e é extrapolada até 
+ ilustra o traçado analítico do fluxo fracionário sob o decaimento exponencial —
+ onde a reta tangencia a curva e é extrapolada até 
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
- para a determinação da saturação média no instante da ruptura.
- O reflexo cinemático deste modelo sobre o avanço da fase aquosa é exibido no perfil espacial da Figura 
+ para a determinação da saturação média no instante da irrupção.
+ O reflexo deste modelo sobre o avanço da fase aquosa é exibido no perfil espacial da Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Perfil-de-saturação"
@@ -8770,7 +8763,7 @@ nolink "false"
 \end_inset
 
  PVI),
- enquanto a evolução da eficiência de deslocamento ao longo da injeção é mapeada na Figura
+ enquanto a evolução da eficiência de deslocamento ao longo da injeção é mapeada na Figura 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Histórico-analítico-da-6"
@@ -8807,7 +8800,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Gráfico do fluxo fracionário gerado pelo modelo de Chierici e a extrapolação da tangente de Welge até 
+Gráfico do fluxo fracionário gerado pelo modelo de Chierici e a extrapolação da condição de choque até 
 \begin_inset Formula $f_{w}=1$
 \end_inset
 
@@ -8923,7 +8916,7 @@ Do ponto de vista analítico,
 \begin_inset Formula $B_{w}=0,86$
 \end_inset
 
-) cria uma curva que ganha inclinação vertiginosamente.
+) cria uma curva que ganha inclinação.
  Ao realizar a busca da tangente no 
 \emph on
 Excel
@@ -8933,7 +8926,7 @@ Excel
 \end_inset
 
 ),
- o método tabular encontra seu coeficiente angular limite ancorado no nó de 
+ o método tabular encontra seu coeficiente angular limite de 
 \begin_inset Formula $S_{w}=0,60$
 \end_inset
 
@@ -8944,7 +8937,7 @@ Excel
 \end_inset
 
 ,
- estabelecendo a seguinte derivada secante máxima (
+ estabelecendo a seguinte inclinação máxima (
 \begin_inset Formula $m_{max}$
 \end_inset
 
@@ -8956,8 +8949,8 @@ m_{max}=\frac{f_{w}(0,60)-f_{w}(0,20)}{0,60-0,20}=\frac{0,8462-0}{0,40}\approx2,
 
 \end_inset
 
-Com base nesta ancoragem ditada pela rigidez da planilha,
- os indicadores de ruptura (
+Com base neste valor ditada pela planilha,
+ os indicadores de irrupção (
 \emph on
 breakthrough
 \emph default
@@ -8978,8 +8971,8 @@ t_{D,bt(Excel)}=\frac{1}{2,1155}\approx0,4727\text{ PVI}
 \end_inset
 
 No entanto,
- o motor numérico contínuo do simulador em C++ imergiu na equação de Chierici varrendo o domínio em saltos infinitesimais de altíssima resolução.
- O algoritmo diagnosticou que a verdadeira singularidade hiperbólica não se encontra no nó de 
+ o motor numérico contínuo do simulador em C++ na equação de Chierici varrendo o domínio em saltos infinitesimais de altíssima resolução.
+ O algoritmo diagnosticou que a verdadeira singularidade não se encontra no nó de 
 \begin_inset Formula $0,60$
 \end_inset
 
@@ -8990,8 +8983,8 @@ No entanto,
 \end_inset
 
 .
- Neste exato micro ponto,
- a inclinação real da tangente atinge o patamar máximo de 
+ Neste exato ponto,
+ a inclinação real da tangente atinge o patamar de 
 \begin_inset Formula $m\approx2,1303$
 \end_inset
 
@@ -9145,7 +9138,7 @@ Saturação da Frente (
 \begin_inset Text
 
 \begin_layout Plain Layout
-Tempo de Ruptura (
+Tempo de Irrupção (
 \begin_inset Formula $t_{D,bt}$
 \end_inset
 
@@ -9260,7 +9253,7 @@ A discrepância superior a
 \end_inset
 
 ) ilustra a relevância da formulação analítica contínua.
- Quando funções empíricas extremas são avaliadas exclusivamente por aproximações tabulares esparsas,
+ Quando funções empíricas são avaliadas exclusivamente por aproximações tabulares esparsas,
  o erro de truncamento intra intervalos pode subestimar a cinemática do deslocamento da frente.
 \end_layout
 

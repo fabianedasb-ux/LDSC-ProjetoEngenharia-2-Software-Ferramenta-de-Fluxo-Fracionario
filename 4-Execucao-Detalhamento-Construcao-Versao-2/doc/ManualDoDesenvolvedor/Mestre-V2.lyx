@@ -632,6 +632,17 @@ literal "false"
 \end_layout
 
 \begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap9-Consideracoes-Finais.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \noindent
 \align block
 \begin_inset CommandInset bibtex
@@ -676,6 +687,17 @@ literal "false"
 \begin_inset CommandInset include
 LatexCommand include
 filename "Cap-Apendice-B-V2.lyx"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand include
+filename "Cap-Apendice-C-V2.lyx"
 literal "false"
 
 \end_inset

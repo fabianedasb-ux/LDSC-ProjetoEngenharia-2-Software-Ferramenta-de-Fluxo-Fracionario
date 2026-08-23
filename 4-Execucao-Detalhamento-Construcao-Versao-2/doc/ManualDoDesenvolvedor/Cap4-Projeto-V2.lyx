@@ -326,6 +326,13 @@ ICurvasPermeabilidade
 ,
  que define a assinatura obrigatória para o cálculo das permeabilidades relativas.
  O motor matemático encapsula suas operações através da classe 
+\change_inserted 258712344 1787518064
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CCalculadoraFluxoFracionario
@@ -357,6 +364,12 @@ CSolver
 \nospellcheck default
 ),
  através do método 
+\change_inserted 258712344 1787518614
+
+\end_layout
+
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 calcularPerfilSaturacao(double tempoInjetado,
@@ -367,6 +380,7 @@ calcularPerfilSaturacao(double tempoInjetado,
 .
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Definição do formato dos arquivos gerados pelo software:
@@ -695,7 +709,13 @@ event loop
 \emph default
 ) até que ações do usuário disparem os gatilhos lógicos.
  Em contrapartida,
- o fluxo de controle interno do motor físico de simulação e cálculo da tangente de Welge é estritamente sequencial e baseado em procedimentos,
+ o fluxo de controle interno do motor físico de simulação e cálculo da 
+\change_deleted 258712344 1787363147
+tangente de Welge
+\change_inserted 258712344 1787363147
+condição de choque
+\change_unchanged
+ é estritamente sequencial e baseado em procedimentos,
  executando de forma determinística as equações matemáticas do balanço de massa sem ramificações assíncronas concorrentes durante o processamento de um mesmo cenário.
 \end_layout
 
@@ -713,7 +733,13 @@ Identificação das condições extremas e de prioridades:
 As condições extremas foram mapeadas para evitar falhas de execução e colapsos numéricos.
  Elas englobam:
  razões de viscosidade excessivamente desfavoráveis (onde a cauda da derivada do fluxo fracionário aproxima-se assintoticamente de zero),
- divisões por zero em tempos avançados de injeção pós-ruptura (
+ divisões por zero em tempos avançados de injeção pós-
+\change_deleted 258712344 1787363167
+ruptura 
+\change_inserted 258712344 1787363167
+irrupção
+\change_unchanged
+(
 \begin_inset Formula $1/t_{D}$
 \end_inset
 
@@ -1038,7 +1064,18 @@ Pixmaps
 \nospellcheck default
 ),
  recurso essencial para a alimentação automática do nosso módulo de relatórios.
- Maiores detalhes da biblioteca acesse 
+ Maiores detalhes da biblioteca acesse
+\change_inserted 258712344 1787518148
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\change_deleted 258712344 1787518148
+ 
+\change_unchanged
+
 \begin_inset CommandInset href
 LatexCommand href
 name "https://www.qcustomplot.com/"
@@ -1047,9 +1084,16 @@ literal "false"
 
 \end_inset
 
+
+\change_inserted 258712344 1787518167
+.
+\change_deleted 258712344 1787518165
 ,
+\change_unchanged
+
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Itemize
 Seleção da biblioteca utilizada para montar a interface gráfica do software – GDI
@@ -1244,6 +1288,13 @@ LET
 \nospellcheck default
 ,
  
+\change_inserted 258712344 1787518190
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 CCurvasPermeabilidadeChierici
@@ -1261,6 +1312,7 @@ CCurvasPermeabilidadeTabelada
  sem que o motor de cálculo precise conhecer os detalhes de implementação de cada modelo matemático.
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 O padrão arquitetural MVC definiu a estrutura inicial do projeto.
  Uma descrição do MVC é disponibilizada no site 
@@ -2192,6 +2244,13 @@ Janela->Simulador->Welge ->Calculadora->derivada()
 ).
  A passagem de condições de contorno cruciais (como saturação inicial e máxima) foi refatorada para ser transferida explicitamente através das assinaturas dos métodos (e.g.,
  
+\change_inserted 258712344 1787518234
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
 \family typewriter
 \nospellcheck on
 _solver->calcularPerfilSaturacao(tempo,
@@ -2204,6 +2263,7 @@ _solver->calcularPerfilSaturacao(tempo,
  eliminando desvios longos e instáveis de arquitetura.
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Subsubsection
 Efeitos do projeto nas otimizações

@@ -251,9 +251,8 @@ Nome
 \begin_inset Text
 
 \begin_layout Plain Layout
-Software Educacional com Interface Interativa para Implementação Computacional do Método das Características – Solução Analítica de 
-\emph on
-Buckley-Leverett
+Software Educacional Interativo para Implementação Computacional do Método das Características:
+ Solução Analítica de Buckley-Leverett
 \end_layout
 
 \end_inset
@@ -338,7 +337,13 @@ framework
 \noun off
 \color none
 Núcleo de Processamento Analítico:
- Módulo em C++ responsável pela implementação dos algoritmos do Método das Características (MOC) e da construção da tangente de Welge.
+ Módulo em C++ responsável pela implementação dos algoritmos do Método das Características (MOC) e da construção da 
+\change_deleted 258712344 1787334383
+tangente de Welge
+\change_inserted 258712344 1787334383
+condição de choque
+\change_unchanged
+.
 \end_layout
 
 \begin_layout Enumerate
@@ -457,7 +462,7 @@ Especificação
 \begin_inset Index idx
 range none
 pageformat default
-status collapsed
+status open
 
 \begin_layout Plain Layout
 especificação
@@ -644,6 +649,10 @@ status open
 \begin_layout Plain Layout
 Comprimento,
  dist
+\change_inserted 258712344 1787334503
+ância (metros)
+\change_unchanged
+
 \end_layout
 
 \end_inset
@@ -1436,14 +1445,10 @@ Símbolos
 
 \end_inset
 
- 
-\change_inserted 258712344 1785813055
 
-\begin_inset Formula $\sin\alpha$
+\begin_inset Formula $\alpha$
 \end_inset
 
-
-\change_unchanged
 
 \begin_inset Argument post:1
 status open
@@ -1533,7 +1538,13 @@ RF-09
 \begin_layout Plain Layout
 O sistema deve analisar a estabilidade física da solução MOC.
  Caso identifique multivaloração,
- deve aplicar o método da Tangente de Welge para definir a frente de choque (
+ deve aplicar o método da 
+\change_deleted 258712344 1787333971
+Tangente de Welge 
+\change_inserted 258712344 1787333971
+Condição de choque 
+\change_unchanged
+para definir a frente de choque (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
@@ -1575,7 +1586,15 @@ RF-10
 \begin_inset Text
 
 \begin_layout Plain Layout
-O sistema deve simular e renderizar graficamente o cenário de injeção 1D entre um poço injetor e um poço produtor,
+O sistema deve simular e renderizar graficamente o cenário de injeção 1D entre um 
+\change_deleted 258712344 1787362854
+poço
+\change_unchanged
+ injetor e um 
+\change_deleted 258712344 1787362854
+poço
+\change_unchanged
+ produtor,
  aplicando o perfil de saturação resultante.
 \end_layout
 
@@ -1714,7 +1733,11 @@ nolink "false"
 \end_inset
 
  apresenta as restrições arquiteturais adotadas.
- A escolha pela linguagem C++(padrão C++17) e pelo 
+ A escolha pela linguagem C++
+\change_inserted 258712344 1787334568
+ 
+\change_unchanged
+(padrão C++17) e pelo 
 \emph on
 framework
 \emph default
@@ -2115,7 +2138,13 @@ nolink "false"
  detalha o cenário principal de utilização do software:
  'Simulação de Injeção 1D e Análise de Sensibilidade'.
  Este caso de uso captura o fluxo completo de trabalho de um engenheiro de reservatórios,
- desde a configuração das propriedades da rocha até a análise do tempo de ruptura (
+ desde a configuração das propriedades da rocha até a análise do tempo de 
+\change_deleted 258712344 1787334015
+ruptura
+\change_inserted 258712344 1787334015
+irrupção
+\change_unchanged
+ (
 \emph on
 breakthrough
 \emph default
@@ -2514,18 +2543,12 @@ Verificação de Estabilidade:
  O sistema analisa o perfil gerado pelo MOC para detectar multivaloração (curva S).
 \end_layout
 
-\begin_layout Enumerate
-
-\size footnotesize
-Aplicação de Condição de Choque:   
-\end_layout
-
 \begin_deeper
 \begin_layout Enumerate
 
 \size footnotesize
 Se Instável:
- O sistema aplica a Tangente de Welge para determinar a saturação da frente de choque (
+ O sistema aplica a Condição de choque para determinar a saturação da frente de choque (
 \begin_inset Formula $S_{wf}$
 \end_inset
 
@@ -2535,7 +2558,7 @@ Se Instável:
 \begin_layout Enumerate
 
 \size footnotesize
-Se Estável (Fluxo Pistão/Dispersivo):
+Se Estável (Rarefação):
  O sistema mantém a solução direta do MOC.
 \end_layout
 
@@ -2544,7 +2567,21 @@ Se Estável (Fluxo Pistão/Dispersivo):
 
 \size footnotesize
 Renderização do Cenário:
- O sistema projeta o perfil de saturação final na distância definida entre o poço injetor e o produtor,
+ O sistema projeta o perfil de saturação final na distância definida entre 
+\change_deleted 258712344 1787362872
+o poço
+\change_inserted 258712344 1787362872
+a face
+\change_unchanged
+ injetor
+\change_inserted 258712344 1787362876
+a
+\change_unchanged
+ e o produtor
+\change_inserted 258712344 1787362877
+a
+\change_unchanged
+,
  exibindo o avanço da frente em função do tempo ou volume injetado.
 \end_layout
 
@@ -2926,7 +2963,13 @@ extension point
 \end_layout
 
 \begin_layout Standard
-O software não aplica a técnica construtiva da Tangente de Welge de forma indiscriminada a toda simulação.
+O software não aplica a técnica construtiva da 
+\change_deleted 258712344 1787333967
+Tangente de Welge 
+\change_inserted 258712344 1787333967
+Condição de choque 
+\change_unchanged
+de forma indiscriminada a toda simulação.
  A invocação da classe 
 \family typewriter
 \nospellcheck on
@@ -2936,7 +2979,13 @@ CWelge
  atua como essa extensão condicional que é ativada exclusivamente se a avaliação da Condição de Entropia detectar que o perfil de saturação gerado pelo MOC apresentar instabilidade física (multivaloração) caracterizando o comportamento de quebra de onda ou choque.
  Esta abordagem assegura que a arquitetura do simulador diferencie e processe corretamente dois fenômenos distintos:
  deslocamentos puramente dispersivos (onde o fluxo principal de MOC é suficiente) e deslocamentos com formação de frentes de choque instáveis (que disparam a extensão de entropia),
- culminando no cálculo preciso do tempo de ruptura (
+ culminando no cálculo preciso do tempo de 
+\change_deleted 258712344 1787334017
+ruptura
+\change_inserted 258712344 1787334017
+irrupção
+\change_unchanged
+ (
 \emph on
 breakthrough
 \emph default
@@ -3039,12 +3088,24 @@ tuple "list"
 \end_layout
 
 \begin_layout Standard
-O compromisso funcional modelado neste cenário assegura que o sistema é capaz de processar as ramificações não-lineares da curva LET e compilar os indicadores de ruptura (
+O compromisso funcional modelado neste cenário assegura que o sistema é capaz de processar as ramificações não-lineares da curva LET e compilar os indicadores de 
+\change_deleted 258712344 1787334018
+ruptura
+\change_inserted 258712344 1787334018
+irrupção
+\change_unchanged
+ (
 \emph on
 breakthrough
 \emph default
 ) em um relatório técnico estruturado.
- A modelagem evidencia a transição entre o cálculo contínuo da tangente de Welge e a exportação dos diagnósticos de engenharia,
+ A modelagem evidencia a transição entre o cálculo contínuo da 
+\change_deleted 258712344 1787333992
+tangente de Welge 
+\change_inserted 258712344 1787333992
+condição de choque 
+\change_unchanged
+e a exportação dos diagnósticos de engenharia,
  atestando a confiabilidade da ferramenta na documentação analítica do escoamento imiscível.
 \end_layout
 

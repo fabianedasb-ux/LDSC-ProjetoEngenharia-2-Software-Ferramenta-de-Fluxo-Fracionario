@@ -122,6 +122,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -607,7 +608,13 @@ Resultados
 \emph on
 breakthrough
 \emph default
- e tangente de Welge) a uma interface intuitiva e adaptável às condições de iluminação do ambiente de trabalho.
+ e 
+\change_deleted 258712344 1787363390
+tangente de Welge
+\change_inserted 258712344 1787363390
+condição de choque
+\change_unchanged
+) a uma interface intuitiva e adaptável às condições de iluminação do ambiente de trabalho.
 \end_layout
 
 \begin_layout Standard

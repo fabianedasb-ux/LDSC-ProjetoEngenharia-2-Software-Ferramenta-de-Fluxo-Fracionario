@@ -98,104 +98,55 @@
 
 \begin_body
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-\backslash
-thispagestyle{empty}
-\end_layout
-
-\end_inset
-
-
+\begin_layout Chapter
+Considerações Finais
 \end_layout
 
 \begin_layout Standard
-\align center
+O trabalho desenvolveu o Software Educacional Interativo para Implementação Computacional do Método das Características:
+ Solução Analítica de Buckley-Leverett.
+ O programa,
+ escrito em linguagem C++ com a biblioteca Qt,
+ executa o cálculo da teoria de fluxo fracionário e do Método das Características.
+ A arquitetura processa dados de entrada em formato de texto e funções matemáticas,
+ incluindo as equações de Corey,
+ LET e Chierici,
+ para a determinação de perfis de saturação de fases fluidas.
+\end_layout
 
-\series bold
-SOFTWARE EDUCACIONAL INTERATIVO PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS:
- SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
+\begin_layout Section
+Trabalhos futuros 
 \end_layout
 
 \begin_layout Standard
-\align center
-\begin_inset VSpace 4cm
-\end_inset
-
-
+A partir das delimitações do escopo de desenvolvimento atual do software,
+ propõem-se as seguintes diretrizes para o aprimoramento e expansão da arquitetura em versões subsequentes:
 \end_layout
 
-\begin_layout Standard
-\align center
-FABIANE DA SILVA BARROS
+\begin_layout Itemize
+Incorporação do Efeito Capilar:
+ Desenvolver e acoplar um módulo matemático para o cálculo da pressão capilar em função da saturação,
+ permitindo que a equação de fluxo fracionário compute os gradientes capilares inerentes ao escoamento multifásico no meio poroso.
 \end_layout
 
-\begin_layout Standard
-\align center
-\begin_inset VSpace 3cm
-\end_inset
-
-
+\begin_layout Itemize
+Integração de Dados Termodinâmicos (PVT):
+ Implementar uma interface de entrada para o processamento de relatórios de análises PVT (Pressão-Volume-Temperatura).
+ Esta adição viabilizará a correção das propriedades volumétricas e viscosidades dos fluidos para as condições de pressão e temperatura do reservatório.
 \end_layout
 
-\begin_layout Standard
-\align right
-\begin_inset Box Frameless
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "t"
-use_parbox 0
-use_makebox 0
-width "8cm"
-special "none"
-height "1in"
-height_special "totalheight"
-thickness "0.4pt"
-separation "3pt"
-shadowsize "4pt"
-framecolor "default"
-backgroundcolor "none"
-status open
-
-\begin_layout Plain Layout
-Projeto de Engenharia apresentado ao Centro de Ciência e Tecnologia da Universidade Estadual do Norte Fluminense Darcy Ribeiro,
- como parte das exigências para obtenção do título de Engenheira de Exploração e Produção de Petróleo.
+\begin_layout Itemize
+Mapeamento Gráfico de Permeabilidades Relativas:
+ Estruturar um subsistema de visualização gráfica dedicado à plotagem das curvas de permeabilidade relativa.
+ A renderização prévia destes dados fornecerá uma validação analítica da interação fluido-rocha antes do acionamento do algoritmo de avanço frontal.
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-
-\size large
-Orientador:
- Prof.
- André Duarte Bueno
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace vfill
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\align center
-MACAÉ – RJ
-\end_layout
-
-\begin_layout Standard
-\align center
-AGOSTO - 2026
+\begin_layout Itemize
+Controle de Restrições Físicas para o Modelo de Corey:
+ Estabelecer rotinas de validação no formulário de entrada do modelo analítico de Corey.
+ O algoritmo de verificação deverá impor travas de consistência,
+ bloqueando a inserção de expoentes negativos e restringindo as saturações aos limites físicos (valores entre zero e um,
+ respeitando as saturações residuais irredutíveis).
 \end_layout
 
 \end_body

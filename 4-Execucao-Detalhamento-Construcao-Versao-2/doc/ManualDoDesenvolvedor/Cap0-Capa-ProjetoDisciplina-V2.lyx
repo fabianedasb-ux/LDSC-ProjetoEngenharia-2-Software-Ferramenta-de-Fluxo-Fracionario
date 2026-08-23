@@ -100,6 +100,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -149,8 +150,15 @@ CENTRO DE CIÊNCIA E TECNOLOGIA - CCT
 \begin_layout Standard
 \align center
 
+\change_deleted 258712344 1787338240
+
 \size large
 SOFTWARE EDUCACIONAL COM INTERFACE INTERATIVA PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS - SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
+\change_inserted 258712344 1787338251
+SOFTWARE EDUCACIONAL INTERATIVO PARA IMPLEMENTAÇÃO COMPUTACIONAL DO MÉTODO DAS CARACTERÍSTICAS:
+ SOLUÇÃO ANALÍTICA DE BUCKLEY-LEVERETT
+\change_unchanged
+
 \end_layout
 
 \begin_layout Standard

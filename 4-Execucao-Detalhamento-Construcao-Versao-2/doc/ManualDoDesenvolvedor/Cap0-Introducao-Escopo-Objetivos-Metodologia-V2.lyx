@@ -107,6 +107,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -661,7 +662,13 @@ Fluxo fracionário para água (adimensional)
 
 \end_deeper
 \begin_layout Itemize
-Implementar o método da construção da tangente de Welge para determinar a saturação da frente de choque (
+Implementar o método da construção da 
+\change_deleted 258712344 1787333882
+tangente de Welge 
+\change_inserted 258712344 1787333882
+condição de choque 
+\change_unchanged
+para determinar a saturação da frente de choque (
 \begin_inset Nomenclature
 status open
 

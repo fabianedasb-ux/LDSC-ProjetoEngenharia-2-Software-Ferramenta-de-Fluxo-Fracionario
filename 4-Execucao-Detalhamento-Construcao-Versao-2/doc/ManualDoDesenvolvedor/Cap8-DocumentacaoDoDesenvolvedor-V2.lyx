@@ -118,6 +118,7 @@
 \docbook_table_output 0
 \docbook_mathml_prefix 1
 \docbook_mathml_version 0
+\author 258712344 "fabia"
 \end_header
 
 \begin_body
@@ -379,7 +380,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -423,7 +424,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -473,7 +474,7 @@ placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -515,12 +516,17 @@ name "fig:doxygen-3"
 \end_inset
 
 
+\change_inserted 258712344 1787515823
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement document
 alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \align center
@@ -561,6 +567,8 @@ name "fig:doxygen-4"
 
 \end_inset
 
+
+\change_inserted 258712344 1787514929
 
 \end_layout
 
